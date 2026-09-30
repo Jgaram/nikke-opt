@@ -6,8 +6,18 @@
 ## Branch & landing
 
 - **브랜치는 `main` 하나만 쓴다.** 기능 브랜치·PR을 만들지 않는다.
-- 작업은 커밋하고 **언제나 `main`에 바로 push**한다(`git push origin HEAD:main`).
-- 세션이 다른 브랜치에서 시작됐다면 `main`을 받아 그 위에서 작업하고 `main`으로 push한다.
+- 작업은 커밋하고 **언제나 `main`에 바로 push**한다. 이것은 레포 소유자의 상시 허가다 —
+  세션이 `claude/...`·`ccr-...` 같은 작업 브랜치를 지정했더라도 원격에는 그 브랜치를 올리지 않는다.
+
+  ```bash
+  git fetch origin main && git merge origin/main   # 최신 main 위에서
+  git push origin HEAD:main
+  ```
+
+- 안전망: 실수로 `claude/**`·`ccr-*` 브랜치에 push해도 `.github/workflows/merge-to-main.yml`이
+  main에 합치고 그 브랜치를 지운다. 충돌이면 main은 그대로, 브랜치는 남고 Actions가 빨갛게 뜬다 —
+  최신 main을 merge해 고친 뒤 다시 push한다.
+- 테스트가 생기면 push 전에 돌리고, 같은 테스트를 워크플로의 표시된 자리에도 넣는다.
 
 ## Invariants
 
