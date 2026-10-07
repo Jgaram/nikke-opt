@@ -1,0 +1,13 @@
+{
+ "boss": "솔로 레이드 S40",
+ "evaluator": {
+  "repo": "Jgaram/nikke-calc",
+  "commit": "ba9f29cdbe8b7766c260e71e1a0136d8f53161ff",
+  "dirty": false
+ },
+ "seed": 20261007,
+ "random": 1500,
+ "order": 60,
+ "sims": 1849,
+ "cache_hits": 293
+}
