@@ -7,10 +7,15 @@
    교체된 자리에 새 니케를 그대로 넣으므로 배치 순서는 부모를 따른다.
 2. 대리 모델 — 지금까지의 모든 180초 결과로 「니케 + 짝」 릿지 회귀를 학습해 이웃 점수를 추정,
    추정 상위만 시뮬로 돌린다.
-3. 순서 다듬기 — 마지막에 상위 구성의 「딜이 달라질 수 있는」 배치 순서를 전부 돌린다.
-4. 조립 — 겹치지 않는 5개를 정확히 고른다(분기 한정). 랭커 구성만으로 고른 묶음, 실제 랭커 1위의 5덱과 비교.
+3. 덱 단위 개선 — 지금 최선 5덱의 각 덱에서 한 명을 *다른 네 덱이 안 쓰는* 니케로 바꾸거나,
+   두 덱이 같은 단계 니케를 맞바꾼다. 대리 모델의 「예상 이득」 순으로 고른다.
+   (1의 이웃은 상위 구성 근처에 몰려 1덱만 강해지고 다른 덱과 겹친다 — 1차 실행에서 확인)
+4. 순서 다듬기 — 마지막에 상위 구성과 최선 5덱의 「딜이 달라질 수 있는」 배치 순서를 전부 돌린다.
+5. 조립 — 겹치지 않는 5개를 정확히 고른다(분기 한정). 랭커 구성만으로 고른 묶음, 실제 랭커 1위의 5덱과 비교.
 
-사용: NIKKE_CALC_DIR=... python search.py [--rounds 3 --per-round 150 --order-top 20]
+「평가 수」는 이번 실행이 새로 요청한 스쿼드 수다(캐시에 있던 것도 센다 — 다시 돌려도 같은 값).
+
+사용: NIKKE_CALC_DIR=... python search.py [--rounds 3 --per-round 150 --pack-rounds 3 --pack-per-round 100]
       → log.jsonl(이번에 돌린 것), summary.json, 표준출력 마크다운
 """
 
@@ -85,6 +90,27 @@ def neighbors(squad: tuple, pool: dict) -> list[tuple]:
     return out
 
 
+def pack_moves(decks: list[tuple], pool: dict, score) -> list[tuple[float, list[tuple]]]:
+    """최선 5덱을 고치는 수: (예상 이득, 새로 돌릴 스쿼드들). 이득 = 모델 예측 차이."""
+    used = {n for d in decks for n in d}
+    pred = {d: score(frozenset(d)) for d in decks}
+    moves = []
+    for d in decks:
+        for i, n in enumerate(d):
+            for m in pool:
+                if m not in used and pool[m]["burst"] == pool[n]["burst"]:
+                    nd = d[:i] + (m,) + d[i + 1:]
+                    moves.append((score(frozenset(nd)) - pred[d], [nd]))
+    for a, b in combinations(decks, 2):
+        for i, n in enumerate(a):
+            for j, m in enumerate(b):
+                if pool[n]["burst"] == pool[m]["burst"]:
+                    na, nb = a[:i] + (m,) + a[i + 1:], b[:j] + (n,) + b[j + 1:]
+                    gain = score(frozenset(na)) + score(frozenset(nb)) - pred[a] - pred[b]
+                    moves.append((gain, [na, nb]))
+    return sorted(moves, key=lambda mv: -mv[0])
+
+
 def pack(book: Book, k: int = 5, only=None):
     """겹치지 않는 k개 구성의 딜 합 최대 — 점수 내림차순 분기 한정 (정확해)."""
     cands = sorted(((d, sq) for c, (d, sq) in book.best.items() if only is None or c in only), reverse=True)
@@ -112,6 +138,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rounds", type=int, default=3)
     ap.add_argument("--per-round", type=int, default=150)
+    ap.add_argument("--pack-rounds", type=int, default=3)
+    ap.add_argument("--pack-per-round", type=int, default=100)
     ap.add_argument("--order-top", type=int, default=20, help="순서를 전수로 다듬을 상위 구성 수")
     ap.add_argument("--jobs", type=int)
     args = ap.parse_args()
@@ -131,7 +159,10 @@ def main() -> None:
     ev = NikkeCalcEvaluator(jobs=args.jobs)
     log = open(HERE / "log.jsonl", "w", encoding="utf-8")
 
+    evals = [0]
+
     def run(squads: list[tuple], phase: str) -> None:
+        evals[0] += len(squads)
         for i in range(0, len(squads), 40):
             part = squads[i:i + 40]
             for sq, r in zip(part, ev.evaluate([EvalRequest(sq, boss=BOSS) for sq in part])):
@@ -140,10 +171,11 @@ def main() -> None:
                 log.write(json.dumps({"phase": phase, "squad": list(sq), "total_damage": r.total_damage,
                                       "error": r.error}, ensure_ascii=False) + "\n")
             log.flush()
-            print(f"  {phase}: {min(i + 40, len(squads))}/{len(squads)} · 시뮬 누적 {ev.sim_count}",
+            print(f"  {phase}: {min(i + 40, len(squads))}/{len(squads)} · 평가 누적 {evals[0]}"
+                  f" · 시뮬 {ev.sim_count}",
                   file=sys.stderr, flush=True)
 
-    history = [{"단계": "출발 (실험 2 결과)", "시뮬": 0, "최선 5덱": pack(book)[0],
+    history = [{"단계": "출발 (실험 2 결과)", "평가": 0, "최선 5덱": pack(book)[0],
                 "최선 구성": max(d for d, _ in book.best.values())}]
     for rnd in range(1, args.rounds + 1):
         score = fit(book, names)
@@ -161,7 +193,23 @@ def main() -> None:
                     cands.append((s, nb))
         pick = [nb for _, nb in sorted(cands, reverse=True)[:args.per_round]]
         run(pick, f"이웃 {rnd}")
-        history.append({"단계": f"이웃 라운드 {rnd}", "시뮬": ev.sim_count, "최선 5덱": pack(book)[0],
+        history.append({"단계": f"이웃 라운드 {rnd}", "평가": evals[0], "최선 5덱": pack(book)[0],
+                        "최선 구성": max(d for d, _ in book.best.values())})
+
+    for rnd in range(1, args.pack_rounds + 1):
+        score = fit(book, names)
+        decks = [sq for _, sq in pack(book)[1]]
+        pick, seen = [], set(book.seen)
+        for gain, new in pack_moves(decks, pool, score):
+            if len(pick) + len(new) > args.pack_per_round:
+                break
+            new = [nd for nd in new if nd not in seen and frozenset(nd) not in book.best]
+            if not new:
+                continue
+            pick += new
+            seen.update(new)
+        run(pick, f"덱 개선 {rnd}")
+        history.append({"단계": f"덱 개선 라운드 {rnd}", "평가": evals[0], "최선 5덱": pack(book)[0],
                         "최선 구성": max(d for d, _ in book.best.values())})
 
     tops = sorted(book.best.values(), reverse=True)[:args.order_top]
@@ -169,7 +217,7 @@ def main() -> None:
     tops += [(d, sq) for d, sq in pack(book)[1] if (d, sq) not in tops]
     orders = [p for _, sq in tops for p in distinct_orders(sq, burst) if p not in book.seen]
     run(orders, "순서")
-    history.append({"단계": "순서 다듬기", "시뮬": ev.sim_count, "최선 5덱": pack(book)[0],
+    history.append({"단계": "순서 다듬기", "평가": evals[0], "최선 5덱": pack(book)[0],
                     "최선 구성": max(d for d, _ in book.best.values())})
     log.close()
 
@@ -183,10 +231,10 @@ def main() -> None:
     def fmt(sq):
         return " → ".join(sq)
 
-    print(f"# 실험 4 결과 — 출발 {start_n}개 평가 + 이번 시뮬 {ev.sim_count}회\n")
-    print("| 단계 | 이번 시뮬 누적 | 최선 5덱 합(억) | 최선 단일 구성(억) |\n|---|---|---|---|")
+    print(f"# 실험 4 결과 — 출발 {start_n}개(실험 2) + 이번 평가 {evals[0]}회\n")
+    print("| 단계 | 이번 평가 누적 | 최선 5덱 합(억) | 최선 단일 구성(억) |\n|---|---|---|---|")
     for h in history:
-        print(f"| {h['단계']} | {h['시뮬']} | {h['최선 5덱']:.1f} | {h['최선 구성']:.1f} |")
+        print(f"| {h['단계']} | {h['평가']} | {h['최선 5덱']:.1f} | {h['최선 구성']:.1f} |")
     print("\n| 묶음 | 5덱 합(억) | 랭커 1위 대비 |\n|---|---|---|")
     for name, v in [("실제 랭커 5덱 중 최고 (같은 육성·S40 시뮬)", players[best_player]),
                     ("랭커 구성만으로 겹치지 않게 다시 고른 최선 (순서 다듬기 포함)", rk_pack[0]),
@@ -200,7 +248,8 @@ def main() -> None:
     for i in rk["players"][best_player]["squads"]:
         print(f"- {book.seen[rk_sq[i]]:.1f}억 — {fmt(rk_sq[i])}")
 
-    summary = {"boss": BOSS, "evaluator": ev.version, "start_evals": start_n, "sims": ev.sim_count,
+    summary = {"boss": BOSS, "evaluator": ev.version, "start_evals": start_n, "evals": evals[0],
+               "sims_this_run": ev.sim_count,
                "history": history, "ranker_best_player": players[best_player],
                "ranker_comps_pack": {"total": rk_pack[0], "squads": [list(s) for _, s in rk_pack[1]]},
                "final": {"total": final[0], "squads": [[d, list(s)] for d, s in final[1]]}}
