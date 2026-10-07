@@ -257,7 +257,7 @@ def learnability(df, pool) -> None:
     rows = []
     for n in (50, 100, 200, 400, 800, len(train_all)):
         tr = train_all[:n]
-        rows.append({"학습 수": n,
+        rows.append({"학습 수": str(n),
                      "니케만": spearman(predict(ridge(U[tr], y[tr], 1.0, 1.0, len(names)), U[test]), y[test]),
                      "니케+짝": spearman(predict(ridge(Xf[tr], y[tr], 1.0, 10.0, len(names)), Xf[test]), y[test])})
     print(table(rows, "{:.3f}"))
