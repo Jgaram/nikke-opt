@@ -17,7 +17,7 @@
 - 안전망: 실수로 `claude/**`·`ccr-*` 브랜치에 push해도 `.github/workflows/merge-to-main.yml`이
   main에 합치고 그 브랜치를 지운다. 충돌이면 main은 그대로, 브랜치는 남고 Actions가 빨갛게 뜬다 —
   최신 main을 merge해 고친 뒤 다시 push한다.
-- 테스트가 생기면 push 전에 돌리고, 같은 테스트를 워크플로의 표시된 자리에도 넣는다.
+- push 전에 `python -m unittest discover -s tests -t .`를 돌린다. 워크플로(`merge-to-main.yml`)도 같은 명령을 돌린다.
 
 ## Invariants
 

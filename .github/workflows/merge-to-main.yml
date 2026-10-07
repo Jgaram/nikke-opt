@@ -67,7 +67,11 @@ jobs:
               exit 1
             fi
 
-            # 테스트가 생기면 여기서 돌린다. 실패하면 main 은 그대로 두고 exit 1.
+            # 테스트. 실패하면 main 은 그대로 두고 exit 1.
+            if ! python3 -m unittest discover -s tests -t .; then
+              echo "::error::tests failed on $BRANCH merged into $MAIN; $MAIN is unchanged."
+              exit 1
+            fi
 
             if git push -q origin "HEAD:$MAIN"; then
               echo "::notice::Merged $BRANCH into $MAIN"
