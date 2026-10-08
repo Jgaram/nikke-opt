@@ -14,7 +14,7 @@
 | 풀 | 60명 = S40 랭커가 쓴 45명 ∪ S40 *이전* 시즌만으로 낸 사전 지식 상위 50명(실험 1 「혼합」). 버스트 I 11 · II 15 · III 33 · 전 단계(레드 후드) 1 |
 | 랭커 데이터 | `Jgaram/nikke-analysis` @ `4c9bec4`, S40 최종 집계 300명 × 5덱 = 1,500덱 → 순서까지 구분한 스쿼드 224개, 구성 66개 |
 | 시뮬 | 2,142줄 · 실제 시뮬 1,849회(나머지는 캐시) · 4코어 약 50분 |
-| 재현 | `python prepare.py <nikke-analysis> <nikke-calc>` → `NIKKE_CALC_DIR=<nikke-calc> python run.py` → `python analyze.py` |
+| 재현 | `python prepare.py <nikke-analysis> <nikke-calc>` → `NIKKE_CALC_DIR=<nikke-calc> python run.py` → `python analyze.py` — 어댑터가 요청 v2를 보내므로 nikke-calc `167698c` 이후가 필요하다(실험 당시 `ba9f29c`와 딜이 같음을 표본 12개로 확인, 2026-10-08) |
 | 원출력 | [`results.md`](results.md) (분석 표 전체), [`results.jsonl`](results.jsonl) (시뮬 결과 전부) |
 
 돌린 묶음:

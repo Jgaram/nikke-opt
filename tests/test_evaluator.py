@@ -16,20 +16,25 @@ from pathlib import Path
 
 from nikke_opt.evaluator import BudgetExceeded, Cache, EvalRequest, NikkeCalcEvaluator
 
+# 요청 v2 계약을 흉내 낸다 — 모르는 최상위 키(v1의 "expected" 등)는 그 줄만 오류.
 # 총딜 = 이름 길이에 자리마다 다른 가중치(100^자리)를 곱한 합 — 순서가 결과를 바꾸게 한다
 FAKE_SIM = textwrap.dedent('''
     import json, sys
     COMMIT = open(".commit").read().strip()
+    V = int(open(".schema").read()) if __import__("os").path.exists(".schema") else 2
+    KEYS = {"schema_version", "id", "squad", "sim", "boss", "enemy", "operation", "profile", "profile_level", "chars"}
     for n, raw in enumerate(sys.stdin, 1):
         if not raw.strip():
             continue
         req = json.loads(raw)
         squad = req["squad"]
-        if "없는 니케" in squad:
-            out = {"schema_version": 1, "line": n, "error": {"type": "invalid_input", "message": "없음"}}
+        unknown = sorted(set(req) - KEYS)
+        if unknown or "없는 니케" in squad:
+            out = {"schema_version": V, "line": n, "error": {"type": "invalid_input", "message": f"없음 {unknown}"}}
         else:
             total = sum(len(name) * 100 ** i for i, name in enumerate(squad))
-            out = {"schema_version": 1, "line": n, "total_damage": total, "expected": req.get("expected"),
+            out = {"schema_version": V, "line": n, "total_damage": total,
+                   "expected": req.get("sim", {}).get("expected", False),
                    "boss": req.get("boss"), "evaluator": {"commit": COMMIT}}
         print(json.dumps(out, ensure_ascii=False), flush=True)
 ''')
@@ -112,9 +117,23 @@ class FakeCalcTest(unittest.TestCase):
         self.assertEqual(ev.sim_count, 3)
 
     def test_always_full_180s_and_expected_by_default(self):
-        with self.assertRaises(ValueError):
-            EvalRequest(SQUAD, options={"duration": 30}).to_line()
+        for opts in ({"duration": 30}, {"sim": {"duration": 30}}):
+            with self.assertRaises(ValueError):
+                EvalRequest(SQUAD, options=opts).to_line()
         self.assertTrue(self.evaluator(cache=None).evaluate([EvalRequest(SQUAD)])[0].raw["expected"])
+
+    def test_request_is_v2(self):
+        line = EvalRequest(SQUAD, boss="솔로 레이드 S40", options={"sim": {"seed": 7}}).to_line()
+        self.assertEqual(line["schema_version"], 2)
+        self.assertEqual(line["sim"], {"expected": True, "seed": 7})  # sim은 기본값 위에 얹힌다
+        self.assertNotIn("expected", line)
+        res = self.evaluator(cache=None).evaluate([EvalRequest(SQUAD, options={"chars": {"크라운": {}}})])
+        self.assertIsNone(res[0].error)
+
+    def test_contract_version_mismatch_stops(self):
+        (self.calc / ".schema").write_text("1")  # 추적 안 하는 파일 — 옛 판 결과를 내는 평가기
+        with self.assertRaises(RuntimeError):
+            self.evaluator(cache=None).evaluate([EvalRequest(SQUAD)])
 
     def test_inline_profile_is_part_of_the_key(self):
         ev = self.evaluator()

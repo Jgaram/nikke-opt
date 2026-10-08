@@ -1,10 +1,13 @@
 """평가기 인터페이스와 nikke-calc 어댑터.
 
 최적화 코드는 `Evaluator.evaluate()`만 쓴다. 계산기 내부는 import하지 않고, nikke-calc는
-`python -m runner.sim --batch` 서브프로세스로만 부른다 (입출력 계약: nikke-calc `docs/SIM-JSON.md`).
+`python -m runner.sim --batch` 서브프로세스로만 부른다 (입출력 계약: nikke-calc `docs/SIM-JSON.md`,
+요청 JSON v2 — `squad` · `sim` · `boss` · `enemy` · `operation` · `profile` · `chars`. nikke-calc `167698c`부터).
 
-- **평가는 언제나 180초 전체.** 요청에 `duration`을 적으면 거절한다.
-- **기본은 기대값 모드**(`expected: true`) — 1회로 결정론적이라 캐시할 수 있다.
+- **평가는 언제나 180초 전체.** 요청에 `sim.duration`을 적으면 거절한다.
+- **기본은 기대값 모드**(`sim.expected: true`) — 1회로 결정론적이라 캐시할 수 있다.
+- **계약 판을 맞춘다.** 요청에 `schema_version`을 싣고, 판이 다른 결과는 받지 않는다 — 평가기가 계약을 바꾸면
+  조용히 틀리지 않고 바로 끊긴다.
 - **예산 = 실제로 돌린 시뮬 횟수.** 캐시 적중은 세지 않는다.
 - **캐시 키에는 평가기 커밋이 들어간다.** 커밋 안 된 변경이 있는(dirty) 평가기는 결과를 캐시하지 않는다.
 - **육성은 요청에 인라인으로 싣는다** — `options={"profile": {"base": "default", "chars": {...}}}`
@@ -28,7 +31,8 @@ from typing import Any, Mapping, Protocol, Sequence
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CACHE = REPO_ROOT / ".cache" / "evals.sqlite"
-FORBIDDEN_OPTIONS = frozenset({"duration", "squad", "id"})
+SCHEMA_VERSION = 2  # nikke-calc 요청·결과 계약의 판 (docs/SIM-JSON.md §버전)
+FORBIDDEN_OPTIONS = frozenset({"squad", "id", "schema_version", "duration"})
 
 
 @dataclass(frozen=True)
@@ -40,11 +44,17 @@ class EvalRequest:
     options: Mapping[str, Any] = field(default_factory=dict)
 
     def to_line(self) -> dict[str, Any]:
-        """`--batch` 입력 한 줄. 캐시 키도 이것으로 만든다."""
-        bad = FORBIDDEN_OPTIONS & {k.replace("_", "-") for k in self.options}
+        """`--batch` 입력 한 줄(요청 v2). 캐시 키도 이것으로 만든다.
+
+        `options`는 요청의 나머지 칸이다(`sim` · `enemy` · `operation` · `profile` · `chars` …).
+        `sim`은 기본값 `{"expected": true}` 위에 얹는다.
+        """
+        sim = self.options.get("sim") or {}
+        bad = sorted(FORBIDDEN_OPTIONS & set(self.options)) + (["sim.duration"] if "duration" in sim else [])
         if bad:
-            raise ValueError(f"평가 요청에 쓸 수 없는 옵션: {sorted(bad)} (평가는 언제나 180초 전체)")
-        line: dict[str, Any] = {"expected": True, **self.options, "squad": list(self.squad)}
+            raise ValueError(f"평가 요청에 쓸 수 없는 옵션: {bad} (평가는 언제나 180초 전체)")
+        line: dict[str, Any] = {"schema_version": SCHEMA_VERSION, **self.options,
+                                "squad": list(self.squad), "sim": {"expected": True, **sim}}
         if self.boss is not None:
             line["boss"] = self.boss
         return line
@@ -154,6 +164,9 @@ class NikkeCalcEvaluator:
 
         fresh = []
         for key, out in zip(run_keys, outputs):
+            if out.get("schema_version") != SCHEMA_VERSION:
+                raise RuntimeError(f"평가기 계약 판이 다르다: 결과 {out.get('schema_version')} ≠ 어댑터 {SCHEMA_VERSION}"
+                                   f" (nikke-calc {self.version['commit'][:7]}, docs/SIM-JSON.md §버전)")
             if "error" not in out and out.get("evaluator", {}).get("commit") != self.version["commit"]:
                 raise RuntimeError(f"평가기 커밋이 실행 중에 바뀌었다: {out.get('evaluator')} ≠ {self.version}")
             for i in todo[key]:

@@ -11,7 +11,7 @@
 | 평가기·보스·풀 | [실험 2](../02_score_distribution/README.md)와 같다 (nikke-calc `ba9f29c`, 솔로 레이드 S40, 풀 60명) |
 | 랭커 데이터 | 실험 2의 S40 랭커 300명 × 5덱 (`ranker_squads.json`) |
 | 탐색 예산 | 시나리오당 **800회** (180초 시뮬). 100·300·800회 시점 값을 함께 남긴다 |
-| 재현 | `NIKKE_CALC_DIR=<nikke-calc> python deficit.py` (실험 2·4를 먼저 돌린다) |
+| 재현 | `NIKKE_CALC_DIR=<nikke-calc> python deficit.py` (실험 2·4를 먼저 돌린다) — 어댑터가 요청 v2를 보내므로 nikke-calc `167698c` 이후가 필요하다(실험 당시 `ba9f29c`와 딜이 같음을 표본 12개로 확인, 2026-10-08) |
 | 원출력 | [`results.md`](results.md), [`summary.json`](summary.json), [`log.jsonl`](log.jsonl) (시나리오별로 평가한 스쿼드 전부) |
 
 ### 시나리오
@@ -136,7 +136,8 @@
 「상 = 기본 스펙」은 매 실행 3개 스쿼드로 확인했다(딜 정확히 일치). `summary.json`의 `profile` 칸이 그때의 파일 이름이다.
 
 **2026-10-08 — 인라인으로 바꿨다.** nikke-calc `a4174a5`부터 육성을 요청에 dict로 싣는다(`base: "default"` + 상이 아닌 니케만,
-스킬 `"7/7/7"` · 오버로드 줄 수 표기). `deficit.py`는 이제 파일을 쓰지 않고, 다시 돌리려면 nikke-calc `a4174a5` 이후가 필요하다.
+스킬 `"7/7/7"` · 오버로드 줄 수 표기). `deficit.py`는 이제 파일을 쓰지 않는다. 같은 날 nikke-calc `167698c`가 요청을 JSON v2로 바꿨으므로 다시 돌리려면 그 이후가 필요하다
+(어댑터가 맞춰 보낸다 — 육성 스쿼드 6개를 `167698c`에서 다시 돌려도 기록과 같았다).
 로그의 육성 시나리오 스쿼드 4개(두 시나리오 × 2, 중·하 섞임)를 인라인으로 다시 돌려 기록된 딜과 소수 8자리까지 같음을 확인했다.
 
 ## nikke-opt에 주는 결론

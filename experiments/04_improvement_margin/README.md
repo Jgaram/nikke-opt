@@ -10,7 +10,7 @@
 | 평가기·보스·육성·풀 | [실험 2](../02_score_distribution/README.md)와 같다 (nikke-calc `ba9f29c`, S40, 전원 기본 스펙, 풀 60명) |
 | 출발 | 실험 2에서 평가한 2,082개 스쿼드(무작위 1,500 · 랭커 224 · 순서 전수) |
 | 이번 예산 | **평가 801회** (180초 시뮬) |
-| 재현 | `NIKKE_CALC_DIR=<nikke-calc> python search.py` (실험 2를 먼저 돌린다) |
+| 재현 | `NIKKE_CALC_DIR=<nikke-calc> python search.py` (실험 2를 먼저 돌린다) — 어댑터가 요청 v2를 보내므로 nikke-calc `167698c` 이후가 필요하다(실험 당시 `ba9f29c`와 딜이 같음을 표본 12개로 확인, 2026-10-08) |
 | 원출력 | [`results.md`](results.md), [`summary.json`](summary.json), [`log.jsonl`](log.jsonl) (이번에 돌린 스쿼드 전부) |
 
 탐색기는 실험 2·3의 결론대로 만든 축소판이다 ([`search.py`](search.py)).

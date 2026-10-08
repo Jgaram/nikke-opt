@@ -198,13 +198,16 @@
 ### 평가기 어댑터 — `nikke_opt/evaluator.py`
 
 nikke-calc를 `python -m runner.sim --batch` 서브프로세스로만 부른다(계약: nikke-calc `docs/SIM-JSON.md`).
+**요청 JSON v2**(`schema_version: 2`, nikke-calc `167698c`부터)를 보내고, 판이 다른 결과는 받지 않는다 — 평가기가 계약을 바꾸면 바로 끊긴다.
 
 ```bash
 NIKKE_CALC_DIR=../nikke-calc python -m nikke_opt.eval "리틀 머메이드,크라운,라피 : 레드 후드,미하라,헬름" --boss "솔로 레이드 S40"
 python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIKKE_CALC_DIR이 있으면 진짜로도 한 번
 ```
 
-- **기대값 모드가 기본** — 1회로 결정론적이다. 평가는 언제나 180초(`duration`은 거절).
+- **기대값 모드가 기본** — `sim.expected: true`, 1회로 결정론적이다. 평가는 언제나 180초(`sim.duration`은 거절).
+- **요청 칸** — `EvalRequest(squad, boss, options)`의 `options`가 요청의 나머지 칸이다: `sim`(시드 등) · `enemy` · `operation`(카메라 · 택틱 · `auto`)
+  · `profile`(육성, 아래) · `chars`(니케별 운용 — `control` dict · `cube` · `favorite_stage`). 운용 변수(큐브 · 컨트롤) 탐색(로드맵 6)은 `chars`로 넘긴다.
 - **병렬** — `--batch` 프로세스 여러 개로 나눠 돈다. 프로세스 수만큼 거의 그대로 빨라진다.
 - **캐시** — (평가기 커밋, 요청) → 결과. `.cache/evals.sqlite`(커밋 안 함). 평가기에 커밋 안 된 변경이 있으면 캐시하지 않는다.
 - **예산** — 실제로 돌린 시뮬 횟수만 센다(캐시 적중·같은 요청 중복은 안 셈). 넘칠 요청은 시작하지 않는다.
@@ -227,6 +230,8 @@ python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIK
 | 호출 | CLI `--json` · `--batch`(JSON Lines). 결과에 평가기 커밋이 실린다 |
 | 육성 | 기본 스펙(레벨 400·오버로드 등)이 전원에게 같다 + 니케별 운용 레이어(`char_defaults.json`, `auto`로 끔). 계정 육성은 `profile` — 처음엔 nikke-calc `profiles/<이름>.json` 파일로만 받았다(실험 5는 이름에 내용 해시를 넣어 우회). **2026-10-08 nikke-calc `a4174a5`부터 인라인 dict**(`base: "default"`면 적지 않은 니케 = 기본 스펙, 스킬·오버로드 줄 수 표기)를 받는다 — 위 「육성」. 빈 항목 = 기본 스펙과 딜 일치 |
 | 보스 | 파라미터화 가능 — 가상 보스를 만들 수 있다 |
+| 계약 v2 | **2026-10-08 nikke-calc `167698c`**: 입력이 요청 JSON 한 가지로 — `sim.*` · `enemy.*` · `operation.*` · `profile` · `chars.<니케>.control/cube`. 정본은 JSON Schema(`python -m runner.request`), 오류는 칸을 JSON Pointer `path`로 가리킨다. v1 배치 키(`expected` 등)는 거절. 실험 2·5 표본 12개가 `ba9f29c` 기록과 소수 8자리까지 같은 딜 |
+| 운용 | 니케별 컨트롤은 dict, 큐브는 니케마다 따로(`chars.<니케>.cube`, 모르는·효과 모델 없는 큐브는 오류). 결과에 조작 요약 `control_detail` |
 | 배치 순서 | **딜을 바꾼다.** 같은 5명 역순이 기본 적 −9%, S40 −24%. 순서도 탐색 대상이다 |
 | 병렬 | 프로세스 병렬 안전, 결과 동일 |
 | 1회 비용 | 4~5초. 4코어면 2천 회 약 40분 |
