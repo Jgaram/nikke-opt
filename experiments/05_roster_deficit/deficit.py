@@ -6,8 +6,8 @@
 - 미보유 — 풀에서 몇 명을 뺀다. 남은 니케는 전원 기본 스펙이라 실험 2·4의 결과를 그대로 쓴다.
   · 무작위 3명 ×2 · 무작위 6명 ×2 (S40 랭커 사용률 95% 이상 21명 중에서)
   · 상징적 2개: 라피 : 레드 후드 없음 / 1덱 축(아니스 : 스타 · 브리드 : 사일런트 트랙) 없음
-- 육성 불균형 — 전원 보유, 니케마다 육성 등급(상·중·하)이 다르다. nikke-calc의 육성 프로필
-  (`profiles/<이름>.json`, `--profile`)로 넘긴다. 상 = 기본 스펙 그대로.
+- 육성 불균형 — 전원 보유, 니케마다 육성 등급(상·중·하)이 다르다. nikke-calc 인라인 육성 프로필
+  (요청의 `profile` dict, `base: "default"`)로 넘긴다. 상 = 기본 스펙 그대로라 프로필에 적지 않는다.
   · 무작위 — 풀 전원에 상 50% · 중 30% · 하 20%
   · 핵심 6명 하 — 「무작위 6명 A」와 같은 6명을 하로, 나머지는 상 (미보유와 직접 비교)
 
@@ -32,7 +32,6 @@ S40 랭커 사용률이 높은 순으로, 그 5덱이 안 쓰는 보유 니케�
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 import random
@@ -60,15 +59,14 @@ ORDER_RESERVE = 100    # 마지막 배치 순서 다듬기 몫
 PARENTS, PER_PARENT = 40, 8
 CHECKPOINTS = (100, 300, 800)
 
-# 육성 등급 → 프로필 항목. 상은 빈 항목 = 기본 스펙(레이어 포함) 그대로다.
-# 기본 스펙: 스킬 10/10/10, 오버로드 레벨 10 — 우월코드 4줄 88.6 · 공격력 2줄 22.22, 소장품 SR15.
-# 최대 장탄은 니케별 레이어가 일부러 정한 값이 있어(프리바티 0 등) 건드리지 않는다.
+# 육성 등급 → 인라인 프로필 항목(nikke-calc `docs/SIM-JSON.md` §육성). 상은 기본 스펙(레이어 포함) 그대로다.
+# 기본 스펙: 스킬 10/10/10, 오버로드 레벨 10 — 우월코드 4줄 · 공격력 2줄, 소장품 SR15.
+# 최대 장탄은 니케별 레이어가 일부러 정한 값이 있어(프리바티 0 등) 건드리지 않는다(적지 않으면 아래 층 값이 남는다).
+# 중의 오버로드는 처음에 합산 퍼센트(우월코드 44.3 · 공격력 11.11)로 적었고, 줄 수 표기와 값이 같다.
 TIERS = {
     "상": {},
-    "중": {"skill_levels": {"1": 7, "2": 7, "3": 7},
-          "equip_skills": {"atk_pct": 11.11, "element_bonus": 44.3}},
-    "하": {"skill_levels": {"1": 4, "2": 4, "3": 4},
-          "equip_skills": {"atk_pct": 0, "element_bonus": 0}, "collection_stage": "없음"},
+    "중": {"skill_levels": "7/7/7", "overload": {"우월 코드 대미지": 2, "공격력": 1}},
+    "하": {"skill_levels": "4/4/4", "overload": {"우월 코드 대미지": 0, "공격력": 0}, "collection_stage": "없음"},
 }
 
 
@@ -89,21 +87,11 @@ def scenarios(pool: dict) -> list[dict]:
     return out
 
 
-def write_profile(calc_dir: Path, sc: dict, pool: dict) -> str | None:
-    """시나리오의 육성 프로필을 nikke-calc `profiles/`에 쓰고 이름을 돌려준다(전원 상이면 None).
-
-    평가기 캐시는 프로필 *이름*으로 키를 잡으므로 이름에 내용 해시를 넣는다.
-    """
-    if not any(t != "상" for t in sc["tiers"].values()):
-        return None
-    chars = {n: TIERS[sc["tiers"].get(n, "상")] for n in sorted(pool) if n not in sc["missing"]}
-    blob = json.dumps(chars, ensure_ascii=False, sort_keys=True)
-    name = f"nikkeopt-exp5-{hashlib.sha256(blob.encode()).hexdigest()[:10]}"
-    d = calc_dir / "profiles"
-    d.mkdir(exist_ok=True)
-    data = {"_meta": {"name": name, "note": f"nikke-opt 실험 5 가상 육성 — {sc['name']}"}, "chars": chars}
-    (d / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    return name
+def growth_profile(sc: dict) -> dict | None:
+    """시나리오의 육성 → nikke-calc 인라인 프로필(전원 상이면 None). 상이 아닌 니케만 적는다 —
+    `base: "default"`라 적지 않은 니케는 기본 스펙이다. 요청에 그대로 실리므로 캐시 키가 내용을 따라간다."""
+    chars = {n: TIERS[t] for n, t in sorted(sc["tiers"].items()) if t != "상"}
+    return {"base": "default", "chars": chars} if chars else None
 
 
 def transplant(decks: list[tuple], owned: dict) -> list[tuple]:
@@ -162,14 +150,15 @@ def main() -> None:
         name = sc["name"]
         owned = {n: v for n, v in full_pool.items() if n not in sc["missing"]}
         names = sorted(owned)
-        profile = write_profile(ev.calc_dir, sc, full_pool)
+        profile = growth_profile(sc)
         tier = {n: sc["tiers"].get(n, "상") for n in owned}
         opts = {"profile": profile} if profile else {}
         book = Book()
         counts = {"known": 0, "sim_or_cache": 0}
         sims0 = ev.sim_count
         print(f"\n== {name} — 미보유 {sc['missing']} · 하 {sum(t == '하' for t in tier.values())}"
-              f" · 중 {sum(t == '중' for t in tier.values())} · 프로필 {profile}", file=sys.stderr, flush=True)
+              f" · 중 {sum(t == '중' for t in tier.values())} · 인라인 프로필 {'있음' if profile else '없음'}",
+              file=sys.stderr, flush=True)
 
         if profile:  # 상 = 기본 스펙이라는 전제를 확인한다 (예산 밖)
             plain = [sq for sq in known if all(tier.get(n) == "상" for n in sq)][:3]
@@ -264,7 +253,8 @@ def main() -> None:
             return max(h["최선 5덱"] for h in history if h["평가"] <= budget)
 
         res = {
-            "missing": sc["missing"], "tiers": {k: v for k, v in tier.items() if v != "상"}, "profile": profile,
+            "missing": sc["missing"], "tiers": {k: v for k, v in tier.items() if v != "상"},
+            "profile": "inline" if profile else None,
             "baseline_evals": base_n, "search_evals": evals, "sims": ev.sim_count - sims0, "counts": counts,
             "baseline_best": {"total": sums[best_i], "player": rk["players"][best_i]["player"],
                               "squads": [[book.seen[d], list(d)] for d in players[best_i]]},

@@ -116,6 +116,29 @@ class FakeCalcTest(unittest.TestCase):
             EvalRequest(SQUAD, options={"duration": 30}).to_line()
         self.assertTrue(self.evaluator(cache=None).evaluate([EvalRequest(SQUAD)])[0].raw["expected"])
 
+    def test_inline_profile_is_part_of_the_key(self):
+        ev = self.evaluator()
+        mid = {"base": "default", "chars": {"크라운": {"skill_levels": "7/7/7"}}}
+        low = {"base": "default", "chars": {"크라운": {"skill_levels": "4/4/4"}}}
+        ev.evaluate([EvalRequest(SQUAD, options={"profile": mid})])
+        ev.evaluate([EvalRequest(SQUAD, options={"profile": low})])
+        again = ev.evaluate([EvalRequest(SQUAD, options={"profile": dict(mid)})])
+        self.assertEqual(ev.sim_count, 2)
+        self.assertTrue(again[0].cached)
+
+    def test_named_profile_is_keyed_by_content(self):
+        # 이름으로 준 프로필은 파일 내용이 바뀌면 다시 돈다 (profiles/는 추적 밖이라 dirty가 아니다)
+        prof = self.calc / "profiles" / "p.json"
+        prof.parent.mkdir()
+        prof.write_text('{"chars": {}}', encoding="utf-8")
+        ev = self.evaluator()
+        req = EvalRequest(SQUAD, options={"profile": "p"})
+        ev.evaluate([req])
+        self.assertTrue(ev.evaluate([req])[0].cached)
+        prof.write_text('{"chars": {"크라운": {}}}', encoding="utf-8")
+        self.assertFalse(ev.evaluate([req])[0].cached)
+        self.assertEqual(ev.sim_count, 2)
+
     def test_dirty_checkout_disables_cache(self):
         (self.calc / "runner" / "sim.py").write_text(FAKE_SIM + "\n# 수정\n", encoding="utf-8")
         ev = NikkeCalcEvaluator(self.calc)
@@ -132,6 +155,20 @@ class RealCalcTest(unittest.TestCase):
         self.assertIsInstance(fwd.total_damage, int)
         self.assertNotEqual(fwd.total_damage, rev.total_damage)
         self.assertEqual(fwd.raw["evaluator"]["commit"], ev.version["commit"])
+
+    def test_inline_profile(self):
+        # 빈 인라인 프로필(base=default)은 기본 스펙과 같고, 낮은 육성은 딜을 낮춘다
+        ev = NikkeCalcEvaluator(cache=None, jobs=3)
+        duo = SQUAD[1:3]
+        plain, empty, low = ev.evaluate([
+            EvalRequest(duo),
+            EvalRequest(duo, options={"profile": {"base": "default", "chars": {}}}),
+            EvalRequest(duo, options={"profile": {"base": "default", "chars": {
+                "크라운": {"skill_levels": "4/4/4", "overload": {"우월코드": 0, "공격력": 0}}}}}),
+        ])
+        self.assertEqual(empty.total_damage, plain.total_damage)
+        self.assertLess(low.total_damage, plain.total_damage)
+        self.assertEqual(empty.raw["spec"]["profile"]["source"], "inline")
 
 
 if __name__ == "__main__":

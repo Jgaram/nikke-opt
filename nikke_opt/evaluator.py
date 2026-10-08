@@ -7,6 +7,10 @@
 - **기본은 기대값 모드**(`expected: true`) — 1회로 결정론적이라 캐시할 수 있다.
 - **예산 = 실제로 돌린 시뮬 횟수.** 캐시 적중은 세지 않는다.
 - **캐시 키에는 평가기 커밋이 들어간다.** 커밋 안 된 변경이 있는(dirty) 평가기는 결과를 캐시하지 않는다.
+- **육성은 요청에 인라인으로 싣는다** — `options={"profile": {"base": "default", "chars": {...}}}`
+  (형식: nikke-calc `docs/SIM-JSON.md` §육성). 요청 줄이 곧 육성이라 캐시 키가 내용을 따라간다.
+  nikke-calc `profiles/`에 파일을 쓰지 않는다. 프로필을 *이름*으로 주면(내 계정 `me` 등) 그 파일
+  내용의 해시를 캐시 키에 넣는다 — 이름은 같은데 내용이 바뀐 프로필을 옛 결과로 읽지 않게.
 """
 
 from __future__ import annotations
@@ -130,7 +134,7 @@ class NikkeCalcEvaluator:
     def evaluate(self, requests: Sequence[EvalRequest]) -> list[EvalResult]:
         lines = [r.to_line() for r in requests]
         results: list[EvalResult | None] = [None] * len(lines)
-        keys = [Cache.key(self.version["commit"], ln) for ln in lines]
+        keys = [Cache.key(self.version["commit"], self._key_line(ln)) for ln in lines]
 
         todo: dict[str, list[int]] = {}  # 같은 요청은 한 번만 돌린다
         for i, key in enumerate(keys):
@@ -159,6 +163,15 @@ class NikkeCalcEvaluator:
         if self.cache and fresh:
             self.cache.put_many(fresh)
         return results  # type: ignore[return-value]
+
+    def _key_line(self, line: dict[str, Any]) -> dict[str, Any]:
+        """캐시 키용 요청 줄. 프로필 *이름*은 파일 내용 해시로 바꿔 넣는다(인라인은 줄 자체가 내용)."""
+        prof = line.get("profile")
+        if not isinstance(prof, str) or prof.lstrip().startswith("{"):
+            return line
+        path = self.calc_dir / "profiles" / f"{prof}.json"
+        digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+        return {**line, "profile": {"file": prof, "sha256": digest}}
 
     def _run(self, lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not lines:
