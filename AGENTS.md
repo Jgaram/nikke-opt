@@ -16,6 +16,11 @@
   git push origin HEAD:main
   ```
 
+- 원격 세션에서는 훅이 이 규칙을 강제한다 (`.claude/settings.json` → `.claude/hooks/single-branch.mjs`,
+  nikke-story에서 가져옴, 2026-10-08). 세션이 배정 브랜치에서 시작해 Claude가 지시 충돌을 매번 짚던 것을 없애려고 넣었다.
+  - SessionStart — 배정 브랜치에서 main으로 옮기고 origin/main까지 fast-forward한다.
+  - PreToolUse(Bash) — main이 아닌 브랜치로 가는 `git push`를 막는다. 삭제(`--delete`)는 허용한다.
+  - Stop — main에 안 올라간 커밋이 있으면 턴을 끝내지 못한다. 커밋 안 된 변경은 경고만 한다.
 - 안전망: 실수로 `claude/**`·`ccr-*` 브랜치에 push해도 `.github/workflows/merge-to-main.yml`이
   main에 합치고 그 브랜치를 지운다. 충돌이면 main은 그대로, 브랜치는 남고 Actions가 빨갛게 뜬다 —
   최신 main을 merge해 고친 뒤 다시 push한다.
