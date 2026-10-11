@@ -32,6 +32,12 @@ git push origin HEAD:main
   진행 현황은 [ROADMAP.md](../docs/ROADMAP.md), 실행 방법은 [README](../README.md)에 둔다.
 - 규칙을 옮길 때 기존 지침과 참조를 함께 갱신한다. 목표 명세와 실제 구현·검증 상태를 구분하고 기존 실험 결과를 보존한다.
 
+## 연구 진행
+
+- 탐색 기법 연구는 [연구 회차](../docs/SEARCH.md#연구-회차-계획--실험--해석--다음-방향-결정)에 따라
+  계획·실험·해석 후 심화·수정·전환 등을 판단하고 다음 계획을 갱신한다. 판단 근거는 실험 문서에,
+  현재 연구 초점과 다음 행동은 [로드맵](../docs/ROADMAP.md)에 남긴다.
+
 ## 자동화 참고
 
 Claude 원격 세션에서는 [.claude/settings.json](../.claude/settings.json)이
