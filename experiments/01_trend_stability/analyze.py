@@ -1,7 +1,7 @@
 """사전 실험 1 — 경향 안정성.
 
 랭커 데이터만으로, 보스가 바뀔 때 과거 데이터가 "이번 시즌에 무엇이 쓰일지"를 얼마나 맞히는지 잰다.
-딜 수치는 쓰지 않는다(README 「지식의 세 출처」). 쓰는 것은 사용 여부·같은 덱 동반·5인 구성·버스트 구성.
+딜 수치는 쓰지 않는다(docs/SEARCH.md 「지식의 세 출처」). 쓰는 것은 사용 여부·같은 덱 동반·5인 구성·버스트 구성.
 
 입력: nikke-analysis 의 data/processed/{raid_entries,roster,metrics_seasons}.csv
       (raid_entries.csv 는 커밋돼 있지 않으니 그 레포에서 `nikke build raids` 로 만든다)

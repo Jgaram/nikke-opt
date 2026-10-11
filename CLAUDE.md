@@ -1,3 +1,3 @@
 # Shared agent instructions
 
-Read and follow [AGENTS.md](AGENTS.md). It is the single source of truth for project-wide instructions.
+Read [AGENTS.md](AGENTS.md) and follow the rules it links for the current task. It is the shared entry point for agents.

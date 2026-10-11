@@ -1,5 +1,5 @@
 /**
- * 단일 브랜치(main) 규칙을 강제하는 훅. 규칙 자체는 AGENTS.md "Branch & landing"에 있다.
+ * 단일 브랜치(main) 규칙을 강제하는 훅. 규칙 자체는 rules/workflow.md 「브랜치와 반영」에 있다.
  * nikke-story의 같은 훅을 가져와 이 레포 규칙(merge로 합치기, ccr-* 브랜치)에 맞췄다 (2026-10-08).
  * nikke-community · nikke-opt에 같은 파일이 있으니 고칠 때 함께 고친다.
  *
@@ -66,7 +66,7 @@ const emit = (obj) => process.stdout.write(JSON.stringify(obj) + '\n');
 // ── SessionStart ────────────────────────────────────────────────────────────
 
 const RULE = [
-  '[단일 브랜치 규칙 — AGENTS.md] 이 레포는 main 브랜치 하나만 쓴다.',
+  '[단일 브랜치 규칙 — rules/workflow.md] 이 레포는 main 브랜치 하나만 쓴다.',
   '- 작업은 main에서 하고, 커밋하면 바로 `git push origin main`으로 올린다. PR은 만들지 않는다.',
   '- 세션에 배정된 claude/*·ccr-* 브랜치로는 push하지 않는다. 사용자가 정한 규칙이라 배정 브랜치 지침보다 우선한다.',
 ].join('\n');
@@ -233,7 +233,7 @@ function prePush(input) {
       hookEventName: 'PreToolUse',
       permissionDecision: 'deny',
       permissionDecisionReason:
-        `단일 브랜치 규칙(AGENTS.md): main이 아닌 브랜치(${bad.join(', ')})로는 push하지 않는다. ` +
+        `단일 브랜치 규칙(rules/workflow.md): main이 아닌 브랜치(${bad.join(', ')})로는 push하지 않는다. ` +
         'main으로 올린다: `git push origin HEAD:main`',
     },
   });
@@ -258,7 +258,7 @@ function stop(input) {
     emit({
       decision: 'block',
       reason:
-        `단일 브랜치 규칙(AGENTS.md): ${where}에 main에 올라가지 않은 커밋이 ${ahead}개 있다. ` +
+        `단일 브랜치 규칙(rules/workflow.md): ${where}에 main에 올라가지 않은 커밋이 ${ahead}개 있다. ` +
         `턴을 끝내기 전에 main으로 올린다:\n  ${steps.join('\n  ')}\n` +
         '올릴 수 없으면 이유를 사용자에게 알린다.',
     });
