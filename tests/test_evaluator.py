@@ -13,6 +13,7 @@ import subprocess
 import sys
 import tempfile
 import textwrap
+import time
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -79,6 +80,8 @@ FAKE_RUST = textwrap.dedent('''
         unknown = sorted(set(req) - KEYS)
         if "죽는 니케" in squad:  # 평가기가 도중에 죽는 경우
             sys.exit(3)
+        if "느린 니케" in squad:
+            __import__("time").sleep(0.5)
         if unknown or "없는 니케" in squad:
             out = {"schema_version": 2, "line": n, "error": {"type": "invalid_input", "message": f"없음 {unknown}"}}
         else:
@@ -269,35 +272,74 @@ class FakeSimTest(SharedContract, unittest.TestCase):
         self.assertEqual(one[0].raw["line"], 7)  # 버전 확인 1 + 5 + 1
         self.assertEqual(ev.sim_count, 6)
 
-    def test_seed_or_error_line_restarts_after_the_call(self):
-        # 시드·오류 줄의 난수 흐름이 다음 호출로 넘어가지 않게 그 호출 뒤에 새로 띄운다
+    def test_seeded_call_runs_in_its_own_process(self):
+        # 시드 줄은 뒤 줄의 난수 흐름을 잇는다 — 띄워 둔 프로세스에 섞지 않고 그 호출만 따로 돌린다
         ev = self.evaluator(cache=None)
-        ev.evaluate([EvalRequest(SQUAD, options={"sim": {"seed": 7}}), EvalRequest(SQUAD[::-1])])
-        ev.evaluate([EvalRequest(SQUAD)])
+        res = ev.evaluate([EvalRequest(SQUAD, options={"sim": {"seed": 7}}), EvalRequest(SQUAD[::-1])])
+        self.assertEqual([r.raw["line"] for r in res], [1, 2])
         self.assertEqual(sim_calls(self.exe), 2)
-        ev.evaluate([EvalRequest(("없는 니케",) + SQUAD[1:]), EvalRequest(SQUAD[::-1])])
+        after = ev.evaluate([EvalRequest(SQUAD)])  # 띄워 둔 프로세스는 그대로
+        self.assertEqual(after[0].raw["line"], 2)
+        ev.evaluate([EvalRequest(("없는 니케",) + SQUAD[1:])])  # 오류 줄은 상태를 남기지 않는다
+        self.assertEqual(ev.evaluate([EvalRequest(SQUAD[::-1][1:])])[0].raw["line"], 4)
         self.assertEqual(sim_calls(self.exe), 2)
-        res = ev.evaluate([EvalRequest(SQUAD)])
-        self.assertEqual(sim_calls(self.exe), 3)
-        self.assertEqual(res[0].raw["line"], 1)  # 새 프로세스는 버전 확인 없이 바로 시작한다
+        self.assertEqual(ev.sim_count, 5)
 
     def test_dead_process_raises_then_restarts(self):
         ev = self.evaluator(cache=None)
         with self.assertRaises(RuntimeError):
             ev.evaluate([EvalRequest(SQUAD), EvalRequest(("죽는 니케",) + SQUAD[1:]), EvalRequest(SQUAD[::-1])])
-        self.assertEqual(ev.sim_count, 0)
-        res = ev.evaluate([EvalRequest(SQUAD)])
+        self.assertEqual(ev.sim_count, 1)  # 죽기 전에 답한 1회만 센다
+        self.assertEqual(ev.pending, 0)
+        res = ev.evaluate([EvalRequest(SQUAD[::-1])])
         self.assertIsNotNone(res[0].total_damage)
+        self.assertEqual(res[0].raw["line"], 1)  # 새 프로세스는 버전 확인 없이 바로 시작한다
         self.assertEqual(sim_calls(self.exe), 2)
 
     def test_close_and_context_manager(self):
         with self.evaluator(cache=None) as ev:
-            proc = ev._proc.proc
-            ev.evaluate([EvalRequest(SQUAD)])
+            proc = ev._pipe.proc
+            fut = ev.submit([EvalRequest(("느린 니케",) + SQUAD[1:])])[0]
         self.assertIsNotNone(proc.poll())  # 끝났다
-        self.assertIsNotNone(ev.evaluate([EvalRequest(SQUAD)])[0].total_damage)  # 다시 부르면 새로 띄운다
+        self.assertIsNotNone(fut.result(timeout=0).total_damage)  # 처리 중이던 요청은 받고 끝낸다
+        self.assertIsNotNone(ev.evaluate([EvalRequest(SQUAD)])[0].total_damage)  # 다시 쓰면 새로 띄운다
         ev.close()
         self.assertEqual(sim_calls(self.exe), 2)
+
+    def test_submit_returns_before_results(self):
+        ev = self.evaluator(cache=None)
+        t = time.perf_counter()
+        slow = ev.submit([EvalRequest(("느린 니케",) + SQUAD[1:])])
+        rest = ev.submit([EvalRequest(SQUAD[i:] + SQUAD[:i]) for i in range(5)])
+        self.assertLess(time.perf_counter() - t, 0.3)
+        self.assertFalse(slow[0].done())
+        self.assertEqual(ev.pending, 6)
+        got = [f.result(timeout=10).total_damage for f in rest]
+        self.assertEqual(got, [r.total_damage for r in ev.evaluate([EvalRequest(SQUAD[i:] + SQUAD[:i])
+                                                                    for i in range(5)])])
+        self.assertTrue(slow[0].done())
+        self.assertEqual((ev.pending, ev.sim_count), (0, 11))
+
+    def test_in_flight_duplicates_and_budget(self):
+        ev = self.evaluator(budget=3)
+        a = ev.submit([EvalRequest(("느린 니케",) + SQUAD[1:]), EvalRequest(SQUAD)])
+        b = ev.submit([EvalRequest(SQUAD)])  # 처리 중인 같은 요청 — 한 번만 돈다
+        with self.assertRaises(BudgetExceeded):  # 처리 중 2 + 새 2 > 3
+            ev.submit([EvalRequest(SQUAD[::-1]), EvalRequest(SQUAD[1:])])
+        c = ev.submit([EvalRequest(SQUAD[::-1])])
+        self.assertEqual(b[0].result(timeout=10).total_damage, a[1].result().total_damage)
+        self.assertFalse(b[0].result().cached)
+        c[0].result(timeout=10)
+        self.assertEqual(ev.sim_count, 3)
+        self.assertTrue(ev.evaluate([EvalRequest(SQUAD)])[0].cached)
+
+    def test_many_lines_do_not_block(self):
+        ev = self.evaluator(cache=None)
+        reqs = [EvalRequest((f"니케{i}",) + SQUAD[1:]) for i in range(3000)]
+        futs = [f for i in range(0, 3000, 500) for f in ev.submit(reqs[i:i + 500])]
+        res = [f.result(timeout=60) for f in futs]
+        self.assertEqual([r.raw["line"] for r in res], list(range(2, 3002)))  # 보낸 순서대로 짝지어졌다
+        self.assertEqual(ev.sim_count, 3000)
 
     def test_dirty_or_unknown_build_disables_cache(self):
         for change in ({"dirty": True}, {"commit": None, "dirty": None}):

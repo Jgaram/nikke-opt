@@ -62,11 +62,31 @@ Rust 실행 파일은 `nikke-calc-rs`에서 `cargo build --release -p nikke-cli`
   · `profile`(육성, 아래) · `chars`(니케별 운용 — `control` dict · `cube` · `favorite_stage`). 2·3단계의 큐브·컨트롤을
   전달할 수 있는 기반이다. 입력 전달 지원과 해당 변수를 탐색·최적화하는 기능은 구분한다.
 - **병렬** — Python은 `--batch` 프로세스 여러 개로, Rust는 프로세스 하나 안의 작업 스레드로 나눠 돈다. 응답 순서는 요청 순서 그대로다.
-- **프로세스 재사용(Rust)** — `nikke-sim --batch`를 처음 한 번 띄워 `evaluate()` 호출 사이에 계속 쓴다(Python은 호출마다 띄운다).
-  `close()`나 `with make_evaluator(...) as ev:`로 끝낸다. 시드(`sim.seed`)나 오류 줄은 평가기 안에서 뒤 줄의 난수 흐름을 잇기 때문에,
-  그런 줄이 있었던 호출 뒤에는 새로 띄운다 — 호출 하나의 결과는 호출마다 띄우던 때와 같다. 프로세스가 죽으면 그 호출은 실패하고 다음 호출에서 새로 띄운다.
-  측정(2026-10-29, 4코어, S40 180초 같은 스쿼드 80개, 시뮬/초): 호출당 1개 4.3 → 5.7 · 5개 13.4 → 16.7 · 20개 19.5 → 22.2 · 40개 21.6 → 22.6.
-  실행 파일에 80줄을 한 번에 넣으면 21.4이므로, 이제 남는 손실은 호출이 작아 작업 스레드가 노는 몫이다 — 탐색이 한 번에 여러 후보를 넘길수록 빠르다.
+- **프로세스 재사용·미리 넣기(Rust)** — `nikke-sim --batch`를 처음 한 번 띄워 계속 쓴다(Python은 호출마다 띄운다).
+  `submit(requests)`는 요청마다 `Future`를 바로 돌려준다 — 결과를 기다리지 않고 다음 후보를 넣어 작업 스레드를 채운다.
+  `evaluate()`는 `submit()` 뒤 다 기다리는 것과 같다. 캐시 적중은 바로 끝나고, 처리 중인 같은 요청은 한 번만 돈다.
+  예산은 끝난 시뮬 + 처리 중인 시뮬로 확인한다(`ev.pending` = 처리 중). `close()`·`with make_evaluator(...) as ev:`는
+  처리 중인 요청을 다 받고 끝낸다. 시드(`sim.seed`)가 있는 요청은 평가기 안에서 뒤 줄의 난수 흐름을 이으므로
+  그 호출만 따로 띄운 프로세스에서 동기로 돈다 — 결과는 호출마다 띄우던 때와 같다. 프로세스가 죽으면 처리 중이던
+  요청은 예외로 끝나고 다음 요청에서 새로 띄운다.
+
+  ```python
+  from concurrent.futures import wait, FIRST_COMPLETED
+  live = set(f for r in first_candidates for f in ev.submit([r]))
+  while live:
+      done, live = wait(live, return_when=FIRST_COMPLETED)
+      for f in done:
+          live |= set(ev.submit(next_candidates(f.result())))   # 결과를 보는 대로 다음 후보를 넣는다
+  ```
+
+  측정(2026-10-29, 4코어, S40 180초, 시뮬/초. 실행 파일에 80줄을 한 번에 넣으면 21.4):
+
+  | 호출 방식 | 전(호출마다 프로세스) | 프로세스 재사용 | 미리 넣기 |
+  |---|---|---|---|
+  | 1개씩 기다리며 | 4.3 | 5.7 | 16개 유지 20.8 · 32개 유지 21.5 |
+  | 5개씩 기다리며 | 13.4 | 16.7 | |
+  | 20개씩 기다리며 | 19.5 | 22.2 | |
+  | 40개씩 기다리며 (기존 실험) | 21.6 | 22.6 | |
 - **버전** — Python은 체크아웃의 `git rev-parse HEAD`·dirty, Rust는 시작할 때 짧은 요청 1회(시뮬 횟수에 안 셈)로 받은 결과의
   `evaluator` — 빌드 때의 `nikke-calc-rs` 커밋·dirty와 원본 기준 커밋(`port_of`). 실행 중에 이 값이 바뀌면 멈춘다.
 - **캐시** — (평가기 커밋, 요청) → 결과. `.cache/evals.sqlite`(커밋 안 함). 키에 평가기 커밋이 들어가 Python·Rust 결과가 섞이지 않는다.

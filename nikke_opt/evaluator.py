@@ -1,6 +1,6 @@
 """평가기 인터페이스와 어댑터 — nikke-calc(Python 원본) · nikke-sim(Rust 포팅).
 
-최적화 코드는 `Evaluator.evaluate()`만 쓴다. 계산기 내부는 import하지 않고 `--batch` 서브프로세스로만 부른다
+최적화 코드는 `Evaluator.evaluate()`·`submit()`만 쓴다. 계산기 내부는 import하지 않고 `--batch` 서브프로세스로만 부른다
 (입출력 계약: nikke-calc `docs/SIM-JSON.md`, 요청 JSON v2 — `squad` · `sim` · `boss` · `enemy` · `operation` ·
 `profile` · `chars`. nikke-calc `167698c`부터). 평가기는 `make_evaluator()`가 고른다 — Rust 실행 파일
 (`NIKKE_SIM_BIN`)이 있으면 그것, 없으면 nikke-calc 체크아웃(`NIKKE_CALC_DIR`).
@@ -25,13 +25,14 @@ import os
 import sqlite3
 import subprocess
 import sys
+import queue
 import threading
 import weakref
 from collections import deque
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import Future, ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping, Protocol, Sequence
+from typing import Any, Callable, Mapping, Protocol, Sequence
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CACHE = REPO_ROOT / ".cache" / "evals.sqlite"
@@ -88,16 +89,20 @@ class Evaluator(Protocol):
 
     def evaluate(self, requests: Sequence[EvalRequest]) -> list[EvalResult]: ...
 
+    def submit(self, requests: Sequence[EvalRequest]) -> list[Future[EvalResult]]: ...
+
     def close(self) -> None: ...
 
 
 class Cache:
-    """(평가기 커밋, 요청) → 결과 JSON. 같은 프로세스의 메인 스레드에서만 쓴다."""
+    """(평가기 커밋, 요청) → 결과 JSON. 여러 스레드에서 써도 된다(연결 하나를 잠금으로 나눠 쓴다)."""
 
     def __init__(self, path: Path):
         path.parent.mkdir(parents=True, exist_ok=True)
-        self._db = sqlite3.connect(path)
-        self._db.execute("CREATE TABLE IF NOT EXISTS evals (key TEXT PRIMARY KEY, result TEXT NOT NULL)")
+        self._db = sqlite3.connect(path, check_same_thread=False)
+        self._lock = threading.Lock()
+        with self._lock:
+            self._db.execute("CREATE TABLE IF NOT EXISTS evals (key TEXT PRIMARY KEY, result TEXT NOT NULL)")
 
     @staticmethod
     def key(commit: str, line: Mapping[str, Any]) -> str:
@@ -105,15 +110,15 @@ class Cache:
         return hashlib.sha256(blob.encode()).hexdigest()
 
     def get(self, key: str) -> dict[str, Any] | None:
-        row = self._db.execute("SELECT result FROM evals WHERE key = ?", (key,)).fetchone()
+        with self._lock:
+            row = self._db.execute("SELECT result FROM evals WHERE key = ?", (key,)).fetchone()
         return json.loads(row[0]) if row else None
 
     def put_many(self, items: Sequence[tuple[str, dict[str, Any]]]) -> None:
-        self._db.executemany(
-            "INSERT OR REPLACE INTO evals VALUES (?, ?)",
-            [(k, json.dumps(v, ensure_ascii=False)) for k, v in items],
-        )
-        self._db.commit()
+        rows = [(k, json.dumps(v, ensure_ascii=False)) for k, v in items]
+        with self._lock:
+            self._db.executemany("INSERT OR REPLACE INTO evals VALUES (?, ?)", rows)
+            self._db.commit()
 
 
 def _git(calc_dir: Path, *args: str) -> str:
@@ -128,7 +133,15 @@ def _file_digest(path: Path) -> str | None:
 
 
 class _BatchEvaluator:
-    """두 어댑터가 함께 쓰는 부분 — 캐시·중복 제거·예산·계약 판 확인. 실행은 하위 클래스의 `_run`."""
+    """두 어댑터가 함께 쓰는 부분 — 캐시·중복 제거·예산·계약 판 확인. 실행은 하위 클래스의 `_start`.
+
+    `submit()`은 요청마다 Future를 바로 돌려준다. 결과를 기다리지 않고 다음 요청을 넣을 수 있어, 평가기가
+    비동기로 받는 경우(Rust) 작업 스레드를 쉬지 않게 채울 수 있다. `evaluate()`는 `submit()` 뒤 전부 기다린다.
+
+    - 캐시 적중은 바로 끝난 Future다. 같은 요청이 이미 처리 중이면(이번 호출이든 앞 호출이든) 그 결과를 함께 받는다.
+    - 예산은 끝난 시뮬 + 처리 중인 시뮬로 확인한다. `sim_count`는 응답이 온 시뮬만 센다.
+    - Future 콜백(`add_done_callback`)은 평가기의 읽기 스레드에서 돌 수 있다 — 콜백에서 오래 막지 않는다.
+    """
 
     version: dict[str, Any]
     cache: Cache | None
@@ -138,9 +151,16 @@ class _BatchEvaluator:
         self.budget = budget
         self.sim_count = 0
         self.cache_hits = 0
+        self._lock = threading.Lock()
+        self._inflight: dict[str, list[Future[EvalResult]]] = {}  # 요청 키 → 그 결과를 기다리는 Future
+
+    @property
+    def pending(self) -> int:
+        """처리 중인(응답을 기다리는) 시뮬 수."""
+        return len(self._inflight)
 
     def close(self) -> None:
-        """띄워 둔 평가기 프로세스를 끝낸다. 다시 `evaluate()`하면 새로 띄운다."""
+        """띄워 둔 평가기 프로세스를 끝낸다(처리 중인 요청은 끝까지 받는다). 다시 쓰면 새로 띄운다."""
 
     def __enter__(self):
         return self
@@ -154,36 +174,70 @@ class _BatchEvaluator:
         self.cache = cache or None
 
     def evaluate(self, requests: Sequence[EvalRequest]) -> list[EvalResult]:
+        return [f.result() for f in self.submit(requests)]
+
+    def submit(self, requests: Sequence[EvalRequest]) -> list[Future[EvalResult]]:
         lines = [self._prepare(r.to_line()) for r in requests]
-        results: list[EvalResult | None] = [None] * len(lines)
         keys = [Cache.key(self._cache_id, self._key_line(ln)) for ln in lines]
+        futures: list[Future[EvalResult]] = [Future() for _ in lines]
+        new: dict[str, dict[str, Any]] = {}  # 새로 돌릴 요청 (같은 요청은 한 번만)
+        waiters: dict[str, list[Future[EvalResult]]] = {}
+        with self._lock:
+            for fut, key, line in zip(futures, keys, lines):
+                if key in self._inflight:
+                    self._inflight[key].append(fut)
+                    continue
+                if key in new:
+                    waiters[key].append(fut)
+                    continue
+                hit = self.cache.get(key) if self.cache else None
+                if hit is not None:
+                    fut.set_result(EvalResult(hit.get("total_damage"), hit, cached=True))
+                    self.cache_hits += 1
+                else:
+                    new[key] = line
+                    waiters[key] = [fut]
+            if self.budget is not None and self.sim_count + len(self._inflight) + len(new) > self.budget:
+                for key in new:  # 같은 호출에서 처리 중 요청에 붙인 Future는 그대로 끝난다
+                    waiters.pop(key)
+                raise BudgetExceeded(f"예산 {self.budget}회 중 {self.sim_count}회 사용·{len(self._inflight)}회 처리 중"
+                                     f" — {len(new)}회 더 필요")
+            self._inflight.update(waiters)
+        if new:
+            try:
+                self._start(list(new.items()))
+            except BaseException as e:
+                for key in new:
+                    self._finish(key, e)
+                raise
+        return futures
 
-        todo: dict[str, list[int]] = {}  # 같은 요청은 한 번만 돌린다
-        for i, key in enumerate(keys):
-            hit = self.cache.get(key) if self.cache else None
-            if hit is not None:
-                results[i] = EvalResult(hit.get("total_damage"), hit, cached=True)
-                self.cache_hits += 1
+    def _finish(self, key: str, out: dict[str, Any] | BaseException) -> None:
+        """요청 하나의 응답(또는 실패)을 기다리던 Future에 넘긴다. 어느 스레드에서 불려도 된다."""
+        with self._lock:
+            waiters = self._inflight.pop(key, None)
+            if waiters is None:
+                return
+            if not isinstance(out, BaseException):
+                self.sim_count += 1
+                try:
+                    self._check(out)
+                except RuntimeError as e:
+                    out = e
+                else:
+                    if self.cache and "error" not in out:
+                        self.cache.put_many([(key, out)])
+        for fut in waiters:
+            if isinstance(out, BaseException):
+                fut.set_exception(out)
             else:
-                todo.setdefault(key, []).append(i)
+                fut.set_result(EvalResult(out.get("total_damage"), out))
 
-        if self.budget is not None and self.sim_count + len(todo) > self.budget:
-            raise BudgetExceeded(f"예산 {self.budget}회 중 {self.sim_count}회 사용 — {len(todo)}회 더 필요")
-
-        run_keys = list(todo)
-        outputs = self._run([lines[todo[k][0]] for k in run_keys])
-        self.sim_count += len(run_keys)
-
-        fresh = []
-        for key, out in zip(run_keys, outputs):
-            self._check(out)
-            for i in todo[key]:
-                results[i] = EvalResult(out.get("total_damage"), out)
-            if "error" not in out:
-                fresh.append((key, out))
-        if self.cache and fresh:
-            self.cache.put_many(fresh)
-        return results  # type: ignore[return-value]
+    def _start(self, items: list[tuple[str, dict[str, Any]]]) -> None:
+        """새 요청을 평가기에 넘기고, 응답마다 `_finish(키, 응답)`을 부르게 한다. 기본은 `_run`으로 동기 실행."""
+        outputs = self._run([line for _, line in items])
+        for (key, _), out in zip(items, outputs):
+            self._finish(key, out)
 
     def _check(self, out: dict[str, Any]) -> None:
         if out.get("schema_version") != SCHEMA_VERSION:
@@ -226,84 +280,119 @@ def _run_batch(cmd: list[str], lines: list[dict[str, Any]], *, what: str,
     return rows
 
 
-class _BatchProcess:
-    """계속 떠 있는 `--batch` 프로세스 하나. 요청 줄을 쓰고 같은 수의 응답 줄을 순서대로 읽는다.
+Done = Callable[[Any, "dict[str, Any] | BaseException"], None]
 
-    쓰기는 별도 스레드가 한다 — 평가기는 동시에 처리 중인 줄 수를 제한하므로, 다 쓴 뒤에 읽으면 막힌다.
-    stderr도 별도 스레드가 비운다(실패 보고용으로 끝부분만 남긴다). 응답의 `line`이 지금까지 보낸 줄 번호와
-    다르면 입출력이 어긋난 것이라 멈춘다.
+
+class _BatchPipe:
+    """계속 떠 있는 `--batch` 프로세스 하나. 줄을 보내 두면 응답이 오는 대로 `done(태그, 응답)`을 부른다.
+
+    평가기는 응답을 요청 순서대로 쓰므로 응답 i번은 보낸 줄 i번의 것이다(응답의 `line`으로 확인한다). 쓰기·읽기·
+    stderr 비우기는 각각 스레드가 한다 — 보내는 쪽은 막히지 않고, 평가기가 동시에 받는 줄 수를 제한해도 읽기가
+    계속 비워 주므로 서로 기다리다 멈추지 않는다. 프로세스가 죽거나 응답이 어긋나면 남은 줄은 모두 예외로 끝나고
+    이 파이프는 다시 쓰지 않는다.
     """
 
     def __init__(self, cmd: list[str], *, what: str, env: Mapping[str, str] | None = None):
         self.what = what
         self.proc = subprocess.Popen(cmd, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                      stderr=subprocess.PIPE, text=True, encoding="utf-8", bufsize=1)
-        self.sent = 0
+        self.dead: BaseException | None = None
+        self._lock = threading.Lock()
+        self._slots: deque[tuple[Any, Done]] = deque()  # 보냈고 응답을 기다리는 줄
+        self._queue: queue.SimpleQueue[str | None] = queue.SimpleQueue()
+        self._answered = 0
         self._stderr: deque[str] = deque(maxlen=100)
-        threading.Thread(target=self._drain, args=(self.proc.stderr, self._stderr), daemon=True).start()
+        self._threads = [threading.Thread(target=t, daemon=True, name=f"{what}-{t.__name__}")
+                         for t in (self._write, self._read, self._drain)]
+        for t in self._threads:
+            t.start()
 
-    @staticmethod
-    def _drain(stream: Any, tail: deque[str]) -> None:
-        try:
-            for s in stream:
-                tail.append(s)
-        except (OSError, ValueError):
-            pass
-        finally:
-            stream.close()  # 프로세스가 끝나면 여기까지 온다
-
-    def alive(self) -> bool:
-        return self.proc.poll() is None
+    def send(self, items: Sequence[tuple[Any, dict[str, Any]]], done: Done) -> None:
+        payload = "".join(json.dumps(line, ensure_ascii=False) + "\n" for _, line in items)
+        with self._lock:
+            if self.dead is not None:
+                raise RuntimeError(f"{self.what} --batch 프로세스가 이미 끝났다") from self.dead
+            self._slots.extend((tag, done) for tag, _ in items)
+            self._queue.put(payload)
 
     def run(self, lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        payload = "".join(json.dumps(ln, ensure_ascii=False) + "\n" for ln in lines)
-        failed: list[BaseException] = []
+        """보내고 응답을 모두 기다린다."""
+        futures = [Future() for _ in lines]
 
-        def write() -> None:
+        def done(i: int, out: dict[str, Any] | BaseException) -> None:
+            futures[i].set_exception(out) if isinstance(out, BaseException) else futures[i].set_result(out)
+
+        self.send(list(enumerate(lines)), done)
+        return [f.result() for f in futures]
+
+    def alive(self) -> bool:
+        return self.dead is None and self.proc.poll() is None
+
+    def close(self) -> None:
+        """입력을 닫는다. 평가기는 받은 줄을 다 답하고 끝난다 — 그때까지 기다린다(안 끝나면 죽인다)."""
+        self._queue.put(None)
+        self._threads[1].join(timeout=600)
+        try:
+            self.proc.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            self.proc.kill()
+            self.proc.wait()
+        self._threads[1].join(timeout=5)
+
+    def _write(self) -> None:
+        while (payload := self._queue.get()) is not None:
             try:
                 self.proc.stdin.write(payload)
                 self.proc.stdin.flush()
-            except (OSError, ValueError) as e:  # 프로세스가 먼저 끝났다 — 읽는 쪽이 보고한다
-                failed.append(e)
-
-        writer = threading.Thread(target=write, daemon=True)
-        writer.start()
-        rows = []
-        for _ in lines:
-            s = self.proc.stdout.readline()
-            if not s:
-                writer.join(timeout=5)
-                code = self.proc.wait(timeout=5)
-                raise RuntimeError(f"{self.what} --batch 실패 (코드 {code}, {len(rows)}/{len(lines)}줄)\n"
-                                   f"{''.join(self._stderr)[-2000:]}")
-            row = json.loads(s)
-            self.sent += 1
-            if row.get("line", self.sent) != self.sent:
-                raise RuntimeError(f"{self.what} --batch 응답 줄이 어긋났다: {row.get('line')} ≠ {self.sent}")
-            rows.append(row)
-        writer.join()
-        if failed:
-            raise RuntimeError(f"{self.what} --batch 입력 실패: {failed[0]}")
-        return rows
-
-    def close(self) -> None:
-        _close_process(self.proc)
-
-
-def _close_process(proc: subprocess.Popen) -> None:
-    """입력을 닫아 스스로 끝나게 하고, 안 끝나면 죽인다."""
-    if proc.poll() is None:
+            except (OSError, ValueError):
+                break  # 프로세스가 먼저 끝났다 — 읽기 스레드가 보고한다
         try:
-            proc.stdin.close()
-            proc.wait(timeout=5)
-        except (OSError, ValueError, subprocess.TimeoutExpired):
-            proc.kill()
-            proc.wait()
-    for stream in (proc.stdin, proc.stdout):
-        try:
-            stream.close()
+            self.proc.stdin.close()
         except (OSError, ValueError):
             pass
+
+    def _read(self) -> None:
+        failure: BaseException | None = None
+        try:
+            for s in self.proc.stdout:
+                if not s.strip():
+                    continue
+                row = json.loads(s)
+                with self._lock:
+                    if not self._slots:
+                        raise RuntimeError(f"{self.what} --batch: 보내지 않은 줄의 응답이 왔다: {s[:200]}")
+                    tag, done = self._slots.popleft()
+                    self._answered += 1
+                    if row.get("line", self._answered) != self._answered:
+                        raise RuntimeError(f"{self.what} --batch 응답 줄이 어긋났다:"
+                                           f" {row.get('line')} ≠ {self._answered}")
+                done(tag, row)
+        except BaseException as e:  # 응답을 믿을 수 없다 — 프로세스를 끝내고 남은 줄을 실패로
+            failure = e
+            self.proc.kill()
+        code = self.proc.wait()
+        with self._lock:
+            pending = list(self._slots)
+            self._slots.clear()
+            if failure is None and pending:
+                failure = RuntimeError(f"{self.what} --batch 실패 (코드 {code}, 응답 못 받은 줄 {len(pending)}개)\n"
+                                       f"{''.join(self._stderr)[-2000:]}")
+            self.dead = failure or RuntimeError(f"{self.what} --batch 끝남 (코드 {code})")
+        for tag, done in pending:
+            done(tag, failure)
+        try:
+            self.proc.stdout.close()
+        except (OSError, ValueError):
+            pass
+
+    def _drain(self) -> None:
+        try:
+            for s in self.proc.stderr:
+                self._stderr.append(s)
+        except (OSError, ValueError):
+            pass
+        finally:
+            self.proc.stderr.close()
 
 
 class NikkeCalcEvaluator(_BatchEvaluator):
@@ -311,6 +400,8 @@ class NikkeCalcEvaluator(_BatchEvaluator):
 
     calc_dir: nikke-calc 체크아웃 경로. 없으면 환경변수 `NIKKE_CALC_DIR`.
     budget:   돌릴 수 있는 시뮬 횟수 상한 (None = 무제한). 넘칠 요청은 아예 시작하지 않는다.
+
+    `submit()`은 그 자리에서 다 돌리고 끝난 Future를 돌려준다(비동기 아님).
     """
 
     def __init__(self, calc_dir: str | Path | None = None, *, jobs: int | None = None,
@@ -358,17 +449,21 @@ class NikkeSimEvaluator(_BatchEvaluator):
                  거절한다(인라인 육성은 그대로 된다).
     budget:      돌릴 수 있는 시뮬 횟수 상한 (None = 무제한). 넘칠 요청은 아예 시작하지 않는다.
 
-    **프로세스는 한 번 띄워 `evaluate()` 호출 사이에 재사용한다.** 호출마다 띄우면 프로세스 시작과 작업 스레드마다의
-    데이터 적재가 매번 들어 작은 호출의 처리량이 떨어진다. `close()`(또는 `with`)로 끝내며, 끝낸 뒤 다시 부르면
-    새로 띄운다.
+    **프로세스는 한 번 띄워 계속 쓰고, `submit()`은 줄을 보내 두기만 하고 바로 돌아온다.** 호출마다 띄우면 시작과
+    작업 스레드마다의 데이터 적재가 매번 들고, 호출마다 다 끝나기를 기다리면 마지막 줄들을 도는 동안 다른 작업
+    스레드가 논다. 탐색은 결과를 기다리지 않고 다음 후보를 넣어 작업 스레드를 채울 수 있다. `close()`(또는
+    `with`)는 처리 중인 줄을 다 받은 뒤 끝내며, 끝낸 뒤 다시 쓰면 새로 띄운다. 프로세스가 죽으면 처리 중이던
+    요청은 예외로 끝나고 다음 요청에서 새로 띄운다.
 
-    평가기는 시드(`sim.seed`)가 있는 줄 — 그리고 일부 오류 줄 — 뒤의 시드 없는 줄을 그 줄의 난수 흐름에 이어
-    한 스레드에서 차례로 돌린다(nikke-calc-rs `batch_pool.rs`). 이 영향이 다음 호출로 넘어가지 않도록, 그런 줄이
-    있었던 호출 뒤에는 프로세스를 새로 띄운다 — 호출 하나의 결과는 호출마다 띄우던 때와 같다.
+    평가기는 시드(`sim.seed`)가 있는 줄 뒤의 시드 없는 줄을 그 줄의 난수 흐름에 이어 한 스레드에서 차례로
+    돌린다(nikke-calc-rs `batch_pool.rs`). 그래서 **시드가 있는 요청이 들어간 호출은 띄워 둔 프로세스에 섞지 않고**
+    그 호출만의 프로세스에서 동기로 돌린다 — 호출 하나의 결과는 호출마다 띄우던 때와 같다. 시드 없는 줄만
+    받는 프로세스에는 줄 사이 상태가 생기지 않는다(예외: 읽기 단계에서 지원 밖인 줄 — 포팅이 예약한 문자
+    U+10F000..U+10F7FF를 담은 줄 — 은 시드가 있는 것으로 친다).
 
     버전은 처음 띄울 때 짧은 요청 1회로 결과의 `evaluator`(빌드 때의 nikke-calc-rs 커밋·dirty, 원본 기준 커밋
     `port_of`)를 받아 둔다. 이 1회는 탐색 평가가 아니라 시뮬 횟수에 세지 않는다. 다시 띄운 프로세스가 다른
-    빌드면 첫 결과의 `evaluator` 대조에서 멈춘다.
+    빌드면 결과마다 하는 `evaluator` 대조에서 멈춘다.
     """
 
     def __init__(self, sim_bin: str | Path | None = None, *, jobs: int | None = None,
@@ -384,10 +479,11 @@ class NikkeSimEvaluator(_BatchEvaluator):
         profile_dir = profile_dir or os.environ.get("NIKKE_PROFILE_DIR")
         self.profile_dir = Path(profile_dir).resolve() if profile_dir else None
         self.jobs = jobs or os.cpu_count() or 1
-        self._proc: _BatchProcess | None = None
+        self._pipe: _BatchPipe | None = None
+        self._pipe_lock = threading.Lock()
         self._finalizer: weakref.finalize | None = None
 
-        probe = self._process().run([VERSION_PROBE])[0]
+        probe = self._live_pipe().run([VERSION_PROBE])[0]
         ev = probe.get("evaluator")
         if probe.get("schema_version") != SCHEMA_VERSION or "error" in probe or not isinstance(ev, dict) \
                 or ev.get("repo") != RUST_REPO:
@@ -406,17 +502,20 @@ class NikkeSimEvaluator(_BatchEvaluator):
             env["NIKKE_PROFILE_DIR"] = str(self.profile_dir)
         return env
 
-    def _process(self) -> _BatchProcess:
-        if self._proc is None or not self._proc.alive():
-            self.close()
-            self._proc = _BatchProcess([str(self.sim_bin), "--batch"], what="nikke-sim", env=self._env(self.jobs))
-            self._finalizer = weakref.finalize(self, _close_process, self._proc.proc)
-        return self._proc
+    def _live_pipe(self) -> _BatchPipe:
+        with self._pipe_lock:
+            if self._pipe is None or not self._pipe.alive():
+                if self._finalizer is not None:
+                    self._finalizer()
+                self._pipe = _BatchPipe([str(self.sim_bin), "--batch"], what="nikke-sim", env=self._env(self.jobs))
+                self._finalizer = weakref.finalize(self, self._pipe.close)
+            return self._pipe
 
     def close(self) -> None:
-        if self._finalizer is not None:
-            self._finalizer()  # _close_process(proc) — 한 번만 돈다
-        self._proc = self._finalizer = None
+        with self._pipe_lock:
+            if self._finalizer is not None:
+                self._finalizer()  # _BatchPipe.close — 한 번만 돈다
+            self._pipe = self._finalizer = None
 
     def _prepare(self, line: dict[str, Any]) -> dict[str, Any]:
         """보스 스크립트 파일의 상대 경로를 절대 경로로 — 어느 폴더에서 돌려도 같은 파일·같은 캐시 키가 되게."""
@@ -431,18 +530,18 @@ class NikkeSimEvaluator(_BatchEvaluator):
                              " (인라인 육성은 폴더 없이 된다)")
         return self.profile_dir / f"{name}.json"
 
-    def _run(self, lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        if not lines:
-            return []
-        proc = self._process()
+    def _start(self, items: list[tuple[str, dict[str, Any]]]) -> None:
+        if any((line.get("sim") or {}).get("seed") is not None for _, line in items):
+            super()._start(items)  # 난수 흐름을 잇는 줄 — 이 호출만의 프로세스에서 (`_run`)
+            return
         try:
-            rows = proc.run(lines)
-        except BaseException:
-            self.close()  # 입출력이 어긋났을 수 있다 — 다음 호출은 새 프로세스로
-            raise
-        if any("seed" in (ln.get("sim") or {}) for ln in lines) or any("error" in r for r in rows):
-            self.close()  # 난수 흐름을 잇는 줄이 있었다 — 다음 호출에 넘기지 않는다
-        return rows
+            self._live_pipe().send(items, self._finish)
+        except RuntimeError:  # 막 죽은 프로세스 — 한 번 새로 띄워 보낸다
+            self._live_pipe().send(items, self._finish)
+
+    def _run(self, lines: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        return _run_batch([str(self.sim_bin), "--batch"], lines, what="nikke-sim",
+                          env=self._env(min(self.jobs, len(lines))))
 
 
 EVALUATORS = ("auto", "rust", "python")
