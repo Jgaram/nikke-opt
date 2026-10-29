@@ -76,7 +76,7 @@ class Record(TypedDict):
     """실행 기록 JSON Lines 한 줄. W4가 쓰고 W5가 읽는다.
 
     - `condition`: CONDITIONS 중 하나.
-    - `start`: 출발점 이름 — "layer" · "auto" · 참조 탐색은 "random:<seed>".
+    - `start`: 출발점 이름 — "layer" · "auto" · 참조 탐색은 "random:<seed>" · 킥 재출발은 "kick:<seed>".
     - `step`: 그 (조합, 조건, 출발점) 안에서의 평가 순번(0 = 출발점).
     - `variants`: 이 평가에 적용한 선택지 label 목록(정렬). 출발점은 [].
     - `request`: 평가기에 보낸 요청 줄 전문(`EvalRequest.to_line()`).
