@@ -225,8 +225,54 @@ class TestSummary(unittest.TestCase):
         self.assertTrue(s["criteria"][0]["met"])
         self.assertTrue(cr[4]["met"])  # c1 참조 +1.8%
         self.assertFalse(analyze.summarize(fake_records(), COMPS, ref_gap_min=0.05)["criteria"][3]["met"])
-        self.assertIsNone(cr[2]["met"])
-        self.assertEqual(cr[2]["values"]["exceptions_with_peer_candidate"], 1)
+        # 기본(유의 0.3%): 예외 둘 다 유의(c2 cover +0.5%, c3 click 미측정) → 실질 최빈 1 − 2/7
+        v2 = cr[2]["values"]
+        self.assertAlmostEqual(v2["effective_mode_share"], 5 / 7)
+        self.assertEqual((v2["significant"], v2["significant_explained"], v2["significant_weak"]), (2, 1, 1))
+        self.assertAlmostEqual(v2["explained_share"], 0.5)
+        self.assertAlmostEqual(v2["explained_share_strong"], 0.0)
+        self.assertFalse(cr[2]["met"])
+        self.assertTrue(cr[3]["met"])  # 0.71 < 0.8 그리고 0.5 < 0.6
+        self.assertEqual(self.s["candidate"]["line"], 4)  # 4줄이 먼저
+
+    def test_significance_and_candidate(self):
+        # 유의 1%: c2 cover(+0.5%)는 유의하지 않음 → 유의 예외는 c3 click 하나, 후보 X(약한 근거)
+        kw = dict(exception_gain_min=0.01, ref_gap_min=0.05)
+        s = analyze.summarize(fake_records(), COMPS, **kw)
+        u = s["uniqueness"]["pooled"]
+        self.assertEqual((u["significant"], u["significant_explained"], u["significant_weak"]), (1, 1, 1))
+        self.assertAlmostEqual(u["effective_mode_share"], 6 / 7)
+        self.assertAlmostEqual(u["explained_share"], 1.0)
+        self.assertAlmostEqual(u["explained_share_strong"], 0.0)
+        cr = {c["line"]: c["met"] for c in s["criteria"]}
+        self.assertEqual((cr[1], cr[2], cr[3], cr[4]), (False, True, False, False))
+        self.assertEqual(s["candidate"]["line"], 2)
+        cover = next(it for it in s["uniqueness"]["items"] if it["axis"] == "cover")
+        self.assertFalse(cover["exceptions"][0]["significant"])
+        # 역전 기준 0건 → 3줄도 해당 → 2·3 함께 → 후보 없음
+        s = analyze.summarize(fake_records(), COMPS, reversals_max=0, **kw)
+        self.assertIsNone(s["candidate"]["line"])
+        self.assertTrue(any("함께" in n for n in s["candidate"]["notes"]))
+        # 1줄과 2줄이 함께 → 1줄, 메모
+        s = analyze.summarize(fake_records(), COMPS, top_k=2, gain_median_max=0.2, **kw)
+        self.assertEqual(s["candidate"]["line"], 1)
+        self.assertTrue(any("2줄도" in n for n in s["candidate"]["notes"]))
+        # 기본 기준에서 참조만 빼면 3줄
+        s = analyze.summarize(fake_records(), COMPS, ref_gap_min=0.05)
+        self.assertEqual(s["candidate"]["line"], 3)
+
+    def test_partial_conditions(self):
+        # search_from_auto · reference가 없는 조합은 그 지표에서 빠진다
+        s = self.s
+        self.assertEqual(s["reference"]["summary"]["n"], 1)
+        self.assertEqual([r["comp_id"] for r in s["reference"]["rows"]], ["c1"])
+        self.assertEqual(s["convergence"]["by_start"]["search_from_auto"]["runs"], 1)
+        self.assertEqual(s["gains"]["vs_auto"]["n"], 4)
+        recs = [r for r in fake_records() if r["condition"] != "reference"]
+        s2 = analyze.summarize(recs, COMPS)
+        self.assertIsNone(s2["criteria"][3]["met"])
+        self.assertNotIn("reference", s2["convergence"]["by_start"])
+        self.assertTrue(any("4줄 판정 불가" in n for n in s2["candidate"]["notes"]))
 
     def test_render(self):
         text = analyze.render(self.s)

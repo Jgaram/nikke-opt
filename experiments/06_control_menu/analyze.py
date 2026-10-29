@@ -10,7 +10,8 @@ README §잴 것 1~5를 계산한다. 입력은 common.Record JSON Lines와 comp
 
 지표 정의는 아래 DEFINITIONS(그대로 results.md에 들어간다)가 정본이다. summarize()가 돌려주는 dict의 키:
 
-- `params`: 판단 기준 수치(`gain_median_max` · `spearman_min` · `top_k` · `ref_gap_min`)와 `thresholds`(수렴 비율).
+- `params`: 판단 기준 수치(`gain_median_max` · `spearman_min` · `top_k` · `ref_gap_min` · `exception_gain_min` ·
+  `mode_ratio_min` · `explained_min` · `reversals_max`)와 `thresholds`(수렴 비율).
 - `data`: 줄 수 · 오류 줄 수 · 조건별 줄 수 · 조건별 실제 시뮬 수(cached false) · 조합 수 · compositions에 없는 comp_id.
 - `comps`: 조합별 표 — 조건별 최선 딜, 이득(`gain_vs_layer` · `gain_vs_auto`), 참조 차이(`ref_gap`), 최선 선택 label.
 - `gains`: `vs_layer` · `vs_auto` 각각 분포 요약 `{n, min, q1, median, q3, max}`.
@@ -19,7 +20,8 @@ README §잴 것 1~5를 계산한다. 입력은 common.Record JSON Lines와 comp
 - `convergence`: `runs` — (조합, 조건, 출발점)마다 임계 비율별 도달 step · 실제 시뮬 수, `by_start` 분포 요약.
 - `camera`: 조합별 최선 기록의 `control_detail` 요약과 전 기록의 니케별 `preempted` 집계, 모르는 키.
 - `reference`: 참조 조건이 있는 조합의 `ref_gap` 목록과 분포.
-- `criteria`: 판단 기준 표 각 줄의 수치와 해당 여부(True · False · None=판정 불가/수치 기준 없음). 최종 판단은 관리자.
+- `criteria`: 판단 기준 표 각 줄의 수치와 해당 여부(True · False · None=판정 불가). `candidate`: 적용 순서로 고른 후보 줄
+  `{line, notes}`(line None = 없음). 최종 판단은 관리자.
 """
 
 from __future__ import annotations
@@ -42,6 +44,11 @@ GAIN_MEDIAN_MAX = 0.01   # 첫째 줄: 탐색 이득 중앙값이 이보다 작�
 SPEARMAN_MIN = 0.95      # 첫째 줄: Spearman 이 값 이상
 TOP_K = 5                # 첫째 줄: 상위 K개 유지
 REF_GAP_MIN = 0.01       # 넷째 줄: 참조 최선이 좌표 하강 최선보다 이 비율 이상 좋음
+EXCEPTION_GAIN_MIN = 0.003  # 유의 예외: 예외 이득이 이 값 이상(또는 미측정)
+MODE_RATIO_MIN = 0.8     # 둘째 줄: 실질 최빈 비율 하한 (셋째 줄은 미만)
+EXPLAINED_MIN = 0.6      # 둘째 줄: 유의 예외 중 동료 조건 후보가 있는 비율 하한 (셋째 줄은 미만)
+REVERSALS_MAX = 3        # 셋째 줄: layer↔search_from_layer 상위권 역전이 이 건수 이상
+CRITERIA_ORDER = (4, 1, 2, 3)  # README §판단 기준 줄 적용 순서 (2·3은 같은 단계)
 THRESHOLDS = (0.99, 0.999)  # 잴 것 4: 탐색 최선의 이 비율에 닿는 step
 
 NO_CHANGE = "(바꾸지 않음)"
@@ -82,7 +89,16 @@ DEFINITIONS = f"""\
   그 조합 전 기록에서 니케별 빼앗긴 횟수 합 · 빼앗긴 기록 수. 모르는 키는 따로 센다.
 - **참조 차이**: `reference` 최선 / `search_from_layer` 최선 − 1.
 - **실제 시뮬 수**: `cached: false`인 줄 수(조건별). 오류 줄도 센다.
-- **판단 기준 표시**: 각 줄의 수치와 해당 여부. 수치 기준이 없는 줄(둘째 · 셋째)은 관련 수치만 보이고 「관리자 판단」으로 둔다.
+- **유의 예외**: 예외 이득이 `exception_gain_min` 이상이거나 미측정인 예외. 그보다 작은 예외는 사실상 최빈 선택으로 친다.
+  **실질 최빈 비율** = 1 − 유의 예외 수 / 전체 (니케, 축, 조합) 수(니케 단위 축 합산).
+  **설명 비율** = 동료 조건 후보가 있는 유의 예외 / 유의 예외(유의 예외가 없으면 1). 이때 후보는 같은 예외 선택의 유의 예외
+  조합 모두에 있고, 최빈 조합과 유의하지 않은 예외 조합에는 없는 동료다. 후보가 유의 예외 조합 하나에서만 나온 것은
+  **약한 근거**로 따로 세고, 설명 비율에는 넣되 약한 근거를 뺀 비율도 보인다.
+- **조건이 일부 조합에만 있을 때**: `search_from_auto` · `reference`가 없는 조합은 그 조건을 쓰는 지표(이득 vs auto는 아님 —
+  `auto`는 전 조합)에서 빠진다. 참조 차이 · 넷째 줄은 참조가 있는 조합만, 수렴의 「조합 탐색 최선」은 그 조합에 있는 탐색 조건만으로 정한다.
+- **판단 기준 표시**: README §판단 기준(사전 등록 2026-10-29)의 각 줄 수치와 해당 여부(판정 불가 = 필요한 수치가 없음).
+  줄 적용 순서 4 → 1 → 2·3으로 **후보 줄**을 고른다 — 4줄 해당이면 4, 아니면 1줄 해당이면 1(2줄도 맞으면 메모),
+  아니면 2 · 3 중 하나만 해당이면 그 줄, 둘 다거나 아무것도 아니면 없음. 후보는 기계적 표시이고 최종 판단은 관리자.
 """
 
 
@@ -175,6 +191,8 @@ def _top(values: Mapping[str, float], k: int) -> list[str]:
 def summarize(records: Sequence[Record], compositions: Sequence[Composition], *,
               gain_median_max: float = GAIN_MEDIAN_MAX, spearman_min: float = SPEARMAN_MIN,
               top_k: int = TOP_K, ref_gap_min: float = REF_GAP_MIN,
+              exception_gain_min: float = EXCEPTION_GAIN_MIN, mode_ratio_min: float = MODE_RATIO_MIN,
+              explained_min: float = EXPLAINED_MIN, reversals_max: int = REVERSALS_MAX,
               thresholds: Sequence[float] = THRESHOLDS) -> dict[str, Any]:
     """잴 것 1~5의 수치를 dict로. 키는 모듈 docstring, 정의는 DEFINITIONS."""
     comps_by_id = {c["id"]: c for c in compositions}
@@ -229,17 +247,20 @@ def summarize(records: Sequence[Record], compositions: Sequence[Composition], *,
              "vs_auto": describe(c["gain_vs_auto"] for c in comps_table)}
 
     rank = {"top_k": top_k, "pairs": _rank_pairs(comp_ids, dmg, top_k)}
-    uniqueness = _uniqueness(comp_ids, by_comp, best, comps_by_id)
+    uniqueness = _uniqueness(comp_ids, by_comp, best, comps_by_id, exception_gain_min)
     convergence = _convergence(comp_ids, by_comp, thresholds)
     camera = _camera(comp_ids, by_comp, best)
     ref_rows = [{"comp_id": c["comp_id"], "ref_gap": c["ref_gap"]} for c in comps_table if c["ref_gap"] is not None]
     reference = {"rows": ref_rows, "summary": describe(r["ref_gap"] for r in ref_rows)}
 
     params = {"gain_median_max": gain_median_max, "spearman_min": spearman_min, "top_k": top_k,
-              "ref_gap_min": ref_gap_min, "thresholds": list(thresholds)}
+              "ref_gap_min": ref_gap_min, "exception_gain_min": exception_gain_min,
+              "mode_ratio_min": mode_ratio_min, "explained_min": explained_min, "reversals_max": reversals_max,
+              "thresholds": list(thresholds)}
     summary = {"params": params, "data": data, "comps": comps_table, "gains": gains, "rank": rank,
                "uniqueness": uniqueness, "convergence": convergence, "camera": camera, "reference": reference}
     summary["criteria"] = _criteria(summary)
+    summary["candidate"] = _candidate(summary["criteria"])
     return summary
 
 
@@ -270,7 +291,7 @@ def _rank_pairs(comp_ids, dmg, top_k) -> list[dict[str, Any]]:
     return out
 
 
-def _uniqueness(comp_ids, by_comp, best, comps_by_id) -> dict[str, Any]:
+def _uniqueness(comp_ids, by_comp, best, comps_by_id, exception_gain_min: float = EXCEPTION_GAIN_MIN) -> dict[str, Any]:
     # 조합마다 메뉴에 있던 (니케, 축) — 그 조합 기록에서 한 번이라도 시도된 label로 안다
     offered: dict[tuple[str, str], list[str]] = defaultdict(list)
     choices: dict[tuple[str, str], dict[str, str]] = defaultdict(dict)
@@ -307,6 +328,7 @@ def _uniqueness(comp_ids, by_comp, best, comps_by_id) -> dict[str, Any]:
 
     items = []
     total = mode_total = exc_total = exc_measured = exc_explained = 0
+    sig_total = sig_explained = sig_weak = 0
     for key in sorted(choices):
         nikke, axis = key
         ch = choices[key]
@@ -326,13 +348,14 @@ def _uniqueness(comp_ids, by_comp, best, comps_by_id) -> dict[str, Any]:
             alt = lookup.get((cid, "layer", tuple(sorted(cur))))
             gain = _ratio(b["total_damage"], alt) if alt is not None else None
             exceptions.append({"comp_id": cid, "choice": ch[cid], "damage": b["total_damage"],
-                               "mode_damage": alt, "gain": gain, "measured": alt is not None})
+                               "mode_damage": alt, "gain": gain, "measured": alt is not None,
+                               "significant": alt is None or gain >= exception_gain_min})
 
-        def peers(cids: Sequence[str]) -> list[str] | None:
-            if not cids or any(c not in comps_by_id for c in list(cids) + mode_comps):
+        def peers(cids: Sequence[str], against: Sequence[str] = tuple(mode_comps)) -> list[str] | None:
+            if not cids or any(c not in comps_by_id for c in list(cids) + list(against)):
                 return None
             common_set = set.intersection(*(set(comps_by_id[c]["squad"]) - {nikke} for c in cids))
-            in_mode = set().union(*(set(comps_by_id[c]["squad"]) for c in mode_comps)) if mode_comps else set()
+            in_mode = set().union(*(set(comps_by_id[c]["squad"]) for c in against)) if against else set()
             return sorted(common_set - in_mode)
 
         by_label = {}
@@ -342,12 +365,29 @@ def _uniqueness(comp_ids, by_comp, best, comps_by_id) -> dict[str, Any]:
         for e in exceptions:
             pc = by_label[e["choice"]]["peer_candidates"]
             e["peer_candidates"] = pc
+        # 유의 예외만으로 다시: 유의하지 않은 예외 조합은 사실상 최빈 선택으로 치고 「최빈 쪽」에 넣는다
+        eff_mode = sorted(mode_comps + [e["comp_id"] for e in exceptions if not e["significant"]])
+        for e in exceptions:
+            e["sig_peer_candidates"] = None
+            e["sig_group_size"] = 0
+        for lab in sorted({e["choice"] for e in exceptions if e["significant"]}):
+            grp = [e for e in exceptions if e["significant"] and e["choice"] == lab]
+            pc = peers([e["comp_id"] for e in grp], eff_mode)
+            for e in grp:
+                e["sig_peer_candidates"] = pc
+                e["sig_group_size"] = len(grp)
+        for e in exceptions:
+            e["explained"] = bool(e["significant"] and e["sig_peer_candidates"])
+            e["weak"] = e["explained"] and e["sig_group_size"] == 1
         n = len(ch)
         total += n
         mode_total += cnt[mode]
         exc_total += len(exceptions)
         exc_measured += sum(1 for e in exceptions if e["measured"])
         exc_explained += sum(1 for e in exceptions if e["peer_candidates"])
+        sig_total += sum(1 for e in exceptions if e["significant"])
+        sig_explained += sum(1 for e in exceptions if e["explained"])
+        sig_weak += sum(1 for e in exceptions if e["weak"])
         items.append({"nikke": nikke, "axis": axis, "n": n, "mode": mode, "mode_count": cnt[mode],
                       "mode_share": cnt[mode] / n, "mode_tie": tie, "counts": dict(sorted(cnt.items())),
                       "choices": dict(sorted(ch.items())), "exceptions": exceptions,
@@ -357,7 +397,16 @@ def _uniqueness(comp_ids, by_comp, best, comps_by_id) -> dict[str, Any]:
               "observations": total, "mode_share": (mode_total / total) if total else None,
               "exceptions": exc_total, "exceptions_measured": exc_measured,
               "exceptions_with_peer_candidate": exc_explained,
-              "exception_gain": describe(e["gain"] for it in items for e in it["exceptions"])}
+              "exception_gain": describe(e["gain"] for it in items for e in it["exceptions"]),
+              "exception_gain_min": exception_gain_min,
+              "significant": sig_total,
+              "significant_unmeasured": sum(1 for it in items for e in it["exceptions"] if not e["measured"]),
+              "effective_mode_share": (1 - sig_total / total) if total else None,
+              "significant_explained": sig_explained, "significant_weak": sig_weak,
+              # 유의 예외가 없으면 설명할 예외가 없다 — 1.0으로 둔다
+              "explained_share": (sig_explained / sig_total) if sig_total else (1.0 if total else None),
+              "explained_share_strong": ((sig_explained - sig_weak) / sig_total) if sig_total
+              else (1.0 if total else None)}
     return {"items": items, "pooled": pooled, "squad_choices": squad_choices}
 
 
@@ -444,34 +493,70 @@ def _camera(comp_ids, by_comp, best) -> dict[str, Any]:
             "comps_with_preemption_any": sum(1 for r in rows if r["all_preempted"])}
 
 
+def _all(parts: Sequence[bool | None]) -> bool | None:
+    return False if False in parts else (None if None in parts else True)
+
+
+def _any(parts: Sequence[bool | None]) -> bool | None:
+    return True if True in parts else (None if None in parts else False)
+
+
 def _criteria(s: Mapping[str, Any]) -> list[dict[str, Any]]:
     p = s["params"]
     med = s["gains"]["vs_layer"]["median"]
     pair = next((x for x in s["rank"]["pairs"] if (x["a"], x["b"]) == ("layer", "search_from_layer")), None)
     rho = pair["spearman"] if pair else None
     top_same = pair["top_same"] if pair else None
-    parts = [None if med is None else med < p["gain_median_max"],
-             None if rho is None else rho >= p["spearman_min"],
-             top_same]
-    line1 = False if False in parts else (None if None in parts else True)
+    line1 = _all([None if med is None else med < p["gain_median_max"],
+                  None if rho is None else rho >= p["spearman_min"], top_same])
     u = s["uniqueness"]["pooled"]
-    revs = pair["reversal_count"] if pair else None
+    mr, ex = u["effective_mode_share"], u["explained_share"]
+    revs = pair["reversal_count"] if pair and pair["n"] else None
+    line2 = _all([None if mr is None else mr >= p["mode_ratio_min"],
+                  None if ex is None else ex >= p["explained_min"]])
+    line3 = _any([_all([None if mr is None else mr < p["mode_ratio_min"],
+                        None if ex is None else ex < p["explained_min"]]),
+                  None if revs is None else revs >= p["reversals_max"]])
     ref = s["reference"]["summary"]
     line4 = None if ref["n"] == 0 else ref["max"] >= p["ref_gap_min"]
     return [
         {"line": 1, "text": f"탐색 이득 중앙 {p['gain_median_max']:.0%} 미만 · Spearman {p['spearman_min']} 이상 · "
-                            f"상위 {p['top_k']}개 유지 (layer ↔ search_from_layer)",
+                            f"상위 {p['top_k']}개 같은 집합 (layer ↔ search_from_layer)",
          "values": {"gain_median": med, "spearman": rho, "top_same": top_same}, "met": line1},
-        {"line": 2, "text": "니케 고유 선택이 대부분이고 예외를 동료 조건으로 설명할 수 있음 (수치 기준 없음 — 관리자 판단)",
-         "values": {"mode_share": u["mode_share"], "exceptions": u["exceptions"],
-                    "exceptions_with_peer_candidate": u["exceptions_with_peer_candidate"]}, "met": None},
-        {"line": 3, "text": "예외가 잦고 동료 조건으로 설명되지 않음, 또는 순위 역전이 잦음 (수치 기준 없음 — 관리자 판단)",
-         "values": {"exceptions": u["exceptions"],
-                    "exceptions_without_peer_candidate": u["exceptions"] - u["exceptions_with_peer_candidate"],
-                    "top_reversals_layer_vs_search": revs}, "met": None},
-        {"line": 4, "text": f"참조 탐색이 좌표 하강보다 {p['ref_gap_min']:.0%} 이상 좋음 (조합 하나라도)",
+        {"line": 2, "text": f"실질 최빈 비율 {p['mode_ratio_min']} 이상 · 유의 예외(이득 ≥ {p['exception_gain_min']:.1%} 또는 "
+                            f"미측정)의 {p['explained_min']:.0%} 이상에 동료 조건 후보",
+         "values": {"effective_mode_share": mr, "explained_share": ex,
+                    "explained_share_strong": u["explained_share_strong"], "significant": u["significant"],
+                    "significant_explained": u["significant_explained"], "significant_weak": u["significant_weak"]},
+         "met": line2},
+        {"line": 3, "text": f"(실질 최빈 비율 {p['mode_ratio_min']} 미만 · 설명 비율 {p['explained_min']:.0%} 미만) 또는 "
+                            f"layer ↔ search_from_layer 상위권 역전 {p['reversals_max']}건 이상",
+         "values": {"effective_mode_share": mr, "explained_share": ex, "top_reversals_layer_vs_search": revs},
+         "met": line3},
+        {"line": 4, "text": f"참조 조합 중 하나라도 reference / search_from_layer − 1 ≥ {p['ref_gap_min']:.0%}",
          "values": {"ref_gap_max": ref["max"], "ref_gap_median": ref["median"], "n": ref["n"]}, "met": line4},
     ]
+
+
+def _candidate(criteria: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    """README 줄 적용 순서(4 → 1 → 2·3)로 고른 후보 줄. 최종 판단은 관리자."""
+    met = {c["line"]: c["met"] for c in criteria}
+    notes = [f"{n}줄 판정 불가(수치 없음)" for n in CRITERIA_ORDER if met[n] is None]
+    if met[4]:
+        return {"line": 4, "notes": notes + ["4줄 해당 — 다른 줄 판단은 보류하고 탐색법을 고친다"]}
+    if met[1]:
+        if met[2]:
+            notes.append("2줄도 해당 — 더 단순한 1줄을 고르고 2줄 수치는 다음 회차 참고")
+        return {"line": 1, "notes": notes}
+    if met[2] and not met[3]:
+        return {"line": 2, "notes": notes}
+    if met[3] and not met[2]:
+        return {"line": 3, "notes": notes}
+    if met[2] and met[3]:
+        notes.append("2줄과 3줄(역전 조건)이 함께 해당 — 관리자 판단")
+    else:
+        notes.append("어느 줄에도 딱 맞지 않음 — 관리자 판단")
+    return {"line": None, "notes": notes}
 
 
 # ---------------------------------------------------------------- 출력
@@ -491,7 +576,7 @@ def _num(x: Any) -> str:
 
 
 def _met(m: bool | None) -> str:
-    return {True: "해당", False: "해당 아님", None: "판정 불가 / 관리자 판단"}[m]
+    return {True: "해당", False: "해당 아님", None: "판정 불가"}[m]
 
 
 def _desc_row(name: str, d: Mapping[str, Any], fmt=_pct) -> str:
@@ -522,12 +607,18 @@ def render(summary: dict[str, Any]) -> str:
     L.append("")
 
     L += ["## 판단 기준 표시", "", f"수치는 인자(`--gain-median-max {p['gain_median_max']}` · `--spearman-min {p['spearman_min']}` · "
-          f"`--top-k {p['top_k']}` · `--ref-gap-min {p['ref_gap_min']}`). 최종 판단은 관리자.", "",
+          f"`--top-k {p['top_k']}` · `--ref-gap-min {p['ref_gap_min']}` · `--exception-gain-min {p['exception_gain_min']}` · "
+          f"`--mode-ratio-min {p['mode_ratio_min']}` · `--explained-min {p['explained_min']}` · "
+          f"`--reversals-max {p['reversals_max']}`). 기본값은 README §판단 기준(사전 등록 2026-10-29).", "",
           "| 줄 | 기준 | 수치 | 해당 여부 |", "|---|---|---|---|"]
     for c in s["criteria"]:
         vals = " · ".join(f"{k} {_num(v) if not isinstance(v, bool) else v}" for k, v in c["values"].items())
         L.append(f"| {c['line']} | {_esc(c['text'])} | {_esc(vals)} | {_met(c['met'])} |")
-    L.append("")
+    cand = s["candidate"]
+    L += ["", f"**후보 줄**(적용 순서 {' → '.join('2·3' if n == 2 else str(n) for n in CRITERIA_ORDER if n != 3)}): "
+          + (f"{cand['line']}줄" if cand["line"] else "없음")
+          + (" — " + "; ".join(cand["notes"]) if cand["notes"] else "")
+          + ". 기계적으로 고른 후보일 뿐이고 최종 판단은 관리자가 README 「결과」에 쓴다.", ""]
 
     L += ["## 1. 탐색 이득", "", "| 비교 | n | 최소 | 1사분위 | 중앙 | 3사분위 | 최대 |", "|---|---|---|---|---|---|---|",
           _desc_row("search_from_layer / layer − 1", s["gains"]["vs_layer"]),
@@ -567,7 +658,12 @@ def render(summary: dict[str, Any]) -> str:
           f"- (니케, 축) {pu['keys']}개 (조합 3개 이상: {pu['keys_n3']}) · 관측 {pu['observations']} · "
           f"최빈 비율(전체) {_num(pu['mode_share'])}",
           f"- 예외 {pu['exceptions']} (이득 측정 {pu['exceptions_measured']} · 동료 조건 후보 있음 "
-          f"{pu['exceptions_with_peer_candidate']})", "",
+          f"{pu['exceptions_with_peer_candidate']})",
+          f"- 유의 예외(이득 ≥ {pu['exception_gain_min']:.1%} 또는 미측정) {pu['significant']} (미측정 "
+          f"{pu['significant_unmeasured']}) · 실질 최빈 비율 {_num(pu['effective_mode_share'])}",
+          f"- 유의 예외 중 동료 조건 후보 있음 {pu['significant_explained']} (약한 근거 = 예외 조합 하나뿐 "
+          f"{pu['significant_weak']}) · 설명 비율 {_num(pu['explained_share'])} · 약한 근거 제외 "
+          f"{_num(pu['explained_share_strong'])}", "",
           "| 예외 이득 | n | 최소 | 1사분위 | 중앙 | 3사분위 | 최대 |", "|---|---|---|---|---|---|---|",
           _desc_row("예외 최선 / 최빈 적용 − 1", pu["exception_gain"]), "",
           "| 니케 | 축 | 조합 수 | 최빈 선택 | 최빈 비율 | 선택 분포 |", "|---|---|---|---|---|---|"]
@@ -579,12 +675,17 @@ def render(summary: dict[str, Any]) -> str:
     for it in u["items"]:
         for e in it["exceptions"]:
             pc = e["peer_candidates"]
+            spc = e["sig_peer_candidates"]
+            sig = ("아니오" if not e["significant"] else
+                   ("예 · " + (_esc(" · ".join(spc)) if spc else "후보 없음") + (" (약한 근거)" if e["weak"] else "")))
             exc_lines.append(f"| {_esc(it['nikke'])} | {it['axis']} | {e['comp_id']} | `{_esc(e['choice'])}` | `{_esc(it['mode'])}` | "
                              f"{_pct(e['gain']) if e['measured'] else '미측정'} | "
-                             f"{'—' if pc is None else (_esc(' · '.join(pc)) if pc else '없음')} |")
+                             f"{'—' if pc is None else (_esc(' · '.join(pc)) if pc else '없음')} | {sig} |")
     if exc_lines:
-        L += ["", "예외:", "", "| 니케 | 축 | 조합 | 예외 선택 | 최빈 선택 | 예외 이득 | 동료 조건 후보 |",
-              "|---|---|---|---|---|---|---|"] + exc_lines
+        L += ["", "예외 (동료 조건 후보: 같은 예외 선택 조합 모두에 있고 최빈 조합엔 없는 동료. 유의 열의 후보는 유의하지 않은 "
+              "예외 조합을 최빈 쪽에 넣고 다시 구한 것):", "",
+              "| 니케 | 축 | 조합 | 예외 선택 | 최빈 선택 | 예외 이득 | 동료 조건 후보 | 유의 · 후보 |",
+              "|---|---|---|---|---|---|---|---|"] + exc_lines
     sq = {k: v for k, v in u["squad_choices"].items() if v}
     if sq:
         L += ["", "스쿼드 단위 선택(카메라 · 택틱):", "", "| 조합 | 선택지 |", "|---|---|"]
@@ -653,11 +754,16 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--spearman-min", type=float, default=SPEARMAN_MIN)
     ap.add_argument("--top-k", type=int, default=TOP_K)
     ap.add_argument("--ref-gap-min", type=float, default=REF_GAP_MIN)
+    ap.add_argument("--exception-gain-min", type=float, default=EXCEPTION_GAIN_MIN)
+    ap.add_argument("--mode-ratio-min", type=float, default=MODE_RATIO_MIN)
+    ap.add_argument("--explained-min", type=float, default=EXPLAINED_MIN)
+    ap.add_argument("--reversals-max", type=int, default=REVERSALS_MAX)
     a = ap.parse_args(argv)
     records = list(read_records(a.records))
     comps = load_compositions(a.compositions) if a.compositions.exists() else []
     s = summarize(records, comps, gain_median_max=a.gain_median_max, spearman_min=a.spearman_min,
-                  top_k=a.top_k, ref_gap_min=a.ref_gap_min)
+                  top_k=a.top_k, ref_gap_min=a.ref_gap_min, exception_gain_min=a.exception_gain_min,
+                  mode_ratio_min=a.mode_ratio_min, explained_min=a.explained_min, reversals_max=a.reversals_max)
     text = render(s)
     if a.out:
         a.out.write_text(text, encoding="utf-8")

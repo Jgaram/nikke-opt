@@ -35,7 +35,16 @@ python experiments/06_control_menu/analyze.py experiments/06_control_menu/run_lo
   그 조합 전 기록에서 니케별 빼앗긴 횟수 합 · 빼앗긴 기록 수. 모르는 키는 따로 센다.
 - **참조 차이**: `reference` 최선 / `search_from_layer` 최선 − 1.
 - **실제 시뮬 수**: `cached: false`인 줄 수(조건별). 오류 줄도 센다.
-- **판단 기준 표시**: 각 줄의 수치와 해당 여부. 수치 기준이 없는 줄(둘째 · 셋째)은 관련 수치만 보이고 「관리자 판단」으로 둔다.
+- **유의 예외**: 예외 이득이 `exception_gain_min` 이상이거나 미측정인 예외. 그보다 작은 예외는 사실상 최빈 선택으로 친다.
+  **실질 최빈 비율** = 1 − 유의 예외 수 / 전체 (니케, 축, 조합) 수(니케 단위 축 합산).
+  **설명 비율** = 동료 조건 후보가 있는 유의 예외 / 유의 예외(유의 예외가 없으면 1). 이때 후보는 같은 예외 선택의 유의 예외
+  조합 모두에 있고, 최빈 조합과 유의하지 않은 예외 조합에는 없는 동료다. 후보가 유의 예외 조합 하나에서만 나온 것은
+  **약한 근거**로 따로 세고, 설명 비율에는 넣되 약한 근거를 뺀 비율도 보인다.
+- **조건이 일부 조합에만 있을 때**: `search_from_auto` · `reference`가 없는 조합은 그 조건을 쓰는 지표(이득 vs auto는 아님 —
+  `auto`는 전 조합)에서 빠진다. 참조 차이 · 넷째 줄은 참조가 있는 조합만, 수렴의 「조합 탐색 최선」은 그 조합에 있는 탐색 조건만으로 정한다.
+- **판단 기준 표시**: README §판단 기준(사전 등록 2026-10-29)의 각 줄 수치와 해당 여부(판정 불가 = 필요한 수치가 없음).
+  줄 적용 순서 4 → 1 → 2·3으로 **후보 줄**을 고른다 — 4줄 해당이면 4, 아니면 1줄 해당이면 1(2줄도 맞으면 메모),
+  아니면 2 · 3 중 하나만 해당이면 그 줄, 둘 다거나 아무것도 아니면 없음. 후보는 기계적 표시이고 최종 판단은 관리자.
 
 ## 기록
 
@@ -45,14 +54,16 @@ python experiments/06_control_menu/analyze.py experiments/06_control_menu/run_lo
 
 ## 판단 기준 표시
 
-수치는 인자(`--gain-median-max 0.01` · `--spearman-min 0.95` · `--top-k 5` · `--ref-gap-min 0.01`). 최종 판단은 관리자.
+수치는 인자(`--gain-median-max 0.01` · `--spearman-min 0.95` · `--top-k 5` · `--ref-gap-min 0.01` · `--exception-gain-min 0.003` · `--mode-ratio-min 0.8` · `--explained-min 0.6` · `--reversals-max 3`). 기본값은 README §판단 기준(사전 등록 2026-10-29).
 
 | 줄 | 기준 | 수치 | 해당 여부 |
 |---|---|---|---|
-| 1 | 탐색 이득 중앙 1% 미만 · Spearman 0.95 이상 · 상위 5개 유지 (layer ↔ search_from_layer) | gain_median — · spearman — · top_same — | 판정 불가 / 관리자 판단 |
-| 2 | 니케 고유 선택이 대부분이고 예외를 동료 조건으로 설명할 수 있음 (수치 기준 없음 — 관리자 판단) | mode_share — · exceptions 0 · exceptions_with_peer_candidate 0 | 판정 불가 / 관리자 판단 |
-| 3 | 예외가 잦고 동료 조건으로 설명되지 않음, 또는 순위 역전이 잦음 (수치 기준 없음 — 관리자 판단) | exceptions 0 · exceptions_without_peer_candidate 0 · top_reversals_layer_vs_search 0 | 판정 불가 / 관리자 판단 |
-| 4 | 참조 탐색이 좌표 하강보다 1% 이상 좋음 (조합 하나라도) | ref_gap_max — · ref_gap_median — · n 0 | 판정 불가 / 관리자 판단 |
+| 1 | 탐색 이득 중앙 1% 미만 · Spearman 0.95 이상 · 상위 5개 같은 집합 (layer ↔ search_from_layer) | gain_median — · spearman — · top_same — | 판정 불가 |
+| 2 | 실질 최빈 비율 0.8 이상 · 유의 예외(이득 ≥ 0.3% 또는 미측정)의 60% 이상에 동료 조건 후보 | effective_mode_share — · explained_share — · explained_share_strong — · significant 0 · significant_explained 0 · significant_weak 0 | 판정 불가 |
+| 3 | (실질 최빈 비율 0.8 미만 · 설명 비율 60% 미만) 또는 layer ↔ search_from_layer 상위권 역전 3건 이상 | effective_mode_share — · explained_share — · top_reversals_layer_vs_search — | 판정 불가 |
+| 4 | 참조 조합 중 하나라도 reference / search_from_layer − 1 ≥ 1% | ref_gap_max — · ref_gap_median — · n 0 | 판정 불가 |
+
+**후보 줄**(적용 순서 4 → 1 → 2·3): 없음 — 4줄 판정 불가(수치 없음); 1줄 판정 불가(수치 없음); 2줄 판정 불가(수치 없음); 3줄 판정 불가(수치 없음); 어느 줄에도 딱 맞지 않음 — 관리자 판단. 기계적으로 고른 후보일 뿐이고 최종 판단은 관리자가 README 「결과」에 쓴다.
 
 ## 1. 탐색 이득
 
@@ -84,6 +95,8 @@ python experiments/06_control_menu/analyze.py experiments/06_control_menu/run_lo
 
 - (니케, 축) 0개 (조합 3개 이상: 0) · 관측 0 · 최빈 비율(전체) —
 - 예외 0 (이득 측정 0 · 동료 조건 후보 있음 0)
+- 유의 예외(이득 ≥ 0.3% 또는 미측정) 0 (미측정 0) · 실질 최빈 비율 —
+- 유의 예외 중 동료 조건 후보 있음 0 (약한 근거 = 예외 조합 하나뿐 0) · 설명 비율 — · 약한 근거 제외 —
 
 | 예외 이득 | n | 최소 | 1사분위 | 중앙 | 3사분위 | 최대 |
 |---|---|---|---|---|---|---|
