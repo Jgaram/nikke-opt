@@ -3,6 +3,7 @@
 import itertools
 import json
 import math
+import os
 import random
 import sys
 import tempfile
@@ -10,6 +11,10 @@ import unittest
 from concurrent.futures import Future
 from pathlib import Path
 from types import SimpleNamespace
+
+# 작은 행렬이라 BLAS 스레드는 이득 없이 다른 프로세스와 다툰다(부하 중 수 분 → 10초). numpy를 불러오기 전에 정한다
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
 
 EXP7 = Path(__file__).resolve().parent.parent / "experiments" / "07_control_search"
 if str(EXP7) not in sys.path:
