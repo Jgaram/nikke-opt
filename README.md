@@ -56,6 +56,8 @@ python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIK
 ```
 
 Rust 실행 파일은 `nikke-calc-rs`에서 `cargo build --release -p nikke-cli`로 만든다(`target/release/nikke-sim`, 게임 데이터 내장).
+클라우드 세션에서는 `bash tools/setup_evaluators.sh [--python]`이 빌드(+ Python 원본 `23164e4` 준비)를 하고
+경로를 `.cache/evaluators.env`에 쓴다 — 평가기를 쓰는 명령 앞에 `source .cache/evaluators.env &&`를 붙인다.
 
 - **기대값 모드가 기본** — `sim.expected: true`, 1회로 결정론적이다. 평가는 언제나 180초(`sim.duration`은 거절).
 - **버스트 게이지는 실누적이 기본** — `sim.burst_gauge_mode: "accumulate"`(2026-10-29부터). 평가기 기본 `fixed`는
