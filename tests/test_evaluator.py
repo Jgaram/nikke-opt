@@ -6,8 +6,10 @@
 
 from __future__ import annotations
 
+import gc
 import json
 import os
+import sqlite3
 import stat
 import subprocess
 import sys
@@ -340,6 +342,55 @@ class FakeSimTest(SharedContract, unittest.TestCase):
         res = [f.result(timeout=60) for f in futs]
         self.assertEqual([r.raw["line"] for r in res], list(range(2, 3002)))  # 보낸 순서대로 짝지어졌다
         self.assertEqual(ev.sim_count, 3000)
+
+    def test_cache_write_failure_still_returns_results(self):
+        ev = self.evaluator()
+        def boom(items):
+            raise sqlite3.OperationalError("database is locked")
+        ev.cache.put_many = boom
+        with self.assertWarns(RuntimeWarning):
+            res = [f.result(timeout=10) for f in ev.submit([EvalRequest(SQUAD), EvalRequest(SQUAD[::-1])])]
+        self.assertTrue(all(r.total_damage for r in res))
+        self.assertEqual(ev.pending, 0)
+
+    def test_discarded_evaluator_is_collected(self):
+        ev = self.evaluator(cache=None)
+        ev.evaluate([EvalRequest(SQUAD)])
+        proc = ev._pipe.proc
+        del ev
+        gc.collect()
+        proc.wait(timeout=5)  # 버린 평가기의 프로세스는 끝난다
+
+    def test_exception_in_with_does_not_wait(self):
+        t = time.perf_counter()
+        with self.assertRaises(KeyError):
+            with self.evaluator(cache=None) as ev:
+                futs = ev.submit([EvalRequest(("느린 니케", str(i)) + SQUAD[2:]) for i in range(6)])
+                raise KeyError
+        self.assertLess(time.perf_counter() - t, 2)
+        self.assertTrue(all(f.done() for f in futs))
+
+    def test_submit_from_callback(self):
+        ev = self.evaluator(cache=None)
+        chained: list = []
+        first = ev.submit([EvalRequest(SQUAD)])[0]
+        first.add_done_callback(lambda f: chained.extend(ev.submit([EvalRequest(SQUAD[::-1])])))
+        first.result(timeout=10)
+        self.assertIsNotNone(chained[0].result(timeout=10).total_damage)
+        ev.close()
+
+    def test_seeded_call_does_not_share_in_flight_results(self):
+        ev = self.evaluator(cache=None)
+        slow = ev.submit([EvalRequest(("느린 니케",) + SQUAD[1:])])
+        ev.evaluate([EvalRequest(("느린 니케",) + SQUAD[1:]), EvalRequest(SQUAD, options={"sim": {"seed": 1}})])
+        slow[0].result(timeout=10)
+        self.assertEqual(ev.sim_count, 3)
+
+    def test_cache_is_flushed_on_close(self):
+        path = self.root / "flush.sqlite"
+        with self.evaluator(cache=Cache(path)) as ev:
+            ev.evaluate([EvalRequest(SQUAD)])
+        self.assertTrue(self.evaluator(cache=Cache(path)).evaluate([EvalRequest(SQUAD)])[0].cached)
 
     def test_dirty_or_unknown_build_disables_cache(self):
         for change in ({"dirty": True}, {"commit": None, "dirty": None}):
