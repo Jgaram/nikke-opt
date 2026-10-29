@@ -1,0 +1,368 @@
+[
+ {
+  "id": "v01",
+  "squad": [
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "아니스 : 스타",
+   "미하라 : 본딩 체인",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "ranker",
+   "layer_target",
+   "layer:미하라 : 본딩 체인",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid"
+  ],
+  "source": "ranker:2 (덱 270) [후보 k003]",
+  "default_damage": 4476525939
+ },
+ {
+  "id": "v02",
+  "squad": [
+   "아니스 : 스타",
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "디젤 : 윈터 스위츠",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "ranker:61 (덱 5) [후보 k012]",
+  "default_damage": 4432814445
+ },
+ {
+  "id": "v03",
+  "squad": [
+   "아니스 : 스타",
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "디젤 : 윈터 스위츠",
+   "앨리스"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:앨리스",
+   "charge_heavy",
+   "charge_n:3",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:61 프리바티→앨리스 [후보 k246]",
+  "default_damage": 3532099116
+ },
+ {
+  "id": "v04",
+  "squad": [
+   "리타",
+   "그레이브",
+   "신데렐라 : 크리스탈 웨이브",
+   "레이",
+   "모더니아"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "ranker",
+   "no_layer_target",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "ranker:20 (덱 27) [후보 k007]",
+  "default_damage": 2311487963
+ },
+ {
+  "id": "v05",
+  "squad": [
+   "리타",
+   "그레이브",
+   "앨리스",
+   "홍련 : 흑영",
+   "모더니아"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "ranker",
+   "layer_target",
+   "layer:앨리스",
+   "layer:홍련 : 흑영",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "ranker:172 (덱 1) [후보 k050]",
+  "default_damage": 2041498854
+ },
+ {
+  "id": "v06",
+  "squad": [
+   "아니스 : 스타",
+   "라피 : 레드 후드",
+   "디젤 : 윈터 스위츠",
+   "브리드 : 사일런트 트랙",
+   "프리카"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:프리카",
+   "charge_heavy",
+   "charge_n:3",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:28 마스트 : 로망틱 메이드→프리카 [후보 k323]",
+  "default_damage": 3653887327
+ },
+ {
+  "id": "v07",
+  "squad": [
+   "나유타",
+   "리버렐리오",
+   "플로라",
+   "디젤 : 윈터 스위츠",
+   "목단"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "ranker:199 (덱 1) [후보 k059]",
+  "default_damage": 3072844235
+ },
+ {
+  "id": "v08",
+  "squad": [
+   "츠바이",
+   "라피 : 레드 후드",
+   "디젤 : 윈터 스위츠",
+   "브리드 : 사일런트 트랙",
+   "마스트 : 로망틱 메이드"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:츠바이",
+   "layer:마스트 : 로망틱 메이드",
+   "charge_light",
+   "charge_n:1",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:28 아니스 : 스타→츠바이 [후보 k282]",
+  "default_damage": 2664825847
+ },
+ {
+  "id": "v09",
+  "squad": [
+   "토브",
+   "라피 : 레드 후드",
+   "디젤 : 윈터 스위츠",
+   "브리드 : 사일런트 트랙",
+   "마스트 : 로망틱 메이드"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:토브",
+   "layer:마스트 : 로망틱 메이드",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:28 아니스 : 스타→토브 [후보 k308]",
+  "default_damage": 2580598885
+ },
+ {
+  "id": "v10",
+  "squad": [
+   "토브",
+   "아르카나 : 포츈 메이트",
+   "도로시 : 세렌디피티",
+   "드레이크",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "layer_target",
+   "layer:토브",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "ranker:0 (덱 296) [후보 k001]",
+  "default_damage": 3649706671
+ },
+ {
+  "id": "v11",
+  "squad": [
+   "토브",
+   "아르카나 : 포츈 메이트",
+   "드레이크",
+   "레이",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "layer_target",
+   "layer:토브",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "ranker:108 (덱 1) [후보 k030]",
+  "default_damage": 2875482407
+ },
+ {
+  "id": "v12",
+  "squad": [
+   "토브",
+   "아르카나 : 포츈 메이트",
+   "도로시 : 세렌디피티",
+   "에이다",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:토브",
+   "layer:에이다",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:0 드레이크→에이다 [후보 k260]",
+  "default_damage": 2545297625
+ },
+ {
+  "id": "v13",
+  "squad": [
+   "미란다",
+   "그레이브",
+   "에이다",
+   "미하라 : 본딩 체인",
+   "D : 킬러 와이프"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:미란다",
+   "layer:에이다",
+   "layer:미하라 : 본딩 체인",
+   "miranda_rule",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:215 레이→에이다 [후보 k259]",
+  "default_damage": 2320949620
+ },
+ {
+  "id": "v14",
+  "squad": [
+   "아니스 : 스타",
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "디젤 : 윈터 스위츠",
+   "레드 후드"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:high",
+   "swap",
+   "no_layer_target",
+   "charge_heavy",
+   "charge_n:3",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:61 프리바티→레드 후드 [후보 k108]",
+  "default_damage": 3293818130
+ },
+ {
+  "id": "v15",
+  "squad": [
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "아니스 : 스타",
+   "미하라 : 본딩 체인",
+   "레드 후드"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:미하라 : 본딩 체인",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:2 프리바티→레드 후드 [후보 k099]",
+  "default_damage": 3089917885
+ },
+ {
+  "id": "v16",
+  "squad": [
+   "리타",
+   "그레이브",
+   "레드 후드",
+   "레이",
+   "모더니아"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:mid",
+   "swap",
+   "no_layer_target",
+   "charge_light",
+   "charge_n:1",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:20 신데렐라 : 크리스탈 웨이브→레드 후드 [후보 k103]",
+  "default_damage": 1712556157
+ }
+]
