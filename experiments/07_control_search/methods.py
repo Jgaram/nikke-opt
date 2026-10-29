@@ -662,8 +662,10 @@ def _is_pair_group(g: str) -> bool:
     return g == "pair" or g.endswith("|same") or g.endswith("|other")
 
 
-def prior_data(points: Mapping[str, Mapping[tuple[str, ...], int]], comps: Mapping[str, Mapping[str, Any]]
-               ) -> dict[str, tuple[Space, list[tuple[int, ...]], np.ndarray]]:
+def prior_data(points: Mapping[str, Mapping[tuple[str, ...], int]], comps: Mapping[str, Mapping[str, Any]],
+               max_points: int | None = None) -> dict[str, tuple[Space, list[tuple[int, ...]], np.ndarray]]:
+    """조합마다 (공간, 선택, y). `max_points`보다 많으면 기본 레이어를 남기고 시드 고정으로 무작위로 줄인다
+    (EM 비용이 점 수의 제곱 · 세제곱으로 는다)."""
     data = {}
     for cid, pts in sorted(points.items()):
         if cid not in comps:
@@ -673,7 +675,11 @@ def prior_data(points: Mapping[str, Mapping[tuple[str, ...], int]], comps: Mappi
         if base is None:
             continue
         sels, ys = [], []
-        for lb, d in pts.items():
+        items = sorted(pts.items())
+        if max_points is not None and len(items) > max_points:
+            rest = [x for x in items if x[0]]
+            items = [((), base)] + random.Random(f"prior|{cid}").sample(rest, max_points - 1)
+        for lb, d in items:
             s = sp.from_labels(lb)
             if s is not None:
                 sels.append(s)
@@ -711,6 +717,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--exclude", default="", help="뺄 개발 조합 id 콤마 목록(교차 적합)")
     p.add_argument("--extra", type=Path, nargs="*", default=[], help="더 넣을 실험 7 실행 폴더(*.jsonl)")
     p.add_argument("--iters", type=int, default=15)
+    p.add_argument("--max-points", type=int, default=1500, help="조합당 점 상한(넘으면 무작위로 줄인다)")
     r = sub.add_parser("run", help="조합 × 기법 실행")
     r.add_argument("--set", choices=("dev", "val"), required=True)
     r.add_argument("--comps", default="all")
@@ -728,7 +735,7 @@ def main(argv: list[str] | None = None) -> int:
         excl = {x for x in args.exclude.split(",") if x}
         paths = [EXP6_RECORDS] + [f for d in args.extra for f in sorted(d.glob("*.jsonl"))]
         pts = load_points(paths, set(comps) - excl)
-        data = prior_data(pts, comps)
+        data = prior_data(pts, comps, args.max_points)
         print(f"조합 {len(data)}개 · 점 {sum(len(v[1]) for v in data.values())}개", file=sys.stderr)
         out = {}
         for kind in ("attr", "flat"):
