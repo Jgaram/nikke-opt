@@ -184,8 +184,11 @@ class SharedContract:
     def test_request_is_v2(self):
         line = EvalRequest(SQUAD, boss="솔로 레이드 S40", options={"sim": {"seed": 7}}).to_line()
         self.assertEqual(line["schema_version"], 2)
-        self.assertEqual(line["sim"], {"expected": True, "seed": 7})  # sim은 기본값 위에 얹힌다
+        # sim은 기본값(기대값 모드 · 게이지 실누적) 위에 얹힌다
+        self.assertEqual(line["sim"], {"expected": True, "burst_gauge_mode": "accumulate", "seed": 7})
         self.assertNotIn("expected", line)
+        fixed = EvalRequest(SQUAD, options={"sim": {"burst_gauge_mode": "fixed"}}).to_line()
+        self.assertEqual(fixed["sim"], {"expected": True, "burst_gauge_mode": "fixed"})  # 옛 조건 재현
         res = self.evaluator(cache=None).evaluate([EvalRequest(SQUAD, options={"chars": {"크라운": {}}})])
         self.assertIsNone(res[0].error)
 

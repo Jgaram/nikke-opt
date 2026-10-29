@@ -47,7 +47,7 @@ sys.path.insert(0, str(HERE.parent.parent))
 sys.path.insert(0, str(EXP2))
 sys.path.insert(0, str(EXP4))
 from nikke_opt.evaluator import EvalRequest, make_evaluator  # noqa: E402
-from run import BOSS, distinct_orders  # noqa: E402
+from run import BOSS, OPTS, distinct_orders  # noqa: E402
 from search import Book, fit, neighbors, pack, pack_moves  # noqa: E402
 
 E8 = 1e8
@@ -152,7 +152,7 @@ def main() -> None:
         names = sorted(owned)
         profile = growth_profile(sc)
         tier = {n: sc["tiers"].get(n, "상") for n in owned}
-        opts = {"profile": profile} if profile else {}
+        opts = {**OPTS, "profile": profile} if profile else dict(OPTS)
         book = Book()
         counts = {"known": 0, "sim_or_cache": 0}
         sims0 = ev.sim_count

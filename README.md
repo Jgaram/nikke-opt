@@ -58,6 +58,9 @@ python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIK
 Rust 실행 파일은 `nikke-calc-rs`에서 `cargo build --release -p nikke-cli`로 만든다(`target/release/nikke-sim`, 게임 데이터 내장).
 
 - **기대값 모드가 기본** — `sim.expected: true`, 1회로 결정론적이다. 평가는 언제나 180초(`sim.duration`은 거절).
+- **버스트 게이지는 실누적이 기본** — `sim.burst_gauge_mode: "accumulate"`(2026-10-29부터). 평가기 기본 `fixed`는
+  사이클을 캐릭터별 표 값으로 고정해 게이지 충전 차이와 버충·카메라 컨트롤을 반영하지 않는다.
+  사전 실험 2~5는 `fixed`였으므로 재현할 때는 `options={"sim": {"burst_gauge_mode": "fixed"}}`를 준다.
 - **요청 칸** — `EvalRequest(squad, boss, options)`의 `options`가 요청의 나머지 칸이다: `sim`(시드 등) · `enemy` · `operation`(카메라 · 택틱 · `auto`)
   · `profile`(육성, 아래) · `chars`(니케별 운용 — `control` dict · `cube` · `favorite_stage`). 2·3단계의 큐브·컨트롤을
   전달할 수 있는 기반이다. 입력 전달 지원과 해당 변수를 탐색·최적화하는 기능은 구분한다.

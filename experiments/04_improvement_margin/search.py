@@ -35,7 +35,7 @@ EXP2 = HERE.parent / "02_score_distribution"
 sys.path.insert(0, str(HERE.parent.parent))
 sys.path.insert(0, str(EXP2))
 from nikke_opt.evaluator import EvalRequest, make_evaluator  # noqa: E402
-from run import BOSS, distinct_orders  # noqa: E402
+from run import BOSS, OPTS, distinct_orders  # noqa: E402
 
 E8 = 1e8
 PARENTS = 40       # 이웃을 만들 상위 구성 수
@@ -165,7 +165,7 @@ def main() -> None:
         evals[0] += len(squads)
         for i in range(0, len(squads), 40):
             part = squads[i:i + 40]
-            for sq, r in zip(part, ev.evaluate([EvalRequest(sq, boss=BOSS) for sq in part])):
+            for sq, r in zip(part, ev.evaluate([EvalRequest(sq, boss=BOSS, options=OPTS) for sq in part])):
                 if r.error is None:
                     book.add(sq, r.total_damage / E8)
                 log.write(json.dumps({"phase": phase, "squad": list(sq), "total_damage": r.total_damage,

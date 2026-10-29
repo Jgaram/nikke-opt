@@ -7,6 +7,9 @@
 
 - **평가는 언제나 180초 전체.** 요청에 `sim.duration`을 적으면 거절한다.
 - **기본은 기대값 모드**(`sim.expected: true`) — 1회로 결정론적이라 캐시할 수 있다.
+- **버스트 게이지 기본은 실누적**(`sim.burst_gauge_mode: "accumulate"`, 2026-10-29 결정) — 평가기 기본 `fixed`는
+  사이클을 표 값으로 고정해 게이지 충전 차이와 버충·카메라 컨트롤을 반영하지 않는다. 사전 실험 2~5(fixed)를
+  재현하려면 `options={"sim": {"burst_gauge_mode": "fixed"}}`를 준다.
 - **계약 판을 맞춘다.** 요청에 `schema_version`을 싣고, 판이 다른 결과는 받지 않는다 — 평가기가 계약을 바꾸면
   조용히 틀리지 않고 바로 끊긴다.
 - **예산 = 실제로 돌린 시뮬 횟수.** 캐시 적중은 세지 않는다.
@@ -41,6 +44,7 @@ DEFAULT_CACHE = REPO_ROOT / ".cache" / "evals.sqlite"
 SCHEMA_VERSION = 2  # nikke-calc 요청·결과 계약의 판 (docs/SIM-JSON.md §버전)
 FORBIDDEN_OPTIONS = frozenset({"squad", "id", "schema_version", "duration"})
 RUST_REPO = "nikke-calc-rs"  # nikke-sim 결과의 evaluator.repo
+DEFAULT_SIM = {"expected": True, "burst_gauge_mode": "accumulate"}  # 요청의 `sim`은 이 위에 얹는다
 VERSION_PROBE = {"schema_version": SCHEMA_VERSION, "squad": ["크라운"], "sim": {"expected": True}}
 
 
@@ -56,14 +60,14 @@ class EvalRequest:
         """`--batch` 입력 한 줄(요청 v2). 캐시 키도 이것으로 만든다.
 
         `options`는 요청의 나머지 칸이다(`sim` · `enemy` · `operation` · `profile` · `chars` …).
-        `sim`은 기본값 `{"expected": true}` 위에 얹는다.
+        `sim`은 기본값 `DEFAULT_SIM`(기대값 모드 · 게이지 실누적) 위에 얹는다.
         """
         sim = self.options.get("sim") or {}
         bad = sorted(FORBIDDEN_OPTIONS & set(self.options)) + (["sim.duration"] if "duration" in sim else [])
         if bad:
             raise ValueError(f"평가 요청에 쓸 수 없는 옵션: {bad} (평가는 언제나 180초 전체)")
         line: dict[str, Any] = {"schema_version": SCHEMA_VERSION, **self.options,
-                                "squad": list(self.squad), "sim": {"expected": True, **sim}}
+                                "squad": list(self.squad), "sim": {**DEFAULT_SIM, **sim}}
         if self.boss is not None:
             line["boss"] = self.boss
         return line

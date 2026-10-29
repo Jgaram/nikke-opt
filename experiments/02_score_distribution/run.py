@@ -26,6 +26,8 @@ sys.path.insert(0, str(HERE.parent.parent))
 from nikke_opt.evaluator import EvalRequest, make_evaluator  # noqa: E402
 
 BOSS = "솔로 레이드 S40"
+# 당시 평가기 기본값(fixed)을 명시한다 — 어댑터 기본은 2026-10-29부터 accumulate. 실험 4·5도 이것을 쓴다
+OPTS = {"sim": {"burst_gauge_mode": "fixed"}}
 SEED = 20261007
 # (B1, B2, B3, A) 인원 → 랭커 빈도 (실험 1 표 4, 시즌 평균). A = 레드 후드(전 단계)
 TEMPLATES = {(1, 1, 3, 0): 0.40, (1, 2, 2, 0): 0.24, (2, 1, 2, 0): 0.22,
@@ -91,7 +93,7 @@ def main() -> None:
     with open(args.out, "w", encoding="utf-8") as f:
         for i in range(0, len(jobs), CHUNK):
             part = jobs[i:i + CHUNK]
-            res = ev.evaluate([EvalRequest(sq, boss=BOSS) for _, sq in part])
+            res = ev.evaluate([EvalRequest(sq, boss=BOSS, options=OPTS) for _, sq in part])
             for (group, sq), r in zip(part, res):
                 row = {"group": group, "squad": list(sq), "key": [list(x) for x in stage_key(sq, burst)],
                        "total_damage": r.total_damage, "error": r.error,
