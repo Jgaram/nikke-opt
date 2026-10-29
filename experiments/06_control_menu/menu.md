@@ -104,9 +104,9 @@ source .cache/evaluators.env && python experiments/06_control_menu/menu.py --che
 | 평가기 | 요청 | 실제 시뮬 | 오류 | 비고 |
 |---|---|---|---|---|
 | Python 원본 `23164e4` (W2 세션) | 11 | 11 | 0 | 위험한 자리만 골랐다: 에이다 `cover:on`(레이어 홀드 끄기) · 에이다 · 앨리스 `combo` · 미하라 `cover:off` · 홍련 `cancel:off` · `click:hold_own_fb` · 마스트 `pattern=3의 배수` · 프리카 `pattern_off` · `버충=에이다` · `camera:리버렐리오` · 라피 `C0.1_dry` |
-| Rust `nikke-sim` (관리자) | 879 | — | — | 미실행 |
+| Rust `nikke-sim` `89d2e64` (관리자, 2026-10-29) | 879 | 879 | 0 | 풀 60명의 선택지 전부 + 니케별 기준 · combo. 30초 |
 
-`exclude`: 없음(Rust 검사 후 갱신).
+`exclude`: 없음 — Rust 검사에서도 조립 오류가 없었다.
 
 ## 풀 60명의 선택지 표
 
