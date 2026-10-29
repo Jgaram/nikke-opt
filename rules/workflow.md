@@ -9,7 +9,8 @@
   세션에 `claude/...`·`ccr-...` 같은 브랜치가 배정되어도 그 브랜치를 원격에 올리지 않는다.
 - 기존 변경과 로컬 커밋을 확인·보존하고 최신 `origin/main`을 합친다. 원격 변경과 충돌하면 해결한 뒤 다시 검증한다.
 - push 전에 저장소 루트에서 `python -m unittest discover -s tests -t .`를 실행한다.
-  `NIKKE_CALC_DIR`이 설정되어 있으면 실제 평가기 테스트도 실행된다. 통과·실패·생략을 구분해 보고한다.
+  `NIKKE_SIM_BIN`(Rust)·`NIKKE_CALC_DIR`(Python)이 설정되어 있으면 해당 실제 평가기 테스트도 실행된다.
+  통과·실패·생략을 구분해 보고한다.
 
 ```bash
 git fetch origin main && git merge origin/main

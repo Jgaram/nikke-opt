@@ -1,20 +1,24 @@
 """평가기 어댑터 테스트.
 
-가짜 nikke-calc(같은 `--batch` 계약을 흉내 내는 작은 스크립트)로 돌려서 진짜 계산기 없이 돈다.
-`NIKKE_CALC_DIR`이 있으면 진짜 nikke-calc로 한 번 더 확인한다.
+가짜 nikke-calc · 가짜 nikke-sim(같은 `--batch` 계약을 흉내 내는 작은 스크립트)으로 돌려서 진짜 계산기 없이 돈다.
+`NIKKE_CALC_DIR` · `NIKKE_SIM_BIN`이 있으면 진짜 평가기로 한 번 더 확인한다.
 """
 
 from __future__ import annotations
 
 import json
 import os
+import stat
 import subprocess
+import sys
 import tempfile
 import textwrap
 import unittest
 from pathlib import Path
+from unittest import mock
 
-from nikke_opt.evaluator import BudgetExceeded, Cache, EvalRequest, NikkeCalcEvaluator
+from nikke_opt.evaluator import (BudgetExceeded, Cache, EvalRequest, NikkeCalcEvaluator, NikkeSimEvaluator,
+                                 make_evaluator)
 
 # 요청 v2 계약을 흉내 낸다 — 모르는 최상위 키(v1의 "expected" 등)는 그 줄만 오류.
 # 총딜 = 이름 길이에 자리마다 다른 가중치(100^자리)를 곱한 합 — 순서가 결과를 바꾸게 한다
@@ -54,21 +58,69 @@ def make_fake_calc(root: Path) -> Path:
     return calc
 
 
+# nikke-sim(Rust 포팅) 흉내 — 같은 계약에 evaluator는 빌드 정보(`.version` 파일)를 싣는다.
+# 받은 작업 스레드 수·프로필 폴더를 결과에 비춰 어댑터가 넘긴 값을 확인한다
+FAKE_RUST = textwrap.dedent('''
+    import json, os, sys
+    sys.stdin.reconfigure(encoding="utf-8")
+    sys.stdout.reconfigure(encoding="utf-8")
+    HERE = os.path.dirname(os.path.abspath(__file__))
+    EV = json.load(open(os.path.join(HERE, ".version")))
+    KEYS = {"schema_version", "id", "squad", "sim", "boss", "enemy", "operation", "profile", "profile_level", "chars"}
+    if sys.argv[1:] != ["--batch"]:
+        sys.exit(2)
+    with open(os.path.join(HERE, ".calls"), "a") as log:
+        log.write("x\\n")
+    for n, raw in enumerate(sys.stdin, 1):
+        if not raw.strip():
+            continue
+        req = json.loads(raw)
+        squad = req["squad"]
+        unknown = sorted(set(req) - KEYS)
+        if unknown or "없는 니케" in squad:
+            out = {"schema_version": 2, "line": n, "error": {"type": "invalid_input", "message": f"없음 {unknown}"}}
+        else:
+            total = sum(len(name) * 100 ** i for i, name in enumerate(squad)) + 7  # 원본과 다른 값
+            out = {"schema_version": 2, "line": n, "total_damage": total,
+                   "expected": req.get("sim", {}).get("expected", False), "boss": req.get("boss"),
+                   "workers": os.environ.get("NIKKE_BATCH_WORKERS"),
+                   "profile_dir": os.environ.get("NIKKE_PROFILE_DIR"), "evaluator": EV}
+        print(json.dumps(out, ensure_ascii=False), flush=True)
+''')
+
+RUST_VERSION = {"repo": "nikke-calc-rs", "commit": "c0ffee" * 6 + "abcd", "dirty": False,
+                "port_of": {"repo": "Jgaram/nikke-calc", "commit": "23164e4a88fe46af609cc99b0de38a98313a5f4d"}}
+
+
+def make_fake_sim(root: Path) -> Path:
+    d = root / "rs"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / ".version").write_text(json.dumps(RUST_VERSION), encoding="utf-8")
+    if os.name == "nt":  # Windows는 shebang을 모른다 — .cmd가 같은 폴더의 스크립트를 부른다
+        (d / "fake_sim.py").write_text(FAKE_RUST, encoding="utf-8")
+        exe = d / "nikke-sim.cmd"
+        exe.write_text(f'@"{sys.executable}" "%~dp0fake_sim.py" %*\r\n', encoding="utf-8")
+        return exe
+    exe = d / "nikke-sim"
+    exe.write_text(f"#!{sys.executable}\n" + FAKE_RUST, encoding="utf-8")
+    exe.chmod(exe.stat().st_mode | stat.S_IXUSR)
+    return exe
+
+
+def sim_calls(exe: Path) -> int:
+    calls = exe.parent / ".calls"
+    return len(calls.read_text().splitlines()) if calls.exists() else 0
+
+
 SQUAD = ("리틀 머메이드", "크라운", "라피 : 레드 후드", "미하라", "헬름")
 
 
-class FakeCalcTest(unittest.TestCase):
-    def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        self.root = Path(self.tmp.name)
-        self.calc = make_fake_calc(self.root)
+class SharedContract:
+    """두 어댑터가 똑같이 지켜야 하는 것. 하위 클래스가 `evaluator()`를 정한다."""
 
-    def tearDown(self):
-        self.tmp.cleanup()
+    root: Path
 
-    def evaluator(self, **kw):
-        kw.setdefault("cache", Cache(self.root / "cache.sqlite"))
-        return NikkeCalcEvaluator(self.calc, **kw)
+    def evaluator(self, **kw): ...
 
     def test_order_preserved_across_jobs(self):
         reqs = [EvalRequest(SQUAD[i:] + SQUAD[:i]) for i in range(5)]
@@ -130,11 +182,6 @@ class FakeCalcTest(unittest.TestCase):
         res = self.evaluator(cache=None).evaluate([EvalRequest(SQUAD, options={"chars": {"크라운": {}}})])
         self.assertIsNone(res[0].error)
 
-    def test_contract_version_mismatch_stops(self):
-        (self.calc / ".schema").write_text("1")  # 추적 안 하는 파일 — 옛 판 결과를 내는 평가기
-        with self.assertRaises(RuntimeError):
-            self.evaluator(cache=None).evaluate([EvalRequest(SQUAD)])
-
     def test_inline_profile_is_part_of_the_key(self):
         ev = self.evaluator()
         mid = {"base": "default", "chars": {"크라운": {"skill_levels": "7/7/7"}}}
@@ -144,6 +191,25 @@ class FakeCalcTest(unittest.TestCase):
         again = ev.evaluate([EvalRequest(SQUAD, options={"profile": dict(mid)})])
         self.assertEqual(ev.sim_count, 2)
         self.assertTrue(again[0].cached)
+
+
+class FakeCalcTest(SharedContract, unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.calc = make_fake_calc(self.root)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def evaluator(self, **kw):
+        kw.setdefault("cache", Cache(self.root / "cache.sqlite"))
+        return NikkeCalcEvaluator(self.calc, **kw)
+
+    def test_contract_version_mismatch_stops(self):
+        (self.calc / ".schema").write_text("1")  # 추적 안 하는 파일 — 옛 판 결과를 내는 평가기
+        with self.assertRaises(RuntimeError):
+            self.evaluator(cache=None).evaluate([EvalRequest(SQUAD)])
 
     def test_named_profile_is_keyed_by_content(self):
         # 이름으로 준 프로필은 파일 내용이 바뀌면 다시 돈다 (profiles/는 추적 밖이라 dirty가 아니다)
@@ -165,10 +231,119 @@ class FakeCalcTest(unittest.TestCase):
         self.assertIsNone(ev.cache)
 
 
-@unittest.skipUnless(os.environ.get("NIKKE_CALC_DIR"), "NIKKE_CALC_DIR 없음 — 진짜 nikke-calc 확인 생략")
-class RealCalcTest(unittest.TestCase):
+class FakeSimTest(SharedContract, unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self.exe = make_fake_sim(self.root)
+        env = mock.patch.dict(os.environ)
+        env.start()
+        self.addCleanup(env.stop)
+        os.environ.pop("NIKKE_PROFILE_DIR", None)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def evaluator(self, **kw):
+        kw.setdefault("cache", Cache(self.root / "cache.sqlite"))
+        return NikkeSimEvaluator(self.exe, **kw)
+
+    def set_version(self, **change):
+        (self.exe.parent / ".version").write_text(json.dumps({**RUST_VERSION, **change}), encoding="utf-8")
+
+    def test_version_comes_from_the_binary_and_probe_is_not_counted(self):
+        ev = self.evaluator()
+        self.assertEqual(ev.version, RUST_VERSION)
+        self.assertEqual(ev.sim_count, 0)
+        self.assertEqual(sim_calls(self.exe), 1)
+
+    def test_one_process_with_batch_workers(self):
+        ev = self.evaluator(jobs=3, cache=None)
+        res = ev.evaluate([EvalRequest(SQUAD[i:] + SQUAD[:i]) for i in range(5)])
+        self.assertEqual(sim_calls(self.exe), 2)  # 버전 확인 1 + 배치 1
+        self.assertEqual({r.raw["workers"] for r in res}, {"3"})
+        one = ev.evaluate([EvalRequest(SQUAD[::-1])])
+        self.assertEqual(one[0].raw["workers"], "1")  # 요청 수보다 많이 띄우지 않는다
+
+    def test_dirty_or_unknown_build_disables_cache(self):
+        for change in ({"dirty": True}, {"commit": None, "dirty": None}):
+            self.set_version(**change)
+            self.assertIsNone(NikkeSimEvaluator(self.exe).cache)
+
+    def test_binary_replaced_mid_run_stops(self):
+        ev = self.evaluator(cache=None)
+        self.set_version(commit="1" * 40)
+        with self.assertRaises(RuntimeError):
+            ev.evaluate([EvalRequest(SQUAD)])
+
+    def test_cache_does_not_mix_with_python(self):
+        cache = Cache(self.root / "cache.sqlite")
+        calc = make_fake_calc(self.root)
+        py = NikkeCalcEvaluator(calc, cache=cache)
+        rs = NikkeSimEvaluator(self.exe, cache=cache)
+        a = py.evaluate([EvalRequest(SQUAD)])[0]
+        b = rs.evaluate([EvalRequest(SQUAD)])[0]
+        self.assertFalse(b.cached)
+        self.assertNotEqual(a.total_damage, b.total_damage)
+        self.assertTrue(rs.evaluate([EvalRequest(SQUAD)])[0].cached)
+
+    def test_named_profile_needs_a_folder_and_is_keyed_by_content(self):
+        req = EvalRequest(SQUAD, options={"profile": "p"})
+        with self.assertRaises(ValueError):
+            self.evaluator().evaluate([req])
+        folder = self.root / "profiles"
+        folder.mkdir()
+        prof = folder / "p.json"
+        prof.write_text('{"chars": {}}', encoding="utf-8")
+        ev = self.evaluator(profile_dir=folder)
+        self.assertEqual(ev.evaluate([req])[0].raw["profile_dir"], str(folder.resolve()))
+        self.assertTrue(ev.evaluate([req])[0].cached)
+        prof.write_text('{"chars": {"크라운": {}}}', encoding="utf-8")
+        self.assertFalse(ev.evaluate([req])[0].cached)
+        self.assertEqual(ev.sim_count, 2)
+
+    def test_relative_boss_file_is_sent_as_absolute(self):
+        ev = self.evaluator(cache=None)
+        res = ev.evaluate([EvalRequest(SQUAD, boss="bosses/x.json"), EvalRequest(SQUAD, boss="솔로 레이드 S40")])
+        self.assertEqual(res[0].raw["boss"], str(Path("bosses/x.json").resolve()))
+        self.assertEqual(res[1].raw["boss"], "솔로 레이드 S40")  # 프리셋 이름은 그대로
+
+
+class MakeEvaluatorTest(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        root = Path(self.tmp.name)
+        self.exe, self.calc = make_fake_sim(root), make_fake_calc(root)
+        env = mock.patch.dict(os.environ)
+        env.start()
+        self.addCleanup(env.stop)
+        for k in ("NIKKE_SIM_BIN", "NIKKE_CALC_DIR", "NIKKE_PROFILE_DIR"):
+            os.environ.pop(k, None)
+
+    def test_auto_prefers_rust(self):
+        os.environ["NIKKE_CALC_DIR"] = str(self.calc)
+        self.assertIsInstance(make_evaluator(cache=None), NikkeCalcEvaluator)
+        os.environ["NIKKE_SIM_BIN"] = str(self.exe)
+        self.assertIsInstance(make_evaluator(cache=None), NikkeSimEvaluator)
+        self.assertIsInstance(make_evaluator("python", cache=None), NikkeCalcEvaluator)
+
+    def test_nothing_configured(self):
+        with self.assertRaises(ValueError):
+            make_evaluator()
+        with self.assertRaises(ValueError):
+            make_evaluator("rust")
+        with self.assertRaises(ValueError):
+            make_evaluator("java")
+
+
+class RealContract:
+    """진짜 평가기로 확인하는 것. 하위 클래스가 `make()`를 정한다."""
+
+    def make(self, jobs: int): ...
+
     def test_order_changes_damage(self):
-        ev = NikkeCalcEvaluator(cache=None, jobs=2)
+        ev = self.make(jobs=2)
         fwd, rev = ev.evaluate([EvalRequest(SQUAD, boss="솔로 레이드 S40"),
                                 EvalRequest(SQUAD[::-1], boss="솔로 레이드 S40")])
         self.assertIsInstance(fwd.total_damage, int)
@@ -177,7 +352,7 @@ class RealCalcTest(unittest.TestCase):
 
     def test_inline_profile(self):
         # 빈 인라인 프로필(base=default)은 기본 스펙과 같고, 낮은 육성은 딜을 낮춘다
-        ev = NikkeCalcEvaluator(cache=None, jobs=3)
+        ev = self.make(jobs=3)
         duo = SQUAD[1:3]
         plain, empty, low = ev.evaluate([
             EvalRequest(duo),
@@ -188,6 +363,23 @@ class RealCalcTest(unittest.TestCase):
         self.assertEqual(empty.total_damage, plain.total_damage)
         self.assertLess(low.total_damage, plain.total_damage)
         self.assertEqual(empty.raw["spec"]["profile"]["source"], "inline")
+
+
+@unittest.skipUnless(os.environ.get("NIKKE_CALC_DIR"), "NIKKE_CALC_DIR 없음 — 진짜 nikke-calc 확인 생략")
+class RealCalcTest(RealContract, unittest.TestCase):
+    def make(self, jobs):
+        return NikkeCalcEvaluator(cache=None, jobs=jobs)
+
+
+@unittest.skipUnless(os.environ.get("NIKKE_SIM_BIN"), "NIKKE_SIM_BIN 없음 — 진짜 nikke-sim 확인 생략")
+class RealSimTest(RealContract, unittest.TestCase):
+    def make(self, jobs):
+        return NikkeSimEvaluator(cache=None, jobs=jobs)
+
+    def test_version_names_the_port(self):
+        v = self.make(jobs=1).version
+        self.assertEqual(v["repo"], "nikke-calc-rs")
+        self.assertEqual(v["port_of"]["repo"], "Jgaram/nikke-calc")
 
 
 if __name__ == "__main__":

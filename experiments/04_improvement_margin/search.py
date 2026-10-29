@@ -15,7 +15,7 @@
 
 「평가 수」는 이번 실행이 새로 요청한 스쿼드 수다(캐시에 있던 것도 센다 — 다시 돌려도 같은 값).
 
-사용: NIKKE_CALC_DIR=... python search.py [--rounds 3 --per-round 150 --pack-rounds 3 --pack-per-round 100]
+사용: NIKKE_SIM_BIN=... (또는 NIKKE_CALC_DIR=...) python search.py [--rounds 3 --per-round 150 --pack-rounds 3 --pack-per-round 100]
       → log.jsonl(이번에 돌린 것), summary.json, 표준출력 마크다운
 """
 
@@ -34,7 +34,7 @@ HERE = Path(__file__).resolve().parent
 EXP2 = HERE.parent / "02_score_distribution"
 sys.path.insert(0, str(HERE.parent.parent))
 sys.path.insert(0, str(EXP2))
-from nikke_opt.evaluator import EvalRequest, NikkeCalcEvaluator  # noqa: E402
+from nikke_opt.evaluator import EvalRequest, make_evaluator  # noqa: E402
 from run import BOSS, distinct_orders  # noqa: E402
 
 E8 = 1e8
@@ -156,7 +156,7 @@ def main() -> None:
     start_n = len(book.seen)
     ranker_comps = {frozenset(s["squad"]) for s in rk["squads"]}
 
-    ev = NikkeCalcEvaluator(jobs=args.jobs)
+    ev = make_evaluator(jobs=args.jobs)
     log = open(HERE / "log.jsonl", "w", encoding="utf-8")
 
     evals = [0]

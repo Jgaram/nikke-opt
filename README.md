@@ -26,10 +26,10 @@
 
 | 평가기 | 상태 | 메모 |
 |---|---|---|
-| [Jgaram/nikke-calc](https://github.com/Jgaram/nikke-calc) (Python) | **1차 대상 · 연결됨** | 원본. 1회 약 4~5초(기대값 모드). 사전 실험(초반 조사) 단계는 이것으로 한다. 어댑터는 아래 「평가기 어댑터」 |
+| [Jgaram/nikke-calc](https://github.com/Jgaram/nikke-calc) (Python) | **연결됨 · 공개 기준** | 원본. 1회 약 4~8초(기대값 모드). 사전 실험 1–5는 이것으로 했다. Rust 실행 파일이 없으면 이것을 쓴다. 어댑터는 아래 「평가기 어댑터」 |
 | [nikke-calculator-xi.vercel.app](https://nikke-calculator-xi.vercel.app/) | 보류 | moris 포크를 다른 사람이 이어받아 서비스 중. 계산은 브라우저 안에서 돈다(엔진 워커 JS 하나 + 공개 데이터 JSON) → 스냅샷을 떠서 Node에서 블랙박스로 돌릴 수는 있어 보인다(미검증). 소스·라이선스 미확인, 서비스 지속도 불확실 — 쓸지는 나중에 정한다 |
 | moris-kr/nikke-calc (TypeScript/Node) | 사라짐 | 2026-10 레포 삭제(개인 사정). 원본에서 갈라진 TS 엔진(`site/src/engine/`), 기대값 모드 1회 약 0.9초였다 |
-| Rust 포팅 (자체) | 보류 | 딜도로 제작자가 속도 개선 방법으로 귀띔. 당분간 하지 않는다. 한다면 **별도 비공개 레포**에서 한다 |
+| Rust 포팅 `nikke-sim` (자체) | **연결됨 · 있으면 우선** | 별도 비공개 레포(`nikke-calc-rs`). 원본 `23164e4` 기준 포팅, 요청 v2를 그대로 받는다. S40 5인 기대값 1회 약 0.2초(원본 7.7초와 같은 총딜, 2026-10-29). 이 레포에는 코드·실행 파일을 두지 않고 실행 파일만 부른다. 디버그용 `DebugChar` 요청은 거절하고, 포팅의 정확도 기준은 「원본과 비슷하면 통과」다 |
 | 딜도로 | 비공개 | Rust 포팅, 더 빠른 것으로 알려짐 |
 
 외부 평가기 코드의 저장·공개 범위는 [작업 규칙](rules/workflow.md#저장소-경계)을 따른다.
@@ -39,24 +39,39 @@
 
 ### 평가기 어댑터 — `nikke_opt/evaluator.py`
 
-nikke-calc를 `python -m runner.sim --batch` 서브프로세스로만 부른다(계약: nikke-calc `docs/SIM-JSON.md`).
+평가기를 `--batch` 서브프로세스로만 부른다(계약: nikke-calc `docs/SIM-JSON.md`). 어댑터는 둘이고 `make_evaluator()`가 고른다.
+
+| 어댑터 | 부르는 것 | 설정 |
+|---|---|---|
+| `NikkeSimEvaluator` (Rust) | `nikke-sim --batch` 프로세스 1개, 안에서 작업 스레드 `jobs`개(`NIKKE_BATCH_WORKERS`) | `NIKKE_SIM_BIN` = 실행 파일 경로 |
+| `NikkeCalcEvaluator` (Python) | `python -m runner.sim --batch` 프로세스 `jobs`개(최대 8) | `NIKKE_CALC_DIR` = nikke-calc 체크아웃 |
+
+기본(`auto`)은 `NIKKE_SIM_BIN`이 있으면 Rust, 없으면 Python이다. CLI는 `--evaluator rust|python`으로 강제한다.
 **요청 JSON v2**(`schema_version: 2`, nikke-calc `167698c`부터)를 보내고, 판이 다른 결과는 받지 않는다 — 평가기가 계약을 바꾸면 바로 끊긴다.
 
 ```bash
-NIKKE_CALC_DIR=../nikke-calc python -m nikke_opt.eval "리틀 머메이드,크라운,라피 : 레드 후드,미하라,헬름" --boss "솔로 레이드 S40"
-python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIKKE_CALC_DIR이 있으면 진짜로도 한 번
+NIKKE_SIM_BIN=../nikke-calc-rs/target/release/nikke-sim python -m nikke_opt.eval "리틀 머메이드,크라운,라피 : 레드 후드,미하라,헬름" --boss "솔로 레이드 S40"
+NIKKE_CALC_DIR=../nikke-calc python -m nikke_opt.eval "리틀 머메이드,크라운,라피 : 레드 후드,미하라,헬름" --evaluator python
+python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIKKE_SIM_BIN·NIKKE_CALC_DIR이 있으면 진짜로도 한 번
 ```
+
+Rust 실행 파일은 `nikke-calc-rs`에서 `cargo build --release -p nikke-cli`로 만든다(`target/release/nikke-sim`, 게임 데이터 내장).
 
 - **기대값 모드가 기본** — `sim.expected: true`, 1회로 결정론적이다. 평가는 언제나 180초(`sim.duration`은 거절).
 - **요청 칸** — `EvalRequest(squad, boss, options)`의 `options`가 요청의 나머지 칸이다: `sim`(시드 등) · `enemy` · `operation`(카메라 · 택틱 · `auto`)
   · `profile`(육성, 아래) · `chars`(니케별 운용 — `control` dict · `cube` · `favorite_stage`). 2·3단계의 큐브·컨트롤을
   전달할 수 있는 기반이다. 입력 전달 지원과 해당 변수를 탐색·최적화하는 기능은 구분한다.
-- **병렬** — `--batch` 프로세스 여러 개로 나눠 돈다. 프로세스 수만큼 거의 그대로 빨라진다.
-- **캐시** — (평가기 커밋, 요청) → 결과. `.cache/evals.sqlite`(커밋 안 함). 평가기에 커밋 안 된 변경이 있으면 캐시하지 않는다.
+- **병렬** — Python은 `--batch` 프로세스 여러 개로, Rust는 프로세스 하나 안의 작업 스레드로 나눠 돈다. 응답 순서는 요청 순서 그대로다.
+- **버전** — Python은 체크아웃의 `git rev-parse HEAD`·dirty, Rust는 시작할 때 짧은 요청 1회(시뮬 횟수에 안 셈)로 받은 결과의
+  `evaluator` — 빌드 때의 `nikke-calc-rs` 커밋·dirty와 원본 기준 커밋(`port_of`). 실행 중에 이 값이 바뀌면 멈춘다.
+- **캐시** — (평가기 커밋, 요청) → 결과. `.cache/evals.sqlite`(커밋 안 함). 키에 평가기 커밋이 들어가 Python·Rust 결과가 섞이지 않는다.
+  평가기에 커밋 안 된 변경이 있으면(Rust는 dirty 빌드·커밋 모름) 캐시하지 않는다.
   패턴 파일 등 외부 참조의 내용이 바뀌는 경우까지 식별하는지는 4단계에서 검증·보완해야 한다.
+- **보스 파일** — Rust는 `.json` 보스 경로를 지금 작업 폴더 기준 절대 경로로 바꿔 보낸다. Python은 nikke-calc 체크아웃 기준이다.
 - **예산** — 실제로 돌린 시뮬 횟수만 센다(캐시 적중·같은 요청 중복은 안 셈). 넘칠 요청은 시작하지 않는다.
-- **육성** — 요청에 인라인으로 싣는다. nikke-calc `profiles/`에 파일을 쓰지 않는다(그 폴더는 nikke-calc의 개인 데이터다).
+- **육성** — 요청에 인라인으로 싣는다. 평가기의 프로필 폴더(nikke-calc `profiles/`)에 파일을 쓰지 않는다(그 폴더는 개인 데이터다).
   형식의 정본은 nikke-calc `docs/SIM-JSON.md` §육성(nikke-calc `a4174a5`부터).
+  Rust에서 프로필을 *이름*으로 주려면 프로필 폴더(`NIKKE_PROFILE_DIR` 또는 `profile_dir`)가 필요하다. 없으면 거절한다.
 
   ```python
   EvalRequest(squad, boss=BOSS, options={"profile": {

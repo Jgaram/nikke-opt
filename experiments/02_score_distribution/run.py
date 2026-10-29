@@ -8,7 +8,7 @@
 - order   — random 앞쪽 일부의 "딜이 달라질 수 있는" 배치 순서 전부 (같은 버스트 단계 안의 순서 ×
             레드 후드(A)의 위치). 순서가 점수를 얼마나 흔드는지 본다.
 
-사용: NIKKE_CALC_DIR=... python -m experiments.02_score_distribution.run   (레포 루트에서)
+사용: NIKKE_SIM_BIN=... (또는 NIKKE_CALC_DIR=...) python -m experiments.02_score_distribution.run   (레포 루트에서)
       python run.py --random 1500 --order 60   → results.jsonl
 """
 
@@ -23,7 +23,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent.parent))
-from nikke_opt.evaluator import EvalRequest, NikkeCalcEvaluator  # noqa: E402
+from nikke_opt.evaluator import EvalRequest, make_evaluator  # noqa: E402
 
 BOSS = "솔로 레이드 S40"
 SEED = 20261007
@@ -87,7 +87,7 @@ def main() -> None:
     for s in rand[:args.order]:
         jobs += [("order", p) for p in distinct_orders(s, burst)]
 
-    ev = NikkeCalcEvaluator(jobs=args.jobs)
+    ev = make_evaluator(jobs=args.jobs)
     with open(args.out, "w", encoding="utf-8") as f:
         for i in range(0, len(jobs), CHUNK):
             part = jobs[i:i + CHUNK]

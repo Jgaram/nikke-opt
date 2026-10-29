@@ -25,7 +25,7 @@ S40 랭커 사용률이 높은 순으로, 그 5덱이 안 쓰는 보유 니케�
 평가 수는 요청한 서로 다른 스쿼드 수다 — 실험 2·4 결과·캐시로 채워도 센다(실험 4와 같다).
 기준선 평가 수와 탐색 평가 수는 따로 센다.
 
-사용: NIKKE_CALC_DIR=... python deficit.py [--only 이름,...] [--budget 800]
+사용: NIKKE_SIM_BIN=... (또는 NIKKE_CALC_DIR=...) python deficit.py [--only 이름,...] [--budget 800]
       → log.jsonl(시나리오별 평가 전부), summary.json, results.md
 """
 
@@ -46,7 +46,7 @@ EXP4 = HERE.parent / "04_improvement_margin"
 sys.path.insert(0, str(HERE.parent.parent))
 sys.path.insert(0, str(EXP2))
 sys.path.insert(0, str(EXP4))
-from nikke_opt.evaluator import EvalRequest, NikkeCalcEvaluator  # noqa: E402
+from nikke_opt.evaluator import EvalRequest, make_evaluator  # noqa: E402
 from run import BOSS, distinct_orders  # noqa: E402
 from search import Book, fit, neighbors, pack, pack_moves  # noqa: E402
 
@@ -134,7 +134,7 @@ def main() -> None:
             if r["error"] is None:
                 known[tuple(r["squad"])] = r["total_damage"] / E8
 
-    ev = NikkeCalcEvaluator(jobs=args.jobs)
+    ev = make_evaluator(jobs=args.jobs)
     summary_path = HERE / "summary.json"
     summary = json.loads(summary_path.read_text(encoding="utf-8")) if args.only and summary_path.exists() else {}
     summary.setdefault("scenarios", {})
