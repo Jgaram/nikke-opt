@@ -22,6 +22,10 @@
 - 같은 출발점 안에서 이미 평가한 선택 집합은 다시 보내지 않는다(기록도 한 번). 출발점이 다르면 다시 평가하고
   기록한다 — 시뮬은 평가기 캐시가 막는다.
 - 평가 오류(`error`)인 선택 집합은 기록하고 후보에서 뺀다. 출발점이 오류면 오류 아닌 첫 후보가 개선이다.
+- 조립할 수 없는 선택 집합(`apply_fn`이 `menu.MenuConflict`를 냄)은 시뮬 없이 후보에서 뺀다. 기록에 쓰지 않고
+  예산·step에도 세지 않는다(요약의 `conflicts`에 개수만) — step이 실제 평가 순번으로 남고, 충돌 여부는
+  menu로 언제든 다시 계산되므로 재개 때 재생할 것도 없다. 무작위·킥 출발점이 조립 불가면 같은 난수 흐름에서
+  다시 뽑는다(`DRAW_TRIES`번 안에 못 찾으면 빈 선택 = layer).
 
 예산 · 기록 · 재개
 - `budget`은 (조합, 조건) 하나가 쓸 평가 수(기록 줄 수) 상한이다. 재개 때 재생한 줄도 센다 — 그래서 같은 예산이면
@@ -48,11 +52,13 @@ HERE = Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent.parent)]
 import common  # noqa: E402
 from common import Composition, Variant  # noqa: E402
+from menu import MenuConflict  # noqa: E402
 from nikke_opt.evaluator import BudgetExceeded, EvalRequest  # noqa: E402
 
 VariantsFn = Callable[[Sequence[str]], Mapping[tuple, list[Variant]]]
 ApplyFn = Callable[[Mapping[str, Any], Sequence[Variant]], dict[str, Any]]
 
+DRAW_TRIES = 100        # 무작위·킥 출발점이 조립 불가일 때 다시 뽑는 최대 횟수
 KICK_KEYS = 2           # 킥 한 번에 무작위로 바꾸는 키 수
 DEFAULT_REFERENCE_STARTS = 5
 DEFAULT_REFERENCE_KICKS = 0
@@ -74,6 +80,8 @@ class _Run:
         self.used = 0        # 이 (조합, 조건)에서 쓴 평가 수(재생 포함)
         self.new = 0         # 이번 호출에서 새로 평가한 수
         self.replayed = 0
+        self.conflicts = 0   # 조립 불가로 건너뛴 선택 집합 수(기록·예산 밖)
+        self.steps: dict[str, int] = {}  # 출발점 → 다음 step
         self.exhausted = False
         self.prior: dict[tuple[str, tuple[str, ...]], common.Record] = {}
         if out.exists():
@@ -85,28 +93,54 @@ class _Run:
         opts = self.apply_fn(base, list(chosen)) if chosen else dict(base)
         return EvalRequest(tuple(self.comp["squad"]), boss=common.BOSS, options=opts)
 
-    def evaluate(self, start: str, base: Mapping[str, Any], sets: list[list[Variant]],
-                 step0: int) -> list[common.Record]:
-        """선택 집합들을 평가(또는 재생)해 기록을 돌려준다. 예산이 모자라면 앞에서부터 되는 만큼만 하고
-        `exhausted`를 세운다(돌려준 기록은 `sets`보다 짧을 수 있다). 부른 쪽은 결과를 반영한 뒤 끝낸다."""
+    def conflict(self, base: Mapping[str, Any], chosen: Sequence[Variant]) -> str | None:
+        """조립할 수 없는 선택 집합(menu.MenuConflict)이면 그 이유, 아니면 None."""
+        try:
+            self.request(base, chosen)
+        except MenuConflict as e:
+            return str(e) or type(e).__name__
+        return None
+
+    def evaluate(self, start: str, base: Mapping[str, Any], sets: list[list[Variant]]) -> list[common.Record | None]:
+        """선택 집합들을 평가(또는 재생)해 `sets`와 같은 순서로 기록을 돌려준다. 조립 불가(MenuConflict)는 None —
+        시뮬도 기록도 없고 예산에도 세지 않는다. 예산이 모자라면 앞에서부터 되는 만큼만 하고 `exhausted`를
+        세운다(돌려준 목록은 `sets`보다 짧을 수 있다). 부른 쪽은 결과를 반영한 뒤 끝낸다."""
+        left = None if self.budget is None else max(0, self.budget - self.used)
+        reqs: list[EvalRequest | None] = []
         short = False
-        if self.budget is not None and self.used + len(sets) > self.budget:
-            sets, short = sets[:max(0, self.budget - self.used)], True
-        reqs = [self.request(base, s) for s in sets]
-        labels = [tuple(sorted(v["label"] for v in s)) for s in sets]
-        olds = [self.prior.get((start, lb)) for lb in labels]
+        for s in sets:
+            try:
+                req = self.request(base, s)
+            except MenuConflict:
+                self.conflicts += 1
+                reqs.append(None)
+                continue
+            if left is not None and left == 0:
+                short = True
+                break
+            reqs.append(req)
+            if left is not None:
+                left -= 1
+        labels = [tuple(sorted(v["label"] for v in s)) for s in sets[:len(reqs)]]
+        olds = [self.prior.get((start, lb)) if req is not None else None for req, lb in zip(reqs, labels)]
         for old, req in zip(olds, reqs):
             if old is not None and old["request"] != req.to_line():
                 raise ValueError(f"{self.comp['id']} {self.condition} {start} {list(old['variants'])}: "
                                  "기록의 요청이 지금 요청과 다르다 — 선택지 정의가 바뀌었으면 다른 out에 돌린다")
-        todo = [i for i, old in enumerate(olds) if old is None]
+        todo = [i for i, (req, old) in enumerate(zip(reqs, olds)) if req is not None and old is None]
         try:
             futs: dict[int, Future] = dict(zip(todo, self.ev.submit([reqs[i] for i in todo]))) if todo else {}
         except BudgetExceeded:
             self.exhausted = True
             return []
-        recs = []
+        recs: list[common.Record | None] = []
         for i, (req, lb, old) in enumerate(zip(reqs, labels, olds)):
+            if req is None:
+                recs.append(None)
+                continue
+            step = self.steps.get(start, 0)
+            self.steps[start] = step + 1
+            self.used += 1
             if old is not None:
                 recs.append(old)
                 self.replayed += 1
@@ -114,7 +148,7 @@ class _Run:
             res = futs[i].result()
             rec: common.Record = {
                 "comp_id": self.comp["id"], "condition": self.condition, "start": start,
-                "step": step0 + i, "variants": list(lb), "request": req.to_line(),
+                "step": step, "variants": list(lb), "request": req.to_line(),
                 "total_damage": None if res.error else res.total_damage,
                 "control_detail": res.raw.get("control_detail"), "cached": res.cached,
                 "error": res.error, "evaluator": self.ev.version, "sim_count": self.ev.sim_count,
@@ -122,7 +156,6 @@ class _Run:
             common.append_record(self.out, rec)
             self.new += 1
             recs.append(rec)
-        self.used += len(sets)
         self.exhausted |= short
         return recs
 
@@ -148,13 +181,13 @@ def _descend(run: _Run, start: str, base: Mapping[str, Any], menu: Mapping[tuple
         return tuple(sorted(v["label"] for v in sel.values()))
 
     def summary() -> dict:
-        return {"start": start, "best_damage": best, "best_variants": list(tag(cur)), "evals": len(seen),
-                "passes": passes}
+        return {"start": start, "best_damage": best, "best_variants": list(tag(cur)),
+                "evals": run.steps.get(start, 0), "passes": passes}
 
-    recs = run.evaluate(start, base, [chosen(cur)], 0)
+    recs = run.evaluate(start, base, [chosen(cur)])
     if not recs:
         return None, cur, summary()
-    seen[tag(cur)] = best = recs[0]["total_damage"]
+    seen[tag(cur)] = best = recs[0] and recs[0]["total_damage"]
     idle, i = 0, 0  # idle: 직전 개선 뒤 개선 없이 지나간 키 수
     limit = len(keys)
     while keys and idle < limit and not run.exhausted:
@@ -174,8 +207,8 @@ def _descend(run: _Run, start: str, base: Mapping[str, Any], menu: Mapping[tuple
                 fresh.append(c)
                 uniq.add(t)
         if fresh:
-            for c, r in zip(fresh, run.evaluate(start, base, [chosen(c) for c in fresh], len(seen))):
-                seen[tag(c)] = r["total_damage"]
+            for c, r in zip(fresh, run.evaluate(start, base, [chosen(c) for c in fresh])):
+                seen[tag(c)] = r and r["total_damage"]  # 조립 불가(None)는 다시 시도하지 않는다
         pick = None
         for c in cands:  # 후보 순서대로 — 동률이면 앞이 이긴다
             if _better(seen.get(tag(c)), best if pick is None else seen[tag(pick)]):
@@ -213,6 +246,16 @@ def _kick(menu: Mapping[tuple, list[Variant]], sel: Mapping[tuple, Variant], rng
     return out
 
 
+def _draw(run: _Run, base: Mapping[str, Any], menu: Mapping[tuple, list[Variant]],
+          gen: Callable[[], dict[tuple, Variant]]) -> dict[tuple, Variant]:
+    """조립할 수 있는 출발 선택이 나올 때까지 같은 난수 흐름에서 다시 뽑는다(최대 DRAW_TRIES번, 다 실패하면 빈 선택)."""
+    for _ in range(DRAW_TRIES):
+        sel = gen()
+        if run.conflict(base, [sel[k] for k in menu if k in sel]) is None:
+            return sel
+    return {}
+
+
 def run_condition(comp: Composition, condition: str, evaluator: Any, *, out: Path,
                   variants_fn: VariantsFn | None = None, apply_fn: ApplyFn | None = None,
                   budget: int | None = None, seed: int = 0,
@@ -225,7 +268,8 @@ def run_condition(comp: Composition, condition: str, evaluator: Any, *, out: Pat
     - `budget`: 이 호출이 쓸 평가 수 상한(None = 수렴까지). 넘기면 그때까지의 최선으로 끝낸다.
     - 재개: `out`에 같은 (comp_id, condition, start)의 기록이 있으면 이어서 진행한다(같은 결과가 나와야 한다).
 
-    더 붙는 칸: `new_evals`(이번에 새로 평가) · `replayed`(기록에서 재생) · `exhausted`(예산으로 끝남) ·
+    더 붙는 칸: `new_evals`(이번에 새로 평가) · `replayed`(기록에서 재생) · `conflicts`(조립 불가로 건너뜀) ·
+    `exhausted`(예산으로 끝남) ·
     `best_start` · `starts`(출발점별 요약). `evals`는 재생 포함 이 (조합, 조건)의 평가 수, `sims`는 이 호출 동안
     평가기 `sim_count`의 증가분이다. `seed` · `reference_*`는 reference 조건에만 쓴다.
     """
@@ -263,16 +307,20 @@ def run_condition(comp: Composition, condition: str, evaluator: Any, *, out: Pat
                 if run.exhausted:
                     break
                 s = seed + i
-                take(*_descend(run, f"random:{s}", base, menu, _random_selection(menu, random.Random(s))))
+                rng = random.Random(s)
+                take(*_descend(run, f"random:{s}", base, menu,
+                               _draw(run, base, menu, lambda: _random_selection(menu, rng))))
             for i in range(reference_kicks):
                 if run.exhausted or best is None:
                     break
                 s = seed + i
-                take(*_descend(run, f"kick:{s}", base, menu, _kick(menu, best_sel, random.Random(f"kick:{s}"))))
+                rng = random.Random(f"kick:{s}")
+                take(*_descend(run, f"kick:{s}", base, menu,
+                               _draw(run, base, menu, lambda: _kick(menu, best_sel, rng))))
 
     return {"comp_id": comp["id"], "condition": condition, "best_damage": best,
             "best_variants": sorted(v["label"] for v in best_sel.values()), "evals": run.used,
-            "sims": evaluator.sim_count - sims0, "new_evals": run.new, "replayed": run.replayed,
+            "sims": evaluator.sim_count - sims0, "new_evals": run.new, "replayed": run.replayed, "conflicts": run.conflicts,
             "exhausted": run.exhausted, "best_start": best_start, "starts": starts}
 
 

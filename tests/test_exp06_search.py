@@ -17,6 +17,7 @@ if str(EXP_DIR) not in sys.path:
     sys.path.insert(0, str(EXP_DIR))
 
 import common  # noqa: E402
+import menu  # noqa: E402
 import search  # noqa: E402
 from nikke_opt.evaluator import BudgetExceeded, EvalResult  # noqa: E402
 
@@ -315,6 +316,67 @@ class TestReference(Base):
         strip = lambda rs: [(r["start"], r["step"], r["variants"]) for r in rs]  # noqa: E731
         self.assertEqual(strip(self.records()), strip(common.read_records([full])))
         self.assertEqual((b["best_damage"], b["evals"], b["replayed"]), (c["best_damage"], c["evals"], 7))
+
+
+CONFLICT = {"A:click:hold", "squad:camera:A"}  # 함께면 조립 불가 — 막지 않으면 최선이 되는 짝
+
+
+def conflict_apply(options, chosen):
+    if CONFLICT <= {v["label"] for v in chosen}:
+        raise menu.MenuConflict("A 홀드와 카메라 A는 함께 못 쓴다")
+    return fake_apply(options, chosen)
+
+
+def ok_best(score):
+    vals = [score(frozenset(v["label"] for v in sel.values()), {}) for sel in all_selections(MENU)
+            if not CONFLICT <= {v["label"] for v in sel.values()}]
+    return max(vals)
+
+
+class TestConflict(Base):
+    def run_x(self, condition, ev, **kw):
+        return search.run_condition(COMP, condition, ev, out=self.out, variants_fn=lambda s: MENU,
+                                    apply_fn=conflict_apply, **kw)
+
+    def assert_clean(self):
+        recs = self.records()
+        self.assertFalse([r for r in recs if CONFLICT <= set(r["variants"])])
+        for st in {r["start"] for r in recs}:
+            steps = [r["step"] for r in recs if r["start"] == st]
+            self.assertEqual(steps, list(range(len(steps))))
+        return recs
+
+    def test_descent_skips_conflict(self):
+        ev = FakeEvaluator(separable)
+        s = self.run_x("search_from_layer", ev)
+        recs = self.assert_clean()
+        self.assertGreater(s["conflicts"], 0)
+        self.assertEqual(ev.sim_count, len(recs))  # 충돌은 시뮬하지 않는다
+        self.assertEqual(s["evals"], len(recs))
+        self.assertEqual(s["best_damage"], ok_best(separable))
+        self.assertLess(s["best_damage"], brute_best(MENU, separable))
+
+    def test_budget_ignores_conflict(self):
+        s = self.run_x("search_from_layer", FakeEvaluator(separable), budget=6)
+        self.assertEqual(len(self.assert_clean()), 6)
+        self.assertTrue(s["exhausted"])
+
+    def test_resume_with_conflict(self):
+        full = Path(self.tmp.name) / "full.jsonl"
+        f = search.run_condition(COMP, "search_from_layer", FakeEvaluator(separable), out=full,
+                                 variants_fn=lambda s: MENU, apply_fn=conflict_apply)
+        ev = FakeEvaluator(separable)
+        self.run_x("search_from_layer", ev, budget=6)
+        s = self.run_x("search_from_layer", ev)
+        strip = lambda rs: [(r["step"], r["variants"], r["total_damage"]) for r in rs]  # noqa: E731
+        self.assertEqual(strip(self.assert_clean()), strip(common.read_records([full])))
+        self.assertEqual((s["best_damage"], s["evals"], s["replayed"]), (f["best_damage"], f["evals"], 6))
+
+    def test_reference_redraws_conflicting_start(self):
+        s = self.run_x("reference", FakeEvaluator(separable), seed=0, reference_starts=12, reference_kicks=4)
+        recs = self.assert_clean()
+        self.assertEqual({r["start"] for r in recs if r["step"] == 0}, {st["start"] for st in s["starts"]})
+        self.assertEqual(s["best_damage"], ok_best(separable))
 
 
 class TestCli(Base):
