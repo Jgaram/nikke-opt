@@ -21,6 +21,11 @@
    nikke-calc-rs는 환경 '전체'의 Repositories에 있으면 같이 받고, 없으면 작업 세션이 `add_repo`로 붙인다.
    W1을 먼저 열어 붙이기·빌드가 되는지 확인한다. 안 되면 평가기가 필요한 단계(W1 · W2의 검증 · W3의 후보 평가 · 본 실행)는
    관리자가 직접 돌리고, 작업 세션은 가짜 평가기 테스트까지 맡는다.
+   - **확인 결과(2026-10-29):** 작업 세션의 `add_repo(nikke-calc-rs)`가 권한 분류기에서 거부됐다(W1). 그래서 대안대로
+     Rust 실행(W1 대조 · W2 조립 검사 · W3 후보 평가 · W4 실제 연결 확인 · 본 실행)은 관리자가 돌리고, 작업 세션은
+     실행 명령을 갖춘 코드와 가짜 평가기 테스트까지 맡는다. 공개 원본 nikke-calc(Python)는 작업 세션에서도 받을 수 있다.
+     작업 세션 id: W1 `session_01MQimn4hFKotwTSPxUWqsaJ` · W2 `session_01MQimn3sWvuYAcbFCbd1S55` ·
+     W3 `session_01MQimn59m22mixwayR65jck` · W4 `session_01MQimn5a2Xs4gP1dCmze9UW` · W5 `session_01MQimn1VGRcf1w14wEB38e6`.
 3. **인터페이스 골격 커밋** — 아래 「인터페이스」의 함수·형식을 빈 구현(또는 `NotImplementedError`)과 docstring으로 먼저 커밋한다.
    작업 세션은 이 골격을 기준으로 병렬로 개발한다.
 
