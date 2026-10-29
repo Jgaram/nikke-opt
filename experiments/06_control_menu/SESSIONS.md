@@ -28,15 +28,19 @@
 
 | 경로 (`experiments/06_control_menu/` 기준) | 소유 |
 |---|---|
-| `README.md` · `SESSIONS.md` · `run_log/`(본 실행 출력) | 관리자 |
+| `README.md` · `SESSIONS.md` · `common.py`(공용 형식) · `tests/test_exp06_skeleton.py` · `run_log/`(본 실행 출력) | 관리자 |
 | `crosscheck.py` · `crosscheck.md` | W1 |
 | `menu.py` · `menu.md` · `tests/test_exp06_menu.py`(레포 루트 `tests/`) | W2 |
-| `select.py` · `compositions.json` · `selection.md` · `tests/test_exp06_select.py` | W3 |
+| `select_comps.py` · `compositions.json` · `selection.md` · `tests/test_exp06_select.py` | W3 |
 | `search.py` · `tests/test_exp06_search.py` | W4 |
 | `analyze.py` · `results.md` · `tests/test_exp06_analyze.py` | W5 |
 | `docs/` · `README.md`(레포) · `rules/` · `AGENTS.md` · `nikke_opt/` | 관리자. 작업 세션이 바꿔야 하면 관리자에게 알린다 |
 
 ## 인터페이스 (골격으로 고정할 것)
+
+골격은 커밋되어 있다 — 형식의 정본은 `common.py`, 함수 계약은 각 모듈의 docstring이다.
+`select.py` 대신 `select_comps.py`를 쓴다(표준 모듈 `select`를 가려 `subprocess`가 깨진다).
+
 
 - **선택지** `Variant` = `{"nikke": 이름 | null(스쿼드 단위), "axis": "click" | "reload" | "cover" | "cancel" | "burst" | "camera" | "tactic", "label": str, "patch": 요청 options 조각}`.
   `patch`는 `{"chars": {니케: {"control": {...}}}}` 또는 `{"operation": {...}}` 꼴이다.
