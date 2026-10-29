@@ -1,0 +1,727 @@
+[
+ {
+  "id": "c01",
+  "squad": [
+   "아니스 : 스타",
+   "브리드 : 사일런트 트랙",
+   "홍련 : 흑영",
+   "디젤 : 윈터 스위츠",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:홍련 : 흑영",
+   "charge_heavy",
+   "charge_n:3",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:61 라피 : 레드 후드→홍련 : 흑영 [후보 k346]",
+  "default_damage": 4384427777
+ },
+ {
+  "id": "c02",
+  "squad": [
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "아니스 : 스타",
+   "드레이크",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "swap",
+   "no_layer_target",
+   "charge_light",
+   "charge_n:1",
+   "gauge_fast"
+  ],
+  "source": "swap:ranker:2 미하라 : 본딩 체인→드레이크 [후보 k089]",
+  "default_damage": 4053082670
+ },
+ {
+  "id": "c03",
+  "squad": [
+   "나유타",
+   "아니스 : 스타",
+   "라피 : 레드 후드",
+   "프리바티",
+   "모더니아"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_light",
+   "charge_n:1",
+   "gauge_slow"
+  ],
+  "source": "ranker:136 (덱 1) [후보 k038]",
+  "default_damage": 3796233709
+ },
+ {
+  "id": "c04",
+  "squad": [
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "아니스 : 스타",
+   "미하라 : 본딩 체인",
+   "홍련 : 흑영"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:미하라 : 본딩 체인",
+   "layer:홍련 : 흑영",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow"
+  ],
+  "source": "swap:ranker:2 프리바티→홍련 : 흑영 [후보 k339]",
+  "default_damage": 3336706338
+ },
+ {
+  "id": "c05",
+  "squad": [
+   "목단",
+   "나유타",
+   "스노우 화이트 : 헤비암즈",
+   "신데렐라 : 크리스탈 웨이브",
+   "모더니아"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid",
+   "charger_candidate"
+  ],
+  "source": "ranker:214 (덱 1) [후보 k064]",
+  "default_damage": 3159220239
+ },
+ {
+  "id": "c06",
+  "squad": [
+   "크라운",
+   "퀸(마코토)",
+   "리틀 머메이드",
+   "유키코",
+   "모더니아"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "ranker",
+   "no_layer_target",
+   "charge_none",
+   "charge_n:0",
+   "gauge_mid"
+  ],
+  "source": "ranker:151 (덱 1) [후보 k042]",
+  "default_damage": 2944511271
+ },
+ {
+  "id": "c07",
+  "squad": [
+   "리타",
+   "그레이브",
+   "스노우 화이트 : 헤비암즈",
+   "신데렐라 : 크리스탈 웨이브",
+   "모더니아"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "ranker",
+   "no_layer_target",
+   "charge_light",
+   "charge_n:1",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "ranker:198 (덱 1) [후보 k058]",
+  "default_damage": 2887283933
+ },
+ {
+  "id": "c08",
+  "squad": [
+   "크라운",
+   "앨리스",
+   "목단",
+   "유키코",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "ranker",
+   "layer_target",
+   "layer:앨리스",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid",
+   "charger_candidate"
+  ],
+  "source": "ranker:124 (덱 2) [후보 k022]",
+  "default_damage": 2541293504
+ },
+ {
+  "id": "c09",
+  "squad": [
+   "브리드 : 사일런트 트랙",
+   "라피 : 레드 후드",
+   "츠바이",
+   "미하라 : 본딩 체인",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:츠바이",
+   "layer:미하라 : 본딩 체인",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "swap:ranker:2 아니스 : 스타→츠바이 [후보 k276]",
+  "default_damage": 2383475097
+ },
+ {
+  "id": "c10",
+  "squad": [
+   "마스트 : 로망틱 메이드",
+   "라피 : 레드 후드",
+   "아니스 : 스타",
+   "미하라 : 본딩 체인",
+   "프리바티"
+  ],
+  "skeleton": "1-1-3",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:마스트 : 로망틱 메이드",
+   "layer:미하라 : 본딩 체인",
+   "charge_light",
+   "charge_n:1",
+   "gauge_slow"
+  ],
+  "source": "swap:ranker:2 브리드 : 사일런트 트랙→마스트 : 로망틱 메이드 [후보 k149]",
+  "default_damage": 2334478200
+ },
+ {
+  "id": "c11",
+  "squad": [
+   "목단",
+   "브리드 : 사일런트 트랙",
+   "스노우 화이트 : 헤비암즈",
+   "플로라",
+   "디젤 : 윈터 스위츠"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "ranker:80 (덱 3) [후보 k015]",
+  "default_damage": 3587156253
+ },
+ {
+  "id": "c12",
+  "squad": [
+   "크라운",
+   "유키코",
+   "리틀 머메이드",
+   "미하라 : 본딩 체인",
+   "마스트 : 로망틱 메이드"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:미하라 : 본딩 체인",
+   "layer:마스트 : 로망틱 메이드",
+   "charge_none",
+   "charge_n:0",
+   "gauge_mid"
+  ],
+  "source": "swap:ranker:3 퀸(마코토)→미하라 : 본딩 체인 [후보 k182]",
+  "default_damage": 3384904216
+ },
+ {
+  "id": "c13",
+  "squad": [
+   "리타",
+   "브리드 : 사일런트 트랙",
+   "스노우 화이트 : 헤비암즈",
+   "플로라",
+   "디젤 : 윈터 스위츠"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "ranker:166 (덱 1) [후보 k047]",
+  "default_damage": 3330491461
+ },
+ {
+  "id": "c14",
+  "squad": [
+   "목단",
+   "나유타",
+   "스노우 화이트 : 헤비암즈",
+   "플로라",
+   "디젤 : 윈터 스위츠"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "no_layer_target",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "ranker:13 (덱 26) [후보 k008]",
+  "default_damage": 3249559762
+ },
+ {
+  "id": "c15",
+  "squad": [
+   "크라운",
+   "유키코",
+   "리틀 머메이드",
+   "홍련 : 흑영",
+   "마스트 : 로망틱 메이드"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:홍련 : 흑영",
+   "layer:마스트 : 로망틱 메이드",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid"
+  ],
+  "source": "swap:ranker:3 퀸(마코토)→홍련 : 흑영 [후보 k338]",
+  "default_damage": 3107942042
+ },
+ {
+  "id": "c16",
+  "squad": [
+   "츠바이",
+   "민트",
+   "스노우 화이트 : 헤비암즈",
+   "디젤 : 윈터 스위츠",
+   "프리카"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:츠바이",
+   "layer:프리카",
+   "charge_heavy",
+   "charge_n:4",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:7 목단→츠바이 [후보 k277]",
+  "default_damage": 2921230634
+ },
+ {
+  "id": "c17",
+  "squad": [
+   "목단",
+   "민트",
+   "스노우 화이트 : 헤비암즈",
+   "앨리스",
+   "프리카"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:앨리스",
+   "layer:프리카",
+   "charge_heavy",
+   "charge_n:4",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:7 디젤 : 윈터 스위츠→앨리스 [후보 k241]",
+  "default_damage": 2855788235
+ },
+ {
+  "id": "c18",
+  "squad": [
+   "목단",
+   "민트",
+   "에이다",
+   "디젤 : 윈터 스위츠",
+   "프리카"
+  ],
+  "skeleton": "1-2-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:에이다",
+   "layer:프리카",
+   "charge_heavy",
+   "charge_n:4",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:7 스노우 화이트 : 헤비암즈→에이다 [후보 k263]",
+  "default_damage": 2789561317
+ },
+ {
+  "id": "c19",
+  "squad": [
+   "토브",
+   "드레이크",
+   "아르카나 : 포츈 메이트",
+   "퀸(마코토)",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:high",
+   "ranker",
+   "layer_target",
+   "layer:토브",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "ranker:123 (덱 2) [후보 k021]",
+  "default_damage": 3403670868
+ },
+ {
+  "id": "c20",
+  "squad": [
+   "츠바이",
+   "크라운",
+   "미하라 : 본딩 체인",
+   "프리바티",
+   "리틀 머메이드"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:츠바이",
+   "layer:미하라 : 본딩 체인",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "swap:ranker:36 미란다→츠바이 [후보 k284]",
+  "default_damage": 3009672742
+ },
+ {
+  "id": "c21",
+  "squad": [
+   "토브",
+   "그레이브",
+   "도로시 : 세렌디피티",
+   "드레이크",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:토브",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "swap:ranker:0 아르카나 : 포츈 메이트→그레이브 [후보 k073]",
+  "default_damage": 2767205401
+ },
+ {
+  "id": "c22",
+  "squad": [
+   "미란다",
+   "크라운",
+   "미하라 : 본딩 체인",
+   "프리바티",
+   "리틀 머메이드"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "ranker",
+   "layer_target",
+   "layer:미란다",
+   "layer:미하라 : 본딩 체인",
+   "miranda_rule",
+   "charge_none",
+   "charge_n:0",
+   "gauge_mid"
+  ],
+  "source": "ranker:36 (덱 13) [후보 k011]",
+  "default_damage": 2717553769
+ },
+ {
+  "id": "c23",
+  "squad": [
+   "미란다",
+   "크라운",
+   "에이다",
+   "프리바티",
+   "리틀 머메이드"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:미란다",
+   "layer:에이다",
+   "miranda_rule",
+   "charge_light",
+   "charge_n:1",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:36 미하라 : 본딩 체인→에이다 [후보 k253]",
+  "default_damage": 2711259656
+ },
+ {
+  "id": "c24",
+  "squad": [
+   "미란다",
+   "크라운",
+   "에이다",
+   "미하라 : 본딩 체인",
+   "리틀 머메이드"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:미란다",
+   "layer:에이다",
+   "layer:미하라 : 본딩 체인",
+   "miranda_rule",
+   "charge_light",
+   "charge_n:1",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:160 헬름→에이다 [후보 k257]",
+  "default_damage": 2704358641
+ },
+ {
+  "id": "c25",
+  "squad": [
+   "리타",
+   "아르카나 : 포츈 메이트",
+   "도로시 : 세렌디피티",
+   "드레이크",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "no_layer_target",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "swap:ranker:0 토브→리타 [후보 k139]",
+  "default_damage": 2270941982
+ },
+ {
+  "id": "c26",
+  "squad": [
+   "목단",
+   "아르카나 : 포츈 메이트",
+   "도로시 : 세렌디피티",
+   "드레이크",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "2-1-2",
+  "tags": [
+   "band:mid",
+   "swap",
+   "no_layer_target",
+   "charge_none",
+   "charge_n:0",
+   "gauge_fast"
+  ],
+  "source": "swap:ranker:0 토브→목단 [후보 k166]",
+  "default_damage": 2257091243
+ },
+ {
+  "id": "c27",
+  "squad": [
+   "크라운",
+   "유키코",
+   "리틀 머메이드",
+   "퀸(마코토)",
+   "레드 후드"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:high",
+   "swap",
+   "no_layer_target",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:3 마스트 : 로망틱 메이드→레드 후드 [후보 k098]",
+  "default_damage": 2443736291
+ },
+ {
+  "id": "c28",
+  "squad": [
+   "토브",
+   "아르카나 : 포츈 메이트",
+   "레드 후드",
+   "드레이크",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:high",
+   "swap",
+   "layer_target",
+   "layer:토브",
+   "charge_light",
+   "charge_n:1",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:0 도로시 : 세렌디피티→레드 후드 [후보 k097]",
+  "default_damage": 2388936254
+ },
+ {
+  "id": "c29",
+  "squad": [
+   "목단",
+   "나유타",
+   "스노우 화이트 : 헤비암즈",
+   "레드 후드",
+   "디젤 : 윈터 스위츠"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:high",
+   "swap",
+   "no_layer_target",
+   "charge_heavy",
+   "charge_n:3",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:13 플로라→레드 후드 [후보 k104]",
+  "default_damage": 2356072789
+ },
+ {
+  "id": "c30",
+  "squad": [
+   "목단",
+   "스노우 화이트 : 헤비암즈",
+   "민트",
+   "레드 후드",
+   "신데렐라 : 크리스탈 웨이브"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:mid",
+   "swap",
+   "no_layer_target",
+   "charge_heavy",
+   "charge_n:3",
+   "gauge_slow",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:155 프리카→레드 후드 [후보 k114]",
+  "default_damage": 2201120737
+ },
+ {
+  "id": "c31",
+  "squad": [
+   "토브",
+   "레드 후드",
+   "아르카나 : 포츈 메이트",
+   "퀸(마코토)",
+   "솔린 : 프로스트 티켓"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:토브",
+   "charge_light",
+   "charge_n:1",
+   "gauge_mid",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:123 드레이크→레드 후드 [후보 k117]",
+  "default_damage": 2091326674
+ },
+ {
+  "id": "c32",
+  "squad": [
+   "리타",
+   "그레이브",
+   "앨리스",
+   "신데렐라 : 크리스탈 웨이브",
+   "레드 후드"
+  ],
+  "skeleton": "redhood",
+  "tags": [
+   "band:mid",
+   "swap",
+   "layer_target",
+   "layer:앨리스",
+   "charge_mid",
+   "charge_n:2",
+   "gauge_fast",
+   "charger_candidate"
+  ],
+  "source": "swap:ranker:6 모더니아→레드 후드 [후보 k102]",
+  "default_damage": 1941757687
+ }
+]

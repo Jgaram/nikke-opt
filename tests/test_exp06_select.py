@@ -149,6 +149,27 @@ class TestSelect(unittest.TestCase):
         self.assertEqual(log["evaluated_ok"], len(self.cands) - 1)
 
 
+class TestExtract(unittest.TestCase):
+    def test_extract_from_fake_data(self):
+        nikke = {
+            "가짜AR": {"weapon_type": "AR", "is_charge": False, "input_type": "DOWN", "full_charge_only": False,
+                     "fire_rate": 12.0, "max_ammo": 60, "reload_time": 1.0, "pellets": 1, "muzzles": 1,
+                     "burst_energy": 0.4},
+            "가짜SR": {"weapon_type": "SR", "is_charge": True, "input_type": "UP", "full_charge_only": False,
+                     "fire_stance_hold": 0.0, "charge_time": 1.0, "max_ammo": 6, "reload_time": 2.0,
+                     "pellets": 1, "muzzles": 1, "burst_energy": 5.6},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp) / "data"
+            d.mkdir()
+            (d / "parsed_nikke.json").write_text(json.dumps(nikke, ensure_ascii=False), encoding="utf-8")
+            (d / "weapon_delays.json").write_text(json.dumps({"_exceptions": {"가짜SR": {"post_reload_delay": 0.5}}}),
+                                                  encoding="utf-8")
+            info = S.extract_info(Path(tmp), ["가짜AR", "가짜SR"])
+        self.assertEqual(info["가짜AR"], ("AR", False, "DOWN", False, round(0.4 * 60 / (60 / 12 + 1.0), 3)))
+        self.assertEqual(info["가짜SR"], ("SR", True, "UP", False, round(5.6 * 6 / (6 * 1.38 + 2.0 + 0.5), 3)))
+
+
 class TestPick(unittest.TestCase):
     def test_run_pick_outputs(self):
         cands = S.candidates()

@@ -8,6 +8,8 @@
 
     python experiments/06_control_menu/select_comps.py candidates [--out 후보.json]
         규칙으로 후보를 만든다(평가기 불필요). selection.md에 방법과 후보 요약을 쓴다.
+    python experiments/06_control_menu/select_comps.py extract /home/user/jgaram/nikke-calc
+        (재현 확인) nikke-calc 데이터에서 NIKKE_INFO를 다시 뽑아 내장 값과 비교한다(다르면 종료 코드 1).
     source .cache/evaluators.env && python experiments/06_control_menu/select_comps.py pick
         후보를 기본 레이어 + accumulate(어댑터 기본 sim, 기본 적)로 평가해 성능 구간을 정하고,
         고정 규칙(시드 고정)으로 약 30개를 골라 compositions.json과 selection.md를 쓴다.
@@ -136,6 +138,34 @@ NIKKE_INFO: dict[str, tuple[str, bool, str, bool, float]] = {
     '헬름 : 아쿠아마린': ('AR', False, 'DOWN', False, 4.0),
     '홍련 : 흑영': ('RL', True, 'UP', True, 2.571),
 }
+
+
+# ---------------------------------------------------------------- 니케 정보 추출 (재현용)
+
+def extract_info(calc_dir: Path, names: Sequence[str]) -> dict[str, tuple[str, bool, str, bool, float]]:
+    """nikke-calc 체크아웃의 데이터 파일(읽기 전용)에서 NIKKE_INFO를 다시 만든다. 평가기 코드는 import하지 않는다.
+
+    게이지 속도 = burst_energy × 펠릿 × 총구 × 탄창 / (탄창 × 발사 주기 + 재장전 + 재장전 후 딜레이).
+    발사 주기: 비차지 1/연사(MG는 예열 끝 60발/초), 차지 = 차지 시간 + 발사 후 딜레이
+    (UP: 0.22 + max(0.16, fire_stance_hold), DOWN_Charge: 0 — weapon_delays.json _comment의 유도식).
+    """
+    data = calc_dir / "data"
+    nikke = json.loads((data / "parsed_nikke.json").read_text(encoding="utf-8"))
+    exc = json.loads((data / "weapon_delays.json").read_text(encoding="utf-8"))["_exceptions"]
+    out = {}
+    for name in sorted(names):
+        v = dict(nikke[name])
+        v.update({k: x for k, x in exc.get(name, {}).items() if not k.startswith("_")})
+        if v["is_charge"]:
+            pfd = 0.0 if v["input_type"] == "DOWN_Charge" else 0.22 + max(0.16, v.get("fire_stance_hold") or 0)
+            period = v["charge_time"] + v.get("post_fire_delay", pfd)
+        else:
+            period = 1 / (60.0 if v["weapon_type"] == "MG" else v["fire_rate"])
+        cyc = v["max_ammo"] * period + v["reload_time"] + v.get("post_reload_delay", 0)
+        rate = v["burst_energy"] * v["pellets"] * v["muzzles"] * v["max_ammo"] / cyc
+        out[name] = (v["weapon_type"], bool(v["is_charge"]), v["input_type"], bool(v["full_charge_only"]),
+                     round(rate, 3))
+    return out
 
 
 # ---------------------------------------------------------------- 출처와 정적 특징
@@ -633,7 +663,17 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--budget", type=int, default=1000, help="시뮬 예산(초과하면 멈춘다)")
     p.add_argument("--out", type=Path, default=common.COMPOSITIONS)
     p.add_argument("--md", type=Path, default=SELECTION_MD)
+    e = sub.add_parser("extract", help="nikke-calc 데이터에서 NIKKE_INFO를 다시 뽑아 이 파일의 값과 비교")
+    e.add_argument("calc_dir", type=Path, help="nikke-calc 체크아웃 (23164e4)")
     args = ap.parse_args(argv)
+
+    if args.cmd == "extract":
+        info = extract_info(args.calc_dir, list(load_sources()[0]))
+        diff = sorted(k for k in set(info) | set(NIKKE_INFO) if info.get(k) != NIKKE_INFO.get(k))
+        for k, v in info.items():
+            print(f"    {k!r}: {v!r},")
+        print(f"# 내장 NIKKE_INFO와 다른 니케: {diff or '없음'}", file=sys.stderr)
+        return 1 if diff else 0
 
     if args.cmd == "candidates":
         cands = candidates()
