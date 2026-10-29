@@ -77,6 +77,8 @@ FAKE_RUST = textwrap.dedent('''
         req = json.loads(raw)
         squad = req["squad"]
         unknown = sorted(set(req) - KEYS)
+        if "죽는 니케" in squad:  # 평가기가 도중에 죽는 경우
+            sys.exit(3)
         if unknown or "없는 니케" in squad:
             out = {"schema_version": 2, "line": n, "error": {"type": "invalid_input", "message": f"없음 {unknown}"}}
         else:
@@ -257,13 +259,45 @@ class FakeSimTest(SharedContract, unittest.TestCase):
         self.assertEqual(ev.sim_count, 0)
         self.assertEqual(sim_calls(self.exe), 1)
 
-    def test_one_process_with_batch_workers(self):
+    def test_one_process_reused_across_calls(self):
         ev = self.evaluator(jobs=3, cache=None)
         res = ev.evaluate([EvalRequest(SQUAD[i:] + SQUAD[:i]) for i in range(5)])
-        self.assertEqual(sim_calls(self.exe), 2)  # 버전 확인 1 + 배치 1
         self.assertEqual({r.raw["workers"] for r in res}, {"3"})
         one = ev.evaluate([EvalRequest(SQUAD[::-1])])
-        self.assertEqual(one[0].raw["workers"], "1")  # 요청 수보다 많이 띄우지 않는다
+        self.assertEqual(one[0].raw["workers"], "3")
+        self.assertEqual(sim_calls(self.exe), 1)  # 버전 확인과 두 호출이 프로세스 하나
+        self.assertEqual(one[0].raw["line"], 7)  # 버전 확인 1 + 5 + 1
+        self.assertEqual(ev.sim_count, 6)
+
+    def test_seed_or_error_line_restarts_after_the_call(self):
+        # 시드·오류 줄의 난수 흐름이 다음 호출로 넘어가지 않게 그 호출 뒤에 새로 띄운다
+        ev = self.evaluator(cache=None)
+        ev.evaluate([EvalRequest(SQUAD, options={"sim": {"seed": 7}}), EvalRequest(SQUAD[::-1])])
+        ev.evaluate([EvalRequest(SQUAD)])
+        self.assertEqual(sim_calls(self.exe), 2)
+        ev.evaluate([EvalRequest(("없는 니케",) + SQUAD[1:]), EvalRequest(SQUAD[::-1])])
+        self.assertEqual(sim_calls(self.exe), 2)
+        res = ev.evaluate([EvalRequest(SQUAD)])
+        self.assertEqual(sim_calls(self.exe), 3)
+        self.assertEqual(res[0].raw["line"], 1)  # 새 프로세스는 버전 확인 없이 바로 시작한다
+
+    def test_dead_process_raises_then_restarts(self):
+        ev = self.evaluator(cache=None)
+        with self.assertRaises(RuntimeError):
+            ev.evaluate([EvalRequest(SQUAD), EvalRequest(("죽는 니케",) + SQUAD[1:]), EvalRequest(SQUAD[::-1])])
+        self.assertEqual(ev.sim_count, 0)
+        res = ev.evaluate([EvalRequest(SQUAD)])
+        self.assertIsNotNone(res[0].total_damage)
+        self.assertEqual(sim_calls(self.exe), 2)
+
+    def test_close_and_context_manager(self):
+        with self.evaluator(cache=None) as ev:
+            proc = ev._proc.proc
+            ev.evaluate([EvalRequest(SQUAD)])
+        self.assertIsNotNone(proc.poll())  # 끝났다
+        self.assertIsNotNone(ev.evaluate([EvalRequest(SQUAD)])[0].total_damage)  # 다시 부르면 새로 띄운다
+        ev.close()
+        self.assertEqual(sim_calls(self.exe), 2)
 
     def test_dirty_or_unknown_build_disables_cache(self):
         for change in ({"dirty": True}, {"commit": None, "dirty": None}):
@@ -271,8 +305,11 @@ class FakeSimTest(SharedContract, unittest.TestCase):
             self.assertIsNone(NikkeSimEvaluator(self.exe).cache)
 
     def test_binary_replaced_mid_run_stops(self):
+        # 떠 있는 프로세스는 바뀌기 전 빌드 그대로다. 다시 띄운 프로세스가 다른 빌드면 멈춘다
         ev = self.evaluator(cache=None)
         self.set_version(commit="1" * 40)
+        self.assertIsNotNone(ev.evaluate([EvalRequest(SQUAD)])[0].total_damage)
+        ev.close()
         with self.assertRaises(RuntimeError):
             ev.evaluate([EvalRequest(SQUAD)])
 

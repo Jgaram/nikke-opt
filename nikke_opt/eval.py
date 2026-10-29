@@ -38,7 +38,9 @@ def main(argv: list[str] | None = None) -> int:
                         cache=not args.no_cache)
     requests = [EvalRequest(tuple(n.strip() for n in s.split(",")), boss=boss) for s in args.squads]
     failed = False
-    for req, res in zip(requests, ev.evaluate(requests)):
+    with ev:
+        results = ev.evaluate(requests)
+    for req, res in zip(requests, results):
         failed |= res.error is not None
         print(json.dumps({"squad": list(req.squad), "total_damage": res.total_damage,
                           "cached": res.cached, "error": res.error, "evaluator": ev.version},
