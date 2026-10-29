@@ -86,7 +86,7 @@ class TestCrosscheck(unittest.TestCase):
                 md = out.read_text(encoding="utf-8")
                 self.assertIn(f"Rust {len(crosscheck.REQUESTS)} · Python {len(crosscheck.REQUESTS)}", md)
                 self.assertNotIn("미실행 |", md)
-                self.assertEqual("**표시**" in md, flagged)
+                self.assertEqual("| **표시** |" in md, flagged)
                 self.assertEqual(len((Path(d) / "r.jsonl").read_text().splitlines()), len(crosscheck.REQUESTS))
 
 
