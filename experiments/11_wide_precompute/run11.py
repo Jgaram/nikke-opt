@@ -163,6 +163,8 @@ def fit_big(book: Any, names: Sequence[str]):
 
 # 실험 10 기법이 177명 풀에서 이 모델을 쓰게 한다. 계정 탐색(≤ 2,000평가)은 DualFit 그대로다(실험 10 재현).
 R10.fit_for = lambda pool: S4.fit if pool == 60 else fit_big
+# 대안 (b)(니케 공유 20명 이하)는 이번 회차에 계산하지 않는다 — 출발 덱이 강해지면 분기 한정이 실행 시간의 90% 넘게 쓴다(README §개발 확인).
+R10.pack_alt20 = lambda *a, **k: (0.0, [])
 
 
 # ---------------------------------------------------------------- 계정
@@ -341,6 +343,7 @@ def run_account(sc_: Mapping[str, Any], method: str, budget: int, ev: Any, pre: 
     acct = R10.Account10(sc_, pool=177, rankerless=method != "K")
     summ, recs, _ = R10.run_method(acct, "K" if method == "K" else "P", budget, ev, pre=pre, pool=177)
     summ["method"] = method
+    summ.pop("alt20", None)
     return summ, recs
 
 
