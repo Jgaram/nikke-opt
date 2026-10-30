@@ -2,7 +2,8 @@
 
     python experiments/08_control_postproc/analyze8.py --runs <joint dir> --reload <reload dir> --out results.md [--json r.json]
 
-- J(c) = `<runs>/<id>.done`의 best_damage, L(c) = `<runs>/<id>.jsonl`의 step 0, 시뮬 = 그 기록의 `cached`가 거짓인 줄 수.
+- J(c) = `<runs>/<id>.done`의 best_damage, L(c) = `<runs>/<id>.jsonl`의 step 0, 시뮬 = 그 기록의 줄 수(평가 수 — 빈 캐시에서
+  혼자 돌렸을 때의 시뮬 수. 시운전 8개가 캐시로 다시 읽혀 `cached`로 세면 0이 된다).
 - S2(c) = `<reload>/reload_eval.jsonl`의 total_damage.
 - 순위의 동률은 id 순. 표준 라이브러리만 쓴다.
 """
@@ -127,8 +128,7 @@ def load_runs(d: Path) -> tuple[dict[str, int], dict[str, int], dict[str, int], 
                 r = json.loads(line)
                 if r["step"] == 0:
                     first = r["total_damage"]
-                if not r.get("cached"):
-                    n += 1
+                n += 1
         if s.get("best_damage") is None or first is None:
             continue
         J[cid], L[cid], sims[cid], best[cid] = s["best_damage"], first, n, s["best_variants"]
@@ -161,7 +161,8 @@ def _records(paths: Iterable[Path]) -> Iterable[dict[str, Any]]:
 
 
 def prior_best() -> dict[frozenset, tuple[str, int]]:
-    """실험 6 · 7 기록의 조합(구성) → (id, 최선 총딜). J의 신뢰도 확인용."""
+    """실험 6 · 7 기록의 조합(구성) → (id, 최선 총딜). J의 신뢰도 확인용.
+    실험 6의 `fixed_layer`(버스트 게이지 `fixed`)는 조건이 달라 뺀다."""
     comps = {}
     for path in (EXP6 / "compositions.json", EXP7 / "val_compositions.json"):
         for c in json.loads(path.read_text(encoding="utf-8")):
@@ -170,6 +171,8 @@ def prior_best() -> dict[frozenset, tuple[str, int]]:
     paths = [EXP6 / "run_log" / "main.jsonl.gz"] + sorted((EXP7 / "run_log").glob("*.jsonl.gz"))
     for r in _records(paths):
         d = r.get("total_damage")
+        if r.get("condition") == "fixed_layer":
+            continue
         if d is not None and r["comp_id"] in comps and d > best.get(r["comp_id"], -1):
             best[r["comp_id"]] = d
     return {comps[i]: (i, v) for i, v in best.items()}

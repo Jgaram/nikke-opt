@@ -1,0 +1,606 @@
+{
+ "A": {
+  "2B": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "D : 킬러 와이프": {
+   "choice": "C0.1_dry",
+   "count": 1,
+   "n": 1
+  },
+  "그레이브": {
+   "choice": "none",
+   "count": 6,
+   "n": 14
+  },
+  "나가": {
+   "choice": "C0.1_dry",
+   "count": 1,
+   "n": 1
+  },
+  "나유타": {
+   "choice": "none",
+   "count": 13,
+   "n": 16
+  },
+  "도라": {
+   "choice": "none",
+   "count": 1,
+   "n": 3
+  },
+  "도로시 : 세렌디피티": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 2
+  },
+  "드레이크": {
+   "choice": "B0.5",
+   "count": 2,
+   "n": 3
+  },
+  "디젤 : 윈터 스위츠": {
+   "choice": "none",
+   "count": 24,
+   "n": 42
+  },
+  "라피 : 레드 후드": {
+   "choice": "C0.1_dry",
+   "count": 5,
+   "n": 16
+  },
+  "레드 후드": {
+   "choice": "none",
+   "count": 7,
+   "n": 12
+  },
+  "레이": {
+   "choice": "none",
+   "count": 5,
+   "n": 6
+  },
+  "레이 (가칭)": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "레이븐": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "루드밀라 : 윈터 오너": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "루주": {
+   "choice": "C0.1_dry",
+   "count": 1,
+   "n": 1
+  },
+  "리버렐리오": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "리타": {
+   "choice": "none",
+   "count": 7,
+   "n": 22
+  },
+  "리틀 머메이드": {
+   "choice": "none",
+   "count": 14,
+   "n": 58
+  },
+  "마르차나 : 마린 스터디": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "마스트 : 로망틱 메이드": {
+   "choice": "none",
+   "count": 37,
+   "n": 53
+  },
+  "맥스웰": {
+   "choice": "C0.1",
+   "count": 1,
+   "n": 1
+  },
+  "모더니아": {
+   "choice": "none",
+   "count": 16,
+   "n": 20
+  },
+  "목단": {
+   "choice": "none",
+   "count": 24,
+   "n": 33
+  },
+  "미란다": {
+   "choice": "B0.1",
+   "count": 6,
+   "n": 10
+  },
+  "미하라 : 본딩 체인": {
+   "choice": "none",
+   "count": 7,
+   "n": 13
+  },
+  "민트": {
+   "choice": "none",
+   "count": 24,
+   "n": 39
+  },
+  "벨벳": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "볼륨": {
+   "choice": "B0.1",
+   "count": 3,
+   "n": 8
+  },
+  "브래디": {
+   "choice": "C0.1_dry",
+   "count": 1,
+   "n": 1
+  },
+  "브리드 : 사일런트 트랙": {
+   "choice": "C0.1",
+   "count": 5,
+   "n": 10
+  },
+  "솔린 : 프로스트 티켓": {
+   "choice": "B0.5",
+   "count": 1,
+   "n": 3
+  },
+  "슈가": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "choice": "none",
+   "count": 22,
+   "n": 34
+  },
+  "신데렐라": {
+   "choice": "none",
+   "count": 2,
+   "n": 3
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "choice": "none",
+   "count": 17,
+   "n": 22
+  },
+  "아니스 : 스타": {
+   "choice": "none",
+   "count": 5,
+   "n": 12
+  },
+  "아르카나 : 포츈 메이트": {
+   "choice": "none",
+   "count": 3,
+   "n": 3
+  },
+  "아스카": {
+   "choice": "B0.1",
+   "count": 1,
+   "n": 2
+  },
+  "아스카 : WILLE": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "아크레인저 블랙": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "앨리스": {
+   "choice": "none",
+   "count": 11,
+   "n": 23
+  },
+  "앵커 : 이노센트 메이드": {
+   "choice": "C0.1",
+   "count": 2,
+   "n": 6
+  },
+  "에이다": {
+   "choice": "C0.1_dry",
+   "count": 3,
+   "n": 4
+  },
+  "유키코": {
+   "choice": "none",
+   "count": 28,
+   "n": 67
+  },
+  "이브": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 1
+  },
+  "츠바이": {
+   "choice": "A0.3",
+   "count": 4,
+   "n": 6
+  },
+  "치사토": {
+   "choice": "C0.1_dry",
+   "count": 1,
+   "n": 1
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "choice": "none",
+   "count": 1,
+   "n": 1
+  },
+  "퀸(마코토)": {
+   "choice": "B0.1",
+   "count": 9,
+   "n": 45
+  },
+  "크라운": {
+   "choice": "C0.5",
+   "count": 30,
+   "n": 66
+  },
+  "타키나": {
+   "choice": "B0.5",
+   "count": 1,
+   "n": 1
+  },
+  "토브": {
+   "choice": "none",
+   "count": 6,
+   "n": 7
+  },
+  "프리바티": {
+   "choice": "none",
+   "count": 5,
+   "n": 16
+  },
+  "프리카": {
+   "choice": "none",
+   "count": 21,
+   "n": 41
+  },
+  "플로라": {
+   "choice": "none",
+   "count": 8,
+   "n": 12
+  },
+  "헬름": {
+   "choice": "none",
+   "count": 4,
+   "n": 6
+  },
+  "헬름 : 아쿠아마린": {
+   "choice": "C0.1",
+   "count": 1,
+   "n": 1
+  },
+  "홍련 : 흑영": {
+   "choice": "none",
+   "count": 7,
+   "n": 7
+  }
+ },
+ "B": {
+  "2B": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 2
+  },
+  "D : 킬러 와이프": {
+   "choice": "none",
+   "count": 4,
+   "n": 6
+  },
+  "그레이브": {
+   "choice": "none",
+   "count": 16,
+   "n": 36
+  },
+  "나가": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 2
+  },
+  "나유타": {
+   "choice": "none",
+   "count": 7,
+   "n": 8
+  },
+  "도라": {
+   "choice": "C0.1_dry",
+   "count": 1,
+   "n": 2
+  },
+  "도로시 : 세렌디피티": {
+   "choice": "none",
+   "count": 14,
+   "n": 26
+  },
+  "드레이크": {
+   "choice": "B0.1",
+   "count": 18,
+   "n": 55
+  },
+  "디젤 : 윈터 스위츠": {
+   "choice": "none",
+   "count": 14,
+   "n": 20
+  },
+  "라피 : 레드 후드": {
+   "choice": "C0.1_dry",
+   "count": 25,
+   "n": 61
+  },
+  "레드 후드": {
+   "choice": "none",
+   "count": 7,
+   "n": 12
+  },
+  "레이": {
+   "choice": "none",
+   "count": 16,
+   "n": 28
+  },
+  "레이 (가칭)": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "레이븐": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "루드밀라 : 윈터 오너": {
+   "choice": "none",
+   "count": 3,
+   "n": 4
+  },
+  "루주": {
+   "choice": "none",
+   "count": 2,
+   "n": 4
+  },
+  "리버렐리오": {
+   "choice": "none",
+   "count": 4,
+   "n": 4
+  },
+  "리타": {
+   "choice": "C0.1_dry",
+   "count": 7,
+   "n": 32
+  },
+  "리틀 머메이드": {
+   "choice": "C0.1",
+   "count": 4,
+   "n": 13
+  },
+  "마르차나 : 마린 스터디": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "마스트 : 로망틱 메이드": {
+   "choice": "none",
+   "count": 7,
+   "n": 15
+  },
+  "맥스웰": {
+   "choice": "C0.1_dry",
+   "count": 3,
+   "n": 4
+  },
+  "모더니아": {
+   "choice": "none",
+   "count": 23,
+   "n": 31
+  },
+  "목단": {
+   "choice": "none",
+   "count": 12,
+   "n": 16
+  },
+  "미란다": {
+   "choice": "none",
+   "count": 7,
+   "n": 23
+  },
+  "미하라 : 본딩 체인": {
+   "choice": "none",
+   "count": 32,
+   "n": 70
+  },
+  "민트": {
+   "choice": "none",
+   "count": 3,
+   "n": 8
+  },
+  "벨벳": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "볼륨": {
+   "choice": "C0.1_dry",
+   "count": 2,
+   "n": 2
+  },
+  "브래디": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "브리드 : 사일런트 트랙": {
+   "choice": "C0.1",
+   "count": 15,
+   "n": 57
+  },
+  "솔린 : 프로스트 티켓": {
+   "choice": "B0.1",
+   "count": 14,
+   "n": 57
+  },
+  "슈가": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 2
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "choice": "none",
+   "count": 6,
+   "n": 12
+  },
+  "신데렐라": {
+   "choice": "A0.3",
+   "count": 6,
+   "n": 10
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "choice": "none",
+   "count": 15,
+   "n": 23
+  },
+  "아니스 : 스타": {
+   "choice": "none",
+   "count": 22,
+   "n": 52
+  },
+  "아르카나 : 포츈 메이트": {
+   "choice": "none",
+   "count": 30,
+   "n": 43
+  },
+  "아스카": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 2
+  },
+  "아스카 : WILLE": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "아크레인저 블랙": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "앨리스": {
+   "choice": "none",
+   "count": 11,
+   "n": 25
+  },
+  "앵커 : 이노센트 메이드": {
+   "choice": "none",
+   "count": 1,
+   "n": 3
+  },
+  "에이다": {
+   "choice": "none",
+   "count": 4,
+   "n": 9
+  },
+  "유키코": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "이브": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "츠바이": {
+   "choice": "none",
+   "count": 3,
+   "n": 6
+  },
+  "치사토": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "퀸(마코토)": {
+   "choice": "A0.3",
+   "count": 1,
+   "n": 4
+  },
+  "크라운": {
+   "choice": "C0.1_dry",
+   "count": 3,
+   "n": 9
+  },
+  "타키나": {
+   "choice": "none",
+   "count": 2,
+   "n": 2
+  },
+  "토브": {
+   "choice": "none",
+   "count": 17,
+   "n": 53
+  },
+  "프리바티": {
+   "choice": "none",
+   "count": 17,
+   "n": 42
+  },
+  "프리카": {
+   "choice": "none",
+   "count": 7,
+   "n": 11
+  },
+  "플로라": {
+   "choice": "A0.3",
+   "count": 4,
+   "n": 9
+  },
+  "헬름": {
+   "choice": "none",
+   "count": 2,
+   "n": 3
+  },
+  "헬름 : 아쿠아마린": {
+   "choice": "none",
+   "count": 1,
+   "n": 2
+  },
+  "홍련 : 흑영": {
+   "choice": "none",
+   "count": 4,
+   "n": 6
+  }
+ }
+}

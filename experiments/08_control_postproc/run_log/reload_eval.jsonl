@@ -1,0 +1,348 @@
+{"comp_id": "k001", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 3642668120, "error": null, "reused": false, "cached": false}
+{"comp_id": "k002", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 3409341112, "error": null, "reused": false, "cached": false}
+{"comp_id": "k003", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4550237149, "error": null, "reused": false, "cached": true}
+{"comp_id": "k004", "fold": "B", "variants": [], "total_damage": 3517968390, "error": null, "reused": true}
+{"comp_id": "k005", "fold": "A", "variants": [], "total_damage": 1812570041, "error": null, "reused": true}
+{"comp_id": "k006", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2248723642, "error": null, "reused": false, "cached": true}
+{"comp_id": "k007", "fold": "A", "variants": [], "total_damage": 2311487963, "error": null, "reused": true}
+{"comp_id": "k008", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 3133849015, "error": null, "reused": false, "cached": true}
+{"comp_id": "k009", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4569005431, "error": null, "reused": false, "cached": false}
+{"comp_id": "k010", "fold": "B", "variants": ["볼륨:reload:C0.1_dry", "퀸(마코토):reload:A0.3"], "total_damage": 2272429704, "error": null, "reused": false, "cached": true}
+{"comp_id": "k011", "fold": "A", "variants": ["미란다:reload:B0.1", "크라운:reload:C0.5"], "total_damage": 2772084186, "error": null, "reused": false, "cached": false}
+{"comp_id": "k012", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4700300313, "error": null, "reused": false, "cached": false}
+{"comp_id": "k013", "fold": "A", "variants": [], "total_damage": 2732938391, "error": null, "reused": true}
+{"comp_id": "k014", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2481153094, "error": null, "reused": false, "cached": true}
+{"comp_id": "k015", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3592233332, "error": null, "reused": false, "cached": true}
+{"comp_id": "k016", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3"], "total_damage": 1118595355, "error": null, "reused": false, "cached": false}
+{"comp_id": "k017", "fold": "A", "variants": [], "total_damage": 3146470948, "error": null, "reused": true}
+{"comp_id": "k018", "fold": "B", "variants": [], "total_damage": 3532862978, "error": null, "reused": true}
+{"comp_id": "k019", "fold": "A", "variants": [], "total_damage": 2339779537, "error": null, "reused": true}
+{"comp_id": "k020", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3376089101, "error": null, "reused": false, "cached": false}
+{"comp_id": "k021", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "퀸(마코토):reload:B0.1"], "total_damage": 3385467418, "error": null, "reused": false, "cached": false}
+{"comp_id": "k022", "fold": "B", "variants": ["크라운:reload:C0.1_dry"], "total_damage": 2547812125, "error": null, "reused": false, "cached": true}
+{"comp_id": "k023", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 2157754912, "error": null, "reused": false, "cached": true}
+{"comp_id": "k024", "fold": "B", "variants": [], "total_damage": 3247098417, "error": null, "reused": true}
+{"comp_id": "k025", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4564271500, "error": null, "reused": false, "cached": true}
+{"comp_id": "k026", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2496078162, "error": null, "reused": false, "cached": true}
+{"comp_id": "k027", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 4139667331, "error": null, "reused": false, "cached": true}
+{"comp_id": "k028", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "크라운:reload:C0.1_dry"], "total_damage": 4384349759, "error": null, "reused": false, "cached": false}
+{"comp_id": "k029", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 3210741536, "error": null, "reused": false, "cached": false}
+{"comp_id": "k030", "fold": "B", "variants": ["드레이크:reload:B0.1", "솔린 : 프로스트 티켓:reload:B0.1"], "total_damage": 2903366084, "error": null, "reused": false, "cached": false}
+{"comp_id": "k031", "fold": "A", "variants": [], "total_damage": 1776894242, "error": null, "reused": true}
+{"comp_id": "k032", "fold": "B", "variants": ["도라:reload:C0.1_dry", "플로라:reload:A0.3"], "total_damage": 2670034124, "error": null, "reused": false, "cached": false}
+{"comp_id": "k033", "fold": "A", "variants": [], "total_damage": 3117457309, "error": null, "reused": true}
+{"comp_id": "k034", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2934257815, "error": null, "reused": false, "cached": false}
+{"comp_id": "k035", "fold": "A", "variants": ["앵커 : 이노센트 메이드:reload:C0.1"], "total_damage": 1210255801, "error": null, "reused": false, "cached": false}
+{"comp_id": "k036", "fold": "B", "variants": ["리타:reload:C0.1_dry", "아스카:reload:A0.3"], "total_damage": 1725901714, "error": null, "reused": false, "cached": false}
+{"comp_id": "k037", "fold": "A", "variants": ["루주:reload:C0.1_dry", "미란다:reload:B0.1"], "total_damage": 1878800043, "error": null, "reused": false, "cached": false}
+{"comp_id": "k038", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 3916206319, "error": null, "reused": false, "cached": false}
+{"comp_id": "k039", "fold": "A", "variants": [], "total_damage": 1798472764, "error": null, "reused": true}
+{"comp_id": "k040", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4296471259, "error": null, "reused": false, "cached": false}
+{"comp_id": "k041", "fold": "A", "variants": [], "total_damage": 2588839972, "error": null, "reused": true}
+{"comp_id": "k042", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2958805935, "error": null, "reused": false, "cached": false}
+{"comp_id": "k043", "fold": "A", "variants": [], "total_damage": 2038283583, "error": null, "reused": true}
+{"comp_id": "k044", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 3347849287, "error": null, "reused": false, "cached": false}
+{"comp_id": "k045", "fold": "A", "variants": [], "total_damage": 2292397952, "error": null, "reused": true}
+{"comp_id": "k046", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2595712497, "error": null, "reused": false, "cached": false}
+{"comp_id": "k047", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3332200388, "error": null, "reused": false, "cached": false}
+{"comp_id": "k048", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "크라운:reload:C0.1_dry"], "total_damage": 3751159248, "error": null, "reused": false, "cached": false}
+{"comp_id": "k049", "fold": "A", "variants": ["D : 킬러 와이프:reload:C0.1_dry", "맥스웰:reload:C0.1", "미란다:reload:B0.1"], "total_damage": 1806633213, "error": null, "reused": false, "cached": false}
+{"comp_id": "k050", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2026413451, "error": null, "reused": false, "cached": true}
+{"comp_id": "k051", "fold": "A", "variants": [], "total_damage": 1899807160, "error": null, "reused": true}
+{"comp_id": "k052", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2847899619, "error": null, "reused": false, "cached": true}
+{"comp_id": "k053", "fold": "A", "variants": [], "total_damage": 2347062792, "error": null, "reused": true}
+{"comp_id": "k054", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2965888300, "error": null, "reused": false, "cached": true}
+{"comp_id": "k055", "fold": "A", "variants": [], "total_damage": 2549131936, "error": null, "reused": true}
+{"comp_id": "k056", "fold": "B", "variants": ["2B:reload:A0.3", "리타:reload:C0.1_dry"], "total_damage": 1702159734, "error": null, "reused": false, "cached": false}
+{"comp_id": "k057", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1", "에이다:reload:C0.1_dry"], "total_damage": 3638970093, "error": null, "reused": false, "cached": false}
+{"comp_id": "k058", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2897522504, "error": null, "reused": false, "cached": true}
+{"comp_id": "k059", "fold": "A", "variants": [], "total_damage": 3072844235, "error": null, "reused": true}
+{"comp_id": "k060", "fold": "B", "variants": ["볼륨:reload:C0.1_dry"], "total_damage": 2049369213, "error": null, "reused": false, "cached": false}
+{"comp_id": "k061", "fold": "A", "variants": [], "total_damage": 3085953642, "error": null, "reused": true}
+{"comp_id": "k062", "fold": "B", "variants": ["리타:reload:C0.1_dry", "신데렐라:reload:A0.3"], "total_damage": 2872833956, "error": null, "reused": false, "cached": false}
+{"comp_id": "k063", "fold": "A", "variants": [], "total_damage": 2426254612, "error": null, "reused": true}
+{"comp_id": "k064", "fold": "B", "variants": [], "total_damage": 3159220239, "error": null, "reused": true}
+{"comp_id": "k065", "fold": "A", "variants": ["D : 킬러 와이프:reload:C0.1_dry", "미란다:reload:B0.1"], "total_damage": 2029491422, "error": null, "reused": false, "cached": false}
+{"comp_id": "k066", "fold": "B", "variants": ["리타:reload:C0.1_dry", "신데렐라:reload:A0.3"], "total_damage": 2140715178, "error": null, "reused": false, "cached": false}
+{"comp_id": "k067", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2581649003, "error": null, "reused": false, "cached": false}
+{"comp_id": "k068", "fold": "B", "variants": ["2B:reload:A0.3", "리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2642943102, "error": null, "reused": false, "cached": false}
+{"comp_id": "k069", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3050205610, "error": null, "reused": false, "cached": true}
+{"comp_id": "k070", "fold": "A", "variants": ["D : 킬러 와이프:reload:C0.1_dry", "도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2047601132, "error": null, "reused": false, "cached": false}
+{"comp_id": "k071", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2660969101, "error": null, "reused": false, "cached": false}
+{"comp_id": "k072", "fold": "A", "variants": ["D : 킬러 와이프:reload:C0.1_dry", "라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2873071894, "error": null, "reused": false, "cached": true}
+{"comp_id": "k073", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2708087823, "error": null, "reused": false, "cached": false}
+{"comp_id": "k074", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2473733834, "error": null, "reused": false, "cached": false}
+{"comp_id": "k075", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 3443339690, "error": null, "reused": false, "cached": false}
+{"comp_id": "k076", "fold": "A", "variants": ["나가:reload:C0.1_dry", "도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2281353821, "error": null, "reused": false, "cached": false}
+{"comp_id": "k077", "fold": "B", "variants": ["나가:reload:A0.3", "리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2529046519, "error": null, "reused": false, "cached": false}
+{"comp_id": "k078", "fold": "A", "variants": ["나가:reload:C0.1_dry", "라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 2934650693, "error": null, "reused": false, "cached": false}
+{"comp_id": "k079", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 3078175091, "error": null, "reused": false, "cached": false}
+{"comp_id": "k080", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2872727635, "error": null, "reused": false, "cached": false}
+{"comp_id": "k081", "fold": "B", "variants": [], "total_damage": 3025768752, "error": null, "reused": true}
+{"comp_id": "k082", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2043944807, "error": null, "reused": false, "cached": false}
+{"comp_id": "k083", "fold": "B", "variants": ["도라:reload:C0.1_dry", "리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2514628211, "error": null, "reused": false, "cached": false}
+{"comp_id": "k084", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 2801667666, "error": null, "reused": false, "cached": false}
+{"comp_id": "k085", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2794955742, "error": null, "reused": false, "cached": false}
+{"comp_id": "k086", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4277994671, "error": null, "reused": false, "cached": false}
+{"comp_id": "k087", "fold": "B", "variants": [], "total_damage": 2736177061, "error": null, "reused": true}
+{"comp_id": "k088", "fold": "B", "variants": ["드레이크:reload:B0.1", "리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2720644027, "error": null, "reused": false, "cached": false}
+{"comp_id": "k089", "fold": "A", "variants": ["드레이크:reload:B0.5", "라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4351936747, "error": null, "reused": false, "cached": true}
+{"comp_id": "k090", "fold": "B", "variants": ["드레이크:reload:B0.1"], "total_damage": 2731398309, "error": null, "reused": false, "cached": true}
+{"comp_id": "k091", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 3116237555, "error": null, "reused": false, "cached": true}
+{"comp_id": "k092", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3329132220, "error": null, "reused": false, "cached": false}
+{"comp_id": "k093", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3379971371, "error": null, "reused": false, "cached": false}
+{"comp_id": "k094", "fold": "A", "variants": ["드레이크:reload:B0.5", "라피 : 레드 후드:reload:C0.1_dry", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2797979817, "error": null, "reused": false, "cached": false}
+{"comp_id": "k095", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3304537187, "error": null, "reused": false, "cached": false}
+{"comp_id": "k096", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 2504725335, "error": null, "reused": false, "cached": true}
+{"comp_id": "k097", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2328200308, "error": null, "reused": false, "cached": false}
+{"comp_id": "k098", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2475638085, "error": null, "reused": false, "cached": false}
+{"comp_id": "k099", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3056477075, "error": null, "reused": false, "cached": false}
+{"comp_id": "k100", "fold": "B", "variants": [], "total_damage": 2578962980, "error": null, "reused": true}
+{"comp_id": "k101", "fold": "A", "variants": [], "total_damage": 1650390630, "error": null, "reused": true}
+{"comp_id": "k102", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 1953255770, "error": null, "reused": false, "cached": true}
+{"comp_id": "k103", "fold": "A", "variants": [], "total_damage": 1712556157, "error": null, "reused": true}
+{"comp_id": "k104", "fold": "B", "variants": [], "total_damage": 2356072789, "error": null, "reused": true}
+{"comp_id": "k105", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 1451298270, "error": null, "reused": false, "cached": true}
+{"comp_id": "k106", "fold": "B", "variants": ["볼륨:reload:C0.1_dry", "퀸(마코토):reload:A0.3"], "total_damage": 1429737421, "error": null, "reused": false, "cached": false}
+{"comp_id": "k107", "fold": "A", "variants": ["미란다:reload:B0.1", "크라운:reload:C0.5"], "total_damage": 2233852281, "error": null, "reused": false, "cached": false}
+{"comp_id": "k108", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3242642813, "error": null, "reused": false, "cached": false}
+{"comp_id": "k109", "fold": "A", "variants": [], "total_damage": 2130147329, "error": null, "reused": true}
+{"comp_id": "k110", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 1729333495, "error": null, "reused": false, "cached": true}
+{"comp_id": "k111", "fold": "A", "variants": [], "total_damage": 905137227, "error": null, "reused": true}
+{"comp_id": "k112", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3"], "total_damage": 776592240, "error": null, "reused": false, "cached": false}
+{"comp_id": "k113", "fold": "A", "variants": [], "total_damage": 2352102833, "error": null, "reused": true}
+{"comp_id": "k114", "fold": "B", "variants": [], "total_damage": 2201120737, "error": null, "reused": true}
+{"comp_id": "k115", "fold": "A", "variants": [], "total_damage": 2315637625, "error": null, "reused": true}
+{"comp_id": "k116", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2832325255, "error": null, "reused": false, "cached": false}
+{"comp_id": "k117", "fold": "A", "variants": ["솔린 : 프로스트 티켓:reload:B0.5", "퀸(마코토):reload:B0.1"], "total_damage": 2075332082, "error": null, "reused": false, "cached": false}
+{"comp_id": "k118", "fold": "B", "variants": ["크라운:reload:C0.1_dry"], "total_damage": 2237857804, "error": null, "reused": false, "cached": true}
+{"comp_id": "k119", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 2023751578, "error": null, "reused": false, "cached": true}
+{"comp_id": "k120", "fold": "B", "variants": [], "total_damage": 1134883150, "error": null, "reused": true}
+{"comp_id": "k121", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2522229592, "error": null, "reused": false, "cached": false}
+{"comp_id": "k122", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4009499032, "error": null, "reused": false, "cached": false}
+{"comp_id": "k123", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2180642477, "error": null, "reused": false, "cached": true}
+{"comp_id": "k124", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2741074006, "error": null, "reused": false, "cached": false}
+{"comp_id": "k125", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2854826052, "error": null, "reused": false, "cached": false}
+{"comp_id": "k126", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3330154510, "error": null, "reused": false, "cached": false}
+{"comp_id": "k127", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2872745642, "error": null, "reused": false, "cached": false}
+{"comp_id": "k128", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3170207762, "error": null, "reused": false, "cached": false}
+{"comp_id": "k129", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3769018902, "error": null, "reused": false, "cached": false}
+{"comp_id": "k130", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2835001772, "error": null, "reused": false, "cached": false}
+{"comp_id": "k131", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3196728359, "error": null, "reused": false, "cached": false}
+{"comp_id": "k132", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3705983346, "error": null, "reused": false, "cached": true}
+{"comp_id": "k133", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "루주:reload:C0.1_dry", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 1970692312, "error": null, "reused": false, "cached": false}
+{"comp_id": "k134", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2573539319, "error": null, "reused": false, "cached": false}
+{"comp_id": "k135", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "루주:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2760909129, "error": null, "reused": false, "cached": false}
+{"comp_id": "k136", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2831410628, "error": null, "reused": false, "cached": false}
+{"comp_id": "k137", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3308431415, "error": null, "reused": false, "cached": false}
+{"comp_id": "k138", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3821348851, "error": null, "reused": false, "cached": false}
+{"comp_id": "k139", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2245399106, "error": null, "reused": false, "cached": false}
+{"comp_id": "k140", "fold": "B", "variants": ["리타:reload:C0.1_dry", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2810434929, "error": null, "reused": false, "cached": false}
+{"comp_id": "k141", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2887419226, "error": null, "reused": false, "cached": false}
+{"comp_id": "k142", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2218248083, "error": null, "reused": false, "cached": false}
+{"comp_id": "k143", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3635805076, "error": null, "reused": false, "cached": false}
+{"comp_id": "k144", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1"], "total_damage": 3319504106, "error": null, "reused": false, "cached": true}
+{"comp_id": "k145", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2687860674, "error": null, "reused": false, "cached": false}
+{"comp_id": "k146", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2984247404, "error": null, "reused": false, "cached": false}
+{"comp_id": "k147", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3197054920, "error": null, "reused": false, "cached": false}
+{"comp_id": "k148", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 1792424101, "error": null, "reused": false, "cached": false}
+{"comp_id": "k149", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 2383560644, "error": null, "reused": false, "cached": false}
+{"comp_id": "k150", "fold": "B", "variants": [], "total_damage": 1473348421, "error": null, "reused": true}
+{"comp_id": "k151", "fold": "A", "variants": [], "total_damage": 1093566115, "error": null, "reused": true}
+{"comp_id": "k152", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 1197668710, "error": null, "reused": false, "cached": true}
+{"comp_id": "k153", "fold": "A", "variants": [], "total_damage": 1647103030, "error": null, "reused": true}
+{"comp_id": "k154", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 1448306371, "error": null, "reused": false, "cached": false}
+{"comp_id": "k155", "fold": "B", "variants": ["볼륨:reload:C0.1_dry", "퀸(마코토):reload:A0.3"], "total_damage": 2142829946, "error": null, "reused": false, "cached": false}
+{"comp_id": "k156", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 1560473637, "error": null, "reused": false, "cached": true}
+{"comp_id": "k157", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 2044373860, "error": null, "reused": false, "cached": false}
+{"comp_id": "k158", "fold": "A", "variants": [], "total_damage": 1738818335, "error": null, "reused": true}
+{"comp_id": "k159", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2269273233, "error": null, "reused": false, "cached": true}
+{"comp_id": "k160", "fold": "A", "variants": ["드레이크:reload:B0.5", "맥스웰:reload:C0.1", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2514826640, "error": null, "reused": false, "cached": false}
+{"comp_id": "k161", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "맥스웰:reload:C0.1_dry", "크라운:reload:C0.1_dry"], "total_damage": 2538384027, "error": null, "reused": false, "cached": false}
+{"comp_id": "k162", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "맥스웰:reload:C0.1", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3385983885, "error": null, "reused": false, "cached": false}
+{"comp_id": "k163", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2354580565, "error": null, "reused": false, "cached": false}
+{"comp_id": "k164", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2707825018, "error": null, "reused": false, "cached": false}
+{"comp_id": "k165", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3578394003, "error": null, "reused": false, "cached": true}
+{"comp_id": "k166", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2224623200, "error": null, "reused": false, "cached": false}
+{"comp_id": "k167", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2985383781, "error": null, "reused": false, "cached": false}
+{"comp_id": "k168", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3213753615, "error": null, "reused": false, "cached": false}
+{"comp_id": "k169", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "미란다:reload:B0.1", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2318733732, "error": null, "reused": false, "cached": false}
+{"comp_id": "k170", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2407585384, "error": null, "reused": false, "cached": false}
+{"comp_id": "k171", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "미란다:reload:B0.1", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2402853332, "error": null, "reused": false, "cached": false}
+{"comp_id": "k172", "fold": "B", "variants": [], "total_damage": 3015239158, "error": null, "reused": true}
+{"comp_id": "k173", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 1411376045, "error": null, "reused": false, "cached": true}
+{"comp_id": "k174", "fold": "B", "variants": [], "total_damage": 1448166258, "error": null, "reused": true}
+{"comp_id": "k175", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 1750227638, "error": null, "reused": false, "cached": true}
+{"comp_id": "k176", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 2598831006, "error": null, "reused": false, "cached": false}
+{"comp_id": "k177", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "미란다:reload:B0.1", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2850029245, "error": null, "reused": false, "cached": false}
+{"comp_id": "k178", "fold": "B", "variants": ["퀸(마코토):reload:A0.3"], "total_damage": 1849261723, "error": null, "reused": false, "cached": false}
+{"comp_id": "k179", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2644927248, "error": null, "reused": false, "cached": false}
+{"comp_id": "k180", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 1886348394, "error": null, "reused": false, "cached": true}
+{"comp_id": "k181", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2779388358, "error": null, "reused": false, "cached": false}
+{"comp_id": "k182", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3381735082, "error": null, "reused": false, "cached": false}
+{"comp_id": "k183", "fold": "B", "variants": [], "total_damage": 2918971272, "error": null, "reused": true}
+{"comp_id": "k184", "fold": "A", "variants": [], "total_damage": 2190002465, "error": null, "reused": true}
+{"comp_id": "k185", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 1955053159, "error": null, "reused": false, "cached": true}
+{"comp_id": "k186", "fold": "A", "variants": [], "total_damage": 2470427351, "error": null, "reused": true}
+{"comp_id": "k187", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 2540139807, "error": null, "reused": false, "cached": true}
+{"comp_id": "k188", "fold": "B", "variants": ["볼륨:reload:C0.1_dry", "퀸(마코토):reload:A0.3"], "total_damage": 2078193963, "error": null, "reused": false, "cached": true}
+{"comp_id": "k189", "fold": "A", "variants": [], "total_damage": 2880287602, "error": null, "reused": true}
+{"comp_id": "k190", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2189363243, "error": null, "reused": false, "cached": true}
+{"comp_id": "k191", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2795863790, "error": null, "reused": false, "cached": true}
+{"comp_id": "k192", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3"], "total_damage": 1168975057, "error": null, "reused": false, "cached": false}
+{"comp_id": "k193", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2840426947, "error": null, "reused": false, "cached": false}
+{"comp_id": "k194", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2395731146, "error": null, "reused": false, "cached": false}
+{"comp_id": "k195", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 3813852235, "error": null, "reused": false, "cached": true}
+{"comp_id": "k196", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2230663742, "error": null, "reused": false, "cached": false}
+{"comp_id": "k197", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 3037012355, "error": null, "reused": false, "cached": false}
+{"comp_id": "k198", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 3205107648, "error": null, "reused": false, "cached": false}
+{"comp_id": "k199", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "볼륨:reload:B0.1", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2092029321, "error": null, "reused": false, "cached": false}
+{"comp_id": "k200", "fold": "B", "variants": ["볼륨:reload:C0.1_dry", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2810438228, "error": null, "reused": false, "cached": false}
+{"comp_id": "k201", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "볼륨:reload:B0.1", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2798038361, "error": null, "reused": false, "cached": false}
+{"comp_id": "k202", "fold": "A", "variants": ["드레이크:reload:B0.5", "브래디:reload:C0.1_dry", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2323056015, "error": null, "reused": false, "cached": false}
+{"comp_id": "k203", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2859826722, "error": null, "reused": false, "cached": false}
+{"comp_id": "k204", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브래디:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3054435761, "error": null, "reused": false, "cached": false}
+{"comp_id": "k205", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "브리드 : 사일런트 트랙:reload:C0.1", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 3421546584, "error": null, "reused": false, "cached": false}
+{"comp_id": "k206", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "브리드 : 사일런트 트랙:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 3261164108, "error": null, "reused": false, "cached": false}
+{"comp_id": "k207", "fold": "B", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3396834633, "error": null, "reused": false, "cached": true}
+{"comp_id": "k208", "fold": "B", "variants": ["솔린 : 프로스트 티켓:reload:B0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 1376564838, "error": null, "reused": false, "cached": false}
+{"comp_id": "k209", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 1679021310, "error": null, "reused": false, "cached": false}
+{"comp_id": "k210", "fold": "B", "variants": ["솔린 : 프로스트 티켓:reload:B0.1"], "total_damage": 1097183112, "error": null, "reused": false, "cached": true}
+{"comp_id": "k211", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "슈가:reload:A0.3", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2565232818, "error": null, "reused": false, "cached": false}
+{"comp_id": "k212", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4047882568, "error": null, "reused": false, "cached": false}
+{"comp_id": "k213", "fold": "B", "variants": ["슈가:reload:A0.3"], "total_damage": 2596305921, "error": null, "reused": false, "cached": true}
+{"comp_id": "k214", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2990739059, "error": null, "reused": false, "cached": false}
+{"comp_id": "k215", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3630271255, "error": null, "reused": false, "cached": false}
+{"comp_id": "k216", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3830266368, "error": null, "reused": false, "cached": false}
+{"comp_id": "k217", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2928537687, "error": null, "reused": false, "cached": false}
+{"comp_id": "k218", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "신데렐라:reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 3394179708, "error": null, "reused": false, "cached": false}
+{"comp_id": "k219", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3605295500, "error": null, "reused": false, "cached": false}
+{"comp_id": "k220", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2915683661, "error": null, "reused": false, "cached": false}
+{"comp_id": "k221", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3706213565, "error": null, "reused": false, "cached": false}
+{"comp_id": "k222", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3528478165, "error": null, "reused": false, "cached": true}
+{"comp_id": "k223", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 1652420193, "error": null, "reused": false, "cached": false}
+{"comp_id": "k224", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 4063499497, "error": null, "reused": false, "cached": false}
+{"comp_id": "k225", "fold": "B", "variants": [], "total_damage": 4431357193, "error": null, "reused": true}
+{"comp_id": "k226", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3"], "total_damage": 2401525937, "error": null, "reused": false, "cached": false}
+{"comp_id": "k227", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 3000379486, "error": null, "reused": false, "cached": false}
+{"comp_id": "k228", "fold": "B", "variants": [], "total_damage": 2271631129, "error": null, "reused": true}
+{"comp_id": "k229", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "아스카:reload:B0.1"], "total_damage": 2548408563, "error": null, "reused": false, "cached": false}
+{"comp_id": "k230", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "아스카:reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2614852906, "error": null, "reused": false, "cached": false}
+{"comp_id": "k231", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1", "아스카:reload:B0.1"], "total_damage": 3128679324, "error": null, "reused": false, "cached": false}
+{"comp_id": "k232", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2797487806, "error": null, "reused": false, "cached": false}
+{"comp_id": "k233", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3571462637, "error": null, "reused": false, "cached": false}
+{"comp_id": "k234", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3604569432, "error": null, "reused": false, "cached": true}
+{"comp_id": "k235", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2817029800, "error": null, "reused": false, "cached": false}
+{"comp_id": "k236", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2945489900, "error": null, "reused": false, "cached": false}
+{"comp_id": "k237", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3062300223, "error": null, "reused": false, "cached": false}
+{"comp_id": "k238", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2280561919, "error": null, "reused": false, "cached": false}
+{"comp_id": "k239", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2827082652, "error": null, "reused": false, "cached": false}
+{"comp_id": "k240", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3176064230, "error": null, "reused": false, "cached": true}
+{"comp_id": "k241", "fold": "B", "variants": [], "total_damage": 2855788235, "error": null, "reused": true}
+{"comp_id": "k242", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 2209653919, "error": null, "reused": false, "cached": true}
+{"comp_id": "k243", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3552757107, "error": null, "reused": false, "cached": true}
+{"comp_id": "k244", "fold": "B", "variants": ["볼륨:reload:C0.1_dry"], "total_damage": 1667952961, "error": null, "reused": false, "cached": true}
+{"comp_id": "k245", "fold": "A", "variants": ["미란다:reload:B0.1", "크라운:reload:C0.5"], "total_damage": 2083973640, "error": null, "reused": false, "cached": false}
+{"comp_id": "k246", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3505478317, "error": null, "reused": false, "cached": true}
+{"comp_id": "k247", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2483289783, "error": null, "reused": false, "cached": false}
+{"comp_id": "k248", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1"], "total_damage": 932904311, "error": null, "reused": false, "cached": false}
+{"comp_id": "k249", "fold": "A", "variants": [], "total_damage": 2865694585, "error": null, "reused": true}
+{"comp_id": "k250", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "앵커 : 이노센트 메이드:reload:C0.1"], "total_damage": 1235330336, "error": null, "reused": false, "cached": false}
+{"comp_id": "k251", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2730648606, "error": null, "reused": false, "cached": false}
+{"comp_id": "k252", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "앵커 : 이노센트 메이드:reload:C0.1"], "total_damage": 1591078980, "error": null, "reused": false, "cached": false}
+{"comp_id": "k253", "fold": "A", "variants": ["미란다:reload:B0.1", "에이다:reload:C0.1_dry", "크라운:reload:C0.5"], "total_damage": 2720946303, "error": null, "reused": false, "cached": false}
+{"comp_id": "k254", "fold": "A", "variants": ["미란다:reload:B0.1", "에이다:reload:C0.1_dry"], "total_damage": 1896343664, "error": null, "reused": false, "cached": false}
+{"comp_id": "k255", "fold": "B", "variants": ["도라:reload:C0.1_dry", "플로라:reload:A0.3"], "total_damage": 2047076665, "error": null, "reused": false, "cached": false}
+{"comp_id": "k256", "fold": "A", "variants": ["루주:reload:C0.1_dry", "미란다:reload:B0.1", "에이다:reload:C0.1_dry"], "total_damage": 1663538508, "error": null, "reused": false, "cached": false}
+{"comp_id": "k257", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2714292638, "error": null, "reused": false, "cached": false}
+{"comp_id": "k258", "fold": "A", "variants": ["D : 킬러 와이프:reload:C0.1_dry", "맥스웰:reload:C0.1", "미란다:reload:B0.1", "에이다:reload:C0.1_dry"], "total_damage": 1644696656, "error": null, "reused": false, "cached": false}
+{"comp_id": "k259", "fold": "A", "variants": ["D : 킬러 와이프:reload:C0.1_dry", "미란다:reload:B0.1", "에이다:reload:C0.1_dry"], "total_damage": 2319962718, "error": null, "reused": false, "cached": false}
+{"comp_id": "k260", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "솔린 : 프로스트 티켓:reload:B0.5", "에이다:reload:C0.1_dry"], "total_damage": 2481409508, "error": null, "reused": false, "cached": false}
+{"comp_id": "k261", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2464652284, "error": null, "reused": false, "cached": false}
+{"comp_id": "k262", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1", "에이다:reload:C0.1_dry"], "total_damage": 4396378650, "error": null, "reused": false, "cached": false}
+{"comp_id": "k263", "fold": "B", "variants": [], "total_damage": 2789561317, "error": null, "reused": true}
+{"comp_id": "k264", "fold": "A", "variants": ["에이다:reload:C0.1_dry"], "total_damage": 1601463836, "error": null, "reused": false, "cached": false}
+{"comp_id": "k265", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2603132326, "error": null, "reused": false, "cached": true}
+{"comp_id": "k266", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3836332436, "error": null, "reused": false, "cached": true}
+{"comp_id": "k267", "fold": "B", "variants": [], "total_damage": 2451225546, "error": null, "reused": true}
+{"comp_id": "k268", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2938290154, "error": null, "reused": false, "cached": true}
+{"comp_id": "k269", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3274121833, "error": null, "reused": false, "cached": false}
+{"comp_id": "k270", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3626405873, "error": null, "reused": false, "cached": false}
+{"comp_id": "k271", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "일레그 : 붐 앤 쇼크:reload:A0.3"], "total_damage": 2571331566, "error": null, "reused": false, "cached": false}
+{"comp_id": "k272", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2905472068, "error": null, "reused": false, "cached": false}
+{"comp_id": "k273", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1", "일레그 : 붐 앤 쇼크:reload:A0.3"], "total_damage": 3239290796, "error": null, "reused": false, "cached": false}
+{"comp_id": "k274", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "츠바이:reload:A0.3"], "total_damage": 2678316086, "error": null, "reused": false, "cached": false}
+{"comp_id": "k275", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2245510509, "error": null, "reused": false, "cached": false}
+{"comp_id": "k276", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1", "츠바이:reload:A0.3"], "total_damage": 2261285037, "error": null, "reused": false, "cached": false}
+{"comp_id": "k277", "fold": "B", "variants": [], "total_damage": 2921230634, "error": null, "reused": true}
+{"comp_id": "k278", "fold": "A", "variants": ["츠바이:reload:A0.3"], "total_damage": 1334726254, "error": null, "reused": false, "cached": true}
+{"comp_id": "k279", "fold": "B", "variants": [], "total_damage": 1557720581, "error": null, "reused": true}
+{"comp_id": "k280", "fold": "A", "variants": ["츠바이:reload:A0.3"], "total_damage": 1583306656, "error": null, "reused": false, "cached": true}
+{"comp_id": "k281", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 2438114062, "error": null, "reused": false, "cached": false}
+{"comp_id": "k282", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1", "츠바이:reload:A0.3"], "total_damage": 2547007024, "error": null, "reused": false, "cached": false}
+{"comp_id": "k283", "fold": "B", "variants": ["퀸(마코토):reload:A0.3"], "total_damage": 1818761494, "error": null, "reused": false, "cached": false}
+{"comp_id": "k284", "fold": "A", "variants": ["츠바이:reload:A0.3", "크라운:reload:C0.5"], "total_damage": 3037269677, "error": null, "reused": false, "cached": false}
+{"comp_id": "k285", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2423784915, "error": null, "reused": false, "cached": false}
+{"comp_id": "k286", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "치사토:reload:C0.1_dry"], "total_damage": 2761880398, "error": null, "reused": false, "cached": false}
+{"comp_id": "k287", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3063174359, "error": null, "reused": false, "cached": false}
+{"comp_id": "k288", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1", "치사토:reload:C0.1_dry"], "total_damage": 3514727945, "error": null, "reused": false, "cached": true}
+{"comp_id": "k289", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2706206059, "error": null, "reused": false, "cached": false}
+{"comp_id": "k290", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 2898297082, "error": null, "reused": false, "cached": false}
+{"comp_id": "k291", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3422040343, "error": null, "reused": false, "cached": true}
+{"comp_id": "k292", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1", "퀸(마코토):reload:B0.1"], "total_damage": 3762024004, "error": null, "reused": false, "cached": false}
+{"comp_id": "k293", "fold": "B", "variants": ["퀸(마코토):reload:A0.3"], "total_damage": 2806191732, "error": null, "reused": false, "cached": true}
+{"comp_id": "k294", "fold": "A", "variants": ["퀸(마코토):reload:B0.1"], "total_damage": 1673146288, "error": null, "reused": false, "cached": false}
+{"comp_id": "k295", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "크라운:reload:C0.5"], "total_damage": 3099180495, "error": null, "reused": false, "cached": false}
+{"comp_id": "k296", "fold": "B", "variants": ["크라운:reload:C0.1_dry"], "total_damage": 3372806263, "error": null, "reused": false, "cached": false}
+{"comp_id": "k297", "fold": "A", "variants": ["크라운:reload:C0.5"], "total_damage": 1886094699, "error": null, "reused": false, "cached": false}
+{"comp_id": "k298", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "타키나:reload:B0.5"], "total_damage": 2537403389, "error": null, "reused": false, "cached": false}
+{"comp_id": "k299", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2523566989, "error": null, "reused": false, "cached": false}
+{"comp_id": "k300", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "타키나:reload:B0.5"], "total_damage": 2794613300, "error": null, "reused": false, "cached": false}
+{"comp_id": "k301", "fold": "B", "variants": ["퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2406647503, "error": null, "reused": false, "cached": false}
+{"comp_id": "k302", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2276992111, "error": null, "reused": false, "cached": false}
+{"comp_id": "k303", "fold": "B", "variants": [], "total_damage": 2198113520, "error": null, "reused": true}
+{"comp_id": "k304", "fold": "A", "variants": [], "total_damage": 1126643426, "error": null, "reused": true}
+{"comp_id": "k305", "fold": "B", "variants": [], "total_damage": 1343864582, "error": null, "reused": true}
+{"comp_id": "k306", "fold": "A", "variants": [], "total_damage": 1421975601, "error": null, "reused": true}
+{"comp_id": "k307", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 2041090700, "error": null, "reused": false, "cached": true}
+{"comp_id": "k308", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2471017790, "error": null, "reused": false, "cached": false}
+{"comp_id": "k309", "fold": "B", "variants": ["퀸(마코토):reload:A0.3"], "total_damage": 1875308349, "error": null, "reused": false, "cached": true}
+{"comp_id": "k310", "fold": "A", "variants": ["미란다:reload:B0.1", "크라운:reload:C0.5"], "total_damage": 1774336259, "error": null, "reused": false, "cached": false}
+{"comp_id": "k311", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2380436853, "error": null, "reused": false, "cached": false}
+{"comp_id": "k312", "fold": "A", "variants": [], "total_damage": 1664854957, "error": null, "reused": true}
+{"comp_id": "k313", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 3425344545, "error": null, "reused": false, "cached": false}
+{"comp_id": "k314", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3544208755, "error": null, "reused": false, "cached": false}
+{"comp_id": "k315", "fold": "B", "variants": [], "total_damage": 2908084236, "error": null, "reused": true}
+{"comp_id": "k316", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 1245380583, "error": null, "reused": false, "cached": false}
+{"comp_id": "k317", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 2641497468, "error": null, "reused": false, "cached": false}
+{"comp_id": "k318", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 1584764187, "error": null, "reused": false, "cached": true}
+{"comp_id": "k319", "fold": "A", "variants": [], "total_damage": 686256543, "error": null, "reused": true}
+{"comp_id": "k320", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 766486251, "error": null, "reused": false, "cached": true}
+{"comp_id": "k321", "fold": "A", "variants": [], "total_damage": 1051543342, "error": null, "reused": true}
+{"comp_id": "k322", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 1002186314, "error": null, "reused": false, "cached": false}
+{"comp_id": "k323", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3626033798, "error": null, "reused": false, "cached": false}
+{"comp_id": "k324", "fold": "A", "variants": ["미란다:reload:B0.1"], "total_damage": 920606245, "error": null, "reused": false, "cached": true}
+{"comp_id": "k325", "fold": "B", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 1353482994, "error": null, "reused": false, "cached": true}
+{"comp_id": "k326", "fold": "A", "variants": [], "total_damage": 1129351205, "error": null, "reused": true}
+{"comp_id": "k327", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3"], "total_damage": 847654757, "error": null, "reused": false, "cached": false}
+{"comp_id": "k328", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 1410442942, "error": null, "reused": false, "cached": false}
+{"comp_id": "k329", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry", "플로라:reload:A0.3"], "total_damage": 2749978328, "error": null, "reused": false, "cached": false}
+{"comp_id": "k330", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry"], "total_damage": 1935108602, "error": null, "reused": false, "cached": false}
+{"comp_id": "k331", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2852774864, "error": null, "reused": false, "cached": false}
+{"comp_id": "k332", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3121118289, "error": null, "reused": false, "cached": false}
+{"comp_id": "k333", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3734885974, "error": null, "reused": false, "cached": false}
+{"comp_id": "k334", "fold": "A", "variants": ["도로시 : 세렌디피티:reload:A0.3", "드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5", "헬름 : 아쿠아마린:reload:C0.1"], "total_damage": 2549545896, "error": null, "reused": false, "cached": false}
+{"comp_id": "k335", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "퀸(마코토):reload:A0.3", "크라운:reload:C0.1_dry"], "total_damage": 3143927897, "error": null, "reused": false, "cached": false}
+{"comp_id": "k336", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "헬름 : 아쿠아마린:reload:C0.1"], "total_damage": 3326567195, "error": null, "reused": false, "cached": false}
+{"comp_id": "k337", "fold": "A", "variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:B0.5"], "total_damage": 2731940102, "error": null, "reused": false, "cached": true}
+{"comp_id": "k338", "fold": "B", "variants": ["리틀 머메이드:reload:C0.1", "크라운:reload:C0.1_dry"], "total_damage": 3146839789, "error": null, "reused": false, "cached": false}
+{"comp_id": "k339", "fold": "A", "variants": ["라피 : 레드 후드:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 3327707167, "error": null, "reused": false, "cached": false}
+{"comp_id": "k340", "fold": "B", "variants": [], "total_damage": 3168967038, "error": null, "reused": true}
+{"comp_id": "k341", "fold": "A", "variants": [], "total_damage": 2467866211, "error": null, "reused": true}
+{"comp_id": "k342", "fold": "B", "variants": ["플로라:reload:A0.3"], "total_damage": 2717138213, "error": null, "reused": false, "cached": false}
+{"comp_id": "k343", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4579888988, "error": null, "reused": false, "cached": false}
+{"comp_id": "k344", "fold": "B", "variants": ["볼륨:reload:C0.1_dry", "퀸(마코토):reload:A0.3"], "total_damage": 2075126172, "error": null, "reused": false, "cached": false}
+{"comp_id": "k345", "fold": "A", "variants": ["미란다:reload:B0.1", "크라운:reload:C0.5"], "total_damage": 2671797406, "error": null, "reused": false, "cached": false}
+{"comp_id": "k346", "fold": "B", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 4479122603, "error": null, "reused": false, "cached": true}
+{"comp_id": "k347", "fold": "B", "variants": ["리타:reload:C0.1_dry"], "total_damage": 2748347935, "error": null, "reused": false, "cached": true}
+{"comp_id": "k348", "fold": "A", "variants": ["브리드 : 사일런트 트랙:reload:C0.1"], "total_damage": 2818592416, "error": null, "reused": false, "cached": false}
