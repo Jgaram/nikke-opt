@@ -123,11 +123,21 @@ def analyze(runs: Mapping, post: Mapping, top10: Mapping | None = None, dev: Map
         devrows = [{"budget": b, "method": m, "median": statistics.median(g) if (g := gains(Qd, dscen, m, b)) else None,
                     "pos": sum(x > 0 for x in g), "n": len(g)}
                    for b in BUDGETS for m in METHODS[1:]]
-    evals = {m: statistics.median([r["evals"] for k, r in runs.items() if k[1] == m]) for m in METHODS}
+    evals = {f"{m}:{b}": statistics.median([r["evals"] for k, r in runs.items() if k[1] == m and k[2] == b])
+             for m in METHODS for b in BUDGETS if any(k[1] == m and k[2] == b for k in runs)}
+    plateau = {}
+    for m in METHODS:
+        xs = []
+        for k, r in runs.items():
+            if k[1] == m and k[2] == max(BUDGETS):
+                h = r["history"]
+                xs.append(min(x["evals"] for x in h if x["pack"] >= h[-2]["pack"] - 1e-9) if len(h) > 1 else 0)
+        if xs:
+            plateau[m] = statistics.median(xs)
     trans = {m: statistics.median([r["transplant_evals"] for k, r in runs.items() if k[1] == m]) for m in METHODS}
     return {"scenarios": scen, "names": names, "rows": rows, "per": per, "alt": alt, "post": postc, "baseline": base,
             "top10": sec, "dev": devrows, "judge": judge(P, scen), "judge_pre": judge(Q, scen),
-            "evals": evals, "transplant": trans}
+            "evals": evals, "transplant": trans, "plateau": plateau}
 
 
 def render(a: Mapping[str, Any], meta: Mapping[str, Any] | None = None) -> str:
@@ -150,8 +160,11 @@ def render(a: Mapping[str, Any], meta: Mapping[str, Any] | None = None) -> str:
         L.append(f"| {r['budget']} | {r['method']} | {pct(r['median'], 2)} | {r['pos']}/{r['n']} | {r['neg']}/{r['n']} | "
                  f"{pct(r['min'])} | {pct(r['max'])} | {'예' if r['better'] else ''} | {'예' if r['worse'] else ''} | "
                  f"{pct(r['pre_median'], 2)} | {r['pre_pos']}/{r['n']} |")
-    L += ["", f"평가 수 중앙(예산 소진): " + " · ".join(f"{m} {v:.0f}" for m, v in a["evals"].items())
-          + f". 랭커 옮기기 평가 중앙: " + " · ".join(f"{m} {v:.0f}" for m, v in a["transplant"].items()) + ".", ""]
+    L += ["", "쓴 평가 수 중앙(예산별): " + " · ".join(
+        f"{m} " + "/".join(f"{a['evals'][f'{m}:{b}']:.0f}" for b in BUDGETS if f"{m}:{b}" in a["evals"]) for m in METHODS)
+          + ". 랭커 옮기기 평가 중앙: " + " · ".join(f"{m} {v:.0f}" for m, v in a["transplant"].items())
+          + ". 예산 2,000에서 순서 다듬기 전 마지막 값에 처음 닿은 평가 수 중앙(정체 시점): "
+          + " · ".join(f"{m} {v:.0f}" for m, v in a["plateau"].items()) + ".", ""]
     L += ["## 시나리오별 5덱 합 (억, 후처리 후 · 괄호는 전)", "",
           "| 시나리오 | 예산 | " + " | ".join(METHODS) + " |", "|---|---:|" + "---:|" * len(METHODS)]
     for r in a["per"]:
@@ -185,7 +198,7 @@ def render(a: Mapping[str, Any], meta: Mapping[str, Any] | None = None) -> str:
                 L.append(f"| {m} | {b} | {pct(statistics.median(g), 2)} | {pct(min(g))} ~ {pct(max(g))} | "
                          f"{statistics.median(x['evals'] for x in xs):.0f} |")
     if a["top10"]:
-        L += ["", "## 보조 — 틀별 상위 10 후처리 (L0 · 2,000)", "", "| 시나리오 | 상위 5 | 상위 10 | 5덱 같음 |", "|---|---:|---:|---|"]
+        L += ["", "## 보조 — 틀별 상위 10 후처리 (L0 · 2,000)", "", "| 시나리오 | 상위 5 | 상위 10 | 5덱 구성 같음 |", "|---|---:|---:|---|"]
         for x in a["top10"]:
             L.append(f"| {x['scenario']} | {x['top5']:.2f} | {x['top10']:.2f} | {'예' if x['same'] else '아니오'} |")
     if a["dev"]:
