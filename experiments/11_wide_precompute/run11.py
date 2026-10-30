@@ -341,6 +341,7 @@ def run_account(sc_: Mapping[str, Any], method: str, budget: int, ev: Any, pre: 
     acct = R10.Account10(sc_, pool=177, rankerless=method != "K")
     summ, recs, _ = R10.run_method(acct, "K" if method == "K" else "P", budget, ev, pre=pre, pool=177)
     summ["method"] = method
+    summ.pop("alt20", None)
     return summ, recs
 
 
@@ -353,6 +354,8 @@ def cmd_search(args: argparse.Namespace) -> int:
     assert all(m in METHODS for m in methods), methods
     budgets = [int(b) for b in args.budgets.split(",")]
     args.out.mkdir(parents=True, exist_ok=True)
+    # 대안 (b)(니케 공유 20명 이하)는 이번 회차에 계산하지 않는다 — 출발 덱이 강해지면 분기 한정이 실행 시간의 90% 넘게 쓴다(README).
+    R10.pack_alt20 = lambda *a, **k: (0.0, [])
     pres = {m: load_pre(m, args.pre or args.out) for m in methods}
     tasks = [(s, m, b) for b in sorted(budgets, reverse=True) for s in scs for m in methods
              if not (args.out / f"{R10.run_name(s['id'], 177, m, b)}.json").exists()]

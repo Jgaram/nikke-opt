@@ -499,11 +499,10 @@ def render(a: Mapping[str, Any], meta: Mapping[str, Any] | None = None) -> str:
     L.append(f"| 중앙 | | {n_or(rc['median_narrowed'], 1)} | {n_or(rc['median_p60'], 1)} |")
     # ---- 표 9
     L += ["", "## 9. 대안 5덱 (예산 2,000, 시나리오 중앙)", "",
-          "(a) 최선과 덱 2개 이하 공유, (b) 그중 니케 공유 20명 이하. 비율 = 대안 합 / 최선 합.", "",
-          "| 기법 | (a) 있음 | (a) 최선 대비 | (a) 공유 니케 | (b) 있음 | (b) 최선 대비 |", "|---|---:|---:|---:|---:|---:|"]
+          "최선과 덱 2개 이하 공유(실험 9 정의). 비율 = 대안 합 / 최선 합. 니케 공유 20명 이하 대안은 이번 회차에 계산하지 않았다(README).", "",
+          "| 기법 | 있음 | 최선 대비 | 공유 니케 |", "|---|---:|---:|---:|"]
     for r in a["alt"]:
-        L.append(f"| {r['method']} | {r['alt']['found']}/{r['n']} | {ratio(r['alt']['ratio'])} | {n_or(r['shared'])}/25 | "
-                 f"{r['alt20']['found']}/{r['n']} | {ratio(r['alt20']['ratio'])} |")
+        L.append(f"| {r['method']} | {r['alt']['found']}/{r['n']} | {ratio(r['alt']['ratio'])} | {n_or(r['shared'])}/25 |")
     if a["missing"] or a["errors"] or a["ignored_scenarios"]:
         L += ["", "## 빠진 실행 · 오류", ""]
         if a["missing"]:
