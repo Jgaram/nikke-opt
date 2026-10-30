@@ -89,6 +89,9 @@ class Account10:
         if pool == 177:
             tiers.update(ext_tiers(sc_))
         names = [n for n in POOLS[pool] if n not in self.missing]
+        if not rankerless:  # K: 실험 9와 같은 로스터 순서(pool.json 순 — 사용률 순이라 랭커 없는 기법은 이름순을 쓴다).
+            # 순서는 대리 모델 동점(평가 안 한 니케끼리) 깨기를 정하므로 K 재현에 필요하다
+            names = [n for n in R9.POOL if n in names] + [n for n in names if n not in R9.POOL]
         if rankerless:
             self.owned = {n: {"burst": BURST_ALL[n]} for n in names}
         else:  # K: 풀 밖 니케는 사용률 · prior −1로 대체 순서 뒤로 간다
@@ -659,6 +662,24 @@ def cmd_import_k(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_collect(args: argparse.Namespace) -> int:
+    """실행 폴더 → `<out>/<name>_summary.jsonl`(요약에 run 이름) + `<name>_evals.jsonl.gz`(평가 기록에 run 이름)."""
+    args.out.mkdir(parents=True, exist_ok=True)
+    runs = sorted(p for p in args.runs.glob("*.json") if not p.name.startswith("precompute_"))
+    with open(args.out / f"{args.name}_summary.jsonl", "w", encoding="utf-8") as fs, \
+            gzip.open(args.out / f"{args.name}_evals.jsonl.gz", "wt", encoding="utf-8") as fe:
+        for p in runs:
+            fs.write(json.dumps({"run": p.stem, **json.loads(p.read_text(encoding="utf-8"))}, ensure_ascii=False) + "\n")
+            g = p.with_suffix(".jsonl.gz")
+            if g.exists():
+                with gzip.open(g, "rt", encoding="utf-8") as f:
+                    for line in f:
+                        if line.strip():
+                            fe.write(json.dumps({"run": p.stem, **json.loads(line)}, ensure_ascii=False) + "\n")
+    print(f"{len(runs)}개 → {args.out}/{args.name}_*", file=sys.stderr)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -678,8 +699,13 @@ def main(argv: list[str] | None = None) -> int:
     k.add_argument("--set", choices=("dev", "val"), default="val")
     k.add_argument("--exp9", type=Path, default=EXP9 / "run_log")
     k.add_argument("--out", type=Path, required=True)
+    c = sub.add_parser("collect")
+    c.add_argument("--runs", type=Path, required=True)
+    c.add_argument("--out", type=Path, required=True)
+    c.add_argument("--name", required=True)
     args = ap.parse_args(argv)
-    return {"precompute": cmd_precompute, "search": cmd_search, "import-k": cmd_import_k}[args.cmd](args)
+    return {"precompute": cmd_precompute, "search": cmd_search, "import-k": cmd_import_k,
+            "collect": cmd_collect}[args.cmd](args)
 
 
 if __name__ == "__main__":

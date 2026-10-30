@@ -156,6 +156,17 @@ class TestMethods(unittest.TestCase):
             self.assertEqual(s9["final"]["total"], s10["final"]["total"])
             self.assertEqual([h["pack"] for h in s9["history"]], [h["pack"] for h in s10["history"]])
 
+    def test_k_account_matches_exp9(self):
+        """K 로스터는 실험 9와 같은 순서(대리 모델 동점 깨기), 랭커 없는 로스터는 이름순."""
+        for s in (val(0), val(4)):
+            self.assertEqual(list(T.Account10(s, 60, rankerless=False).owned), list(run9.Account(s).owned))
+            self.assertEqual(list(T.Account10(s, 60, rankerless=True).owned), sorted(run9.Account(s).owned))
+        acct = T.Account10(val(1), 60, rankerless=False)
+        s9, _ = run9.run_method(run9.Account(val(1)), "L0k", 300, FakeEv())
+        s10, _, _ = T.run_method(acct, "K+E", 300, FakeEv())
+        if not s10["kicks"]:
+            self.assertEqual(s9["final"]["total"], s10["final"]["total"])
+
     def test_rankerless_do_not_read_ranker_data(self):
         scs = [val(7)]
         saved = {k: getattr(run9, k) for k in ("RANKERS", "RK_SQ", "PATTERN", "POOL")}
