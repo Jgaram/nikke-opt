@@ -1,0 +1,1175 @@
+{
+ "aggregate": {
+  "cases": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "ok": {
+   "O": {
+    "C1": false,
+    "C2": false,
+    "C3": false,
+    "C4": false
+   },
+   "I1": {
+    "C1": false,
+    "C2": false,
+    "C3": true,
+    "C4": true
+   },
+   "I2": {
+    "C1": false,
+    "C2": false,
+    "C3": false,
+    "C4": true
+   }
+  },
+  "rule": "split",
+  "text": "일부만 통과 — 경우 종류로 나눈 규칙(경계: C3(n=3), C4(n=10) 통과 / C1(n=1), C2(n=2) 실패)",
+  "next": "경계 근처 경우를 더 확인",
+  "c5": "C5 O 실패 — 메타 밖 신캐도 갱신 필요(예상과 다름)",
+  "missing_loss": {
+   "C1": {
+    "I1": false,
+    "I2": true
+   },
+   "C2": {
+    "I1": false,
+    "I2": false
+   },
+   "C3": {
+    "I1": true,
+    "I2": false
+   },
+   "C4": {
+    "I1": true,
+    "I2": true
+   },
+   "C5": {
+    "I1": false,
+    "I2": false
+   }
+  },
+  "o_all": false
+ },
+ "cases": {
+  "C1": {
+   "stats": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": -0.02505680930759807,
+      "pos": 1,
+      "neg": 7,
+      "min": -0.07577836305341501,
+      "max": 0.015059952609512761,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.011498625618938274,
+      "pos": 1,
+      "neg": 7,
+      "min": -0.046965447672336125,
+      "max": 0.011151902437360528,
+      "low": 2,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": -0.018044739845428148,
+      "pos": 1,
+      "neg": 7,
+      "min": -0.09114959601243977,
+      "max": 0.022106615409214436,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.00865925743207796,
+      "pos": 1,
+      "neg": 7,
+      "min": -0.051939720340774986,
+      "max": 0.01817143510381558,
+      "low": 2,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": -0.01352675562993888,
+      "pos": 0,
+      "neg": 8,
+      "min": -0.04164706150778619,
+      "max": -0.0031343661239796594,
+      "low": 1,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.010357875536950112,
+      "pos": 0,
+      "neg": 8,
+      "min": -0.04296370132723015,
+      "max": -0.0031343661239796594,
+      "low": 1,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "h": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": 0.018513470485473582,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.05255982942901494,
+      "max": 0.041485311226211685,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.004901182471477972,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.038271859785071416,
+      "max": 0.03524334538752005,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": 0.016002462143131613,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.06831722245510619,
+      "max": 0.04690943140344417,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.009082236557006795,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.04329150780376667,
+      "max": 0.040330423212576294,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": 0.008834150072055569,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.033700243409323205,
+      "max": 0.060616920096982385,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.0066794442471472815,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.031222040397683948,
+      "max": 0.041932277171063514,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "F4": {
+     "800": {
+      "n": 8,
+      "median": 0.02469431293046076,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.007445826947876766,
+      "max": 0.06874552117278765,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.015077419707463569,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.008224297891060273,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "ok": {
+    "O": false,
+    "I1": false,
+    "I2": false
+   },
+   "pick": "F4",
+   "text": "처음부터 다시 필요"
+  },
+  "C2": {
+   "stats": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": -0.021833034398654694,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.05129006047575402,
+      "max": 0.03159723280712301,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.01672257656774795,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.04822667810065029,
+      "max": 0.028320438276498994,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": -0.021833034398654694,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.06717588746355974,
+      "max": 0.03159723280712301,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.01672257656774795,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.04933839743823332,
+      "max": 0.028320438276498994,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": -0.02053416710646283,
+      "pos": 3,
+      "neg": 5,
+      "min": -0.05000489874284664,
+      "max": 0.02355949125781076,
+      "low": 3,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.01748934144441988,
+      "pos": 3,
+      "neg": 5,
+      "min": -0.0510158692049526,
+      "max": 0.020313642581335056,
+      "low": 3,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "h": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": 0.0253166830509588,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.032162985980389136,
+      "max": 0.056630351622451114,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.0054321191629359555,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.0365495874374977,
+      "max": 0.046713046115753665,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": 0.0253166830509588,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.04374124023528858,
+      "max": 0.056630351622451114,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.0054321191629359555,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.0376749462070739,
+      "max": 0.046713046115753665,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": 0.025296853205836856,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.03479730428910566,
+      "max": 0.05397622723033213,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.0061799104502541224,
+      "pos": 4,
+      "neg": 4,
+      "min": -0.03937299849381215,
+      "max": 0.048363114022550446,
+      "low": 2,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "F4": {
+     "800": {
+      "n": 8,
+      "median": 0.02469431293046076,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.007445826947876766,
+      "max": 0.06874552117278765,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.015077419707463569,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.008224297891060273,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "ok": {
+    "O": false,
+    "I1": false,
+    "I2": false
+   },
+   "pick": "F4",
+   "text": "처음부터 다시 필요"
+  },
+  "C3": {
+   "stats": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": -0.022797805769163848,
+      "pos": 1,
+      "neg": 7,
+      "min": -0.08050521329110694,
+      "max": 0.0009281375901146749,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.00879694883143839,
+      "pos": 3,
+      "neg": 5,
+      "min": -0.03305617975292685,
+      "max": 0.00695661240521428,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": -0.0004545941344851201,
+      "pos": 4,
+      "neg": 4,
+      "min": -0.029641260200658714,
+      "max": 0.01880109667821439,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.002518978529327087,
+      "pos": 4,
+      "neg": 4,
+      "min": -0.01639354246671154,
+      "max": 0.02040781642149425,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": -0.005564218848174263,
+      "pos": 3,
+      "neg": 5,
+      "min": -0.029518078140446602,
+      "max": 0.00695661240521428,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.0049054128379225626,
+      "pos": 3,
+      "neg": 5,
+      "min": -0.029518078140446602,
+      "max": 0.00695661240521428,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "h": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": 0.0055432132420126234,
+      "pos": 4,
+      "neg": 4,
+      "min": -0.08735161235241617,
+      "max": 0.05197672190319924,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.008192365486467956,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.003327051502139522,
+      "max": 0.03780392473152561,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": 0.023930169946357882,
+      "pos": 8,
+      "neg": 0,
+      "min": 0.0023927642805152693,
+      "max": 0.05762514582333922,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.016170213428595925,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.004325898294296748,
+      "max": 0.05128644861924925,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": 0.022450865195640768,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.0033443370979236997,
+      "max": 0.05755652084258722,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.011284503855508388,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.012056151382026203,
+      "max": 0.04301571822315231,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "F4": {
+     "800": {
+      "n": 8,
+      "median": 0.02469431293046076,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.007445826947876766,
+      "max": 0.06874552117278765,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.015077419707463569,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.008224297891060273,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "ok": {
+    "O": false,
+    "I1": true,
+    "I2": false
+   },
+   "pick": "I1",
+   "text": "이어 붙이기로 충분(I1 — 새 시드 하나)"
+  },
+  "C4": {
+   "stats": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": -0.043109366888032075,
+      "pos": 0,
+      "neg": 8,
+      "min": -0.12445402113178583,
+      "max": -0.026315710835726813,
+      "low": 5,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.022222685554782573,
+      "pos": 0,
+      "neg": 8,
+      "min": -0.03705762333293583,
+      "max": -0.00026064087667265756,
+      "low": 2,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": -0.0013587495353391543,
+      "pos": 4,
+      "neg": 4,
+      "min": -0.012461354688745985,
+      "max": 0.01972944528649223,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.0027742708627370716,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.013818091493562612,
+      "max": 0.01972944528649223,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": -0.004250849789294686,
+      "pos": 3,
+      "neg": 5,
+      "min": -0.023765971075434322,
+      "max": 0.004221357370606915,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.004787534627658574,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.020706578196742043,
+      "max": 0.0031336718108645467,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "h": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": -0.012487544819511809,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.06426415650375206,
+      "max": 0.019540616633402452,
+      "low": 3,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.009955502110041925,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.02918449307355686,
+      "max": 0.022633349793125035,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": 0.024982861549320057,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.0018610450047819027,
+      "max": 0.07334996675645344,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.019348679828952497,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.0017188496982475376,
+      "max": 0.04124712826798471,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": 0.022715269474824384,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.015124347364294355,
+      "max": 0.06577286115547798,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.013933481522990343,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.015896795961098165,
+      "max": 0.03774536051518673,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "F4": {
+     "800": {
+      "n": 8,
+      "median": 0.02469431293046076,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.007445826947876766,
+      "max": 0.06874552117278765,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.015077419707463569,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.008224297891060273,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "ok": {
+    "O": false,
+    "I1": true,
+    "I2": true
+   },
+   "pick": "I1",
+   "text": "이어 붙이기로 충분(I1 — 새 시드 하나)"
+  },
+  "C5": {
+   "stats": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": -0.005941305340383396,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.030727310210310277,
+      "max": 0.0033634221181599866,
+      "low": 1,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.0069069892115985465,
+      "pos": 1,
+      "neg": 6,
+      "min": -0.030727310210310277,
+      "max": 0.007647871173962262,
+      "low": 1,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": -0.004387924959995515,
+      "pos": 2,
+      "neg": 6,
+      "min": -0.030727310210310277,
+      "max": 0.0033634221181599866,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": -0.005131346152309091,
+      "pos": 1,
+      "neg": 6,
+      "min": -0.030727310210310277,
+      "max": 0.007647871173962262,
+      "low": 1,
+      "better": false,
+      "worse": true,
+      "noninf": false,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": -0.0029129475415020645,
+      "pos": 1,
+      "neg": 6,
+      "min": -0.030251932003047433,
+      "max": 0.018083781630712226,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 2.5022969168619902e-05,
+      "pos": 4,
+      "neg": 3,
+      "min": -0.03158422710005249,
+      "max": 0.019253844925183783,
+      "low": 1,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "h": {
+    "O": {
+     "800": {
+      "n": 8,
+      "median": 0.023217873970549086,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.02698119118876352,
+      "max": 0.060616920096982385,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.007345748668753704,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.01924838797145001,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I1": {
+     "800": {
+      "n": 8,
+      "median": 0.025040629396537062,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.02698119118876352,
+      "max": 0.060616920096982385,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.008400716130432806,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.01924838797145001,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "I2": {
+     "800": {
+      "n": 8,
+      "median": 0.029186475494389796,
+      "pos": 5,
+      "neg": 3,
+      "min": -0.011401810660963463,
+      "max": 0.06677877843665736,
+      "low": 0,
+      "better": false,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.022883963079031844,
+      "pos": 6,
+      "neg": 2,
+      "min": -0.019702953986394545,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    },
+    "F4": {
+     "800": {
+      "n": 8,
+      "median": 0.02469431293046076,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.007445826947876766,
+      "max": 0.06874552117278765,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     },
+     "2000": {
+      "n": 8,
+      "median": 0.015077419707463569,
+      "pos": 7,
+      "neg": 1,
+      "min": -0.008224297891060273,
+      "max": 0.04704131043601634,
+      "low": 0,
+      "better": true,
+      "worse": false,
+      "noninf": true,
+      "complete": true,
+      "n_all": 8
+     }
+    }
+   },
+   "ok": {
+    "O": false,
+    "I1": false,
+    "I2": true
+   },
+   "pick": "I2",
+   "text": "이어 붙이기로 충분(I2 — 신캐 집중)"
+  }
+ }
+}
