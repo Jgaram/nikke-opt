@@ -1,0 +1,1 @@
+{"at": "2026-10-31T18:03:11", "phase": 1, "jobs": 116, "by_scenario": {"v1": 15, "v2": 15, "v3": 15, "v4": 15, "v5": 15, "v6": 15, "v7": 11, "v8": 15}, "skipped": [], "sims": 118995, "cache_hits": 25805, "seconds": 4175, "evaluator": "nikke-calc-rs 89d2e64", "args": {"cmd": "run", "phase": 1, "workers": 6, "only": null, "limit": null, "cap": 230000}}
