@@ -1,0 +1,1 @@
+{"comp_id": "v6|목단>나유타>팬텀>레이븐>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2649966780, "base_damage": 2633898694, "best_variants": ["squad:camera:리버렐리오", "레이븐:burst:delay1", "목단:burst:wait2", "팬텀:reload:B0.1"], "exhausted": true, "seconds": 80.6, "squad": ["목단", "나유타", "팬텀", "레이븐", "리버렐리오"], "scenario": "v6", "layer": "S1", "B_record": 26.33898694}

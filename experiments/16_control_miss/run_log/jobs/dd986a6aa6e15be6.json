@@ -1,0 +1,1 @@
+{"comp_id": "v6|목단>나유타>팬텀>미하라 : 본딩 체인>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2835485813, "base_damage": 2809584304, "best_variants": ["squad:camera:리버렐리오", "미하라 : 본딩 체인:reload:C0.1_dry"], "exhausted": true, "seconds": 31.8, "squad": ["목단", "나유타", "팬텀", "미하라 : 본딩 체인", "리버렐리오"], "scenario": "v6", "layer": "D", "B_record": 28.09584304}

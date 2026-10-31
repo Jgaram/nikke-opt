@@ -1,0 +1,1 @@
+{"comp_id": "v3|볼륨>크라운>스노우 화이트 : 헤비암즈>팬텀>레이븐", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 3151231759, "base_damage": 3126568341, "best_variants": ["레이븐:reload:B0.1", "볼륨:reload:C0.1_dry"], "exhausted": true, "seconds": 64.5, "squad": ["볼륨", "크라운", "스노우 화이트 : 헤비암즈", "팬텀", "레이븐"], "scenario": "v3", "layer": "S4", "B_record": null}

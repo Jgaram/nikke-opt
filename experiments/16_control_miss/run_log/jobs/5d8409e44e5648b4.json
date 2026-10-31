@@ -1,0 +1,1 @@
+{"comp_id": "v4|토브>솔린 : 프로스트 티켓>마스트>드레이크>미하라 : 본딩 체인", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 1761689292, "base_damage": 1709140049, "best_variants": ["드레이크:reload:B0.5", "솔린 : 프로스트 티켓:reload:C0.5"], "exhausted": true, "seconds": 58.9, "squad": ["토브", "솔린 : 프로스트 티켓", "마스트", "드레이크", "미하라 : 본딩 체인"], "scenario": "v4", "layer": "S2", "B_record": 17.09140049}

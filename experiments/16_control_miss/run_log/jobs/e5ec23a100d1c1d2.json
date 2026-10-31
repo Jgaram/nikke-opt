@@ -1,0 +1,1 @@
+{"comp_id": "v2|볼륨>나유타>팬텀>네온 : 비전 아이>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 3194799613, "base_damage": 3125977982, "best_variants": ["네온 : 비전 아이:reload:C0.1", "볼륨:reload:A0.3", "팬텀:reload:C0.1_dry"], "exhausted": true, "seconds": 66.7, "squad": ["볼륨", "나유타", "팬텀", "네온 : 비전 아이", "리버렐리오"], "scenario": "v2", "layer": "S1", "B_record": 31.25977982}

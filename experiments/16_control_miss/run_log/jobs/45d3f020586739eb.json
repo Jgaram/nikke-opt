@@ -1,0 +1,1 @@
+{"comp_id": "v6|목단>나유타>팬텀>도로시 : 세렌디피티>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2579381691, "base_damage": 2557538809, "best_variants": ["squad:camera:리버렐리오", "도로시 : 세렌디피티:reload:B0.1", "팬텀:reload:B0.5"], "exhausted": true, "seconds": 74.2, "squad": ["목단", "나유타", "팬텀", "도로시 : 세렌디피티", "리버렐리오"], "scenario": "v6", "layer": "S1", "B_record": 25.57538809}

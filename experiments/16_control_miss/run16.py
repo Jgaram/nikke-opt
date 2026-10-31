@@ -5,6 +5,8 @@
     source .cache/evaluators.env && python experiments/16_control_miss/run16.py control --targets <dir>/targets.json
         [--cap 240000] [--only v1,v2] [--layers S0,S0p] [--limit N] [--workers 8]
         → <dir>/jobs/<해시>.json(구성마다 M3:k2 200평가 결과) · <dir>/control_log.jsonl(실행마다 시뮬 수)
+    source .cache/evaluators.env && python experiments/16_control_miss/run16.py deckpost --targets <dir>/targets.json
+        → <dir>/deckpost.json(관찰: 5덱 구성 후처리 반복, 결과를 본 뒤 추가 · 판단에 쓰지 않음)
 
 - 조합 기록: 실험 13 U4 · 2,000 실행 8개(`val_evals.jsonl.gz`)를 그대로 읽는다(새 시뮬 0).
 - S4 출처: 실험 13 U4 합친 판(PB15 시드 s0~s3 기록 합). 계정 B는 컨트롤 탐색의 첫 평가(바꾸지 않음 = 기본 레이어)로 잰다.
@@ -352,6 +354,108 @@ def cmd_control(args: argparse.Namespace) -> int:
     return 0
 
 
+# ---------------------------------------------------------------- 관찰: 5덱 구성 후처리 (결과를 본 뒤 추가, 판단에 쓰지 않음)
+
+DECK_ROUNDS = 4
+DECK_BASES = {"D0": (), "D5": ("S0",), "Dstar": LAYERS}   # D0 = 5덱 구성만, D5 = S0 + 5덱 구성, D* = 측정한 모든 층 + 5덱 구성
+
+
+def measured_values(best: Mapping[frozenset, tuple[float, tuple]], results: Iterable[Mapping[str, Any]]
+                    ) -> dict[frozenset, tuple[float, tuple]]:
+    """기본 레이어 값에 컨트롤 결과(max(B, J))를 반영. 기록에 없는 구성(S4)은 B = base_damage."""
+    vals = dict(best)
+    for r in results:
+        c = frozenset(r["squad"])
+        b = vals[c][0] if c in vals else r["base_damage"] / E8
+        vals[c] = (max(b, r["best_damage"] / E8), tuple(r["squad"]))
+    return vals
+
+
+def deck_loop(sid: str, best: Mapping[frozenset, tuple[float, tuple]], start: Mapping[str, Mapping[str, Any]],
+              run: Any, rounds: int = DECK_ROUNDS) -> dict[str, Any]:
+    """5덱을 조립 → 컨트롤을 안 찾은 5덱 구성에 M3:k2 → 다시 조립을 5덱이 모두 측정한 구성이 될 때까지(최대 rounds번).
+    start: comp_id → 작업 결과(출발 층). run(list[job]) → comp_id → 결과."""
+    have = dict(start)
+    hist = []
+    for i in range(rounds + 1):
+        total, ch = R9.pack_vals(measured_values(best, have.values()))
+        todo = [{"id": comp_id(sid, sq), "scenario": sid, "layer": "D", "squad": list(sq),
+                 "B": best[frozenset(sq)][0] if frozenset(sq) in best else None}
+                for _, sq in ch if comp_id(sid, sq) not in have]
+        hist.append({"round": i, "total": total, "new": len(todo), "squads": [[v, list(sq)] for v, sq in ch]})
+        if not todo or i == rounds:
+            break
+        have.update(run(todo))
+    return {"total": hist[-1]["total"], "rounds": hist, "extra": sorted(set(have) - set(start)),
+            "complete": hist[-1]["new"] == 0}
+
+
+def cmd_deckpost(args: argparse.Namespace) -> int:
+    targets = json.loads(args.targets.read_text(encoding="utf-8"))
+    base_dir = args.targets.parent
+    jobs_dir = base_dir / "jobs"
+    log = base_dir / "control_log.jsonl"
+    sids = list(targets["scenarios"])
+    runs = load_runs(wanted=[targets["scenarios"][s]["run"] for s in sids])
+    accts = {s["id"]: R10.Account10(s, pool=177, rankerless=True) for s in R10.scenarios("val")}
+    from nikke_opt.evaluator import make_evaluator
+    ev = make_evaluator()
+    gate = CapGate(ev, args.cap, base=prior_sims(log))
+    t0 = time.time()
+    n_jobs = Counter()
+
+    def run(jobs: Sequence[Mapping[str, Any]]) -> dict[str, dict[str, Any]]:
+        out = {}
+        todo = []
+        for j in jobs:
+            p = job_path(jobs_dir, j["id"])
+            if p.exists():
+                out[j["id"]] = json.loads(p.read_text(encoding="utf-8"))
+            else:
+                todo.append(j)
+
+        def one(j):
+            if not gate.enter():
+                raise RuntimeError("시뮬 상한 — 5덱 구성 후처리 관찰을 멈춘다")
+            try:
+                r = run_one(j, accts, ev)
+            finally:
+                gate.leave()
+            job_path(jobs_dir, j["id"]).write_text(json.dumps(r, ensure_ascii=False) + "\n", encoding="utf-8")
+            return j["id"], r
+
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            for cid, r in pool.map(one, todo):
+                out[cid] = r
+                n_jobs["new"] += 1
+        return out
+
+    res: dict[str, Any] = {}
+    with ev:
+        for sid in sids:
+            t = targets["scenarios"][sid]
+            best = R9.book_of(runs[t["run"]])
+            res[sid] = {}
+            for name, lays in DECK_BASES.items():
+                start = {}
+                for lay in lays:
+                    for e in t["layers"][lay]:
+                        cid = comp_id(sid, e["squad"])
+                        start[cid] = json.loads(job_path(jobs_dir, cid).read_text(encoding="utf-8"))
+                res[sid][name] = deck_loop(sid, best, start, run)
+                print(json.dumps({"scenario": sid, "base": name, "total": round(res[sid][name]["total"], 2),
+                                  "extra": len(res[sid][name]["extra"]), "sims": ev.sim_count}, ensure_ascii=False),
+                      file=sys.stderr, flush=True)
+        rec = {"at": time.strftime("%Y-%m-%dT%H:%M:%S"), "what": "deckpost", "jobs": n_jobs["new"], "sims": ev.sim_count,
+               "cache_hits": ev.cache_hits, "seconds": round(time.time() - t0),
+               "evaluator": f"{ev.version.get('repo')} {str(ev.version.get('commit'))[:7]}"}
+    (base_dir / "deckpost.json").write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    with log.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    print(json.dumps(rec, ensure_ascii=False), file=sys.stderr)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -364,8 +468,12 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--layers")
     c.add_argument("--limit", type=int)
     c.add_argument("--workers", type=int, default=8)
+    d = sub.add_parser("deckpost")
+    d.add_argument("--targets", type=Path, required=True)
+    d.add_argument("--cap", type=int, default=CAP)
+    d.add_argument("--workers", type=int, default=8)
     args = ap.parse_args(argv)
-    return {"sample": cmd_sample, "control": cmd_control}[args.cmd](args)
+    return {"sample": cmd_sample, "control": cmd_control, "deckpost": cmd_deckpost}[args.cmd](args)
 
 
 if __name__ == "__main__":

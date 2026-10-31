@@ -1,0 +1,1 @@
+{"comp_id": "v6|목단>나유타>팬텀>미하라 : 본딩 체인>에밀리아", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2176052008, "base_damage": 2119971255, "best_variants": ["미하라 : 본딩 체인:reload:C0.5", "에밀리아:click:tap", "팬텀:reload:C0.1_dry"], "exhausted": true, "seconds": 67.9, "squad": ["목단", "나유타", "팬텀", "미하라 : 본딩 체인", "에밀리아"], "scenario": "v6", "layer": "S2", "B_record": 21.19971255}

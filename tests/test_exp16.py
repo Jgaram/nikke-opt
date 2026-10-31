@@ -192,5 +192,37 @@ class TestAnalyze(unittest.TestCase):
         self.assertEqual(A.axes_of(["아니스 : 스타:burst:x", "squad:tactic:a=b", "모름"]), ["burst", "tactic"])
 
 
+class TestDeckLoop(unittest.TestCase):
+    def test_converges_and_measures_decks(self):
+        best = fake_best(200, seed=5, with_test=0)
+        calls = []
+
+        def run(todo):
+            calls.append(len(todo))
+            out = {}
+            for j in todo:
+                b = best[frozenset(j["squad"])][0]
+                g = 0.3 if sum(map(ord, "".join(j["squad"]))) % 3 == 0 else 0.0
+                out[j["id"]] = {"squad": j["squad"], "base_damage": round(b * R.E8), "best_damage": round(b * (1 + g) * R.E8)}
+            return out
+
+        r = R.deck_loop("v1", best, {}, run)
+        self.assertTrue(r["complete"])
+        self.assertEqual(calls[0], 5)
+        self.assertGreaterEqual(r["total"], R.R9.pack_vals(best)[0] - 1e-9)
+        last = r["rounds"][-1]
+        self.assertEqual(last["new"], 0)
+        self.assertTrue(all(R.comp_id("v1", sq) in set(r["extra"]) for _, sq in last["squads"]))
+
+    def test_measured_values_new_comp(self):
+        best = fake_best(20, seed=6, with_test=0)
+        sq = squad(random.Random(9), (1, 2, 2))
+        vals = R.measured_values(best, [{"squad": list(sq), "base_damage": 10 * R.E8, "best_damage": 12 * R.E8}])
+        self.assertAlmostEqual(vals[frozenset(sq)][0], 12.0)
+        c, (v, s0) = next(iter(best.items()))
+        vals = R.measured_values(best, [{"squad": list(s0), "base_damage": v * R.E8, "best_damage": v * 0.5 * R.E8}])
+        self.assertAlmostEqual(vals[c][0], v)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,1 @@
+{"comp_id": "v6|목단>나유타>에이다>미하라 : 본딩 체인>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2660411446, "base_damage": 2633739691, "best_variants": ["미하라 : 본딩 체인:reload:C0.1", "에이다:cancel:on", "에이다:click:auto"], "exhausted": true, "seconds": 73.2, "squad": ["목단", "나유타", "에이다", "미하라 : 본딩 체인", "리버렐리오"], "scenario": "v6", "layer": "S1", "B_record": 26.33739691}

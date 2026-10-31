@@ -1,0 +1,1 @@
+{"comp_id": "v7|목단>나유타>헬름>팬텀>미하라 : 본딩 체인", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 3199981249, "base_damage": 3141021822, "best_variants": ["팬텀:reload:C0.1", "헬름:reload:C0.5"], "exhausted": true, "seconds": 72.8, "squad": ["목단", "나유타", "헬름", "팬텀", "미하라 : 본딩 체인"], "scenario": "v7", "layer": "S1", "B_record": 31.41021822}

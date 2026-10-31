@@ -1,0 +1,1 @@
+{"comp_id": "v1|목단>나유타>팬텀>킬로>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2458491522, "base_damage": 2442676072, "best_variants": ["킬로:reload:C0.1_dry", "팬텀:reload:A0.3"], "exhausted": true, "seconds": 76.6, "squad": ["목단", "나유타", "팬텀", "킬로", "리버렐리오"], "scenario": "v1", "layer": "S2", "B_record": 24.42676072}

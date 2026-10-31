@@ -1,0 +1,1 @@
+{"comp_id": "v2|토브>솔린 : 프로스트 티켓>노아>팬텀>도로시 : 세렌디피티", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 1030370763, "base_damage": 919196215, "best_variants": ["노아:click:tap", "토브:burst:delay1", "팬텀:burst:delay1"], "exhausted": true, "seconds": 70.2, "squad": ["토브", "솔린 : 프로스트 티켓", "노아", "팬텀", "도로시 : 세렌디피티"], "scenario": "v2", "layer": "S3", "B_record": 9.19196215}

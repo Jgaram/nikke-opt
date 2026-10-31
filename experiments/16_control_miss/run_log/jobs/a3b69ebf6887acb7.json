@@ -1,0 +1,1 @@
+{"comp_id": "v7|목단>나유타>헬름>A2>레이븐", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2143993663, "base_damage": 2105164299, "best_variants": ["A2:reload:B0.5", "레이븐:reload:C0.1_dry", "헬름:reload:C0.5"], "exhausted": true, "seconds": 75.4, "squad": ["목단", "나유타", "헬름", "A2", "레이븐"], "scenario": "v7", "layer": "S2", "B_record": 21.05164299}

@@ -1,0 +1,1 @@
+{"comp_id": "v6|목단>노아>팬텀>디젤 : 윈터 스위츠>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 993445792, "base_damage": 787545867, "best_variants": ["노아:click:tap", "목단:burst:delay2", "팬텀:burst:delay1"], "exhausted": true, "seconds": 51.5, "squad": ["목단", "노아", "팬텀", "디젤 : 윈터 스위츠", "리버렐리오"], "scenario": "v6", "layer": "S3", "B_record": 7.87545867}

@@ -209,12 +209,31 @@ def analyze(log: Path) -> dict[str, Any]:
     sids = list(targets["scenarios"])
     runs = R.load_runs(wanted=[targets["scenarios"][s]["run"] for s in sids])
     rows = []
+    deck = json.loads((log / "deckpost.json").read_text(encoding="utf-8")) if (log / "deckpost.json").exists() else None
+    obs = []
     for sid in sids:
         t = targets["scenarios"][sid]
-        rows.append(scenario(sid, t, R.R9.book_of(runs[t["run"]]), jobs))
+        best = R.R9.book_of(runs[t["run"]])
+        rows.append(scenario(sid, t, best, jobs))
+        if deck is not None:
+            obs.append(deck_obs(sid, rows[-1], best, jobs, deck[sid]))
     sims = [json.loads(x) for x in (log / "control_log.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
     return {"rows": rows, "judge": judge(rows), "sims": sum(s["sims"] for s in sims), "runs": sims,
-            "jobs": len(jobs)}
+            "jobs": len(jobs), "deck": obs}
+
+
+def deck_obs(sid: str, row: Mapping[str, Any], best: Mapping[frozenset, tuple[float, tuple]],
+             jobs: Mapping[str, Mapping[str, Any]], deck: Mapping[str, Any]) -> dict[str, Any]:
+    """관찰(결과를 본 뒤 추가, 판단에 쓰지 않음): 5덱 구성 후처리 D0 · D5 · D* 와 측정한 모든 구성을 반영한 P_all."""
+    mine = [j for c, j in jobs.items() if c.startswith(sid + "|")]
+    p_all, ch = R.R9.pack_vals(R.measured_values(best, mine))
+    out = {"scenario": sid, "P5": row["totals"]["P5"], "Pstar": row["totals"]["Pstar"], "Pall": p_all,
+           "Pall_unmeasured": sum(R.comp_id(sid, sq) not in jobs for _, sq in ch)}
+    for k in R.DECK_BASES:
+        if k in deck:
+            out[k] = {"total": deck[k]["total"], "jobs_added": len(deck[k]["extra"]), "complete": deck[k]["complete"],
+                      "rounds": len(deck[k]["rounds"]) - 1}
+    return out
 
 
 def f_pct(x: float | None, d: int = 2) -> str:
@@ -280,6 +299,24 @@ def render(a: Mapping[str, Any]) -> str:
             "| 축 | 전체 | g ≥ +5% |", "|---|---:|---:|"]
     for a_ in AXES:
         out.append(f"| {a_} | {ax_all[a_]} | {ax[a_]} |")
+    if a.get("deck"):
+        ob = a["deck"]
+        out += ["", "## 관찰(결과를 본 뒤 추가, 판단에 쓰지 않음) — 5덱 구성 후처리", "",
+                "5덱 조립 → 컨트롤을 안 찾은 5덱 구성에 M3:k2 → 다시 조립을 반복(최대 4번). D0 = 5덱 구성만, D5 = S0 + 5덱 구성, "
+                "D\\* = 측정한 모든 층 + 5덱 구성. P_all = 측정한 모든 구성(층 + 5덱 구성)을 반영한 5덱(측정 범위 안의 최선).", "",
+                "| 시나리오 | P5 | D0 (작업) | D5 (+작업) | D\\* | P_all | D0/P5 | D5/P5 | P_all/D0 | P_all/D5 |",
+                "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+        for o in ob:
+            out.append(f"| {o['scenario']} | {o['P5']:.2f} | {o['D0']['total']:.2f} ({o['D0']['jobs_added']}) | "
+                       f"{o['D5']['total']:.2f} (+{o['D5']['jobs_added']}) | {o['Dstar']['total']:.2f} | {o['Pall']:.2f} | "
+                       f"{f_pct(o['D0']['total'] / o['P5'] - 1)} | {f_pct(o['D5']['total'] / o['P5'] - 1)} | "
+                       f"{f_pct(o['Pall'] / o['D0']['total'] - 1)} | {f_pct(o['Pall'] / o['D5']['total'] - 1)} |")
+        med = lambda f: statistics.median(f(o) for o in ob)  # noqa: E731
+        out += ["", f"- 중앙: D0/P5 {f_pct(med(lambda o: o['D0']['total'] / o['P5'] - 1))} · D5/P5 {f_pct(med(lambda o: o['D5']['total'] / o['P5'] - 1))} · "
+                f"P_all/P5 {f_pct(med(lambda o: o['Pall'] / o['P5'] - 1))} · P_all/D0 {f_pct(med(lambda o: o['Pall'] / o['D0']['total'] - 1))} · "
+                f"P_all/D5 {f_pct(med(lambda o: o['Pall'] / o['D5']['total'] - 1))}. "
+                f"모두 1번 반복으로 수렴: {all(o[k]['complete'] and o[k]['rounds'] == 1 for o in ob for k in ('D0', 'D5', 'Dstar'))}. "
+                f"P_all 5덱에 컨트롤을 안 찾은 구성: {sum(o['Pall_unmeasured'] for o in ob)}개."]
     mm = sum(r["base_mismatch"] for r in rows)
     miss = {r["scenario"]: r["missing"] for r in rows if r["missing"]}
     out += ["", f"- 기본 레이어 값 재현: 기록 B와 작업 첫 평가가 다른 구성 {mm}개. 측정 못 한 구성: {miss or '없음'}.", ""]
@@ -295,7 +332,7 @@ def main(argv: list[str] | None = None) -> int:
     a = analyze(args.log)
     args.out.write_text(render(a), encoding="utf-8")
     if args.json:
-        slim = {"judge": a["judge"], "sims": a["sims"], "jobs": a["jobs"],
+        slim = {"judge": a["judge"], "sims": a["sims"], "jobs": a["jobs"], "deck": a.get("deck"),
                 "rows": [{k: v for k, v in r.items() if k != "measured"} for r in a["rows"]]}
         args.json.write_text(json.dumps(slim, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(json.dumps(a["judge"], ensure_ascii=False))

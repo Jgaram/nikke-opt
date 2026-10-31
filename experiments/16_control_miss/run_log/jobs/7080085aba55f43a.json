@@ -1,0 +1,1 @@
+{"comp_id": "v5|목단>바이퍼>팬텀>미하라 : 본딩 체인>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 1276514987, "base_damage": 1273357046, "best_variants": ["미하라 : 본딩 체인:reload:A0.3", "바이퍼:reload:B0.5"], "exhausted": true, "seconds": 56.7, "squad": ["목단", "바이퍼", "팬텀", "미하라 : 본딩 체인", "리버렐리오"], "scenario": "v5", "layer": "S3", "B_record": 12.73357046}

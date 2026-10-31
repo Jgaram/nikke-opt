@@ -1,0 +1,1 @@
+{"comp_id": "v7|목단>나유타>A2>디젤 : 윈터 스위츠>레이븐", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2154271772, "base_damage": 2079812098, "best_variants": ["A2:reload:C0.5", "squad:camera:디젤 : 윈터 스위츠", "레이븐:reload:C0.1_dry"], "exhausted": true, "seconds": 75.4, "squad": ["목단", "나유타", "A2", "디젤 : 윈터 스위츠", "레이븐"], "scenario": "v7", "layer": "S2", "B_record": 20.79812098}

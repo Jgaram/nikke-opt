@@ -1,0 +1,1 @@
+{"comp_id": "v2|아니스 : 스타>브리드 : 사일런트 트랙>크라운>리버렐리오>프리바티", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 4938881202, "base_damage": 4795331452, "best_variants": ["브리드 : 사일런트 트랙:reload:C0.1", "프리바티:reload:C0.1"], "exhausted": true, "seconds": 68.3, "squad": ["아니스 : 스타", "브리드 : 사일런트 트랙", "크라운", "리버렐리오", "프리바티"], "scenario": "v2", "layer": "S1", "B_record": 47.95331452}

@@ -1,0 +1,1 @@
+{"comp_id": "v2|목단>나유타>팬텀>아스카 : WILLE>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 3207583603, "base_damage": 3017065704, "best_variants": ["squad:camera:리버렐리오", "아스카 : WILLE:reload:C0.1", "팬텀:reload:B0.1"], "exhausted": true, "seconds": 70.2, "squad": ["목단", "나유타", "팬텀", "아스카 : WILLE", "리버렐리오"], "scenario": "v2", "layer": "S1", "B_record": 30.17065704}

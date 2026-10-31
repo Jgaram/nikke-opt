@@ -1,0 +1,1 @@
+{"comp_id": "v2|목단>나유타>팬텀>레이>리버렐리오", "method": "M3:k2", "evals": 200, "lookups": 0, "best_damage": 2645428129, "base_damage": 2624909221, "best_variants": ["레이:reload:A0.3", "팬텀:reload:B0.1"], "exhausted": true, "seconds": 68.5, "squad": ["목단", "나유타", "팬텀", "레이", "리버렐리오"], "scenario": "v2", "layer": "S1", "B_record": 26.24909221}
