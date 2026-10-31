@@ -208,7 +208,8 @@ def cmd_post(a: argparse.Namespace) -> int:
     from nikke_opt.evaluator import make_evaluator
     ev = make_evaluator()
     ops = Ops19(ev, accts, priors)
-    out_path = LOG / "plans.jsonl"
+    # 계정 묶음마다 프로세스 하나로 돌린다(5덱 조립 · 대리 모델이 Python이라 한 프로세스의 스레드로는 코어 하나만 쓴다)
+    out_path = LOG / (f"plans_{a.only.replace(',', '-')}.jsonl" if a.only else "plans.jsonl")
     done = set()
     if out_path.exists():
         for line in out_path.read_text(encoding="utf-8").splitlines():

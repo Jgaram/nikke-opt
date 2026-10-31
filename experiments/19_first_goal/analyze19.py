@@ -26,12 +26,14 @@ def med(xs: Sequence[float]) -> float | None:
     return xs[n // 2] if n % 2 else (xs[n // 2 - 1] + xs[n // 2]) / 2
 
 
-def load(path: Path = LOG / "plans.jsonl") -> dict[tuple[str, str], dict[str, Any]]:
+def load(log: Path = LOG) -> dict[tuple[str, str], dict[str, Any]]:
+    """plans.jsonl과 계정 묶음별 plans_<묶음>.jsonl을 모두 읽는다."""
     out = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            r = json.loads(line)
-            out[(r["scenario"], r["plan"])] = r
+    for path in sorted(log.glob("plans*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                out[(r["scenario"], r["plan"])] = r
     return out
 
 
