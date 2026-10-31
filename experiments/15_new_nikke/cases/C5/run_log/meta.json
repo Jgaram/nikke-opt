@@ -1,0 +1,23 @@
+{
+ "case": "C5",
+ "removed": [
+  "엑시아",
+  "신 : 스위프트 바니",
+  "아크레인저 블랙",
+  "베이",
+  "크러스트"
+ ],
+ "session": "session_01MQimn2JY2JK2H91AV7bx4Y",
+ "evaluator": "nikke-calc-rs 89d2e64",
+ "cpus": 4,
+ "sims": {
+  "precompute": 47831,
+  "update": 11537,
+  "owned": 32631,
+  "missing": 8149,
+  "total": 100148
+ },
+ "hours": 1.53,
+ "skipped": [],
+ "notes": "시뮬은 단계 로그 끝 줄(시뮬 N회)과 사전 계산 JSON sims의 합. 동시 프로세스에서 sqlite 'database is locked' 캐시 쓰기 경고가 사전 계산 중 몇 번 났다(경고만, 죽은 프로세스 없음, 결과 영향 없음 — 캐시 놓침으로 시뮬이 조금 늘었을 수 있다). 3·4단계 프로세스 시작은 5초씩 엇갈렸다(관리자 공지 뒤 B·M 단계). hours는 평가기 빌드 시작부터(권한 대기 시간 제외)."
+}
