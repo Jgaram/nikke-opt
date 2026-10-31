@@ -1,0 +1,1 @@
+{"at": "2026-10-31T21:30:37", "sims": 37272, "cache_hits": 12385, "ran": {"C": 20, "J": 46, "S": 44, "T": 50}, "reused": {"C": 146, "J": 116, "S": 116, "T": 116}, "seconds": 2313, "evaluator": "nikke-calc-rs 89d2e64"}
