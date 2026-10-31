@@ -10,6 +10,9 @@
   계정 결과(5덱 합)는 결정론이라 캐시 유무와 상관없이 같다 — F4(실험 13 U4) 기록을 다른 컨테이너의 결과와 그대로 비교한다.
 - 작업 세션은 다른 세션을 열지 않는다. 관리자만 `create_session`으로 연다.
 
+작업 세션(2026-10-31 10:42 UTC 시작): C1 `session_01MQimn3tFqMaAwPWC3oM6Ri` · C2 `session_01MQimn23nWWpW6s6L9MPghf` ·
+C3 `session_01MQimn4kzK7BRqmYJ1LxvEs` · C4 `session_01MQimn2VijsCfYhDYtySY92` · C5 `session_01MQimn2JY2JK2H91AV7bx4Y`.
+
 ## 단계
 
 1. **관리자 — 공용 코드 · 테스트 · 사전 등록 확인 커밋(작업 세션을 열기 전에).**
