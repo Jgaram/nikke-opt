@@ -1,0 +1,11 @@
+{
+  "case": "C3",
+  "removed": ["스노우 화이트 : 헤비암즈", "브리드 : 사일런트 트랙", "아니스 : 스타"],
+  "session": "session_01MQimn4kzK7BRqmYJ1LxvEs",
+  "evaluator": "nikke-calc-rs 89d2e64",
+  "cpus": 4,
+  "sims": {"precompute": 47260, "update": 10999, "owned": 26484, "missing": 12776, "total": 97519},
+  "hours": 1.52,
+  "skipped": [],
+  "notes": "사전 계산 4개 · I2 · 보유 계정 3개 프로세스가 각각 한 번씩 sqlite 'database is locked' 경고(캐시에 쓰지 못했다)를 냈으나 죽은 프로세스는 없어 다시 돌리지 않았다. owned = 보유 O·I1(21,192) + 보유 I2(5,292); 3단계는 I2 갱신과 보유 O·I1이 같은 캐시를 함께 썼다. 평가기 빌드가 처음에 자동 권한 검사로 막혀 사용자 허용 뒤 진행(12:42~14:13 UTC)."
+}
