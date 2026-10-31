@@ -5,8 +5,10 @@
 
 - 조합 기록: 실험 13 U4 · 2,000 계정 실행 8개(실험 16 · 17과 같다, 새 시뮬 0). 5덱 조립은 실험 9 `repack_post`.
 - 운용 탐색 기법(구성 하나): C = 컨트롤만 M3:k2 200(지금 기본) · J = 컨트롤 + 큐브 M3:k2 400(실험 17 기본) ·
-  S = C의 최선에서 컨트롤 + 큐브 200 더(실험 17 SQ, 합 400). 같은 구성 · 같은 기법은 한 번만 돌고 정책끼리 결과를 나눠 쓴다.
-  실험 16 jobs(C)와 실험 17 기록(C0 · J · SQ)에 같은 구성이 있으면 그 값을 쓴다(같은 시드 · 같은 평가기라 다시 돌린 값과 같다).
+  S = C의 최선에서 컨트롤 + 큐브 200 더(실험 17 SQ, 합 400) · T = 컨트롤 + 큐브(니케별 사전값 상위 3) M3:k2 400
+  (실험 17 최종 판단 「운용 탐색 기본 = JT · 400」, 사전값은 실험 17 prior_JT.json — 그 시나리오를 뺀 J 기록).
+  같은 구성 · 같은 기법은 한 번만 돌고 정책끼리 결과를 나눠 쓴다.
+  실험 16 jobs(C)와 실험 17 기록(C0 · J · SQ · JT)에 같은 구성이 있으면 그 값을 쓴다(같은 시드 · 같은 평가기라 다시 돌린 값과 같다).
 - 정책(후처리 대상을 고르는 규칙):
   PS  틀별 기본 레이어 상위 5(실험 9 기본 = 실험 16 S0)
   PF  고정점: 5덱을 짜고 → 그 덱 중 아직 운용을 찾지 않은 덱에 운용 탐색 → 다시 짜기를 새 덱이 없을 때까지
@@ -50,9 +52,9 @@ R17 = sys.modules.get("run17") or _load("run17", EXP17 / "run17.py")
 R16, R10, R9, M, CB = R17.R16, R17.R10, R17.R9, R17.M, R17.CB
 E8 = R16.E8
 
-METHODS = ("C", "J", "S")
+METHODS = ("C", "J", "S", "T")
 POLICIES = ("PS", "PF", "PF2")
-BUDGET = {"C": 200, "J": 400, "S": 400}     # 구성 하나의 평가 수(S = C 200 + 이어서 200)
+BUDGET = {"C": 200, "J": 400, "S": 400, "T": 400}     # 구성 하나의 평가 수(S = C 200 + 이어서 200)
 MAX_ROUNDS = 12
 TOP = 5
 
@@ -75,6 +77,8 @@ class Ops:
         self.ran = {m: 0 for m in METHODS}
         self.reused = {m: 0 for m in METHODS}
         self.e16 = load_exp16_jobs() if reuse else {}
+        pj = EXP17 / "run_log" / "prior_JT.json"
+        self.priors = json.loads(pj.read_text(encoding="utf-8"))["scenarios"] if pj.exists() else {}
         self.reuse = reuse
 
     def path(self, m: str, cid: str) -> Path:
@@ -94,6 +98,11 @@ class Ops:
                 return {"value": d, "labels": lab, "evals": 200, "source": "exp17"}
         if m == "J":
             p = EXP17 / "run_log" / "logs" / "J" / f"{h}.jsonl.gz"
+            if p.exists():
+                d, lab = R17.best_at(R17.read_log(p), 400)
+                return {"value": d, "labels": lab, "evals": 400, "source": "exp17"}
+        if m == "T":
+            p = EXP17 / "run_log" / "logs" / "JT" / f"{h}.jsonl.gz"
             if p.exists():
                 d, lab = R17.best_at(R17.read_log(p), 400)
                 return {"value": d, "labels": lab, "evals": 400, "source": "exp17"}
@@ -154,8 +163,10 @@ class Ops:
             run = M.Run(job, sp, self.ev, method="M3:k2", budget=BUDGET["C"], out=None)
             R17.m3_from(run, sp.empty(), seed=M.job_seed(cid, "M3:k2"))
             r = {"value": run.best, "labels": list(sp.labels(run.best_sel)), "evals": run.used, "source": "run"}
-        elif m == "J":
-            res = R17.run_method("J", {"id": cid, "squad": list(squad)}, acct, self.ev, self.inv, logdir=logdir)
+        elif m in ("J", "T"):
+            kw = {"allowed": self.priors[sid]["allowed"]} if m == "T" else {}
+            res = R17.run_method("J" if m == "J" else "JT", {"id": cid, "squad": list(squad)}, acct, self.ev, self.inv,
+                                 logdir=logdir, **kw)
             r = {"value": res["best_damage"], "labels": res["best_variants"], "evals": res["evals"], "source": "run"}
         else:
             c = self.get("C", sid, squad)
