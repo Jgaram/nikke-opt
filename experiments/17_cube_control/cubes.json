@@ -1,0 +1,182 @@
+{
+ "_source": {
+  "repo": "nikke-calc-rs",
+  "commit": "89d2e64406dc60592ba90cb71935b7d56154ed52",
+  "file": "upstream/data/base_stat_tables/cube.json",
+  "sha256": "6d9fe4e50fe780a0245347ae5d86ba21f950bd56345de09c18cd62e68a95bba8",
+  "note": "게임 공개 자료(blablalink CDN)를 평가기가 정리한 큐브 표에서 이름 · 효과 종류만 옮겼다"
+ },
+ "default": "렐릭 베어 큐브",
+ "cubes": [
+  {
+   "name": "렐릭 어설트 큐브",
+   "stat": "accuracy_pct",
+   "skill": "히트 업 HC",
+   "template": "전투 시작 시 명중률 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "5.09",
+   "unsupported": null
+  },
+  {
+   "name": "택티컬 어설트 큐브",
+   "stat": "charge_dmg_pct",
+   "skill": "차지 대미지 업 HC",
+   "template": "전투 시작 시 차지 대미지 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "5.09",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 베어 큐브",
+   "stat": "reload_speed_pct",
+   "skill": "퀵 리로드 HC",
+   "template": "전투 시작 시 재장전 속도 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "29.69",
+   "unsupported": null
+  },
+  {
+   "name": "택티컬 베어 큐브",
+   "stat": "ammo_charge_flat",
+   "skill": "리로드 업 HC",
+   "template": "10발 사격 시 탄환 충전 {0}발 ▲",
+   "type": "instant",
+   "timing": "hit_count:10",
+   "value_max": "3",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 부스트 큐브",
+   "stat": "charge_speed_pct",
+   "skill": "차지 스피드 업 HC",
+   "template": "전투 시작 시 차지 속도 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "2.12",
+   "unsupported": null
+  },
+  {
+   "name": "택티컬 부스트 큐브",
+   "stat": "max_ammo_pct",
+   "skill": "매거진 업 HC",
+   "template": "전투 시작 시 최대 장탄 수 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "29.69",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 퀀텀 큐브",
+   "stat": "burst_charge_speed_pct",
+   "skill": "버스트 차지 업 HC",
+   "template": "전투 시작 시 버스트 게이지 충전 속도 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "4.66",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 비고르 큐브",
+   "stat": "max_hp_pct",
+   "skill": "헬스 업 HC",
+   "template": "전투 시작 시 최대 체력 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "9.69",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 인듀어 큐브",
+   "stat": "def_pct",
+   "skill": "디펜스 업 HC",
+   "template": "전투 시작 시 방어력 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "48.45",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 힐링 큐브",
+   "stat": "outgoing_heal_pct",
+   "skill": "힐 업 HC",
+   "template": "전투 시작 시 주는 체력 회복량 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "16.16",
+   "unsupported": "계산기 미구현 stat (outgoing_heal_pct) — 버프로 등록하지 않는다"
+  },
+  {
+   "name": "렐릭 템퍼링 큐브",
+   "stat": "received_dmg_pct",
+   "skill": "대미지 리덕션 HC",
+   "template": "전투 시작 시 받는 대미지 {0}% ▼",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "9.69",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 어시스터 큐브",
+   "stat": "max_hp_pct",
+   "skill": "핀치 헬스 업 HC",
+   "template": "착용자의 체력이 20% 이하일 때 최대 체력 {0}% ▲ 20초 유지",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "12.14",
+   "unsupported": "체력 20% 이하일 때만 · 20초 지속 (조건부라 상시 버프로 등록하지 않는다)"
+  },
+  {
+   "name": "렐릭 디스트로이 큐브",
+   "stat": "part_dmg_pct",
+   "skill": "핀치 파츠 히트 업 HC",
+   "template": "전투 시작 시 파츠 대미지 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "31.9",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 피어싱 큐브",
+   "stat": "pierce_dmg_pct",
+   "skill": "피어스 히트 업 HC",
+   "template": "전투 시작 시 관통 대미지 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "14.14",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 크래시 큐브",
+   "stat": "armor_break_dmg_pct",
+   "skill": "트루 대미지 업 HC",
+   "template": "전투 시작 시 방어력 무시 대미지 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "14.14",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 커버 큐브",
+   "stat": "cover_hp_pct",
+   "skill": "커버 헬스 업 HC",
+   "template": "전투 시작 시 시전자의 최대 체력 비례 엄폐물 최대 체력 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "14.54",
+   "unsupported": null
+  },
+  {
+   "name": "렐릭 디바이드 큐브",
+   "stat": "split_dmg_pct",
+   "skill": "디바이드 업 HC",
+   "template": "전투 시작 시 분배 대미지 {0}% ▲",
+   "type": "battle_start",
+   "timing": null,
+   "value_max": "17.69",
+   "unsupported": null
+  }
+ ]
+}
