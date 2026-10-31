@@ -121,13 +121,14 @@ def m3_from(run: Any, start: tuple[int, ...], *, kick: int = KICK, seed: int = 0
 
 
 def space_for(method: str, squad: Sequence[str], options: Mapping[str, Any], inventory: Mapping[str, int],
-              allowed: Mapping[str, Sequence[str]] | None = None) -> Any:
+              allowed: Mapping[str, Sequence[str]] | None = None, start: str = CB.DEFAULT_CUBE) -> Any:
+    """start = 계정의 출발 큐브(options가 이미 그 큐브를 낀 상태). 개발 계정은 렐릭 베어."""
     if method == "C0":
         return M.Space(list(squad), base=options)
     if method == "JT":
-        fn = CB.joint_variants_fn(inventory, allowed=lambda who: (allowed or {}).get(who))
+        fn = CB.joint_variants_fn(inventory, start=start, allowed=lambda who: (allowed or {}).get(who))
     else:
-        fn = CB.joint_variants_fn(inventory)
+        fn = CB.joint_variants_fn(inventory, start=start)
     return M.Space(list(squad), variants_fn=fn, base=options)
 
 
@@ -150,9 +151,9 @@ def best_at(rows: Sequence[Mapping[str, Any]], budget: int) -> tuple[int | None,
 
 def run_method(method: str, job: Mapping[str, Any], acct: Any, ev: Any, inventory: Mapping[str, int], *,
                logdir: Path, allowed: Mapping[str, Sequence[str]] | None = None,
-               start_labels: Sequence[str] | None = None) -> dict[str, Any]:
+               start_labels: Sequence[str] | None = None, start: str = CB.DEFAULT_CUBE) -> dict[str, Any]:
     cid = job["id"]
-    sp = space_for(method, job["squad"], acct.options, inventory, allowed)
+    sp = space_for(method, job["squad"], acct.options, inventory, allowed, start)
     budget = {"REF": REF_BUDGET, "SQ": HALF}.get(method, BUDGET)
     tmp = logdir / method / f"{hname(cid)}.jsonl"
     tmp.parent.mkdir(parents=True, exist_ok=True)
