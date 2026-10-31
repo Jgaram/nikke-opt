@@ -1,0 +1,24 @@
+{
+  "case": "C1",
+  "removed": ["아르카나 : 포츈 메이트"],
+  "session": "session_01MQimn3tFqMaAwPWC3oM6Ri",
+  "evaluator": "nikke-calc-rs 89d2e64",
+  "cpus": 4,
+  "sims": {
+    "precompute": 47116,
+    "update": 741,
+    "owned": 27682,
+    "missing": 9158,
+    "total": 84697
+  },
+  "sims_detail": {
+    "precompute": "O-s0 12326 + O-s1 12818 + O-s2 9536 + O-s3 12436 (precompute_O-s*.json sims)",
+    "update": "I2 첫 실행이 2시간 백그라운드 제한에 끊겨 기록 없음, 재실행 28 — 첫 실행분은 캐시 행 수(67,015, 4a 시작 직후)에서 사전 계산 · 보유 O·I1 합(66,274)을 뺀 추정 741(재실행 28 포함, 캐시 쓰기 실패분만큼 과소일 수 있음)",
+    "owned": "O·I1 3프로세스 끝 줄 5532 + 7765 + 5861 = 19158, I2 4프로세스 1794 + 2099 + 2477 + 2154 = 8524",
+    "missing": "4프로세스 끝 줄 1359 + 1238 + 4929 + 1632"
+  },
+  "hours": 4.0,
+  "timeline_utc": {"start": "12:43", "precompute_done": "14:07", "merge_done": "14:39", "owned_O_I1_done": "~15:40", "I2_update_done": "16:25", "owned_I2_done": "16:34", "missing_done": "16:42"},
+  "skipped": [],
+  "notes": "캐시 잠금 경고(공용 Cache commit 지연), s2 재실행 — 동시 시작 4개 중 s2가 Cache 초기화에서 database is locked로 즉시 종료, 같은 명령으로 단독 재실행. 이후 단계는 프로세스 시작을 5초씩 엇갈림. I2 update는 첫 실행이 백그라운드 2시간 제한으로 끊겨 같은 명령으로 재실행(precompute_I2.json의 sims 28은 재실행분만; I2 평가 11,557로 예산 13,200 미만에서 끝남)."
+}
