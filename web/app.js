@@ -23,8 +23,6 @@
 
   let D = null;
   const state = { season: null, boss: null };
-  let view = 'ranker';                                   // ranker(실험 22) · plan(편성안 계층)
-  const plan = { acct: null, rendered: false };
   let charts = [];
 
   // ------------------------------------------------------------ DOM
@@ -189,7 +187,6 @@
   }
   // 5덱 격자: 행 = 덱(1~5), 열 = 배치 순서. 5덱 묶음 하나가 격자 하나다.
   // o: title · note · size(lg = 큰 얼굴 + 니케별 딜, md = 작은 얼굴) · otherSet(없으면 점선) · newSet · refDecks(같은 덱이면 흐리게)
-  //    · hl(덱 번호 Set, 1부터 — 바뀐 덱을 칠한다)
   const deckKey = (order) => [...order].sort().join('|');
   function fiveGrid(set, o = {}) {
     const size = o.size || 'lg';
@@ -205,13 +202,11 @@
     const rows = set.decks.map((d, i) => {
       const dmg = Object.fromEntries((d.members || []).map(([n, v]) => [n, v]));
       const same = ref ? ref.get(deckKey(d.order)) : null;
-      const chg = !!(o.hl && o.hl.has(i + 1));
-      return h('div', { class: `fg-row${same ? ' same' : ''}${chg ? ' chg' : ''}`, role: 'row' },
+      return h('div', { class: `fg-row${same ? ' same' : ''}`, role: 'row' },
         h('div', { class: 'fg-lab', role: 'rowheader' },
           h('span', { class: 'fg-no', text: `${i + 1}` }),
           h('span', { class: 'fg-val', text: eok(d.value) }),
-          same ? h('span', { class: 'fg-same', text: `= ${same}덱` }) : null,
-          chg ? h('span', { class: 'fg-chg', text: '바뀜' }) : null),
+          same ? h('span', { class: 'fg-same', text: `= ${same}덱` }) : null),
         d.order.map((n) => h('div', { class: 'fg-cell', role: 'cell' },
           face(n, size, { diff: !!(o.otherSet && !o.otherSet.has(n)), isNew: !!(o.newSet && o.newSet.has(n)) }),
           size === 'lg' && d.members ? h('span', { class: 'dmg', text: dmg[n] == null ? '' : eok(dmg[n]) }) : null)));
@@ -253,10 +248,6 @@
         h('a', { href: D.experiment.ranker_repo, text: 'Jgaram/nikke-analysis' }), '의 enikk 원자료(시즌마다 6개 서버 상위 50명 × 5덱)'),
       h('p', null, '실험 문서: ', h('a', { href: D.experiment.readme, text: '실험 22 README' }), ' · 코드: ',
         h('a', { href: D.repo, text: 'Jgaram/nikke-opt' }), ' · 이 페이지는 main에 결과가 올라올 때마다 GitHub Actions가 다시 만듭니다.'),
-      D.tree ? h('p', null, '편성안 계층: ', h('a', { href: `${D.repo}/blob/main/${D.tree.file}`, text: D.tree.file }),
-        D.tree.short ? [' (', h('a', { href: `${D.repo}/commit/${D.tree.commit}`, text: D.tree.short }), `, ${day(D.tree.date)})`] : null,
-        ' · ', h('a', { href: D.tree.exp28_readme, text: '실험 28 README' }),
-        D.tree.experiment === 29 ? [' · ', h('a', { href: D.tree.readme, text: '실험 29 README' })] : null) : null,
       iconCredit(),
     );
   }
@@ -427,9 +418,7 @@
     state.season = s;
     state.boss = b || (S.better && S.by_boss[S.better].status === 'done' ? S.better
       : BOSSES.find((x) => S.by_boss[x].status === 'done') || 'nocore');
-    if (view === 'ranker') {
-      try { history.replaceState(null, '', `#S${s}-${state.boss}`); } catch (e) { /* file:// 등 */ }
-    }
+    try { history.replaceState(null, '', `#S${s}-${state.boss}`); } catch (e) { /* file:// 등 */ }
     renderPicker();
     renderDetail();
     const t = document.querySelector('#overview table');
@@ -780,212 +769,6 @@
     ));
   }
 
-
-  // ------------------------------------------------------------ 편성안 계층(가상 계정 w1~w8)
-  const CLASS_NAMES = ['A', 'B', 'C'];
-  const acctOf = (sid) => D.tree.rows.find((r) => r.scenario === sid);
-  const jf = (v) => (v == null ? '—' : v.toFixed(2));
-
-  function renderPlan() {
-    const T = D.tree;
-    const root = $('#plan-app');
-    plan.rendered = true;
-    if (!T || !T.rows.length) {
-      root.replaceChildren(h('section', { id: 'plan' }, h('h2', { text: '편성안 계층' }),
-        h('div', { class: 'empty', text: '계산 전 — 실험 28 · 29 analysis.json이 없습니다.' })));
-      return;
-    }
-    const src = T.experiment === 29
-      ? h('span', null, h('b', { text: '실험 29' }), ' 결과(', h('code', { text: 'analysis.json' }), ') — C는 근처 탐색 + 후처리 뒤 값입니다.',
-        T.verdict ? [' 판단(사전 등록): ', h('b', { text: T.verdict })] : null)
-      : h('span', null, h('b', { text: '실험 28' }), ' 기록(', h('code', { text: 'analysis.json' }),
-        ') — C는 후처리 전 값입니다. 실험 29(C 근처 탐색 + 후처리)가 끝나면 그 결과로 바뀝니다.');
-    root.replaceChildren(h('section', { id: 'plan' },
-      h('h2', { text: '편성안 계층' }),
-      h('p', { class: 'sub' }, h('b', { text: '큰 분류' }), ' = 대표끼리 쌍 자카드 J ≤ 0.2(덱 나누기가 크게 다른 5덱). ',
-        h('b', { text: '세부 분류' }), ' = 대표에서 덱 1~2개만 바꾼 것(J ≥ 0.5, 최선의 97% 이상). 정의: ',
-        h('a', { href: T.exp28_readme, text: '실험 28' }), '.'),
-      h('p', { class: 'small muted' }, '데이터: ', src),
-      h('div', { id: 'plan-picker' }), h('div', { id: 'plan-body' }), planOverview()));
-    selectAcct(plan.acct || T.rows[0].scenario);
-  }
-
-  function selectAcct(sid) {
-    if (!acctOf(sid)) sid = D.tree.rows[0].scenario;
-    plan.acct = sid;
-    try { history.replaceState(null, '', `#plan-${sid}`); } catch (e) { /* file:// 등 */ }
-    $('#plan-picker').replaceChildren(h('div', { class: 'picker' },
-      h('div', { class: 'chips', role: 'group', 'aria-label': '가상 계정' }, D.tree.rows.map((r) => h('button', {
-        class: 'chip-btn acct-btn', type: 'button', 'aria-pressed': String(r.scenario === sid), onclick: () => selectAcct(r.scenario),
-      }, r.scenario)))));
-    $('#plan-body').replaceChildren(acctBody(acctOf(sid)));
-    const t = document.querySelector('#plan-overview tbody');
-    if (t) for (const tr of t.children) tr.classList.toggle('sel', tr.dataset.sid === sid);
-  }
-
-  function acctBody(R) {
-    const extra = [];
-    if (R.sims_total != null) extra.push(`새 시뮬 ${int(R.sims_total)}회(C 탐색 ${int(R.search_sims)} · C 후처리 ${int((R.C_final || {}).sims)} · 세부 분류 후처리 ${int((R.subs_post || {}).sims)})`);
-    if (R.subs_post && R.subs_post.converged === false) extra.push('세부 분류 후처리는 제한에 걸려 멈춤');
-    return h('div', null,
-      h('div', { class: 'acct-head' },
-        h('div', null, h('p', { class: 'eyebrow', text: `가상 계정 ${R.scenario}` }), h('h3', { class: 'acct-name', text: R.name || R.scenario })),
-        h('div', { class: 'acct-best' }, h('span', { class: 'muted small', text: '최선(A) 합' }), h('b', { text: eok(R.best) }))),
-      extra.length ? h('p', { class: 'small muted', text: extra.join(' · ') }) : null,
-      R.classes.map((c) => classBox(R, c)));
-  }
-
-  function classBox(R, c) {
-    if (!c.found) {
-      return h('div', { class: 'cls none' }, h('div', { class: 'cls-sum' },
-        h('span', { class: `cls-badge c-${c.name}`, text: c.name }), h('span', { class: 'cls-ratio', text: '없음' }),
-        c.note ? h('span', { class: 'cls-note', text: c.note }) : null));
-    }
-    const vs = Object.entries(c.vs || {}).map(([o, v]) => h('span', { class: 'cls-j' },
-      h('span', { class: `cls-badge sm c-${o}`, text: o }), ` J ${jf(v.J)} · 바꿀 니케 ${v.moves}명`));
-    const note = [c.note];
-    if (c.name === 'C' && R.C_pre_post && R.C_pre_post.ratio != null) note.push(`후처리 전 ${pct(R.C_pre_post.ratio)}`);
-    const box = h('details', { class: 'cls', open: c.name === 'A' ? true : null },
-      h('summary', { class: 'cls-sum' },
-        h('span', { class: `cls-badge c-${c.name}`, text: c.name }),
-        h('span', { class: 'cls-ratio', text: pct(c.ratio) }),
-        h('span', { class: 'cls-total', text: eok(c.total) }),
-        h('span', { class: 'cls-vs' }, vs),
-        h('span', { class: 'cls-note', text: note.filter(Boolean).join(' · ') }),
-        h('span', { class: 'cls-subs', text: `세부 분류 ${subsCount(c)}` })),
-      h('div', { class: 'cls-inner' }));
-    // 펼 때 그린다(계정 하나에 격자가 많다)
-    const fill = () => { if (box.open && !box.dataset.filled) { box.dataset.filled = '1'; box.lastChild.replaceChildren(...classInner(R, c)); } };
-    box.addEventListener('toggle', fill);
-    requestAnimationFrame(fill);
-    return box;
-  }
-  const subsCount = (c) => (c.capped ? `${int(c.subs_count)}개 이상` : `${int(c.subs_count)}개`);
-
-  function classInner(R, c) {
-    const show = D.tree.show;
-    const subs = c.subs || [];
-    const repSet = new Set(c.decks.flatMap((d) => d.order));
-    const out = [h('div', { class: 'rep-grid' }, fiveGrid({ total: c.total, decks: c.decks }, { title: `대표 5덱 · ${c.name}`, size: 'lg', note: `최선 대비 ${pct(c.ratio)}` }))];
-    out.push(h('h4', { class: 'subs-h' }, `세부 분류 ${subsCount(c)}`,
-      c.subs_count ? h('span', { class: 'muted small', text: ` · 덱 하나만 바뀐 것 ${int(c.subs_1deck)}개` }) : null));
-    if (!subs.length) {
-      out.push(h('p', { class: 'small muted', text: '최선의 97% 이상이면서 이 대표에서 덱 1~2개만 바꾼 5덱이 기록에 없습니다.' }));
-      return out;
-    }
-    out.push(h('p', { class: 'small muted face-key' }, '줄을 누르면 5덱이 펼쳐집니다. 칠한 줄 = 바뀐 덱 · 점선 테두리 = 대표에 없던 니케 · ',
-      h('span', { class: 'pill unposted', text: '후처리 전 값' }), ' = 새 덱 중 운용 탐색을 안 한 덱이 있어 값이 낮게 잡혔을 수 있음.'));
-    out.push(h('div', { class: 'subs' }, subs.slice(0, show).map((s, i) => subItem(R, c, s, i + 1, repSet))));
-    const more = subs.slice(show);
-    if (more.length) {
-      const d = h('details', { class: 'more' }, h('summary', { text: `더보기 — ${more.length}개 더 (합 순)` }), h('div', { class: 'subs' }));
-      d.addEventListener('toggle', () => {
-        if (d.open && !d.dataset.filled) {
-          d.dataset.filled = '1';
-          d.lastChild.replaceChildren(...more.map((s, i) => subItem(R, c, s, show + i + 1, repSet)),
-            c.more_left ? h('p', { class: 'small muted more-left', text: `외 ${int(c.more_left)}개${c.capped ? ' 이상(400개에서 자름)' : ''}` }) : null);
-        }
-      });
-      out.push(d);
-    } else if (c.more_left) {
-      out.push(h('p', { class: 'small muted', text: `외 ${int(c.more_left)}개` }));
-    }
-    return out;
-  }
-
-  // 세부 분류 한 줄: 바뀐 덱 · 빠짐 → 들어옴(덱 사이 옮김) · 최선 대비 · J. 펴면 5덱 격자
-  function subItem(R, c, s, rank, repSet) {
-    const moved = s.moved || [];
-    const change = [];
-    if (s.out.length || s.in.length) {
-      change.push(h('span', { class: 'swap' }, faces(s.out, 'sm'), h('span', { class: 'arrow', 'aria-label': '대신', text: '→' }), faces(s.in, 'sm')));
-    }
-    const inSet = new Set(s.in);
-    const mv = moved.filter(([n]) => !inSet.has(n));
-    if (mv.length) {
-      change.push(h('span', { class: 'moved' }, mv.map(([n, a, b]) => h('span', { class: 'mv' }, face(n, 'sm'),
-        h('span', { class: 'mv-d', 'aria-label': `${a}덱에서 ${b}덱으로`, text: `${a}→${b}` })))));
-    }
-    const other = Object.entries(s.J_other || {}).map(([o, j]) => h('span', { class: 'sj' }, h('span', { class: `cls-badge sm c-${o}`, text: o }), ` ${jf(j)}`));
-    const sum = h('summary', { class: 'sub-sum' },
-      h('span', { class: 'sub-no', text: `${rank}` }),
-      h('span', { class: 'sub-decks' }, s.changed.map((n) => h('span', { class: 'tag deck-tag', text: `${n}덱` }))),
-      h('span', { class: 'sub-change' }, change),
-      h('span', { class: 'sub-nums' },
-        h('b', { class: 'sub-ratio', text: pct(s.total / R.best) }),
-        h('span', { class: 'sj' }, h('span', { class: `cls-badge sm c-${c.name}`, text: c.name }), ` ${jf(s.J)}`),
-        other,
-        s.new_unposted > 0 ? h('span', { class: 'pill unposted', text: '후처리 전 값' }) : null));
-    const d = h('details', { class: 'sub-item' }, sum, h('div', { class: 'sub-inner' }));
-    d.addEventListener('toggle', () => {
-      if (!d.open || d.dataset.filled) return;
-      d.dataset.filled = '1';
-      const decks = c.decks.map((x) => ({ order: x.order, value: x.value }));
-      for (const sl of s.slots) decks[sl.no - 1] = { order: sl.order, value: sl.value };
-      d.lastChild.replaceChildren(fiveGrid({ total: s.total, decks }, {
-        title: `${c.name} 세부 분류 ${rank}`, size: 'md', hl: new Set(s.changed), otherSet: repSet,
-        note: `최선 대비 ${pct(s.total / R.best)} · 대표 ${c.name}와 J ${jf(s.J)} · 옮기거나 바꿀 니케 ${s.moves}명${s.new_unposted ? ` · 후처리 안 된 새 덱 ${s.new_unposted}개` : ''}`,
-      }));
-    });
-    return d;
-  }
-
-  function planOverview() {
-    const head = h('tr', null, ['계정', '조건', '최선 합', 'A', 'B', 'C', '세부 분류 A · B · C'].map((t, i) => h('th', { class: i >= 2 ? 'r' : null, text: t })));
-    const rows = D.tree.rows.map((r) => {
-      const cl = Object.fromEntries(r.classes.map((c) => [c.name, c]));
-      const cell = (n) => h('td', { class: 'r', text: cl[n] && cl[n].found ? pct(cl[n].ratio) : '없음' });
-      return h('tr', { class: 'clickable', 'data-sid': r.scenario, onclick: () => { selectAcct(r.scenario); $('#plan').scrollIntoView({ behavior: 'smooth' }); } },
-        h('td', null, h('b', { text: r.scenario })), h('td', { class: 'small', text: r.name || '' }),
-        h('td', { class: 'r', text: eok(r.best) }), CLASS_NAMES.map(cell),
-        h('td', { class: 'r', text: CLASS_NAMES.map((n) => (cl[n] && cl[n].found ? (cl[n].capped ? `${cl[n].subs_count}+` : cl[n].subs_count) : '—')).join(' · ') }));
-    });
-    return h('div', { class: 'card', id: 'plan-overview' }, h('h3', { text: '계정 8개 한눈에' }),
-      h('p', { class: 'sub small', text: '큰 분류마다 최선(A) 대비 합. 줄을 누르면 그 계정으로 갑니다. 400+ = 400개에서 자름.' }),
-      tableWrap(h('table', { class: 'mid' }, h('thead', null, head), h('tbody', null, rows))));
-  }
-
-  // ------------------------------------------------------------ 화면 이동(주소 #plan · #plan-w3 = 편성안 계층, 나머지 = 실험 22)
-  function viewOfHash() {
-    const m = /^#plan(?:-(w\d+))?$/.exec(location.hash);
-    return m ? ['plan', m[1] || null] : ['ranker', null];
-  }
-  function setView(v, acct) {
-    view = v;
-    $('#app').hidden = v !== 'ranker';
-    $('#plan-app').hidden = v !== 'plan';
-    $('#toc-ranker').hidden = v !== 'ranker';
-    $('#lede-ranker').hidden = v !== 'ranker';
-    $('#lede-plan').hidden = v !== 'plan';
-    $('#eyebrow').textContent = v === 'plan' ? `nikke-opt · 실험 ${D.tree && D.tree.experiment === 29 ? '28 · 29' : '28'}` : 'nikke-opt · 실험 22';
-    for (const a of document.querySelectorAll('.views a')) {
-      if (a.dataset.view === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
-    }
-    if (v === 'plan') {
-      if (acct) plan.acct = acct;
-      if (!plan.rendered || !D.tree || !D.tree.rows.length) renderPlan(); else selectAcct(plan.acct || D.tree.rows[0].scenario);
-    } else {
-      if (state.season != null) {
-        try { history.replaceState(null, '', `#S${state.season}-${state.boss}`); } catch (e) { /* file:// 등 */ }
-      }
-      // 숨긴 채 그린 그래프는 폭이 틀리므로 보일 때 다시 그린다
-      requestAnimationFrame(() => {
-        charts = charts.filter((c) => c.el.isConnected);
-        for (const c of charts) c.el.replaceChildren();          // 먼저 비워야 칸 폭을 제대로 잰다
-        for (const c of charts) redraw(c.el, c.draw);
-      });
-    }
-  }
-  window.addEventListener('hashchange', () => {
-    const [v, acct] = viewOfHash();
-    if (v !== view || (v === 'plan' && acct && acct !== plan.acct)) {
-      setView(v, acct);
-      window.scrollTo(0, 0);
-    } else if (v === 'plan' && plan.acct) {
-      try { history.replaceState(null, '', `#plan-${plan.acct}`); } catch (e) { /* file:// 등 */ }
-    }
-  });
-
   // ------------------------------------------------------------ 시작
   function initialSelection() {
     const m = /^#S(\d+)-(nocore|core30)$/.exec(location.hash);
@@ -1012,12 +795,9 @@
     renderDetailShell(app);
     renderAbout(app);
     renderFoot();
-    const [v, acct] = viewOfHash();
-    view = v;
     const [s, b, scroll] = initialSelection();
     selectSeason(s, b, false);
-    setView(v, acct);
-    if (scroll && v === 'ranker') requestAnimationFrame(() => document.getElementById('detail').scrollIntoView());
+    if (scroll) requestAnimationFrame(() => document.getElementById('detail').scrollIntoView());
   }
   main();
 })();

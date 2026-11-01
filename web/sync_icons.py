@@ -6,7 +6,7 @@
 - `web/icons/{units,bosses,elements,bursts}/`에 그림을 복사하고, `web/icons/icons.json`에
   이름 → 얼굴 번호 · 속성 · 버스트(로스터 `data/processed/roster.csv`)와 시즌 → 보스 그림
   (`data/processed/soloraid_seasons.csv`)을 적는다. 어느 커밋에서 받았는지도 남긴다.
-- 사이트(실험 22 + 편성안 계층)에 나오는 니케 · 시즌만 받고, 더는 안 쓰는 얼굴 · 보스 그림은 지운다.
+- 사이트에 나오는 니케 · 시즌만 받고, 더는 안 쓰는 얼굴 · 보스 그림은 지운다.
   실험 결과가 늘어 새 니케가 나오면 다시 돌린다(`web/build.py`가 그림 없는 니케를 알려 준다).
 - 그림의 권리는 SHIFT UP · Level Infinite에 있다(nikke-analysis README 「라이선스」).
 """
@@ -62,7 +62,7 @@ def commit_of(repo: Path) -> str:
 def sync(analysis: Path, out: Path = ICONS) -> dict[str, Any]:
     B = load_build()
     data = B.build_data()
-    names = sorted({B.base_name(n) for n in B.all_names(data)})
+    names = sorted({B.base_name(n) for n in B.site_names(data["seasons"])})
     seasons = [x["season"] for x in data["seasons"]]
 
     src = analysis / "data" / "assets" / "icons"
