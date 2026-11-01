@@ -1,0 +1,64 @@
+{
+ "session": "W2",
+ "seasons": [
+  9,
+  28,
+  40
+ ],
+ "note_S40": "W4 취소로 관리자 지시(분담 변경)에 따라 S40을 추가로 맡음; S9·S28 4개가 끝난 뒤 S40 2개를 동시에 실행",
+ "evaluator": "nikke-calc-rs 89d2e64",
+ "runs": {
+  "S09_nocore": {
+   "sims": 13233,
+   "evals": 13233,
+   "seconds": 2201.5,
+   "final_total": 77.90319999,
+   "start_utc": "2026-11-01T05:11:18Z",
+   "end_utc": "2026-11-01T05:49:35Z"
+  },
+  "S09_core30": {
+   "sims": 13243,
+   "evals": 13243,
+   "seconds": 1897.5,
+   "final_total": 97.23802442,
+   "start_utc": "2026-11-01T05:11:18Z",
+   "end_utc": "2026-11-01T05:43:58Z"
+  },
+  "S28_nocore": {
+   "sims": 13222,
+   "evals": 13222,
+   "seconds": 2368.3,
+   "final_total": 189.42440045,
+   "start_utc": "2026-11-01T05:11:18Z",
+   "end_utc": "2026-11-01T05:52:46Z"
+  },
+  "S28_core30": {
+   "sims": 13222,
+   "evals": 13222,
+   "seconds": 2331.4,
+   "final_total": 248.2868889,
+   "start_utc": "2026-11-01T05:11:18Z",
+   "end_utc": "2026-11-01T05:51:17Z"
+  },
+  "S40_nocore": {
+   "sims": 13220,
+   "evals": 13220,
+   "seconds": 1208.4,
+   "final_total": 293.14484579,
+   "start_utc": "2026-11-01T05:52:55Z",
+   "end_utc": "2026-11-01T06:14:45Z"
+  },
+  "S40_core30": {
+   "sims": 13209,
+   "evals": 13209,
+   "seconds": 1815.6,
+   "final_total": 362.6094694899999,
+   "start_utc": "2026-11-01T05:52:55Z",
+   "end_utc": "2026-11-01T06:25:13Z"
+  }
+ },
+ "total_sims": 79349,
+ "total_seconds": 11822.7,
+ "rerun": false,
+ "blockers": "없음. 모든 실행이 2시간 제한 안에 한 번에 끝나 다시 돌리지 않음. evals는 약 1.32만(15,000 근처 안내보다 약간 적음)."
+}
