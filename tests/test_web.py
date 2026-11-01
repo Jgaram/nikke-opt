@@ -1,5 +1,5 @@
 """현황판 사이트(web/build.py) — 지금 run_log로 만들어지는지, 지표가 analyze22와 같은지, 결과 전 판을 「계산 전」으로 두는지,
-화면에 나오는 니케 · 보스 · 속성 그림이 빠짐없이 있는지."""
+화면에 나오는 니케 · 보스 · 속성 그림이 빠짐없이 있는지, 편성안 계층(실험 29가 있으면 그것, 없으면 실험 28)을 그대로 옮기는지."""
 
 from __future__ import annotations
 
@@ -110,9 +110,68 @@ class TestWebBuild(unittest.TestCase):
                 self.assertEqual(r["status"], "pending")
                 self.assertIsNotNone(r["rankers"]["top_five"]["total"])
 
+    def test_tree_source(self):
+        """실험 29 analysis.json이 있으면 그것, 없으면 실험 28 것."""
+        t = self.data["tree"]
+        self.assertIsNotNone(t)
+        want = next(e for e, d in B.TREE_SOURCES if (d / "analysis.json").exists())
+        self.assertEqual(t["experiment"], want)
+        self.assertEqual([r["scenario"] for r in t["rows"]], [f"w{k}" for k in range(1, 9)])
+
+    def test_tree_matches_analysis(self):
+        """큰 분류 · 세부 분류 값은 analysis.json 그대로, 세부 분류 5덱은 대표에서 바뀐 덱만 다르다."""
+        _, d = B.tree_source()
+        src = {r["scenario"]: r for r in json.loads((d / "analysis.json").read_text(encoding="utf-8"))["rows"]}
+        for r in self.data["tree"]["rows"]:
+            a = src[r["scenario"]]
+            self.assertEqual(r["best"], a["best"])
+            self.assertEqual([c["name"] for c in r["classes"]], ["A", "B", "C"])
+            for c, k in zip(r["classes"], a["classes"]):
+                for f in ("found", "total", "ratio", "subs_count"):
+                    self.assertEqual(c[f], k[f], (r["scenario"], c["name"], f))
+                if not c["found"]:
+                    continue
+                self.assertEqual([x["order"] for x in c["decks"]], [q for _, q in k["decks"]])
+                self.assertAlmostEqual(sum(x["value"] for x in c["decks"]), c["total"], places=6)
+                self.assertEqual(c["more_left"], c["subs_count"] - len(c["subs"]))
+                self.assertEqual(set(c["vs"]), {o["name"] for o in r["classes"] if o["found"]} - {c["name"]})
+                rep = [x["order"] for x in c["decks"]]
+                for s, t in zip(c["subs"], k["subs"]):
+                    for f in ("total", "J", "changed", "out", "in", "moves", "new_unposted"):
+                        self.assertEqual(s[f], t[f])
+                    self.assertEqual([sl["no"] for sl in s["slots"]], s["changed"])
+                    self.assertEqual(sorted(map(sorted, (sl["order"] for sl in s["slots"]))), sorted(map(sorted, t["new_decks"])))
+                    plan = [list(q) for q in rep]
+                    vals = [x["value"] for x in c["decks"]]
+                    for sl in s["slots"]:
+                        plan[sl["no"] - 1], vals[sl["no"] - 1] = sl["order"], sl["value"]
+                    names = [n for q in plan for n in q]
+                    self.assertEqual(len(set(names)), 25)
+                    self.assertAlmostEqual(sum(vals), s["total"], places=6)
+                    self.assertEqual(B.SIM.moves(rep, plan), s["moves"])
+                    for n, a_, b_ in s["moved"]:
+                        self.assertIn(n, rep[a_ - 1])
+                        self.assertIn(n, plan[b_ - 1])
+
+    def test_tree_falls_back_to_28(self):
+        old = B.TREE_SOURCES
+        B.TREE_SOURCES = ((29, self.tmp / "none"), old[-1])
+        try:
+            t = B.tree_block()
+        finally:
+            B.TREE_SOURCES = old
+        self.assertEqual(t["experiment"], 28)
+        self.assertEqual(t["file"], "experiments/28_plan_tree/analysis.json")
+        B.TREE_SOURCES = ((29, self.tmp / "none"),)
+        try:
+            self.assertIsNone(B.tree_block())
+        finally:
+            B.TREE_SOURCES = old
+
     def test_every_nikke_has_face(self):
         """화면에 나오는 니케는 모두 얼굴 그림이 있다(니케 이름은 글자로 쓰지 않으므로). 없으면 web/sync_icons.py를 다시 돌린다."""
-        names = B.site_names(self.data["seasons"])
+        names = B.all_names(self.data)
+        self.assertTrue(B.tree_names(self.data["tree"]) <= names)
         self.assertGreater(len(names), 100)
         self.assertEqual(self.data["icons"]["missing"], [])
         for n in names:

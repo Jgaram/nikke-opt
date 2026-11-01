@@ -10,7 +10,7 @@
   "9": "full_ebg002_dmtr"
  },
  "source": {
-  "commit": "7190ad3012d00dcfa4df58b7386e1f8386df2075",
+  "commit": "c7535226063ced6fb8cc2fca3ff0458de2b64b85",
   "files": "data/assets/icons/ · data/processed/roster.csv · data/processed/soloraid_seasons.csv",
   "repo": "https://github.com/Jgaram/nikke-analysis"
  },
@@ -91,6 +91,13 @@
     "Wind"
    ],
    "id": "400"
+  },
+  "길티 : 마이티 바니": {
+   "b": "III",
+   "el": [
+    "Water"
+   ],
+   "id": "404"
   },
   "나가": {
    "b": "II",
@@ -196,6 +203,13 @@
     "Fire"
    ],
    "id": "101"
+  },
+  "드레이크 : 그레이트 빌런": {
+   "b": "III",
+   "el": [
+    "Wind"
+   ],
+   "id": "104"
   },
   "디젤": {
    "b": "II",
@@ -568,6 +582,13 @@
     "Fire"
    ],
    "id": "550"
+  },
+  "벨로타 : 펌킨 위치": {
+   "b": "II",
+   "el": [
+    "Water"
+   ],
+   "id": "063"
   },
   "벨벳": {
    "b": "II",

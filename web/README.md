@@ -1,11 +1,14 @@
 # 예측 현황판 사이트 (`web/`)
 
 레포의 탐색 로직이 **얼마나 맞게 예상하는지 사람이 눈으로 확인**하려고 만든 정적 사이트다. 레포 소유자가 보는 용도이며,
-지금은 [실험 22](../experiments/22_ranker_check/README.md)(랭커 대조)만 보여 준다.
+화면이 둘이다. 머리의 탭으로 오간다.
+
+- **랭커 대조** — [실험 22](../experiments/22_ranker_check/README.md). 주소 `#S<시즌>-<보스>`(그 밖의 주소도 이 화면).
+- **편성안 계층** — 가상 계정 w1~w8의 큰 분류 A · B · C → 세부 분류 → 더보기([실험 28](../experiments/28_plan_tree/README.md) · [29](../experiments/29_tree_post/README.md)). 주소 `#plan` · `#plan-w3`.
 
 주소: <https://jgaram.github.io/nikke-opt/> (레포 공개 + Pages 설정 뒤)
 
-## 보여 주는 것
+## 보여 주는 것 — 랭커 대조(실험 22)
 
 | 칸 | 내용 | 출처(`experiments/22_ranker_check/`) |
 |---|---|---|
@@ -25,6 +28,26 @@
 - 아직 없는 결과 파일은 「계산 전」으로 둔다. 작업 세션이 결과를 main에 올리면 다음 배포에서 채워진다.
 - 시뮬은 하지 않는다. 평가기도 필요 없다(`numpy`만).
 - 나중 과제: 여러 컨트롤이 겹칠 때 어느 것을 먼저 적용하는지(평가기의 우선순위 로직)도 보여 주기([로드맵](../docs/ROADMAP.md)).
+
+## 보여 주는 것 — 편성안 계층(w1~w8)
+
+데이터: `experiments/29_tree_post/analysis.json`이 있으면 그것, 없으면 `experiments/28_plan_tree/analysis.json`. 어느 쪽인지 화면 위에 적는다.
+실험 29 결과가 main에 올라오면 다시 빌드만 하면 바뀐다(실험 28에서 C는 후처리 전 값).
+모양은 [실험 29 SESSIONS §화면](../experiments/29_tree_post/SESSIONS.md#화면-v).
+
+| 칸 | 내용 |
+|---|---|
+| 맨 위 | 큰 분류 = 대표끼리 쌍 자카드 J ≤ 0.2, 세부 분류 = 대표에서 덱 1~2개만 바꾼 것(J ≥ 0.5, 최선의 97% 이상). 데이터 출처 · (실험 29면) 판단 |
+| 계정 고르기 | w1~w8 단추 · 계정 조건(`name`) · 최선 합. 실험 29면 새 시뮬 수(C 탐색 · C 후처리 · 세부 분류 후처리) |
+| 큰 분류 A · B · C | 접었다 펴는 칸(A만 펴 둠). 머리 = 최선 대비 % · 합 · 다른 대표와의 J와 바꿀 니케 수 · note · 세부 분류 수. 펴면 대표 5덱 5×5 격자(덱마다 값). `found: false`면 「없음」 |
+| 세부 분류 | 앞 3개(바뀐 덱이 겹치지 않게 고른 것). 줄 = 바뀐 덱 번호 · 빠짐 → 들어옴 얼굴 · 덱 사이 옮긴 니케(얼굴 + `3→5`) · 최선 대비 % · 대표와 J · 다른 대표와 J. `new_unposted > 0`이면 「후처리 전 값」. 누르면 그 5덱 격자(바뀐 덱 줄을 칠하고, 대표에 없던 니케는 점선) |
+| 더보기 | 나머지(합 순, 20개까지). 그 밖은 「외 n개」(400이면 「400개 이상」 — 나열을 400에서 잘랐다) |
+| 계정 8개 한눈에 | 계정마다 A · B · C 최선 대비 · 세부 분류 수. 줄을 누르면 그 계정 |
+
+- 값은 `analysis.json` 그대로다. 빌드가 더하는 것은 셋뿐이다:
+  대표끼리 바꿀 니케 수([`nikke_opt.similarity.moves`](../nikke_opt/similarity.py)), 세부 분류 새 덱을 바뀐 덱 자리에 놓는 순서(겹침 최대),
+  그 결과 덱 사이를 옮긴 니케.
+- 주력 딜러 표시는 쓰지 않는다. 니케는 랭커 대조와 같이 얼굴 그림으로만 보여 준다.
 
 ## 만들기 · 로컬에서 보기
 
@@ -52,7 +75,7 @@ python -m http.server -d _site 8000
 
 ## 그림
 
-[Jgaram/nikke-analysis](https://github.com/Jgaram/nikke-analysis)의 그림을 **화면에 나오는 것만** `web/icons/`에 복사해 커밋해 둔다.
+[Jgaram/nikke-analysis](https://github.com/Jgaram/nikke-analysis)의 그림을 **화면(두 화면 모두)에 나오는 것만** `web/icons/`에 복사해 커밋해 둔다.
 빌드는 외부에 기대지 않는다. 어느 커밋에서 받았는지는 `icons.json`의 `source`에 남는다.
 
 | 폴더 | 내용 | nikke-analysis 출처 |
@@ -80,6 +103,6 @@ python web/sync_icons.py --analysis ../nikke-analysis
 
 | 파일 | 역할 |
 |---|---|
-| `build.py` | run_log → `data.json`, 정적 파일 · `icons/` 복사 |
+| `build.py` | 실험 22 run_log · 실험 28/29 `analysis.json` → `data.json`, 정적 파일 · `icons/` 복사 |
 | `sync_icons.py` | nikke-analysis → `icons/`(화면에 나오는 니케 · 시즌만) |
 | `index.html` · `style.css` · `app.js` | 화면. 외부 라이브러리 · CDN 없음. 밝게 · 어둡게(시스템 설정 또는 오른쪽 위 버튼) |
