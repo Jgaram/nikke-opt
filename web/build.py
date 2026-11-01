@@ -1,4 +1,4 @@
-"""실험 22 현황판 — GitHub Pages 정적 사이트 만들기.
+"""현황판 — GitHub Pages 정적 사이트 만들기(실험 22 랭커 대조 + 가상 계정 w1~w8 편성안 계층).
 
     python web/build.py --out _site          → _site/index.html · app.js · style.css · data.json
     python -m http.server -d _site 8000       (로컬에서 보기: http://localhost:8000)
@@ -7,6 +7,9 @@
   그대로 부른다. 정의를 여기서 다시 쓰지 않는다.
 - 그 밖에 화면에 필요한 것(수렴 곡선 · 단계별 시뮬 수 · 2~8순위 5덱 · 덱별 딜 · 랭커 덱 값 · 기본 레이어 컨트롤)을
   같은 run_log에서 읽어 붙인다. 시뮬은 하지 않는다. 아직 없는 결과 파일은 「계산 전」으로 둔다.
+- 편성안 계층(큰 분류 A · B · C → 세부 분류)은 실험 29 `analysis.json`이 있으면 그것, 없으면 실험 28 것을
+  그대로 옮긴다. 화면용으로 더하는 것은 대표끼리 바꿀 니케 수(`nikke_opt.similarity.moves`)와
+  세부 분류 새 덱의 자리 맞춤(바뀐 덱 번호 ↔ 새 덱, 겹침 최대) · 덱 사이 옮긴 니케뿐이다.
 - 니케 얼굴 · 속성 · 버스트 · 보스 그림은 `web/icons/`(nikke-analysis에서 `web/sync_icons.py`로 받은 것)를
   그대로 복사하고, 이름 → 그림은 `web/icons/icons.json`으로 잇는다.
 """
@@ -22,6 +25,7 @@ import subprocess
 import sys
 from collections import Counter
 from datetime import datetime, timezone
+from itertools import permutations
 from pathlib import Path
 from typing import Any
 
@@ -33,6 +37,10 @@ STATIC = ("index.html", "app.js", "style.css")
 ICONS = HERE / "icons"
 ICON_DIRS = ("units", "bosses", "elements", "bursts")
 REPO_URL = "https://github.com/Jgaram/nikke-opt"
+# 편성안 계층: 앞의 것이 있으면 그것을 쓴다(실험 29 결과가 올라오면 다시 빌드만 하면 바뀐다)
+TREE_SOURCES = ((29, ROOT / "experiments" / "29_tree_post"), (28, ROOT / "experiments" / "28_plan_tree"))
+TREE_SHOW = 3              # 세부 분류: 앞 3개 = 보일 것, 나머지 = 더보기(실험 28 tree28.SHOW)
+TREE_CAP = 400             # 세부 분류 나열을 자른 수(실험 28 tree28.subs cap)
 E8 = 1e8
 BURST_STAGE = {"I": "1", "II": "2", "III": "3", "I-II-III": "A"}   # 로스터 표기 → nikke_info burst_stage
 
@@ -53,6 +61,9 @@ def _load(name: str, path: Path):
 
 A22 = sys.modules.get("analyze22") or _load("analyze22", EXP / "analyze22.py")
 R22, R9 = A22.R22, A22.R9
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from nikke_opt import similarity as SIM  # noqa: E402  (바꿀 니케 수 정의를 그대로 쓴다)
 
 
 def read_json(p: Path) -> Any:
@@ -266,6 +277,95 @@ def site_names(seasons: list[dict[str, Any]]) -> set[str]:
     return out
 
 
+# ---------------------------------------------------------------- 편성안 계층(가상 계정 w1~w8)
+
+def tree_source() -> tuple[int, Path] | None:
+    for exp, d in TREE_SOURCES:
+        if (d / "analysis.json").exists():
+            return exp, d
+    return None
+
+
+def align_sub(rep: list[list[str]], s: dict[str, Any]) -> dict[str, Any]:
+    """세부 분류 하나: 새 덱을 바뀐 덱 자리에 겹침이 가장 큰 순서로 놓고, 덱 사이 옮긴 니케를 찾는다."""
+    ch = [i - 1 for i in s["changed"]]
+    new = list(zip(s["new_decks"], s.get("new_values") or [None] * len(s["new_decks"])))
+    best = max(permutations(range(len(new))),
+               key=lambda p: sum(len(set(rep[ch[k]]) & set(new[p[k]][0])) for k in range(len(ch))))
+    slots = [{"no": ch[k] + 1, "order": list(new[best[k]][0]), "value": new[best[k]][1]} for k in range(len(ch))]
+    home = {n: i + 1 for i, q in enumerate(rep) for n in q}
+    moved = [[n, home[n], sl["no"]] for sl in slots for n in sl["order"] if n in home and home[n] != sl["no"]]
+    out = {k: s.get(k) for k in ("total", "J", "J_other", "changed", "out", "in", "moves", "new_unposted")}
+    out.update({"slots": slots, "moved": moved})
+    return out
+
+
+def tree_row(r: dict[str, Any]) -> dict[str, Any]:
+    reps = {k["name"]: [list(q) for _, q in k["decks"]] for k in r["classes"] if k.get("found")}
+    classes = []
+    for k in r["classes"]:
+        rep = reps.get(k["name"])
+        c = {x: k.get(x) for x in ("name", "found", "note", "total", "ratio", "subs_count", "subs_1deck")}
+        c["decks"] = [{"order": list(q), "value": v} for v, q in k["decks"]] if rep else []
+        c["subs"] = [align_sub(rep, s) for s in k.get("subs") or []] if rep else []
+        c["more_left"] = max(0, (k.get("subs_count") or 0) - len(c["subs"]))
+        c["capped"] = (k.get("subs_count") or 0) >= TREE_CAP
+        c["vs"] = {o: {"J": r["rep_J"].get("-".join(sorted((k["name"], o)))), "moves": SIM.moves(rep, reps[o])}
+                   for o in reps if o != k["name"]} if rep else {}
+        classes.append(c)
+    out = {"scenario": r["scenario"], "name": r.get("name"), "best": r["best"], "rep_J": r.get("rep_J"),
+           "classes": classes}
+    # 실험 29에만 있는 것(없으면 없음)
+    if r.get("C_final"):
+        out["C_final"] = {k: r["C_final"].get(k) for k in ("ratio", "total", "J_A", "J_B", "sims")}
+    if r.get("C_pre_post"):
+        out["C_pre_post"] = {"ratio": r["C_pre_post"].get("ratio")}
+    if r.get("subs_post"):
+        out["subs_post"] = {k: r["subs_post"].get(k) for k in ("converged", "sims", "rounds")}
+    for k in ("search_sims", "seconds", "evaluator"):
+        if r.get(k) is not None:
+            out[k] = r[k]
+    sims = [x for x in (r.get("search_sims"), (r.get("C_final") or {}).get("sims"), (r.get("subs_post") or {}).get("sims"))
+            if x is not None]
+    if sims:
+        out["sims_total"] = sum(sims)
+    return out
+
+
+def tree_block() -> dict[str, Any] | None:
+    src = tree_source()
+    if src is None:
+        return None
+    exp, d = src
+    a = read_json(d / "analysis.json") or {}
+    rel = (d / "analysis.json").relative_to(ROOT).as_posix()
+    line = git("log", "-1", "--format=%H|%cI", "--", rel)
+    h, date = (line.split("|", 1) + [""])[:2] if line else ("", "")
+    return {"experiment": exp, "file": rel, "readme": f"{REPO_URL}/blob/main/{d.relative_to(ROOT).as_posix()}/README.md",
+            "exp28_readme": f"{REPO_URL}/blob/main/experiments/28_plan_tree/README.md",
+            "commit": h, "short": h[:7], "date": date, "verdict": a.get("verdict"), "show": TREE_SHOW,
+            "rows": [tree_row(r) for r in a.get("rows") or []]}
+
+
+def tree_names(tree: dict[str, Any] | None) -> set[str]:
+    out: set[str] = set()
+    for r in (tree or {}).get("rows", []):
+        for c in r["classes"]:
+            for q in c["decks"]:
+                out.update(q["order"])
+            for s in c["subs"]:
+                out.update(s["out"] or [])
+                out.update(s["in"] or [])
+                for sl in s["slots"]:
+                    out.update(sl["order"])
+    return out
+
+
+def all_names(data: dict[str, Any]) -> set[str]:
+    """화면 전체(실험 22 + 편성안 계층)에 니케로 나오는 이름."""
+    return site_names(data["seasons"]) | tree_names(data.get("tree"))
+
+
 def nikke_table(names: set[str], icons: dict[str, Any]) -> dict[str, Any]:
     """이름 → 무기 · 버스트 · 기본 레이어(평가기 nikke_info) + 얼굴 번호 · 속성(nikke-analysis 로스터)."""
     info = (read_json(NIKKE_INFO) or {}).get("nikke", {})
@@ -301,7 +401,8 @@ def build_data() -> dict[str, Any]:
     icons = icon_index()
     for x in seasons:
         x["boss_img"] = boss_image(x["season"], icons)
-    names = site_names(seasons)
+    tree = tree_block()
+    names = site_names(seasons) | tree_names(tree)
     nikke = nikke_table(names, icons)
     runs = [(x["season"], b, x["by_boss"][b]) for x in seasons for b in R22.BOSSES]
     done = [r for _, _, r in runs if r["status"] == "done"]
@@ -315,7 +416,7 @@ def build_data() -> dict[str, Any]:
         "judge": {**j, "better_count": dict(j["better_count"])},
         "progress": {"done": len(done), "total": len(runs), "sims": sum(r["sims"] for r in done),
                      "seconds": sum(r["seconds"] for r in done)},
-        "bosses": BOSS_INFO, "runs_meta": runs_meta(), "seasons": seasons, "nikke": nikke,
+        "bosses": BOSS_INFO, "runs_meta": runs_meta(), "seasons": seasons, "tree": tree, "nikke": nikke,
         "icons": {"source": icons.get("source") or {},
                   "missing": sorted(n for n in names if not nikke.get(n, {}).get("img"))},
     }
@@ -340,7 +441,9 @@ def main(argv: list[str] | None = None) -> int:
     a = p.parse_args(argv)
     d = build(a.out)
     pr = d["progress"]
-    print(f"{a.out}: 사전 계산 {pr['done']}/{pr['total']} · 판단 {d['judge']['verdict']} · data.json "
+    t = d.get("tree")
+    tree = f"편성안 계층 실험 {t['experiment']} · 계정 {len(t['rows'])}개" if t else "편성안 계층 없음"
+    print(f"{a.out}: 사전 계산 {pr['done']}/{pr['total']} · 판단 {d['judge']['verdict']} · {tree} · data.json "
           f"{(a.out / 'data.json').stat().st_size / 1024:.0f} KB")
     if d["icons"]["missing"]:
         print(f"얼굴 그림 없는 니케 {len(d['icons']['missing'])}명: {', '.join(d['icons']['missing'])} "
