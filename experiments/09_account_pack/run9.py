@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import heapq
 import importlib.util
 import json
 import os
@@ -172,38 +173,162 @@ def skeleton(squad: Sequence[str]) -> str:
     return sc.skeleton(list(squad), BURST)
 
 
+PACK_SLACK = 1e-6   # 라그랑주 상한의 부동소수 오차 여유(값 단위 억 — 해끼리의 실제 차이보다 훨씬 작다)
+PACK_LAM_ITERS = 120
+
+
+def _pack_lagrange(vs: Sequence[float], inc: np.ndarray, m: int, k: int, smax: int, lb: float) -> np.ndarray:
+    """니케별 λ ≥ 0. 서로 겹치지 않는 구성 r개의 값 합 ≤ top_r(v − λ(구성)) + (안 쓴 니케 λ 상위 smax·r개 합)이
+    어떤 λ에서도 맞으므로, 뿌리 문제(r = k)의 이 상한을 줄이는 λ를 하강(Polyak 걸음)으로 찾는다."""
+    v = np.asarray(vs, dtype=float)
+    lam = np.zeros(m + 1)
+    best, best_lam = float("inf"), lam.copy()
+    need = min(smax * k, m)
+    mu, stall = 1.0, 0
+    for _ in range(PACK_LAM_ITERS):
+        red = v - lam[inc].sum(1)
+        sel = np.argpartition(-red, k - 1)[:k] if len(v) > k else np.arange(len(v))
+        top = np.argpartition(-lam[:m], need - 1)[:need] if m > need else np.arange(m)
+        dual = float(red[sel].sum() + lam[top].sum())
+        if dual < best - 1e-12:
+            best, best_lam, stall = dual, lam.copy(), 0
+        else:
+            stall += 1
+            if stall >= 8:
+                mu, stall = mu / 2, 0
+        g = np.zeros(m + 1)
+        np.add.at(g, inc[sel].ravel(), -1.0)
+        g[top] += 1.0
+        g[m] = 0.0
+        norm = float((g * g).sum())
+        gap = dual - lb
+        if norm == 0 or gap <= 1e-9 or mu < 1e-4:
+            break
+        lam = np.maximum(0.0, lam - mu * gap / norm * g)
+        lam[m] = 0.0
+    return best_lam[:m]
+
+
 def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
               avoid: Sequence[set[frozenset]] = (), max_share: int = MAX_SHARE,
               limit: int | None = None) -> tuple[float, list[tuple[float, tuple]]]:
     """겹치지 않는 k개 구성의 값 합 최대(분기 한정, 실험 4 `pack`과 같은 탐색). `avoid`의 각 묶음과 그대로 공유하는
-    구성이 `max_share`개 이하여야 한다. `limit`이 있으면 값 상위 그만큼만 본다."""
+    구성이 `max_share`개 이하여야 한다. `limit`이 있으면 값 상위 그만큼만 본다.
+
+    값 순 DFS에서 처음 만나는 최대 해를 돌려준다(값이 같으면 앞선 해). 2026-11-01 속도 개선 — 같은 DFS 순서와
+    덧셈 순서를 지키고 가지치기만 더 한다: 남은 후보를 쓴 니케와 겹치지 않는 것으로 줄여 내려보내고, 상한은
+    「다음 r개 값 합」과 라그랑주 상한 중 작은 쪽, 시작 하한은 앞쪽 후보 30개에서 시작한 탐욕 완성의 최고(보다 조금 아래).
+    어느 가지치기도 지금 최선보다 엄격히 큰 해가 있는 가지를 자르지 않으므로 결과는 이전 판과 같다
+    (`tests/test_exp09.py`가 이전 판과 비교한다). 한 덱만 크게 높은 계정(실험 19 t5)에서 이전 판이 몇 분씩 걸렸다.
+    """
     cands = sorted(((v, sq, c) for c, (v, sq) in vals.items()), key=lambda t: (-t[0], t[1]))
     if limit is not None:
         cands = cands[:limit]
-    best: list[Any] = [float("-inf"), []]
+    n = len(cands)
+    if k <= 0 or n < k:
+        return (0.0, [])
+    bit: dict[Any, int] = {}
+    masks, rows = [], []
+    for _, _, c in cands:
+        b = sorted(bit.setdefault(x, len(bit)) for x in c)
+        rows.append(b)
+        mm = 0
+        for x in b:
+            mm |= 1 << x
+        masks.append(mm)
+    m = len(bit)
+    smax = max(len(r) for r in rows)
+    vs = [t[0] for t in cands]
+    hits = [tuple(c in a for a in avoid) for _, _, c in cands] if avoid else None
 
-    def dfs(start, used, chosen, total, shares):
-        if len(chosen) == k:
-            if total > best[0]:
-                best[:] = [total, list(chosen)]
-            return
-        for i in range(start, len(cands)):
-            d, sq, c = cands[i]
-            if best[1] and total + d * (k - len(chosen)) <= best[0]:
-                return
-            if not used.isdisjoint(c):
+    def share_ok(shares: tuple, i: int) -> tuple[tuple, bool]:
+        ns = tuple(s + h for s, h in zip(shares, hits[i]))
+        return ns, all(s <= max_share for s in ns)
+
+    # 시작 하한: 앞쪽 후보마다 탐욕 완성 — DFS와 같은 순서 · 같은 덧셈이라 그 해의 DFS 값과 같다
+    seed = float("-inf")
+    for first in range(min(n, 30)):
+        used, total, cnt, shares = 0, 0.0, 0, tuple(0 for _ in avoid)
+        for j in range(first, n):
+            if masks[j] & used:
                 continue
-            ns = shares
-            if avoid:
-                ns = tuple(s + (c in a) for s, a in zip(shares, avoid))
-                if any(s > max_share for s in ns):
+            if hits is not None:
+                ns, ok = share_ok(shares, j)
+                if not ok:
                     continue
-            chosen.append((d, sq))
-            dfs(i + 1, used | c, chosen, total + d, ns)
-            chosen.pop()
+                shares = ns
+            used |= masks[j]
+            total += vs[j]
+            cnt += 1
+            if cnt == k:
+                break
+        if cnt == k and total > seed:
+            seed = total
+    have = seed > float("-inf")
 
-    dfs(0, frozenset(), [], 0.0, tuple(0 for _ in avoid))
-    return (best[0], best[1]) if best[1] else (0.0, [])
+    inc = np.full((n, smax), m, dtype=np.int64)
+    for j, r in enumerate(rows):
+        inc[j, :len(r)] = r
+    lam = _pack_lagrange(vs, inc, m, k, smax, seed if have else 0.0).tolist()
+    red = [vs[j] - sum(lam[x] for x in rows[j]) for j in range(n)]
+    lam_order = sorted(range(m), key=lambda x: -lam[x])
+    best: list[Any] = [seed - 1e-7 if have else float("-inf"), None, have]   # 값, 해(후보 번호), 가지치기 시작
+
+    def dfs(L: list[int], used: int, path: list[int], total: float, shares: tuple, r: int) -> None:
+        nL = len(L)
+        if nL < r:
+            return
+        if r == 1:
+            for i in L:
+                if best[2] and total + vs[i] <= best[0]:
+                    return
+                if hits is not None and not share_ok(shares, i)[1]:
+                    continue
+                t = total + vs[i]
+                if t > best[0]:
+                    best[0], best[1], best[2] = t, path + [i], True
+                return
+            return
+        need, lam_top, got = smax * r, 0.0, 0
+        for x in lam_order:
+            if got == need:
+                break
+            if not (used >> x) & 1:
+                lam_top += lam[x]
+                got += 1
+        suf = [float("-inf")] * (nL + 1)   # suf[p] = L[p:]의 감한 값 상위 r개 합
+        top: list[float] = []
+        for p in range(nL - 1, -1, -1):
+            x = red[L[p]]
+            if len(top) < r:
+                heapq.heappush(top, x)
+            elif x > top[0]:
+                heapq.heapreplace(top, x)
+            if len(top) == r:
+                suf[p] = sum(top)
+        for p in range(nL - r + 1):
+            i = L[p]
+            if best[2]:
+                b = total
+                for q in range(p, p + r):
+                    b += vs[L[q]]
+                if b <= best[0] or total + suf[p] + lam_top + PACK_SLACK <= best[0]:
+                    return
+            ns = shares
+            if hits is not None:
+                ns, ok = share_ok(shares, i)
+                if not ok:
+                    continue
+            mi = masks[i]
+            child = [j for j in L[p + 1:] if not masks[j] & mi]
+            path.append(i)
+            dfs(child, used | mi, path, total + vs[i], ns, r - 1)
+            path.pop()
+
+    dfs(list(range(n)), 0, [], 0.0, tuple(0 for _ in avoid), k)
+    if best[1] is None:
+        return (0.0, [])
+    return (best[0], [(vs[i], cands[i][1]) for i in best[1]])
 
 
 def stage_pattern() -> dict[tuple, tuple[str, ...]]:

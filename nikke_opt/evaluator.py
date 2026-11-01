@@ -299,6 +299,13 @@ class _BatchEvaluator:
                                 warnings.warn(f"평가 결과를 캐시에 쓰지 못했다: {e!r}", RuntimeWarning, stacklevel=2)
             finally:
                 del self._inflight[ikey]
+                if not self._inflight and self.cache:
+                    # 처리 중 요청이 없으면 바로 commit한다. 열린 쓰기 트랜잭션을 부른 쪽의 긴 계산 동안 쥐고 있으면
+                    # 같은 캐시 파일을 쓰는 다른 프로세스가 쓸 때마다 잠금 대기(30초)에 걸린다
+                    try:
+                        self.cache.flush()
+                    except Exception as e:
+                        warnings.warn(f"평가 결과 캐시를 commit하지 못했다: {e!r}", RuntimeWarning, stacklevel=2)
         for fut in waiters:
             if failed:
                 fut.set_exception(out)

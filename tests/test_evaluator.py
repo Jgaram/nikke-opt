@@ -395,6 +395,17 @@ class FakeSimTest(SharedContract, unittest.TestCase):
             ev.evaluate([EvalRequest(SQUAD)])
         self.assertTrue(self.evaluator(cache=Cache(path)).evaluate([EvalRequest(SQUAD)])[0].cached)
 
+    def test_cache_commits_when_idle(self):
+        # 호출이 끝난 뒤 쓰기 트랜잭션을 열어 두지 않는다 — 다른 프로세스가 같은 캐시 파일에 바로 쓸 수 있다
+        path = self.root / "idle.sqlite"
+        ev = self.evaluator(cache=Cache(path))
+        ev.evaluate([EvalRequest(SQUAD), EvalRequest(SQUAD[::-1])])
+        self.assertFalse(ev.cache._db.in_transaction)
+        other = sqlite3.connect(path, timeout=0.1)
+        other.execute("INSERT INTO evals VALUES ('k', '{}')")
+        other.commit()
+        other.close()
+
     def test_dirty_or_unknown_build_disables_cache(self):
         for change in ({"dirty": True}, {"commit": None, "dirty": None}):
             self.set_version(**change)

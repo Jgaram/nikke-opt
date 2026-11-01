@@ -86,7 +86,8 @@ def cmd_search(a: argparse.Namespace) -> int:
     pres = {k: json.loads(p.read_text(encoding="utf-8")) for k, p in PRE.items()}
     R10.pack_alt20 = lambda *x, **k: (0.0, [])   # 실험 11 · 13과 같다(대안 (b) 계산 안 함)
     tasks = [(s, pre, b) for (pre, b) in sorted(ACCOUNT_RUNS, key=lambda t: -t[1]) for s in scs
-             if not (out / f"{run_name(s['id'], pre, b)}.json").exists()]
+             if not (out / f"{run_name(s['id'], pre, b)}.json").exists()
+             and (not a.runs or f"{pre}_{b}" in a.runs.split(","))]
     from nikke_opt.evaluator import make_evaluator
     ev = make_evaluator()
     t0 = time.time()
@@ -270,6 +271,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("search")
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--only")
+    p.add_argument("--runs", help="계정 탐색 판만 고른다(예: U4_4000,I1_2000) — 한 계정의 판을 프로세스 여럿에 나눌 때")
     p.set_defaults(func=cmd_search)
     sub.add_parser("prior").set_defaults(func=cmd_prior)
     p = sub.add_parser("post")

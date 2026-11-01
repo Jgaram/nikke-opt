@@ -46,6 +46,37 @@ class FakeEv:
         return [_Res(self.damage(r.squad, r.options)) for r in reqs]
 
 
+def _pack_vals_previous(vals, k=5, avoid=(), max_share=2, limit=None):
+    """2026-11-01 전 `run9.pack_vals`(비교 기준)."""
+    cands = sorted(((v, sq, c) for c, (v, sq) in vals.items()), key=lambda t: (-t[0], t[1]))
+    if limit is not None:
+        cands = cands[:limit]
+    best = [float("-inf"), []]
+
+    def dfs(start, used, chosen, total, shares):
+        if len(chosen) == k:
+            if total > best[0]:
+                best[:] = [total, list(chosen)]
+            return
+        for i in range(start, len(cands)):
+            d, sq, c = cands[i]
+            if best[1] and total + d * (k - len(chosen)) <= best[0]:
+                return
+            if not used.isdisjoint(c):
+                continue
+            ns = shares
+            if avoid:
+                ns = tuple(s + (c in a) for s, a in zip(shares, avoid))
+                if any(s > max_share for s in ns):
+                    continue
+            chosen.append((d, sq))
+            dfs(i + 1, used | c, chosen, total + d, ns)
+            chosen.pop()
+
+    dfs(0, frozenset(), [], 0.0, tuple(0 for _ in avoid))
+    return (best[0], best[1]) if best[1] else (0.0, [])
+
+
 class TestScenarios(unittest.TestCase):
     def test_dev_matches_exp5(self):
         summ = json.loads((EXP9.parent / "05_roster_deficit" / "summary.json").read_text(encoding="utf-8"))["scenarios"]
@@ -92,6 +123,24 @@ class TestPack(unittest.TestCase):
         self.assertLessEqual(alt[0], best[0])
         used = [n for _, sq in alt[1] for n in sq]
         self.assertEqual(len(used), len(set(used)))
+
+    def test_same_as_previous_dfs(self):
+        # 2026-11-01 속도 개선 전 판(그대로 옮김)과 해 · 값 · 순서까지 같다 — 동점 · avoid · limit · k 여러 가지
+        rng = random.Random(11)
+        for trial in range(400):
+            names = [f"n{i}" for i in range(rng.randint(8, 24))]
+            vals: dict = {}
+            for _ in range(rng.randint(1, 70)):
+                sq = tuple(rng.sample(names, 5))
+                v = rng.choice([round(rng.uniform(1, 50), rng.choice([0, 1, 6])), 10.0, 20.0])
+                if frozenset(sq) not in vals or v > vals[frozenset(sq)][0]:
+                    vals[frozenset(sq)] = (v, sq)
+            avoid = [set(rng.sample(list(vals), min(len(vals), rng.randint(1, 6)))) for _ in range(rng.randint(0, 2))]
+            kw = dict(k=rng.choice([1, 2, 3, 5]), avoid=avoid, max_share=rng.randint(0, 2), limit=rng.choice([None, 6]))
+            self.assertEqual(run9.pack_vals(vals, **kw), _pack_vals_previous(vals, **kw), (trial, kw))
+        lop = {c: (v + 4.0 * len(c & max(self.book.best, key=lambda x: self.book.best[x][0])) ** 1.5, sq)
+               for c, (v, sq) in self.book.best.items()}   # 한 덱만 크게 높은 책
+        self.assertEqual(run9.pack_vals(lop), _pack_vals_previous(lop))
 
     def test_frames_and_pattern(self):
         self.assertEqual(set(run9.PATTERN), set(run9.FRAMES))
