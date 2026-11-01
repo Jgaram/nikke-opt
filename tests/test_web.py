@@ -1,0 +1,118 @@
+"""현황판 사이트(web/build.py) — 지금 run_log로 만들어지는지, 지표가 analyze22와 같은지, 결과 전 판을 「계산 전」으로 두는지."""
+
+from __future__ import annotations
+
+import importlib.util
+import json
+import shutil
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+WEB = ROOT / "web"
+
+
+def _load():
+    name = "web_build"
+    if name in sys.modules:
+        return sys.modules[name]
+    spec = importlib.util.spec_from_file_location(name, WEB / "build.py")
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[name] = mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
+B = _load()
+
+
+class TestWebBuild(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = Path(tempfile.mkdtemp())
+        cls.data = B.build(cls.tmp / "site")
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, ignore_errors=True)
+
+    def test_files(self):
+        for f in (*B.STATIC, "data.json", ".nojekyll"):
+            self.assertTrue((self.tmp / "site" / f).exists(), f)
+        on_disk = json.loads((self.tmp / "site" / "data.json").read_text(encoding="utf-8"))
+        self.assertEqual(on_disk["progress"], self.data["progress"])
+
+    def test_every_season_and_boss(self):
+        seasons = sorted(int(k) for k in B.R22.SEASON_DATA)
+        self.assertEqual([s["season"] for s in self.data["seasons"]], seasons)
+        n = 0
+        for s in self.data["seasons"]:
+            self.assertEqual(set(s["by_boss"]), set(B.R22.BOSSES))
+            for b, r in s["by_boss"].items():
+                self.assertIn(r["status"], ("done", "pending"))
+                self.assertIn("rankers", r)               # 결과 전이어도 랭커 덱 값은 있다
+                pre = B.A22.LOG / f"precompute_{B.R22.run_name(s['season'], b)}.json"
+                self.assertEqual(r["status"] == "done", pre.exists())
+                n += r["status"] == "done"
+        self.assertEqual(self.data["progress"]["done"], n)
+        self.assertEqual(self.data["progress"]["total"], len(seasons) * len(B.R22.BOSSES))
+
+    def test_metrics_match_analyze22(self):
+        for s in self.data["seasons"]:
+            m = B.A22.season_metrics(s["season"])
+            self.assertEqual(s.get("better"), m.get("better"))
+            for b, r in s["by_boss"].items():
+                if r["status"] != "done":
+                    continue
+                for k in ("total", "N25", "D4", "V_top", "V_r1", "V_pack", "sims", "seconds"):
+                    self.assertEqual(r[k], m["by_boss"][b][k], (s["season"], b, k))
+
+    def test_done_run_shape(self):
+        for s in self.data["seasons"]:
+            for b, r in s["by_boss"].items():
+                if r["status"] != "done":
+                    continue
+                self.assertEqual(len(r["decks"]), 5)
+                names = [n for d in r["decks"] for n in d["order"]]
+                self.assertEqual(len(names), 25)
+                self.assertEqual(len(set(names)), 25)
+                self.assertAlmostEqual(sum(d["value"] for d in r["decks"]), r["total"], places=6)
+                ranks = [a["rank"] for a in r["alts"]]
+                self.assertEqual(ranks, list(range(2, 2 + len(ranks))))
+                for a in r["alts"]:
+                    self.assertLessEqual(a["ratio"], 1.0 + 1e-9)
+                    self.assertLessEqual(a["same_decks"], 2)   # 앞 순위와 같은 덱 2개 이하(run11.extract)
+                hits = [r["reach"][k] for k in ("95", "99", "99.5", "100")]
+                self.assertTrue(all(x is not None for x in hits))
+                self.assertEqual(hits, sorted(hits))
+                self.assertEqual(r["history"][-1][1], r["total"])
+
+    def test_pending_when_no_results(self):
+        """precompute가 하나도 없는 run_log: 모두 계산 전, 판단은 시즌 0개."""
+        log = self.tmp / "log_empty"
+        log.mkdir()
+        for f in B.A22.LOG.glob("rankers_S*.json"):
+            shutil.copyfile(f, log / f.name)
+        old = B.A22.LOG
+        B.A22.LOG = log
+        try:
+            d = B.build_data()
+        finally:
+            B.A22.LOG = old
+        self.assertEqual(d["progress"]["done"], 0)
+        self.assertEqual(d["judge"]["seasons"], 0)
+        for s in d["seasons"]:
+            for r in s["by_boss"].values():
+                self.assertEqual(r["status"], "pending")
+                self.assertIsNotNone(r["rankers"]["top_five"]["total"])
+
+    @unittest.skipUnless(shutil.which("node"), "node 없음")
+    def test_app_js_syntax(self):
+        subprocess.run(["node", "--check", str(WEB / "app.js")], check=True, capture_output=True)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -11,3 +11,4 @@
 | 다음 작업·진행 상태 확인 | [로드맵과 실험 현황](docs/ROADMAP.md) |
 | 여러 세션 운영(관리자·작업 세션) | [작업 규칙 §여러 세션](rules/workflow.md#여러-세션으로-진행할-때), 해당 실험의 `SESSIONS.md` |
 | 실행 방법·평가기 연결 | [README](README.md#평가기계산기) |
+| 현황판 사이트(`web/`, GitHub Pages) | [web/README.md](web/README.md) |

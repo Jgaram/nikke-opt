@@ -18,6 +18,7 @@
 | 브랜치·검증·커밋·푸시 규칙 | [작업 규칙](rules/workflow.md) |
 | 평가기·탐색·실험 작업의 준수 사항 | [평가 규칙](rules/evaluation.md) |
 | 분석 기법 선택과 결과 보고 | [AI 분석 가이드](AI_분석가이드.md) |
+| 예측 현황판 사이트(실험 22 — 예측 5덱 · 시뮬 비용 · 랭커 대조) | [web/README.md](web/README.md) · https://jgaram.github.io/nikke-opt/ |
 
 ## 평가기(계산기)
 
