@@ -1,0 +1,12 @@
+{"at": "2026-11-01T03:58:57", "cmd": "search", "only": "u1,u2", "runs": ["u1_U4_4000", "u2_U4_4000", "u1_U4_3000", "u2_U4_3000", "u1_U4_2000", "u2_U4_2000"], "sims": 5799, "cache_hits": 10495, "seconds": 994, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T03:58:59", "cmd": "search", "only": "u7,u8", "runs": ["u7_U4_4000", "u8_U4_4000", "u7_U4_3000", "u8_U4_3000", "u7_U4_2000", "u8_U4_2000"], "sims": 6127, "cache_hits": 10193, "seconds": 996, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T03:59:55", "cmd": "search", "only": "u5,u6", "runs": ["u5_U4_4000", "u6_U4_4000", "u5_U4_3000", "u6_U4_3000", "u5_U4_2000", "u6_U4_2000"], "sims": 7171, "cache_hits": 9089, "seconds": 1052, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T03:59:59", "cmd": "search", "only": "u3,u4", "runs": ["u3_U4_4000", "u4_U4_4000", "u3_U4_3000", "u4_U4_3000", "u3_U4_2000", "u4_U4_2000"], "sims": 7191, "cache_hits": 9117, "seconds": 1056, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:07:16", "cmd": "post", "only": "u7", "sims": 4194, "cache_hits": 5505, "ran": {"C": 15, "T@main": 8}, "seconds": 488, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:16:38", "cmd": "post", "only": "u3", "sims": 5675, "cache_hits": 3625, "ran": {"C": 15, "T@main": 7}, "seconds": 1020, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:22:26", "cmd": "post", "only": "u8", "sims": 6433, "cache_hits": 3669, "ran": {"C": 15, "T@main": 9}, "seconds": 1397, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:24:00", "cmd": "post", "only": "u1", "sims": 5055, "cache_hits": 5045, "ran": {"C": 15, "T@main": 9}, "seconds": 1491, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:24:13", "cmd": "post", "only": "u5", "sims": 6153, "cache_hits": 3547, "ran": {"C": 15, "T@main": 8}, "seconds": 1445, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:24:15", "cmd": "post", "only": "u4", "sims": 6038, "cache_hits": 3662, "ran": {"C": 15, "T@main": 8}, "seconds": 1446, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:24:19", "cmd": "post", "only": "u2", "sims": 6063, "cache_hits": 3637, "ran": {"C": 15, "T@main": 8}, "seconds": 1511, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T04:26:07", "cmd": "post", "only": "u6", "sims": 6563, "cache_hits": 3537, "ran": {"C": 15, "T@main": 9}, "seconds": 1108, "evaluator": "nikke-calc-rs 89d2e64"}

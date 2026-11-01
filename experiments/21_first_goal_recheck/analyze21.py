@@ -134,8 +134,9 @@ def render_plans(a: Mapping[str, Any], rows: Mapping[tuple[str, str], Mapping[st
         for i, ((v, sq), ld) in enumerate(zip(r["decks"], r["leaders"]), 1):
             L.append(f"{i}. 주력 {ld} — " + deck_line(v, sq, r["settings"].get(">".join(sq)), start))
         if al.get("decks"):
-            L += ["", f"### 유력 대안: {al['total']:.2f}억(최선의 {al['ratio'] * 100:.1f}%, 주력에서 뺀 니케 {' · '.join(al['pair'] or [])}, "
-                  f"공유 {al['shared_nikkes']}명)", ""]
+            redo = " · ".join(f"{i + 1}번" for i in (al.get("pair") or []))
+            L += ["", f"### 유력 대안: {al['total']:.2f}억(최선의 {al['ratio'] * 100:.1f}%, 최선의 {redo} 덱을 다시 짬, "
+                  f"다시 짠 덱 {al.get('rebuilt')}개 · 새 주력 {al.get('new_leaders')}명 · 공유 {al['shared_nikkes']}명)", ""]
             for i, ((v, sq), ld) in enumerate(zip(al["decks"], al["leaders"]), 1):
                 L.append(f"{i}. 주력 {ld} — " + deck_line(v, sq, (al.get("settings") or {}).get(">".join(sq)), start))
         L.append("")

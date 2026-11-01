@@ -1,0 +1,27 @@
+{"at": "2026-11-01T01:32:10", "cmd": "search", "only": "d3", "runs": ["d3_U4_4000"], "sims": 3588, "cache_hits": 0, "seconds": 591, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:32:20", "cmd": "search", "only": "d4", "runs": ["d4_U4_4000"], "sims": 3598, "cache_hits": 0, "seconds": 601, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:32:26", "cmd": "search", "only": "d2", "runs": ["d2_U4_4000"], "sims": 3614, "cache_hits": 0, "seconds": 607, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:32:29", "cmd": "search", "only": "d1", "runs": ["d1_U4_4000"], "sims": 3582, "cache_hits": 0, "seconds": 610, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:35:12", "cmd": "search", "only": "d3", "runs": ["d3_U4_3000", "d3_CL_3000", "d3_U4_2000"], "sims": 654, "cache_hits": 6623, "seconds": 182, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:35:15", "cmd": "search", "only": "d2", "runs": ["d2_U4_3000", "d2_CL_3000", "d2_U4_2000"], "sims": 554, "cache_hits": 6801, "seconds": 168, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:35:47", "cmd": "search", "only": "d1", "runs": ["d1_U4_3000", "d1_CL_3000", "d1_U4_2000"], "sims": 813, "cache_hits": 6446, "seconds": 197, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:35:51", "cmd": "search", "only": "d4", "runs": ["d4_U4_3000", "d4_CL_3000", "d4_U4_2000"], "sims": 901, "cache_hits": 6406, "seconds": 211, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:43:19", "cmd": "search", "only": "t1,t2,t3,t4", "runs": ["t1_U4_3000", "t2_U4_3000", "t3_U4_3000", "t4_U4_3000", "t1_CL_3000", "t2_CL_3000", "t3_CL_3000", "t4_CL_3000"], "sims": 6485, "cache_hits": 15299, "seconds": 1260, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:48:29", "cmd": "post", "only": "t2", "sims": 2768, "cache_hits": 3292, "ran": {"T@main": 5}, "seconds": 309, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:53:05", "cmd": "post", "only": "d3", "sims": 3990, "cache_hits": 4153, "ran": {"T@main": 10}, "seconds": 1066, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:54:51", "cmd": "post", "only": "d2", "sims": 4788, "cache_hits": 4049, "ran": {"T@main": 12}, "seconds": 1172, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:55:28", "cmd": "post", "only": "t3", "sims": 1652, "cache_hits": 3294, "ran": {"T@main": 2}, "seconds": 397, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:55:39", "cmd": "post", "only": "d1", "sims": 4389, "cache_hits": 4313, "ran": {"T@main": 11}, "seconds": 1189, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:56:05", "cmd": "post", "only": "d4", "sims": 5187, "cache_hits": 4390, "ran": {"T@main": 13}, "seconds": 1185, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:56:29", "cmd": "post", "only": "t1", "sims": 2306, "cache_hits": 3471, "ran": {"T@main": 4}, "seconds": 1090, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T01:57:32", "cmd": "post", "only": "t4", "sims": 3107, "cache_hits": 3468, "ran": {"T@main": 6}, "seconds": 251, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T02:06:06", "cmd": "search", "only": "t5,t6,t7,t8", "runs": ["t5_U4_3000", "t6_U4_3000", "t7_U4_3000", "t8_U4_3000", "t5_CL_3000", "t6_CL_3000", "t7_CL_3000", "t8_CL_3000"], "sims": 6567, "cache_hits": 15174, "seconds": 2627, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T02:07:05", "cmd": "post", "only": "t7", "sims": 798, "cache_hits": 3955, "ran": {"T@main": 2}, "seconds": 104, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T02:07:46", "cmd": "post", "only": "t8", "sims": 1569, "cache_hits": 3298, "ran": {"T@main": 2}, "seconds": 85, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T02:08:01", "cmd": "post", "only": "t6", "sims": 2059, "cache_hits": 3086, "ran": {"T@main": 3}, "seconds": 250, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T02:29:17", "cmd": "post", "only": "t5", "sims": 3990, "cache_hits": 4376, "ran": {"T@main": 10}, "seconds": 1556, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T03:40:56", "cmd": "alt2", "plan": "C3", "only": "t4,t5,t6", "sims": 3591, "cache_hits": 7884, "ran": {"T@main": 9}, "seconds": 4278}
+{"at": "2026-11-01T03:41:43", "cmd": "alt2", "plan": "C3", "only": "d3,d4", "sims": 0, "cache_hits": 5250, "ran": {}, "seconds": 19}
+{"at": "2026-11-01T03:46:49", "cmd": "alt2", "plan": "C3", "only": "t1", "sims": 1080, "cache_hits": 2745, "ran": {"T@main": 3}, "seconds": 325}
+{"at": "2026-11-01T03:47:35", "cmd": "alt2", "plan": "C3", "only": "t6,d1", "sims": 798, "cache_hits": 2627, "ran": {"T@main": 2}, "seconds": 371}
+{"at": "2026-11-01T03:48:30", "cmd": "alt2", "plan": "C3", "only": "t2,t3", "sims": 2393, "cache_hits": 5257, "ran": {"T@main": 6}, "seconds": 426}
