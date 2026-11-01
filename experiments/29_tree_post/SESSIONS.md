@@ -11,6 +11,8 @@
 | E2 | 실험 29 실행: w5 · w6 · w7 · w8 |
 | V | 현황판(`web/`)에 편성안 계층 화면 만들기(아래 §화면) |
 
+세션(2026-11-01 14:06 UTC 시작, 모두 Opus): E1 `session_01MQimn1sJUd2GhN666PeMHF` · E2 `session_01MQimn2N1P6GM6fcpwz1AZJ` · V `session_01MQimn24kJvEo8JduWRcDGy`.
+
 - 결과는 결정론이라 어느 컨테이너에서 돌려도 같다. 시뮬 횟수는 세션별로 기록한다(캐시가 컨테이너마다 따로).
 - 작업 세션은 다른 세션을 열지 않는다. 공용 코드(`run29.py` · `tree28.py` 등)를 고쳐야 하면 직접 고치지 않고 관리자에게 알린다.
 
