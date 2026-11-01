@@ -58,7 +58,7 @@ def account(sid: str) -> dict[str, Any]:
                 post[tuple(r["squad"])] = r["value"] / E8
     vals = {c: (max(v, post.get(sq, v)), sq) for c, (v, sq) in book.items()}
     known = {c for c, (_, sq) in book.items() if sq in post}
-    return {"book": book, "vals": vals, "known": known}
+    return {"book": book, "vals": vals, "known": known, "post": post}
 
 
 def plan_of(decks: Sequence) -> list[tuple[float, tuple]]:
@@ -223,6 +223,7 @@ def subs(rep: Sequence[tuple[float, tuple]], vals: Mapping[frozenset, tuple[floa
         nd = [set(q) for q in new]
         before, after = set().union(*rd), set().union(*nd)
         out.append({"total": total, "J": j, "changed": [i + 1 for i in changed], "new_decks": [list(q) for q in new],
+                    "new_values": [v for v, _ in plan[n - len(changed):]],
                     "out": sorted(before - after), "in": sorted(after - before),
                     "moves": SIM.moves([list(q) for _, q in rep], [list(q) for _, q in plan]),
                     "new_unposted": sum(frozenset(q) not in known for q in new)})
@@ -267,7 +268,15 @@ def analyze_account(sid: str) -> dict[str, Any]:
     reps = {k["name"]: [list(q) for _, q in (A if k["name"] == "A" else B if k["name"] == "B" else C)]
             for k in classes if k["found"]}
     jj = {f"{a}-{b}": SIM.pair_jaccard(reps[a], reps[b]) for a, b in combinations(sorted(reps), 2)}
-    return {"scenario": sid, "best": best, "classes": classes, "rep_J": jj,
+    for k in classes:
+        if not k["found"]:
+            continue
+        rep = [q for _, q in k["decks"]]
+        for s in k["subs"]:
+            plan = [list(rep[i]) for i in range(len(rep)) if i + 1 not in s["changed"]] + s["new_decks"]
+            s["J_other"] = {o: SIM.pair_jaccard(reps[o], plan) for o in reps if o != k["name"]}
+    names = {s["id"]: s["name"] for s in R25.A25.check_scenarios()}
+    return {"scenario": sid, "name": names[sid], "best": best, "classes": classes, "rep_J": jj,
             "C_pick": {k: c.get(k) for k in ("found", "exact", "nodes")}, "seconds": round(time.time() - t0, 1)}
 
 
