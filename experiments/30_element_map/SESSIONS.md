@@ -18,6 +18,12 @@
 세션(2026-11-01 15:11 UTC 시작, 모두 Opus, 계획 `2707d17`): E1 `session_01MQimn21KSR17RzbGCYKY2n` · E2 `session_01MQimn4QKqYrcLv7LKBPp4c` ·
 E3 `session_01MQimn5mAjyW7axDP2YbPQ6` · E4 `session_01MQimn3Z7u6zarS94mb3bBr` · E5 `session_01MQimn3Xd7YQ5EB2CF2eNwC`.
 
+**분담 변경(2026-11-01 15:2x UTC): 모든 실행을 관리자 컨테이너에서 한다.**
+- 작업 세션 5개 모두 0단계에서 막혔다. 평가기 레포 붙이기(`add_repo` Jgaram/nikke-calc-rs)를 자동 권한 검사가 거부했고, 직접 clone은 권한이 없었다(시뮬 0, 커밋 0).
+- 실험 29가 쓴 Default 환경에 E1을 다시 열어도(`session_01MQimn5E4VMwsJcUhjoenK7`) 같았다.
+- 여섯 세션에 「취소 — 더 진행하지 말 것」을 보냈다. 관리자 컨테이너(4코어)에는 평가기가 있으므로 B 10개를 4개씩 동시에 → W 5개 → core30 5개 순으로 직접 돌린다.
+- 그래서 아래 「E 세션」 소유 · 절차는 쓰이지 않았다. `run_log/<속성>/`도 관리자가 쓴다. 모든 시뮬이 한 컨테이너(같은 캐시)에서 세어진다.
+
 - B와 W는 같은 세션(같은 평가 캐시)에서 센다. W는 B 기록 앞부분을 쓰므로 B 다음에 돈다.
 - 결과는 결정론이라 어느 컨테이너에서 돌려도 같다. 시뮬 횟수는 부분별 기록(`part_*.json`의 `sims`)으로 남는다.
 - 작업 세션은 다른 세션을 열지 않는다. 공용 코드(`run30.py` · `tree28.py` 등)를 고쳐야 하면 직접 고치지 않고 관리자에게 알린다.
