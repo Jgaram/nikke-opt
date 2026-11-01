@@ -167,9 +167,10 @@ def cmd_post(a: argparse.Namespace) -> int:
                        "settings": {">".join(sq): (ops.get_cached(m, R17.comp_id(sid, sq)) or {}).get("labels") if m else None
                                     for _, sq in decks}}
                 if key == "P":
-                    lead_best = rec["leaders"]
+                    # 유력 대안 = 실험 20 다듬은 판(rebuild_alt): 최선 덱 두 개를 다시 짜고 그 두 덱의 주력을 주력에서 뺀다
+                    bdecks = [sq for _, sq in decks]
                     ar = R20.policy_pf(best, value_fn(m, sid), post=dict(post),
-                                       packer=lambda p: R20.leader_alt(best, p, lead_best, leader))
+                                       packer=lambda p: R20.rebuild_alt(best, p, bdecks, leader))
                     adecks = [(v, tuple(sq)) for v, sq in ar["decks"]]
                     pair = ar["extra"][0] if ar["extra"] else None
                     names_b = {n for _, sq in decks for n in sq}
@@ -179,6 +180,7 @@ def cmd_post(a: argparse.Namespace) -> int:
                                   "rounds": ar["rounds"], "ratio": ar["total"] / r["total"] if r["total"] else None,
                                   "shared_nikkes": len(names_b & {n for _, sq in adecks for n in sq}),
                                   "best_after_alt": R18.pack(best, ar["post"])[0],
+                                  **R20.alt_shape(bdecks, [sq for _, sq in adecks], leader),
                                   "settings": {">".join(sq): (ops.get_cached(m, R17.comp_id(sid, sq)) or {}).get("labels")
                                                for _, sq in adecks}}
                 rec["at"] = time.strftime("%Y-%m-%dT%H:%M:%S")

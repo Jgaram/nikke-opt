@@ -16,7 +16,7 @@ import run21 as R  # noqa: E402
 
 LOG = R.LOG
 ALT_RATIO = R.R20.ALT_RATIO
-ALT_MIN = None            # 유력 대안이 있어야 하는 계정 수(8개 중) — 실험 20 결과를 보고, 이 계정 결과 전에 정한다
+ALT_MIN = 6               # 유력 대안이 있어야 하는 계정 수(8개 중) — 실험 20 다듬은 판 11/12 → 두 개까지 허용(사전 등록)
 
 
 def med(xs: Sequence[float]) -> float | None:
@@ -72,7 +72,7 @@ def analyze() -> dict[str, Any]:
         g["P0"].append(tot["P"] / tot["P0"] - 1)
         g["Q"].append(tot["P"] / Rv)
         g["Q_P0"].append(tot["P0"] / Rv)
-        found += (alt.get("ratio") or 0) >= ALT_RATIO
+        found += ((alt.get("ratio") or 0) >= ALT_RATIO and alt.get("rebuilt", 0) >= 2 and alt.get("new_leaders", 0) >= 2)
     verdict = (judge(g["B1"], g["B0w"], g["Q"], found) if len(full) == 8 and ALT_MIN is not None
                else {"line": f"판단 보류 — 계정 {len(full)}개"})
     summary = {k: {"median": med(v), "min": min(v) if v else None, "max": max(v) if v else None} for k, v in g.items()}
