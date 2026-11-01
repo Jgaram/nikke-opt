@@ -76,6 +76,24 @@ class TestLeaders(unittest.TestCase):
         self.assertGreaterEqual(len(set(la) - set(lead)), 2)
         self.assertFalse(set(pair) & set(la))
 
+    def test_rebuild_alt(self):
+        rng = random.Random(9)
+        names = [f"n{i}" for i in range(35)]
+        best, leader = {}, {}
+        for _ in range(400):
+            sq = tuple(rng.sample(names, 5))
+            c = frozenset(sq)
+            best[c] = (rng.uniform(10, 40), sq)
+            leader[c] = sq[0]
+        t, decks = R.R18.pack(best, {})
+        bsq = [sq for _, sq in decks]
+        at, alt, pair = R.rebuild_alt(best, {}, bsq, leader)
+        self.assertEqual(len(alt), 5)
+        shape = R.alt_shape(bsq, [sq for _, sq in alt], leader)
+        self.assertGreaterEqual(shape["rebuilt"], 2)
+        self.assertGreaterEqual(shape["new_leaders"], 2)
+        self.assertLessEqual(at, t)
+
     def test_policy_pf_matches_exp18(self):
         rng = random.Random(4)
         names = [f"n{i}" for i in range(30)]

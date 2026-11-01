@@ -106,6 +106,39 @@ def leader_alt(best: Mapping[frozenset, tuple[float, tuple]], post: Mapping[tupl
     return out
 
 
+REBUILD_SHARE = 4   # 최선 덱과 이만큼 이상 겹치면 「그 덱을 고친 덱」, 아니면 「다시 짠 덱」
+
+
+def rebuild_alt(best: Mapping[frozenset, tuple[float, tuple]], post: Mapping[tuple, float],
+                best_decks: Sequence[tuple], leader: Mapping[frozenset, str | None]
+                ) -> tuple[float, list[tuple[float, tuple]], tuple[int, int] | None]:
+    """다듬은 유력 대안(실험 20 결과를 보고 더한 측정, README §결과): 최선 덱 두 개(i, j)마다 — 그 두 덱과 4명 이상 겹치는 구성과
+    그 두 덱의 주력 딜러가 주력인 구성을 빼고 다시 짠 최선 — 10쌍 중 합이 가장 큰 것.
+    그러면 대안에는 「다시 짠 덱」(최선의 어느 덱과도 4명 이상 겹치지 않는 덱)이 2개 이상, 주력 딜러가 최선과 다른 덱이 2개 이상 있다."""
+    bd = [frozenset(sq) for sq in best_decks]
+    lead = [leader.get(c) for c in bd]
+    out: tuple[float, list[tuple[float, tuple]], tuple[int, int] | None] = (0.0, [], None)
+    for i, j in combinations(range(len(bd)), 2):
+        bad = {lead[i], lead[j]} - {None}
+        vals = {c: v for c, v in best.items()
+                if leader.get(c) not in bad and len(c & bd[i]) < REBUILD_SHARE and len(c & bd[j]) < REBUILD_SHARE}
+        t, d = R18.pack(vals, post)
+        if d and t > out[0]:
+            out = (t, d, (i, j))
+    return out
+
+
+def alt_shape(best_decks: Sequence[tuple], alt_decks: Sequence[tuple], leader: Mapping[frozenset, str | None]
+              ) -> dict[str, int]:
+    """대안의 모양: 다시 짠 덱 수 · 주력 딜러가 최선 주력 5명 밖인 덱 수 · 공유 니케 수."""
+    bd = [frozenset(sq) for sq in best_decks]
+    ad = [frozenset(sq) for sq in alt_decks]
+    lb = {leader.get(c) for c in bd}
+    return {"rebuilt": sum(1 for c in ad if max((len(c & b) for b in bd), default=0) < REBUILD_SHARE),
+            "new_leaders": sum(1 for c in ad if leader.get(c) not in lb),
+            "shared_nikkes": len(set().union(*bd) & set().union(*ad)) if bd and ad else 0}
+
+
 def policy_pf(best: Mapping[frozenset, tuple[float, tuple]], value: Callable[[Sequence[tuple]], Mapping[tuple, float]],
               post: dict[tuple, float] | None = None,
               packer: Callable[[Mapping[tuple, float]], tuple[float, list]] | None = None) -> dict[str, Any]:
@@ -345,6 +378,59 @@ def cmd_post(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_alt2(a: argparse.Namespace) -> int:
+    """다듬은 유력 대안(rebuild_alt)을 한 판(--plan)의 최선 5덱에 대해 만들고 같은 후처리를 돌린다 → run_log/alt2_<계정>.jsonl."""
+    scs = scenarios(a.only)
+    accts = {sid: AC.AccountT(s) for sid, s in scs.items()}
+    priors = json.loads((R19.LOG / "priors.json").read_text(encoding="utf-8"))["priors"]
+    run = dict(PLANS)[a.plan]
+    from nikke_opt.evaluator import make_evaluator
+    ev = make_evaluator()
+    ops = Ops20(ev, accts, priors)
+    pool = ThreadPoolExecutor(max_workers=a.workers)
+    t0 = time.time()
+    m = METHOD
+
+    def value_fn(sid: str):
+        def f(squads):
+            futs = {sq: pool.submit(ops.get, m, sid, sq) for sq in squads}
+            return {sq: fu.result()["value"] / E8 for sq, fu in futs.items()}
+        return f
+
+    with ev:
+        for sid in scs:
+            out_path = LOG / f"alt2_{sid}.jsonl"
+            if out_path.exists() and any(json.loads(x)["plan"] == a.plan for x in out_path.read_text(encoding="utf-8").splitlines() if x.strip()):
+                continue
+            acct = accts[sid]
+            best = load_book(sid, run)
+            lsq = leaders_of(acct, ev, [sq for _, sq in best.values()])
+            leader = {c: lsq.get(sq) for c, (_, sq) in best.items()}
+            r = policy_pf(best, value_fn(sid))          # 판의 최선(운용 탐색은 기록에서 — 새 시뮬 없음)
+            post = r.pop("post")
+            bdecks = [tuple(sq) for _, sq in r["decks"]]
+            ar = policy_pf(best, value_fn(sid), post=dict(post), packer=lambda p: rebuild_alt(best, p, bdecks, leader))
+            adecks = [tuple(sq) for _, sq in ar["decks"]]
+            rec = {"scenario": sid, "plan": a.plan, "total": r["total"], "alt_total": ar["total"],
+                   "ratio": ar["total"] / r["total"] if r["total"] else None, "decks": r["decks"], "alt_decks": ar["decks"],
+                   "pair": list(ar["extra"][0]) if ar["extra"] and ar["extra"][0] else None,
+                   "leaders": [leader.get(frozenset(sq)) for sq in bdecks],
+                   "alt_leaders": [leader.get(frozenset(sq)) for sq in adecks],
+                   "post_comps": len(ar["ran"]), "post_evals": len(ar["ran"]) * R18.BUDGET["T"],
+                   "best_after_alt": R18.pack(best, ar["post"])[0], **alt_shape(bdecks, adecks, leader),
+                   "settings": {">".join(sq): (ops.get_cached(m, R17.comp_id(sid, sq)) or {}).get("labels") for sq in adecks},
+                   "at": time.strftime("%Y-%m-%dT%H:%M:%S")}
+            with out_path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            print(json.dumps({k: rec[k] for k in ("scenario", "plan", "total", "alt_total", "rebuilt", "new_leaders")},
+                             ensure_ascii=False), file=sys.stderr, flush=True)
+        pool.shutdown()
+        rec = {"at": time.strftime("%Y-%m-%dT%H:%M:%S"), "cmd": "alt2", "plan": a.plan, "only": a.only, "sims": ev.sim_count,
+               "cache_hits": ev.cache_hits, "ran": dict(ops.ran), "seconds": round(time.time() - t0)}
+    log_run(rec)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -356,6 +442,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--only")
     p.set_defaults(func=cmd_post)
+    p = sub.add_parser("alt2")
+    p.add_argument("--plan", required=True, choices=[k for k, _ in PLANS])
+    p.add_argument("--workers", type=int, default=4)
+    p.add_argument("--only")
+    p.set_defaults(func=cmd_alt2)
     a = ap.parse_args(argv)
     return a.func(a)
 
