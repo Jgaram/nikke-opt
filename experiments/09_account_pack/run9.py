@@ -175,6 +175,7 @@ def skeleton(squad: Sequence[str]) -> str:
 
 PACK_SLACK = 1e-6   # 라그랑주 상한의 부동소수 오차 여유(값 단위 억 — 해끼리의 실제 차이보다 훨씬 작다)
 PACK_LAM_ITERS = 120
+PACK_COST_MU = (0.25, 0.5, 1.0, 2.0, 4.0, 8.0)   # 비용 있는 묶기의 시작 하한: 값(억) − μ·비용 순 탐욕
 
 
 def _pack_lagrange(vs: Sequence[float], inc: np.ndarray, m: int, k: int, smax: int, lb: float) -> np.ndarray:
@@ -209,11 +210,27 @@ def _pack_lagrange(vs: Sequence[float], inc: np.ndarray, m: int, k: int, smax: i
     return best_lam[:m]
 
 
+class _PackStop(Exception):
+    pass
+
+
+class PackTimeout(Exception):
+    """`pack_vals`가 `deadline`을 넘김. total · decks = 그때까지 찾은 최선 해(최적 증명 전, 없으면 0.0 · [])."""
+
+    def __init__(self, total: float, decks: list[tuple[float, tuple]]):
+        super().__init__("pack_vals deadline")
+        self.total, self.decks = total, decks
+
+
 def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
               avoid: Sequence[set[frozenset]] = (), max_share: int = MAX_SHARE,
-              limit: int | None = None, floor: float | None = None) -> tuple[float, list[tuple[float, tuple]]]:
+              limit: int | None = None, floor: float | None = None,
+              cost: Mapping[frozenset, int] | None = None, budget: int = 0,
+              deadline: float | None = None) -> tuple[float, list[tuple[float, tuple]]]:
     """겹치지 않는 k개 구성의 값 합 최대(분기 한정, 실험 4 `pack`과 같은 탐색). `avoid`의 각 묶음과 그대로 공유하는
     구성이 `max_share`개 이하여야 한다. `limit`이 있으면 값 상위 그만큼만 본다.
+    `cost`가 있으면 고른 구성의 비용(없으면 0) 합이 `budget` 이하여야 한다(실험 24: 최선과의 공유 쌍 수). 없으면 이전과 같다.
+    `deadline`(time.monotonic 값)을 넘기면 `PackTimeout`(그때까지 찾은 최선 해를 담음)을 낸다 — 최적 증명 전이다.
     `floor`가 있으면 그보다 엄격히 큰 해만 찾는다 — 있으면 floor 없을 때와 같은 해, 없으면 (0.0, [])
     (여러 묶기 중 최고를 고를 때 앞에서 찾은 값을 넘겨 가지치기를 일찍 시작한다).
 
@@ -224,6 +241,8 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
     (`tests/test_exp09.py`가 이전 판과 비교한다). 한 덱만 크게 높은 계정(실험 19 t5)에서 이전 판이 몇 분씩 걸렸다.
     """
     cands = sorted(((v, sq, c) for c, (v, sq) in vals.items()), key=lambda t: (-t[0], t[1]))
+    if cost is not None:
+        cands = [t for t in cands if cost.get(t[2], 0) <= budget]
     if limit is not None:
         cands = cands[:limit]
     n = len(cands)
@@ -242,30 +261,59 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
     smax = max(len(r) for r in rows)
     vs = [t[0] for t in cands]
     hits = [tuple(c in a for a in avoid) for _, _, c in cands] if avoid else None
+    cs = [cost.get(c, 0) for _, _, c in cands] if cost is not None else None
 
     def share_ok(shares: tuple, i: int) -> tuple[tuple, bool]:
         ns = tuple(s + h for s, h in zip(shares, hits[i]))
         return ns, all(s <= max_share for s in ns)
 
     # 시작 하한: 앞쪽 후보마다 탐욕 완성 — DFS와 같은 순서 · 같은 덧셈이라 그 해의 DFS 값과 같다
-    seed = float("-inf")
+    seed, seed_pick = float("-inf"), None
     for first in range(min(n, 30)):
-        used, total, cnt, shares = 0, 0.0, 0, tuple(0 for _ in avoid)
+        used, total, cnt, shares, spent, pick = 0, 0.0, 0, tuple(0 for _ in avoid), 0, []
         for j in range(first, n):
             if masks[j] & used:
+                continue
+            if cs is not None and spent + cs[j] > budget:
                 continue
             if hits is not None:
                 ns, ok = share_ok(shares, j)
                 if not ok:
                     continue
                 shares = ns
+            if cs is not None:
+                spent += cs[j]
             used |= masks[j]
             total += vs[j]
             cnt += 1
+            pick.append(j)
             if cnt == k:
                 break
         if cnt == k and total > seed:
-            seed = total
+            seed, seed_pick = total, pick
+    if cs is not None:
+        # 비용이 있으면 값 순 탐욕이 예산 안에서 못 채우기 쉽다 — 값 − μ·비용 순서로도 채워 본다.
+        # 합은 DFS와 같게 후보 번호 순으로 더한다(DFS가 같은 해를 다시 찾는다)
+        for mu in PACK_COST_MU:
+            order = sorted(range(n), key=lambda j: (-(vs[j] - mu * cs[j]), j))
+            for first in range(min(n, 10)):
+                used, spent, pick = 0, 0, []
+                for j in order[first:]:
+                    if masks[j] & used or spent + cs[j] > budget:
+                        continue
+                    if hits is not None and not share_ok(tuple(sum(hits[q][a] for q in pick) for a in range(len(avoid))), j)[1]:
+                        continue
+                    used |= masks[j]
+                    spent += cs[j]
+                    pick.append(j)
+                    if len(pick) == k:
+                        break
+                if len(pick) == k:
+                    total = 0.0
+                    for j in sorted(pick):
+                        total += vs[j]
+                    if total > seed:
+                        seed, seed_pick = total, sorted(pick)
     have = seed > float("-inf")
 
     inc = np.full((n, smax), m, dtype=np.int64)
@@ -277,11 +325,29 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
     lam = _pack_lagrange(vs, inc, m, k, smax, lb).tolist()
     red = [vs[j] - sum(lam[x] for x in rows[j]) for j in range(n)]
     lam_order = sorted(range(m), key=lambda x: -lam[x])
+    kt = None
+    if cs is not None:
+        # 비용 상한: kt[i, r, b] = 후보 i 이후에서 비용 합 b 이하로 고른 r개의 감한 값 합 최대(겹침은 무시, λ로 따로 더한다)
+        kt = np.full((n + 1, k + 1, budget + 1), -1e18)
+        kt[:, 0, :] = 0.0
+        for i in range(n - 1, -1, -1):
+            cur = kt[i + 1].copy()
+            c = cs[i]
+            if c <= budget:
+                cur[1:, c:] = np.maximum(cur[1:, c:], red[i] + kt[i + 1, :k, :budget + 1 - c])
+            kt[i] = cur
     best: list[Any] = [seed - 1e-7 if have else float("-inf"), None, have]   # 값, 해(후보 번호), 가지치기 시작
+    if cs is not None and have:
+        best[1] = seed_pick                # 제한 시간에 끊겨도 돌려줄 해(끝까지 돌면 DFS가 다시 찾거나 더 좋은 해로 바꾼다)
     if floor is not None and floor >= best[0]:
-        best[0], best[2] = floor, True
+        best[0], best[1], best[2] = floor, None, True
+    ticks = [0]
 
-    def dfs(L: list[int], used: int, path: list[int], total: float, shares: tuple, r: int) -> None:
+    def dfs(L: list[int], used: int, path: list[int], total: float, shares: tuple, r: int, spent: int = 0) -> None:
+        if deadline is not None:
+            ticks[0] += 1
+            if not ticks[0] & 1023 and time.monotonic() > deadline:
+                raise _PackStop
         nL = len(L)
         if nL < r:
             return
@@ -290,6 +356,8 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
                 if best[2] and total + vs[i] <= best[0]:
                     return
                 if hits is not None and not share_ok(shares, i)[1]:
+                    continue
+                if cs is not None and spent + cs[i] > budget:
                     continue
                 t = total + vs[i]
                 if t > best[0]:
@@ -315,11 +383,15 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
                 suf[p] = sum(top)
         for p in range(nL - r + 1):
             i = L[p]
+            if kt is not None and kt[i, r, budget - spent] < -1e17:
+                return                     # 남은 r개를 예산 안에서 못 채운다(뒤 후보도 마찬가지)
             if best[2]:
                 b = total
                 for q in range(p, p + r):
                     b += vs[L[q]]
                 if b <= best[0] or total + suf[p] + lam_top + PACK_SLACK <= best[0]:
+                    return
+                if kt is not None and total + float(kt[i, r, budget - spent]) + lam_top + PACK_SLACK <= best[0]:
                     return
             ns = shares
             if hits is not None:
@@ -327,14 +399,34 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
                 if not ok:
                     continue
             mi = masks[i]
-            child = [j for j in L[p + 1:] if not masks[j] & mi]
+            if cs is None:
+                sp = 0
+                child = [j for j in L[p + 1:] if not masks[j] & mi]
+            else:
+                sp = spent + cs[i]
+                if sp > budget:
+                    continue
+                child = [j for j in L[p + 1:] if not masks[j] & mi and sp + cs[j] <= budget]
             path.append(i)
-            dfs(child, used | mi, path, total + vs[i], ns, r - 1)
+            dfs(child, used | mi, path, total + vs[i], ns, r - 1, sp)
             path.pop()
 
-    dfs(list(range(n)), 0, [], 0.0, tuple(0 for _ in avoid), k)
+    try:
+        dfs(list(range(n)), 0, [], 0.0, tuple(0 for _ in avoid), k)
+    except _PackStop:
+        if best[1] is None:
+            raise PackTimeout(0.0, []) from None
+        t = 0.0
+        for i in best[1]:
+            t += vs[i]
+        raise PackTimeout(t, [(vs[i], cands[i][1]) for i in best[1]]) from None
     if best[1] is None:
         return (0.0, [])
+    if cs is not None:                     # 시작 해가 그대로 남은 경우(값이 seed − 1e-7) 실제 합으로
+        t = 0.0
+        for i in best[1]:
+            t += vs[i]
+        return (t, [(vs[i], cands[i][1]) for i in best[1]])
     return (best[0], [(vs[i], cands[i][1]) for i in best[1]])
 
 
