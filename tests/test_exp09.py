@@ -142,6 +142,21 @@ class TestPack(unittest.TestCase):
                for c, (v, sq) in self.book.best.items()}   # 한 덱만 크게 높은 책
         self.assertEqual(run9.pack_vals(lop), _pack_vals_previous(lop))
 
+    def test_floor(self):
+        # floor보다 엄격히 큰 해만 — 있으면 floor 없을 때와 같은 해, 없으면 (0.0, [])
+        rng = random.Random(13)
+        for trial in range(300):
+            names = [f"n{i}" for i in range(rng.randint(8, 22))]
+            vals: dict = {}
+            for _ in range(rng.randint(1, 60)):
+                sq = tuple(rng.sample(names, 5))
+                vals[frozenset(sq)] = (round(rng.uniform(1, 50), rng.choice([0, 1, 6])), sq)
+            k = rng.choice([1, 2, 3, 5])
+            plain = run9.pack_vals(vals, k=k)
+            for floor in (plain[0] - 1.0, plain[0], plain[0] + 1.0, rng.uniform(0, 100)):
+                want = plain if plain[1] and plain[0] > floor else (0.0, [])
+                self.assertEqual(run9.pack_vals(vals, k=k, floor=floor), want, (trial, k, floor))
+
     def test_frames_and_pattern(self):
         self.assertEqual(set(run9.PATTERN), set(run9.FRAMES))
         for f, pat in run9.PATTERN.items():

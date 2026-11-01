@@ -100,7 +100,7 @@ def leader_alt(best: Mapping[frozenset, tuple[float, tuple]], post: Mapping[tupl
     out: tuple[float, list[tuple[float, tuple]], tuple[str, str] | None] = (0.0, [], None)
     for a, b in combinations(names, 2):
         vals = {c: v for c, v in best.items() if leader.get(c) not in (a, b)}
-        t, d = R18.pack(vals, post)
+        t, d = R18.pack(vals, post, floor=out[0] if out[1] else None)   # 앞 쌍보다 큰 해만(결과 같음, 빠름)
         if d and t > out[0]:
             out = (t, d, (a, b))
     return out
@@ -122,7 +122,7 @@ def rebuild_alt(best: Mapping[frozenset, tuple[float, tuple]], post: Mapping[tup
         bad = {lead[i], lead[j]} - {None}
         vals = {c: v for c, v in best.items()
                 if leader.get(c) not in bad and len(c & bd[i]) < REBUILD_SHARE and len(c & bd[j]) < REBUILD_SHARE}
-        t, d = R18.pack(vals, post)
+        t, d = R18.pack(vals, post, floor=out[0] if out[1] else None)   # 앞 쌍보다 큰 해만(결과 같음, 빠름)
         if d and t > out[0]:
             out = (t, d, (i, j))
     return out

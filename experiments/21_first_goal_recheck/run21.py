@@ -43,7 +43,7 @@ R20 = sys.modules.get("run20") or _load("run20", EXPS / "20_search_robust" / "ru
 AC, R19, R18, R17, R10, R9 = R20.AC, R20.R19, R20.R18, R20.R17, R20.R10, R20.R9
 E8 = R20.E8
 
-P_RUN = None              # 실험 20 판단으로 채운다(사전 등록 커밋): "U4_2000" · "U4_3000" · "CL_3000" · "U4_4000"
+P_RUN = "U4_3000"         # 실험 20 판단(계정 탐색 = C3 · U4 3,000) — 사전 등록 커밋
 REF_RUN = "U4_4000"       # P_RUN이 U4_4000이면 참조는 U4_6000
 RUNS = dict(R20.RUNS, U4_6000=("P", 6000))
 

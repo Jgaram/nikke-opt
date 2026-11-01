@@ -211,9 +211,11 @@ def _pack_lagrange(vs: Sequence[float], inc: np.ndarray, m: int, k: int, smax: i
 
 def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
               avoid: Sequence[set[frozenset]] = (), max_share: int = MAX_SHARE,
-              limit: int | None = None) -> tuple[float, list[tuple[float, tuple]]]:
+              limit: int | None = None, floor: float | None = None) -> tuple[float, list[tuple[float, tuple]]]:
     """겹치지 않는 k개 구성의 값 합 최대(분기 한정, 실험 4 `pack`과 같은 탐색). `avoid`의 각 묶음과 그대로 공유하는
     구성이 `max_share`개 이하여야 한다. `limit`이 있으면 값 상위 그만큼만 본다.
+    `floor`가 있으면 그보다 엄격히 큰 해만 찾는다 — 있으면 floor 없을 때와 같은 해, 없으면 (0.0, [])
+    (여러 묶기 중 최고를 고를 때 앞에서 찾은 값을 넘겨 가지치기를 일찍 시작한다).
 
     값 순 DFS에서 처음 만나는 최대 해를 돌려준다(값이 같으면 앞선 해). 2026-11-01 속도 개선 — 같은 DFS 순서와
     덧셈 순서를 지키고 가지치기만 더 한다: 남은 후보를 쓴 니케와 겹치지 않는 것으로 줄여 내려보내고, 상한은
@@ -269,10 +271,15 @@ def pack_vals(vals: Mapping[frozenset, tuple[float, tuple]], k: int = 5,
     inc = np.full((n, smax), m, dtype=np.int64)
     for j, r in enumerate(rows):
         inc[j, :len(r)] = r
-    lam = _pack_lagrange(vs, inc, m, k, smax, seed if have else 0.0).tolist()
+    lb = seed if have else 0.0
+    if floor is not None:
+        lb = max(lb, floor)
+    lam = _pack_lagrange(vs, inc, m, k, smax, lb).tolist()
     red = [vs[j] - sum(lam[x] for x in rows[j]) for j in range(n)]
     lam_order = sorted(range(m), key=lambda x: -lam[x])
     best: list[Any] = [seed - 1e-7 if have else float("-inf"), None, have]   # 값, 해(후보 번호), 가지치기 시작
+    if floor is not None and floor >= best[0]:
+        best[0], best[2] = floor, True
 
     def dfs(L: list[int], used: int, path: list[int], total: float, shares: tuple, r: int) -> None:
         nL = len(L)
