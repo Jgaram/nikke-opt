@@ -1,0 +1,67 @@
+{
+ "session": "W1",
+ "manager": "session_01MQimn5CDbvH37JKpu9CsSc",
+ "evaluator": "nikke-calc-rs 89d2e64",
+ "seasons": [
+  4,
+  23
+ ],
+ "runs": {
+  "S04_nocore": {
+   "season": 4,
+   "boss": "nocore",
+   "budget": 15000,
+   "evals": 13231,
+   "sims": 13231,
+   "seconds": 2234.1,
+   "final_total": 69.30252644,
+   "start_utc": "2026-11-01T05:11:01Z",
+   "end_utc_approx(file mtime)": "2026-11-01T05:49Z",
+   "rerun": false
+  },
+  "S04_core30": {
+   "season": 4,
+   "boss": "core30",
+   "budget": 15000,
+   "evals": 13235,
+   "sims": 13235,
+   "seconds": 2235.7,
+   "final_total": 81.06057879999999,
+   "start_utc": "2026-11-01T05:11:01Z",
+   "end_utc_approx(file mtime)": "2026-11-01T05:50Z",
+   "rerun": false
+  },
+  "S23_nocore": {
+   "season": 23,
+   "boss": "nocore",
+   "budget": 15000,
+   "evals": 13207,
+   "sims": 13207,
+   "seconds": 1457.6,
+   "final_total": 157.45639366999998,
+   "start_utc": "2026-11-01T05:11:01Z",
+   "end_utc_approx(file mtime)": "2026-11-01T05:36Z",
+   "rerun": false
+  },
+  "S23_core30": {
+   "season": 23,
+   "boss": "core30",
+   "budget": 15000,
+   "evals": 13211,
+   "sims": 13211,
+   "seconds": 2221.7,
+   "final_total": 176.03792539,
+   "start_utc": "2026-11-01T05:11:01Z",
+   "end_utc_approx(file mtime)": "2026-11-01T05:50Z",
+   "rerun": false
+  }
+ },
+ "total_sims": 52884,
+ "total_seconds_sum": 8149.1,
+ "reruns": "없음(2시간 제한 안에 끝남)",
+ "blockers": [
+  "S18 추가 배정(W4 취소) — 별도 실행 중, 끝나면 이 파일에 추가",
+  "기다리기 명령이 pgrep 자기 자신을 잡아 약 40분 늦게 확인함(계산 자체는 05:50에 끝남)"
+ ],
+ "note": "evals가 budget(15000)보다 작은 값(약 13.2k)으로 끝남 — run22.py 동작 그대로 기록"
+}
