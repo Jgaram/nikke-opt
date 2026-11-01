@@ -57,7 +57,8 @@ ELEMENTS = ("전격", "풍압", "철갑", "수냉", "작열")
 SEEDS = (0, 1)
 SEED_BUDGET = 12500                 # B: 시드마다
 PREFIX = SEED_BUDGET // 2           # W: 시드마다 B 기록 앞 6,250평가
-W_BUDGET = SEED_BUDGET              # W 넓게 찾기(새 평가) — B 총 25,000 = W 12,500 + 12,500
+W_BUDGET = SEED_BUDGET              # W 넓게 찾기(새 평가)의 계획값. 본 실행은 w_budget_of() = B가 실제로 쓴 평가 수 − 앞부분
+                                    # (2026-11-01 변경: B 시드가 끝 순서 다듬기에서 예산을 다 쓰지 않고 약 11,000에서 끝났다)
 A_ORDER = 1250                      # W 첫 블록: A 순서 다듬기 상한
 BLOCK, BLOCK_ORDER = 1000, 125      # 큰 분류 블록: 근처 탐색 875 + 그 대표 순서 125(실험 26 · 27과 같다)
 BLOCK_MIN = 300                     # 남은 예산이 이보다 적으면 블록을 열지 않는다
@@ -456,6 +457,11 @@ def summary(el: str) -> dict[str, Any]:
     return out
 
 
+def w_budget_of(el: str, prefix_evals: int) -> int:
+    """B와 W의 총평가를 같게: B 두 시드가 실제로 쓴 평가 수 합 − W 앞부분 평가 수(2026-11-01 변경, README §변경)."""
+    return sum(json.loads(part_file(el, f"B_s{k}").read_text(encoding="utf-8"))["evals"] for k in SEEDS) - prefix_evals
+
+
 def cmd_run(a: argparse.Namespace) -> int:
     """--part 순서: B_s0 · B_s1(서로 독립 — 프로세스 둘로 동시에 돌려도 된다) → W(B 둘 다 필요) → core30(B · W 필요)."""
     from nikke_opt.evaluator import make_evaluator
@@ -467,7 +473,8 @@ def cmd_run(a: argparse.Namespace) -> int:
     parts = PARTS if a.part == "all" else tuple(a.part.split(","))
     seed_budget = a.seed_budget
     global W_BUDGET
-    W_BUDGET = a.w_budget
+    if a.w_budget is not None:
+        W_BUDGET = a.w_budget
 
     def save(part: str, s: Mapping[str, Any]) -> None:
         part_file(el, part).write_text(json.dumps(s, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -490,6 +497,8 @@ def cmd_run(a: argparse.Namespace) -> int:
                        "errors": s["errors"], "kicks": len(s["kicks"]), "history": s["history"]}
             elif part == "W":
                 prefix = [r for k in SEEDS for r in load_recs(d / f"B_s{k}.jsonl.gz")[:seed_budget // 2]]
+                if a.w_budget is None:
+                    W_BUDGET = w_budget_of(el, len(prefix))
                 out, recs = run_wide(account(el, 0), ev, prefix)
                 write_recs(d / "W.jsonl.gz", recs)
                 out["prefix_evals"] = len(prefix)
@@ -690,7 +699,8 @@ def main(argv: list[str] | None = None) -> int:
     r = sub.add_parser("run")
     r.add_argument("--element", required=True)
     r.add_argument("--seed-budget", type=int, default=SEED_BUDGET, help="시운전용(본 실행은 기본값)")
-    r.add_argument("--w-budget", type=int, default=W_BUDGET, help="시운전용(본 실행은 기본값)")
+    r.add_argument("--w-budget", type=int, default=None,
+                   help="시운전용. 주지 않으면 B 두 시드가 실제로 쓴 평가 수 − 앞부분(본 실행)")
     r.add_argument("--part", default="all", help="B_s0 · B_s1 · W · core30(쉼표로 여럿) · all")
     sub.add_parser("analyze")
     c = sub.add_parser("corecheck")
