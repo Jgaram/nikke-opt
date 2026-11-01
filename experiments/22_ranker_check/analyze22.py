@@ -38,6 +38,11 @@ def load(p: Path) -> Any:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
 
 
+def main_dealer(members: list[list]) -> str:
+    """덱에서 시뮬 딜이 가장 큰 니케. 이 분석의 표에는 쓰지 않는다(사용자 지시) — 현황판(web/build.py)이 부른다."""
+    return max(members, key=lambda m: (m[1], m[0]))[0]
+
+
 def five_value(squads: list[list[str]], vals: dict[str, dict], boss: str) -> float | None:
     out = 0.0
     for q in squads:
