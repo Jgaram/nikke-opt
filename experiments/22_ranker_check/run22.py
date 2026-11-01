@@ -4,6 +4,8 @@
         → run_log/precompute_S04_nocore.json · .jsonl.gz   (--boss core30, --budget 15000 기본, --out 로 폴더 바꾸기)
     source .cache/evaluators.env && python experiments/22_ranker_check/run22.py rankers [--season 4,9]
         → run_log/rankers_S04.json (랭커 대표 5덱 · 1위 5덱 · 상위 스쿼드를 두 보스에서 평가)
+    source .cache/evaluators.env && python experiments/22_ranker_check/run22.py members
+        → run_log/members_S04_nocore.json (사전 계산 최선 5덱을 같은 보스로 다시 평가해 니케별 딜 — 주력 딜러용, 덱당 1시뮬)
 
 - 사전 계산은 실험 12 PB15(실험 10 `run_method(G+E)` 15,000)와 같은 절차다. 계정은 그 시즌 풀 전원 보유 · 상(기본 스펙),
   그때 없던 애장품만 0단계. 운용(큐브 · 컨트롤)은 평가기 기본 레이어 고정 — 후처리는 하지 않는다.
@@ -137,6 +139,28 @@ def cmd_rankers(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_members(a: argparse.Namespace) -> int:
+    from nikke_opt.evaluator import EvalRequest, make_evaluator
+    with make_evaluator() as ev:
+        for f in sorted(LOG.glob("precompute_S*_*.json")):
+            pre = json.loads(f.read_text(encoding="utf-8"))
+            out_f = LOG / f"members_{pre['name']}.json"
+            if out_f.exists():
+                continue
+            sims0 = ev.sim_count
+            sqs = [sq for _, sq in pre["final"]["squads"]]
+            res = ev.evaluate([EvalRequest(list(sq), boss=None, options=pre["options"]) for sq in sqs])
+            rows = [{"squad": list(sq), "total": r.total_damage / R10.E8,
+                     "members": [[m["name"], round(m["damage"] / R10.E8, 3)] for m in r.raw.get("members", [])]}
+                    for sq, r in zip(sqs, res)]
+            for row, (v, _) in zip(rows, pre["final"]["squads"]):
+                assert abs(row["total"] - v) < 1e-6, (pre["name"], row["squad"], row["total"], v)   # 사전 계산 값과 같아야 한다
+            out_f.write_text(json.dumps({"name": pre["name"], "squads": rows, "sims": ev.sim_count - sims0}, ensure_ascii=False, indent=1)
+                             + "\n", encoding="utf-8")
+            print(pre["name"], "sims", ev.sim_count - sims0, flush=True)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -147,8 +171,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--out", type=Path, default=LOG)
     r = sub.add_parser("rankers")
     r.add_argument("--season", default=None)
+    sub.add_parser("members")
     a = p.parse_args(argv)
-    return {"precompute": cmd_precompute, "rankers": cmd_rankers}[a.cmd](a)
+    return {"precompute": cmd_precompute, "rankers": cmd_rankers, "members": cmd_members}[a.cmd](a)
 
 
 if __name__ == "__main__":

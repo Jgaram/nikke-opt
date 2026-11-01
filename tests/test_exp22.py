@@ -78,3 +78,32 @@ class TestOptions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+A22 = sys.modules.get("analyze22") or _load("analyze22", EXP / "analyze22.py")
+
+
+class TestJudge(unittest.TestCase):
+    @staticmethod
+    def row(n25, vt, better="core30"):
+        m = {"N25": n25, "D4": 2, "V_top": vt, "V_pack": vt}
+        other = {"N25": n25 - 1, "D4": 2, "V_top": vt, "V_pack": vt}
+        bb = {"core30": m, "nocore": other} if better == "core30" else {"nocore": m, "core30": other}
+        return {"better": better, "tie": False, "by_boss": bb, "N25_prev": 18, "N25_same": 16}
+
+    def test_verdicts(self):
+        self.assertEqual(A22.judge([self.row(15, 0.90)] * 3)["verdict"], "얼추 비슷")      # 경계는 통과
+        self.assertEqual(A22.judge([self.row(14, 0.95)] * 3)["verdict"], "일부 다름")
+        self.assertEqual(A22.judge([self.row(20, 0.89)] * 3)["verdict"], "일부 다름")
+        self.assertEqual(A22.judge([self.row(10, 0.80)] * 3)["verdict"], "다름")
+
+    def test_uses_better_boss(self):
+        j = A22.judge([self.row(16, 0.95, "nocore"), self.row(18, 0.92, "core30")])
+        self.assertEqual(j["N25_med"], 17)
+        self.assertEqual(dict(j["better_count"]), {"nocore": 1, "core30": 1})
+
+    def test_main_dealer_and_five_value(self):
+        self.assertEqual(A22.main_dealer([["a", 1.0], ["b", 3.0], ["c", 2.0]]), "b")
+        vals = {"a,b": {"nocore": 1.0}, "c,d": {"nocore": 2.0}}
+        self.assertEqual(A22.five_value([["a", "b"], ["c", "d"]], vals, "nocore"), 3.0)
+        self.assertIsNone(A22.five_value([["a", "b"], ["x"]], vals, "nocore"))

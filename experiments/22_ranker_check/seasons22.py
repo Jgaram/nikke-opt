@@ -8,6 +8,7 @@
 - 애장품: 그 시즌 끝보다 뒤에 애장품이 나온 니케는 0단계(그때 없던 애장품을 끈다). 나머지는 평가기 기본(3단계).
 - 랭커: 시즌마다 마지막 수집본(6개 서버 상위 50명 × 5덱). 니케 사용 수, 스쿼드(5명 집합) 빈도 · 가장 흔한 순서, 대표 5덱.
   enikk의 「Rei」는 레이(아야나미 레이, 831) 출시 전 시즌이면 라이(392)다.
+- 비교 눈금(`baseline`): 직전 시즌 · 같은 약점 속성 직전 시즌의 랭커 사용 상위 25명(README §지표 N25_prev · N25_same).
 """
 
 from __future__ import annotations
@@ -71,13 +72,29 @@ class Data:
             uid = next(iter(ids))
         return self.eval_name(uid) or f"!{self.id2ko.get(uid) or en}"
 
+    def ranks(self, s: int) -> list[dict]:
+        fs = sorted(glob.glob(str(self.an / "data" / "raw" / "enikk_soloraid" / "*" / f"season-{s:03d}.json")))
+        return json.loads(Path(fs[-1]).read_text(encoding="utf-8"))["data"]["SRRankings"]
+
+    def top_units(self, s: int, k: int = 25) -> list[str]:
+        end = self.seasons[s]["end_at"]
+        c = Counter(self.to_eval(ch, end) for p in self.ranks(s) for t in p["teams"] for ch in t["characters"])
+        return [n for n, _ in c.most_common(k)]
+
+    def baseline(self, s: int) -> dict:
+        weak = self.seasons[s]["weak_element"]
+        same = max((t for t in self.seasons if t < s and self.seasons[t]["weak_element"] == weak), default=None)
+        out = {"prev": {"season": s - 1, "top25": self.top_units(s - 1)}}
+        if same is not None:
+            out["same"] = {"season": same, "top25": self.top_units(same)}
+        return out
+
     def season(self, s: int) -> dict:
         row = self.seasons[s]
         end = row["end_at"]
         pool = sorted({n for uid in self.roster if (n := self.eval_name(uid)) and self.released(uid) <= end})
         fav0 = sorted({n for uid, t in self.treasure.items() if (n := self.eval_name(uid)) and n in pool and t > end})
-        fs = sorted(glob.glob(str(self.an / "data" / "raw" / "enikk_soloraid" / "*" / f"season-{s:03d}.json")))
-        ranks = json.loads(Path(fs[-1]).read_text(encoding="utf-8"))["data"]["SRRankings"]
+        ranks = self.ranks(s)
         units, squads, orders, fives = Counter(), Counter(), defaultdict(Counter), Counter()
         players = []
         unsupported = Counter()
@@ -106,9 +123,10 @@ class Data:
                 "players": len(players), "decks": sum(len(p["decks"]) for p in players),
                 "unsupported_share": round(sum(unsupported.values()) / n_slots, 4), "unsupported": unsupported.most_common(5),
                 "units": units.most_common(TOP_UNITS), "squads": top_sq, "distinct_squads": len(squads),
-                "top_five": {"count": five_n, "squads": [list(orders[q].most_common(1)[0][0]) for q in five]},
+                "top_five": {"count": five_n, "squads": sorted(list(orders[q].most_common(1)[0][0]) for q in five)},
                 "rank1": {"server": best["server"], "damage": best["damage"], "squads": [d["squad"] for d in best["decks"]]},
             },
+            "baseline": self.baseline(s),
         }
 
 
