@@ -161,7 +161,7 @@ def preload(sess: Any, records: Sequence[Mapping[str, Any]]) -> None:
 def run_account(acct: Any, ev: Any) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     fitf = R10.fit_for(177)
     burst = R10.BURST_ALL
-    base_recs = R9.load_records(ACC20 / f"{acct.id}_{BASE_RUN}.jsonl.gz")
+    base_recs = R9.load_records(Path(f"{R20.run_file(acct.id, BASE_RUN)}.jsonl.gz"))
     sess = R9.Session(acct, ev, EXTRA)
     preload(sess, base_recs)
     t0, sims0 = time.time(), ev.sim_count
@@ -184,11 +184,13 @@ def run_account(acct: Any, ev: Any) -> tuple[dict[str, Any], list[dict[str, Any]
     sess.run(orders, "순서", cap=sess.left)
     final = describe(sess.book.best, jpick(sess.book.best, prev=p))
     final["evals"] = sess.used
-    cbook = R9.book_of(R9.load_records(ACC20 / f"{acct.id}_{CONTROL_RUN}.jsonl.gz"))
+    cbook = R9.book_of(R9.load_records(Path(f"{R20.run_file(acct.id, CONTROL_RUN)}.jsonl.gz")))   # t 계정은 실험 19 기록
     control = describe(cbook, jpick(cbook))
     summ = {"scenario": acct.id, "name": acct.name, "theta": THETA, "extra": EXTRA, "evals": sess.used,
             "errors": sum(r["error"] is not None for r in sess.records), "start": start, "check": check, "final": final,
-            "control": control, "history": history, "sims_during": ev.sim_count - sims0, "seconds": round(time.time() - t0, 1),
+            "control": control, "history": history, "sims_during": ev.sim_count - sims0,
+            "requests": len(sess.records),   # 이 실험에서 처음 물은 요청 = 실제 시뮬(다시 돌린 실행의 캐시 적중 포함)
+            "seconds": round(time.time() - t0, 1),
             "evaluator": f"{ev.version.get('repo')} {str(ev.version.get('commit'))[:7]}"}
     return summ, sess.records
 
@@ -251,10 +253,10 @@ def cmd_analyze(a: argparse.Namespace) -> int:
         nb0 = statistics.median(r["start"].get("neighbors") or [0])
         nb1 = statistics.median(f.get("neighbors") or [0])
         L.append(f"| {r['scenario']} | {pct(r_of(r['start']))} | {pct(r_of(r['check']))} | {pct(r_of(f))} | {pct(r_of(r['control']))} | "
-                 f"{f.get('pair_jaccard', 0):.2f} · {f.get('moves', '—')} · {f.get('shared_nikkes', '—')} | {nb0:g} → {nb1:g} | {r['sims_during']} |")
+                 f"{f.get('pair_jaccard', 0):.2f} · {f.get('moves', '—')} · {f.get('shared_nikkes', '—')} | {nb0:g} → {nb1:g} | {r.get('requests', r['sims_during'])} |")
     L += ["", f"중앙: 출발 {pct(med([r_of(r['start']) for r in rows]))} · +500 {pct(med([r_of(r['check']) for r in rows]))} · "
               f"+1,000 {pct(med(fin))} · 대조 {pct(med(ctl))}. 97% 이상: +1,000 {sum(1 for x in fin if x and x >= GOOD)}/{len(rows)} · "
-              f"대조 {sum(1 for x in ctl if x and x >= GOOD)}/{len(rows)}. 새 시뮬 합 {sum(r['sims_during'] for r in rows)}.",
+              f"대조 {sum(1 for x in ctl if x and x >= GOOD)}/{len(rows)}. 새 시뮬(처음 물은 요청) 합 {sum(r.get('requests', r['sims_during']) for r in rows)}.",
           ""]
     (HERE / "results.md").write_text("\n".join(L), encoding="utf-8")
     (HERE / "analysis.json").write_text(json.dumps({"verdict": v, "rows": rows}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
