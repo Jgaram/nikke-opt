@@ -1,30 +1,28 @@
-# 예측 현황판 사이트 (`web/`)
+# 현황판 사이트 (`web/`)
 
-레포의 탐색 로직이 **얼마나 맞게 예상하는지 사람이 눈으로 확인**하려고 만든 정적 사이트다. 레포 소유자가 보는 용도이며,
-지금은 [실험 22](../experiments/22_ranker_check/README.md)(랭커 대조)만 보여 준다.
+레포의 탐색 로직이 시즌마다 **어떤 5덱 구성을 내놓는지 사람이 눈으로 확인**하려고 만든 정적 사이트다. 레포 소유자가 보는 용도이며,
+지금은 [실험 31](../experiments/31_recent_seasons/README.md)(최근 10시즌 S33~S42 편성안 지도)을 보여 준다.
+2026-11-01 사용자 결정으로 실험 22(랭커 대조 8시즌) 화면을 이것으로 바꿨다. 실험 22 화면은 `c5531e1`(바꾸기 직전 main)의 `web/`에 있다.
 
 주소: <https://jgaram.github.io/nikke-opt/> (레포 공개 + Pages 설정 뒤)
 
 ## 보여 주는 것
 
-| 칸 | 내용 | 출처(`experiments/22_ranker_check/`) |
+| 칸 | 내용 | 출처(`experiments/31_recent_seasons/`) |
 |---|---|---|
-| 한눈에 | 판단(잠정) · N25 · V_top 중앙 · 한 판 시뮬 수 · 시간 · 99% 도달 평가 수 | `analyze22.judge` + `run_log/precompute_*.json` |
-| 시즌별 | 시즌마다 N25 · V_top 점 그래프(랭커끼리 눈금 띠), 시즌 × 보스 표 | `analyze22.season_metrics` |
-| 5덱 비교 | 시즌 상세의 중심. **5덱 묶음 하나 = 5×5 격자 하나**(줄 = 덱, 왼쪽부터 배치 순서, 얼굴 아래 니케별 딜). 우리 1순위 · 랭커 대표 · 랭커 1위 · 랭커 상위 40 스쿼드로 짠 최선을 나란히(넓으면 2열, 좁으면 1열). 위에 N25 · D4 · V_top · V_r1 · V_pack. 아래 접기: 덱별 가장 가까운 랭커 스쿼드, 덱별 운용 · 컨트롤 | `precompute_*.json`(`final`) · `.jsonl.gz` · `members_*.json` · `rankers_S*.json` · [`06_control_menu/nikke_info.json`](../experiments/06_control_menu/nikke_info.json)(nikke-calc 23164e4의 `char_defaults` 기준) |
-| 2~8순위 | 앞 순위와 같은 덱을 2개 이하만 공유하는 다음 최선 5덱(`run11.extract`). 요약 표 + 작은 격자 나열(1순위와 같은 덱은 흐리게) | `precompute_*.json`(`sets`) |
-| 랭커가 쓴 니케 | 사용 상위 25, 우리만 · 랭커만 쓴 니케, 상위 40 스쿼드 표, 대리 모델 니케 가치 | `rankers_S*.json` · `seasons.json` |
-| 유력 대안 | 최선과 쌍 자카드 J ≤ 0.3 · 97% 이상인 5덱(2026-11-01 정의, [실험 25](../experiments/25_jpick_alt/README.md)) — **실험 22에서는 계산하지 않아 공란** | — |
-| 조건 | 시즌 기간 · 보스 속성 → 약점 · 코어 · 니케 풀(직전 표시 시즌 이후 신규) · 애장품 0단계 | `seasons.json` |
-| 시뮬 비용 | 평가 수 · 시간 · 수렴 곡선(최선 5덱 합 ÷ 최종) · 단계별 시뮬 수 | `precompute_*.json`(`history`) · `.jsonl.gz`(`phase`) · `meta_*.json` |
+| 한눈에 | 진행(완료 시즌 / 10) · 탐색 판(B · W) · 새 시뮬 합 · 97% 이상 큰 분류 수 · N25 · V_top(시즌 중앙). 시즌 10개 표(보스 · 기간 · 속성 → 약점 · 풀 · 애장품 끔 · 큰 분류 비율 · 세부 분류 수 · 랭커 대표 5덱과 가장 가까운 큰 분류) | `seasons.json` · `analysis.json` |
+| 시즌 조건 | 보스 그림 · 기간 · 속성 → 약점 · 풀 · 새 니케 · 애장품 끔 · 날짜 경계로 뺀 니케 · 애장품 | `seasons.json` |
+| 큰 분류 | 대표끼리 J ≤ 0.2인 5덱(A = 최선). 앞 3개는 상자, 나머지는 더보기. 상자마다 대표 5×5 격자(얼굴 아래 니케별 딜) · 다른 대표와의 J · 바꿀 니케 수 · 랭커 대표와의 J | `analysis.json` · `run_log/S??/members.json` |
+| 세부 분류 | 대표에서 덱 1~2개만 바꾼 5덱(J ≥ 0.5, 최선의 97% 이상). 3개 + 더보기 20개. 줄 = 바뀐 덱 · 빠짐 → 들어옴 · 덱 사이 옮김 · 최선 대비 · J, 펴면 5덱 격자(바뀐 덱 칠함) | `analysis.json` |
+| 그 시즌 랭커 | N25 · D4 · V_top · V_r1 · V_pack(우리 A 기준), 랭커 대표 5덱 · 1위 5덱 격자(우리 A에 없는 니케는 점선)와 큰 분류마다의 J, 사용 상위 25(✓ = A에도 있음), 우리만 · 랭커만, 상위 40 스쿼드 | `seasons.json` · `run_log/S??/rankers.json` · `analysis.json` |
+| 시뮬 비용 | 부분별(B 시드 둘 · W · 코어 30 재평가 · 덱별 니케 딜) 평가 수 · 새 시뮬 · 시간 | `run_log/S??/part_*.json` |
 
-- **니케와 속성은 글자 없이 그림으로만** 보여 준다(툴팁도 없음). 니케 = 얼굴, 그 오른쪽 위에 속성 육각형, 왼쪽 아래에 버스트 단계 문양, 오른쪽 아래 `N` = 직전 표시 시즌 이후 신규.
-- 시즌 상세는 위 표 순서대로 5덱 비교 → 2~8순위 → 랭커가 쓴 니케 → 유력 대안 → 조건 → 시뮬 비용이다.
-  보스는 그림 + 이름. 그림은 [아래](#그림)처럼 nikke-analysis에서 받아 둔 것이다. 화면 낭독기용 대체 글(`alt`)에만 이름이 들어간다.
-- 지표(N25 · D4 · V_top · V_r1 · V_pack · 더 맞는 보스 · 판단)는 `analyze22.py`를 **그대로 불러 쓴다.** 정의를 여기서 다시 쓰지 않는다.
-- 아직 없는 결과 파일은 「계산 전」으로 둔다. 작업 세션이 결과를 main에 올리면 다음 배포에서 채워진다.
-- 시뮬은 하지 않는다. 평가기도 필요 없다(`numpy`만).
-- 나중 과제: 여러 컨트롤이 겹칠 때 어느 것을 먼저 적용하는지(평가기의 우선순위 로직)도 보여 주기([로드맵](../docs/ROADMAP.md)).
+- 보스 조건은 위쪽 단추로 **코어 없음 · 코어 30px**를 바꾼다(한눈에 표와 시즌 상세가 함께 바뀐다). 주소 `#S40-core30`.
+- **니케와 속성은 글자 없이 그림으로만** 보여 준다. 니케 = 얼굴, 그 오른쪽 위에 속성 육각형, 왼쪽 아래에 버스트 단계 문양, 오른쪽 아래 `N` = 직전 시즌 뒤 새 니케.
+- 분류 · 지표는 `run31.py analyze`가 만든 `analysis.json`을 **그대로 옮긴다.** 정의를 여기서 다시 쓰지 않는다.
+  화면용으로 더하는 것은 세부 분류 새 덱의 자리 맞춤(바뀐 덱 번호 ↔ 새 덱, 겹침 최대) · 덱 사이 옮긴 니케뿐이다.
+- 아직 없는 결과는 「계산 전」, 부분 기록만 있으면 「실행 중」으로 둔다. analyze를 돌려 `analysis.json`이 main에 올라오면 다음 배포에서 채워진다.
+- 시뮬은 하지 않는다. 평가기 · numpy도 필요 없다(실험 모듈을 불러오지 않는다).
 
 ## 만들기 · 로컬에서 보기
 
@@ -36,7 +34,8 @@ python web/build.py --out _site
 python -m http.server -d _site 8000
 ```
 
-`_site/`는 커밋하지 않는다(`.gitignore`). 테스트: `python -m unittest tests.test_web`.
+- `_site/`는 커밋하지 않는다(`.gitignore`). 테스트: `python -m unittest tests.test_web`.
+- 다른 폴더의 결과로 미리 보기: `python web/build.py --out _site --exp <analysis.json · run_log가 있는 폴더>`.
 
 ## 배포
 
@@ -52,8 +51,9 @@ python -m http.server -d _site 8000
 
 ## 그림
 
-[Jgaram/nikke-analysis](https://github.com/Jgaram/nikke-analysis)의 그림을 **화면에 나오는 것만** `web/icons/`에 복사해 커밋해 둔다.
-빌드는 외부에 기대지 않는다. 어느 커밋에서 받았는지는 `icons.json`의 `source`에 남는다.
+[Jgaram/nikke-analysis](https://github.com/Jgaram/nikke-analysis)의 그림을 `web/icons/`에 복사해 커밋해 둔다. 빌드는 외부에 기대지 않는다.
+받는 것은 **화면에 나오는 시즌의 보스 그림과, 10시즌 풀 전원(174명)의 얼굴**이다 — 실험 31 결과가 들어와 새 니케가 화면에 나와도 다시 받지 않게.
+어느 커밋에서 받았는지는 `icons.json`의 `source`에 남는다.
 
 | 폴더 | 내용 | nikke-analysis 출처 |
 |---|---|---|
@@ -63,7 +63,7 @@ python -m http.server -d _site 8000
 | `icons/bursts/<단계>.png` | 버스트 단계 문양(한 색, 글자색으로 칠함) | `data/assets/icons/bursts/` |
 | `icons/icons.json` | 이름 → 얼굴 번호 · 속성(스킬로 더해진 속성 포함) · 버스트, 시즌 → 보스 그림, 받은 커밋 | 위 두 CSV |
 
-새 시즌 · 실험 결과로 처음 나오는 니케가 생기면 `build.py`가 「얼굴 그림 없는 니케」를 알려 주고 `tests.test_web`이 실패한다.
+시즌이 바뀌어 그림 없는 니케가 생기면 `build.py`가 「얼굴 그림 없는 니케」를 알려 주고 `tests.test_web`이 실패한다.
 그때 nikke-analysis를 받아 다시 가져온다(안 쓰게 된 얼굴 · 보스 그림은 지운다).
 
 ```bash
@@ -80,6 +80,6 @@ python web/sync_icons.py --analysis ../nikke-analysis
 
 | 파일 | 역할 |
 |---|---|
-| `build.py` | run_log → `data.json`, 정적 파일 · `icons/` 복사 |
-| `sync_icons.py` | nikke-analysis → `icons/`(화면에 나오는 니케 · 시즌만) |
+| `build.py` | `seasons.json` · `analysis.json` · run_log → `data.json`, 정적 파일 · `icons/` 복사 |
+| `sync_icons.py` | nikke-analysis → `icons/`(화면에 나오는 시즌 · 10시즌 풀 니케) |
 | `index.html` · `style.css` · `app.js` | 화면. 외부 라이브러리 · CDN 없음. 밝게 · 어둡게(시스템 설정 또는 오른쪽 위 버튼) |

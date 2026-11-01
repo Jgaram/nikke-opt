@@ -1,16 +1,18 @@
 {
  "bosses": {
-  "14": "full_mbg002_raid",
-  "18": "full_ebg001",
-  "23": "full_eba004_dmtr",
-  "28": "full_eba005_anmi",
+  "33": "full_xbg003_hsta",
   "34": "full_xbg004_zeus",
-  "4": "full_mbg001_psid",
+  "35": "full_xbg001_anmi",
+  "36": "full_xbg005_psid",
+  "37": "full_bbg006_hsta",
+  "38": "full_xba003_dmtr",
+  "39": "full_ebg001_island_zeus",
   "40": "full_bbg001_rich_anmi",
-  "9": "full_ebg002_dmtr"
+  "41": "full_eba002_hsta",
+  "42": "full_xbg004_psid"
  },
  "source": {
-  "commit": "7190ad3012d00dcfa4df58b7386e1f8386df2075",
+  "commit": "c7535226063ced6fb8cc2fca3ff0458de2b64b85",
   "files": "data/assets/icons/ · data/processed/roster.csv · data/processed/soloraid_seasons.csv",
   "repo": "https://github.com/Jgaram/nikke-analysis"
  },
@@ -57,13 +59,6 @@
    ],
    "id": "041"
   },
-  "N102": {
-   "b": "I",
-   "el": [
-    "Water"
-   ],
-   "id": "120"
-  },
   "그레이브": {
    "b": "II",
    "el": [
@@ -91,6 +86,13 @@
     "Wind"
    ],
    "id": "400"
+  },
+  "길티 : 마이티 바니": {
+   "b": "III",
+   "el": [
+    "Water"
+   ],
+   "id": "404"
   },
   "나가": {
    "b": "II",
@@ -196,6 +198,13 @@
     "Fire"
    ],
    "id": "101"
+  },
+  "드레이크 : 그레이트 빌런": {
+   "b": "III",
+   "el": [
+    "Wind"
+   ],
+   "id": "104"
   },
   "디젤": {
    "b": "II",
@@ -569,6 +578,13 @@
    ],
    "id": "550"
   },
+  "벨로타 : 펌킨 위치": {
+   "b": "II",
+   "el": [
+    "Water"
+   ],
+   "id": "063"
+  },
   "벨벳": {
    "b": "II",
    "el": [
@@ -715,6 +731,13 @@
     "Electric"
    ],
    "id": "401"
+  },
+  "신 : 스위프트 바니": {
+   "b": "III",
+   "el": [
+    "Water"
+   ],
+   "id": "405"
   },
   "신데렐라": {
    "b": "III",
