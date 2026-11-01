@@ -349,6 +349,7 @@ def run_wide(acct: Any, ev: Any, prefix: Sequence[Mapping[str, Any]]) -> tuple[d
     a = pick_target(book, [], None)
     reps: list[list[list[str]]] = [a["decks"]]
     blocks: list[dict[str, Any]] = [{"kind": "A", "evals": sess.used, "best": a["total"]}]
+    stalled: set[int] = set()     # 블록이 새 평가를 하나도 못 한 분류 — 다시 찾기에서 뺀다(2026-11-01 수정: 풍압에서 0평가 블록이 무한 반복)
     while sess.left >= BLOCK_MIN:
         a_total = R9.pack_vals(book)[0]
         reps[0] = pick_target(book, [], reps[0])["decks"]          # 최선이 바뀌었으면 A를 새 최선으로
@@ -361,7 +362,7 @@ def run_wide(acct: Any, ev: Any, prefix: Sequence[Mapping[str, Any]]) -> tuple[d
                 reps.append(cand["decks"])
         if target is None:
             lows = sorted((plan_total(book, reps[i]) / a_total, i) for i in range(1, len(reps)))
-            lows = [(r, i) for r, i in lows if r < GOOD]
+            lows = [(r, i) for r, i in lows if r < GOOD and i not in stalled]
             if not lows:
                 break
             target, kind = lows[0][1], "revisit"
@@ -379,6 +380,8 @@ def run_wide(acct: Any, ev: Any, prefix: Sequence[Mapping[str, Any]]) -> tuple[d
         sess.run(order_moves(sess, p["decks"]), f"분류 {target} 순서", cap=cap - (sess.used - used0))
         p = pick_target(book, others, p["decks"])
         reps[target] = p["decks"]
+        if sess.used == used0:
+            stalled.add(target)
         blocks.append({"kind": kind, "target": target, "evals": sess.used, "spent": sess.used - used0,
                        "before": before, "after": p["total"], "best": R9.pack_vals(book)[0], "exact": p["exact"]})
         print(json.dumps({"element": acct.options["enemy"]["code"], **{k: (round(v, 2) if isinstance(v, float) else v)
@@ -386,7 +389,7 @@ def run_wide(acct: Any, ev: Any, prefix: Sequence[Mapping[str, Any]]) -> tuple[d
                          ensure_ascii=False), flush=True)
     summ = {"start": start[0], "blocks": blocks, "reps": reps, "evals": sess.used, "sims_during": ev.sim_count - sims0,
             "requests": len(sess.records), "seconds": round(time.time() - t0, 1),
-            "errors": sum(r["error"] is not None for r in sess.records)}
+            "errors": sum(r["error"] is not None for r in sess.records), "stalled": sorted(stalled)}
     return summ, sess.records
 
 
