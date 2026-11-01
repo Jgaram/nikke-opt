@@ -3,7 +3,7 @@
     python web/build.py --out _site          → _site/index.html · app.js · style.css · data.json
     python -m http.server -d _site 8000       (로컬에서 보기: http://localhost:8000)
 
-- 지표(N25 · D4 · V_top · V_r1 · V_pack · 주력 · 더 맞는 보스 · 판단)는 실험 22 `analyze22.season_metrics` · `judge`를
+- 지표(N25 · D4 · V_top · V_r1 · V_pack · 더 맞는 보스 · 판단)는 실험 22 `analyze22.season_metrics` · `judge`를
   그대로 부른다. 정의를 여기서 다시 쓰지 않는다.
 - 그 밖에 화면에 필요한 것(수렴 곡선 · 단계별 시뮬 수 · 2~8순위 5덱 · 덱별 딜 · 랭커 덱 값 · 기본 레이어 컨트롤)을
   같은 run_log에서 읽어 붙인다. 시뮬은 하지 않는다. 아직 없는 결과 파일은 「계산 전」으로 둔다.
@@ -111,10 +111,6 @@ def reach(history: list[dict], final: float) -> dict[str, int | None]:
     return out
 
 
-def leader(members: list[list] | None) -> str | None:
-    return A22.main_dealer(members) if members else None
-
-
 def pack_summary(sets: list[list[str]], idx: dict[tuple, float]) -> list[dict[str, Any]]:
     return [{"order": list(q), "value": idx.get(tuple(q))} for q in sets]
 
@@ -145,7 +141,7 @@ def ranker_side(s: int, b: str, ours: list[list[str]], rv: dict[str, dict]) -> d
         rows = []
         for q in squads:
             e = rv.get(",".join(q), {})
-            rows.append({"order": list(q), "value": e.get(b), "members": e.get(f"{b}_members"), "leader": leader(e.get(f"{b}_members"))})
+            rows.append({"order": list(q), "value": e.get(b), "members": e.get(f"{b}_members")})
         tot = None if any(r["value"] is None for r in rows) else sum(r["value"] for r in rows)
         return {"decks": rows, "total": tot}
 
@@ -159,7 +155,7 @@ def ranker_side(s: int, b: str, ours: list[list[str]], rv: dict[str, dict]) -> d
     sq = []
     for q in rk["squads"]:
         e = rv.get(",".join(q["order"]), {})
-        sq.append({"order": q["order"], "count": q["count"], "value": e.get(b), "leader": leader(e.get(f"{b}_members")),
+        sq.append({"order": q["order"], "count": q["count"], "value": e.get(b),
                    "members": e.get(f"{b}_members"),
                    "overlap": max((len(set(q["members"]) & o) for o in our_sets), default=0)})
     out["squads"] = sq
@@ -183,12 +179,12 @@ def boss_run(s: int, b: str, m: dict[str, Any] | None, rv: dict[str, dict]) -> d
         elif rv.get(",".join(q), {}).get(f"{b}_members"):          # 랭커 덱 평가에 같은 순서가 있으면 그 값
             members = rv[",".join(q)][f"{b}_members"]
         near = max(rsq, key=lambda t: (len(set(q) & t[0]), t[1]["count"]), default=None)
-        decks.append({"order": list(q), "value": val, "members": members, "leader": leader(members),
+        decks.append({"order": list(q), "value": val, "members": members,
                       "match": len(set(q) & near[0]) if near else 0,
                       "near": {"order": near[1]["order"], "count": near[1]["count"]} if near else None})
     hist = pre.get("history", [])
     out = {k: m.get(k) for k in ("total", "evals", "sims", "seconds", "N25", "D4", "V_top", "V_r1", "V_pack",
-                                 "ours_only", "rankers_only", "main_ours", "main_rankers", "main_overlap")}
+                                 "ours_only", "rankers_only")}
     coef = pre.get("coef") or {}
     ours25 = {n for q in pre["final"]["squads"] for n in q[1]}
     top25 = set(n for n, _ in rk["units"][:25])
@@ -249,8 +245,8 @@ def icon_index() -> dict[str, Any]:
 
 def site_names(seasons: list[dict[str, Any]]) -> set[str]:
     """화면에 니케로 나오는 이름 전부(풀 · 덱 · 랭커 스쿼드 · 사용 순위 · 대리 모델 표)."""
-    lists = ("order", "pool", "favorite0", "new_since_prev", "ours_only", "rankers_only", "top25", "main_ours")
-    pairs = ("units", "main_rankers", "coef_top", "members")      # [이름, 값, …] 목록
+    lists = ("order", "pool", "favorite0", "new_since_prev", "ours_only", "rankers_only", "top25")
+    pairs = ("units", "coef_top", "members")      # [이름, 값, …] 목록
     out: set[str] = set()
 
     def walk(o: Any) -> None:
@@ -260,8 +256,6 @@ def site_names(seasons: list[dict[str, Any]]) -> set[str]:
                     out.update(x for x in v if isinstance(x, str))
                 elif k in pairs and isinstance(v, list):
                     out.update(x[0] for x in v if isinstance(x, list) and x and isinstance(x[0], str))
-                elif k == "leader" and isinstance(v, str):
-                    out.add(v)
                 else:
                     walk(v)
         elif isinstance(o, list):

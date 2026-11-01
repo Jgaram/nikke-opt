@@ -147,7 +147,7 @@
   // 니케 얼굴. size: lg(덱) · md(목록) · sm(표 · 줄 안). lg · md는 오른쪽 위에 속성, 왼쪽 아래에 버스트 단계를 붙인다.
   function face(n, size = 'md', o = {}) {
     const info = nk(n);
-    const cls = ['face', `f-${size}`, o.lead && 'lead', o.diff && 'diff', o.dim && 'dim'].filter(Boolean).join(' ');
+    const cls = ['face', `f-${size}`, o.diff && 'diff', o.dim && 'dim'].filter(Boolean).join(' ');
     const img = info.img
       ? h('img', { class: 'face-img', src: info.img, alt: n, loading: 'lazy', decoding: 'async',
         onerror: (e) => e.target.replaceWith(missingFace(n)) })
@@ -208,8 +208,8 @@
           h('span', { class: 'fg-val', text: eok(d.value) }),
           same ? h('span', { class: 'fg-same', text: `= ${same}덱` }) : null),
         d.order.map((n) => h('div', { class: 'fg-cell', role: 'cell' },
-          face(n, size, { lead: d.leader === n, diff: !!(o.otherSet && !o.otherSet.has(n)), isNew: !!(o.newSet && o.newSet.has(n)) }),
-          size === 'lg' && d.members ? h('span', { class: `dmg${d.leader === n ? ' lead' : ''}`, text: dmg[n] == null ? '' : eok(dmg[n]) }) : null)));
+          face(n, size, { diff: !!(o.otherSet && !o.otherSet.has(n)), isNew: !!(o.newSet && o.newSet.has(n)) }),
+          size === 'lg' && d.members ? h('span', { class: 'dmg', text: dmg[n] == null ? '' : eok(dmg[n]) }) : null)));
     });
     return h('figure', { class: `fgrid fg-${size}${o.ours ? ' ours' : ''}` }, head,
       h('div', { class: 'fg-body', role: 'table', 'aria-label': `${o.title} 5덱` }, rows));
@@ -647,11 +647,9 @@
         tile('D4', h('span', null, R.D4, h('small', { text: ' / 5' })), '랭커 상위 40 스쿼드와 4명 이상 같은 우리 덱 수'),
         tile('V_top', pct(R.V_top), '랭커 대표 5덱 ÷ 우리'),
         tile('V_r1', pct(R.V_r1), '랭커 1위 5덱 ÷ 우리'),
-        tile('V_pack', pct(R.V_pack), '랭커 스쿼드로 짠 최선 ÷ 우리'),
-        tile('주력 겹침', R.main_overlap == null ? '—' : h('span', null, R.main_overlap, h('small', { text: ' / 5' })),
-          R.main_overlap == null ? 'members 계산 뒤 표시' : '우리 덱 주력 중 랭커 스쿼드 주력에 있는 수')));
+        tile('V_pack', pct(R.V_pack), '랭커 스쿼드로 짠 최선 ÷ 우리')));
     }
-    card.append(gridKey(R.members_ready || !done ? '진한 테두리 = 주력(덱 딜 1위) · 얼굴 아래 = 니케별 딜' : '얼굴 아래 = 니케별 딜 · 주력은 members 계산 뒤 표시'),
+    card.append(gridKey(R.members_ready || !done ? '얼굴 아래 = 니케별 딜' : '니케별 딜은 members 계산 뒤 표시'),
       h('p', { class: 'small muted face-key' }, '점선 테두리 — 우리 격자: 랭커 사용 상위 25명에 없는 니케 · 랭커 격자: 우리 1순위 5덱에 없는 니케.'));
     card.append(h('div', { class: 'sets cmp' },
       fiveGrid(done ? R : null, { title: '우리 1순위', ours: true, newSet, otherSet: done ? new Set([...ours25].filter((n) => !notTop25.has(n))) : null,
@@ -698,8 +696,8 @@
   function robustAltCard() {
     return h('div', { class: 'card' }, h('h3', { text: '유력 대안 — 뼈대가 다른 안' }),
       h('div', { class: 'empty' }, h('b', { text: '공란 — 실험 22에서는 계산하지 않았습니다. ' }),
-        '이 레포의 「유력 대안」은 최선 5덱의 덱 두 개를 기록에서 빼고 다시 짠 안 중, 합이 최선의 97% 이상이고 다시 짠 덱 · 주력 딜러가 다른 덱이 각각 2개 이상인 것입니다(실험 20 · 21). ',
-        '실험 21의 가상 계정 8개(허수아비 보스)에서는 8개 모두 찾았습니다.'));
+        '이 레포의 「유력 대안」은 최선 5덱과 쌍 자카드 J(같은 덱에 묶인 니케 쌍의 겹침)가 0.3 이하이면서 합이 최선의 97% 이상인 5덱입니다(2026-11-01, 실험 25). ',
+        '실험 25의 가상 계정 8개(허수아비 보스)에서는 6개에서 찾았습니다(J 중앙 0.28 · 니케 8~10명이 다른 덱으로).'));
   }
 
   function rankerCard(S, R) {
@@ -728,10 +726,10 @@
     card.append(details(`랭커 상위 ${sq.length} 스쿼드 표 (이 보스 시뮬 값)`,
       done ? h('p', { class: 'small muted', text: '점선 테두리 = 우리 1순위 5덱에 없는 니케.' }) : null,
       tableWrap(h('table', { class: 'mid' },
-        h('thead', null, h('tr', null, ['쓴 랭커', '배치 순서', '시뮬 딜', '주력', '우리 덱과 최대 겹침'].map((t, i) => h('th', { class: i === 0 || i === 2 || i === 4 ? 'r' : null, text: t })))),
+        h('thead', null, h('tr', null, ['쓴 랭커', '배치 순서', '시뮬 딜', '우리 덱과 최대 겹침'].map((t, i) => h('th', { class: i === 1 ? null : 'r', text: t })))),
         h('tbody', null, sq.map((q) => h('tr', null,
           h('td', { class: 'r', text: q.count }), h('td', null, faces(q.order, 'sm', { diffSet: done ? ours25 : null })),
-          h('td', { class: 'r', text: q.value == null ? '평가기 밖' : eok(q.value) }), h('td', null, q.leader ? face(q.leader, 'sm') : '—'),
+          h('td', { class: 'r', text: q.value == null ? '평가기 밖' : eok(q.value) }),
           h('td', { class: 'r', text: done ? `${q.overlap}/5` : '—' }))))))));
     if (done && R.coef_top && R.coef_top.length) {
       card.append(details('탐색이 본 니케 가치 상위 20 (대리 모델)', h('p', { class: 'small muted', text: '사전 계산의 마지막 대리 모델(니케 + 짝 릿지)이 매긴 니케 단독 항입니다. 짝 효과는 빠져 있어, 짝을 타는 니케는 낮게 나올 수 있습니다.' }),

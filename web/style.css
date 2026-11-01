@@ -241,7 +241,6 @@ td .mark { font-weight: 650; }
 .fg-row.same .fg-cell { opacity: 0.38; }
 .fg-row.same .fg-val { color: var(--muted); }
 .fg-cell .dmg { font-size: 11.5px; line-height: 1.2; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.fg-cell .dmg.lead { color: var(--ink); font-weight: 700; }
 .face-key { margin: 4px 0 0; }
 .nw-key { display: inline-grid; place-items: center; width: 15px; height: 15px; border-radius: 4px; font-size: 10px; font-weight: 700; background: var(--new-bg); color: var(--new-ink); vertical-align: 1px; }
 .tag { font-size: 11px; padding: 0 5px; border-radius: 4px; background: var(--tag-bg); color: var(--ink-2); white-space: nowrap; }
@@ -280,7 +279,6 @@ table.plain td, table.plain th { padding-left: 10px; padding-right: 10px; }
   display: grid; place-items: center; font-size: 10px; font-weight: 700; line-height: 1;
   background: var(--new-bg); color: var(--new-ink); box-shadow: 0 0 0 1.5px var(--surface);
 }
-.face.lead { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--ink); }
 .face.diff { outline: 2px dashed var(--muted); outline-offset: 2px; }
 .face.dim .face-img { filter: grayscale(0.9); opacity: 0.5; }
 .glyph {
