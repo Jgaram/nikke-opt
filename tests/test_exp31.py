@@ -119,9 +119,15 @@ class TestRun31(unittest.TestCase):
             self.assertEqual(set(a0.tier.values()), {"상"})
 
     def test_arm_needs_decision(self):
-        self.assertIsNone(R.USE_W)                                  # 실험 30 판정 전(README §판)
-        with self.assertRaises(RuntimeError):
-            R.arm_of()
+        self.assertIs(R.USE_W, False)                               # 실험 30 판정 「기준선이 낫다」 → B 판(README §판)
+        self.assertEqual(R.arm_of(), "B")
+        old = R.USE_W
+        R.USE_W = None
+        try:
+            with self.assertRaises(RuntimeError):
+                R.arm_of()
+        finally:
+            R.USE_W = old
         self.assertEqual(R.arm_of(True), "W")
         self.assertEqual(R.arm_of(False), "B")
 

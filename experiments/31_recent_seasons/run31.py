@@ -64,7 +64,7 @@ SHOW, MORE, SUB_CAP = T28.SHOW, T28.MORE, 400
 CLASS_NAMES = "ABCDEFGHIJ"
 # 실험 30 판정에 따라 정한다(README §판). None이면 W · core30 · analyze의 지도를 만들지 않는다.
 # True = 「넓게 찾기가 지도를 넓힌다」 → W 판(B 앞 6,250 × 2 + W 12,500), False = 그 밖 → B 판(B 전체).
-USE_W: bool | None = None
+USE_W: bool | None = False        # 2026-11-01 실험 30 판정 「기준선이 낫다」(main 8785994) → B 판
 # 코어 30 이어 찾기 평가 수(실험 30 CORE_EXTRA). 실험 30 corecheck: 재평가만(R)은 따로 찾은 코어 30 최선의 S40 99.9% · S34 97.9%,
 # 이어 찾기까지(RC)는 99.98% · 100.0% — 관찰 기준 「두 시즌 모두 99% 이상」을 채운 것은 RC다(README §절차).
 CORE_CONT = R30.CORE_EXTRA          # 2,000
