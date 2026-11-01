@@ -1,8 +1,7 @@
 name: pages
 
 # 현황판 사이트(web/)를 GitHub Pages에 올린다. main에 실험 결과나 사이트 코드가 올라올 때마다 다시 만든다.
-# web/build.py가 실험 22 run_log와 실험 28/29 analysis.json(편성안 계층)에서 data.json을 만들고,
-# 정적 파일과 함께 배포한다(시뮬은 하지 않는다). 실험 29 analysis.json이 올라오면 그 push로 다시 만든다.
+# web/build.py가 실험 22 run_log에서 data.json을 만들고, 정적 파일과 함께 배포한다(시뮬은 하지 않는다).
 #
 # 처음 한 번: 레포를 공개로 바꾸고 Settings → Pages → Build and deployment → Source를 「GitHub Actions」로 둔다.
 # 레포가 비공개인 동안에는 실패하지 않고 건너뛴다(무료 플랜은 비공개 레포에서 Pages를 쓸 수 없다).
