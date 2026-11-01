@@ -1,0 +1,4 @@
+{"at": "2026-11-01T11:43:48", "cmd": "run", "only": "w2,w6", "runs": ["w2", "w6"], "sims": 4176, "cache_hits": 6, "ops_ran": {"T@main": 6}, "ops_from25": 13, "seconds": 696, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T11:43:53", "cmd": "run", "only": "w1,w5", "runs": ["w1", "w5"], "sims": 4535, "cache_hits": 50, "ops_ran": {"T@main": 7}, "ops_from25": 13, "seconds": 701, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T11:45:36", "cmd": "run", "only": "w3,w7", "runs": ["w3", "w7"], "sims": 5171, "cache_hits": 216, "ops_ran": {"T@main": 9}, "ops_from25": 11, "seconds": 804, "evaluator": "nikke-calc-rs 89d2e64"}
+{"at": "2026-11-01T11:45:52", "cmd": "run", "only": "w4,w8", "runs": ["w4", "w8"], "sims": 4579, "cache_hits": 7, "ops_ran": {"T@main": 7}, "ops_from25": 13, "seconds": 820, "evaluator": "nikke-calc-rs 89d2e64"}
