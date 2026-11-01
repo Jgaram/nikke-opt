@@ -1,4 +1,5 @@
-"""현황판 사이트(web/build.py) — 지금 run_log로 만들어지는지, 지표가 analyze22와 같은지, 결과 전 판을 「계산 전」으로 두는지."""
+"""현황판 사이트(web/build.py) — 지금 run_log로 만들어지는지, 지표가 analyze22와 같은지, 결과 전 판을 「계산 전」으로 두는지,
+화면에 나오는 니케 · 보스 · 속성 그림이 빠짐없이 있는지."""
 
 from __future__ import annotations
 
@@ -108,6 +109,37 @@ class TestWebBuild(unittest.TestCase):
             for r in s["by_boss"].values():
                 self.assertEqual(r["status"], "pending")
                 self.assertIsNotNone(r["rankers"]["top_five"]["total"])
+
+    def test_every_nikke_has_face(self):
+        """화면에 나오는 니케는 모두 얼굴 그림이 있다(니케 이름은 글자로 쓰지 않으므로). 없으면 web/sync_icons.py를 다시 돌린다."""
+        names = B.site_names(self.data["seasons"])
+        self.assertGreater(len(names), 100)
+        self.assertEqual(self.data["icons"]["missing"], [])
+        for n in names:
+            img = self.data["nikke"].get(n, {}).get("img")
+            self.assertTrue(img, n)
+            self.assertTrue((self.tmp / "site" / img).exists(), (n, img))
+            for e in self.data["nikke"][n]["el"]:
+                self.assertTrue((self.tmp / "site" / "icons" / "elements" / f"{e.lower()}.png").exists(), (n, e))
+            self.assertIn(self.data["nikke"][n].get("b"), ("1", "2", "3", "A"), n)
+
+    def test_boss_and_element_images(self):
+        for s in self.data["seasons"]:
+            self.assertTrue(s["boss_img"], s["season"])
+            self.assertTrue((self.tmp / "site" / s["boss_img"]).exists(), s["boss_img"])
+            for e in (s["element"], s["weak"]):
+                self.assertTrue((self.tmp / "site" / "icons" / "elements" / f"{e.lower()}.png").exists(), e)
+        for f in ("i", "ii", "iii", "i-ii-iii"):
+            self.assertTrue((self.tmp / "site" / "icons" / "bursts" / f"{f}.png").exists(), f)
+
+    def test_icon_index_matches_files(self):
+        """icons.json이 가리키는 그림은 모두 있고, 가리키지 않는 얼굴 · 보스 그림은 남아 있지 않다."""
+        idx = B.icon_index()
+        units = {f"{u['id']}.webp" for u in idx["units"].values()}
+        bosses = {f"{b}.webp" for b in idx["bosses"].values()}
+        self.assertEqual({p.name for p in (B.ICONS / "units").iterdir()}, units)
+        self.assertEqual({p.name for p in (B.ICONS / "bosses").iterdir()}, bosses)
+        self.assertTrue(idx["source"].get("commit"))
 
     @unittest.skipUnless(shutil.which("node"), "node 없음")
     def test_app_js_syntax(self):

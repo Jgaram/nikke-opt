@@ -8,6 +8,10 @@
     burst: '버스트', cube: '큐브', camera: '카메라', tactic: '택틱',
   };
   const LAYER_KO = { always: '항상', rule: '조건부' };
+  const EL_KO = { Electric: '전격', Fire: '작열', Iron: '철갑', Water: '수냉', Wind: '풍압' };
+  // 버스트 단계 → nikke-analysis 버스트 문양(파일 · 가로 · 세로 px, 세로 13 기준)
+  const BURST_GLYPH = { 1: ['i', 6, 13], 2: ['ii', 11, 13], 3: ['iii', 14, 13], A: ['i-ii-iii', 14, 13] };
+  const FACE_BADGE = { lg: { el: 17, burst: 10 }, md: { el: 14, burst: 8 } };   // 얼굴 크기별 속성 · 버스트 표시 크기(sm은 없음)
   const PHASE_KO = {
     설계: '설계 — 버스트 단계 · 구조 틀만 보고 고르게 만든 스쿼드',
     구성: '구성 — 대리 모델(니케 + 짝)이 높게 본 스쿼드',
@@ -122,9 +126,49 @@
   const seasonOf = (s) => D.seasons.find((x) => x.season === s);
   const nk = (n) => D.nikke[n] || {};
   const doneRuns = () => D.seasons.flatMap((S) => BOSSES.map((b) => S.by_boss[b]).filter((r) => r.status === 'done'));
-  function burstLabel(n) {
-    const b = nk(n).b;
-    return b === 'A' ? 'B1~3' : b ? `B${b}` : '?';
+
+  // ------------------------------------------------------------ 그림(니케 · 속성은 글자 없이 그림으로만)
+  function elIcon(code, size = 16) {
+    if (!code) return null;
+    return h('img', { class: 'el', src: `icons/elements/${code.toLowerCase()}.png`, alt: EL_KO[code] || code,
+      width: size, height: Math.round((size * 73) / 63), decoding: 'async' });
+  }
+  function burstGlyph(b, height) {
+    const g = BURST_GLYPH[b];
+    if (!g) return null;
+    const url = `url("icons/bursts/${g[0]}.png")`;
+    const w = Math.round((g[1] * height) / g[2]);
+    return h('span', { class: 'glyph', role: 'img', 'aria-label': b === 'A' ? '버스트 전 단계' : `버스트 ${b}단계`,
+      style: `width:${w}px;height:${height}px;-webkit-mask-image:${url};mask-image:${url}` });
+  }
+  function missingFace(n) {
+    return h('span', { class: 'face-img face-missing', role: 'img', 'aria-label': n, text: '?' });
+  }
+  // 니케 얼굴. size: lg(덱) · md(목록) · sm(표 · 줄 안). lg · md는 오른쪽 위에 속성, 왼쪽 아래에 버스트 단계를 붙인다.
+  function face(n, size = 'md', o = {}) {
+    const info = nk(n);
+    const cls = ['face', `f-${size}`, o.lead && 'lead', o.diff && 'diff', o.dim && 'dim'].filter(Boolean).join(' ');
+    const img = info.img
+      ? h('img', { class: 'face-img', src: info.img, alt: n, loading: 'lazy', decoding: 'async',
+        onerror: (e) => e.target.replaceWith(missingFace(n)) })
+      : missingFace(n);
+    const badge = FACE_BADGE[size];
+    return h('span', { class: cls }, img,
+      badge && info.el && info.el.length ? h('span', { class: 'els' }, info.el.map((e) => elIcon(e, badge.el))) : null,
+      badge && info.b ? h('span', { class: 'bst' }, burstGlyph(info.b, badge.burst)) : null,
+      o.check ? h('span', { class: 'chk', 'aria-label': '우리 1순위 5덱에도 있음', text: '✓' }) : null);
+  }
+  function faces(list, size = 'sm', o = {}) {
+    return h('ul', { class: `faces faces-${size}` }, (list || []).map((n) => h('li', null, face(n, size, {
+      dim: o.dimSet ? o.dimSet.has(n) : false, diff: o.diffSet ? !o.diffSet.has(n) : false,
+    }))));
+  }
+  function bossImg(S, cls = 'boss-thumb') {
+    return S.boss_img ? h('img', { class: cls, src: S.boss_img, alt: S.boss_name, decoding: 'async' }) : null;
+  }
+  // 보스 속성 → 약점, 그림으로
+  function elPair(S, size = 16) {
+    return h('span', { class: 'el-pair' }, elIcon(S.element, size), h('span', { class: 'arrow', 'aria-label': '약점', text: '→' }), elIcon(S.weak, size));
   }
 
   // ------------------------------------------------------------ 공통 조각
@@ -140,20 +184,18 @@
     const ico = cls === 'good' ? '✓' : cls === 'warn' ? '!' : '×';
     return h('span', { class: `verdict ${cls}` }, h('span', { class: 'ico', 'aria-hidden': 'true', text: ico }), v);
   }
+  // 덱 안의 니케 한 명: 얼굴 + 아래에 딜 · 신규 표시. 주력 = 진한 테두리, 상대 5덱에 없음 = 점선 테두리.
   function chip(n, o = {}) {
-    const info = nk(n);
-    const title = [info.w, info.b ? `버스트 ${info.b === 'A' ? '전 단계' : info.b}` : null].filter(Boolean).join(' · ');
-    return h('li', { class: `nk${o.lead ? ' lead' : ''}${o.diff ? ' diff' : ''}`, title: title || null },
-      h('span', { class: 'bs', text: burstLabel(n) }), n,
+    return h('li', { class: `mem${o.lead ? ' lead' : ''}` },
+      face(n, 'lg', { lead: o.lead, diff: o.diff }),
       o.dmg != null ? h('span', { class: 'dmg', text: eok(o.dmg) }) : null,
-      o.isNew ? h('span', { class: 'tag new', text: '신규' }) : null,
-      o.diff ? h('span', { class: 'tag', text: o.diff }) : null);
+      o.isNew ? h('span', { class: 'tag new', text: '신규' }) : null);
   }
   function members(order, o = {}) {
     const dmg = Object.fromEntries((o.members || []).map(([n, d]) => [n, d]));
     return h('ol', { class: 'members' }, order.map((n) => chip(n, {
       lead: o.lead === n, dmg: o.members ? dmg[n] : null, isNew: o.newSet && o.newSet.has(n),
-      diff: o.otherSet && !o.otherSet.has(n) ? o.diffLabel : null,
+      diff: !!(o.otherSet && !o.otherSet.has(n)),
     })));
   }
   function details(summary, ...kids) {
@@ -190,7 +232,14 @@
         h('a', { href: D.experiment.ranker_repo, text: 'Jgaram/nikke-analysis' }), '의 enikk 원자료(시즌마다 6개 서버 상위 50명 × 5덱)'),
       h('p', null, '실험 문서: ', h('a', { href: D.experiment.readme, text: '실험 22 README' }), ' · 코드: ',
         h('a', { href: D.repo, text: 'Jgaram/nikke-opt' }), ' · 이 페이지는 main에 결과가 올라올 때마다 GitHub Actions가 다시 만듭니다.'),
+      iconCredit(),
     );
+  }
+  function iconCredit() {
+    const s = (D.icons && D.icons.source) || {};
+    const at = s.repo && s.commit ? h('a', { href: `${s.repo}/tree/${s.commit}/data/assets/icons`, text: `Jgaram/nikke-analysis ${s.commit.slice(0, 7)}` }) : 'Jgaram/nikke-analysis';
+    return h('p', null, '니케 얼굴 · 속성 · 버스트 · 보스 그림: ', at,
+      '(blablalink · enikk에서 받은 것). 게임 이름 · 그림의 권리는 SHIFT UP · Level Infinite에 있습니다.');
   }
 
   // ------------------------------------------------------------ 한눈에
@@ -237,6 +286,7 @@
         const g = sv('g');
         const hit = sv('rect', { class: 'row-hit', x: 0, y: y - rowH / 2, width: w, height: rowH, rx: 6 });
         g.append(hit);
+        if (r.img) g.append(sv('image', { href: r.img, x: 2, y: y - 13, width: 26, height: 26, preserveAspectRatio: 'xMidYMid meet' }));
         g.append(sv('text', { x: left - 12, y: y + 4, 'text-anchor': 'end', class: 't-ink', text: r.label }));
         if (r.band) {
           const [a, b] = [Math.min(...r.band), Math.max(...r.band)];
@@ -269,7 +319,7 @@
     const n25Rows = D.seasons.map((S) => {
       const v = Object.fromEntries(BOSSES.map((b) => [b, S.by_boss[b].status === 'done' ? S.by_boss[b].N25 : null]));
       return {
-        season: S.season, label: `S${S.season}`, vals: v,
+        season: S.season, label: `S${S.season}`, img: S.boss_img, vals: v,
         band: [S.baseline.N25_prev, S.baseline.N25_same].filter((x) => x != null),
         tipHead: `S${S.season} · ${S.boss_name}`,
         tipRows: [
@@ -281,7 +331,7 @@
     const vRows = D.seasons.map((S) => {
       const v = Object.fromEntries(BOSSES.map((b) => [b, S.by_boss[b].status === 'done' ? S.by_boss[b].V_top : null]));
       return {
-        season: S.season, label: `S${S.season}`, vals: v, band: null,
+        season: S.season, label: `S${S.season}`, img: S.boss_img, vals: v, band: null,
         tipHead: `S${S.season} · ${S.boss_name}`,
         tipRows: BOSSES.map((b) => ({ key: `k-${b}`, text: `${BOSS_LABEL[b]}: V_top ${v[b] == null ? '계산 전' : pct(v[b])}` })),
       };
@@ -319,7 +369,8 @@
         if (!k) {
           cells.push(h('td', { rowspan: 2 }, h('b', { text: `S${S.season}` })));
           cells.push(h('td', { rowspan: 2, class: 'small nowrap' }, `${day(S.start)}`, h('br'), h('span', { class: 'muted', text: `~ ${day(S.end).slice(5)}` })));
-          cells.push(h('td', { rowspan: 2 }, S.boss_name, h('br'), h('span', { class: 'muted small', text: `${S.code} → 약점 ${S.weak_ko}` })));
+          cells.push(h('td', { rowspan: 2 }, h('div', { class: 'boss-cell' }, bossImg(S),
+            h('div', null, S.boss_name, h('br'), elPair(S, 14)))));
           cells.push(h('td', { rowspan: 2, class: 'r', text: S.pool_size }));
         }
         cells.push(h('td', { style: 'white-space:nowrap' }, h('span', { class: `dot-inline k-${b}` }), BOSS_LABEL[b],
@@ -366,7 +417,7 @@
       return h('button', {
         class: 'chip-btn', type: 'button', 'aria-pressed': String(x.season === state.season),
         onclick: () => selectSeason(x.season, state.boss),
-      }, `S${x.season}`, n === 2 ? null : h('span', { class: 'st', text: n === 1 ? '1/2' : '계산 전' }));
+      }, bossImg(x, 'chip-boss'), `S${x.season}`, n === 2 ? null : h('span', { class: 'st', text: n === 1 ? '1/2' : '계산 전' }));
     }));
     const seg = h('div', { class: 'seg', role: 'group', 'aria-label': '보스 코어' }, BOSSES.map((b) => h('button', {
       type: 'button', 'aria-pressed': String(b === state.boss), onclick: () => selectSeason(state.season, b),
@@ -382,8 +433,7 @@
     const prevS = D.seasons[D.seasons.indexOf(S) - 1];
     const newSet = new Set(S.new_since_prev || []);
     body.replaceChildren(
-      h('h3', { style: 'font-size:19px;margin-top:10px' }, `S${S.season} · ${S.boss_name} `,
-        h('span', { class: 'muted', style: 'font-weight:500', text: `· ${BOSS_LABEL[state.boss]}` })),
+      bossHero(S, R),
       conditionsCard(S, R, prevS),
       costCard(S),
       R.status === 'done' ? bestCard(S, R, newSet) : h('div', { class: 'card' }, h('h3', { text: '우리 예측 — 1순위 5덱' }),
@@ -394,25 +444,40 @@
     );
   }
 
+  function coreOf(R) {
+    const enemy = (R.options || {}).enemy || { core_px: D.bosses[state.boss].core_px || undefined };
+    return enemy.core_px ? `있음 · ${enemy.core_px}px` : '없음';
+  }
+
+  // 시즌 상세 머리: 보스 그림 · 이름 · 속성 → 약점 · 기간 · 코어
+  function bossHero(S, R) {
+    return h('div', { class: 'boss-hero' }, bossImg(S, 'boss-img'),
+      h('div', { class: 'boss-text' },
+        h('p', { class: 'eyebrow', text: `시즌 ${S.season} · ${day(S.start)} ~ ${day(S.end).slice(5)}` }),
+        h('h3', { class: 'boss-name' }, S.boss_name),
+        h('div', { class: 'boss-facts' },
+          h('span', { class: 'fact' }, h('span', { class: 'muted', text: '속성 → 약점' }), elPair(S, 18)),
+          h('span', { class: 'fact' }, h('span', { class: `key k-${state.boss}` }), BOSS_LABEL[state.boss]),
+          h('span', { class: 'fact muted', text: `니케 풀 ${S.pool_size}명` }))));
+  }
+
   function conditionsCard(S, R, prevS) {
-    const opt = R.options || {};
-    const enemy = opt.enemy || { code: S.code, core_px: D.bosses[state.boss].core_px || undefined };
     const newList = S.new_since_prev;
     return h('div', { class: 'card' }, h('h3', { text: '조건 — 보스 · 패치 시점' }),
       h('dl', { class: 'kv' },
         h('dt', { text: '시즌 기간' }), h('dd', { text: `${day(S.start)} ~ ${day(S.end)}` }),
-        h('dt', { text: '보스' }), h('dd', null, `${S.boss_name} · 속성 ${S.code} (약점 ${S.weak_ko})`),
-        h('dt', { text: '코어' }), h('dd', { text: enemy.core_px ? `있음 · ${enemy.core_px}px` : '없음' }),
+        h('dt', { text: '보스' }), h('dd', null, h('span', { class: 'el-line' }, S.boss_name, ' · 속성 ', elIcon(S.element, 16), ' · 약점 ', elIcon(S.weak, 16))),
+        h('dt', { text: '코어' }), h('dd', { text: coreOf(R) }),
         h('dt', { text: '그 밖의 보스 값' }), h('dd', { text: '평가기 기본 적 — 방어력 31,784, 패턴 · 파츠 없음, 180초' }),
-        h('dt', { text: '니케 풀' }), h('dd', null, `${S.pool_size}명 — 그 시즌 끝까지 출시된 SSR 전원 보유 · 기본 스펙`,
-          newList ? h('span', { class: 'muted', text: ` · S${prevS.season} 이후 신규 ${newList.length}명` }) : null),
+        h('dt', { text: '니케 풀' }), h('dd', null, `${S.pool_size}명 — 그 시즌 끝까지 출시된 SSR 전원 보유 · 기본 스펙`),
+        newList && newList.length ? [h('dt', { text: `S${prevS.season} 이후 신규` }),
+          h('dd', null, h('span', { class: 'muted small', text: `${newList.length}명` }), faces(newList, 'md'))] : null,
         h('dt', { text: '애장품' }), h('dd', { text: S.favorite0.length ? `그때 없던 애장품 ${S.favorite0.length}명은 0단계, 나머지 3단계` : '전원 3단계' }),
         h('dt', { text: '운용' }), h('dd', { text: '큐브 렐릭 베어 Lv15 · 평가기 기본 레이어 컨트롤 고정(후처리 없음) · solo · 버스트 게이지 실누적' }),
       ),
-      details('니케 풀 · 신규 · 애장품 0단계 목록',
-        newList && newList.length ? h('p', null, h('b', { text: `S${prevS.season} 이후 신규 (${newList.length}명): ` }), newList.join(', ')) : null,
-        S.favorite0.length ? h('p', null, h('b', { text: '애장품 0단계: ' }), S.favorite0.join(', ')) : null,
-        h('p', null, h('b', { text: `풀 (${S.pool_size}명): ` }), S.pool.join(', '))),
+      details(S.favorite0.length ? '니케 풀 · 애장품 0단계 보기' : '니케 풀 보기',
+        S.favorite0.length ? [h('p', null, h('b', { text: `애장품 0단계 (${S.favorite0.length}명)` })), faces(S.favorite0, 'sm')] : null,
+        h('p', null, h('b', { text: `풀 (${S.pool_size}명)` })), faces(S.pool, 'sm')),
     );
   }
 
@@ -511,9 +576,9 @@
     const items = lay.map((n) => {
       const L = nk(n).layer;
       const pat = nk(n).pat || [];
-      return h('li', null, h('b', { text: n }), ' — ',
+      return h('li', { class: 'ctl' }, face(n, 'sm'), h('span', null,
         Object.entries(L).map(([a, v]) => `${AXIS_KO[a] || a}(${LAYER_KO[v] || v})`).join(', '),
-        pat.length && L.burst ? ` · 버스트 패턴 카탈로그: ${pat.join(' / ')}` : '');
+        pat.length && L.burst ? ` · 버스트 패턴 카탈로그: ${pat.join(' / ')}` : ''));
     });
     return details('운용 · 컨트롤 보기',
       h('p', null, h('b', { text: '큐브: ' }), '5명 모두 렐릭 베어 큐브 Lv15(평가기 기본 스펙 큐브, 고정).'),
@@ -521,7 +586,7 @@
         ? [h('p', null, h('b', { text: '탐색에서 고른 컨트롤:' })), h('ul', null, settings.map((s) => h('li', { text: s })))]
         : h('p', null, h('b', { text: '탐색에서 고른 컨트롤: ' }), '없음 — 실험 22는 큐브 · 컨트롤 후처리를 하지 않았습니다.'),
       h('p', null, h('b', { text: '평가기 기본 레이어가 이 덱에 거는 컨트롤:' })),
-      items.length ? h('ul', null, items) : h('p', { text: '이 덱의 니케에는 기본 레이어 규칙이 없습니다 — 모두 평가기 기본 자동 운용입니다.' }),
+      items.length ? h('ul', { class: 'ctl-list' }, items) : h('p', { text: '이 덱의 니케에는 기본 레이어 규칙이 없습니다 — 모두 평가기 기본 자동 운용입니다.' }),
       h('p', { class: 'muted small', text: '조건부 규칙은 동료 · 딜 순위 같은 조건이 맞을 때만 걸립니다. 이 덱에서 조건이 맞는지는 여기서 판정하지 않았습니다(nikke-calc 23164e4의 char_defaults 기준).' }),
       h('p', null, h('b', { text: '조작: ' }), 'solo — 조작자 1명, 조작이 겹치면 급한 쪽이 카메라를 가져갑니다. 버스트 입력은 카메라와 무관합니다.'),
       h('p', { class: 'muted small', text: '나중 과제: 여러 컨트롤이 겹칠 때 어느 것을 먼저 적용하는지(평가기의 우선순위 로직)도 함께 보여 주기.' }),
@@ -530,31 +595,29 @@
 
   function deckBlock(i, d, o) {
     const head = h('div', { class: 'deck-head' },
-      h('span', { class: 'deck-no', text: i != null ? `${i + 1}` : '' }),
+      i != null ? h('span', { class: 'deck-no', text: `${i + 1}` }) : null,
       h('span', { class: 'deck-val', text: eok(d.value) }),
-      d.leader ? h('span', { class: 'deck-meta', text: `주력 ${d.leader}` }) : null,
-      o.matchNote ? h('span', { class: 'deck-meta', text: o.matchNote }) : null,
-      o.countNote ? h('span', { class: 'deck-meta', text: o.countNote }) : null);
+      o.matchNote ? h('span', { class: 'deck-meta', text: o.matchNote }) : null);
     return h('div', { class: 'deck' }, head,
-      members(d.order, { lead: d.leader, members: d.members, newSet: o.newSet, otherSet: o.otherSet, diffLabel: o.diffLabel }),
+      members(d.order, { lead: d.leader, members: d.members, newSet: o.newSet, otherSet: o.otherSet }),
+      o.near ? h('div', { class: 'near' }, h('span', { class: 'small muted', text: `가장 가까운 랭커 스쿼드 · ${o.near.count}명 사용` }),
+        faces(o.near.order, 'sm', { diffSet: new Set(d.order) })) : null,
       o.controls ? controlDetails(d.order, d.settings) : null);
+  }
+
+  // 얼굴 표시 읽는 법(덱 카드 위에 한 줄)
+  function faceKey(extra) {
+    return h('p', { class: 'sub small face-key' }, '덱 안의 순서 = 배치 순서 · 얼굴 오른쪽 위 = 속성 · 왼쪽 아래 = 버스트 단계 · ',
+      h('span', { class: 'tag new', text: '신규' }), ' = 직전 표시 시즌 이후 추가된 니케', extra ? ` · ${extra}` : '');
   }
 
   function bestCard(S, R, newSet) {
     const near = (d) => `랭커 상위 40 스쿼드와 최대 ${d.match}/5명 같음`;
     return h('div', { class: 'card' }, h('h3', { text: `우리 예측 — 1순위 5덱 · ${eok(R.total)}` }),
-      h('p', { class: 'sub small' }, '덱 안의 순서 = 배치 순서. ',
-        h('span', { class: 'nk', style: 'padding:0 6px 0 3px' }, h('span', { class: 'bs', text: 'B1' }), '버스트 단계'), ' ',
-        h('span', { class: 'tag new', text: '신규' }), ' = 직전 표시 시즌 이후 추가된 니케. ',
-        R.members_ready ? '굵은 테두리 = 주력(덱 딜 1위).' : '니케별 딜 · 주력은 members 계산 뒤 표시됩니다(일부는 랭커 덱과 같은 순서라 먼저 보임).'),
-      h('div', { class: 'decks' }, R.decks.map((d, i) => {
-        const blk = deckBlock(i, d, { newSet, controls: true, matchNote: near(d) });
-        if (d.near) {
-          blk.insertBefore(h('div', { class: 'small muted', style: 'margin-top:6px' },
-            `가장 가까운 랭커 스쿼드(${d.near.count}명 사용): ${d.near.order.join(' · ')}`), blk.lastChild);
-        }
-        return blk;
-      })));
+      faceKey(R.members_ready ? '진한 테두리 = 주력(덱 딜 1위) · 얼굴 아래 = 니케별 딜'
+        : '니케별 딜 · 주력은 members 계산 뒤 표시됩니다(일부는 랭커 덱과 같은 순서라 먼저 보임)'),
+      h('p', { class: 'small muted', text: '가장 가까운 랭커 스쿼드에서 점선 테두리 = 우리 덱에 없는 니케.' }),
+      h('div', { class: 'decks' }, R.decks.map((d, i) => deckBlock(i, d, { newSet, controls: true, matchNote: near(d), near: d.near }))));
   }
 
   function altCard(S, R, newSet) {
@@ -571,10 +634,13 @@
       h('tbody', null, R.alts.map((a) => h('tr', null,
         h('td', { text: `${a.rank}순위` }), h('td', { class: 'r', text: eok(a.total) }), h('td', { class: 'r', text: pct(a.ratio, 2) }),
         h('td', { class: 'r', text: `${a.same_decks}/5` }), h('td', { class: 'r', text: `${a.shared}/25` }),
-        h('td', { class: 'small', text: a.in.length ? `${a.out.join(', ')} → ${a.in.join(', ')}` : '같은 25명 — 덱 나누기만 다름' })))))));
+        h('td', { class: 'small' }, a.in.length
+          ? h('div', { class: 'swap' }, faces(a.out, 'sm', { dimSet: new Set(a.out) }), h('span', { class: 'arrow', 'aria-label': '대신', text: '→' }), faces(a.in, 'sm'))
+          : '같은 25명 — 덱 나누기만 다름')))))));
+    card.append(h('p', { class: 'small muted', text: '흐린 얼굴 = 1순위에서 빠진 니케 · 덱 보기의 점선 테두리 = 1순위 5덱에 없는 니케.' }));
     for (const a of R.alts) {
       card.append(details(`${a.rank}순위 덱 보기 · ${eok(a.total)}`,
-        h('div', { class: 'decks' }, a.decks.map((d, i) => deckBlock(i, d, { newSet, otherSet: best25, diffLabel: '1순위에 없음' })))));
+        h('div', { class: 'decks' }, a.decks.map((d, i) => deckBlock(i, d, { newSet, otherSet: best25 })))));
     }
     return card;
   }
@@ -627,43 +693,50 @@
       h('p', { class: 'small muted', text: '점선 테두리 = 상대 5덱(25명)에 없는 니케.' }),
       h('div', { class: 'vs' },
         h('div', null, h('b', { text: `우리 1순위 · ${eok(done ? R.total : null)}` }),
-          done ? h('div', { class: 'decks', style: 'margin-top:6px' }, ours.map((d, i) => deckBlock(i, d, { newSet, otherSet: top25s, diffLabel: '우리만' })))
+          done ? h('div', { class: 'decks', style: 'margin-top:6px' }, ours.map((d, i) => deckBlock(i, d, { newSet, otherSet: top25s })))
             : h('div', { class: 'empty', style: 'margin-top:6px', text: '계산 전' })),
         h('div', null, h('b', { text: `랭커 대표 5덱 · ${eok(rk.top_five && rk.top_five.total)} · ${rk.top_five ? rk.top_five.count : 0}명` }),
-          h('div', { class: 'decks', style: 'margin-top:6px' }, top5.map((d, i) => deckBlock(i, d, { newSet, otherSet: done ? ours25 : null, diffLabel: '랭커만' }))))));
+          h('div', { class: 'decks', style: 'margin-top:6px' }, top5.map((d, i) => deckBlock(i, d, { newSet, otherSet: done ? ours25 : null }))))));
     if (rk.rank1) {
       card.append(details(`랭커 1위 5덱 보기 (${rk.rank1.server || ''}) · 시뮬 ${eok(rk.rank1.total)}`,
-        h('div', { class: 'decks' }, rk.rank1.decks.map((d, i) => deckBlock(i, d, { newSet, otherSet: done ? ours25 : null, diffLabel: '우리 5덱에 없음' })))));
+        h('p', { class: 'small muted', text: '점선 테두리 = 우리 1순위 5덱에 없는 니케.' }),
+        h('div', { class: 'decks' }, rk.rank1.decks.map((d, i) => deckBlock(i, d, { newSet, otherSet: done ? ours25 : null })))));
     }
     if (rk.pack) {
       card.append(details(`랭커 상위 40 스쿼드로 짠 최선 5덱 보기 · ${eok(rk.pack.total)}`,
-        h('div', { class: 'decks' }, rk.pack.decks.map((d, i) => deckBlock(i, d, { newSet, otherSet: done ? ours25 : null, diffLabel: '우리 5덱에 없음' })))));
+        h('p', { class: 'small muted', text: '점선 테두리 = 우리 1순위 5덱에 없는 니케.' }),
+        h('div', { class: 'decks' }, rk.pack.decks.map((d, i) => deckBlock(i, d, { newSet, otherSet: done ? ours25 : null })))));
     }
     // 니케 사용
     const units = S.rankers.units.slice(0, 25);
     const players = S.rankers.players;
     card.append(h('h4', { text: '랭커 사용 상위 25명' }),
-      h('p', { class: 'small muted', text: done ? `막대 = ${players}명 중 쓴 랭커 수 · ✓ = 우리 1순위 5덱에도 있음` : `막대 = ${players}명 중 쓴 랭커 수` }),
-      h('div', { class: 'ulist' }, units.map(([n, c]) => h('div', { class: 'ubar' },
-        h('span', null, done ? (ours25.has(n) ? '✓ ' : '　 ') : '', n),
+      h('p', { class: 'small muted', text: `많이 쓴 순서 · 얼굴 아래 막대와 숫자 = ${players}명 중 쓴 랭커 수${done ? ' · ✓ = 우리 1순위 5덱에도 있음 · 점선 테두리 = 우리가 안 씀' : ''}` }),
+      h('ol', { class: 'ugrid' }, units.map(([n, c]) => h('li', { class: `ucard${done && !ours25.has(n) ? ' miss' : ''}` },
+        face(n, 'md', { check: done && ours25.has(n) }),
         h('span', { class: 'track' }, h('span', { class: 'fill', style: `width:${(c / players) * 100}%` })),
-        h('span', { class: 'num small', text: c })))));
+        h('span', { class: 'num', text: c })))));
     if (done) {
-      card.append(h('p', { class: 'small' }, h('b', { text: '우리만 쓴 니케: ' }), R.ours_only.length ? R.ours_only.join(', ') : '없음'),
-        h('p', { class: 'small' }, h('b', { text: '랭커 상위 25인데 우리가 안 쓴 니케: ' }), R.rankers_only.length ? R.rankers_only.join(', ') : '없음'));
+      card.append(h('div', { class: 'who' },
+        h('div', null, h('h4', { text: `우리만 쓴 니케 · ${R.ours_only.length}명` }),
+          R.ours_only.length ? faces(R.ours_only, 'md') : h('p', { class: 'small muted', text: '없음' })),
+        h('div', null, h('h4', { text: `랭커 상위 25인데 우리가 안 쓴 니케 · ${R.rankers_only.length}명` }),
+          R.rankers_only.length ? faces(R.rankers_only, 'md') : h('p', { class: 'small muted', text: '없음' }))));
     }
     // 상위 40 스쿼드
     const sq = rk.squads || [];
-    card.append(details(`랭커 상위 ${sq.length} 스쿼드 표 (이 보스 시뮬 값)`, tableWrap(h('table', { class: 'mid' },
-      h('thead', null, h('tr', null, ['쓴 랭커', '배치 순서', '시뮬 딜', '주력', '우리 덱과 최대 겹침'].map((t, i) => h('th', { class: i === 0 || i === 2 || i === 4 ? 'r' : null, text: t })))),
-      h('tbody', null, sq.map((q) => h('tr', null,
-        h('td', { class: 'r', text: q.count }), h('td', { class: 'small', text: q.order.join(' · ') }),
-        h('td', { class: 'r', text: q.value == null ? '평가기 밖' : eok(q.value) }), h('td', { class: 'small', text: q.leader || '—' }),
-        h('td', { class: 'r', text: done ? `${q.overlap}/5` : '—' }))))))));
+    card.append(details(`랭커 상위 ${sq.length} 스쿼드 표 (이 보스 시뮬 값)`,
+      done ? h('p', { class: 'small muted', text: '점선 테두리 = 우리 1순위 5덱에 없는 니케.' }) : null,
+      tableWrap(h('table', { class: 'mid' },
+        h('thead', null, h('tr', null, ['쓴 랭커', '배치 순서', '시뮬 딜', '주력', '우리 덱과 최대 겹침'].map((t, i) => h('th', { class: i === 0 || i === 2 || i === 4 ? 'r' : null, text: t })))),
+        h('tbody', null, sq.map((q) => h('tr', null,
+          h('td', { class: 'r', text: q.count }), h('td', null, faces(q.order, 'sm', { diffSet: done ? ours25 : null })),
+          h('td', { class: 'r', text: q.value == null ? '평가기 밖' : eok(q.value) }), h('td', null, q.leader ? face(q.leader, 'sm') : '—'),
+          h('td', { class: 'r', text: done ? `${q.overlap}/5` : '—' }))))))));
     if (done && R.coef_top && R.coef_top.length) {
       card.append(details('탐색이 본 니케 가치 상위 20 (대리 모델)', h('p', { class: 'small muted', text: '사전 계산의 마지막 대리 모델(니케 + 짝 릿지)이 매긴 니케 단독 항입니다. 짝 효과는 빠져 있어, 짝을 타는 니케는 낮게 나올 수 있습니다.' }),
-        tableWrap(h('table', null, h('thead', null, h('tr', null, ['니케', '단독 항', '우리 5덱', '랭커 상위 25'].map((t, i) => h('th', { class: i ? 'r' : null, text: t })))),
-          h('tbody', null, R.coef_top.map(([n, v, a, b]) => h('tr', null, h('td', { text: n }), h('td', { class: 'r', text: nf1.format(v) }),
+        tableWrap(h('table', { class: 'coef' }, h('thead', null, h('tr', null, ['니케', '단독 항', '우리 5덱', '랭커 상위 25'].map((t, i) => h('th', { class: i ? 'r' : null, text: t })))),
+          h('tbody', null, R.coef_top.map(([n, v, a, b]) => h('tr', null, h('td', null, face(n, 'sm')), h('td', { class: 'r', text: nf1.format(v) }),
             h('td', { class: 'r', text: a ? '✓' : '' }), h('td', { class: 'r', text: b ? '✓' : '' }))))))));
     }
     return card;

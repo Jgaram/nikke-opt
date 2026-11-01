@@ -7,6 +7,8 @@
   그대로 부른다. 정의를 여기서 다시 쓰지 않는다.
 - 그 밖에 화면에 필요한 것(수렴 곡선 · 단계별 시뮬 수 · 2~8순위 5덱 · 덱별 딜 · 랭커 덱 값 · 기본 레이어 컨트롤)을
   같은 run_log에서 읽어 붙인다. 시뮬은 하지 않는다. 아직 없는 결과 파일은 「계산 전」으로 둔다.
+- 니케 얼굴 · 속성 · 버스트 · 보스 그림은 `web/icons/`(nikke-analysis에서 `web/sync_icons.py`로 받은 것)를
+  그대로 복사하고, 이름 → 그림은 `web/icons/icons.json`으로 잇는다.
 """
 
 from __future__ import annotations
@@ -28,8 +30,11 @@ ROOT = HERE.parent
 EXP = ROOT / "experiments" / "22_ranker_check"
 NIKKE_INFO = ROOT / "experiments" / "06_control_menu" / "nikke_info.json"
 STATIC = ("index.html", "app.js", "style.css")
+ICONS = HERE / "icons"
+ICON_DIRS = ("units", "bosses", "elements", "bursts")
 REPO_URL = "https://github.com/Jgaram/nikke-opt"
 E8 = 1e8
+BURST_STAGE = {"I": "1", "II": "2", "III": "3", "I-II-III": "A"}   # 로스터 표기 → nikke_info burst_stage
 
 WEAK_KO = {"Electric": "전격", "Wind": "풍압", "Iron": "철갑", "Water": "수냉", "Fire": "작열"}
 BOSS_INFO = {"nocore": {"label": "코어 없음", "core_px": 0}, "core30": {"label": "코어 30px", "core_px": 30}}
@@ -233,10 +238,62 @@ def runs_meta() -> dict[str, dict[str, Any]]:
     return out
 
 
-def nikke_table(names: set[str]) -> dict[str, Any]:
+def base_name(n: str) -> str:
+    """랭커 덱의 평가기 밖 니케는 `!이름`(로스터에 있음) · `?영문`(못 찾음)으로 적혀 있다 — 앞 표시를 뗀다."""
+    return n[1:] if n[:1] in "!?" else n
+
+
+def icon_index() -> dict[str, Any]:
+    return read_json(ICONS / "icons.json") or {"units": {}, "bosses": {}}
+
+
+def site_names(seasons: list[dict[str, Any]]) -> set[str]:
+    """화면에 니케로 나오는 이름 전부(풀 · 덱 · 랭커 스쿼드 · 사용 순위 · 대리 모델 표)."""
+    lists = ("order", "pool", "favorite0", "new_since_prev", "ours_only", "rankers_only", "top25", "main_ours")
+    pairs = ("units", "main_rankers", "coef_top", "members")      # [이름, 값, …] 목록
+    out: set[str] = set()
+
+    def walk(o: Any) -> None:
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k in lists and isinstance(v, list):
+                    out.update(x for x in v if isinstance(x, str))
+                elif k in pairs and isinstance(v, list):
+                    out.update(x[0] for x in v if isinstance(x, list) and x and isinstance(x[0], str))
+                elif k == "leader" and isinstance(v, str):
+                    out.add(v)
+                else:
+                    walk(v)
+        elif isinstance(o, list):
+            for x in o:
+                walk(x)
+
+    walk(seasons)
+    return out
+
+
+def nikke_table(names: set[str], icons: dict[str, Any]) -> dict[str, Any]:
+    """이름 → 무기 · 버스트 · 기본 레이어(평가기 nikke_info) + 얼굴 번호 · 속성(nikke-analysis 로스터)."""
     info = (read_json(NIKKE_INFO) or {}).get("nikke", {})
-    return {n: {"w": info[n]["weapon"], "b": info[n]["burst_stage"], "layer": info[n].get("layer") or {},
-                "pat": info[n].get("burst_patterns") or []} for n in sorted(names) if n in info}
+    units = icons.get("units", {})
+    out: dict[str, Any] = {}
+    for n in sorted(names):
+        i, u = info.get(n), units.get(base_name(n))
+        if not i and not u:
+            continue
+        e: dict[str, Any] = {}
+        if i:
+            e.update({"w": i["weapon"], "b": i["burst_stage"], "layer": i.get("layer") or {}, "pat": i.get("burst_patterns") or []})
+        if u:
+            e.update({"img": f"icons/units/{u['id']}.webp", "el": u.get("el") or []})
+            e.setdefault("b", BURST_STAGE.get(u.get("b") or ""))
+        out[n] = e
+    return out
+
+
+def boss_image(s: int, icons: dict[str, Any]) -> str | None:
+    img = icons.get("bosses", {}).get(str(s))
+    return f"icons/bosses/{img}.webp" if img and (ICONS / "bosses" / f"{img}.webp").exists() else None
 
 
 def build_data() -> dict[str, Any]:
@@ -247,7 +304,11 @@ def build_data() -> dict[str, Any]:
         seasons.append(blk)
     rows = [A22.season_metrics(x["season"]) for x in seasons]
     j = A22.judge(rows)
-    names = {n for x in seasons for n in x["pool"]}
+    icons = icon_index()
+    for x in seasons:
+        x["boss_img"] = boss_image(x["season"], icons)
+    names = site_names(seasons)
+    nikke = nikke_table(names, icons)
     runs = [(x["season"], b, x["by_boss"][b]) for x in seasons for b in R22.BOSSES]
     done = [r for _, _, r in runs if r["status"] == "done"]
     return {
@@ -260,7 +321,9 @@ def build_data() -> dict[str, Any]:
         "judge": {**j, "better_count": dict(j["better_count"])},
         "progress": {"done": len(done), "total": len(runs), "sims": sum(r["sims"] for r in done),
                      "seconds": sum(r["seconds"] for r in done)},
-        "bosses": BOSS_INFO, "runs_meta": runs_meta(), "seasons": seasons, "nikke": nikke_table(names),
+        "bosses": BOSS_INFO, "runs_meta": runs_meta(), "seasons": seasons, "nikke": nikke,
+        "icons": {"source": icons.get("source") or {},
+                  "missing": sorted(n for n in names if not nikke.get(n, {}).get("img"))},
     }
 
 
@@ -269,6 +332,9 @@ def build(out: Path) -> dict[str, Any]:
     data = build_data()
     for f in STATIC:
         shutil.copyfile(HERE / f, out / f)
+    for d in ICON_DIRS:
+        if (ICONS / d).is_dir():
+            shutil.copytree(ICONS / d, out / "icons" / d, dirs_exist_ok=True)
     (out / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (out / ".nojekyll").write_text("", encoding="utf-8")
     return data
@@ -282,6 +348,9 @@ def main(argv: list[str] | None = None) -> int:
     pr = d["progress"]
     print(f"{a.out}: 사전 계산 {pr['done']}/{pr['total']} · 판단 {d['judge']['verdict']} · data.json "
           f"{(a.out / 'data.json').stat().st_size / 1024:.0f} KB")
+    if d["icons"]["missing"]:
+        print(f"얼굴 그림 없는 니케 {len(d['icons']['missing'])}명: {', '.join(d['icons']['missing'])} "
+              "— python web/sync_icons.py --analysis <nikke-analysis 경로>", file=sys.stderr)
     return 0
 
 
