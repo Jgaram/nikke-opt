@@ -1,9 +1,0 @@
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 0, "variants": [], "total_damage": 3505538742, "error": null, "cached": true, "sim_count": 1995}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 1, "variants": ["미란다:reload:A0.3"], "total_damage": 3448420906, "error": null, "cached": false, "sim_count": 2019}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 2, "variants": ["미란다:reload:B0.1"], "total_damage": 3460051836, "error": null, "cached": false, "sim_count": 2019}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 3, "variants": ["미란다:reload:B0.5"], "total_damage": 3459498813, "error": null, "cached": false, "sim_count": 2019}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 4, "variants": ["미란다:reload:C0.1"], "total_damage": 3482720088, "error": null, "cached": false, "sim_count": 2019}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 5, "variants": ["미란다:reload:C0.5"], "total_damage": 3475220594, "error": null, "cached": false, "sim_count": 2019}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 6, "variants": ["미란다:reload:C0.1_dry"], "total_damage": 3498368102, "error": null, "cached": false, "sim_count": 2019}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 7, "variants": ["미란다:cover:on"], "total_damage": 3230225349, "error": null, "cached": false, "sim_count": 2024}
-{"comp_id": "w3|미란다>나유타>헬름 : 아쿠아마린>스노우 화이트 : 헤비암즈>팬텀", "method": "JT:M3:k2", "step": 8, "variants": ["미란다:cancel:on"], "total_damage": 3505538742, "error": null, "cached": false, "sim_count": 2027}
