@@ -15,6 +15,9 @@
 
 관리자는 `corecheck`(실험 22 S40 · S34 코어 30 재평가)와 분석 · 판단을 맡는다.
 
+세션(2026-11-01 15:11 UTC 시작, 모두 Opus, 계획 `2707d17`): E1 `session_01MQimn21KSR17RzbGCYKY2n` · E2 `session_01MQimn4QKqYrcLv7LKBPp4c` ·
+E3 `session_01MQimn5mAjyW7axDP2YbPQ6` · E4 `session_01MQimn3Z7u6zarS94mb3bBr` · E5 `session_01MQimn3Xd7YQ5EB2CF2eNwC`.
+
 - B와 W는 같은 세션(같은 평가 캐시)에서 센다. W는 B 기록 앞부분을 쓰므로 B 다음에 돈다.
 - 결과는 결정론이라 어느 컨테이너에서 돌려도 같다. 시뮬 횟수는 부분별 기록(`part_*.json`의 `sims`)으로 남는다.
 - 작업 세션은 다른 세션을 열지 않는다. 공용 코드(`run30.py` · `tree28.py` 등)를 고쳐야 하면 직접 고치지 않고 관리자에게 알린다.
