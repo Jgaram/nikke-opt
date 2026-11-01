@@ -19,6 +19,8 @@
 **분담 변경(2026-11-01 05:15 UTC):** W3 `session_01MQimn23vCToexEWX28MoLA` · W4 `session_01MQimn54eCUNqkQ2ag5jrVp`는 평가기 저장소 붙이기(`add_repo`)가
 자동 권한 검사에 막혀 시작하지 못했다. 두 세션은 취소했다. S14 · S34는 관리자 컨테이너에서(`meta_M.json`), S18은 W1, S40은 W2가 자기 몫 4개를 끝낸 뒤 이어서 돌린다.
 W1 `session_01MQimn5oGWQFXjkqejUa5A1` · W2 `session_01MQimn2DzC41Dus13p26ry7`(05:11 UTC 시작).
+**S18(10:2x UTC):** W1은 S18을 06:30 UTC에 시작했으나 06:40 UTC 뒤 세션이 끊겨 결과가 오지 않았다. 관리자가 같은 명령으로 다시 돌렸다(`meta_M.json`).
+W1은 앞서 `22bfe35`에서 관리자 파일(members 10개)을 잘못 지웠다가 `7f78b11`에서 그대로 되살렸다(확인함).
 
 ## 파일 소유
 

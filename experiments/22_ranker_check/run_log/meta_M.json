@@ -1,11 +1,12 @@
 {
- "session": "관리자 session_01MQimn5CDbvH37JKpu9CsSc (W3 몫 대신)",
+ "session": "관리자 session_01MQimn5CDbvH37JKpu9CsSc (W3 몫 S14·S34, W1이 끊겨 잃은 S18)",
  "seasons": [
   14,
-  34
+  34,
+  18
  ],
  "start_utc": "2026-11-01T05:15:29Z",
- "note": "프로세스 4개 동시(4코어). 다시 돌린 실행 없음.",
+ "note": "S14·S34는 프로세스 4개 동시(05:15 UTC~). S18은 W1(06:30 UTC 시작) 세션이 끊겨 결과가 오지 않아 10:2x UTC에 프로세스 2개로 다시 돌렸다. 다시 돌린 실행은 그 S18뿐.",
  "runs": {
   "S14_nocore": {
    "evals": 13243,
@@ -38,10 +39,28 @@
    "final_total": 301.50989332,
    "end_utc": "2026-11-01T05:53:22Z",
    "evaluator": "nikke-calc-rs 89d2e64"
+  },
+  "S18_nocore": {
+   "evals": 13211,
+   "sims": 13210,
+   "seconds": 934.9,
+   "final_total": 105.07035746,
+   "start_utc": "2026-11-01T10:20:59Z",
+   "end_utc": "2026-11-01T10:38:55Z",
+   "evaluator": "nikke-calc-rs 89d2e64"
+  },
+  "S18_core30": {
+   "evals": 13225,
+   "sims": 13223,
+   "seconds": 1084.4,
+   "final_total": 138.82974228999998,
+   "start_utc": "2026-11-01T10:20:59Z",
+   "end_utc": "2026-11-01T10:40:00Z",
+   "evaluator": "nikke-calc-rs 89d2e64"
   }
  },
  "total": {
-  "sims": 53098,
-  "seconds": 8379.9
+  "sims": 79531,
+  "seconds": 10399.2
  }
 }
