@@ -631,6 +631,29 @@ def cmd_corecheck(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_simcount(a: argparse.Namespace) -> int:
+    """관리자 컨테이너 평가 캐시의 고유 평가 수를 보스 조건별로 센다 → run_log/sims_cache.json (관리자만, 캐시는 커밋 안 함).
+    다시 돌린 부분은 part_*.json의 sims에 안 잡히므로(앞선 실행이 캐시에 남김) 이것이 실제 시뮬 수에 가깝다.
+    포함: 시운전(작열 코어 없음 · 코어 30), corecheck(S40은 풍압 코어 30과 같은 요청, S34는 프로필이 있어 따로), 평가기 확인 7회.
+    빠짐: 캐시 쓰기 경고(database is locked)로 안 남은 평가."""
+    import sqlite3
+    from collections import Counter
+    db = ROOT / ".cache" / "evals.sqlite"
+    con = sqlite3.connect(str(db), timeout=120)
+    cnt: Counter = Counter()
+    for (res,) in con.execute("select result from evals"):
+        r = json.loads(res)
+        b = r.get("boss") or {}
+        prof = (r.get("spec") or {}).get("profile")
+        cnt[f"{b.get('code')}|core{b.get('core_px') or 0}|{'profile' if prof is not None else 'default'}"] += 1
+    out = {"by_condition": dict(sorted(cnt.items())), "total": sum(cnt.values()),
+           "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    LOG.mkdir(parents=True, exist_ok=True)
+    (LOG / "sims_cache.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(json.dumps(out, ensure_ascii=False))
+    return 0
+
+
 # ---------------------------------------------------------------- 분석
 
 def verdict(rows: Sequence[Mapping[str, Any]]) -> str:
@@ -649,6 +672,8 @@ def verdict(rows: Sequence[Mapping[str, Any]]) -> str:
 
 def cmd_analyze(a: argparse.Namespace) -> int:
     rows, out = [], {"elements": {}}
+    sc_f = LOG / "sims_cache.json"
+    sc = json.loads(sc_f.read_text(encoding="utf-8"))["by_condition"] if sc_f.exists() else {}
     for el in ELEMENTS:
         summ = summary(el)
         if "W" not in summ:
@@ -657,7 +682,8 @@ def cmd_analyze(a: argparse.Namespace) -> int:
         ref = max(bm["best"], wm["best"])
         row = {"element": el, "B_best": bm["best"], "W_best": wm["best"], "best_ratio": wm["best"] / bm["best"],
                "MB": count_at(bm, ref), "MW": count_at(wm, ref), "MB95": count_at(bm, ref, LOW), "MW95": count_at(wm, ref, LOW),
-               "sims": summ.get("sims_total"), "exact": bm["exact"] and wm["exact"]}
+               "sims": summ.get("sims_total"), "exact": bm["exact"] and wm["exact"],
+               "sims_cache": sc.get(f"{el}|core0|default"), "sims_cache_core30": sc.get(f"{el}|core30|default")}
         row["dM"] = row["MW"] - row["MB"]
         core = None
         cf = edir(el) / "core30.jsonl.gz"
@@ -676,11 +702,12 @@ def cmd_analyze(a: argparse.Namespace) -> int:
     dest = HERE if LOG == HERE / "run_log" else LOG          # 시운전(--log)은 그 폴더에 쓴다
     (dest / "analysis.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     L = ["# 실험 30 결과 표", "", f"판단(사전 등록): **{out['verdict']}**", "",
-         "| 속성 | B 최선(억) | W 최선 / B | M_B (≥97%) | M_W (≥97%) | ΔM | ≥95% B · W | 새 시뮬 | 정확해 |",
-         "|---|---|---|---|---|---|---|---|---|"]
+         "| 속성 | B 최선(억) | W 최선 / B | M_B (≥97%) | M_W (≥97%) | ΔM | ≥95% B · W | 부분 합 시뮬 | 캐시 기준 시뮬(없음 · 코어 30) | 정확해 |",
+         "|---|---|---|---|---|---|---|---|---|---|"]
     for r in rows:
         L.append(f"| {r['element']} | {r['B_best']:.1f} | {(r['best_ratio'] - 1) * 100:+.2f}% | {r['MB']} | {r['MW']} | {r['dM']:+d} | "
-                 f"{r['MB95']} · {r['MW95']} | {r['sims']:,} | {'O' if r['exact'] else 'X'} |")
+                 f"{r['MB95']} · {r['MW95']} | {r['sims']:,} | {r['sims_cache'] or 0:,} · {r['sims_cache_core30'] or 0:,} | "
+                 f"{'O' if r['exact'] else 'X'} |")
     L += ["", "## 지도 대표(비율 = 그 기록 최선 대비, J 최대 = 다른 대표와의 J 중 최대)", ""]
     for el, e in out["elements"].items():
         for arm in ("B", "W"):
@@ -708,12 +735,13 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("analyze")
     c = sub.add_parser("corecheck")
     c.add_argument("--season", required=True)
+    sub.add_parser("simcount")
     p.add_argument("--log", type=Path, default=None, help="기록 폴더(시운전용, 기본 run_log)")
     a = p.parse_args(argv)
     if a.log is not None:
         global LOG
         LOG = a.log
-    return {"run": cmd_run, "analyze": cmd_analyze, "corecheck": cmd_corecheck}[a.cmd](a)
+    return {"run": cmd_run, "analyze": cmd_analyze, "corecheck": cmd_corecheck, "simcount": cmd_simcount}[a.cmd](a)
 
 
 if __name__ == "__main__":
