@@ -1,0 +1,18 @@
+{
+ "by_condition": {
+  "None|core0|default": 5,
+  "수냉|core0|default": 30217,
+  "수냉|core30|default": 2000,
+  "작열|core0|default": 31973,
+  "작열|core30|default": 3892,
+  "전격|core0|default": 29640,
+  "전격|core30|default": 2000,
+  "전격|core30|profile": 2906,
+  "철갑|core0|default": 29379,
+  "철갑|core30|default": 2000,
+  "풍압|core0|default": 30347,
+  "풍압|core30|default": 5131
+ },
+ "total": 169490,
+ "at": "2026-11-01T20:50:11Z"
+}
