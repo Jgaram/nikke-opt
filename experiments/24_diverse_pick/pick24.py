@@ -1,6 +1,7 @@
 """실험 24 — 고르기 시험: 탐색 기록만으로(시뮬 0) 최선과 묶는 방식이 다른 5덱을 고르면 5덱 합이 얼마나 떨어지는가.
 
-    python experiments/24_diverse_pick/pick24.py     → results.md · analysis.json
+    python experiments/24_diverse_pick/pick24.py            → results.md · analysis.json (사례당 수 분, 4프로세스)
+    python experiments/24_diverse_pick/pick24.py --report   → analysis.json에서 표만 다시
 
 - 기록: 실험 20 개발 계정 12개의 계정 탐색(U4 · 3,000, C3 판) · 실험 22 사전 계산(시즌 × 보스, 15,000평가).
   값은 기록 그대로의 기본 레이어 180초 딜(억)이다. 큐브 · 컨트롤 후처리는 하지 않는다.
@@ -203,9 +204,10 @@ def summarize(rows: Sequence[dict]) -> dict[str, Any]:
                        "shared_median": statistics.median([y["shared_nikkes"] for y in ok]) if ok else None,
                        "neighbors_median": statistics.median([n for y in ok for n in y["neighbors"]] or [0]) if ok else None}
             if th != "rule":
-                us = [y["upper_ratio"] for y in ok]
-                per[th].update(inexact=sum(not y["exact"] for y in ok),
-                               upper_median=statistics.median(us) if us else None, upper_good=sum(u >= GOOD for u in us))
+                loose = [y for y in ys if not y["exact"]]          # 못 찾은 기록도 센다(그때 상한은 해가 있다면의 최대)
+                us = [y["upper_ratio"] for y in loose]
+                per[th].update(inexact=len(loose), upper_median=statistics.median(us) if us else None,
+                               upper_max=max(us) if us else None, upper_good=sum(u >= GOOD for u in us))
         ys = [r["thetas"][str(MAIN_THETA)] for r in xs]
         lo = verdict_of([y["ratio"] if y["found"] else None for y in ys])
         hi = verdict_of([y["upper_ratio"] if y["found"] else None for y in ys])
@@ -232,12 +234,12 @@ def interval(v: Mapping[str, Any]) -> str:
         return "—"
     if not v["inexact"]:
         return "0"
-    return f"{v['inexact']} · {pct(v['upper_median'])} · {v['upper_good']}/{v['n']}"
+    return f"{v['inexact']} · {pct(v['upper_median'])} · {v['upper_good']}/{v['inexact']}"
 
 
 def cell(y: Mapping[str, Any]) -> str:
     if not y["found"]:
-        return "없음"
+        return "없음" if y["exact"] else f"없음(있어도 ≤ {pct(y['upper_ratio'])})"
     return pct(y["ratio"]) if y["exact"] else f"{pct(y['ratio'])} ~ {pct(y['upper_ratio'])}"
 
 
@@ -249,7 +251,8 @@ def report(a: Mapping[str, Any]) -> str:
     for g, s in a["summary"].items():
         L += [f"## {GROUPS[g]}", "", f"**해석(θ = {MAIN_THETA}, 사전 등록): {s['verdict']}**", "",
               "- 값 비율은 찾은 해(하한)다. 제한 시간 안에 최적을 증명하지 못한 기록은 「구간」 칸에 수와 상한 중앙을 적는다.", "",
-              "| 조건 | 공유 쌍 상한 | 값 비율 중앙 (최소 ~ 최대) | 97% 이상 | 구간: 기록 수 · 상한 중앙 · 상한 97% 이상 | J 중앙 | 바꿀 중앙 | 공유 중앙 | 이웃 수 중앙 |",
+              "- 「없음」은 예산 안 5덱이 없음을 증명한 것, 「없음(있어도 ≤ x)」은 시간 안에 못 찾고 상한만 낸 것이다.", "",
+              "| 조건 | 공유 쌍 상한 | 값 비율 중앙 (최소 ~ 최대) | 97% 이상 | 구간(최적 미증명): 기록 수 · 상한 중앙 · 그중 상한 97% 이상 | J 중앙 | 바꿀 중앙 | 공유 중앙 | 이웃 수 중앙 |",
               "|---|---|---|---|---|---|---|---|---|"]
         for th, v in s["per"].items():
             label = "기존 규칙(같은 덱 2개 이하)" if th == "rule" else f"J ≤ {th}"
@@ -281,6 +284,13 @@ def run_case(case: tuple[str, str, Path]) -> dict[str, Any]:
 
 
 def main() -> int:
+    if "--report" in sys.argv:            # 계산은 그대로 두고 analysis.json에서 표만 다시 만든다
+        a = json.loads((HERE / "analysis.json").read_text(encoding="utf-8"))
+        a["summary"] = summarize(a["cases"])
+        (HERE / "analysis.json").write_text(json.dumps(a, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        (HERE / "results.md").write_text(report(a), encoding="utf-8")
+        print(" · ".join(f"{g}: {s['verdict']}" for g, s in a["summary"].items()))
+        return 0
     with Pool(4) as pool:                 # 사례마다 독립(시뮬 없음) — 결과는 순서대로 모은다
         rows = pool.map(run_case, cases(), chunksize=1)
     a = {"thetas": THETAS, "main_theta": MAIN_THETA, "cases": rows, "summary": summarize(rows)}
