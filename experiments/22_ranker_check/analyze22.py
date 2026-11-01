@@ -2,8 +2,8 @@
 
     python experiments/22_ranker_check/analyze22.py     → results.md · run_log/analysis.json
 
-입력: seasons.json, run_log/precompute_S<k>_<보스>.json(우리 최선 5덱), run_log/members_*.json(우리 덱 니케별 딜, 없으면 주력 생략),
-run_log/rankers_S<k>.json(랭커 덱 시뮬 값). 시뮬은 하지 않는다.
+입력: seasons.json, run_log/precompute_S<k>_<보스>.json(우리 최선 5덱), run_log/rankers_S<k>.json(랭커 덱 시뮬 값). 시뮬은 하지 않는다.
+README의 관찰 「주력」은 2026-11-01 사용자 지시(주력 딜러 개념은 쓰지 않는다, 실험 23)에 따라 내지 않는다 — 판단에는 원래 쓰지 않았다.
 """
 
 from __future__ import annotations
@@ -36,10 +36,6 @@ N25_MIN, V_MIN = 15, 0.90          # README §판단 기준(사전 등록)
 
 def load(p: Path) -> Any:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
-
-
-def main_dealer(members: list[list]) -> str:
-    return max(members, key=lambda m: (m[1], m[0]))[0]
 
 
 def five_value(squads: list[list[str]], vals: dict[str, dict], boss: str) -> float | None:
@@ -81,17 +77,6 @@ def season_metrics(s: int) -> dict[str, Any]:
             "V_pack": None if pv is None else pv / total,
             "ours_only": sorted(our25 - set(top25)), "rankers_only": [n for n in top25 if n not in our25],
         }
-        mem = load(LOG / f"members_{R22.run_name(s, b)}.json")
-        if mem:
-            ours_main = [main_dealer(r["members"]) for r in mem["squads"]]
-            rk_main = Counter()
-            for q in rk["squads"]:
-                e = rv.get(",".join(q["order"]), {})
-                if e.get(f"{b}_members"):
-                    rk_main[main_dealer(e[f"{b}_members"])] += q["count"]
-            m["main_ours"] = ours_main
-            m["main_rankers"] = rk_main.most_common(8)
-            m["main_overlap"] = sum(d in rk_main for d in ours_main)
         out["by_boss"][b] = m
     if len(out["by_boss"]) == len(BOSSES):
         key = lambda b: (out["by_boss"][b]["N25"], out["by_boss"][b]["D4"], out["by_boss"][b]["V_top"] or 0.0)
@@ -130,13 +115,13 @@ def write_md(rows: list[dict[str, Any]], j: dict[str, Any]) -> str:
          f"더 맞는 보스: " + " · ".join(f"{b} {j['better_count'].get(b, 0)}" for b in BOSSES) + f" (N25 · D4 · V_top 모두 같은 시즌 {j['ties']}).",
          f"비교 눈금: 랭커끼리 N25_prev 중앙 {j['N25_prev_med']} · N25_same 중앙 {j['N25_same_med']}.", "",
          "## 시즌 × 보스", "",
-         "| 시즌 | 보스 · 약점 | 풀 | 보스 | 우리 합(억) | N25 | D4 | V_top | V_r1 | V_pack | 주력 겹침 | N25_prev · same |",
-         "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+         "| 시즌 | 보스 · 약점 | 풀 | 보스 | 우리 합(억) | N25 | D4 | V_top | V_r1 | V_pack | N25_prev · same |",
+         "|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in rows:
         for b, m in r["by_boss"].items():
             mark = " ◀" if r.get("better") == b else ""
             L.append(f"| {r['season']} | {r['boss_name']} · {r['weak']} | {r['pool']} | {b}{mark} | {m['total']:.1f} | {m['N25']} | {m['D4']} | "
-                     f"{pct(m['V_top'])} | {pct(m['V_r1'])} | {pct(m['V_pack'])} | {m.get('main_overlap', '—')}/5 | "
+                     f"{pct(m['V_top'])} | {pct(m['V_r1'])} | {pct(m['V_pack'])} | "
                      f"{r['N25_prev']} · {r['N25_same']} (S{r['same_season']}) |")
     L += ["", "◀ = 그 시즌에 더 맞는 보스(N25 → D4 → V_top 순).", "", "## 보스별 중앙", "",
           "| 보스 | N25 | D4 | V_top | V_pack |", "|---|---|---|---|---|"]
@@ -163,8 +148,6 @@ def write_md(rows: list[dict[str, Any]], j: dict[str, Any]) -> str:
             L.append(f"- 우리: {', '.join(sq)} (랭커 상위 40과 최대 {x}명 같음)")
         tf = R22.season(r["season"])["rankers"]["top_five"]
         L.append(f"- 랭커 대표 5덱({tf['count']}명): " + " / ".join(", ".join(q) for q in tf["squads"]))
-        if m.get("main_ours"):
-            L.append(f"- 주력: 우리 {', '.join(m['main_ours'])} · 랭커 {', '.join(n for n, _ in m['main_rankers'][:6])}")
         L.append("")
     return "\n".join(L) + "\n"
 

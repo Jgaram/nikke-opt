@@ -102,8 +102,7 @@ class TestJudge(unittest.TestCase):
         self.assertEqual(j["N25_med"], 17)
         self.assertEqual(dict(j["better_count"]), {"nocore": 1, "core30": 1})
 
-    def test_main_dealer_and_five_value(self):
-        self.assertEqual(A22.main_dealer([["a", 1.0], ["b", 3.0], ["c", 2.0]]), "b")
+    def test_five_value(self):
         vals = {"a,b": {"nocore": 1.0}, "c,d": {"nocore": 2.0}}
         self.assertEqual(A22.five_value([["a", "b"], ["c", "d"]], vals, "nocore"), 3.0)
         self.assertIsNone(A22.five_value([["a", "b"], ["x"]], vals, "nocore"))
