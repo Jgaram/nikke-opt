@@ -1,0 +1,8 @@
+{
+ "requests": 2000,
+ "sims": 1892,
+ "seconds": 315.0,
+ "evaluator": "nikke-calc-rs 89d2e64",
+ "seed_budget": 12500,
+ "w_budget": 12500
+}
