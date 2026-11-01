@@ -1,0 +1,47 @@
+{
+ "session": "관리자 session_01MQimn5CDbvH37JKpu9CsSc (W3 몫 대신)",
+ "seasons": [
+  14,
+  34
+ ],
+ "start_utc": "2026-11-01T05:15:29Z",
+ "note": "프로세스 4개 동시(4코어). 다시 돌린 실행 없음.",
+ "runs": {
+  "S14_nocore": {
+   "evals": 13243,
+   "sims": 13239,
+   "seconds": 2022.0,
+   "final_total": 110.45609717,
+   "end_utc": "2026-11-01T05:51:01Z",
+   "evaluator": "nikke-calc-rs 89d2e64"
+  },
+  "S14_core30": {
+   "evals": 13442,
+   "sims": 13440,
+   "seconds": 2003.6,
+   "final_total": 145.53065252999997,
+   "end_utc": "2026-11-01T05:50:48Z",
+   "evaluator": "nikke-calc-rs 89d2e64"
+  },
+  "S34_nocore": {
+   "evals": 13206,
+   "sims": 13197,
+   "seconds": 2253.8,
+   "final_total": 242.31867521,
+   "end_utc": "2026-11-01T05:54:52Z",
+   "evaluator": "nikke-calc-rs 89d2e64"
+  },
+  "S34_core30": {
+   "evals": 13225,
+   "sims": 13222,
+   "seconds": 2100.5,
+   "final_total": 301.50989332,
+   "end_utc": "2026-11-01T05:53:22Z",
+   "evaluator": "nikke-calc-rs 89d2e64"
+  }
+ },
+ "total": {
+  "sims": 53098,
+  "seconds": 8379.9
+ }
+}
