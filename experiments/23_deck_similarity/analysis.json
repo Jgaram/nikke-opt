@@ -1,0 +1,2477 @@
+{
+ "reference": [
+  {
+   "case": "밖의 니케 1명으로 교체",
+   "pair_jaccard": 0.8518518518518519,
+   "pair_shared": 46,
+   "moves": 1,
+   "shared_nikkes": 24
+  },
+  {
+   "case": "두 덱 사이 1명 맞교환",
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 25
+  },
+  {
+   "case": "덱 1개를 밖의 5명으로 통째 교체",
+   "pair_jaccard": 0.6666666666666666,
+   "pair_shared": 40,
+   "moves": 5,
+   "shared_nikkes": 20
+  },
+  {
+   "case": "맞교환 2번(서로 다른 덱 쌍)",
+   "pair_jaccard": 0.5151515151515151,
+   "pair_shared": 34,
+   "moves": 4,
+   "shared_nikkes": 25
+  },
+  {
+   "case": "두 덱 사이 2명씩 맞교환",
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 4,
+   "shared_nikkes": 25
+  },
+  {
+   "case": "맞교환 3번(서로 다른 덱 쌍)",
+   "pair_jaccard": 0.3698630136986301,
+   "pair_shared": 27,
+   "moves": 6,
+   "shared_nikkes": 25
+  },
+  {
+   "case": "같은 25명, 덱마다 원래 덱 출신 1명씩(완전 재배치)",
+   "pair_jaccard": 0.0,
+   "pair_shared": 0,
+   "moves": 20,
+   "shared_nikkes": 25
+  },
+  {
+   "case": "니케 25명 모두 다름",
+   "pair_jaccard": 0.0,
+   "pair_shared": 0,
+   "moves": 25,
+   "shared_nikkes": 0
+  }
+ ],
+ "rankers": {
+  "source": {
+   "repo": "Jgaram/nikke-analysis",
+   "commit": "7190ad3",
+   "note": "enikk 원자료, 시즌마다 마지막 수집본 · 실험 22 이름 변환"
+  },
+  "seasons": {
+   "4": {
+    "rankers": 300,
+    "distinct": 244,
+    "pair_median": 0.25,
+    "near_j_median": 0.8518518518518519,
+    "near_moves_median": 1.0
+   },
+   "9": {
+    "rankers": 300,
+    "distinct": 83,
+    "pair_median": 0.639344262295082,
+    "near_j_median": 1.0,
+    "near_moves_median": 0.0
+   },
+   "14": {
+    "rankers": 300,
+    "distinct": 167,
+    "pair_median": 0.3698630136986301,
+    "near_j_median": 1.0,
+    "near_moves_median": 0.0
+   },
+   "18": {
+    "rankers": 300,
+    "distinct": 155,
+    "pair_median": 0.3888888888888889,
+    "near_j_median": 1.0,
+    "near_moves_median": 0.0
+   },
+   "23": {
+    "rankers": 300,
+    "distinct": 99,
+    "pair_median": 0.6129032258064516,
+    "near_j_median": 1.0,
+    "near_moves_median": 0.0
+   },
+   "28": {
+    "rankers": 300,
+    "distinct": 150,
+    "pair_median": 0.4084507042253521,
+    "near_j_median": 1.0,
+    "near_moves_median": 0.0
+   },
+   "34": {
+    "rankers": 299,
+    "distinct": 231,
+    "pair_median": 0.3698630136986301,
+    "near_j_median": 0.8518518518518519,
+    "near_moves_median": 1
+   },
+   "40": {
+    "rankers": 300,
+    "distinct": 46,
+    "pair_median": 0.8518518518518519,
+    "near_j_median": 1.0,
+    "near_moves_median": 0.0
+   }
+  },
+  "runs": [
+   {
+    "season": 4,
+    "boss": "nocore",
+    "status": "done",
+    "total": 69.30252644,
+    "j_median": 0.07526881720430108,
+    "j_max": 0.16279069767441862,
+    "moves_min": 12,
+    "near": {
+     "rank": 44,
+     "server": "SEA",
+     "pair_jaccard": 0.16279069767441862,
+     "moves": 12,
+     "shared_nikkes": 20
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     25,
+     275
+    ],
+    "mean_j": 0.06806779640009454,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.08695652173913043,
+     "pair_shared": 8,
+     "moves": 14,
+     "shared_nikkes": 19
+    },
+    "rank1": {
+     "pair_jaccard": 0.07526881720430108,
+     "pair_shared": 7,
+     "moves": 15,
+     "shared_nikkes": 17
+    }
+   },
+   {
+    "season": 4,
+    "boss": "core30",
+    "status": "done",
+    "total": 81.06057879999999,
+    "j_median": 0.07526881720430108,
+    "j_max": 0.13636363636363635,
+    "moves_min": 13,
+    "near": {
+     "rank": 44,
+     "server": "SEA",
+     "pair_jaccard": 0.13636363636363635,
+     "moves": 13,
+     "shared_nikkes": 17
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     32,
+     268
+    ],
+    "mean_j": 0.07679785428291808,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.08695652173913043,
+     "pair_shared": 8,
+     "moves": 15,
+     "shared_nikkes": 17
+    },
+    "rank1": {
+     "pair_jaccard": 0.08695652173913043,
+     "pair_shared": 8,
+     "moves": 15,
+     "shared_nikkes": 17
+    }
+   },
+   {
+    "season": 9,
+    "boss": "nocore",
+    "status": "done",
+    "total": 77.90319999,
+    "j_median": 0.06382978723404255,
+    "j_max": 0.08695652173913043,
+    "moves_min": 14,
+    "near": {
+     "rank": 31,
+     "server": "TW-HK",
+     "pair_jaccard": 0.08695652173913043,
+     "moves": 14,
+     "shared_nikkes": 15
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     300
+    ],
+    "mean_j": 0.059570610357321786,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.06382978723404255,
+     "pair_shared": 6,
+     "moves": 16,
+     "shared_nikkes": 16
+    },
+    "rank1": {
+     "pair_jaccard": 0.06382978723404255,
+     "pair_shared": 6,
+     "moves": 16,
+     "shared_nikkes": 16
+    }
+   },
+   {
+    "season": 9,
+    "boss": "core30",
+    "status": "done",
+    "total": 97.23802442,
+    "j_median": 0.08695652173913043,
+    "j_max": 0.1111111111111111,
+    "moves_min": 15,
+    "near": {
+     "rank": 31,
+     "server": "NA",
+     "pair_jaccard": 0.1111111111111111,
+     "moves": 15,
+     "shared_nikkes": 17
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     4,
+     296
+    ],
+    "mean_j": 0.08680150123407561,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.0989010989010989,
+     "pair_shared": 9,
+     "moves": 16,
+     "shared_nikkes": 17
+    },
+    "rank1": {
+     "pair_jaccard": 0.0989010989010989,
+     "pair_shared": 9,
+     "moves": 16,
+     "shared_nikkes": 17
+    }
+   },
+   {
+    "season": 14,
+    "boss": "nocore",
+    "status": "done",
+    "total": 110.45609717,
+    "j_median": 0.05263157894736842,
+    "j_max": 0.19047619047619047,
+    "moves_min": 13,
+    "near": {
+     "rank": 8,
+     "server": "JP",
+     "pair_jaccard": 0.19047619047619047,
+     "moves": 13,
+     "shared_nikkes": 16
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     18,
+     282
+    ],
+    "mean_j": 0.06127887671691331,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.05263157894736842,
+     "pair_shared": 5,
+     "moves": 18,
+     "shared_nikkes": 14
+    },
+    "rank1": {
+     "pair_jaccard": 0.06382978723404255,
+     "pair_shared": 6,
+     "moves": 17,
+     "shared_nikkes": 15
+    }
+   },
+   {
+    "season": 14,
+    "boss": "core30",
+    "status": "done",
+    "total": 145.53065252999997,
+    "j_median": 0.05263157894736842,
+    "j_max": 0.16279069767441862,
+    "moves_min": 12,
+    "near": {
+     "rank": 10,
+     "server": "JP",
+     "pair_jaccard": 0.16279069767441862,
+     "moves": 12,
+     "shared_nikkes": 17
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     18,
+     282
+    ],
+    "mean_j": 0.05983148632094142,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.05263157894736842,
+     "pair_shared": 5,
+     "moves": 17,
+     "shared_nikkes": 16
+    },
+    "rank1": {
+     "pair_jaccard": 0.05263157894736842,
+     "pair_shared": 5,
+     "moves": 17,
+     "shared_nikkes": 17
+    }
+   },
+   {
+    "season": 18,
+    "boss": "nocore",
+    "status": "pending"
+   },
+   {
+    "season": 18,
+    "boss": "core30",
+    "status": "pending"
+   },
+   {
+    "season": 23,
+    "boss": "nocore",
+    "status": "done",
+    "total": 157.45639366999998,
+    "j_median": 0.08695652173913043,
+    "j_max": 0.12359550561797752,
+    "moves_min": 13,
+    "near": {
+     "rank": 10,
+     "server": "JP",
+     "pair_jaccard": 0.12359550561797752,
+     "moves": 13,
+     "shared_nikkes": 20
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     17,
+     283
+    ],
+    "mean_j": 0.08123559698539487,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.08695652173913043,
+     "pair_shared": 8,
+     "moves": 14,
+     "shared_nikkes": 19
+    },
+    "rank1": {
+     "pair_jaccard": 0.08695652173913043,
+     "pair_shared": 8,
+     "moves": 14,
+     "shared_nikkes": 19
+    }
+   },
+   {
+    "season": 23,
+    "boss": "core30",
+    "status": "done",
+    "total": 176.03792539,
+    "j_median": 0.12359550561797752,
+    "j_max": 0.19047619047619047,
+    "moves_min": 12,
+    "near": {
+     "rank": 8,
+     "server": "NA",
+     "pair_jaccard": 0.19047619047619047,
+     "moves": 12,
+     "shared_nikkes": 19
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     294,
+     6
+    ],
+    "mean_j": 0.1288532555065143,
+    "typical_pct": 0.0,
+    "top_five": {
+     "pair_jaccard": 0.12359550561797752,
+     "pair_shared": 11,
+     "moves": 13,
+     "shared_nikkes": 19
+    },
+    "rank1": {
+     "pair_jaccard": 0.12359550561797752,
+     "pair_shared": 11,
+     "moves": 13,
+     "shared_nikkes": 19
+    }
+   },
+   {
+    "season": 28,
+    "boss": "nocore",
+    "status": "done",
+    "total": 189.42440045,
+    "j_median": 0.26582278481012656,
+    "j_max": 0.6129032258064516,
+    "moves_min": 3,
+    "near": {
+     "rank": 22,
+     "server": "JP",
+     "pair_jaccard": 0.6129032258064516,
+     "moves": 3,
+     "shared_nikkes": 22
+    },
+    "bins": [
+     0,
+     0,
+     3,
+     114,
+     180,
+     3
+    ],
+    "mean_j": 0.27986121821528515,
+    "typical_pct": 0.06,
+    "top_five": {
+     "pair_jaccard": 0.26582278481012656,
+     "pair_shared": 21,
+     "moves": 10,
+     "shared_nikkes": 19
+    },
+    "rank1": {
+     "pair_jaccard": 0.26582278481012656,
+     "pair_shared": 21,
+     "moves": 8,
+     "shared_nikkes": 21
+    }
+   },
+   {
+    "season": 28,
+    "boss": "core30",
+    "status": "done",
+    "total": 248.2868889,
+    "j_median": 0.2345679012345679,
+    "j_max": 0.3888888888888889,
+    "moves_min": 6,
+    "near": {
+     "rank": 3,
+     "server": "TW-HK",
+     "pair_jaccard": 0.3888888888888889,
+     "moves": 6,
+     "shared_nikkes": 21
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     33,
+     264,
+     3
+    ],
+    "mean_j": 0.2422811621723316,
+    "typical_pct": 0.04,
+    "top_five": {
+     "pair_jaccard": 0.21951219512195122,
+     "pair_shared": 18,
+     "moves": 11,
+     "shared_nikkes": 19
+    },
+    "rank1": {
+     "pair_jaccard": 0.3333333333333333,
+     "pair_shared": 25,
+     "moves": 7,
+     "shared_nikkes": 20
+    }
+   },
+   {
+    "season": 34,
+    "boss": "nocore",
+    "status": "done",
+    "total": 242.31867521,
+    "j_median": 0.17647058823529413,
+    "j_max": 0.2987012987012987,
+    "moves_min": 8,
+    "near": {
+     "rank": 2,
+     "server": "GLOBAL",
+     "pair_jaccard": 0.2987012987012987,
+     "moves": 8,
+     "shared_nikkes": 20
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     280,
+     19
+    ],
+    "mean_j": 0.1817895387909743,
+    "typical_pct": 0.0033444816053511705,
+    "top_five": {
+     "pair_jaccard": 0.21951219512195122,
+     "pair_shared": 18,
+     "moves": 10,
+     "shared_nikkes": 21
+    },
+    "rank1": {
+     "pair_jaccard": 0.17647058823529413,
+     "pair_shared": 15,
+     "moves": 11,
+     "shared_nikkes": 19
+    }
+   },
+   {
+    "season": 34,
+    "boss": "core30",
+    "status": "done",
+    "total": 301.50989332,
+    "j_median": 0.2345679012345679,
+    "j_max": 0.4492753623188406,
+    "moves_min": 6,
+    "near": {
+     "rank": 22,
+     "server": "JP",
+     "pair_jaccard": 0.4492753623188406,
+     "moves": 6,
+     "shared_nikkes": 22
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     44,
+     252,
+     3
+    ],
+    "mean_j": 0.24353532251616475,
+    "typical_pct": 0.026755852842809364,
+    "top_five": {
+     "pair_jaccard": 0.26582278481012656,
+     "pair_shared": 21,
+     "moves": 9,
+     "shared_nikkes": 21
+    },
+    "rank1": {
+     "pair_jaccard": 0.20481927710843373,
+     "pair_shared": 17,
+     "moves": 12,
+     "shared_nikkes": 19
+    }
+   },
+   {
+    "season": 40,
+    "boss": "nocore",
+    "status": "done",
+    "total": 293.14484579,
+    "j_median": 0.28205128205128205,
+    "j_max": 0.3333333333333333,
+    "moves_min": 7,
+    "near": {
+     "rank": 46,
+     "server": "NA",
+     "pair_jaccard": 0.3333333333333333,
+     "moves": 7,
+     "shared_nikkes": 20
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     2,
+     298,
+     0
+    ],
+    "mean_j": 0.26348885660538324,
+    "typical_pct": 0.013333333333333334,
+    "top_five": {
+     "pair_jaccard": 0.28205128205128205,
+     "pair_shared": 22,
+     "moves": 8,
+     "shared_nikkes": 22
+    },
+    "rank1": {
+     "pair_jaccard": 0.21951219512195122,
+     "pair_shared": 18,
+     "moves": 10,
+     "shared_nikkes": 22
+    }
+   },
+   {
+    "season": 40,
+    "boss": "core30",
+    "status": "done",
+    "total": 362.6094694899999,
+    "j_median": 0.20481927710843373,
+    "j_max": 0.26582278481012656,
+    "moves_min": 10,
+    "near": {
+     "rank": 47,
+     "server": "JP",
+     "pair_jaccard": 0.26582278481012656,
+     "moves": 10,
+     "shared_nikkes": 20
+    },
+    "bins": [
+     0,
+     0,
+     0,
+     0,
+     299,
+     1
+    ],
+    "mean_j": 0.19160487676851634,
+    "typical_pct": 0.006666666666666667,
+    "top_five": {
+     "pair_jaccard": 0.20481927710843373,
+     "pair_shared": 17,
+     "moves": 11,
+     "shared_nikkes": 20
+    },
+    "rank1": {
+     "pair_jaccard": 0.21951219512195122,
+     "pair_shared": 18,
+     "moves": 11,
+     "shared_nikkes": 19
+    }
+   }
+  ]
+ },
+ "alts": [
+  {
+   "group": "exp22",
+   "name": "S4 nocore 2순위",
+   "ratio": 0.9994147679444976,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 1,
+   "rank": 2,
+   "near_prev": 0.47058823529411764
+  },
+  {
+   "group": "exp22",
+   "name": "S4 nocore 3순위",
+   "ratio": 0.9986838579387296,
+   "pair_jaccard": 0.2345679012345679,
+   "pair_shared": 19,
+   "moves": 11,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 3,
+   "near_prev": 0.2987012987012987
+  },
+  {
+   "group": "exp22",
+   "name": "S4 nocore 4순위",
+   "ratio": 0.9962080519499168,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 4,
+   "near_prev": 0.3888888888888889
+  },
+  {
+   "group": "exp22",
+   "name": "S4 nocore 5순위",
+   "ratio": 0.9953365728985392,
+   "pair_jaccard": 0.21951219512195122,
+   "pair_shared": 18,
+   "moves": 12,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 5,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S4 nocore 6순위",
+   "ratio": 0.9950005712951898,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 25,
+   "rebuilt": 0,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S4 nocore 7순위",
+   "ratio": 0.9932382708961455,
+   "pair_jaccard": 0.25,
+   "pair_shared": 20,
+   "moves": 10,
+   "shared_nikkes": 21,
+   "rebuilt": 3,
+   "rank": 7,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S4 nocore 8순위",
+   "ratio": 0.9931943078524222,
+   "pair_jaccard": 0.3157894736842105,
+   "pair_shared": 24,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 8,
+   "near_prev": 0.4925373134328358
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 2순위",
+   "ratio": 0.9982553404861699,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1,
+   "rank": 2,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 3순위",
+   "ratio": 0.9968747262386931,
+   "pair_jaccard": 0.42857142857142855,
+   "pair_shared": 30,
+   "moves": 6,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 3,
+   "near_prev": 0.47058823529411764
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 4순위",
+   "ratio": 0.9968427219026964,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 5순위",
+   "ratio": 0.9964782414062904,
+   "pair_jaccard": 0.26582278481012656,
+   "pair_shared": 21,
+   "moves": 10,
+   "shared_nikkes": 24,
+   "rebuilt": 4,
+   "rank": 5,
+   "near_prev": 0.26582278481012656
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 6순위",
+   "ratio": 0.996435182128258,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 1,
+   "rank": 6,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 7순위",
+   "ratio": 0.9963590884204249,
+   "pair_jaccard": 0.25,
+   "pair_shared": 20,
+   "moves": 10,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 7,
+   "near_prev": 0.3698630136986301
+  },
+  {
+   "group": "exp22",
+   "name": "S4 core30 8순위",
+   "ratio": 0.9959111497239891,
+   "pair_jaccard": 0.5151515151515151,
+   "pair_shared": 34,
+   "moves": 5,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 8,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 2순위",
+   "ratio": 0.9981647336692413,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 2,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 3순위",
+   "ratio": 0.9965458435592565,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 3,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 4순위",
+   "ratio": 0.9960211303253294,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 5순위",
+   "ratio": 0.9951071921301189,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 7,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 5,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 6순위",
+   "ratio": 0.9946193303990873,
+   "pair_jaccard": 0.3157894736842105,
+   "pair_shared": 24,
+   "moves": 8,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 6,
+   "near_prev": 0.3888888888888889
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 7순위",
+   "ratio": 0.9934082955505562,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 7,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S9 nocore 8순위",
+   "ratio": 0.992424129559816,
+   "pair_jaccard": 0.42857142857142855,
+   "pair_shared": 30,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 8,
+   "near_prev": 0.5151515151515151
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 2순위",
+   "ratio": 0.9929172702334504,
+   "pair_jaccard": 0.3157894736842105,
+   "pair_shared": 24,
+   "moves": 8,
+   "shared_nikkes": 24,
+   "rebuilt": 3,
+   "rank": 2,
+   "near_prev": 0.3157894736842105
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 3순위",
+   "ratio": 0.9918995540613021,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 3,
+   "rank": 3,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 4순위",
+   "ratio": 0.9856763694212455,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 5순위",
+   "ratio": 0.9848413545134014,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1,
+   "rank": 5,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 6순위",
+   "ratio": 0.9840326160546652,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 6,
+   "near_prev": 0.4925373134328358
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 7순위",
+   "ratio": 0.9838405261792134,
+   "pair_jaccard": 0.2987012987012987,
+   "pair_shared": 23,
+   "moves": 9,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 7,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S9 core30 8순위",
+   "ratio": 0.983745663495042,
+   "pair_jaccard": 0.3157894736842105,
+   "pair_shared": 24,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 8,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 2순위",
+   "ratio": 0.9927407707628313,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0,
+   "rank": 2,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 3순위",
+   "ratio": 0.9920800528679408,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 3,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 4순위",
+   "ratio": 0.9882790151637584,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 5순위",
+   "ratio": 0.9876059358869704,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 5,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 6순위",
+   "ratio": 0.9858259203419941,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 7순위",
+   "ratio": 0.9849375861303573,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 nocore 8순위",
+   "ratio": 0.984889805970319,
+   "pair_jaccard": 0.35135135135135137,
+   "pair_shared": 26,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 8,
+   "near_prev": 0.47058823529411764
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 2순위",
+   "ratio": 0.9943067084109366,
+   "pair_jaccard": 0.25,
+   "pair_shared": 20,
+   "moves": 12,
+   "shared_nikkes": 20,
+   "rebuilt": 4,
+   "rank": 2,
+   "near_prev": 0.25
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 3순위",
+   "ratio": 0.9878385031659559,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 3,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 4순위",
+   "ratio": 0.9853075785559388,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 4,
+   "near_prev": 0.4925373134328358
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 5순위",
+   "ratio": 0.9849627299681842,
+   "pair_jaccard": 0.2345679012345679,
+   "pair_shared": 19,
+   "moves": 11,
+   "shared_nikkes": 20,
+   "rebuilt": 4,
+   "rank": 5,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 6순위",
+   "ratio": 0.9837064480315503,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 7순위",
+   "ratio": 0.9823576701858691,
+   "pair_jaccard": 0.3698630136986301,
+   "pair_shared": 27,
+   "moves": 9,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 7,
+   "near_prev": 0.4492753623188406
+  },
+  {
+   "group": "exp22",
+   "name": "S14 core30 8순위",
+   "ratio": 0.9819937681550641,
+   "pair_jaccard": 0.17647058823529413,
+   "pair_shared": 15,
+   "moves": 12,
+   "shared_nikkes": 21,
+   "rebuilt": 4,
+   "rank": 8,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 2순위",
+   "ratio": 0.9937804401131373,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 2,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 3순위",
+   "ratio": 0.9921729317478025,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 3,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 4순위",
+   "ratio": 0.9920985928802138,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 1,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 5순위",
+   "ratio": 0.9911428061605243,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 6,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 5,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 6순위",
+   "ratio": 0.9902830488852261,
+   "pair_jaccard": 0.2987012987012987,
+   "pair_shared": 23,
+   "moves": 8,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 6,
+   "near_prev": 0.3333333333333333
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 7순위",
+   "ratio": 0.9898110953603932,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 5,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S23 nocore 8순위",
+   "ratio": 0.9873611461331268,
+   "pair_jaccard": 0.3333333333333333,
+   "pair_shared": 25,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 8,
+   "near_prev": 0.4925373134328358
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 2순위",
+   "ratio": 0.9937492313229539,
+   "pair_jaccard": 0.28205128205128205,
+   "pair_shared": 22,
+   "moves": 9,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 2,
+   "near_prev": 0.28205128205128205
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 3순위",
+   "ratio": 0.9933069803714755,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 7,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 3,
+   "near_prev": 0.4084507042253521
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 4순위",
+   "ratio": 0.9915342036853801,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 4,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 5순위",
+   "ratio": 0.9910534759682561,
+   "pair_jaccard": 0.28205128205128205,
+   "pair_shared": 22,
+   "moves": 10,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 5,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 6순위",
+   "ratio": 0.9907248838772514,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 7순위",
+   "ratio": 0.9906143135557887,
+   "pair_jaccard": 0.3698630136986301,
+   "pair_shared": 27,
+   "moves": 7,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 7,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S23 core30 8순위",
+   "ratio": 0.9901612089771972,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 8,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 2순위",
+   "ratio": 0.991572864392297,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 2,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 3순위",
+   "ratio": 0.9912713238311849,
+   "pair_jaccard": 0.3333333333333333,
+   "pair_shared": 25,
+   "moves": 7,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 3,
+   "near_prev": 0.5151515151515151
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 4순위",
+   "ratio": 0.9907854861577841,
+   "pair_jaccard": 0.4925373134328358,
+   "pair_shared": 33,
+   "moves": 5,
+   "shared_nikkes": 22,
+   "rebuilt": 1,
+   "rank": 4,
+   "near_prev": 0.4925373134328358
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 5순위",
+   "ratio": 0.9898002988241739,
+   "pair_jaccard": 0.4925373134328358,
+   "pair_shared": 33,
+   "moves": 5,
+   "shared_nikkes": 21,
+   "rebuilt": 1,
+   "rank": 5,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 6순위",
+   "ratio": 0.9897222436213337,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 25,
+   "rebuilt": 0,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 7순위",
+   "ratio": 0.988683166345479,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 nocore 8순위",
+   "ratio": 0.988400656753933,
+   "pair_jaccard": 0.4925373134328358,
+   "pair_shared": 33,
+   "moves": 5,
+   "shared_nikkes": 21,
+   "rebuilt": 1,
+   "rank": 8,
+   "near_prev": 0.5151515151515151
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 2순위",
+   "ratio": 0.9972194910772028,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 2,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 3순위",
+   "ratio": 0.9954886540930031,
+   "pair_jaccard": 0.5151515151515151,
+   "pair_shared": 34,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 0,
+   "rank": 3,
+   "near_prev": 0.5151515151515151
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 4순위",
+   "ratio": 0.9953224975142858,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 25,
+   "rebuilt": 0,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 5순위",
+   "ratio": 0.9945900965775885,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0,
+   "rank": 5,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 6순위",
+   "ratio": 0.9932139761085869,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 7순위",
+   "ratio": 0.9931016681243694,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S28 core30 8순위",
+   "ratio": 0.9927602400675938,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 8,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 2순위",
+   "ratio": 0.99427825338349,
+   "pair_jaccard": 0.25,
+   "pair_shared": 20,
+   "moves": 10,
+   "shared_nikkes": 21,
+   "rebuilt": 4,
+   "rank": 2,
+   "near_prev": 0.25
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 3순위",
+   "ratio": 0.9937147661909256,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 24,
+   "rebuilt": 2,
+   "rank": 3,
+   "near_prev": 0.47058823529411764
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 4순위",
+   "ratio": 0.9936688857403563,
+   "pair_jaccard": 0.4492753623188406,
+   "pair_shared": 31,
+   "moves": 6,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 4,
+   "near_prev": 0.47058823529411764
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 5순위",
+   "ratio": 0.9890226358422652,
+   "pair_jaccard": 0.2987012987012987,
+   "pair_shared": 23,
+   "moves": 9,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 5,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 6순위",
+   "ratio": 0.9887426147091801,
+   "pair_jaccard": 0.20481927710843373,
+   "pair_shared": 17,
+   "moves": 10,
+   "shared_nikkes": 21,
+   "rebuilt": 4,
+   "rank": 6,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 7순위",
+   "ratio": 0.9871429188555112,
+   "pair_jaccard": 0.2987012987012987,
+   "pair_shared": 23,
+   "moves": 9,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S34 nocore 8순위",
+   "ratio": 0.986270168417202,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1,
+   "rank": 8,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 2순위",
+   "ratio": 0.9907185459847252,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 25,
+   "rebuilt": 0,
+   "rank": 2,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 3순위",
+   "ratio": 0.9893649250951883,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 3,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 4순위",
+   "ratio": 0.9877580925476214,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 4,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 5순위",
+   "ratio": 0.9877102715629058,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 5,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 6순위",
+   "ratio": 0.9846701954980479,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 7,
+   "shared_nikkes": 22,
+   "rebuilt": 1,
+   "rank": 6,
+   "near_prev": 0.42857142857142855
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 7순위",
+   "ratio": 0.9817610007769678,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S34 core30 8순위",
+   "ratio": 0.981447266494625,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 8,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 2순위",
+   "ratio": 0.9983843076322096,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 2,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 3순위",
+   "ratio": 0.9964988560954088,
+   "pair_jaccard": 0.4925373134328358,
+   "pair_shared": 33,
+   "moves": 5,
+   "shared_nikkes": 22,
+   "rebuilt": 1,
+   "rank": 3,
+   "near_prev": 0.4925373134328358
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 4순위",
+   "ratio": 0.9925785148494185,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 4,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 5순위",
+   "ratio": 0.9898228108975958,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 7,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 5,
+   "near_prev": 0.5151515151515151
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 6순위",
+   "ratio": 0.9887451695727119,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 6,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 7순위",
+   "ratio": 0.9870214282985363,
+   "pair_jaccard": 0.42857142857142855,
+   "pair_shared": 30,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 3,
+   "rank": 7,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S40 nocore 8순위",
+   "ratio": 0.9861867917919978,
+   "pair_jaccard": 0.3157894736842105,
+   "pair_shared": 24,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 3,
+   "rank": 8,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 2순위",
+   "ratio": 0.9989600515382835,
+   "pair_jaccard": 0.5151515151515151,
+   "pair_shared": 34,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 0,
+   "rank": 2,
+   "near_prev": 0.5151515151515151
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 3순위",
+   "ratio": 0.9968929153957712,
+   "pair_jaccard": 0.35135135135135137,
+   "pair_shared": 26,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 2,
+   "rank": 3,
+   "near_prev": 0.4084507042253521
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 4순위",
+   "ratio": 0.9966929520575221,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 8,
+   "shared_nikkes": 21,
+   "rebuilt": 1,
+   "rank": 4,
+   "near_prev": 0.47058823529411764
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 5순위",
+   "ratio": 0.9959331938239946,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 0,
+   "rank": 5,
+   "near_prev": 0.6129032258064516
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 6순위",
+   "ratio": 0.9936539362492754,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1,
+   "rank": 6,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 7순위",
+   "ratio": 0.9933048088252784,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 24,
+   "rebuilt": 1,
+   "rank": 7,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp22",
+   "name": "S40 core30 8순위",
+   "ratio": 0.9929161265876131,
+   "pair_jaccard": 0.4925373134328358,
+   "pair_shared": 33,
+   "moves": 5,
+   "shared_nikkes": 23,
+   "rebuilt": 2,
+   "rank": 8,
+   "near_prev": 0.5384615384615384
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d1 C0",
+   "ratio": 0.9745100115456291,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 24,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d1 C3",
+   "ratio": 0.9745100115456291,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 24,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d1 CL3",
+   "ratio": 0.994973520342219,
+   "pair_jaccard": 0.2987012987012987,
+   "pair_shared": 23,
+   "moves": 9,
+   "shared_nikkes": 23,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d2 C0",
+   "ratio": 0.9880774198425031,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d2 C3",
+   "ratio": 0.9939959759608603,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d2 CL3",
+   "ratio": 0.992094019611277,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 7,
+   "shared_nikkes": 23,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d3 C0",
+   "ratio": 0.9905019115249272,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d3 C3",
+   "ratio": 0.9905019115249272,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d3 CL3",
+   "ratio": 0.9974884409717576,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 1
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d4 C0",
+   "ratio": 0.9915920177162388,
+   "pair_jaccard": 0.5625,
+   "pair_shared": 36,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d4 C3",
+   "ratio": 0.9915920177162388,
+   "pair_jaccard": 0.5625,
+   "pair_shared": 36,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_pre",
+   "name": "d4 CL3",
+   "ratio": 1.0058041673686207,
+   "pair_jaccard": 0.639344262295082,
+   "pair_shared": 39,
+   "moves": 3,
+   "shared_nikkes": 22,
+   "rebuilt": 1
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t1 C0",
+   "ratio": 0.9904424888402135,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 24,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t1 C3",
+   "ratio": 0.9904424888402135,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 24,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t1 CL3",
+   "ratio": 0.9917221278331134,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t2 C0",
+   "ratio": 0.9842284809184024,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t2 C3",
+   "ratio": 0.9842284809184024,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 1
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t2 CL3",
+   "ratio": 0.9919031229075471,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 1
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t3 C0",
+   "ratio": 0.979725837594342,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t3 C3",
+   "ratio": 0.979725837594342,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t3 CL3",
+   "ratio": 0.979725837594342,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t4 C0",
+   "ratio": 0.9712068008520568,
+   "pair_jaccard": 0.639344262295082,
+   "pair_shared": 39,
+   "moves": 3,
+   "shared_nikkes": 24,
+   "rebuilt": 1
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t4 C3",
+   "ratio": 0.9790203670273807,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 24,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t4 CL3",
+   "ratio": 0.9899785822865437,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t5 C0",
+   "ratio": 0.98948618165546,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 24,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t5 C3",
+   "ratio": 0.9955431195335661,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 24,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t5 CL3",
+   "ratio": 0.9759193352898161,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 3,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t6 C0",
+   "ratio": 0.9895686002708919,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t6 C3",
+   "ratio": 0.9895686002708919,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t6 CL3",
+   "ratio": 0.9745441414148175,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t7 C0",
+   "ratio": 0.9731568187453269,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t7 C3",
+   "ratio": 0.9731568187453269,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t7 CL3",
+   "ratio": 0.9731568187453269,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t8 C0",
+   "ratio": 0.9749132456127338,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t8 C3",
+   "ratio": 0.9749132456127338,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_pre",
+   "name": "t8 CL3",
+   "ratio": 0.9749132456127338,
+   "pair_jaccard": 0.7241379310344828,
+   "pair_shared": 42,
+   "moves": 2,
+   "shared_nikkes": 23,
+   "rebuilt": 0
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "d1 C3",
+   "ratio": 0.9844965296377767,
+   "pair_jaccard": 0.3698630136986301,
+   "pair_shared": 27,
+   "moves": 7,
+   "shared_nikkes": 22,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "d2 C3",
+   "ratio": 0.9831193168677081,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 22,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "d3 C3",
+   "ratio": 0.9905019115249272,
+   "pair_jaccard": 0.6129032258064516,
+   "pair_shared": 38,
+   "moves": 4,
+   "shared_nikkes": 25,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "d4 C3",
+   "ratio": 0.9915920177162388,
+   "pair_jaccard": 0.5625,
+   "pair_shared": 36,
+   "moves": 4,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t1 C3",
+   "ratio": 0.9752103665238949,
+   "pair_jaccard": 0.3698630136986301,
+   "pair_shared": 27,
+   "moves": 7,
+   "shared_nikkes": 22,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t2 C3",
+   "ratio": 0.9935390129628052,
+   "pair_jaccard": 0.28205128205128205,
+   "pair_shared": 22,
+   "moves": 9,
+   "shared_nikkes": 23,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t3 C3",
+   "ratio": 0.9815663739659829,
+   "pair_jaccard": 0.3698630136986301,
+   "pair_shared": 27,
+   "moves": 8,
+   "shared_nikkes": 22,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t4 C3",
+   "ratio": 0.9715050967729043,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 6,
+   "shared_nikkes": 24,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t5 C3",
+   "ratio": 0.9719409263076918,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t6 C3",
+   "ratio": 1.002841262435715,
+   "pair_jaccard": 0.2987012987012987,
+   "pair_shared": 23,
+   "moves": 9,
+   "shared_nikkes": 22,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t7 C3",
+   "ratio": 0.9378350268657676,
+   "pair_jaccard": 0.5625,
+   "pair_shared": 36,
+   "moves": 4,
+   "shared_nikkes": 22,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp20_rebuild",
+   "name": "t8 C3",
+   "ratio": 0.9847402939847035,
+   "pair_jaccard": 0.4925373134328358,
+   "pair_shared": 33,
+   "moves": 5,
+   "shared_nikkes": 25,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp21",
+   "name": "u1",
+   "ratio": 0.9745631023800936,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp21",
+   "name": "u2",
+   "ratio": 0.9894650849318901,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp21",
+   "name": "u3",
+   "ratio": 0.9811239351407051,
+   "pair_jaccard": 0.5384615384615384,
+   "pair_shared": 35,
+   "moves": 5,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp21",
+   "name": "u4",
+   "ratio": 0.9799188833767767,
+   "pair_jaccard": 0.3888888888888889,
+   "pair_shared": 28,
+   "moves": 7,
+   "shared_nikkes": 23,
+   "rebuilt": 3
+  },
+  {
+   "group": "exp21",
+   "name": "u5",
+   "ratio": 0.9858055762330677,
+   "pair_jaccard": 0.47058823529411764,
+   "pair_shared": 32,
+   "moves": 5,
+   "shared_nikkes": 22,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp21",
+   "name": "u6",
+   "ratio": 0.9861727003032904,
+   "pair_jaccard": 0.26582278481012656,
+   "pair_shared": 21,
+   "moves": 10,
+   "shared_nikkes": 24,
+   "rebuilt": 4
+  },
+  {
+   "group": "exp21",
+   "name": "u7",
+   "ratio": 0.9805279025842599,
+   "pair_jaccard": 0.42857142857142855,
+   "pair_shared": 30,
+   "moves": 6,
+   "shared_nikkes": 23,
+   "rebuilt": 2
+  },
+  {
+   "group": "exp21",
+   "name": "u8",
+   "ratio": 0.9879086289334934,
+   "pair_jaccard": 0.4084507042253521,
+   "pair_shared": 29,
+   "moves": 6,
+   "shared_nikkes": 21,
+   "rebuilt": 3
+  }
+ ],
+ "alt_summary": {
+  "exp22": {
+   "n": 98,
+   "j_median": 0.47058823529411764,
+   "j_min": 0.17647058823529413,
+   "j_max": 0.6129032258064516,
+   "moves_median": 5.5,
+   "shared_median": 23.0,
+   "ratio_median": 0.9920893228740773,
+   "bins": [
+    0,
+    0,
+    41,
+    41,
+    16,
+    0
+   ]
+  },
+  "exp20_pre": {
+   "n": 36,
+   "j_median": 0.7241379310344828,
+   "j_min": 0.2987012987012987,
+   "j_max": 0.7241379310344828,
+   "moves_median": 2.0,
+   "shared_median": 23.0,
+   "ratio_median": 0.9887818007489815,
+   "bins": [
+    0,
+    20,
+    11,
+    4,
+    1,
+    0
+   ]
+  },
+  "exp20_rebuild": {
+   "n": 12,
+   "j_median": 0.4395194697597349,
+   "j_min": 0.28205128205128205,
+   "j_max": 0.6129032258064516,
+   "moves_median": 5.5,
+   "shared_median": 22.5,
+   "ratio_median": 0.9838079232527424,
+   "bins": [
+    0,
+    0,
+    3,
+    7,
+    2,
+    0
+   ]
+  },
+  "exp21": {
+   "n": 8,
+   "j_median": 0.4185110663983903,
+   "j_min": 0.26582278481012656,
+   "j_max": 0.5384615384615384,
+   "moves_median": 6.0,
+   "shared_median": 23.0,
+   "ratio_median": 0.9834647556868864,
+   "bins": [
+    0,
+    0,
+    1,
+    6,
+    1,
+    0
+   ]
+  }
+ }
+}
