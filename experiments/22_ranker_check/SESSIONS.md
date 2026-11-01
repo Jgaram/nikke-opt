@@ -16,12 +16,17 @@
 | W3 | 14 · 34 | 99 · 155 |
 | W4 | 18 · 40 | 109 · 170 |
 
+**분담 변경(2026-11-01 05:15 UTC):** W3 `session_01MQimn23vCToexEWX28MoLA` · W4 `session_01MQimn54eCUNqkQ2ag5jrVp`는 평가기 저장소 붙이기(`add_repo`)가
+자동 권한 검사에 막혀 시작하지 못했다. 두 세션은 취소했다. S14 · S34는 관리자 컨테이너에서(`meta_M.json`), S18은 W1, S40은 W2가 자기 몫 4개를 끝낸 뒤 이어서 돌린다.
+W1 `session_01MQimn5oGWQFXjkqejUa5A1` · W2 `session_01MQimn2DzC41Dus13p26ry7`(05:11 UTC 시작).
+
 ## 파일 소유
 
 | 파일 | 소유 |
 |---|---|
 | `README.md` · `SESSIONS.md` · `seasons22.py` · `seasons.json` · `run22.py` · `analyze22.py` · `results.md` · `run_log/rankers_*.json` · `tests/test_exp22.py` | 관리자 |
-| `run_log/precompute_S<k>_<보스>.json` · `.jsonl.gz`, `run_log/meta_W<n>.json` | 그 시즌을 맡은 작업 세션 |
+| `run_log/precompute_S<k>_<보스>.json` · `.jsonl.gz`, `run_log/meta_W<n>.json` | 그 시즌을 맡은 세션(위 분담 변경 반영) |
+| `run_log/meta_M.json` · `run_log/members_*.json` | 관리자 |
 | `docs/` · 레포 `README.md` · `rules/` · `AGENTS.md` | 관리자 |
 
 작업 세션이 공용 코드를 고쳐야 하면(버그 등) 직접 고치지 않고 관리자에게 알린다.
