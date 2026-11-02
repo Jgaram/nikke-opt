@@ -283,3 +283,51 @@ class TestRoles(unittest.TestCase):
         prior = {"n0": {"a": 5.0, "c": 0.0, "u": [0.0] * 4, "v": [0.0] * 4}}
         mod = M.RoleModel(names, els, adv, M.RoleConfig(k=4, iters=50), prior=prior, lam_prior=1.0).fit(tr)
         self.assertAlmostEqual(float(mod.a[mod.ni["n0"]]), 5.0, delta=0.05)
+
+
+Q2 = sys.modules.get("q2_33") or _load("q2_33", ROOT / "experiments" / "33_role_vectors" / "q2_33.py")
+
+
+class TestQ2(unittest.TestCase):
+    def test_registered(self):
+        self.assertEqual((Q2.TEST_FRAC, Q2.INNER_FRAC, Q2.WIN_TOP, Q2.WIN_M1, Q2.LAM_PRIOR, Q2.PAIRS_FREQ), (0.2, 0.1, 0.1, 0.05, 1.0, 2))
+        self.assertEqual(len(Q2.GRID_M2), 6)
+        self.assertEqual(Q2.HOLD_NIKKES, ("아르카나 : 포츈 메이트", "스노우 화이트 : 헤비암즈", R.BREAD, "아니스 : 스타"))
+
+    def test_dualfp_matches_dualfit(self):
+        import numpy as np
+        names, els, adv, buf, obs = _world(300)
+        tr = [o for o in obs if o.element == "전격"][:40]
+        te = [o for o in obs if o.element == "전격"][40:60]
+        mine = Q2.DualFP(tr, names)
+        ref = R.R10.DualFit(M._Book({o.comp: (o.total / 1e8, o.squad) for o in tr}), names)
+        self.assertTrue(np.allclose(mine.predict(te), [ref(o.comp) * 1e8 for o in te], rtol=1e-8))
+        F = np.random.default_rng(0).standard_normal((len(tr), 3))
+        withf = Q2.DualFP(tr, names, F, 1.0)
+        self.assertEqual(withf.predict(te, np.zeros((len(te), 3))).shape, (len(te),))
+
+    def test_fp_features(self):
+        fp = {"a": {"dealer": 0.5, "buffer": 0.0, "own_adv": 0.6, "boost_weapon": {}, "boost_stage": {}},
+              "b": {"dealer": 0.0, "buffer": 0.2, "own_adv": 0.1, "boost_weapon": {"AR": 0.3}, "boost_stage": {"3": 0.1}}}
+        at = {"a": {"code": "작열", "weapon": "AR", "stage": "3"}, "b": {"code": "수냉", "weapon": "SMG", "stage": "1"}}
+        f = Q2.fp_features(("a", "b"), "풍압", fp, at)          # a(작열)는 풍압 보스에 우코
+        self.assertEqual(len(f), 5)
+        self.assertAlmostEqual(f[0], 0.5)
+        self.assertAlmostEqual(f[1], 0.2)
+        self.assertAlmostEqual(f[2], 0.6)
+        self.assertAlmostEqual(f[3], 0.3 * 0.5)
+        self.assertAlmostEqual(f[4], 0.1 * 0.5)
+
+    def test_verdict_lines(self):
+        def met(rt, hit):
+            return {"median": {"rho": 0.9, "rho_top": rt, "hit_k": [hit, 10]}}
+        base = {"random": {"all": {"M0": met(0.5, 5), "M1": met(0.5, 5), "M2": met(0.65, 6)}},
+                "nikke": {x: {"M0": met(0.5, 5), "M2": met(0.6, 6), "M3": met(0.4, 4)} for x in "wxyz"}}
+        self.assertEqual(Q2.verdict(base)["line"], 1)
+        base["nikke"] = {x: {"M0": met(0.5, 5), "M2": met(0.4, 6), "M3": met(0.4, 4)} for x in "wxyz"}
+        self.assertEqual(Q2.verdict(base)["line"], 2)
+        base["random"]["all"]["M2"] = met(0.55, 6)
+        base["random"]["all"]["M1"] = met(0.56, 6)
+        self.assertEqual(Q2.verdict(base)["line"], 3)
+        base["random"]["all"]["M1"] = met(0.52, 6)
+        self.assertEqual(Q2.verdict(base)["line"], 4)
