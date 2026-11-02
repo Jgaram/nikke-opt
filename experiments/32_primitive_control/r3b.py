@@ -33,6 +33,9 @@ from r3 import r1, r0, run31, M, R9, R10, R30, SIM, E8, jdump, jload  # noqa: E4
 
 OUT = HERE / "r3b"
 ARM = "Bp"
+NAME = "r3b"           # 결과 파일 · 덱 id 앞머리(수정 회차 r3c는 바꿔 끼운다)
+PRE = HERE / "r3b"     # 사전 계산 기록은 수정 회차도 이것을 다시 쓴다
+PRE_ARM = "Bp"
 N_END = 200            # 끝 탐침 구성 수(× 탐침 4 = 800시뮬, 사전 계산의 약 3%)
 PER_SLOT = 8           # 한 바퀴에 5덱 자리마다 다음 대안 수
 DELTA = 0.01           # 비열등 허용 오차(사용자: 추천대로)
@@ -104,8 +107,12 @@ def cmd_run(a: argparse.Namespace) -> int:
 
 # ---------------------------------------------------------------- 끝 탐침: 5덱 묶음 이웃 200 × 4
 
+def pre_dir(s: int) -> Path:
+    return PRE / f"S{s}"
+
+
 def recs_of(s: int) -> list[dict[str, Any]]:
-    return [r for k in run31.SEEDS for r in R30.load_recs(sdir(s) / f"{ARM}_s{k}.jsonl.gz")]
+    return [r for k in run31.SEEDS for r in R30.load_recs(pre_dir(s) / f"{PRE_ARM}_s{k}.jsonl.gz")]
 
 
 def end_pick(order: Sequence[frozenset], cur: Mapping[frozenset, tuple[float, tuple]], probed: set,
@@ -182,7 +189,7 @@ def book_end(s: int) -> tuple[dict, dict]:
 def best5(s: int) -> list[dict[str, Any]]:
     bk, win = book_end(s)
     _, ch = R9.pack_vals(bk)
-    return [{"id": f"r3b-S{s}-{ARM}-{i}", "season": s, "squad": list(q), "value": v, "win": win.get(frozenset(q))}
+    return [{"id": f"{NAME}-S{s}-{ARM}-{i}", "season": s, "squad": list(q), "value": v, "win": win.get(frozenset(q))}
             for i, (v, q) in enumerate(ch)]
 
 
@@ -271,7 +278,7 @@ def cmd_analyze(a: argparse.Namespace) -> int:
         P5 = jload(sdir(s) / f"best5_{ARM}.json") or best5(s)
         Ppost = [jload(sdir(s) / "post" / f"{d['id']}.json") for d in P5]
         rep = jload(sdir(s) / "post" / f"{P5[0]['id']}-rep.json")
-        pre = {k: jload(sdir(s) / f"{ARM}_s{k}.json") for k in run31.SEEDS}
+        pre = {k: jload(pre_dir(s) / f"{PRE_ARM}_s{k}.json") for k in run31.SEEDS}
         end = jload(sdir(s) / "end.json") or {}
         bk0, _ = r3.book_win(recs_of(s))
         row: dict[str, Any] = {
@@ -280,7 +287,7 @@ def cmd_analyze(a: argparse.Namespace) -> int:
             "Bp_post": sum(p["best"] for p in Ppost) if all(Ppost) else None,
             "A_pre": sum(d["value"] for d in A5), "Bp_pre": sum(d["value"] for d in P5),
             "Bp_pre_noend": R9.pack_vals(bk0)[0],
-            "Bp_seed_pack": {k: R9.pack_vals(r3.book_win(R30.load_recs(sdir(s) / f"{ARM}_s{k}.jsonl.gz"))[0])[0] for k in run31.SEEDS},
+            "Bp_seed_pack": {k: R9.pack_vals(r3.book_win(R30.load_recs(pre_dir(s) / f"{PRE_ARM}_s{k}.jsonl.gz"))[0])[0] for k in run31.SEEDS},
             "sims_pre": sum(p["sims"] for p in pre.values() if p), "comps": len(bk0),
             "end": {k: end.get(k) for k in ("rounds", "comps", "sims", "errors")},
             "end_wins": sum(1 for x in end.get("rows", []) if x["win"]),
@@ -310,7 +317,7 @@ def cmd_analyze(a: argparse.Namespace) -> int:
         summ["dedicated_ok"] = all(x["ok"] for x in ded.values())
     if "sum_ok" in summ and "dedicated_ok" in summ:
         summ["verdict"] = "B′ 비열등" if summ["sum_ok"] and summ["dedicated_ok"] else "B′ 미달"
-    jdump(HERE / "r3b.json", {"summary": summ, "seasons": rows})
+    jdump(HERE / f"{NAME}.json", {"summary": summ, "seasons": rows})
     pc = lambda x: "—" if x is None else f"{x:+.2%}"  # noqa: E731
     md = ["| 시즌 | A 5덱(후처리) | B′ 5덱(후처리) | B′/A − 1 | B′ 사전 5덱(끝 탐침 전 → 뒤) | A 사전 5덱 | 끝 탐침 이긴 구성 | J A · B′ |",
           "|---|---|---|---|---|---|---|---|"]
@@ -324,7 +331,7 @@ def cmd_analyze(a: argparse.Namespace) -> int:
     if "verdict" in summ:
         md += ["", f"판단: 5덱 합 중앙 {summ['ratio_median']:+.2%}(기준 ≥ −{DELTA:.0%}) · 전담 규칙형 "
                    f"{'통과' if summ['dedicated_ok'] else '미달'} → **{summ['verdict']}**"]
-    (HERE / "r3b.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    (HERE / f"{NAME}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print("\n".join(md))
     return 0
 
