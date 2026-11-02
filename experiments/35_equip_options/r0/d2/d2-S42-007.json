@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-007",
+ "season": 42,
+ "squad": [
+  "볼륨",
+  "맥스웰 : 오디너리 미케닉",
+  "마스트 : 로망틱 메이드",
+  "스노우 화이트 : 헤비암즈",
+  "신데렐라"
+ ],
+ "v_spec": 49.94565645,
+ "v_E0": 53.7432302,
+ "v_O": 64.05658859,
+ "base_check": 53.7432302,
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5283774999999977,
+   "max_ammo_pct": 0.1812782100000021,
+   "crit_rate": 0.20020842000000272,
+   "crit_dmg": 0.36716883999999794,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3911951899999977,
+   "max_ammo_pct": 0.14193188000000134,
+   "crit_rate": 0.2519346500000026,
+   "crit_dmg": 0.4966845699999993,
+   "charge_speed_pct": 3.990437489999998,
+   "charge_dmg_pct": 0.41892246999999827,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4343858900000015,
+   "max_ammo_pct": 0.5696965400000025,
+   "crit_rate": 0.18398462000000393,
+   "crit_dmg": 0.32038020000000245,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9747208399999963,
+   "max_ammo_pct": 0.0683143099999981,
+   "crit_rate": 1.1781560499999983,
+   "crit_dmg": 2.149468060000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.27447489000000047,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 14.616779129999998,
+   "atk_pct": 4.524428559999997,
+   "max_ammo_pct": 3.27828444,
+   "crit_rate": 3.9906563600000027,
+   "crit_dmg": 7.5412076,
+   "charge_speed_pct": -0.037689630000002694,
+   "charge_dmg_pct": 1.1060846700000013,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "charge_speed_pct",
+   "crit_dmg",
+   "charge_dmg_pct",
+   "atk_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "볼륨": "공4+크확4+크뎀4",
+  "맥스웰 : 오디너리 미케닉": "공4+크뎀4+차뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확1+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공2+크확2+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 803,
+ "seconds": 78.4
+}

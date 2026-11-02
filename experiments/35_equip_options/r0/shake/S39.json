@@ -1,0 +1,106 @@
+{
+ "id": "r3-S39-A-0",
+ "v_E0": 80.76149892,
+ "v_O": 97.64644243,
+ "base_check": 80.76149892,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5853531899999922,
+   "max_ammo_pct": 1.549963979999987,
+   "crit_rate": 0.7133999700000118,
+   "crit_dmg": 0.6161988100000002,
+   "charge_speed_pct": -0.17397937999999158,
+   "charge_dmg_pct": 0.7641297199999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 3.4485942899999884,
+   "atk_pct": 1.5998482699999954,
+   "max_ammo_pct": 0.9211320399999892,
+   "crit_rate": 0.6156989800000048,
+   "crit_dmg": 0.531844030000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 13.090789019999988,
+   "atk_pct": 6.167221380000001,
+   "max_ammo_pct": 0.2720002099999874,
+   "crit_rate": 2.3164180100000067,
+   "crit_dmg": 2.0008010200000115,
+   "charge_speed_pct": 0.32004574000001185,
+   "charge_dmg_pct": 0.7012207400000108,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 12.733731819999988,
+   "atk_pct": 4.922659569999993,
+   "max_ammo_pct": 0.43417617999999436,
+   "crit_rate": 2.222943920000006,
+   "crit_dmg": 1.9200607000000076,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5011596399999974,
+   "max_ammo_pct": -8.966740990000005,
+   "crit_rate": 0.13224842000001047,
+   "crit_dmg": 0.11423351999999909,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+장탄2+크확2+차뎀4",
+  "크라운": "우코4+공4+장탄1+크확3",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 400,
+ "seconds": 46.2
+}

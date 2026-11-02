@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-012",
+ "season": 39,
+ "squad": [
+  "츠바이",
+  "민트",
+  "헬름 : 아쿠아마린",
+  "신데렐라 : 크리스탈 웨이브",
+  "율리아"
+ ],
+ "v_spec": 56.81591466,
+ "v_E0": 68.79890646,
+ "v_O": 77.23239788,
+ "base_check": 68.79890646,
+ "screen": {
+  "츠바이": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9709536599999922,
+   "max_ammo_pct": 1.432092449999999,
+   "crit_rate": 0.16176129000000117,
+   "crit_dmg": 0.7353266900000079,
+   "charge_speed_pct": -0.349675849999997,
+   "charge_dmg_pct": 0.030191410000000474,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 1.1284668899999986,
+   "atk_pct": 0.8734310399999998,
+   "max_ammo_pct": 0.1340031599999918,
+   "crit_rate": 0.12903292000000022,
+   "crit_dmg": 0.6770393500000011,
+   "charge_speed_pct": 1.4464494200000075,
+   "charge_dmg_pct": 0.46161039999999787,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 2.3002545199999958,
+   "atk_pct": 1.7880309100000034,
+   "max_ammo_pct": 1.6239492899999988,
+   "crit_rate": 0.2959747499999992,
+   "crit_dmg": 1.3736537999999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 14.81437709,
+   "atk_pct": 7.571694639999997,
+   "max_ammo_pct": 3.550777850000003,
+   "crit_rate": 3.4024857600000047,
+   "crit_dmg": 8.228475549999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "율리아": {
+   "element_bonus": 9.543013760000001,
+   "atk_pct": 7.0517465,
+   "max_ammo_pct": 2.5308430000000044,
+   "crit_rate": 2.529548360000007,
+   "crit_dmg": 4.090599190000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "츠바이": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "charge_speed_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "율리아": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "츠바이": "공4+장탄2+크확2+크뎀4",
+  "민트": "우코4+공4+크뎀2+차속2",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄1+크뎀3",
+  "신데렐라 : 크리스탈 웨이브": "우코4+공4+장탄1+크뎀3",
+  "율리아": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 765,
+ "seconds": 87.7
+}

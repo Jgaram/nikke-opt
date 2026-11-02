@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-017",
+ "season": 39,
+ "squad": [
+  "레이블",
+  "타키나",
+  "헬름 : 아쿠아마린",
+  "치사토",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "v_spec": 53.24096946,
+ "v_E0": 61.80881115,
+ "v_O": 66.03261247,
+ "base_check": 61.80881115,
+ "screen": {
+  "레이블": {
+   "element_bonus": 1.0002552199999997,
+   "atk_pct": 0.5444877499999947,
+   "max_ammo_pct": 0.3278777599999998,
+   "crit_rate": 0.18876815000000136,
+   "crit_dmg": 0.16305121999999983,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 7.332725599999996,
+   "atk_pct": 3.6068154799999945,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.315219380000002,
+   "crit_dmg": 1.1360183100000043,
+   "charge_speed_pct": 0.155879910000003,
+   "charge_dmg_pct": 0.0737045500000022,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.7048059799999962,
+   "atk_pct": 1.1456208899999965,
+   "max_ammo_pct": 0.4107351099999974,
+   "crit_rate": 0.3152701600000043,
+   "crit_dmg": 0.2723172900000037,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "치사토": {
+   "element_bonus": 11.241847909999997,
+   "atk_pct": 4.533260899999995,
+   "max_ammo_pct": 2.874538989999998,
+   "crit_rate": 2.063490520000002,
+   "crit_dmg": 1.782337340000005,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8884720099999939,
+   "max_ammo_pct": 0.5990128799999965,
+   "crit_rate": 0.8510129600000056,
+   "crit_dmg": 0.7350602800000061,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.26081102000000556,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "레이블": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "타키나": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "치사토": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "레이블": "우코4+공4+장탄4",
+  "타키나": "우코4+공4+크확2+크뎀2",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄1+크확3",
+  "치사토": "우코4+공4+장탄3+크확1",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확4+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 754,
+ "seconds": 86.4
+}

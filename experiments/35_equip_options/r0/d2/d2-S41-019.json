@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-019",
+ "season": 41,
+ "squad": [
+  "리타",
+  "민트",
+  "길티 : 마이티 바니",
+  "퀀시 : 이스케이프 퀸",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "v_spec": 37.55064168,
+ "v_E0": 43.28922952,
+ "v_O": 47.97266287,
+ "base_check": 43.28922952,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.38992154999999684,
+   "max_ammo_pct": -0.04983447000000041,
+   "crit_rate": 0.1886733300000003,
+   "crit_dmg": 0.13795319999999833,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.24002071999999686,
+   "max_ammo_pct": 0.10697667000000166,
+   "crit_rate": 0.11772520000000242,
+   "crit_dmg": 0.09001303000000149,
+   "charge_speed_pct": 0.4058889800000003,
+   "charge_dmg_pct": 0.1555550100000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티 : 마이티 바니": {
+   "element_bonus": 5.990832679999997,
+   "atk_pct": 3.144847890000001,
+   "max_ammo_pct": 0.8225926200000018,
+   "crit_rate": 2.1800357700000035,
+   "crit_dmg": 1.3449403800000042,
+   "charge_speed_pct": 2.4953099499999993,
+   "charge_dmg_pct": 0.7801988100000017,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 6.083904310000001,
+   "atk_pct": 2.4981712000000016,
+   "max_ammo_pct": 0.9207206000000028,
+   "crit_rate": 2.1556468599999974,
+   "crit_dmg": 2.8470715099999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 3.0014155399999964,
+   "atk_pct": 2.0434131900000025,
+   "max_ammo_pct": 1.4155656699999994,
+   "crit_rate": 1.042263939999998,
+   "crit_dmg": 0.7942109700000017,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "민트": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+크확4+크뎀4",
+  "민트": "공4+차속4+차뎀4",
+  "길티 : 마이티 바니": "우코4+공4+차속4",
+  "퀀시 : 이스케이프 퀸": "우코4+공1+크확3+크뎀4",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄2+크확2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 94.6
+}

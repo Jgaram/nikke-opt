@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-044",
+ "season": 36,
+ "squad": [
+  "리타",
+  "마리",
+  "이사벨",
+  "스노우 화이트 : 헤비암즈",
+  "드레이크"
+ ],
+ "v_spec": 27.76940551,
+ "v_E0": 31.68463572,
+ "v_O": 35.5508158,
+ "base_check": 31.68463572,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.42680006999999875,
+   "max_ammo_pct": 0.25903386999999967,
+   "crit_rate": 0.14789415999999989,
+   "crit_dmg": 0.11300035000000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마리": {
+   "element_bonus": 1.2252690899999976,
+   "atk_pct": 0.682542680000001,
+   "max_ammo_pct": 0.34638625999999917,
+   "crit_rate": 0.28322840000000227,
+   "crit_dmg": 0.21198182000000187,
+   "charge_speed_pct": 0.3690132599999991,
+   "charge_dmg_pct": 0.4068589100000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이사벨": {
+   "element_bonus": 4.5741350999999995,
+   "atk_pct": 1.9858180899999986,
+   "max_ammo_pct": 1.0934336999999985,
+   "crit_rate": 1.1893367200000036,
+   "crit_dmg": 0.9988616900000018,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.84094026,
+   "max_ammo_pct": 0.6131744300000008,
+   "crit_rate": 0.9874235900000023,
+   "crit_dmg": 0.7622937899999975,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.272628000000001,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9224208300000001,
+   "max_ammo_pct": 0.4231623199999994,
+   "crit_rate": 0.41958134000000413,
+   "crit_dmg": 0.32138836999999754,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "마리": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "charge_speed_pct"
+  ],
+  "이사벨": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄2+크확3+크뎀3",
+  "마리": "우코4+공4+차속3+차뎀1",
+  "이사벨": "우코4+공4+장탄1+크확3",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "드레이크": "공4+장탄2+크확3+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 803,
+ "seconds": 72.0
+}

@@ -1,0 +1,133 @@
+{
+ "id": "r3b-S36-Bp-4",
+ "season": 36,
+ "arm": "Bp",
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "프리바티 : 언카인드 메이드",
+  "소다 : 트윙클링 바니",
+  "드레이크"
+ ],
+ "win": null,
+ "v_spec": 41.05665751,
+ "ctrl": [
+  "드레이크:cover_at:next_fb+0.1-rl",
+  "소다 : 트윙클링 바니:cover_at:next_fb+0.1-rl",
+  "아르카나 : 포츈 메이트:cover_at:fb_end-0.3",
+  "프리바티 : 언카인드 메이드:cover_at:next_fb+0.1-rl"
+ ],
+ "v_E0": 46.28557637,
+ "v_O": 54.59494937,
+ "base_check": 46.28557637,
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.2407597999999993,
+   "max_ammo_pct": 0.05166346000000033,
+   "crit_rate": 0.054931599999996195,
+   "crit_dmg": 0.07146172999999578,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3338775799999993,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.5430350500000003,
+   "crit_dmg": 1.2350491699999964,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티 : 언카인드 메이드": {
+   "element_bonus": 8.406574920000004,
+   "atk_pct": 3.3848182199999997,
+   "max_ammo_pct": 0.7176552399999991,
+   "crit_rate": 2.5527887599999985,
+   "crit_dmg": 1.9694667699999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "소다 : 트윙클링 바니": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9163961100000009,
+   "max_ammo_pct": 1.0184431899999993,
+   "crit_rate": 1.6491644500000007,
+   "crit_dmg": 1.110360589999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2557112300000028,
+   "max_ammo_pct": 0.386026980000004,
+   "crit_rate": 0.5438926499999965,
+   "crit_dmg": 0.7101015100000012,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "프리바티 : 언카인드 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "소다 : 트윙클링 바니": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "공4+크확4+크뎀4",
+  "프리바티 : 언카인드 메이드": "우코4+공4+크확3+크뎀1",
+  "소다 : 트윙클링 바니": "공4+크확4+크뎀4",
+  "드레이크": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1936,
+ "seconds": 73.9,
+ "v_start2": 54.59494937,
+ "v_OC": 54.62544027,
+ "ctrl2": [
+  "드레이크:cover_at:next_fb+0.1-rl",
+  "소다 : 트윙클링 바니:cover_at:next_fb+0.1-rl",
+  "토브:cover_at:next_fb+0.1-rl",
+  "프리바티 : 언카인드 메이드:cover_at:next_fb+0.1-rl"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

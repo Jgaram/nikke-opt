@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-010",
+ "season": 36,
+ "squad": [
+  "목단",
+  "크라운",
+  "메이든 : 아이스 로즈",
+  "아니스 : 스파클링 서머",
+  "헬름"
+ ],
+ "v_spec": 61.12030397,
+ "v_E0": 58.53632985,
+ "v_O": 78.04913281,
+ "base_check": 58.53632985,
+ "screen": {
+  "목단": {
+   "element_bonus": 6.336770270000002,
+   "atk_pct": 2.553013059999998,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.205300440000002,
+   "crit_dmg": 1.1312615000000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6550034500000024,
+   "max_ammo_pct": 0.10099533000000349,
+   "crit_rate": 0.23534560999999599,
+   "crit_dmg": 0.23181437999999588,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 8.627177010000004,
+   "atk_pct": 2.752695899999999,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.7727210500000012,
+   "crit_dmg": 1.5706350600000007,
+   "charge_speed_pct": 3.52478687,
+   "charge_dmg_pct": 0.7021462900000017,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 5.277267219999999,
+   "atk_pct": 2.924236790000002,
+   "max_ammo_pct": -10.34412381,
+   "crit_rate": 1.1098265799999965,
+   "crit_dmg": 1.0665295900000018,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7496362800000043,
+   "max_ammo_pct": -0.36042473999999913,
+   "crit_rate": 0.17855769999999893,
+   "crit_dmg": 0.16358641000000063,
+   "charge_speed_pct": 1.891148770000001,
+   "charge_dmg_pct": 0.20784362999999928,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+크확4+크뎀4",
+  "메이든 : 아이스 로즈": "우코4+공4+차속4",
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "헬름": "공4+차속4+차뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 838,
+ "seconds": 131.0
+}

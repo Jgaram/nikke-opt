@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-020",
+ "season": 36,
+ "squad": [
+  "리타",
+  "나유타",
+  "헬름",
+  "신데렐라",
+  "루드밀라 : 윈터 오너"
+ ],
+ "v_spec": 43.6581909,
+ "v_E0": 51.37308205,
+ "v_O": 57.04667093,
+ "base_check": 51.37308205,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.52539479,
+   "max_ammo_pct": 0.3632625800000042,
+   "crit_rate": 0.17082618999999966,
+   "crit_dmg": 0.14851648999999867,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5329961500000024,
+   "max_ammo_pct": 0.005404620000000193,
+   "crit_rate": 0.5412396500000014,
+   "crit_dmg": 0.42189084999999693,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5910465600000023,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5809982600000012,
+   "max_ammo_pct": 0.4663227799999987,
+   "crit_rate": 0.6701369099999965,
+   "crit_dmg": 0.511148139999996,
+   "charge_speed_pct": 0.18817805999999848,
+   "charge_dmg_pct": 0.2384599499999993,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 13.275030229999999,
+   "atk_pct": 4.716072390000001,
+   "max_ammo_pct": 5.474556200000002,
+   "crit_rate": 3.2081445800000026,
+   "crit_dmg": 2.358817309999999,
+   "charge_speed_pct": 0.3003113099999979,
+   "charge_dmg_pct": 1.1150686499999978,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3032548099999985,
+   "max_ammo_pct": 2.949500470000004,
+   "crit_rate": 0.4064673600000006,
+   "crit_dmg": 0.5795561500000019,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄1+크확3+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공4+장탄1+크확3",
+  "루드밀라 : 윈터 오너": "공4+장탄4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 835,
+ "seconds": 74.4
+}

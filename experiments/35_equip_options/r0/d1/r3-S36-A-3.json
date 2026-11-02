@@ -1,0 +1,141 @@
+{
+ "id": "r3-S36-A-3",
+ "season": 36,
+ "arm": "A",
+ "squad": [
+  "D : 킬러 와이프",
+  "미란다",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "win": null,
+ "v_spec": 45.85851041,
+ "ctrl": [
+  "D : 킬러 와이프:reload:A0.3",
+  "미란다:burst:wait2",
+  "미란다:reload:A0.3",
+  "아인:reload:A0.3",
+  "에이다:reload:A0.3",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:reload:C0.1"
+ ],
+ "v_E0": 52.42291512,
+ "v_O": 64.18995951,
+ "base_check": 52.42291512,
+ "screen": {
+  "D : 킬러 와이프": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.21752917999999966,
+   "max_ammo_pct": -0.03202754000000141,
+   "crit_rate": 0.06269439999999804,
+   "crit_dmg": 0.03566320000000189,
+   "charge_speed_pct": -0.152882009999999,
+   "charge_dmg_pct": 0.09403367000000173,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5746313200000017,
+   "max_ammo_pct": 0.0289858199999955,
+   "crit_rate": 0.2082919799999985,
+   "crit_dmg": 0.30608732000000316,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5474410200000008,
+   "max_ammo_pct": 2.912383560000002,
+   "crit_rate": 1.2534465499999996,
+   "crit_dmg": 0.4104675900000032,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 10.793012570000002,
+   "atk_pct": 8.002867799999997,
+   "max_ammo_pct": 0.09764224999999982,
+   "crit_rate": 0.7536157000000046,
+   "crit_dmg": 5.14075519,
+   "charge_speed_pct": 0.3337228900000042,
+   "charge_dmg_pct": 0.18634512999999941,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 7.377146259999996,
+   "atk_pct": 3.28087936,
+   "max_ammo_pct": 0.2656071899999972,
+   "crit_rate": 0.40175512000000424,
+   "crit_dmg": 4.184683970000002,
+   "charge_speed_pct": -0.8181131999999991,
+   "charge_dmg_pct": 0.24078643,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "D : 킬러 와이프": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "타키나": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "아인": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "D : 킬러 와이프": "우코4+공4+장탄4",
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "타키나": "공4+장탄1+크확4+크뎀3",
+  "에이다": "우코4+공4+크뎀4",
+  "아인": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1348,
+ "seconds": 58.2,
+ "v_start2": 64.18995951,
+ "v_OC": 64.18995951,
+ "ctrl2": [
+  "D : 킬러 와이프:reload:A0.3",
+  "미란다:burst:wait2",
+  "미란다:reload:A0.3",
+  "아인:reload:A0.3",
+  "에이다:reload:A0.3",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:reload:C0.1"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

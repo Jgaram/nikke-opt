@@ -1,0 +1,132 @@
+{
+ "id": "r3b-S39-Bp-2",
+ "season": 39,
+ "arm": "Bp",
+ "squad": [
+  "미란다",
+  "민트",
+  "헬름 : 아쿠아마린",
+  "마르차나 : 마린 스터디",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "win": null,
+ "v_spec": 56.62155569,
+ "ctrl": [
+  "마르차나 : 마린 스터디:cover_at:next_fb+0.1-rl",
+  "미란다:cover_at:next_fb+0.1-rl"
+ ],
+ "v_E0": 63.3627956,
+ "v_O": 74.54502664,
+ "base_check": 63.3627956,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8825906299999957,
+   "max_ammo_pct": 0.36193690999999717,
+   "crit_rate": 0.4605110500000009,
+   "crit_dmg": 0.5655878700000017,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.9379225200000008,
+   "atk_pct": 0.7330983700000004,
+   "max_ammo_pct": 0.3658409399999982,
+   "crit_rate": 0.336796360000001,
+   "crit_dmg": 0.21521644999999978,
+   "charge_speed_pct": 0.36028836999999925,
+   "charge_dmg_pct": 0.3836661899999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.8856129899999985,
+   "atk_pct": 1.4883747499999984,
+   "max_ammo_pct": 0.3381367599999976,
+   "crit_rate": 0.6791443799999968,
+   "crit_dmg": 0.41347855000000067,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 12.86195669,
+   "atk_pct": 10.914451479999997,
+   "max_ammo_pct": 0.775322199999998,
+   "crit_rate": 2.762816420000007,
+   "crit_dmg": 5.640800600000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 4.052393369999997,
+   "max_ammo_pct": 0.848398159999995,
+   "crit_rate": 3.285169030000006,
+   "crit_dmg": 1.576795329999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3805701799999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "민트": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "max_ammo_pct"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄1+크확3+크뎀4",
+  "민트": "우코4+공4+장탄1+차뎀3",
+  "헬름 : 아쿠아마린": "우코4+공4+크확3+크뎀1",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확4+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1563,
+ "seconds": 47.8,
+ "v_start2": 74.54502664,
+ "v_OC": 74.7436369,
+ "ctrl2": [
+  "squad:camera:slot2",
+  "마르차나 : 마린 스터디:cover_at:next_fb+0.1-rl",
+  "민트:cover_at:fb_end-0.3",
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.3",
+  "헬름 : 아쿠아마린:cover_at:fb_end-0.3"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

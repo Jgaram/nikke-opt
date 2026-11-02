@@ -1,0 +1,133 @@
+{
+ "id": "r3-S41-A-3",
+ "season": 41,
+ "arm": "A",
+ "squad": [
+  "리틀 머메이드",
+  "플로라",
+  "크라운",
+  "길티 : 마이티 바니",
+  "루드밀라 : 윈터 오너"
+ ],
+ "win": null,
+ "v_spec": 48.44839404,
+ "ctrl": [
+  "squad:camera:길티 : 마이티 바니",
+  "길티 : 마이티 바니:cancel:on",
+  "리틀 머메이드:reload:C0.1",
+  "플로라:reload:A0.3"
+ ],
+ "v_E0": 55.08832149,
+ "v_O": 61.17067902,
+ "base_check": 55.08832149,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9094466899999958,
+   "max_ammo_pct": 0.2258771499999952,
+   "crit_rate": 0.8343309099999985,
+   "crit_dmg": 0.7206420800000046,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7451983099999993,
+   "max_ammo_pct": 0.3733050700000007,
+   "crit_rate": 0.2655525800000049,
+   "crit_dmg": 0.22938220000000342,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6334910899999997,
+   "max_ammo_pct": 0.4458125099999961,
+   "crit_rate": 0.2439927600000047,
+   "crit_dmg": 0.2107277300000021,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티 : 마이티 바니": {
+   "element_bonus": 9.68774149,
+   "atk_pct": 4.417475509999996,
+   "max_ammo_pct": 0.7111622699999955,
+   "crit_rate": 1.7189457400000023,
+   "crit_dmg": 1.4847353500000011,
+   "charge_speed_pct": 2.632241450000002,
+   "charge_dmg_pct": 1.1075752500000036,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 6.0549856199999965,
+   "atk_pct": 3.2372569499999955,
+   "max_ammo_pct": 0.12774734999999993,
+   "crit_rate": 1.0482754400000047,
+   "crit_dmg": 1.657180050000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "플로라": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "플로라": "공4+크확4+크뎀4",
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "길티 : 마이티 바니": "우코4+공4+차속4",
+  "루드밀라 : 윈터 오너": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1589,
+ "seconds": 54.6,
+ "v_start2": 61.17067902,
+ "v_OC": 61.27774515,
+ "ctrl2": [
+  "squad:camera:길티 : 마이티 바니",
+  "길티 : 마이티 바니:cancel:on",
+  "리틀 머메이드:reload:C0.1_dry",
+  "플로라:reload:A0.3"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

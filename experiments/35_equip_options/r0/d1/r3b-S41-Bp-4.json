@@ -1,0 +1,133 @@
+{
+ "id": "r3b-S41-Bp-4",
+ "season": 41,
+ "arm": "Bp",
+ "squad": [
+  "리타",
+  "그레이브",
+  "퀀시 : 이스케이프 퀸",
+  "길로틴 : 윈터 슬레이어",
+  "루드밀라 : 윈터 오너"
+ ],
+ "win": null,
+ "v_spec": 36.98126763,
+ "ctrl": [
+  "그레이브:cover_at:fb_end-0.1-rl",
+  "길로틴 : 윈터 슬레이어:cover_at:fb_end-0.1-rl_dry",
+  "리타:cover_at:fb_end-0.1-rl_dry",
+  "퀀시 : 이스케이프 퀸:cover_at:fb_end-0.1-rl"
+ ],
+ "v_E0": 43.25261401,
+ "v_O": 46.33967943,
+ "base_check": 43.25261401,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.46436681000000135,
+   "max_ammo_pct": 0.23658649000000054,
+   "crit_rate": 0.12877195000000086,
+   "crit_dmg": 0.09856512999999723,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9212295700000013,
+   "max_ammo_pct": -0.0006101699999945254,
+   "crit_rate": 0.003417079999998407,
+   "crit_dmg": 1.1616657100000012,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 6.384698820000004,
+   "atk_pct": 2.6623886300000024,
+   "max_ammo_pct": 0.8959705199999988,
+   "crit_rate": 1.465106039999995,
+   "crit_dmg": 2.3054039199999963,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴 : 윈터 슬레이어": {
+   "element_bonus": 4.284303229999999,
+   "atk_pct": 1.6577064300000046,
+   "max_ammo_pct": 0.7334045800000055,
+   "crit_rate": 0.9635243799999955,
+   "crit_dmg": 0.7448678899999948,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 3.980185580000004,
+   "atk_pct": 2.9493469599999997,
+   "max_ammo_pct": 3.3276335999999986,
+   "crit_rate": 0.8326652699999997,
+   "crit_dmg": 1.176661799999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "길로틴 : 윈터 슬레이어": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄2+크확3+크뎀3",
+  "그레이브": "공4+크확4+크뎀4",
+  "퀀시 : 이스케이프 퀸": "우코4+공4+크확1+크뎀3",
+  "길로틴 : 윈터 슬레이어": "우코4+공4+크확2+크뎀2",
+  "루드밀라 : 윈터 오너": "우코4+공4+장탄4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1693,
+ "seconds": 85.7,
+ "v_start2": 46.33967943,
+ "v_OC": 46.74416802,
+ "ctrl2": [
+  "그레이브:cover_at:fb_end-0.1-rl",
+  "길로틴 : 윈터 슬레이어:cover_at:fb_end-0.3",
+  "루드밀라 : 윈터 오너:cover_at:fb_end-0.1-rl_dry",
+  "리타:cover_at:fb_end-0.1-rl_dry"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

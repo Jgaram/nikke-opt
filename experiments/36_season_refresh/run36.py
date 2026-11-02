@@ -37,9 +37,9 @@ import cubes as CB  # noqa: E402
 from r3 import r1, r0, run31, M, R9, R10, R30, E8, menu6  # noqa: E402
 
 # ---------------------------------------------------------------- 절차(실험 32 · 35 판단으로 정한다 — README §절차)
-ARM: str | None = None     # "A" = 레이어 바탕(지금 절차) · "Bc" = 실험 32 R3c(P0 바탕 + 끝 탐침 + 원시 메뉴 후처리)
-OPT: str | None = None     # "final5" = 최종 5덱에만 옵션 탐색 · "reps" = 지도 대표 덱 전부에 옵션 탐색 → 다시 묶기
-C2: bool | None = None     # 옵션 뒤 컨트롤 + 큐브를 한 번 더 찾는가
+ARM: str | None = "A"      # "A" = 레이어 바탕(지금 절차) · "Bc" = 실험 32 R3c(P0 바탕 + 끝 탐침 + 원시 메뉴 후처리)
+OPT: str | None = "final5" # "final5" = 최종 5덱에만 옵션 탐색 · "reps" = 지도 대표 덱 전부에 옵션 탐색 → 다시 묶기
+C2: bool | None = True     # 옵션 뒤 컨트롤 + 큐브를 한 번 더 찾는가
 CUBE = True                # 후처리에 큐브를 같이 찾는다(지금 운용 기본 JT와 같은 뜻 — 사용자에게 알림, 2026-11-02)
 POST_BUDGET = 400          # 컨트롤(+큐브) · 옵션 · 다시 찾기 각각
 SPEC = "M3:k2"

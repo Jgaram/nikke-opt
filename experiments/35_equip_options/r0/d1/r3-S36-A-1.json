@@ -1,0 +1,133 @@
+{
+ "id": "r3-S36-A-1",
+ "season": 36,
+ "arm": "A",
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "벨벳",
+  "프리바티",
+  "신데렐라"
+ ],
+ "win": null,
+ "v_spec": 52.11467132,
+ "ctrl": [
+  "리틀 머메이드:reload:C0.5",
+  "벨벳:burst:wait2",
+  "신데렐라:reload:A0.3",
+  "프리바티:reload:A0.3"
+ ],
+ "v_E0": 50.35115068,
+ "v_O": 68.16865289,
+ "base_check": 50.35115068,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9977784900000017,
+   "max_ammo_pct": 1.0445207000000067,
+   "crit_rate": 0.6501567899999969,
+   "crit_dmg": 0.5615577099999953,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.755292500000003,
+   "max_ammo_pct": 0.9318634000000046,
+   "crit_rate": 0.5765368299999949,
+   "crit_dmg": 0.4979837299999943,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.613128599999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "벨벳": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.43424475000000484,
+   "max_ammo_pct": 1.2438672400000002,
+   "crit_rate": 0.14007473999999576,
+   "crit_dmg": 0.120989239999993,
+   "charge_speed_pct": 0.5706307499999994,
+   "charge_dmg_pct": 0.23192934999999437,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5171267100000065,
+   "max_ammo_pct": -7.497935149999996,
+   "crit_rate": 0.1588707199999959,
+   "crit_dmg": 0.137229099999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 12.718878200000006,
+   "atk_pct": 4.794592350000002,
+   "max_ammo_pct": 4.542060900000003,
+   "crit_rate": 2.5180240699999956,
+   "crit_dmg": 2.1749371899999943,
+   "charge_speed_pct": 0.002324989999998195,
+   "charge_dmg_pct": 1.1573946099999972,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "벨벳": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "나유타": "공4+크확4+차뎀4",
+  "벨벳": "공4+장탄2+차속4+차뎀2",
+  "프리바티": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공4+장탄1+크확3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1821,
+ "seconds": 97.0,
+ "v_start2": 68.16865289,
+ "v_OC": 68.16865289,
+ "ctrl2": [
+  "리틀 머메이드:reload:C0.5",
+  "벨벳:burst:wait2",
+  "신데렐라:reload:A0.3",
+  "프리바티:reload:A0.3"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

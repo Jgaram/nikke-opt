@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-021",
+ "season": 39,
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "소다 : 트윙클링 바니",
+  "슈가",
+  "프리바티"
+ ],
+ "v_spec": 47.58728435,
+ "v_E0": 52.344884,
+ "v_O": 62.47914164,
+ "base_check": 52.344884,
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.2787579200000039,
+   "max_ammo_pct": 0.05290982000000355,
+   "crit_rate": 0.06675769000000287,
+   "crit_dmg": 0.08692277000000104,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.029172459999998,
+   "max_ammo_pct": 0.027104719999996973,
+   "crit_rate": 0.5916595500000028,
+   "crit_dmg": 1.329272699999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "소다 : 트윙클링 바니": {
+   "element_bonus": 11.201483080000003,
+   "atk_pct": 4.8185188,
+   "max_ammo_pct": 1.283787580000002,
+   "crit_rate": 3.6997786199999965,
+   "crit_dmg": 2.542401869999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "슈가": {
+   "element_bonus": 6.853854200000001,
+   "atk_pct": 3.362540100000004,
+   "max_ammo_pct": 0.7248532999999995,
+   "crit_rate": 1.2531309999999962,
+   "crit_dmg": 2.272973399999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.32371521000000314,
+   "max_ammo_pct": -2.8751666699999987,
+   "crit_rate": 0.0799163699999994,
+   "crit_dmg": 0.10407741000000215,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "소다 : 트윙클링 바니": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "슈가": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ]
+ },
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "공4+크확4+크뎀4",
+  "소다 : 트윙클링 바니": "우코4+공4+크확3+크뎀1",
+  "슈가": "우코4+공4+크확1+크뎀3",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 846,
+ "seconds": 103.0
+}

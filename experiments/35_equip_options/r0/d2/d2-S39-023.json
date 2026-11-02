@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-023",
+ "season": 39,
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "소다 : 트윙클링 바니",
+  "드레이크",
+  "누아르"
+ ],
+ "v_spec": 45.60643382,
+ "v_E0": 50.29512489,
+ "v_O": 58.05792373,
+ "base_check": 50.29512489,
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.24079743999999437,
+   "max_ammo_pct": 0.04533112000000017,
+   "crit_rate": 0.06187392000000358,
+   "crit_dmg": 0.08048796000000635,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4218500899999995,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.617556730000004,
+   "crit_dmg": 1.387233970000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "소다 : 트윙클링 바니": {
+   "element_bonus": 11.576184689999998,
+   "atk_pct": 4.228181759999998,
+   "max_ammo_pct": 2.0720616199999995,
+   "crit_rate": 3.8085133500000055,
+   "crit_dmg": 2.6418821100000045,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4674374099999952,
+   "max_ammo_pct": 0.3675337199999973,
+   "crit_rate": 0.6909531500000057,
+   "crit_dmg": 0.9017901800000061,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "누아르": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0016587000000001,
+   "max_ammo_pct": 0.1922182999999933,
+   "crit_rate": 0.45590840000000554,
+   "crit_dmg": 0.594598100000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "소다 : 트윙클링 바니": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "누아르": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "공4+크확4+크뎀4",
+  "소다 : 트윙클링 바니": "우코4+공4+크확3+크뎀1",
+  "드레이크": "공4+크확4+크뎀4",
+  "누아르": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 102.9
+}

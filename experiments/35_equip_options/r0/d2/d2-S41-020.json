@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-020",
+ "season": 41,
+ "squad": [
+  "목단",
+  "바이퍼",
+  "맥스웰 : 오디너리 미케닉",
+  "드레이크 : 그레이트 빌런",
+  "신데렐라"
+ ],
+ "v_spec": 35.07232714,
+ "v_E0": 38.34168928,
+ "v_O": 46.17422446,
+ "base_check": 38.34168928,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7003619999999984,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.25125351000000506,
+   "crit_dmg": 0.2170271000000028,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "바이퍼": {
+   "element_bonus": 3.8426627299999936,
+   "atk_pct": 2.22060106,
+   "max_ammo_pct": 0.716705399999995,
+   "crit_rate": 0.7210330400000018,
+   "crit_dmg": 0.6227900900000023,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3399025099999946,
+   "max_ammo_pct": 0.23575562999999988,
+   "crit_rate": 0.20135330000000096,
+   "crit_dmg": 0.17391844000000134,
+   "charge_speed_pct": 0.6850023800000002,
+   "charge_dmg_pct": 0.3837093400000029,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크 : 그레이트 빌런": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7943952499999938,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.8118449299999995,
+   "crit_dmg": 0.7012303600000038,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.3365585000000024,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5954906300000005,
+   "max_ammo_pct": 1.6558501299999975,
+   "crit_rate": 1.1620080900000005,
+   "crit_dmg": 1.0036811900000018,
+   "charge_speed_pct": 0.011890720000003796,
+   "charge_dmg_pct": 0.43381594000000234,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "바이퍼": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "드레이크 : 그레이트 빌런": [
+   "charge_dmg_pct",
+   "crit_rate",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "신데렐라": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "바이퍼": "우코4+공4+장탄2+크확2",
+  "맥스웰 : 오디너리 미케닉": "공4+장탄1+차속4+차뎀3",
+  "드레이크 : 그레이트 빌런": "크확4+크뎀4+차뎀4",
+  "신데렐라": "공2+장탄2+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 832,
+ "seconds": 88.0
+}

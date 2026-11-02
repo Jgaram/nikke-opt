@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-002",
+ "season": 42,
+ "squad": [
+  "목단",
+  "민트",
+  "프리카",
+  "리버렐리오",
+  "네온 : 비전 아이"
+ ],
+ "v_spec": 62.19347751,
+ "v_E0": 65.47180252,
+ "v_O": 76.96459119,
+ "base_check": 65.47180252,
+ "screen": {
+  "목단": {
+   "element_bonus": 4.4625989399999995,
+   "atk_pct": 2.1803537799999972,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.2475511100000034,
+   "crit_dmg": 1.3092583800000028,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3924719599999946,
+   "max_ammo_pct": 0.14588602999999978,
+   "crit_rate": 0.20594520999999588,
+   "crit_dmg": 0.21457182999999702,
+   "charge_speed_pct": 0.16590817000000868,
+   "charge_dmg_pct": 0.27981107000000804,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3971794200000005,
+   "max_ammo_pct": -0.17086288000000138,
+   "crit_rate": 0.20841369000000043,
+   "crit_dmg": 0.21698102999999946,
+   "charge_speed_pct": 0.3968009600000073,
+   "charge_dmg_pct": 0.2834437000000065,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.262255339999996,
+   "max_ammo_pct": 1.056428909999994,
+   "crit_rate": 1.3310159400000003,
+   "crit_dmg": 1.3796174499999978,
+   "charge_speed_pct": 2.820229900000001,
+   "charge_dmg_pct": 0.7427439000000078,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 16.749288579999998,
+   "atk_pct": 6.472607359999998,
+   "max_ammo_pct": 5.261593859999998,
+   "crit_rate": 4.670141830000006,
+   "crit_dmg": 4.900788210000002,
+   "charge_speed_pct": 12.545038610000006,
+   "charge_dmg_pct": 1.9754548700000072,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리카": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확2+크뎀2",
+  "민트": "공4+크확4+크뎀4",
+  "프리카": "공4+크뎀3+차속1+차뎀4",
+  "리버렐리오": "공4+크확2+크뎀2+차속4",
+  "네온 : 비전 아이": "우코4+공1+장탄3+차속4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 801,
+ "seconds": 77.2
+}

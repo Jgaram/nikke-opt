@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-008",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "앵커 : 이노센트 메이드",
+  "마스트 : 로망틱 메이드",
+  "리버렐리오",
+  "네온 : 비전 아이"
+ ],
+ "v_spec": 76.79596596,
+ "v_E0": 81.41036825,
+ "v_O": 94.63275099,
+ "base_check": 81.41036825,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 8.532943950000003,
+   "atk_pct": 3.1077106999999984,
+   "max_ammo_pct": 1.7352739100000036,
+   "crit_rate": 1.89083119,
+   "crit_dmg": 2.7146941999999967,
+   "charge_speed_pct": 0.483151399999997,
+   "charge_dmg_pct": 1.618847340000002,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3868023100000073,
+   "max_ammo_pct": 0.020235839999998007,
+   "crit_rate": 0.1844467099999889,
+   "crit_dmg": 0.26694021999999507,
+   "charge_speed_pct": 0.3548672900000014,
+   "charge_dmg_pct": 0.34006552999998974,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6533439399999992,
+   "max_ammo_pct": 0.14288210000000845,
+   "crit_rate": 0.31360569999999655,
+   "crit_dmg": 0.4595030400000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.51345228000001,
+   "max_ammo_pct": 0.4077239500000047,
+   "crit_rate": 1.0415036999999927,
+   "crit_dmg": 1.6400308500000023,
+   "charge_speed_pct": 2.550097319999992,
+   "charge_dmg_pct": 0.8022701099999949,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 18.563903460000006,
+   "atk_pct": 6.475626730000002,
+   "max_ammo_pct": 4.050857030000003,
+   "crit_rate": 4.439629139999994,
+   "crit_dmg": 5.822936929999997,
+   "charge_speed_pct": 13.32272558999999,
+   "charge_dmg_pct": 2.369113529999993,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+크확1+크뎀3",
+  "앵커 : 이노센트 메이드": "공4+차속4+차뎀4",
+  "마스트 : 로망틱 메이드": "공4+크확4+크뎀4",
+  "리버렐리오": "공4+크확1+크뎀3+차속4",
+  "네온 : 비전 아이": "우코4+공4+차속4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 767,
+ "seconds": 107.7
+}

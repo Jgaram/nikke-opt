@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-005",
+ "season": 41,
+ "squad": [
+  "목단",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "헬름",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "v_spec": 68.76590022,
+ "v_E0": 78.11885969,
+ "v_O": 90.58392586,
+ "base_check": 78.11885969,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1737904999999955,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.623946630000006,
+   "crit_dmg": 1.0006782600000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7365406699999966,
+   "max_ammo_pct": -0.004260620000010817,
+   "crit_rate": 0.34725054000000455,
+   "crit_dmg": 0.5753895300000096,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.9800139799999954,
+   "atk_pct": 1.503754949999987,
+   "max_ammo_pct": 0.5335401499999932,
+   "crit_rate": 0.6497285200000107,
+   "crit_dmg": 0.9740725100000134,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 8.738808889999987,
+   "atk_pct": 4.51427262,
+   "max_ammo_pct": 0.7247410599999995,
+   "crit_rate": 2.1052482000000055,
+   "crit_dmg": 3.24905926000001,
+   "charge_speed_pct": 1.7456787899999995,
+   "charge_dmg_pct": 0.7687848400000092,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 16.416242029999992,
+   "atk_pct": 5.384207439999997,
+   "max_ammo_pct": 0.6728099299999997,
+   "crit_rate": 3.242583190000005,
+   "crit_dmg": 5.317153410000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.9642863800000043,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "크라운": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3",
+  "헬름": "우코4+공4+크확1+크뎀3",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 846,
+ "seconds": 109.6
+}

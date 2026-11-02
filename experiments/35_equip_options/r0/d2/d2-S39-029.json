@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-029",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "리틀 머메이드",
+  "에이드 : 에이전트 바니",
+  "밀크 : 블루밍 바니",
+  "마르차나 : 마린 스터디"
+ ],
+ "v_spec": 41.60318464,
+ "v_E0": 44.99573731,
+ "v_O": 49.8420219,
+ "base_check": 44.99573731,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.715462180000003,
+   "max_ammo_pct": 0.5050649699999994,
+   "crit_rate": 0.25606220999999607,
+   "crit_dmg": 0.3801035499999941,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1691548400000045,
+   "max_ammo_pct": 0.29061035000000146,
+   "crit_rate": 0.343835839999997,
+   "crit_dmg": 0.1883804100000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이드 : 에이전트 바니": {
+   "element_bonus": 0.7356036400000008,
+   "atk_pct": 0.6277280700000034,
+   "max_ammo_pct": 0.20198445000000476,
+   "crit_rate": 0.20072663999999918,
+   "crit_dmg": 0.11380563999999538,
+   "charge_speed_pct": 2.8679136299999968,
+   "charge_dmg_pct": 0.30090590999999733,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "밀크 : 블루밍 바니": {
+   "element_bonus": 5.581010140000004,
+   "atk_pct": 2.076359580000002,
+   "max_ammo_pct": 2.432257480000004,
+   "crit_rate": 2.062744169999995,
+   "crit_dmg": 0.8771545799999956,
+   "charge_speed_pct": 0.5632460699999982,
+   "charge_dmg_pct": 0.15659486999999928,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 8.632557520000006,
+   "atk_pct": 8.486876250000002,
+   "max_ammo_pct": 0.864572900000006,
+   "crit_rate": 1.7081921199999996,
+   "crit_dmg": 3.8922771899999944,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "에이드 : 에이전트 바니": [
+   "charge_speed_pct",
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "밀크 : 블루밍 바니": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄4+크확1+크뎀3",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "에이드 : 에이전트 바니": "우코4+공4+차속3+차뎀1",
+  "밀크 : 블루밍 바니": "우코4+공4+장탄2+크확2",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 87.3
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-002",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "아니스 : 스파클링 서머",
+  "네온 : 비전 아이"
+ ],
+ "v_spec": 97.8739305,
+ "v_E0": 95.5614914,
+ "v_O": 119.97371307,
+ "base_check": 95.5614914,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 12.324556430000001,
+   "atk_pct": 3.5497919999999965,
+   "max_ammo_pct": 1.5160251699999918,
+   "crit_rate": 2.4424385200000103,
+   "crit_dmg": 3.960621240000009,
+   "charge_speed_pct": -0.5988529899999975,
+   "charge_dmg_pct": 2.327781139999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6834664900000007,
+   "max_ammo_pct": 0.2645256699999976,
+   "crit_rate": 0.31173936000000424,
+   "crit_dmg": 0.5184841900000094,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6255343299999936,
+   "max_ammo_pct": 0.2119214899999946,
+   "crit_rate": 0.2615963000000079,
+   "crit_dmg": 0.3945161600000091,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 6.189756619999997,
+   "atk_pct": 2.745880289999988,
+   "max_ammo_pct": -9.47144917,
+   "crit_rate": 1.3498591500000003,
+   "crit_dmg": 2.1950161100000116,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 18.4436977,
+   "atk_pct": 5.983399969999994,
+   "max_ammo_pct": 2.6590598599999993,
+   "crit_rate": 3.5360058400000014,
+   "crit_dmg": 5.971095560000009,
+   "charge_speed_pct": 11.07532289000001,
+   "charge_dmg_pct": 2.3244298299999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공1+크확3+크뎀4",
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "아니스 : 스파클링 서머": "우코4+공4+크확1+크뎀3",
+  "네온 : 비전 아이": "우코4+공4+차속4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 804,
+ "seconds": 110.2
+}

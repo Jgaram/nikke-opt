@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-000",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "네온 : 비전 아이",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 101.55358333,
+ "v_E0": 102.2550953,
+ "v_O": 123.39258858,
+ "base_check": 102.2550953,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 10.20080028999999,
+   "atk_pct": 3.8688254499999886,
+   "max_ammo_pct": 1.862292999999994,
+   "crit_rate": 2.0917420600000014,
+   "crit_dmg": 1.8067370300000078,
+   "charge_speed_pct": 0.5127123900000043,
+   "charge_dmg_pct": 2.2656534300000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6255721399999885,
+   "max_ammo_pct": 0.2399829399999902,
+   "crit_rate": 0.22037184000001275,
+   "crit_dmg": 0.19034627000000626,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 16.233174819999988,
+   "atk_pct": 6.652922619999998,
+   "max_ammo_pct": 3.048578049999989,
+   "crit_rate": 3.3362957700000067,
+   "crit_dmg": 2.881718300000003,
+   "charge_speed_pct": 9.64360803000001,
+   "charge_dmg_pct": 2.3722483600000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 5.08345156,
+   "atk_pct": 2.9683747299999936,
+   "max_ammo_pct": -8.980912060000009,
+   "crit_rate": 1.1350924300000003,
+   "crit_dmg": 0.9804360400000007,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 4.399297139999987,
+   "atk_pct": 2.4537263099999933,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.7818238700000109,
+   "crit_dmg": 0.6752980199999996,
+   "charge_speed_pct": 1.6215331500000048,
+   "charge_dmg_pct": 0.5588635800000077,
+   "accuracy_pct": 0.0,
+   "def_pct": -0.9617098399999975
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+크확1+차뎀3",
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "네온 : 비전 아이": "우코4+공4+차속4",
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "메이든 : 아이스 로즈": "우코4+공4+크확1+차속3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 758,
+ "seconds": 112.2
+}

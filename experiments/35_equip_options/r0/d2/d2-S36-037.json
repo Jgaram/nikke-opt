@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-037",
+ "season": 36,
+ "squad": [
+  "목단",
+  "브리드 : 사일런트 트랙",
+  "리버렐리오",
+  "디젤 : 윈터 스위츠",
+  "미하라 : 본딩 체인"
+ ],
+ "v_spec": 33.17610487,
+ "v_E0": 37.73221695,
+ "v_O": 44.74793343,
+ "base_check": 37.73221695,
+ "screen": {
+  "목단": {
+   "element_bonus": 2.912113859999998,
+   "atk_pct": 1.4296253199999995,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.5136295399999966,
+   "crit_dmg": 0.4436490000000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8427718000000013,
+   "max_ammo_pct": 0.27090820000000093,
+   "crit_rate": 0.20323568999999964,
+   "crit_dmg": 0.1755495899999957,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7126396900000032,
+   "max_ammo_pct": 1.2130134300000037,
+   "crit_rate": 0.6934932699999976,
+   "crit_dmg": 0.5990050400000015,
+   "charge_speed_pct": 2.047757820000001,
+   "charge_dmg_pct": 0.6180466799999991,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.579956639999999,
+   "max_ammo_pct": 0.12356321000000037,
+   "crit_rate": 1.1404677999999961,
+   "crit_dmg": 0.7009734299999977,
+   "charge_speed_pct": 0.16766648000000117,
+   "charge_dmg_pct": 0.1677970799999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미하라 : 본딩 체인": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9320422300000004,
+   "max_ammo_pct": 0.700025140000001,
+   "crit_rate": 0.5693731100000008,
+   "crit_dmg": 0.49175942000000106,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리버렐리오": [
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "미하라 : 본딩 체인": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확2+크뎀2",
+  "브리드 : 사일런트 트랙": "공4+장탄1+크확4+크뎀3",
+  "리버렐리오": "공4+장탄3+크확1+차속4",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4",
+  "미하라 : 본딩 체인": "공4+장탄1+크확4+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 799,
+ "seconds": 68.4
+}

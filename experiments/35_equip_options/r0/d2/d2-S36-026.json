@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-026",
+ "season": 36,
+ "squad": [
+  "리타",
+  "마리",
+  "신데렐라",
+  "아인",
+  "헬름"
+ ],
+ "v_spec": 39.81224221,
+ "v_E0": 45.25186585,
+ "v_O": 49.37328046,
+ "base_check": 45.25186585,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.46451865000000225,
+   "max_ammo_pct": 0.23712119000000342,
+   "crit_rate": 0.13831658000000147,
+   "crit_dmg": 0.12041476999999645,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마리": {
+   "element_bonus": 1.2092258700000045,
+   "atk_pct": 0.7232366799999994,
+   "max_ammo_pct": 0.19192835000000485,
+   "crit_rate": 0.26542218999999534,
+   "crit_dmg": 0.21310162999999704,
+   "charge_speed_pct": 0.46823381000000097,
+   "charge_dmg_pct": 0.40045389999999514,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 11.02603018,
+   "atk_pct": 4.218583710000004,
+   "max_ammo_pct": 4.134283459999999,
+   "crit_rate": 2.647899840000001,
+   "crit_dmg": 1.9588223499999984,
+   "charge_speed_pct": -0.0976445599999991,
+   "charge_dmg_pct": 0.8989443799999961,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 5.243457169999999,
+   "atk_pct": 2.4020775500000013,
+   "max_ammo_pct": 0.48413043000000044,
+   "crit_rate": 1.0349548599999991,
+   "crit_dmg": 0.8277672999999979,
+   "charge_speed_pct": 0.9738333099999963,
+   "charge_dmg_pct": 0.595048349999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6223087199999995,
+   "max_ammo_pct": -0.8408384600000005,
+   "crit_rate": 0.18535150999999672,
+   "crit_dmg": 0.1497931500000007,
+   "charge_speed_pct": 0.8051832999999959,
+   "charge_dmg_pct": 0.19519193,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "마리": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "아인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct"
+  ],
+  "헬름": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+크확4+크뎀4",
+  "마리": "우코4+공4+차속4",
+  "신데렐라": "우코4+공4+장탄1+크확3",
+  "아인": "우코4+공4+크확4",
+  "헬름": "공4+차속4+차뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 796,
+ "seconds": 81.3
+}

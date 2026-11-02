@@ -1,0 +1,135 @@
+{
+ "id": "r3b-S36-Bp-1",
+ "season": 36,
+ "arm": "Bp",
+ "squad": [
+  "리틀 머메이드",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "신데렐라",
+  "아스카 : WILLE"
+ ],
+ "win": null,
+ "v_spec": 46.61680954,
+ "ctrl": [
+  "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+  "신데렐라:cover_at:fb_end-0.5-rl",
+  "아스카 : WILLE:cover_at:fb_end-0.1-rl_dry",
+  "앵커 : 이노센트 메이드:click:tapfire@charge4",
+  "앵커 : 이노센트 메이드:cover_at:fb_end-0.5-rl"
+ ],
+ "v_E0": 52.66202404,
+ "v_O": 63.13652241,
+ "base_check": 52.66202404,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3664106499999988,
+   "max_ammo_pct": -0.02702956000000256,
+   "crit_rate": 0.6183601999999979,
+   "crit_dmg": 0.9057723800000019,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6116665899999987,
+   "max_ammo_pct": 0.27626804999999877,
+   "crit_rate": 0.2566944599999985,
+   "crit_dmg": 0.38249131999999975,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.23852562999999805,
+   "max_ammo_pct": 0.17816889000000202,
+   "crit_rate": 0.09953180000000117,
+   "crit_dmg": 0.15035054999999886,
+   "charge_speed_pct": -0.025238989999998296,
+   "charge_dmg_pct": 0.15960805000000278,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 13.073137670000001,
+   "atk_pct": 4.046693980000001,
+   "max_ammo_pct": 1.0302911499999965,
+   "crit_rate": 3.745065160000003,
+   "crit_dmg": 4.673612750000004,
+   "charge_speed_pct": 0.1281323000000043,
+   "charge_dmg_pct": 1.086896700000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아스카 : WILLE": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.353961380000001,
+   "max_ammo_pct": 0.40349583999999794,
+   "crit_rate": 0.9809607900000046,
+   "crit_dmg": 1.5577241200000032,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "아스카 : WILLE": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확2+크뎀3",
+  "앵커 : 이노센트 메이드": "공4+장탄3+크뎀2+차뎀3",
+  "신데렐라": "우코4+크확4+크뎀4",
+  "아스카 : WILLE": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1645,
+ "seconds": 62.0,
+ "v_start2": 63.13652241,
+ "v_OC": 63.16960308,
+ "ctrl2": [
+  "리틀 머메이드:cover_at:fb_end-0.3",
+  "신데렐라:cover_at:fb_end-0.5-rl",
+  "아스카 : WILLE:cancel:on",
+  "앵커 : 이노센트 메이드:click:tapfire@charge4",
+  "앵커 : 이노센트 메이드:cover_at:fb_end-0.5-rl"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

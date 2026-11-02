@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-011",
+ "season": 36,
+ "squad": [
+  "목단",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "헬름",
+  "신데렐라"
+ ],
+ "v_spec": 60.53931801,
+ "v_E0": 68.54480329,
+ "v_O": 79.52150257,
+ "base_check": 68.54480329,
+ "screen": {
+  "목단": {
+   "element_bonus": 6.164179080000004,
+   "atk_pct": 2.3845312199999995,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.251752119999992,
+   "crit_dmg": 1.9979362199999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6899941599999977,
+   "max_ammo_pct": 0.41803788,
+   "crit_rate": 0.32145468999999594,
+   "crit_dmg": 0.5321506100000022,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.638075090000001,
+   "max_ammo_pct": 0.06858008000000382,
+   "crit_rate": 0.2730885900000004,
+   "crit_dmg": 0.4123177499999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8074523900000088,
+   "max_ammo_pct": -0.99927031,
+   "crit_rate": 0.7976808399999982,
+   "crit_dmg": 1.2735662300000001,
+   "charge_speed_pct": 1.6425340600000027,
+   "charge_dmg_pct": 0.31974789000000214,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 16.454710960000007,
+   "atk_pct": 5.3015249300000065,
+   "max_ammo_pct": 3.368786159999999,
+   "crit_rate": 3.7801737799999984,
+   "crit_dmg": 6.022660699999989,
+   "charge_speed_pct": -0.03453457000000526,
+   "charge_dmg_pct": 1.4287251699999928,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "헬름": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확1+크뎀3",
+  "크라운": "공4+장탄3+크확1+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+크확4+크뎀4",
+  "헬름": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공2+크확2+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 753,
+ "seconds": 118.4
+}

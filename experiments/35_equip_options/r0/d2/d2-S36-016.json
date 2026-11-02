@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-016",
+ "season": 36,
+ "squad": [
+  "볼륨",
+  "마스트 : 로망틱 메이드",
+  "나유타",
+  "리버렐리오",
+  "신데렐라"
+ ],
+ "v_spec": 46.22904852,
+ "v_E0": 51.7290148,
+ "v_O": 63.29321508,
+ "base_check": 51.7290148,
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5345360800000023,
+   "max_ammo_pct": 0.19439852000000002,
+   "crit_rate": 0.20536716000000155,
+   "crit_dmg": 0.3738203300000009,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.45120178999999894,
+   "max_ammo_pct": 0.2584533700000051,
+   "crit_rate": 0.19397800999999504,
+   "crit_dmg": 0.33687350999999666,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0965697399999996,
+   "max_ammo_pct": 0.06447019000000154,
+   "crit_rate": 0.4268861500000014,
+   "crit_dmg": 0.8433495499999992,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.353470889999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.0708203400000045,
+   "max_ammo_pct": 0.6975903700000003,
+   "crit_rate": 1.0941322699999958,
+   "crit_dmg": 2.0639898000000017,
+   "charge_speed_pct": 5.644055420000001,
+   "charge_dmg_pct": 0.7080981599999987,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 13.397166089999999,
+   "atk_pct": 4.630663850000005,
+   "max_ammo_pct": 2.959111610000001,
+   "crit_rate": 3.683249570000001,
+   "crit_dmg": 6.853732959999995,
+   "charge_speed_pct": -0.051973080000003335,
+   "charge_dmg_pct": 1.0210817999999975,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "리버렐리오": [
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "볼륨": "공1+장탄4+크확3+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확1+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "리버렐리오": "공4+크뎀4+차속4",
+  "신데렐라": "우코4+공3+크확1+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 767,
+ "seconds": 106.9
+}

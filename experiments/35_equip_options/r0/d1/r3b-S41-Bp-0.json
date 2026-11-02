@@ -1,0 +1,132 @@
+{
+ "id": "r3b-S41-Bp-0",
+ "season": 41,
+ "arm": "Bp",
+ "squad": [
+  "아니스 : 스타",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "프리바티",
+  "팬텀"
+ ],
+ "win": null,
+ "v_spec": 87.61909177,
+ "ctrl": [
+  "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+  "앵커 : 이노센트 메이드:click:tap+fc5.5",
+  "프리바티:cover_at:next_fb+0.5-rl"
+ ],
+ "v_E0": 76.77984626,
+ "v_O": 112.01139249,
+ "base_check": 76.77984626,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.813352690000002,
+   "max_ammo_pct": 1.8371770400000003,
+   "crit_rate": 1.2041357100000027,
+   "crit_dmg": 1.7342366499999997,
+   "charge_speed_pct": 0.17169911000000582,
+   "charge_dmg_pct": 1.0240741300000025,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 4.952746070000003,
+   "atk_pct": 2.06312269,
+   "max_ammo_pct": 0.6651911900000016,
+   "crit_rate": 1.0966611099999994,
+   "crit_dmg": 1.6039041300000036,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 4.450509429999997,
+   "atk_pct": 1.8331024400000047,
+   "max_ammo_pct": -0.2787519599999939,
+   "crit_rate": 0.980290949999997,
+   "crit_dmg": 1.4190133400000065,
+   "charge_speed_pct": 0.3325733500000041,
+   "charge_dmg_pct": 0.23034278999999458,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 4.092859950000005,
+   "atk_pct": 2.440889510000005,
+   "max_ammo_pct": -20.95784768,
+   "crit_rate": 1.45933402,
+   "crit_dmg": 1.8559506600000049,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 11.903762659999998,
+   "atk_pct": 4.04476468,
+   "max_ammo_pct": -0.08034770000000435,
+   "crit_rate": 2.655873970000002,
+   "crit_dmg": 4.1209786099999945,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+장탄1+크확3+크뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3",
+  "앵커 : 이노센트 메이드": "우코4+공4+크확1+크뎀3",
+  "프리바티": "우코4+공4+크확1+크뎀3",
+  "팬텀": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1580,
+ "seconds": 56.8,
+ "v_start2": 112.01139249,
+ "v_OC": 115.24340143,
+ "ctrl2": [
+  "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+  "앵커 : 이노센트 메이드:cancel:on",
+  "앵커 : 이노센트 메이드:click:tap",
+  "팬텀:cover_at:fb_end-0.5-rl"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

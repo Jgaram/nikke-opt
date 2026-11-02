@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-020",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "그레이브",
+  "헬름 : 아쿠아마린",
+  "마르차나 : 마린 스터디",
+  "밀크 : 블루밍 바니"
+ ],
+ "v_spec": 50.51063007,
+ "v_E0": 58.17560731,
+ "v_O": 64.83486397,
+ "base_check": 58.17560731,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8176651399999955,
+   "max_ammo_pct": 0.4640710799999965,
+   "crit_rate": 0.2920975700000028,
+   "crit_dmg": 0.4287904800000035,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.169205169999998,
+   "max_ammo_pct": 0.31742547999999715,
+   "crit_rate": 0.004334410000005562,
+   "crit_dmg": 0.9905801700000012,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.5638957799999957,
+   "atk_pct": 1.460892009999995,
+   "max_ammo_pct": 0.47579992999999376,
+   "crit_rate": 0.42593075000000624,
+   "crit_dmg": 0.24449753000000385,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 11.252904249999993,
+   "atk_pct": 10.611094459999997,
+   "max_ammo_pct": 1.2755559599999984,
+   "crit_rate": 2.190415790000003,
+   "crit_dmg": 5.261305160000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "밀크 : 블루밍 바니": {
+   "element_bonus": 6.691161299999997,
+   "atk_pct": 2.381972829999995,
+   "max_ammo_pct": 2.570879039999994,
+   "crit_rate": 2.6180808000000013,
+   "crit_dmg": 1.062454030000005,
+   "charge_speed_pct": 0.8402664000000044,
+   "charge_dmg_pct": 0.2578766400000063,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "그레이브": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "밀크 : 블루밍 바니": [
+   "element_bonus",
+   "crit_rate",
+   "max_ammo_pct",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄3+크확1+크뎀4",
+  "그레이브": "공4+장탄1+크확3+크뎀4",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄1+크확3",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4",
+  "밀크 : 블루밍 바니": "우코4+공4+장탄2+크확2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 766,
+ "seconds": 92.9
+}

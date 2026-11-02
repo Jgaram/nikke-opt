@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-008",
+ "season": 39,
+ "squad": [
+  "리타",
+  "민트",
+  "센티",
+  "신데렐라 : 크리스탈 웨이브",
+  "이브"
+ ],
+ "v_spec": 65.99337304,
+ "v_E0": 74.45527304,
+ "v_O": 83.44608046,
+ "base_check": 74.45527304,
+ "screen": {
+  "리타": {
+   "element_bonus": 1.7729272699999967,
+   "atk_pct": 1.1637814099999986,
+   "max_ammo_pct": -0.2896862999999996,
+   "crit_rate": 0.6636636100000004,
+   "crit_dmg": 0.48415534000000093,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 1.109943549999997,
+   "atk_pct": 0.7243995599999948,
+   "max_ammo_pct": 0.333581499999994,
+   "crit_rate": 0.41539231000000143,
+   "crit_dmg": 0.32089944999999886,
+   "charge_speed_pct": 1.064669930000008,
+   "charge_dmg_pct": 0.5504010500000049,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "센티": {
+   "element_bonus": 0.935191709999998,
+   "atk_pct": 0.592343459999995,
+   "max_ammo_pct": 0.09926362999999583,
+   "crit_rate": 0.3464076500000033,
+   "crit_dmg": 0.26906256000000894,
+   "charge_speed_pct": 0.002027879999999982,
+   "charge_dmg_pct": 0.46398906000000295,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 13.415573399999992,
+   "atk_pct": 6.186553369999999,
+   "max_ammo_pct": 2.966529659999992,
+   "crit_rate": 6.282338970000012,
+   "crit_dmg": 3.301568180000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 8.75398134999999,
+   "atk_pct": 4.15805829,
+   "max_ammo_pct": 2.0892297799999966,
+   "crit_rate": 2.6758952500000106,
+   "crit_dmg": 6.588695580000007,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "민트": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "센티": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "element_bonus",
+   "crit_rate",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "우코4+공4+장탄4",
+  "민트": "우코4+공4+차속1+차뎀3",
+  "센티": "우코4+공4+차뎀4",
+  "신데렐라 : 크리스탈 웨이브": "우코4+공3+크확4+크뎀1",
+  "이브": "우코4+공3+크확1+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 796,
+ "seconds": 73.5
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-010",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "민트",
+  "헬름 : 아쿠아마린",
+  "마르차나 : 마린 스터디",
+  "이브"
+ ],
+ "v_spec": 61.02947399,
+ "v_E0": 69.17703124,
+ "v_O": 80.751783,
+ "base_check": 69.17703124,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8661854500000032,
+   "max_ammo_pct": 0.12406361000000743,
+   "crit_rate": 0.4477576599999935,
+   "crit_dmg": 0.5375986899999958,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.9240314900000044,
+   "atk_pct": 0.7250720500000085,
+   "max_ammo_pct": 0.36651845000000094,
+   "crit_rate": 0.3295398899999924,
+   "crit_dmg": 0.21676703999999347,
+   "charge_speed_pct": 0.19703204999999002,
+   "charge_dmg_pct": 0.3779838699999942,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.8410502000000122,
+   "atk_pct": 1.4624241200000085,
+   "max_ammo_pct": 0.5279959000000076,
+   "crit_rate": 0.6515449399999937,
+   "crit_dmg": 0.4062653099999949,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 11.791765220000002,
+   "atk_pct": 4.521038410000003,
+   "max_ammo_pct": 1.4208916400000078,
+   "crit_rate": 2.6155946299999897,
+   "crit_dmg": 5.1038719499999985,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 10.796486980000005,
+   "atk_pct": 4.83828982,
+   "max_ammo_pct": 1.1964593200000024,
+   "crit_rate": 2.375616429999994,
+   "crit_dmg": 5.46087580999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "민트": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "max_ammo_pct"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄3+크확2+크뎀3",
+  "민트": "우코4+공4+장탄4",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄4",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4",
+  "이브": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 837,
+ "seconds": 90.8
+}

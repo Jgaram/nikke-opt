@@ -1,0 +1,138 @@
+{
+ "id": "r3b-S42-Bp-0",
+ "season": 42,
+ "arm": "Bp",
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "에이다",
+  "아니스 : 스파클링 서머"
+ ],
+ "win": null,
+ "v_spec": 95.00357503,
+ "ctrl": [
+  "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+  "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+  "에이다:click:tap",
+  "에이다:cover_at:fb_end-0.1-rl",
+  "크라운:cover_at:next_fb+0.1-rl",
+  "플로라:cancel:on",
+  "플로라:cover_at:fb_end-0.1-rl"
+ ],
+ "v_E0": 93.49566713,
+ "v_O": 112.38128395,
+ "base_check": 93.49566713,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 12.531622470000002,
+   "atk_pct": 3.2934441799999945,
+   "max_ammo_pct": 1.9628768599999944,
+   "crit_rate": 2.191807979999993,
+   "crit_dmg": 1.8931708300000025,
+   "charge_speed_pct": 0.21619986999999696,
+   "charge_dmg_pct": 2.356954139999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 4.5707132299999955,
+   "atk_pct": 1.72868785,
+   "max_ammo_pct": 0.03190353000000812,
+   "crit_rate": 0.810635199999993,
+   "crit_dmg": 0.7001895100000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6033793200000019,
+   "max_ammo_pct": 0.21766587999999842,
+   "crit_rate": 0.2585599699999932,
+   "crit_dmg": 0.22333220999999526,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 13.967495990000003,
+   "atk_pct": 4.50504291,
+   "max_ammo_pct": 0.17786825000000306,
+   "crit_rate": 2.413608609999997,
+   "crit_dmg": 2.084751179999998,
+   "charge_speed_pct": 0.08749865999999429,
+   "charge_dmg_pct": 0.1427649099999968,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 6.285083,
+   "atk_pct": 2.6255749200000054,
+   "max_ammo_pct": -11.797603710000004,
+   "crit_rate": 1.2238961399999937,
+   "crit_dmg": 1.0571338599999933,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "플로라": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+장탄4",
+  "플로라": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "에이다": "우코4+공4+크확2+크뎀2",
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1646,
+ "seconds": 63.0,
+ "v_start2": 112.38128395,
+ "v_OC": 112.517506,
+ "ctrl2": [
+  "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+  "에이다:click:tap",
+  "에이다:cover_at:fb_end-0.1-rl",
+  "크라운:cover_at:next_fb+0.1-rl",
+  "플로라:cancel:on",
+  "플로라:cover_at:fb_end-0.1-rl_dry"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

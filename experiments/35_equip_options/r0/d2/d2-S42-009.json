@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-009",
+ "season": 42,
+ "squad": [
+  "리타",
+  "마스트 : 로망틱 메이드",
+  "타키나",
+  "아인",
+  "질"
+ ],
+ "v_spec": 31.85893386,
+ "v_E0": 36.25298711,
+ "v_O": 42.38560106,
+ "base_check": 36.25298711,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3628519199999971,
+   "max_ammo_pct": 0.1763805399999967,
+   "crit_rate": 0.14580705000000194,
+   "crit_dmg": 0.21014522000000113,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.37162198000000046,
+   "max_ammo_pct": 0.8102280199999967,
+   "crit_rate": 0.16090525999999983,
+   "crit_dmg": 0.2242747499999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0032803900000005,
+   "max_ammo_pct": 0.025015289999998913,
+   "crit_rate": 0.423964490000003,
+   "crit_dmg": 0.7107907999999981,
+   "charge_speed_pct": 0.40244334999999865,
+   "charge_dmg_pct": 0.0943100699999988,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 6.532438589999998,
+   "atk_pct": 2.663169179999997,
+   "max_ammo_pct": 0.5689428000000021,
+   "crit_rate": 1.449431439999998,
+   "crit_dmg": 2.118850530000003,
+   "charge_speed_pct": 1.1739654900000005,
+   "charge_dmg_pct": 0.5121230000000025,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "질": {
+   "element_bonus": 5.31000199,
+   "atk_pct": 2.427347349999998,
+   "max_ammo_pct": -0.42245384000000286,
+   "crit_rate": 1.2012643799999978,
+   "crit_dmg": 1.7097044599999975,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "타키나": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_speed_pct"
+  ],
+  "아인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "질": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄2+크확2+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4",
+  "타키나": "공4+크확4+크뎀4",
+  "아인": "우코4+공4+크확1+크뎀3",
+  "질": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 542,
+ "seconds": 43.8
+}

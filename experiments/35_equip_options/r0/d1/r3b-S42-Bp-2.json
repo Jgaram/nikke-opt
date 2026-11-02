@@ -1,0 +1,141 @@
+{
+ "id": "r3b-S42-Bp-2",
+ "season": 42,
+ "arm": "Bp",
+ "squad": [
+  "볼륨",
+  "마스트 : 로망틱 메이드",
+  "맥스웰 : 오디너리 미케닉",
+  "신데렐라",
+  "메이든 : 아이스 로즈"
+ ],
+ "win": null,
+ "v_spec": 57.71493007,
+ "ctrl": [
+  "맥스웰 : 오디너리 미케닉:click:tapfire@charge4",
+  "맥스웰 : 오디너리 미케닉:cover_at:fb_end-0.1-rl",
+  "메이든 : 아이스 로즈:cancel:on",
+  "메이든 : 아이스 로즈:click:hold@chain",
+  "메이든 : 아이스 로즈:start_hold:hold0-2.2",
+  "볼륨:cover_at:fb_end-0.1-rl_dry",
+  "신데렐라:cover_at:fb_end-0.3"
+ ],
+ "v_E0": 63.32538745,
+ "v_O": 73.50762864,
+ "base_check": 63.32538745,
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5005499399999991,
+   "max_ammo_pct": 0.22478070000000372,
+   "crit_rate": 0.1903999299999981,
+   "crit_dmg": 0.3366612100000026,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.41182496999999785,
+   "max_ammo_pct": 0.632376800000003,
+   "crit_rate": 0.16480410999999862,
+   "crit_dmg": 0.2822135500000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.33850862999999976,
+   "max_ammo_pct": 4.5436534099999975,
+   "crit_rate": 0.21263266999999786,
+   "crit_dmg": 0.40218886999999626,
+   "charge_speed_pct": 0.8767966299999941,
+   "charge_dmg_pct": 0.30246568999999823,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 15.381049240000003,
+   "atk_pct": 4.920896339999999,
+   "max_ammo_pct": 3.0516794199999993,
+   "crit_rate": 4.6031327399999995,
+   "crit_dmg": 8.236909270000005,
+   "charge_speed_pct": -0.03847752000000071,
+   "charge_dmg_pct": 1.209157740000002,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 7.590606190000003,
+   "atk_pct": 2.20003552,
+   "max_ammo_pct": 1.062335730000001,
+   "crit_rate": 2.0147208899999995,
+   "crit_dmg": 3.9384286000000017,
+   "charge_speed_pct": 2.2355614499999987,
+   "charge_dmg_pct": 0.49594985000000236,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "atk_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "crit_dmg",
+   "charge_speed_pct",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "볼륨": "공4+장탄1+크확3+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확1+크뎀4",
+  "맥스웰 : 오디너리 미케닉": "공3+장탄2+크뎀3+차속4",
+  "신데렐라": "우코4+공1+크확3+크뎀4",
+  "메이든 : 아이스 로즈": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1576,
+ "seconds": 45.2,
+ "v_start2": 73.50762864,
+ "v_OC": 73.72940808,
+ "ctrl2": [
+  "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+  "맥스웰 : 오디너리 미케닉:click:tapfire@charge4",
+  "맥스웰 : 오디너리 미케닉:cover_at:fb_end-0.5-rl",
+  "메이든 : 아이스 로즈:cancel:on",
+  "메이든 : 아이스 로즈:click:hold@chain",
+  "메이든 : 아이스 로즈:cover_at:fb_end-0.3",
+  "메이든 : 아이스 로즈:start_hold:hold0-2.2",
+  "볼륨:cover_at:fb_end-0.1-rl_dry",
+  "신데렐라:cover_at:fb_end-0.3"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

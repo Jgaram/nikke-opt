@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-003",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "민트",
+  "프리카",
+  "루드밀라 : 윈터 오너",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "v_spec": 74.44634862,
+ "v_E0": 85.05696169,
+ "v_O": 96.02515722,
+ "base_check": 85.05696169,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.3232920899999954,
+   "max_ammo_pct": 1.4693309799999952,
+   "crit_rate": 1.4969447300000098,
+   "crit_dmg": 1.568834410000008,
+   "charge_speed_pct": 0.152207709999999,
+   "charge_dmg_pct": 0.9930796100000094,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7038888399999905,
+   "max_ammo_pct": 0.2808258899999885,
+   "crit_rate": 0.3617582300000066,
+   "crit_dmg": 0.3785617900000062,
+   "charge_speed_pct": 0.5763956700000108,
+   "charge_dmg_pct": 0.48950409000001116,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 2.2418513499999904,
+   "atk_pct": 1.2091965999999985,
+   "max_ammo_pct": 0.08614202999999065,
+   "crit_rate": 0.6219488200000001,
+   "crit_dmg": 0.6493451800000116,
+   "charge_speed_pct": 1.2386060000000043,
+   "charge_dmg_pct": 0.8404827800000021,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 8.789200399999999,
+   "atk_pct": 4.331502159999999,
+   "max_ammo_pct": 1.9789301299999948,
+   "crit_rate": 2.2610754900000103,
+   "crit_dmg": 3.3209060100000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 18.135580669999996,
+   "atk_pct": 6.431282119999992,
+   "max_ammo_pct": 3.268344709999994,
+   "crit_rate": 5.0090320200000065,
+   "crit_dmg": 5.248918710000012,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.1787280600000116,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "프리카": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+장탄1+크확3+크뎀4",
+  "민트": "공4+크뎀3+차속1+차뎀4",
+  "프리카": "우코4+공4+차속4",
+  "루드밀라 : 윈터 오너": "우코4+공4+크확1+크뎀3",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크확2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 755,
+ "seconds": 80.7
+}

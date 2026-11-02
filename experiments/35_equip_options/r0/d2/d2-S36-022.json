@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-022",
+ "season": 36,
+ "squad": [
+  "미란다",
+  "루주",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "v_spec": 42.93678465,
+ "v_E0": 49.67714232,
+ "v_O": 61.13111699,
+ "base_check": 49.67714232,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5672297400000019,
+   "max_ammo_pct": -0.18045896999999655,
+   "crit_rate": 0.20590573999999862,
+   "crit_dmg": 0.29838429000000133,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 0.4960706299999984,
+   "atk_pct": 0.46942273999999884,
+   "max_ammo_pct": 0.6583460499999987,
+   "crit_rate": 0.1344166199999961,
+   "crit_dmg": 0.0795613299999971,
+   "charge_speed_pct": 0.0014199199999964662,
+   "charge_dmg_pct": 0.20292283999999938,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4709917099999998,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.1389863699999978,
+   "crit_dmg": 0.3731404299999994,
+   "charge_speed_pct": 0.81882564,
+   "charge_dmg_pct": 0.03403644000000128,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 10.128979460000004,
+   "atk_pct": 7.393642249999999,
+   "max_ammo_pct": 0.09078431000000364,
+   "crit_rate": 0.6305635299999963,
+   "crit_dmg": 4.935227679999997,
+   "charge_speed_pct": 0.14061312999999842,
+   "charge_dmg_pct": 0.1729837399999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 6.8882322000000045,
+   "atk_pct": 3.0764877300000038,
+   "max_ammo_pct": -0.2296808699999957,
+   "crit_rate": 0.4036713899999995,
+   "crit_dmg": 3.8533217800000017,
+   "charge_speed_pct": 0.029534519999998565,
+   "charge_dmg_pct": 0.23429952000000043,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "루주": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "타키나": [
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "아인": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+크확4+크뎀4",
+  "루주": "우코4+공4+장탄4",
+  "타키나": "공4+크확4+크뎀4",
+  "에이다": "우코4+공4+크뎀4",
+  "아인": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 798,
+ "seconds": 56.3
+}

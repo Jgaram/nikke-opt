@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-040",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "마리",
+  "아스카 : WILLE",
+  "프리바티",
+  "길로틴"
+ ],
+ "v_spec": 31.26099769,
+ "v_E0": 33.50377546,
+ "v_O": 41.24626941,
+ "base_check": 33.50377546,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7971794900000013,
+   "max_ammo_pct": 0.36609671000000077,
+   "crit_rate": 0.480544799999997,
+   "crit_dmg": 0.4150664399999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마리": {
+   "element_bonus": 1.2554364599999985,
+   "atk_pct": 0.853434270000001,
+   "max_ammo_pct": 0.3056654399999985,
+   "crit_rate": 0.23730659000000287,
+   "crit_dmg": 0.20497293999999755,
+   "charge_speed_pct": 0.40401138000000003,
+   "charge_dmg_pct": 0.4435820200000009,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아스카 : WILLE": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.81363537,
+   "max_ammo_pct": 4.806810760000001,
+   "crit_rate": 0.8057732099999981,
+   "crit_dmg": 0.6959827100000027,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7690219099999993,
+   "max_ammo_pct": -3.4558347899999973,
+   "crit_rate": 0.19356171999999816,
+   "crit_dmg": 0.16718481000000196,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴": {
+   "element_bonus": 4.583450809999999,
+   "atk_pct": 2.174864660000001,
+   "max_ammo_pct": 1.5543999900000003,
+   "crit_rate": 1.0108554700000028,
+   "crit_dmg": 1.0931695200000036,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "마리": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "charge_speed_pct"
+  ],
+  "아스카 : WILLE": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "길로틴": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "마리": "우코4+공4+차뎀4",
+  "아스카 : WILLE": "공4+장탄2+크확3+크뎀3",
+  "프리바티": "공4+크확4+크뎀4",
+  "길로틴": "우코4+공4+장탄2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 84.2
+}

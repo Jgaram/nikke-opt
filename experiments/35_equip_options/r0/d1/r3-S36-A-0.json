@@ -1,0 +1,137 @@
+{
+ "id": "r3-S36-A-0",
+ "season": 36,
+ "arm": "A",
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "win": null,
+ "v_spec": 90.77077211,
+ "ctrl": [
+  "squad:camera:메이든 : 아이스 로즈",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "메이든 : 아이스 로즈:reload:C0.1_dry",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "크라운:burst:wait2",
+  "크라운:reload:C0.1_dry"
+ ],
+ "v_E0": 86.36079784,
+ "v_O": 113.1356223,
+ "base_check": 86.36079784,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 12.66891296,
+   "atk_pct": 3.8509168300000027,
+   "max_ammo_pct": 2.621428620000003,
+   "crit_rate": 2.969318219999991,
+   "crit_dmg": 4.387881579999998,
+   "charge_speed_pct": -0.06679521000000932,
+   "charge_dmg_pct": 2.616981409999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6729401300000006,
+   "max_ammo_pct": 0.3345971399999996,
+   "crit_rate": 0.31644407000000285,
+   "crit_dmg": 0.48903104999999414,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.61436968000001,
+   "max_ammo_pct": 0.28282784000001016,
+   "crit_rate": 0.2951602400000013,
+   "crit_dmg": 0.4110869000000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 6.450317589999997,
+   "atk_pct": 2.9913852500000075,
+   "max_ammo_pct": -12.883455299999994,
+   "crit_rate": 1.686259629999995,
+   "crit_dmg": 2.4628917,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 11.320391240000006,
+   "atk_pct": 3.107541960000006,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 2.556160460000001,
+   "crit_dmg": 4.177201209999993,
+   "charge_speed_pct": 3.6267839399999957,
+   "charge_dmg_pct": 1.2690522399999935,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.5854887200000007
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "crit_dmg",
+   "charge_speed_pct",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+크확4+크뎀4",
+  "크라운": "공4+장탄3+크확1+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확2+크뎀3",
+  "아니스 : 스파클링 서머": "우코4+공4+크확1+크뎀3",
+  "메이든 : 아이스 로즈": "우코4+공1+크뎀4+차속3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1571,
+ "seconds": 101.7,
+ "v_start2": 113.1356223,
+ "v_OC": 113.4730078,
+ "ctrl2": [
+  "squad:camera:메이든 : 아이스 로즈",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "메이든 : 아이스 로즈:reload:A0.3",
+  "아니스 : 스타:reload:A0.3",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "크라운:burst:wait2"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

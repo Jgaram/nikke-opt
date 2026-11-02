@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-025",
+ "season": 36,
+ "squad": [
+  "미란다",
+  "타키나",
+  "도라",
+  "에이다",
+  "아인"
+ ],
+ "v_spec": 41.26946717,
+ "v_E0": 46.12762729,
+ "v_O": 59.2632595,
+ "base_check": 46.12762729,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.519873859999997,
+   "max_ammo_pct": 0.28341480999999646,
+   "crit_rate": 0.1982222900000039,
+   "crit_dmg": 0.28286871000000247,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2595951200000002,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.9442162500000038,
+   "crit_dmg": 0.3297320400000032,
+   "charge_speed_pct": 0.5214378000000011,
+   "charge_dmg_pct": 0.036884280000002434,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "도라": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.1917191900000006,
+   "max_ammo_pct": 0.18099629999999678,
+   "crit_rate": 0.05847073999999708,
+   "crit_dmg": 0.034795449999997174,
+   "charge_speed_pct": 0.6216421600000004,
+   "charge_dmg_pct": 0.08834922999999861,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 9.141967469999997,
+   "atk_pct": 6.9927712,
+   "max_ammo_pct": -0.5595702500000002,
+   "crit_rate": 0.6671990600000015,
+   "crit_dmg": 4.348156940000003,
+   "charge_speed_pct": 0.8162031499999998,
+   "charge_dmg_pct": 0.18969214999999906,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 7.034893060000002,
+   "atk_pct": 3.600303099999998,
+   "max_ammo_pct": -0.4216676599999971,
+   "crit_rate": 0.44947931000000096,
+   "crit_dmg": 3.783632330000003,
+   "charge_speed_pct": 1.2144427100000001,
+   "charge_dmg_pct": 0.2407339900000025,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "타키나": [
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "도라": [
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "charge_speed_pct"
+  ],
+  "아인": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "charge_speed_pct"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄1+크확3+크뎀4",
+  "타키나": "공4+크확4+크뎀4",
+  "도라": "공4+장탄4+차속4",
+  "에이다": "우코4+공4+크뎀4",
+  "아인": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 751,
+ "seconds": 66.8
+}

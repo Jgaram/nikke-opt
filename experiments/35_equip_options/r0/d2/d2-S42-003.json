@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-003",
+ "season": 42,
+ "squad": [
+  "로산나",
+  "솔린 : 프로스트 티켓",
+  "맥스웰 : 오디너리 미케닉",
+  "신데렐라",
+  "드레이크 : 그레이트 빌런"
+ ],
+ "v_spec": 59.20888206,
+ "v_E0": 66.98210563,
+ "v_O": 74.56648761,
+ "base_check": 66.98210563,
+ "screen": {
+  "로산나": {
+   "element_bonus": 5.209395960000009,
+   "atk_pct": 1.957261520000003,
+   "max_ammo_pct": 3.8264491300000074,
+   "crit_rate": 1.0373575299999942,
+   "crit_dmg": 1.9579454099999936,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "솔린 : 프로스트 티켓": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.675881600000011,
+   "max_ammo_pct": 0.2550646700000101,
+   "crit_rate": 0.19456329999999866,
+   "crit_dmg": 0.16805639999999755,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4413417800000019,
+   "max_ammo_pct": 0.21185155000000577,
+   "crit_rate": 0.22876145999998698,
+   "crit_dmg": 0.19759228999998868,
+   "charge_speed_pct": 1.672618259999993,
+   "charge_dmg_pct": 0.4530020699999966,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 14.737620520000007,
+   "atk_pct": 4.517927900000004,
+   "max_ammo_pct": 4.357557310000004,
+   "crit_rate": 3.0797154699999965,
+   "crit_dmg": 2.660096789999997,
+   "charge_speed_pct": 0.5123927999999864,
+   "charge_dmg_pct": 1.1612831999999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크 : 그레이트 빌런": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0002342000000084,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.047942159999991,
+   "crit_dmg": 0.9051600999999891,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.7053224,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "로산나": [
+   "element_bonus",
+   "max_ammo_pct",
+   "crit_dmg",
+   "atk_pct"
+  ],
+  "솔린 : 프로스트 티켓": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "드레이크 : 그레이트 빌런": [
+   "charge_dmg_pct",
+   "crit_rate",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "로산나": "우코4+공4+장탄4",
+  "솔린 : 프로스트 티켓": "공4+장탄3+크확3+크뎀2",
+  "맥스웰 : 오디너리 미케닉": "공4+차속4+차뎀4",
+  "신데렐라": "우코4+공4+장탄3+크확1",
+  "드레이크 : 그레이트 빌런": "크확4+크뎀4+차뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 74.3
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-013",
+ "season": 41,
+ "squad": [
+  "목단",
+  "바이퍼",
+  "크라운",
+  "길로틴 : 윈터 슬레이어",
+  "헬름"
+ ],
+ "v_spec": 46.49042849,
+ "v_E0": 53.84953627,
+ "v_O": 60.3623788,
+ "base_check": 53.84953627,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.021890490000004,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.38229365000000115,
+   "crit_dmg": 0.35774003999999593,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "바이퍼": {
+   "element_bonus": 6.444285700000002,
+   "atk_pct": 3.65150843,
+   "max_ammo_pct": 0.6383745500000018,
+   "crit_rate": 1.2956034500000015,
+   "crit_dmg": 1.2190702799999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6471281399999995,
+   "max_ammo_pct": 0.3454333900000037,
+   "crit_rate": 0.23817102999999662,
+   "crit_dmg": 0.23329106999999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴 : 윈터 슬레이어": {
+   "element_bonus": 5.134002960000004,
+   "atk_pct": 1.8274738200000016,
+   "max_ammo_pct": 0.396590020000005,
+   "crit_rate": 1.041233069999997,
+   "crit_dmg": 0.9825196999999974,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 5.993452439999999,
+   "atk_pct": 3.931309050000003,
+   "max_ammo_pct": 0.39261760000000123,
+   "crit_rate": 1.3038961700000016,
+   "crit_dmg": 1.17505259,
+   "charge_speed_pct": 1.79856719,
+   "charge_dmg_pct": 0.6485553199999998,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "바이퍼": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "길로틴 : 윈터 슬레이어": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "바이퍼": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "길로틴 : 윈터 슬레이어": "우코4+공4+크확2+크뎀2",
+  "헬름": "우코4+공4+크확3+차속1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 95.7
+}

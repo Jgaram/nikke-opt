@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-018",
+ "season": 36,
+ "squad": [
+  "리타",
+  "그레이브",
+  "신데렐라",
+  "메이든 : 아이스 로즈",
+  "K"
+ ],
+ "v_spec": 44.74746604,
+ "v_E0": 48.91325332,
+ "v_O": 55.2373309,
+ "base_check": 48.91325332,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.412775620000005,
+   "max_ammo_pct": 0.08937803000000599,
+   "crit_rate": 0.11368406999999792,
+   "crit_dmg": 0.08749094999999585,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.798692680000002,
+   "max_ammo_pct": 0.4346836600000046,
+   "crit_rate": 0.004900759999998172,
+   "crit_dmg": 1.0023533299999983,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 10.072861710000005,
+   "atk_pct": 4.280591350000002,
+   "max_ammo_pct": 4.477409350000002,
+   "crit_rate": 2.582998140000001,
+   "crit_dmg": 1.8864109499999984,
+   "charge_speed_pct": -0.09512471000000033,
+   "charge_dmg_pct": 0.8478118899999956,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 5.4965861200000035,
+   "atk_pct": 2.11653218,
+   "max_ammo_pct": 1.478091770000006,
+   "crit_rate": 1.3805595499999939,
+   "crit_dmg": 1.0167403899999954,
+   "charge_speed_pct": 2.280686899999999,
+   "charge_dmg_pct": 0.34980954999999625,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "K": {
+   "element_bonus": 2.069002580000003,
+   "atk_pct": 1.5462684499999995,
+   "max_ammo_pct": -3.20400961,
+   "crit_rate": 1.71369052,
+   "crit_dmg": 0.47353857999999605,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "K": [
+   "element_bonus",
+   "crit_rate",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄2+크확3+크뎀3",
+  "그레이브": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공4+장탄4",
+  "메이든 : 아이스 로즈": "우코4+공4+장탄1+차속3",
+  "K": "우코4+공4+크확3+크뎀1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 97.1
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-006",
+ "season": 41,
+ "squad": [
+  "목단",
+  "민트",
+  "프리카",
+  "팬텀",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "v_spec": 68.55808058,
+ "v_E0": 76.30130132,
+ "v_O": 85.59342867,
+ "base_check": 76.30130132,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1820166299999926,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.7079120000000074,
+   "crit_dmg": 0.742670710000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.47204195999999854,
+   "max_ammo_pct": 0.18717639999999847,
+   "crit_rate": 0.2581124500000129,
+   "crit_dmg": 0.26858348000000376,
+   "charge_speed_pct": 0.6938014600000031,
+   "charge_dmg_pct": 0.35059414000001254,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 2.1165426599999932,
+   "atk_pct": 1.0674215499999917,
+   "max_ammo_pct": -1.036483160000003,
+   "crit_rate": 0.5835470900000104,
+   "crit_dmg": 0.6067289900000077,
+   "charge_speed_pct": 2.106979630000012,
+   "charge_dmg_pct": 0.7935286900000023,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 9.613012069999996,
+   "atk_pct": 3.66792959,
+   "max_ammo_pct": 2.83369128999999,
+   "crit_rate": 2.8418118400000054,
+   "crit_dmg": 2.950294860000014,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 16.999868339999992,
+   "atk_pct": 5.8195330099999865,
+   "max_ammo_pct": 0.1562840299999948,
+   "crit_rate": 4.69928388000001,
+   "crit_dmg": 4.91897603000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.0650524200000007,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "민트": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "프리카": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "민트": "공4+차속4+차뎀4",
+  "프리카": "우코4+공4+차속1+차뎀3",
+  "팬텀": "우코4+공4+크확2+크뎀2",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크확2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 764,
+ "seconds": 117.9
+}

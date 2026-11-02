@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-024",
+ "season": 39,
+ "squad": [
+  "목단",
+  "나유타",
+  "스노우 화이트 : 헤비암즈",
+  "라피 : 레드 후드",
+  "프리바티"
+ ],
+ "v_spec": 45.37507241,
+ "v_E0": 49.8004142,
+ "v_O": 58.06815677,
+ "base_check": 49.8004142,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9670581800000022,
+   "max_ammo_pct": -0.6784357499999984,
+   "crit_rate": 0.3209675900000022,
+   "crit_dmg": 0.2772560400000046,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4991373399999972,
+   "max_ammo_pct": -0.3837389999999985,
+   "crit_rate": 0.510356950000002,
+   "crit_dmg": 0.44082124999999905,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.6490135499999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.044050839999997,
+   "max_ammo_pct": -1.501233599999999,
+   "crit_rate": 0.9951784799999999,
+   "crit_dmg": 0.859584599999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3213155400000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 9.890236479999999,
+   "atk_pct": 3.9131740699999966,
+   "max_ammo_pct": -0.30501194,
+   "crit_rate": 1.737989480000003,
+   "crit_dmg": 1.5011888599999992,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4698190399999973,
+   "max_ammo_pct": -2.9548130499999985,
+   "crit_rate": 0.1467174799999995,
+   "crit_dmg": 0.12672414000000032,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "라피 : 레드 후드": "우코4+공4+장탄4",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 828,
+ "seconds": 109.1
+}

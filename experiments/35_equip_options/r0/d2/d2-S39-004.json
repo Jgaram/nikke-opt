@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-004",
+ "season": 39,
+ "squad": [
+  "아니스 : 스타",
+  "타키나",
+  "센티",
+  "치사토",
+  "레이븐"
+ ],
+ "v_spec": 71.31231629,
+ "v_E0": 83.12884494,
+ "v_O": 88.38920577,
+ "base_check": 83.12884494,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2069351899999958,
+   "max_ammo_pct": 1.4624712399999993,
+   "crit_rate": 0.42117357000000766,
+   "crit_dmg": 0.36378829000000223,
+   "charge_speed_pct": 1.5475942800000126,
+   "charge_dmg_pct": 0.4474892000000068,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 6.71057042999999,
+   "atk_pct": 4.0940452499999935,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.4453995200000094,
+   "crit_dmg": 1.2484608000000037,
+   "charge_speed_pct": 1.6402672200000126,
+   "charge_dmg_pct": 0.0739964600000036,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "센티": {
+   "element_bonus": 1.017077999999998,
+   "atk_pct": 0.7596077599999944,
+   "max_ammo_pct": 1.4197496199999904,
+   "crit_rate": 0.21920747000000063,
+   "crit_dmg": 0.18933978000001161,
+   "charge_speed_pct": 2.2251351700000015,
+   "charge_dmg_pct": 0.5023660500000062,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "치사토": {
+   "element_bonus": 10.482237769999998,
+   "atk_pct": 5.00350976,
+   "max_ammo_pct": 3.3167240599999985,
+   "crit_rate": 2.289519370000008,
+   "crit_dmg": 1.9775634900000085,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 8.838783359999994,
+   "atk_pct": 5.660006259999989,
+   "max_ammo_pct": 0.257145869999988,
+   "crit_rate": 1.9257241399999998,
+   "crit_dmg": 1.6633405300000135,
+   "charge_speed_pct": 0.6017783300000019,
+   "charge_dmg_pct": 0.5954963200000094,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "타키나": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "센티": [
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct"
+  ],
+  "치사토": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+장탄4+차뎀4",
+  "타키나": "우코4+공4+크확4",
+  "센티": "우코4+공1+장탄3+차속4",
+  "치사토": "우코4+공4+장탄3+크확1",
+  "레이븐": "우코4+공4+크확2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 832,
+ "seconds": 87.9
+}

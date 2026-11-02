@@ -1,0 +1,29 @@
+{
+ "id": "r3d-S36-Bd-3",
+ "season": 36,
+ "squad": [
+  "리타",
+  "타키나",
+  "아인",
+  "에이다",
+  "헬름"
+ ],
+ "value": 40.69367557,
+ "win": null,
+ "arm": "Bd",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 41.26821721,
+ "start": 40.69367557,
+ "base": 40.69367557,
+ "p0": 40.69367557,
+ "best_variants": [
+  "리타:cover_at:next_fb+0.1-rl",
+  "에이다:click:tap+fc5.5",
+  "헬름:click:hold@chain"
+ ],
+ "keys": 30,
+ "options": 117,
+ "seconds": 124.2
+}

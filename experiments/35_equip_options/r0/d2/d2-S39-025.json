@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-025",
+ "season": 39,
+ "squad": [
+  "리타",
+  "타키나",
+  "치사토",
+  "에이다",
+  "헬름"
+ ],
+ "v_spec": 45.30111609,
+ "v_E0": 52.4142431,
+ "v_O": 58.25116358,
+ "base_check": 52.4142431,
+ "screen": {
+  "리타": {
+   "element_bonus": 1.1535724599999995,
+   "atk_pct": 0.8654622800000027,
+   "max_ammo_pct": 0.45179843000000375,
+   "crit_rate": 0.23487562999999767,
+   "crit_dmg": 0.20643694000000323,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 5.647977089999998,
+   "atk_pct": 3.1625663800000012,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.1570237999999975,
+   "crit_dmg": 0.9714988300000016,
+   "charge_speed_pct": 0.9311865199999971,
+   "charge_dmg_pct": 0.07431316999999638,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "치사토": {
+   "element_bonus": 11.435001919999998,
+   "atk_pct": 4.267508849999999,
+   "max_ammo_pct": 2.028639130000002,
+   "crit_rate": 2.2898739899999967,
+   "crit_dmg": 1.8757196700000023,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4100676400000012,
+   "max_ammo_pct": 0.13759492999999878,
+   "crit_rate": 0.6131443700000005,
+   "crit_dmg": 0.4763420900000028,
+   "charge_speed_pct": 0.8775829000000002,
+   "charge_dmg_pct": 0.14378683999999708,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5341040599999971,
+   "max_ammo_pct": -0.5083061500000028,
+   "crit_rate": 0.1523283599999985,
+   "crit_dmg": 0.1214999600000013,
+   "charge_speed_pct": 1.3573433199999982,
+   "charge_dmg_pct": 0.15717302000000188,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "타키나": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "치사토": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "에이다": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "우코4+공4+장탄3+크확1",
+  "타키나": "우코4+공4+크확2+크뎀2",
+  "치사토": "우코4+공4+장탄1+크확3",
+  "에이다": "공4+크확4+크뎀4",
+  "헬름": "공4+크확1+차속3+차뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 754,
+ "seconds": 96.1
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-036",
+ "season": 36,
+ "squad": [
+  "D : 킬러 와이프",
+  "츠바이",
+  "마리",
+  "스노우 화이트 : 헤비암즈",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 33.21501733,
+ "v_E0": 38.50656298,
+ "v_O": 46.83946983,
+ "base_check": 38.50656298,
+ "screen": {
+  "D : 킬러 와이프": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.353867539999996,
+   "max_ammo_pct": 0.05065318999999846,
+   "crit_rate": 0.06922464000000161,
+   "crit_dmg": 0.2337795199999988,
+   "charge_speed_pct": 1.1892660600000013,
+   "charge_dmg_pct": 0.17460655000000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "츠바이": {
+   "element_bonus": 2.1610478499999957,
+   "atk_pct": 1.7762204200000014,
+   "max_ammo_pct": 0.8879973299999975,
+   "crit_rate": 0.35719607000000053,
+   "crit_dmg": 1.232250520000001,
+   "charge_speed_pct": 0.17508785000000415,
+   "charge_dmg_pct": 0.02546510999999896,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마리": {
+   "element_bonus": 1.4217505800000012,
+   "atk_pct": 1.0214149500000005,
+   "max_ammo_pct": 0.27806130999999823,
+   "crit_rate": 0.2461623300000042,
+   "crit_dmg": 0.8023099600000023,
+   "charge_speed_pct": 0.8601144500000046,
+   "charge_dmg_pct": 0.54871318,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.3250116899999966,
+   "max_ammo_pct": 0.5033455599999996,
+   "crit_rate": 0.7942096000000021,
+   "crit_dmg": 2.7489376900000053,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.41217874000000165,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 6.242889869999999,
+   "atk_pct": 2.505306769999997,
+   "max_ammo_pct": 1.2073100499999967,
+   "crit_rate": 1.163045260000004,
+   "crit_dmg": 3.437694790000002,
+   "charge_speed_pct": 2.086878030000001,
+   "charge_dmg_pct": 0.42457428000000164,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "D : 킬러 와이프": [
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "츠바이": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "마리": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "charge_speed_pct"
+  ]
+ },
+ "alloc": {
+  "D : 킬러 와이프": "공4+크뎀4+차뎀4",
+  "츠바이": "우코4+공4+장탄1+크뎀3",
+  "마리": "우코4+공4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+장탄2+크확2+크뎀4",
+  "메이든 : 아이스 로즈": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 803,
+ "seconds": 71.9
+}

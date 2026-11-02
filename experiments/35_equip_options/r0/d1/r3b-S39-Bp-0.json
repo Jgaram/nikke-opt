@@ -1,0 +1,132 @@
+{
+ "id": "r3b-S39-Bp-0",
+ "season": 39,
+ "arm": "Bp",
+ "squad": [
+  "아니스 : 스타",
+  "마스트 : 로망틱 메이드",
+  "크라운",
+  "라피 : 레드 후드",
+  "이브"
+ ],
+ "win": null,
+ "v_spec": 77.07233449,
+ "ctrl": [
+  "라피 : 레드 후드:cover_at:fb_end-0.5-rl",
+  "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+  "크라운:cover_at:fb_end-0.1-rl_dry"
+ ],
+ "v_E0": 85.75682375,
+ "v_O": 102.95857715,
+ "base_check": 85.75682375,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7283238499999953,
+   "max_ammo_pct": 0.759618709999998,
+   "crit_rate": 1.0788022100000063,
+   "crit_dmg": 1.6072450300000014,
+   "charge_speed_pct": -0.14690257999998835,
+   "charge_dmg_pct": 0.9473074699999984,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6692685399999903,
+   "max_ammo_pct": 0.06012812000000167,
+   "crit_rate": 0.32120787000000917,
+   "crit_dmg": 0.44847843000000864,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 3.665515599999992,
+   "atk_pct": 1.6501664199999908,
+   "max_ammo_pct": 0.016756309999991004,
+   "crit_rate": 0.768608190000009,
+   "crit_dmg": 1.1893042000000094,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 15.011125839999991,
+   "atk_pct": 5.364870979999992,
+   "max_ammo_pct": 0.7446366599999976,
+   "crit_rate": 3.2749580899999984,
+   "crit_dmg": 4.754759419999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 11.077522169999995,
+   "atk_pct": 4.415806230000001,
+   "max_ammo_pct": 0.14059935000000223,
+   "crit_rate": 1.6402799300000055,
+   "crit_dmg": 8.235923940000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+크확4+크뎀4",
+  "크라운": "우코4+공4+크확1+크뎀3",
+  "라피 : 레드 후드": "우코4+공4+크확1+크뎀3",
+  "이브": "우코4+공3+크확1+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1673,
+ "seconds": 56.3,
+ "v_start2": 102.95857715,
+ "v_OC": 104.02337191,
+ "ctrl2": [
+  "squad:camera:slot1",
+  "라피 : 레드 후드:cover_at:fb_end-0.5-rl",
+  "아니스 : 스타:cover_at:next_fb+0.1-rl",
+  "이브:cover_at:next_fb+0.1-rl"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

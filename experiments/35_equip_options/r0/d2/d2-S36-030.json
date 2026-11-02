@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-030",
+ "season": 36,
+ "squad": [
+  "리타",
+  "그레이브",
+  "이사벨",
+  "신데렐라",
+  "드레이크"
+ ],
+ "v_spec": 38.65150133,
+ "v_E0": 44.83422723,
+ "v_O": 48.61170664,
+ "base_check": 44.83422723,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4299782500000049,
+   "max_ammo_pct": 0.4594373700000034,
+   "crit_rate": 0.13761291999999514,
+   "crit_dmg": 0.1048753999999974,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8547798200000045,
+   "max_ammo_pct": -0.006783219999995538,
+   "crit_rate": 0.002931989999993334,
+   "crit_dmg": 1.224525529999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이사벨": {
+   "element_bonus": 4.3826396000000045,
+   "atk_pct": 1.9963564100000042,
+   "max_ammo_pct": 0.8882437000000039,
+   "crit_rate": 1.1392009499999958,
+   "crit_dmg": 0.9555683099999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 10.459754000000004,
+   "atk_pct": 4.084331390000003,
+   "max_ammo_pct": 3.8043479400000066,
+   "crit_rate": 2.623030099999994,
+   "crit_dmg": 1.8866702499999946,
+   "charge_speed_pct": -0.12531842000000637,
+   "charge_dmg_pct": 0.8164395999999954,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9274325000000019,
+   "max_ammo_pct": 0.4404405600000061,
+   "crit_rate": 0.40037023000000005,
+   "crit_dmg": 0.30586464999999663,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "이사벨": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄2+크확3+크뎀3",
+  "그레이브": "공4+크확4+크뎀4",
+  "이사벨": "우코4+공4+크확2+크뎀2",
+  "신데렐라": "우코4+공4+장탄1+크확3",
+  "드레이크": "공4+장탄2+크확3+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 76.4
+}

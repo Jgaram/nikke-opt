@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-045",
+ "season": 36,
+ "squad": [
+  "레이블",
+  "루주",
+  "트리나",
+  "질",
+  "디젤 : 윈터 스위츠"
+ ],
+ "v_spec": 24.86007939,
+ "v_E0": 28.94304447,
+ "v_O": 33.16849178,
+ "base_check": 28.94304447,
+ "screen": {
+  "레이블": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.23556355999999923,
+   "max_ammo_pct": 0.12872627000000136,
+   "crit_rate": 0.08032250000000118,
+   "crit_dmg": 0.06937665999999965,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 0.822361990000001,
+   "atk_pct": 0.5345315299999989,
+   "max_ammo_pct": 0.2923312799999991,
+   "crit_rate": 0.14962196000000105,
+   "crit_dmg": 0.1292361100000008,
+   "charge_speed_pct": 0.5036348299999993,
+   "charge_dmg_pct": 0.3363953500000001,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "트리나": {
+   "element_bonus": 0.787803199999999,
+   "atk_pct": 0.5111720800000015,
+   "max_ammo_pct": 0.2319947400000011,
+   "crit_rate": 0.14298571999999865,
+   "crit_dmg": 0.12350394999999992,
+   "charge_speed_pct": 0.6100303300000007,
+   "charge_dmg_pct": 0.32225864000000115,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "질": {
+   "element_bonus": 6.442309359999999,
+   "atk_pct": 3.3316696099999987,
+   "max_ammo_pct": -0.29651554000000147,
+   "crit_rate": 1.1410397599999982,
+   "crit_dmg": 0.9855702999999991,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.3425818199999995,
+   "max_ammo_pct": 0.1176672399999994,
+   "crit_rate": 0.8884776700000003,
+   "crit_dmg": 0.5461242000000013,
+   "charge_speed_pct": 0.1727723499999989,
+   "charge_dmg_pct": 0.14397514999999927,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "레이블": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "루주": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "트리나": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "질": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_speed_pct"
+  ]
+ },
+ "alloc": {
+  "레이블": "공4+장탄1+크확4+크뎀3",
+  "루주": "우코4+공4+장탄4",
+  "트리나": "우코4+공4+차속4",
+  "질": "우코4+공4+크확2+크뎀2",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 799,
+ "seconds": 71.2
+}

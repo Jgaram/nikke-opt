@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-013",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "마스트 : 로망틱 메이드",
+  "나유타",
+  "스노우 화이트 : 헤비암즈",
+  "신데렐라"
+ ],
+ "v_spec": 51.19218296,
+ "v_E0": 60.0802564,
+ "v_O": 68.89970107,
+ "base_check": 60.0802564,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3562593800000045,
+   "max_ammo_pct": 0.612030500000003,
+   "crit_rate": 0.5305585599999958,
+   "crit_dmg": 0.8487901099999959,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5253489299999998,
+   "max_ammo_pct": 1.0722406600000056,
+   "crit_rate": 0.19874083999999925,
+   "crit_dmg": 0.3161260699999957,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1981196300000008,
+   "max_ammo_pct": 0.47392880000000304,
+   "crit_rate": 0.4051880999999966,
+   "crit_dmg": 0.7322679399999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.4064645099999993,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.058139280000006,
+   "max_ammo_pct": 0.9298176400000031,
+   "crit_rate": 1.1040307999999968,
+   "crit_dmg": 1.8030254599999935,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3189037299999953,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 14.025248770000005,
+   "atk_pct": 4.758179310000003,
+   "max_ammo_pct": 3.385128140000006,
+   "crit_rate": 3.262830859999994,
+   "crit_dmg": 5.207754219999991,
+   "charge_speed_pct": 0.03843836999999439,
+   "charge_dmg_pct": 1.1884883399999993,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "charge_dmg_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄4+크확1+크뎀3",
+  "나유타": "공4+크뎀4+차뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공4+장탄1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 846,
+ "seconds": 157.6
+}

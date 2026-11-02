@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-005",
+ "season": 39,
+ "squad": [
+  "리틀 머메이드",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "신데렐라 : 크리스탈 웨이브",
+  "이브"
+ ],
+ "v_spec": 70.11255443,
+ "v_E0": 82.50186123,
+ "v_O": 97.40683183,
+ "base_check": 82.50186123,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.050107490000002,
+   "max_ammo_pct": 0.3509145700000005,
+   "crit_rate": 0.9136893700000002,
+   "crit_dmg": 1.4840246199999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 3.1048915300000033,
+   "atk_pct": 1.527549620000002,
+   "max_ammo_pct": 2.479684000000006,
+   "crit_rate": 0.6205549499999989,
+   "crit_dmg": 1.0347297799999922,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6109036900000007,
+   "max_ammo_pct": 2.449549840000003,
+   "crit_rate": 0.22742298000000005,
+   "crit_dmg": 0.3424452999999943,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 16.61583562,
+   "atk_pct": 7.094867649999998,
+   "max_ammo_pct": 2.5917633300000062,
+   "crit_rate": 3.89704549999999,
+   "crit_dmg": 6.103900339999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 9.513154630000002,
+   "atk_pct": 4.06600198000001,
+   "max_ammo_pct": 0.006972020000006296,
+   "crit_rate": 1.8011577399999936,
+   "crit_dmg": 7.253428069999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "크라운": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "크라운": "우코4+공4+장탄1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+크확4+크뎀4",
+  "신데렐라 : 크리스탈 웨이브": "우코4+공4+크확1+크뎀3",
+  "이브": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 755,
+ "seconds": 80.6
+}

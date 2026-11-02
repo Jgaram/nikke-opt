@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-016",
+ "season": 41,
+ "squad": [
+  "미란다",
+  "리틀 머메이드",
+  "타키나",
+  "에이다",
+  "길티 : 마이티 바니"
+ ],
+ "v_spec": 40.01019291,
+ "v_E0": 45.57923921,
+ "v_O": 53.84927784,
+ "base_check": 45.57923921,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5654570999999962,
+   "max_ammo_pct": -0.2551232900000002,
+   "crit_rate": 0.20505922000000254,
+   "crit_dmg": 0.29982362000000506,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8468305299999983,
+   "max_ammo_pct": -0.12158853000000391,
+   "crit_rate": 0.24763936000000086,
+   "crit_dmg": 0.13786557000000244,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4663920599999969,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.1131530100000049,
+   "crit_dmg": 0.3770230000000012,
+   "charge_speed_pct": 2.2955261700000023,
+   "charge_dmg_pct": 0.030905310000001407,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.3102046699999974,
+   "max_ammo_pct": 0.047776659999996696,
+   "crit_rate": 0.14200792000000462,
+   "crit_dmg": 2.0307112200000006,
+   "charge_speed_pct": -0.13110753999999503,
+   "charge_dmg_pct": 0.06766211000000055,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티 : 마이티 바니": {
+   "element_bonus": 11.429675949999996,
+   "atk_pct": 9.169396769999999,
+   "max_ammo_pct": 1.244830009999994,
+   "crit_rate": 2.9286449100000027,
+   "crit_dmg": 3.430565780000002,
+   "charge_speed_pct": 4.9153806200000005,
+   "charge_dmg_pct": 1.2240543400000021,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "타키나": [
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "미란다": "우코4+공4+장탄4",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "타키나": "공4+크확4+크뎀4",
+  "에이다": "공4+크확4+크뎀4",
+  "길티 : 마이티 바니": "우코4+공4+크뎀1+차속3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 766,
+ "seconds": 80.1
+}

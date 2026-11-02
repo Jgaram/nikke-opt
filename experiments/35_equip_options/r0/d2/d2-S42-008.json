@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-008",
+ "season": 42,
+ "squad": [
+  "D : 킬러 와이프",
+  "미란다",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "v_spec": 43.20009995,
+ "v_E0": 49.30191018,
+ "v_O": 60.85737967,
+ "base_check": 49.30191018,
+ "screen": {
+  "D : 킬러 와이프": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.21015419999999807,
+   "max_ammo_pct": -0.01787597999999946,
+   "crit_rate": 0.0602614800000012,
+   "crit_dmg": 0.03536687999999799,
+   "charge_speed_pct": 0.2526999099999969,
+   "charge_dmg_pct": 0.09084563999999773,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5598171399999998,
+   "max_ammo_pct": 0.28023831000000143,
+   "crit_rate": 0.20321455999999927,
+   "crit_dmg": 0.29473226999999724,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4528180000000006,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.1275398599999988,
+   "crit_dmg": 0.3690072599999965,
+   "charge_speed_pct": 1.1809210199999995,
+   "charge_dmg_pct": 0.0340014100000019,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 10.136938809999997,
+   "atk_pct": 7.216722939999997,
+   "max_ammo_pct": -0.07554663999999889,
+   "crit_rate": 0.652149399999999,
+   "crit_dmg": 4.865141100000002,
+   "charge_speed_pct": 0.3277344700000029,
+   "charge_dmg_pct": 0.18140865000000161,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 7.035802369999999,
+   "atk_pct": 3.149813790000003,
+   "max_ammo_pct": 0.22882419999999826,
+   "crit_rate": 0.4212884800000012,
+   "crit_dmg": 3.9193460400000006,
+   "charge_speed_pct": 0.5325292500000032,
+   "charge_dmg_pct": 0.24687198000000166,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "D : 킬러 와이프": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "타키나": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "아인": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "charge_speed_pct"
+  ]
+ },
+ "alloc": {
+  "D : 킬러 와이프": "공4+차속4+차뎀4",
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "타키나": "공4+크확4+차속4",
+  "에이다": "우코4+공4+크뎀4",
+  "아인": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 764,
+ "seconds": 65.8
+}

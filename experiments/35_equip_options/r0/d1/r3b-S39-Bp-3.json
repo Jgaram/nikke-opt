@@ -1,0 +1,131 @@
+{
+ "id": "r3b-S39-Bp-3",
+ "season": 39,
+ "arm": "Bp",
+ "squad": [
+  "레이블",
+  "리틀 머메이드",
+  "타키나",
+  "치사토",
+  "프리바티"
+ ],
+ "win": null,
+ "v_spec": 52.93228526,
+ "ctrl": [
+  "타키나:start_hold:hold0-2.2"
+ ],
+ "v_E0": 54.83617148,
+ "v_O": 63.71476561,
+ "base_check": 54.83617148,
+ "screen": {
+  "레이블": {
+   "element_bonus": 1.1052578299999993,
+   "atk_pct": 0.5531698399999954,
+   "max_ammo_pct": -0.22707821000000195,
+   "crit_rate": 0.20223631000000353,
+   "crit_dmg": 0.17468398000000462,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1203000299999957,
+   "max_ammo_pct": 0.2511406899999997,
+   "crit_rate": 0.3402539300000029,
+   "crit_dmg": 0.2938922900000023,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 7.748139219999999,
+   "atk_pct": 3.528695929999998,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.3777379100000005,
+   "crit_dmg": 1.190018590000001,
+   "charge_speed_pct": -2.49791467,
+   "charge_dmg_pct": 0.05832275000000209,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "치사토": {
+   "element_bonus": 11.43743842,
+   "atk_pct": 4.3149373699999956,
+   "max_ammo_pct": 1.8778892200000001,
+   "crit_rate": 2.0437990700000057,
+   "crit_dmg": 1.7653295300000025,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.554477519999999,
+   "max_ammo_pct": -4.504868360000003,
+   "crit_rate": 0.1734361200000052,
+   "crit_dmg": 0.14980500000000063,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "레이블": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "타키나": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "치사토": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "alloc": {
+  "레이블": "우코4+공4+크확2+크뎀2",
+  "리틀 머메이드": "공4+장탄2+크확3+크뎀3",
+  "타키나": "우코4+공4+크확2+크뎀2",
+  "치사토": "우코4+공4+장탄2+크확2",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1575,
+ "seconds": 44.0,
+ "v_start2": 63.71476561,
+ "v_OC": 63.98462167,
+ "ctrl2": [
+  "리틀 머메이드:cancel:on",
+  "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+  "타키나:click:tap",
+  "타키나:start_hold:hold0-2.2",
+  "프리바티:cover_at:fb_end-0.3"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

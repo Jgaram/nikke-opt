@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-010",
+ "season": 41,
+ "squad": [
+  "리틀 머메이드",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "길티 : 마이티 바니",
+  "팬텀"
+ ],
+ "v_spec": 49.91758536,
+ "v_E0": 55.40181666,
+ "v_O": 65.10108329,
+ "base_check": 55.40181666,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3028641000000007,
+   "max_ammo_pct": -0.1908632899999958,
+   "crit_rate": 0.6246952899999982,
+   "crit_dmg": 0.892875839999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.92465421,
+   "atk_pct": 1.4740603899999982,
+   "max_ammo_pct": 0.1558966400000017,
+   "crit_rate": 0.6585869999999971,
+   "crit_dmg": 0.9643854199999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 1.0921201499999995,
+   "atk_pct": 0.5495238800000024,
+   "max_ammo_pct": 0.05090088000000037,
+   "crit_rate": 0.24630582999999717,
+   "crit_dmg": 0.3612208199999998,
+   "charge_speed_pct": 0.5627447600000011,
+   "charge_dmg_pct": 0.4467429199999984,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티 : 마이티 바니": {
+   "element_bonus": 7.593104420000003,
+   "atk_pct": 3.3406442100000007,
+   "max_ammo_pct": -0.15872851999999682,
+   "crit_rate": 1.8368648599999986,
+   "crit_dmg": 2.431785759999997,
+   "charge_speed_pct": 2.8192264199999997,
+   "charge_dmg_pct": 0.8785628099999983,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 9.00337219,
+   "atk_pct": 3.4199059600000012,
+   "max_ammo_pct": -0.4546743499999977,
+   "crit_rate": 2.0370803599999974,
+   "crit_dmg": 3.226296210000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3",
+  "앵커 : 이노센트 메이드": "우코4+공4+차속4",
+  "길티 : 마이티 바니": "우코4+공4+차속4",
+  "팬텀": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 799,
+ "seconds": 110.3
+}

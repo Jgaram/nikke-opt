@@ -1,0 +1,133 @@
+{
+ "id": "r3b-S41-Bp-3",
+ "season": 41,
+ "arm": "Bp",
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "벨벳",
+  "길티 : 마이티 바니",
+  "신 : 스위프트 바니"
+ ],
+ "win": null,
+ "v_spec": 41.33051124,
+ "ctrl": [
+  "squad:camera:slot3",
+  "리틀 머메이드:cover_at:next_fb+0.1-rl",
+  "벨벳:click:hold@chain",
+  "벨벳:start_hold:hold0-2.2"
+ ],
+ "v_E0": 47.58006465,
+ "v_O": 54.18348992,
+ "base_check": 47.58006465,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6966048799999953,
+   "max_ammo_pct": -0.3241905799999998,
+   "crit_rate": 0.5006813800000032,
+   "crit_dmg": 0.4324570700000052,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.542938679999999,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.46116369000000645,
+   "crit_dmg": 0.39832890000000276,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.4771546900000061,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "벨벳": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3841494999999995,
+   "max_ammo_pct": 0.35668526999999983,
+   "crit_rate": 0.11539112000000529,
+   "crit_dmg": 0.09966866000000607,
+   "charge_speed_pct": 1.3449271200000013,
+   "charge_dmg_pct": 0.1883427500000039,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티 : 마이티 바니": {
+   "element_bonus": 7.137499079999998,
+   "atk_pct": 4.237217919999999,
+   "max_ammo_pct": 1.1067690799999994,
+   "crit_rate": 1.2906845600000025,
+   "crit_dmg": 1.1148258500000026,
+   "charge_speed_pct": 3.4289731400000036,
+   "charge_dmg_pct": 0.6725479900000053,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신 : 스위프트 바니": {
+   "element_bonus": 6.9173694399999945,
+   "atk_pct": 3.534050889999996,
+   "max_ammo_pct": 0.9365219899999957,
+   "crit_rate": 2.2871771800000005,
+   "crit_dmg": 2.638900420000006,
+   "charge_speed_pct": 2.142929510000002,
+   "charge_dmg_pct": 1.5927613100000002,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "벨벳": [
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct"
+  ],
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "신 : 스위프트 바니": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "벨벳": "공4+장탄3+차속4+차뎀1",
+  "길티 : 마이티 바니": "우코4+공4+차속4",
+  "신 : 스위프트 바니": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1527,
+ "seconds": 51.7,
+ "v_start2": 54.18348992,
+ "v_OC": 54.58973203,
+ "ctrl2": [
+  "squad:camera:slot3",
+  "나유타:cover_fb:on",
+  "리틀 머메이드:cover_at:fb_end-0.1-rl",
+  "벨벳:click:hold@chain"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-004",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "아니스 : 스파클링 서머",
+  "신데렐라"
+ ],
+ "v_spec": 93.10174774,
+ "v_E0": 94.9713141,
+ "v_O": 115.93122577,
+ "base_check": 94.9713141,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 12.141003920000003,
+   "atk_pct": 3.511328149999997,
+   "max_ammo_pct": 2.3711818299999976,
+   "crit_rate": 2.4140591200000046,
+   "crit_dmg": 3.902539410000003,
+   "charge_speed_pct": 0.6849718200000012,
+   "charge_dmg_pct": 2.289769579999998,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6762844999999942,
+   "max_ammo_pct": 0.5195287699999938,
+   "crit_rate": 0.30885669999999266,
+   "crit_dmg": 0.5121298199999984,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.626433739999996,
+   "max_ammo_pct": 1.5798360600000052,
+   "crit_rate": 0.26172683999999435,
+   "crit_dmg": 0.394874669999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 6.144367880000004,
+   "atk_pct": 2.7327791799999943,
+   "max_ammo_pct": -8.957835459999998,
+   "crit_rate": 1.341600459999995,
+   "crit_dmg": 2.1796853999999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 18.44166464,
+   "atk_pct": 5.482570530000004,
+   "max_ammo_pct": 4.202939990000004,
+   "crit_rate": 4.048841159999995,
+   "crit_dmg": 6.4952768400000025,
+   "charge_speed_pct": -0.3317666700000075,
+   "charge_dmg_pct": 2.471691969999995,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.9686526699999973
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공1+크확3+크뎀4",
+  "크라운": "공4+장탄3+크확1+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "아니스 : 스파클링 서머": "우코4+공4+크확1+크뎀3",
+  "신데렐라": "우코4+공3+장탄1+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 796,
+ "seconds": 107.4
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-000",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "프리바티",
+  "스노우 화이트 : 헤비암즈",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "v_spec": 92.53515891,
+ "v_E0": 85.04819176,
+ "v_O": 114.27380909,
+ "base_check": 85.04819176,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7347697799999935,
+   "max_ammo_pct": 0.9081244199999929,
+   "crit_rate": 0.7733348100000086,
+   "crit_dmg": 0.6679662800000017,
+   "charge_speed_pct": -0.041381269999988035,
+   "charge_dmg_pct": 0.8223399900000032,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7895400299999977,
+   "max_ammo_pct": 0.1756104399999998,
+   "crit_rate": 0.30190862000000607,
+   "crit_dmg": 0.2607791300000031,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 3.299465149999989,
+   "atk_pct": 2.76400151,
+   "max_ammo_pct": -19.4051161,
+   "crit_rate": 0.9167126700000097,
+   "crit_dmg": 0.7918075500000015,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 16.325861169999996,
+   "atk_pct": 6.367098429999999,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 3.2952543399999996,
+   "crit_dmg": 2.8462691200000023,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.109831040000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 5.283299569999997,
+   "atk_pct": 3.7918536299999914,
+   "max_ammo_pct": 0.23233820000000094,
+   "crit_rate": 1.088384380000008,
+   "crit_dmg": 0.9400869500000084,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+장탄1+크확3+차뎀4",
+  "크라운": "공4+장탄1+크확4+크뎀3",
+  "프리바티": "우코4+공4+크확2+크뎀2",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크확2+크뎀2",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+크확2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 833,
+ "seconds": 115.8
+}

@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-001",
+ "season": 42,
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "에이다",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 86.11478379,
+ "v_E0": 95.93879308,
+ "v_O": 101.94037767,
+ "base_check": 95.93879308,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 10.440838200000002,
+   "atk_pct": 3.4238643199999927,
+   "max_ammo_pct": 3.184144070000002,
+   "crit_rate": 2.0069334000000083,
+   "crit_dmg": 1.7334823000000057,
+   "charge_speed_pct": 0.8668986899999993,
+   "charge_dmg_pct": 2.131537640000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 3.719457890000001,
+   "atk_pct": 1.766631899999993,
+   "max_ammo_pct": 0.862327030000003,
+   "crit_rate": 0.7275616499999984,
+   "crit_dmg": 0.628449290000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6098016299999927,
+   "max_ammo_pct": 0.07715808999999751,
+   "crit_rate": 0.262459860000007,
+   "crit_dmg": 0.2266999600000048,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 11.245918119999999,
+   "atk_pct": 4.369913209999993,
+   "max_ammo_pct": 0.2381176499999924,
+   "crit_rate": 2.236381090000009,
+   "crit_dmg": 1.9316701000000052,
+   "charge_speed_pct": 1.494011069999999,
+   "charge_dmg_pct": 0.8557510100000059,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 9.79005509999999,
+   "atk_pct": 2.842626459999991,
+   "max_ammo_pct": 1.0669266700000009,
+   "crit_rate": 2.0050242399999973,
+   "crit_dmg": 1.7318346800000057,
+   "charge_speed_pct": 3.784292860000008,
+   "charge_dmg_pct": 1.069036969999999,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.371803799999995
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct"
+  ],
+  "플로라": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+장탄3+차뎀1",
+  "플로라": "우코4+공4+장탄3+크확1",
+  "크라운": "공4+크확4+크뎀4",
+  "에이다": "우코4+공4+크확2+크뎀2",
+  "메이든 : 아이스 로즈": "우코4+공4+크확1+차속3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 768,
+ "seconds": 77.3
+}

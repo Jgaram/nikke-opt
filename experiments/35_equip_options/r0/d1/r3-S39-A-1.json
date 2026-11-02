@@ -1,0 +1,139 @@
+{
+ "id": "r3-S39-A-1",
+ "season": 39,
+ "arm": "A",
+ "squad": [
+  "미란다",
+  "민트",
+  "헬름 : 아쿠아마린",
+  "마르차나 : 마린 스터디",
+  "이브"
+ ],
+ "win": null,
+ "v_spec": 65.24237721,
+ "ctrl": [
+  "squad:camera:민트",
+  "squad:tactic:버충=민트",
+  "마르차나 : 마린 스터디:reload:C0.1_dry",
+  "미란다:reload:B0.1",
+  "민트:reload:C0.5",
+  "이브:reload:B0.5",
+  "헬름 : 아쿠아마린:reload:C0.1_dry"
+ ],
+ "v_E0": 73.7140221,
+ "v_O": 83.92005327,
+ "base_check": 73.7140221,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8900428399999925,
+   "max_ammo_pct": 0.18850883999999724,
+   "crit_rate": 0.4563522100000057,
+   "crit_dmg": 0.5638370900000069,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.9168004699999983,
+   "atk_pct": 0.7366377299999982,
+   "max_ammo_pct": 5.036264849999995,
+   "crit_rate": 0.3158305200000058,
+   "crit_dmg": 0.21234703000000366,
+   "charge_speed_pct": 0.7447903099999991,
+   "charge_dmg_pct": 0.30507439000000147,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.8766157799999945,
+   "atk_pct": 1.5092370599999896,
+   "max_ammo_pct": 0.3963920599999966,
+   "crit_rate": 0.6661644100000075,
+   "crit_dmg": 0.420268930000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 12.505343979999992,
+   "atk_pct": 5.029415,
+   "max_ammo_pct": 1.2697645800000004,
+   "crit_rate": 2.696682150000001,
+   "crit_dmg": 5.480216560000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 11.799010589999995,
+   "atk_pct": 5.233992399999991,
+   "max_ammo_pct": 2.1531167999999923,
+   "crit_rate": 2.9617980000000017,
+   "crit_dmg": 5.895665600000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "민트": [
+   "max_ammo_pct",
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "민트": "우코3+공1+장탄4+차속4",
+  "헬름 : 아쿠아마린": "우코4+공4+크확3+크뎀1",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4",
+  "이브": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1566,
+ "seconds": 48.7,
+ "v_start2": 83.92005327,
+ "v_OC": 84.46628626,
+ "ctrl2": [
+  "squad:camera:민트",
+  "squad:tactic:버충=민트",
+  "마르차나 : 마린 스터디:reload:B0.1",
+  "민트:reload:C0.5",
+  "이브:reload:C0.1_dry",
+  "헬름 : 아쿠아마린:cover:on",
+  "헬름 : 아쿠아마린:reload:B0.5"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

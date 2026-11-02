@@ -1,0 +1,135 @@
+{
+ "id": "r3-S41-A-4",
+ "season": 41,
+ "arm": "A",
+ "squad": [
+  "리타",
+  "나유타",
+  "헬름",
+  "퀀시 : 이스케이프 퀸",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "win": null,
+ "v_spec": 45.17393308,
+ "ctrl": [
+  "리타:reload:B0.1",
+  "일레그 : 붐 앤 쇼크:cover:on",
+  "퀀시 : 이스케이프 퀸:reload:C0.1_dry",
+  "헬름:burst:wait2"
+ ],
+ "v_E0": 52.01394503,
+ "v_O": 57.65799334,
+ "base_check": 52.01394503,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4644113599999997,
+   "max_ammo_pct": 0.2134633800000003,
+   "crit_rate": 0.1492915400000001,
+   "crit_dmg": 0.13089650999999947,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3861381200000054,
+   "max_ammo_pct": -0.06655954000000008,
+   "crit_rate": 0.49143914999999794,
+   "crit_dmg": 0.38228639999999814,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5379382899999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 6.026424609999999,
+   "atk_pct": 3.618979639999999,
+   "max_ammo_pct": 0.008183870000003424,
+   "crit_rate": 1.6701285899999974,
+   "crit_dmg": 1.2763787299999976,
+   "charge_speed_pct": 1.721723009999998,
+   "charge_dmg_pct": 0.5926920399999958,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 6.621763080000001,
+   "atk_pct": 2.66638322,
+   "max_ammo_pct": 1.0030693300000024,
+   "crit_rate": 1.630833299999999,
+   "crit_dmg": 2.6614013000000014,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 3.7455337600000007,
+   "atk_pct": 2.4547086200000052,
+   "max_ammo_pct": 2.4944252800000015,
+   "crit_rate": 0.8705720499999998,
+   "crit_dmg": 0.7491924999999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄1+크확3+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름": "우코4+공4+크확4",
+  "퀀시 : 이스케이프 퀸": "우코4+공3+크확1+크뎀4",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1635,
+ "seconds": 69.6,
+ "v_start2": 57.65799334,
+ "v_OC": 57.74140348,
+ "ctrl2": [
+  "나유타:reload:C0.1_dry",
+  "리타:reload:B0.1",
+  "일레그 : 붐 앤 쇼크:cover:on",
+  "일레그 : 붐 앤 쇼크:reload:C0.1_dry",
+  "퀀시 : 이스케이프 퀸:reload:B0.5",
+  "헬름:burst:wait2"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

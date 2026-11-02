@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-012",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "벨벳",
+  "프리바티",
+  "네온 : 비전 아이"
+ ],
+ "v_spec": 55.3892032,
+ "v_E0": 52.57005346,
+ "v_O": 69.36652104,
+ "base_check": 52.57005346,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.0494807199999983,
+   "max_ammo_pct": 0.5159067999999962,
+   "crit_rate": 0.6648122000000001,
+   "crit_dmg": 0.5742212800000033,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7982298599999993,
+   "max_ammo_pct": -0.04975212000000084,
+   "crit_rate": 0.5904566400000064,
+   "crit_dmg": 0.510004980000005,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.6280382600000038,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "벨벳": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.44354273999999805,
+   "max_ammo_pct": 1.4585281600000002,
+   "crit_rate": 0.14390924000000638,
+   "crit_dmg": 0.12430127000000368,
+   "charge_speed_pct": 0.8290030300000026,
+   "charge_dmg_pct": 0.23756492000000407,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5720468099999962,
+   "max_ammo_pct": -7.1351294700000025,
+   "crit_rate": 0.17644956000000178,
+   "crit_dmg": 0.1524071400000011,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 13.383414559999999,
+   "atk_pct": 5.496984269999999,
+   "max_ammo_pct": 6.684410759999999,
+   "crit_rate": 2.3579153100000028,
+   "crit_dmg": 2.0366442900000052,
+   "charge_speed_pct": 7.326454460000001,
+   "charge_dmg_pct": 1.2414176900000058,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "벨벳": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+장탄2+크확3+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "벨벳": "공4+장탄2+차속4+차뎀2",
+  "프리바티": "공4+크확4+크뎀4",
+  "네온 : 비전 아이": "우코4+공3+장탄2+차속3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 763,
+ "seconds": 141.9
+}

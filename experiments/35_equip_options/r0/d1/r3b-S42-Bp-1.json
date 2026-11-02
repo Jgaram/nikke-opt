@@ -1,0 +1,129 @@
+{
+ "id": "r3b-S42-Bp-1",
+ "season": 42,
+ "arm": "Bp",
+ "squad": [
+  "목단",
+  "민트",
+  "스노우 화이트 : 헤비암즈",
+  "네온 : 비전 아이",
+  "리버렐리오"
+ ],
+ "win": null,
+ "v_spec": 56.90532833,
+ "ctrl": [
+  "민트:cover_at:fb_end-0.1-rl"
+ ],
+ "v_E0": 57.61709817,
+ "v_O": 68.53082653,
+ "base_check": 57.61709817,
+ "screen": {
+  "목단": {
+   "element_bonus": 3.1468219899999994,
+   "atk_pct": 1.9060081399999973,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.9343108799999982,
+   "crit_dmg": 0.7365415000000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.24958744999999993,
+   "max_ammo_pct": 0.13208867000000168,
+   "crit_rate": 0.1210784000000018,
+   "crit_dmg": 0.09955786999999816,
+   "charge_speed_pct": 0.04513022000000433,
+   "charge_dmg_pct": 0.1637064100000032,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.118931660000001,
+   "max_ammo_pct": 0.35494959999999764,
+   "crit_rate": 1.3959095100000027,
+   "crit_dmg": 0.8902247700000032,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.29597645999999855,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 13.139426719999996,
+   "atk_pct": 5.529228670000002,
+   "max_ammo_pct": 6.055377539999995,
+   "crit_rate": 3.782225150000002,
+   "crit_dmg": 3.355808379999999,
+   "charge_speed_pct": 9.424168970000004,
+   "charge_dmg_pct": 1.4151865800000039,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.025688670000001,
+   "max_ammo_pct": 0.49952518999999995,
+   "crit_rate": 0.8841983900000017,
+   "crit_dmg": 0.685132700000004,
+   "charge_speed_pct": 1.6101156100000011,
+   "charge_dmg_pct": 0.5895415000000028,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확3+크뎀1",
+  "민트": "공4+장탄1+크확3+차뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확4+크뎀3",
+  "네온 : 비전 아이": "우코4+공4+장탄2+차속2",
+  "리버렐리오": "공4+크확4+크뎀2+차속2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1567,
+ "seconds": 42.0,
+ "v_start2": 68.53082653,
+ "v_OC": 69.81197594,
+ "ctrl2": [
+  "민트:click:tapfire@charge4",
+  "민트:cover_at:fb_end-0.1-rl",
+  "스노우 화이트 : 헤비암즈:click:hold@chain"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

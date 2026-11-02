@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-017",
+ "season": 41,
+ "squad": [
+  "리틀 머메이드",
+  "맥스웰 : 오디너리 미케닉",
+  "벨벳",
+  "루드밀라 : 윈터 오너",
+  "드레이크 : 그레이트 빌런"
+ ],
+ "v_spec": 38.68879697,
+ "v_E0": 43.2846839,
+ "v_O": 51.84388328,
+ "base_check": 43.2846839,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.009042049999998,
+   "max_ammo_pct": 0.1955843499999972,
+   "crit_rate": 0.6586768700000007,
+   "crit_dmg": 0.5689254500000018,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.551755809999996,
+   "max_ammo_pct": 0.35531461000000064,
+   "crit_rate": 0.28821042000000574,
+   "crit_dmg": 0.2489416100000028,
+   "charge_speed_pct": 0.4467694900000012,
+   "charge_dmg_pct": 0.4725182200000049,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "벨벳": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4103691899999973,
+   "max_ammo_pct": 0.728677299999994,
+   "crit_rate": 0.13564917000000065,
+   "crit_dmg": 0.11716657000000197,
+   "charge_speed_pct": 1.0796956100000017,
+   "charge_dmg_pct": 0.22290299000000147,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 5.407984739999996,
+   "atk_pct": 2.876892379999994,
+   "max_ammo_pct": 1.51842233,
+   "crit_rate": 0.935027060000003,
+   "crit_dmg": 1.4805112300000047,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크 : 그레이트 빌런": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.266470609999999,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.2430914400000006,
+   "crit_dmg": 1.0737150500000041,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.682508300000002,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "charge_speed_pct",
+   "max_ammo_pct"
+  ],
+  "벨벳": [
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "드레이크 : 그레이트 빌런": [
+   "charge_dmg_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "맥스웰 : 오디너리 미케닉": "공4+장탄1+차속3+차뎀4",
+  "벨벳": "공4+장탄3+차속4+차뎀1",
+  "루드밀라 : 윈터 오너": "우코4+공4+장탄2+크뎀2",
+  "드레이크 : 그레이트 빌런": "크확4+크뎀4+차뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 84.3
+}

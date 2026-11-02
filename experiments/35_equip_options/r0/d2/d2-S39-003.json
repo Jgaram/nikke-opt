@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-003",
+ "season": 39,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "이브",
+  "레이븐"
+ ],
+ "v_spec": 76.19003338,
+ "v_E0": 84.8505762,
+ "v_O": 103.75058288,
+ "base_check": 84.8505762,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6917327100000108,
+   "max_ammo_pct": 0.7970109500000007,
+   "crit_rate": 0.9796507699999921,
+   "crit_dmg": 1.5730039399999924,
+   "charge_speed_pct": 0.7905707299999989,
+   "charge_dmg_pct": 0.9175988399999966,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 3.782456400000001,
+   "atk_pct": 1.6446408200000064,
+   "max_ammo_pct": 0.1060582900000071,
+   "crit_rate": 0.7517989999999912,
+   "crit_dmg": 1.2440585299999896,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6834228700000011,
+   "max_ammo_pct": -0.2008894299999895,
+   "crit_rate": 0.2862107899999984,
+   "crit_dmg": 0.4311668900000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 10.778161020000013,
+   "atk_pct": 4.268314350000011,
+   "max_ammo_pct": -0.8483182800000009,
+   "crit_rate": 1.2732836299999946,
+   "crit_dmg": 8.171117479999992,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 15.040298950000007,
+   "atk_pct": 6.545355600000008,
+   "max_ammo_pct": 0.09143828000000553,
+   "crit_rate": 3.049808369999994,
+   "crit_dmg": 4.879532239999989,
+   "charge_speed_pct": 0.9673027699999892,
+   "charge_dmg_pct": 0.8002996099999962,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "크라운": "우코4+공4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+크확4+크뎀4",
+  "이브": "우코4+공3+크확1+크뎀4",
+  "레이븐": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 846,
+ "seconds": 94.2
+}

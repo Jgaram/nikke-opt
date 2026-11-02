@@ -1,0 +1,33 @@
+{
+ "id": "r3d-S42-Bd-3",
+ "season": 42,
+ "squad": [
+  "로산나",
+  "리틀 머메이드",
+  "나유타",
+  "프리바티",
+  "신데렐라 : 크리스탈 웨이브"
+ ],
+ "value": 52.53804734,
+ "win": null,
+ "arm": "Bd",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 54.08772186,
+ "start": 52.53804734,
+ "base": 52.53804734,
+ "p0": 52.53804734,
+ "best_variants": [
+  "squad:burst_who3:first=2",
+  "로산나:burst_t:wait2",
+  "로산나:cancel:on",
+  "로산나:cover_at:fb_end-0.3",
+  "리틀 머메이드:cover_at:fb_end-0.1-rl",
+  "신데렐라 : 크리스탈 웨이브:cover_at:fb_end-0.1-rl_dry",
+  "프리바티:cover_at:fb_end-0.5-rl"
+ ],
+ "keys": 22,
+ "options": 83,
+ "seconds": 135.4
+}

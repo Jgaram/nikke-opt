@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-009",
+ "season": 41,
+ "squad": [
+  "목단",
+  "크라운",
+  "헬름",
+  "프리바티",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "v_spec": 66.47578941,
+ "v_E0": 58.98631962,
+ "v_O": 85.16998195,
+ "base_check": 58.98631962,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2271321200000003,
+   "max_ammo_pct": 0.006015380000000903,
+   "crit_rate": 0.4844546399999956,
+   "crit_dmg": 0.4184417899999957,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7785357700000048,
+   "max_ammo_pct": 0.4064892900000032,
+   "crit_rate": 0.3048871799999944,
+   "crit_dmg": 0.2633297699999986,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 7.8392005800000035,
+   "atk_pct": 5.025520820000004,
+   "max_ammo_pct": -0.6948997800000001,
+   "crit_rate": 1.8087860199999994,
+   "crit_dmg": 1.562335229999995,
+   "charge_speed_pct": 1.9953294199999974,
+   "charge_dmg_pct": 0.8822295199999957,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 3.518123540000005,
+   "atk_pct": 2.8203699600000007,
+   "max_ammo_pct": -16.98023243,
+   "crit_rate": 0.9871774799999997,
+   "crit_dmg": 0.8526737400000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 5.387316850000005,
+   "atk_pct": 3.776775640000004,
+   "max_ammo_pct": 0.729159100000004,
+   "crit_rate": 1.1093705299999996,
+   "crit_dmg": 0.9582226899999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "헬름": "우코4+공4+차속4",
+  "프리바티": "우코4+공4+크확2+크뎀2",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+크확2+크뎀2"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 114.4
+}

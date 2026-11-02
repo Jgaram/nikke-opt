@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-015",
+ "season": 41,
+ "squad": [
+  "리타",
+  "나유타",
+  "헬름",
+  "길로틴 : 윈터 슬레이어",
+  "루드밀라 : 윈터 오너"
+ ],
+ "v_spec": 43.645717,
+ "v_E0": 51.77234618,
+ "v_O": 55.80053627,
+ "base_check": 51.77234618,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5300059699999977,
+   "max_ammo_pct": 0.2848476699999978,
+   "crit_rate": 0.17216815999999824,
+   "crit_dmg": 0.14933076999999884,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5466352799999967,
+   "max_ammo_pct": 0.005404620000000193,
+   "crit_rate": 0.5479736799999984,
+   "crit_dmg": 0.4260998000000029,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.6025249200000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 6.515423839999997,
+   "atk_pct": 3.814140090000002,
+   "max_ammo_pct": 0.16297352000000132,
+   "crit_rate": 1.6748599399999975,
+   "crit_dmg": 1.2735720200000031,
+   "charge_speed_pct": 1.48309055,
+   "charge_dmg_pct": 0.6198420400000018,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴 : 윈터 슬레이어": {
+   "element_bonus": 5.036163359999996,
+   "atk_pct": 1.8069713499999978,
+   "max_ammo_pct": 1.0138661900000017,
+   "crit_rate": 1.1305305300000015,
+   "crit_dmg": 0.9476338500000026,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 5.126264280000001,
+   "atk_pct": 3.2590404899999967,
+   "max_ammo_pct": 5.823307999999997,
+   "crit_rate": 1.0791337400000032,
+   "crit_dmg": 1.528016270000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct"
+  ],
+  "길로틴 : 윈터 슬레이어": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄3+크확2+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름": "우코4+공4+크확3+차속1",
+  "길로틴 : 윈터 슬레이어": "우코4+공4+장탄2+크확2",
+  "루드밀라 : 윈터 오너": "우코4+공4+장탄4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 96.2
+}

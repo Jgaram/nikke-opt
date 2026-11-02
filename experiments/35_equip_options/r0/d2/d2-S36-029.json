@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-029",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "길로틴",
+  "스노우 화이트 : 헤비암즈",
+  "프리바티"
+ ],
+ "v_spec": 38.9684975,
+ "v_E0": 40.35351239,
+ "v_O": 49.99586079,
+ "base_check": 40.35351239,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5556708900000018,
+   "max_ammo_pct": 0.36675086999999706,
+   "crit_rate": 0.4562267399999982,
+   "crit_dmg": 0.3940690800000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5666017499999967,
+   "max_ammo_pct": 0.6948819699999973,
+   "crit_rate": 0.4616302900000022,
+   "crit_dmg": 0.39873287000000346,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5857521100000014,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴": {
+   "element_bonus": 5.766436370000001,
+   "atk_pct": 2.596575940000001,
+   "max_ammo_pct": 0.8096012999999971,
+   "crit_rate": 1.2958897000000036,
+   "crit_dmg": 1.4096148900000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.1265239899999955,
+   "max_ammo_pct": -0.36362951000000265,
+   "crit_rate": 0.9474414900000028,
+   "crit_dmg": 0.8183502600000025,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3188816899999978,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.489210700000001,
+   "max_ammo_pct": -2.42079983,
+   "crit_rate": 0.1331431899999984,
+   "crit_dmg": 0.11499857999999819,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "길로틴": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "나유타": "공4+크확4+차뎀4",
+  "길로틴": "우코4+공4+크확2+크뎀2",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 845,
+ "seconds": 97.4
+}

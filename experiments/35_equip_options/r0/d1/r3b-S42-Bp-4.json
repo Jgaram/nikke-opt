@@ -1,0 +1,134 @@
+{
+ "id": "r3b-S42-Bp-4",
+ "season": 42,
+ "arm": "Bp",
+ "squad": [
+  "토브",
+  "솔린 : 프로스트 티켓",
+  "아르카나 : 포츈 메이트",
+  "드레이크",
+  "프리바티 : 언카인드 메이드"
+ ],
+ "win": null,
+ "v_spec": 45.1614385,
+ "ctrl": [
+  "드레이크:cover_at:fb_end-0.3",
+  "솔린 : 프로스트 티켓:cover_at:next_fb+0.5-rl",
+  "프리바티 : 언카인드 메이드:cover_at:next_fb+0.1-rl"
+ ],
+ "v_E0": 49.48536202,
+ "v_O": 59.66408807,
+ "base_check": 49.48536202,
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.24292795999999584,
+   "max_ammo_pct": 0.11398669999999811,
+   "crit_rate": 0.057112380000006624,
+   "crit_dmg": 0.0743145200000015,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "솔린 : 프로스트 티켓": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9140667999999934,
+   "max_ammo_pct": 0.06955981999999494,
+   "crit_rate": 0.4738088000000005,
+   "crit_dmg": 0.6186812000000046,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3948335899999975,
+   "max_ammo_pct": 0.2610359299999985,
+   "crit_rate": 0.6603554400000036,
+   "crit_dmg": 1.4885100200000068,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7771614699999958,
+   "max_ammo_pct": -0.08883545000000481,
+   "crit_rate": 0.8877918300000047,
+   "crit_dmg": 1.1596371500000018,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티 : 언카인드 메이드": {
+   "element_bonus": 9.905754539999997,
+   "atk_pct": 3.4310176299999995,
+   "max_ammo_pct": 0.24763301999999499,
+   "crit_rate": 3.1579794200000038,
+   "crit_dmg": 2.3129779800000065,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "솔린 : 프로스트 티켓": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "프리바티 : 언카인드 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "토브": "공4+크확4+크뎀4",
+  "솔린 : 프로스트 티켓": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "공4+장탄1+크확3+크뎀4",
+  "드레이크": "공4+크확4+크뎀4",
+  "프리바티 : 언카인드 메이드": "우코4+공4+크확3+크뎀1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 951,
+ "seconds": 43.1,
+ "v_start2": 59.66408807,
+ "v_OC": 59.70692339,
+ "ctrl2": [
+  "드레이크:cover_at:fb_end-0.3",
+  "솔린 : 프로스트 티켓:cover_at:next_fb+0.5-rl",
+  "아르카나 : 포츈 메이트:cover_at:fb_end-0.1-rl_dry",
+  "토브:cancel:on",
+  "토브:cover_at:fb_end-0.1-rl_dry",
+  "프리바티 : 언카인드 메이드:cover_at:next_fb+0.1-rl"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

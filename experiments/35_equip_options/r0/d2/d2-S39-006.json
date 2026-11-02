@@ -1,0 +1,115 @@
+{
+ "id": "d2-S39-006",
+ "season": 39,
+ "squad": [
+  "리틀 머메이드",
+  "마스트 : 로망틱 메이드",
+  "크라운",
+  "라피 : 레드 후드",
+  "신데렐라 : 크리스탈 웨이브"
+ ],
+ "v_spec": 69.93110322,
+ "v_E0": 81.51719877,
+ "v_O": 92.22949214,
+ "base_check": 81.51719877,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.0483675499999947,
+   "max_ammo_pct": 0.1452126099999873,
+   "crit_rate": 0.9182431200000138,
+   "crit_dmg": 1.487715680000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5559172299999915,
+   "max_ammo_pct": 0.15272689999999045,
+   "crit_rate": 0.20710884000000362,
+   "crit_dmg": 0.31174530000001255,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 2.8272483699999924,
+   "atk_pct": 1.3905202299999928,
+   "max_ammo_pct": 0.7679650499999866,
+   "crit_rate": 0.5654745100000014,
+   "crit_dmg": 0.9422558300000077,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 11.710867789999995,
+   "atk_pct": 4.54295522999999,
+   "max_ammo_pct": 0.8245947199999932,
+   "crit_rate": 2.371129900000014,
+   "crit_dmg": 3.7830204400000014,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 14.36672046999999,
+   "atk_pct": 6.174079769999992,
+   "max_ammo_pct": 0.6664556199999936,
+   "crit_rate": 3.24862435,
+   "crit_dmg": 5.238894240000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "크라운": "우코4+공4+장탄1+크뎀3",
+  "라피 : 레드 후드": "우코4+공4+크확1+크뎀3",
+  "신데렐라 : 크리스탈 웨이브": "우코4+공4+크확1+크뎀3"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 767,
+ "seconds": 87.8
+}

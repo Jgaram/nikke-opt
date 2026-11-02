@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-006",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 87.3299665,
+ "v_E0": 85.74028378,
+ "v_O": 110.85246098,
+ "base_check": 85.74028378,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 12.546754499999992,
+   "atk_pct": 3.8383648800000003,
+   "max_ammo_pct": 1.7237284499999959,
+   "crit_rate": 2.7106443600000034,
+   "crit_dmg": 4.395956139999996,
+   "charge_speed_pct": 0.5658149399999957,
+   "charge_dmg_pct": 2.5824874400000084,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6789973199999935,
+   "max_ammo_pct": 0.739254889999998,
+   "crit_rate": 0.3096450500000003,
+   "crit_dmg": 0.514085510000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6244095800000053,
+   "max_ammo_pct": 0.19760053999999627,
+   "crit_rate": 0.2609067300000021,
+   "crit_dmg": 0.39355580000000145,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 6.353940910000006,
+   "atk_pct": 2.955622669999997,
+   "max_ammo_pct": -10.94908289,
+   "crit_rate": 1.506243909999995,
+   "crit_dmg": 2.4469299800000073,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 11.37017831,
+   "atk_pct": 3.1248019500000055,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 2.5954118599999987,
+   "crit_dmg": 4.230123829999997,
+   "charge_speed_pct": 4.442031279999995,
+   "charge_dmg_pct": 1.2617235000000022,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.6613621500000022
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "crit_dmg",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+크확4+크뎀4",
+  "크라운": "공4+장탄4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "아니스 : 스파클링 서머": "우코4+공4+크확1+크뎀3",
+  "메이든 : 아이스 로즈": "우코4+크뎀4+차속4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 837,
+ "seconds": 89.3
+}

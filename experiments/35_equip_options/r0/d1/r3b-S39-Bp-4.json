@@ -1,0 +1,134 @@
+{
+ "id": "r3b-S39-Bp-4",
+ "season": 39,
+ "arm": "Bp",
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "슈가",
+  "드레이크",
+  "소다 : 트윙클링 바니"
+ ],
+ "win": "burst_who3:none=2",
+ "v_spec": 48.97649256,
+ "ctrl": [
+  "드레이크:cover_at:next_fb+0.1-rl",
+  "소다 : 트윙클링 바니:cover_at:next_fb+0.5-rl",
+  "슈가:cover_at:next_fb+0.1-rl"
+ ],
+ "v_E0": 57.63216032,
+ "v_O": 63.01085905,
+ "base_check": 57.63216032,
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.24079659999999592,
+   "max_ammo_pct": 0.04968813999999355,
+   "crit_rate": 0.05486799000000531,
+   "crit_dmg": 0.07137023000000653,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7192826599999975,
+   "max_ammo_pct": 0.05605622999999582,
+   "crit_rate": 0.5789309300000056,
+   "crit_dmg": 1.3020051300000048,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "슈가": {
+   "element_bonus": 7.126458099999994,
+   "atk_pct": 3.0858221999999955,
+   "max_ammo_pct": 1.4846933999999976,
+   "crit_rate": 1.2880903000000004,
+   "crit_dmg": 2.3571820000000017,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2510761200000005,
+   "max_ammo_pct": 0.3305629400000001,
+   "crit_rate": 0.5365713000000056,
+   "crit_dmg": 0.7000898800000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "소다 : 트윙클링 바니": {
+   "element_bonus": 10.854185039999997,
+   "atk_pct": 4.25730995,
+   "max_ammo_pct": 3.8216321999999963,
+   "crit_rate": 3.63873916,
+   "crit_dmg": 2.4500758500000046,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "슈가": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "소다 : 트윙클링 바니": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "공3+장탄1+크확4+크뎀4",
+  "슈가": "우코4+공4+크뎀4",
+  "드레이크": "공4+크확4+크뎀4",
+  "소다 : 트윙클링 바니": "우코4+공4+장탄3+크확1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1650,
+ "seconds": 55.5,
+ "v_start2": 63.01085905,
+ "v_OC": 63.01666992,
+ "ctrl2": [
+  "드레이크:cover_at:next_fb+0.1-rl",
+  "소다 : 트윙클링 바니:cover_at:next_fb+0.5-rl",
+  "슈가:cancel:on",
+  "슈가:cover_at:next_fb+0.1-rl",
+  "아르카나 : 포츈 메이트:cover_at:fb_end-0.3",
+  "토브:cover_at:fb_end-0.1-rl_dry"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

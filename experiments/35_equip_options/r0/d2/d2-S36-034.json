@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-034",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "츠바이",
+  "마리",
+  "질",
+  "아니스 : 스파클링 서머"
+ ],
+ "v_spec": 35.21673794,
+ "v_E0": 36.1240593,
+ "v_O": 52.34789579,
+ "base_check": 36.1240593,
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.165284100000001,
+   "max_ammo_pct": 0.6399354699999975,
+   "crit_rate": 0.19716181000000432,
+   "crit_dmg": 0.8757120900000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "츠바이": {
+   "element_bonus": 2.6948364799999993,
+   "atk_pct": 1.6440666000000022,
+   "max_ammo_pct": 0.5235059600000014,
+   "crit_rate": 0.38155584999999803,
+   "crit_dmg": 1.6968101000000004,
+   "charge_speed_pct": 0.08304482999999863,
+   "charge_dmg_pct": 0.06000156000000345,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마리": {
+   "element_bonus": 1.6876508799999996,
+   "atk_pct": 0.9647794599999955,
+   "max_ammo_pct": 0.6674716400000023,
+   "crit_rate": 0.2512919500000024,
+   "crit_dmg": 1.070197720000003,
+   "charge_speed_pct": 0.25815829999999806,
+   "charge_dmg_pct": 0.6200766299999998,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "질": {
+   "element_bonus": 5.634030939999999,
+   "atk_pct": 2.8713279899999975,
+   "max_ammo_pct": -0.6199377599999991,
+   "crit_rate": 0.7923951000000002,
+   "crit_dmg": 3.5544185900000045,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 3.5358662299999963,
+   "atk_pct": 2.3576222399999978,
+   "max_ammo_pct": -4.979925610000002,
+   "crit_rate": 0.5443417400000001,
+   "crit_dmg": 2.410196169999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "츠바이": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "마리": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "질": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리틀 머메이드": "공4+장탄1+크확3+크뎀4",
+  "츠바이": "우코4+공4+장탄2+크뎀2",
+  "마리": "우코4+공4+크뎀4",
+  "질": "우코4+공4+크뎀4",
+  "아니스 : 스파클링 서머": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 798,
+ "seconds": 84.1
+}

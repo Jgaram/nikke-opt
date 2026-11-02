@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-014",
+ "season": 41,
+ "squad": [
+  "리타",
+  "나유타",
+  "헬름",
+  "퀀시 : 이스케이프 퀸",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "v_spec": 44.88811656,
+ "v_E0": 52.25596322,
+ "v_O": 57.91584746,
+ "base_check": 52.25596322,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4750506700000017,
+   "max_ammo_pct": 0.049709669999998596,
+   "crit_rate": 0.15439540999999934,
+   "crit_dmg": 0.13507006000000388,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3833437099999983,
+   "max_ammo_pct": -0.1219269400000016,
+   "crit_rate": 0.49043096999999847,
+   "crit_dmg": 0.3811460699999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5379382899999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 6.028522670000001,
+   "atk_pct": 3.6250906200000017,
+   "max_ammo_pct": -0.27098262000000517,
+   "crit_rate": 1.6680908200000033,
+   "crit_dmg": 1.2742241300000003,
+   "charge_speed_pct": 1.6308891999999986,
+   "charge_dmg_pct": 0.5931629000000029,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 6.658958640000002,
+   "atk_pct": 2.6824566599999997,
+   "max_ammo_pct": 0.9080262499999989,
+   "crit_rate": 1.63415174,
+   "crit_dmg": 2.6680959999999985,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 3.7822364399999984,
+   "atk_pct": 2.4650903299999953,
+   "max_ammo_pct": 2.2506687099999994,
+   "crit_rate": 0.8798788900000005,
+   "crit_dmg": 0.7560460000000049,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄1+크확3+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름": "우코4+공4+크확3+차속1",
+  "퀀시 : 이스케이프 퀸": "우코4+공3+크확1+크뎀4",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 832,
+ "seconds": 105.7
+}

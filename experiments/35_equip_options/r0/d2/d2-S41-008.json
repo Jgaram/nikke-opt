@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-008",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "앵커 : 이노센트 메이드",
+  "마스트 : 로망틱 메이드",
+  "루드밀라 : 윈터 오너",
+  "팬텀"
+ ],
+ "v_spec": 67.00749798,
+ "v_E0": 76.34379934,
+ "v_O": 86.63752533,
+ "base_check": 76.34379934,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7972328299999987,
+   "max_ammo_pct": 0.9636713900000018,
+   "crit_rate": 1.1414390300000008,
+   "crit_dmg": 1.627849580000003,
+   "charge_speed_pct": 0.09170483999999135,
+   "charge_dmg_pct": 0.9706120999999968,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 2.4838906500000064,
+   "atk_pct": 1.1027769700000079,
+   "max_ammo_pct": 0.0683152800000073,
+   "crit_rate": 0.5536275899999907,
+   "crit_dmg": 0.795379699999998,
+   "charge_speed_pct": 1.0256201600000026,
+   "charge_dmg_pct": 1.0160590999999926,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 4.257310439999998,
+   "atk_pct": 1.8972424500000074,
+   "max_ammo_pct": 1.7917711099999991,
+   "crit_rate": 0.948901939999999,
+   "crit_dmg": 1.3850230199999913,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 8.53793752,
+   "atk_pct": 3.6757556499999993,
+   "max_ammo_pct": 2.414934020000004,
+   "crit_rate": 1.76817389,
+   "crit_dmg": 3.607695640000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 11.818546089999998,
+   "atk_pct": 4.152212860000006,
+   "max_ammo_pct": 0.6230499899999984,
+   "crit_rate": 2.984835739999994,
+   "crit_dmg": 4.057994089999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "앵커 : 이노센트 메이드": "우코4+공4+차뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+장탄1+크뎀3",
+  "루드밀라 : 윈터 오너": "우코4+공4+장탄1+크뎀3",
+  "팬텀": "우코4+공2+크확2+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 766,
+ "seconds": 114.8
+}

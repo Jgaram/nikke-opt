@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-023",
+ "season": 36,
+ "squad": [
+  "미란다",
+  "솔린 : 프로스트 티켓",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "v_spec": 42.59108544,
+ "v_E0": 49.37598616,
+ "v_O": 61.41248297,
+ "base_check": 49.37598616,
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5407426999999956,
+   "max_ammo_pct": 1.145673169999995,
+   "crit_rate": 0.19620184000000052,
+   "crit_dmg": 0.28545618000000417,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "솔린 : 프로스트 티켓": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.47704710000000006,
+   "max_ammo_pct": 0.45222066999999555,
+   "crit_rate": 0.1369602000000043,
+   "crit_dmg": 0.0798030000000054,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4205267799999959,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.1185172900000069,
+   "crit_dmg": 0.36495605000000353,
+   "charge_speed_pct": 0.6925662800000012,
+   "charge_dmg_pct": 0.028359670000000392,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 10.14421994,
+   "atk_pct": 7.594405889999997,
+   "max_ammo_pct": 0.19358397999999966,
+   "crit_rate": 0.6179818600000004,
+   "crit_dmg": 4.93353321,
+   "charge_speed_pct": 0.6940619900000016,
+   "charge_dmg_pct": 0.1759044400000036,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 6.832514419999995,
+   "atk_pct": 3.067334189999997,
+   "max_ammo_pct": 1.1129528399999984,
+   "crit_rate": 0.4126451400000022,
+   "crit_dmg": 3.799866400000006,
+   "charge_speed_pct": 0.5945289400000036,
+   "charge_dmg_pct": 0.2375290800000016,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "솔린 : 프로스트 티켓": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "타키나": [
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "charge_speed_pct"
+  ],
+  "아인": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "미란다": "공4+장탄1+크확3+크뎀4",
+  "솔린 : 프로스트 티켓": "공4+장탄1+크확4+크뎀3",
+  "타키나": "공4+크확4+크뎀3+차속1",
+  "에이다": "우코4+공4+크뎀4",
+  "아인": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 846,
+ "seconds": 61.3
+}

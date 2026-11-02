@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-043",
+ "season": 36,
+ "squad": [
+  "리타",
+  "브리드 : 사일런트 트랙",
+  "리버렐리오",
+  "디젤 : 윈터 스위츠",
+  "누아르"
+ ],
+ "v_spec": 27.94785005,
+ "v_E0": 30.81426389,
+ "v_O": 37.9032788,
+ "base_check": 30.81426389,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.342781549999998,
+   "max_ammo_pct": 0.17647923999999904,
+   "crit_rate": 0.13790666999999956,
+   "crit_dmg": 0.10637841000000137,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8869005600000008,
+   "max_ammo_pct": 0.190326289999998,
+   "crit_rate": 0.2758379700000013,
+   "crit_dmg": 0.21070325999999895,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.77959405,
+   "max_ammo_pct": 0.9752846799999979,
+   "crit_rate": 0.9169082000000017,
+   "crit_dmg": 0.6878640199999992,
+   "charge_speed_pct": 2.1146862000000013,
+   "charge_dmg_pct": 0.707442069999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.6096067000000005,
+   "max_ammo_pct": 0.07010835999999898,
+   "crit_rate": 1.3652411099999995,
+   "crit_dmg": 0.7692487999999997,
+   "charge_speed_pct": 0.21357650999999933,
+   "charge_dmg_pct": 0.19961719000000144,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "누아르": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7573015699999992,
+   "max_ammo_pct": 0.09667019999999837,
+   "crit_rate": 0.23272560000000198,
+   "crit_dmg": 0.17964680000000044,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "리버렐리오": [
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_speed_pct"
+  ],
+  "누아르": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄1+크확4+크뎀3",
+  "브리드 : 사일런트 트랙": "공4+장탄1+크확4+크뎀3",
+  "리버렐리오": "공4+장탄3+크확1+차속4",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4",
+  "누아르": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 748,
+ "seconds": 81.9
+}

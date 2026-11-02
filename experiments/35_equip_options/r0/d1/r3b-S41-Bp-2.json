@@ -1,0 +1,135 @@
+{
+ "id": "r3b-S41-Bp-2",
+ "season": 41,
+ "arm": "Bp",
+ "squad": [
+  "목단",
+  "크라운",
+  "헬름",
+  "스노우 화이트 : 헤비암즈",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "win": null,
+ "v_spec": 67.79112612,
+ "ctrl": [
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.1-rl_dry",
+  "일레그 : 붐 앤 쇼크:cover_at:fb_end-0.1-rl",
+  "크라운:cover_at:fb_end-0.1-rl_dry",
+  "헬름:click:hold@chain",
+  "헬름:start_hold:hold0-2.2"
+ ],
+ "v_E0": 76.36404848,
+ "v_O": 83.57449489,
+ "base_check": 76.36404848,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1042031899999927,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.4009976900000112,
+   "crit_dmg": 0.37847548000000586,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6779689399999995,
+   "max_ammo_pct": -0.25146152000000654,
+   "crit_rate": 0.2459707800000075,
+   "crit_dmg": 0.2432800300000082,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 6.847896389999988,
+   "atk_pct": 4.671277109999991,
+   "max_ammo_pct": -0.14873685999999964,
+   "crit_rate": 1.585660400000009,
+   "crit_dmg": 1.4322562600000026,
+   "charge_speed_pct": 1.2847516400000103,
+   "charge_dmg_pct": 0.7318617200000119,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 14.023711519999992,
+   "atk_pct": 5.7107329499999935,
+   "max_ammo_pct": 1.3750568399999992,
+   "crit_rate": 2.845235080000009,
+   "crit_dmg": 2.5225352400000105,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.9483464000000055,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 4.057973869999998,
+   "atk_pct": 3.1496975700000007,
+   "max_ammo_pct": 0.5697048299999921,
+   "crit_rate": 0.8346101700000048,
+   "crit_dmg": 0.7968735100000117,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "크라운": "공4+크확4+크뎀4",
+  "헬름": "우코4+공4+크확2+크뎀2",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크확2+크뎀2",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1615,
+ "seconds": 66.5,
+ "v_start2": 83.57449489,
+ "v_OC": 84.44998878,
+ "ctrl2": [
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.3",
+  "일레그 : 붐 앤 쇼크:cover_at:next_fb+0.1-rl",
+  "크라운:cover_at:next_fb+0.1-rl",
+  "헬름:click:hold@chain",
+  "헬름:start_hold:hold0-2.2"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

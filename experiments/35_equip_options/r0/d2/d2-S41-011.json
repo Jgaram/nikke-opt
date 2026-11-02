@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-011",
+ "season": 41,
+ "squad": [
+  "볼륨",
+  "나유타",
+  "마스트 : 로망틱 메이드",
+  "팬텀",
+  "퀀시 : 이스케이프 퀸"
+ ],
+ "v_spec": 48.8929576,
+ "v_E0": 55.07849382,
+ "v_O": 64.75942775,
+ "base_check": 55.07849382,
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6045591899999962,
+   "max_ammo_pct": 0.762249439999998,
+   "crit_rate": 0.24365476999999913,
+   "crit_dmg": 0.438243700000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1847931900000006,
+   "max_ammo_pct": 0.1286535599999965,
+   "crit_rate": 0.4846150300000005,
+   "crit_dmg": 0.9514723600000039,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.38611870000000437,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.3468914400000003,
+   "atk_pct": 1.2387631699999986,
+   "max_ammo_pct": 0.8835161599999992,
+   "crit_rate": 0.5378923700000016,
+   "crit_dmg": 0.9393169000000015,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 9.265439119999996,
+   "atk_pct": 3.654544129999998,
+   "max_ammo_pct": 2.0324280299999984,
+   "crit_rate": 2.341096710000002,
+   "crit_dmg": 4.260166650000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 8.29351689,
+   "atk_pct": 2.983582900000002,
+   "max_ammo_pct": 1.5697819899999956,
+   "crit_rate": 1.59482182,
+   "crit_dmg": 4.847943260000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "볼륨": "공4+장탄1+크확3+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+장탄3+크뎀1",
+  "팬텀": "우코4+공4+크뎀4",
+  "퀀시 : 이스케이프 퀸": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 835,
+ "seconds": 116.8
+}

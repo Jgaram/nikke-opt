@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-017",
+ "season": 36,
+ "squad": [
+  "목단",
+  "마스트 : 로망틱 메이드",
+  "나유타",
+  "리버렐리오",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 45.53950417,
+ "v_E0": 49.20030443,
+ "v_O": 58.22716458,
+ "base_check": 49.20030443,
+ "screen": {
+  "목단": {
+   "element_bonus": 4.136351080000004,
+   "atk_pct": 1.9393346400000055,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.9069680699999978,
+   "crit_dmg": 1.46716507,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4152255500000024,
+   "max_ammo_pct": 0.4648999600000039,
+   "crit_rate": 0.1875451199999958,
+   "crit_dmg": 0.28965781999999507,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0353126600000024,
+   "max_ammo_pct": 0.0765997300000052,
+   "crit_rate": 0.39988893999999675,
+   "crit_dmg": 0.7231283699999977,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3975474999999946,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.884495770000001,
+   "max_ammo_pct": 1.2149645600000056,
+   "crit_rate": 0.9138399399999955,
+   "crit_dmg": 1.4976004899999964,
+   "charge_speed_pct": 3.561295279999996,
+   "charge_dmg_pct": 0.7177431799999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 8.14840821,
+   "atk_pct": 2.4175302599999995,
+   "max_ammo_pct": 1.1702093500000004,
+   "crit_rate": 1.9067167699999956,
+   "crit_dmg": 3.090326499999996,
+   "charge_speed_pct": 2.7726064099999945,
+   "charge_dmg_pct": 0.5942149499999942,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "리버렐리오": [
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "crit_dmg",
+   "charge_speed_pct",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확1+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "리버렐리오": "공4+장탄3+크뎀1+차속4",
+  "메이든 : 아이스 로즈": "우코4+공3+크뎀4+차속1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 846,
+ "seconds": 117.6
+}

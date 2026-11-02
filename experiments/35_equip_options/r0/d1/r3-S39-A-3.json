@@ -1,0 +1,131 @@
+{
+ "id": "r3-S39-A-3",
+ "season": 39,
+ "arm": "A",
+ "squad": [
+  "목단",
+  "타키나",
+  "센티",
+  "스노우 화이트 : 헤비암즈",
+  "치사토"
+ ],
+ "win": null,
+ "v_spec": 56.01100427,
+ "ctrl": [
+  "치사토:reload:B0.1",
+  "타키나:click:tap"
+ ],
+ "v_E0": 62.86475059,
+ "v_O": 66.63081471,
+ "base_check": 62.86475059,
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6598926899999995,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.19749205000000103,
+   "crit_dmg": 0.17058827999999693,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 7.110567529999997,
+   "atk_pct": 4.0457363499999985,
+   "max_ammo_pct": 0.2762992899999972,
+   "crit_rate": 1.5429394800000011,
+   "crit_dmg": 1.3327105399999937,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "센티": {
+   "element_bonus": 0.5463589399999975,
+   "atk_pct": 0.39914310999999714,
+   "max_ammo_pct": 0.18138800999999916,
+   "crit_rate": 0.12134711000000209,
+   "crit_dmg": 0.10481327000000107,
+   "charge_speed_pct": 0.35142258999999854,
+   "charge_dmg_pct": 0.26995836999999767,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6413677600000014,
+   "max_ammo_pct": 2.01697987,
+   "crit_rate": 0.7464084699999987,
+   "crit_dmg": 0.6447080000000014,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.22253938000000062,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "치사토": {
+   "element_bonus": 9.87325739,
+   "atk_pct": 4.639994549999997,
+   "max_ammo_pct": 2.688836160000001,
+   "crit_rate": 2.1222703300000063,
+   "crit_dmg": 1.8331063899999975,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "타키나": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "센티": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "치사토": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "타키나": "우코4+공4+크확2+크뎀2",
+  "센티": "우코4+공4+장탄4",
+  "스노우 화이트 : 헤비암즈": "공4+장탄3+크확3+크뎀2",
+  "치사토": "우코4+공4+장탄3+크확1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1610,
+ "seconds": 51.5,
+ "v_start2": 66.63081471,
+ "v_OC": 67.04689915,
+ "ctrl2": [
+  "목단:cover:on",
+  "목단:reload:C0.1",
+  "치사토:reload:B0.1",
+  "타키나:click:tap"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

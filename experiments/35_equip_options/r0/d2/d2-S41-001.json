@@ -1,0 +1,115 @@
+{
+ "id": "d2-S41-001",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "나유타",
+  "프리바티",
+  "팬텀",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "v_spec": 78.75262335,
+ "v_E0": 74.28009504,
+ "v_O": 99.05401143,
+ "base_check": 74.28009504,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.811269160000009,
+   "max_ammo_pct": 2.3776806300000004,
+   "crit_rate": 0.7168043699999913,
+   "crit_dmg": 0.6191375699999924,
+   "charge_speed_pct": -0.2520828300000062,
+   "charge_dmg_pct": 0.7591694899999908,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9598181200000084,
+   "max_ammo_pct": 0.42567007000000956,
+   "crit_rate": 0.6776822799999991,
+   "crit_dmg": 0.5853479399999912,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.8855851599999909,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 3.502249430000006,
+   "atk_pct": 2.785933490000005,
+   "max_ammo_pct": -16.6224153,
+   "crit_rate": 0.9606562899999886,
+   "crit_dmg": 0.8297711599999928,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 9.54246366000001,
+   "atk_pct": 4.234926800000011,
+   "max_ammo_pct": 2.796757620000008,
+   "crit_rate": 2.090471739999998,
+   "crit_dmg": 1.8056426200000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 6.40967504000001,
+   "atk_pct": 3.8821664499999997,
+   "max_ammo_pct": 1.4368864800000125,
+   "crit_rate": 1.3260908699999874,
+   "crit_dmg": 1.1453888399999954,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "공4+장탄3+크확2+차뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "프리바티": "우코4+공4+크확2+크뎀2",
+  "팬텀": "우코4+공4+장탄1+크확3",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄3+크확1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 109.8
+}

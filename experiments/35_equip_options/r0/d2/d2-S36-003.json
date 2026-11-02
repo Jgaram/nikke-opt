@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-003",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "네온 : 비전 아이",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 96.02006633,
+ "v_E0": 103.36824695,
+ "v_O": 116.49635965,
+ "base_check": 103.36824695,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 10.48473104,
+   "atk_pct": 3.8204618099999976,
+   "max_ammo_pct": 1.4512652500000058,
+   "crit_rate": 2.2749727000000064,
+   "crit_dmg": 3.6777042300000033,
+   "charge_speed_pct": 0.671303370000004,
+   "charge_dmg_pct": 2.15706471,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6775049999999965,
+   "max_ammo_pct": 0.5874847399999936,
+   "crit_rate": 0.3093209299999984,
+   "crit_dmg": 0.5135368600000021,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6255830099999997,
+   "max_ammo_pct": 0.6750880499999994,
+   "crit_rate": 0.26165783999999803,
+   "crit_dmg": 0.39449175000000025,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 16.70719658,
+   "atk_pct": 6.670888469999994,
+   "max_ammo_pct": 3.3102525399999934,
+   "crit_rate": 3.6029498200000063,
+   "crit_dmg": 6.080388099999993,
+   "charge_speed_pct": 10.34564263,
+   "charge_dmg_pct": 2.3383954800000026,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 9.938881050000006,
+   "atk_pct": 3.096692129999994,
+   "max_ammo_pct": 0.009568160000000603,
+   "crit_rate": 2.310295690000004,
+   "crit_dmg": 3.721043039999998,
+   "charge_speed_pct": 4.060507920000006,
+   "charge_dmg_pct": 1.059583509999996,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.4158349899999934
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "crit_dmg",
+   "atk_pct"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+크확1+크뎀3",
+  "크라운": "공4+장탄3+크확1+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "네온 : 비전 아이": "우코4+공4+차속4",
+  "메이든 : 아이스 로즈": "우코4+공4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 800,
+ "seconds": 111.3
+}

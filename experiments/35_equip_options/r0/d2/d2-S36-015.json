@@ -1,0 +1,115 @@
+{
+ "id": "d2-S36-015",
+ "season": 36,
+ "squad": [
+  "리타",
+  "그레이브",
+  "네온 : 비전 아이",
+  "스노우 화이트 : 헤비암즈",
+  "리버렐리오"
+ ],
+ "v_spec": 47.8803606,
+ "v_E0": 51.14498281,
+ "v_O": 59.70369735,
+ "base_check": 51.14498281,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.44050718000000444,
+   "max_ammo_pct": 0.9693950700000045,
+   "crit_rate": 0.12078515999999695,
+   "crit_dmg": 0.09261777999999765,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8693395100000032,
+   "max_ammo_pct": -0.005719009999999969,
+   "crit_rate": 0.002620509999999854,
+   "crit_dmg": 1.1007213899999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 12.062331620000002,
+   "atk_pct": 5.52269708,
+   "max_ammo_pct": 4.789749890000003,
+   "crit_rate": 2.3545204099999992,
+   "crit_dmg": 1.8247862300000008,
+   "charge_speed_pct": 8.512976299999998,
+   "charge_dmg_pct": 1.190415139999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 7.551982299999999,
+   "max_ammo_pct": 0.8217848700000019,
+   "crit_rate": 0.9237648900000011,
+   "crit_dmg": 0.7155929500000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.31343280000000107,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.8855103799999995,
+   "max_ammo_pct": 0.007152050000001964,
+   "crit_rate": 0.5515349199999946,
+   "crit_dmg": 0.41646535999999656,
+   "charge_speed_pct": 1.5951792299999994,
+   "charge_dmg_pct": 0.5374245900000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "charge_dmg_pct"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄4+크확2+크뎀2",
+  "그레이브": "공4+크확4+크뎀4",
+  "네온 : 비전 아이": "우코4+공4+장탄2+차속2",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "리버렐리오": "공4+크확3+차속4+차뎀1"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 754,
+ "seconds": 120.2
+}

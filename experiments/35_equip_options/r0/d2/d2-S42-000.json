@@ -1,0 +1,115 @@
+{
+ "id": "d2-S42-000",
+ "season": 42,
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "v_spec": 91.53499196,
+ "v_E0": 90.82118745,
+ "v_O": 109.51477104,
+ "base_check": 90.82118745,
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 12.64597628,
+   "atk_pct": 3.5351938099999956,
+   "max_ammo_pct": 2.481252490000003,
+   "crit_rate": 2.417965719999998,
+   "crit_dmg": 2.0885134700000094,
+   "charge_speed_pct": 0.25779896000000235,
+   "charge_dmg_pct": 2.6075645900000097,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 4.628806749999995,
+   "atk_pct": 1.8426016199999964,
+   "max_ammo_pct": 0.9514538499999929,
+   "crit_rate": 0.8973407800000075,
+   "crit_dmg": 0.7750756800000005,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6130850899999984,
+   "max_ammo_pct": 0.8577280299999899,
+   "crit_rate": 0.2652791100000087,
+   "crit_dmg": 0.22913432,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 5.541566750000001,
+   "atk_pct": 2.6988412700000026,
+   "max_ammo_pct": -10.561793539999996,
+   "crit_rate": 1.1758078100000091,
+   "crit_dmg": 1.0156034299999988,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 10.50716994999999,
+   "atk_pct": 2.9381132099999974,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 2.1319388600000053,
+   "crit_dmg": 1.841457020000007,
+   "charge_speed_pct": 3.82814848000001,
+   "charge_dmg_pct": 1.166615660000005,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.4054128599999984
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "max_ammo_pct"
+  ],
+  "플로라": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+장탄2+차뎀2",
+  "플로라": "우코4+공4+장탄1+크확3",
+  "크라운": "공4+장탄1+크확4+크뎀3",
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "메이든 : 아이스 로즈": "우코4+공4+차속4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 798,
+ "seconds": 82.0
+}

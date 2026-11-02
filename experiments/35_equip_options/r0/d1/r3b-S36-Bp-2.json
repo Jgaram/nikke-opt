@@ -1,0 +1,137 @@
+{
+ "id": "r3b-S36-Bp-2",
+ "season": 36,
+ "arm": "Bp",
+ "squad": [
+  "목단",
+  "나유타",
+  "디젤 : 윈터 스위츠",
+  "스노우 화이트 : 헤비암즈",
+  "프리바티"
+ ],
+ "win": "burst_who3:first=2",
+ "v_spec": 44.32122618,
+ "ctrl": [
+  "디젤 : 윈터 스위츠:cover_at:fb_end-0.5-rl",
+  "스노우 화이트 : 헤비암즈:click:tapfire@charge4",
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.5-rl",
+  "스노우 화이트 : 헤비암즈:start_hold:hold0-2.2",
+  "프리바티:cover_at:fb_end-0.1-rl_dry"
+ ],
+ "v_E0": 47.20094179,
+ "v_O": 58.7280536,
+ "base_check": 47.20094179,
+ "screen": {
+  "목단": {
+   "element_bonus": 4.469541589999999,
+   "atk_pct": 2.372251580000004,
+   "max_ammo_pct": 0.1640426300000044,
+   "crit_rate": 0.7876578099999989,
+   "crit_dmg": 0.6803444799999951,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6329126600000023,
+   "max_ammo_pct": 0.16028770999999864,
+   "crit_rate": 0.5547910899999948,
+   "crit_dmg": 0.47920007999999825,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.7153891799999954,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.014627950000005,
+   "max_ammo_pct": 0.7279368399999981,
+   "crit_rate": 1.2893234199999952,
+   "crit_dmg": 0.7924526500000013,
+   "charge_speed_pct": 0.09689013999999929,
+   "charge_dmg_pct": 0.24802014000000128,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.1509241000000046,
+   "max_ammo_pct": 2.1397756500000042,
+   "crit_rate": 1.0543933900000013,
+   "crit_dmg": 0.910732320000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3580938300000014,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5083324900000008,
+   "max_ammo_pct": -2.804915609999995,
+   "crit_rate": 0.15883512999999994,
+   "crit_dmg": 0.13719601999999753,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "alloc": {
+  "목단": "우코4+공4+크확2+크뎀2",
+  "나유타": "공4+크확4+크뎀4",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+장탄2+크확3+크뎀3",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1344,
+ "seconds": 57.7,
+ "v_start2": 58.7280536,
+ "v_OC": 58.95313336,
+ "ctrl2": [
+  "나유타:cover_at:fb_end-0.1-rl_dry",
+  "디젤 : 윈터 스위츠:cover_at:fb_end-0.5-rl",
+  "디젤 : 윈터 스위츠:start_hold:hold0-2.2",
+  "목단:cover_at:fb_end-0.1-rl",
+  "스노우 화이트 : 헤비암즈:click:tapfire@charge4",
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.5-rl",
+  "스노우 화이트 : 헤비암즈:start_hold:hold0-2.2"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}

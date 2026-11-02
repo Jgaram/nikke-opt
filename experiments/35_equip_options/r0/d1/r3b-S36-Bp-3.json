@@ -1,0 +1,139 @@
+{
+ "id": "r3b-S36-Bp-3",
+ "season": 36,
+ "arm": "Bp",
+ "squad": [
+  "리타",
+  "타키나",
+  "아인",
+  "에이다",
+  "헬름"
+ ],
+ "win": null,
+ "v_spec": 41.34037231,
+ "ctrl": [
+  "리타:cancel:on",
+  "리타:cover_at:fb_end-0.1-rl_dry",
+  "아인:click:tap+fc2.5",
+  "에이다:click:tap+fc5.5",
+  "타키나:click:tap+fc2.5",
+  "타키나:start_hold:hold0-2.2",
+  "헬름:click:hold@chain"
+ ],
+ "v_E0": 46.46579917,
+ "v_O": 52.22908348,
+ "base_check": 46.46579917,
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.400952089999997,
+   "max_ammo_pct": 1.017557939999996,
+   "crit_rate": 0.1098398200000048,
+   "crit_dmg": 0.09501321000000473,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5494874499999938,
+   "max_ammo_pct": 0.013766470000000197,
+   "crit_rate": 0.5956217600000002,
+   "crit_dmg": 0.5101022400000019,
+   "charge_speed_pct": 0.5161661600000045,
+   "charge_dmg_pct": 0.015174410000000194,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 7.709402489999995,
+   "atk_pct": 3.1435510999999963,
+   "max_ammo_pct": 0.698349069999999,
+   "crit_rate": 1.4984378400000011,
+   "crit_dmg": 1.2234302000000028,
+   "charge_speed_pct": 0.9492733200000032,
+   "charge_dmg_pct": 0.5566024800000022,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 7.691184779999993,
+   "atk_pct": 3.4556395599999945,
+   "max_ammo_pct": 0.2991760199999973,
+   "crit_rate": 1.4952795100000031,
+   "crit_dmg": 1.1767588800000013,
+   "charge_speed_pct": 0.3441069800000065,
+   "charge_dmg_pct": 0.332371270000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.544805199999999,
+   "max_ammo_pct": -0.6186283400000008,
+   "crit_rate": 0.1473249100000018,
+   "crit_dmg": 0.11917814000000249,
+   "charge_speed_pct": 0.17504986000000144,
+   "charge_dmg_pct": 0.1572817999999998,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "타키나": [
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "아인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "alloc": {
+  "리타": "공4+장탄4+크확2+크뎀2",
+  "타키나": "공4+크확3+크뎀4+차속1",
+  "아인": "우코4+공4+크확2+크뎀2",
+  "에이다": "우코4+공4+크확2+크뎀2",
+  "헬름": "공4+크확4+차뎀4"
+ },
+ "o_evals": 354,
+ "o_errors": 0,
+ "sims": 1482,
+ "seconds": 61.7,
+ "v_start2": 52.22908348,
+ "v_OC": 52.22908348,
+ "ctrl2": [
+  "리타:cancel:on",
+  "리타:cover_at:fb_end-0.1-rl_dry",
+  "아인:click:tap+fc2.5",
+  "에이다:click:tap+fc5.5",
+  "타키나:click:tap+fc2.5",
+  "타키나:start_hold:hold0-2.2",
+  "헬름:click:hold@chain"
+ ],
+ "c_evals": 400,
+ "c_errors": 0
+}
