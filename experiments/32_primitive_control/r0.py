@@ -192,7 +192,42 @@ def cmd_analyze(an: Path) -> int:
     return 0
 
 
+def cmd_p0() -> int:
+    """정정(R1 v1에서 발견): A(`operation.auto`)는 장비 옵션까지 뺀다. 같은 덱을 P0(레이어 켬 + 컨트롤 축 전부 끔)으로 다시 잰다."""
+    import r1
+    from nikke_opt.evaluator import EvalRequest, make_evaluator
+    with make_evaluator("rust", jobs=4, cache=False) as ev:
+        for s in run31.SEASONS:
+            f = OUT / f"S{s}.json"
+            d = json.loads(f.read_text(encoding="utf-8"))
+            if all("P0" in v for v in d["vals"].values()):
+                continue
+            ks = list(d["vals"])
+            res = ev.evaluate([EvalRequest(k.split(","), boss=None, options=r1.p_base(s, k.split(","))) for k in ks])
+            for k, r in zip(ks, res):
+                d["vals"][k]["P0"] = None if r.total_damage is None else r.total_damage / E8
+            d["sims_p0"] = len(ks)
+            f.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            print(json.dumps({"season": s, "sims": ev.sim_count}), flush=True)
+    rows, all_lp, all_pa = [], [], []
+    for s in run31.SEASONS:
+        V = json.loads((OUT / f"S{s}.json").read_text(encoding="utf-8"))["vals"]
+        lp = [v["L"] / v["P0"] for v in V.values() if v["P0"] and v["L"]]
+        pa = [v["P0"] / v["A"] for v in V.values() if v["P0"] and v["A"]]
+        all_lp += lp
+        all_pa += pa
+        rows.append({"season": s, "n": len(lp), "L/P0_median": st.median(lp), "L/P0_gap5": sum(abs(x - 1) >= LAYER_GAP for x in lp),
+                     "P0/A_median": st.median(pa), "P0/A_gap5": sum(abs(x - 1) >= LAYER_GAP for x in pa)})
+    out = {"rows": rows, "L/P0_gap5": sum(abs(x - 1) >= LAYER_GAP for x in all_lp), "P0/A_gap5": sum(abs(x - 1) >= LAYER_GAP for x in all_pa),
+           "n": len(all_lp), "L/P0_range": [min(all_lp), max(all_lp)], "P0/A_range": [min(all_pa), max(all_pa)]}
+    (HERE / "r0_p0.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(json.dumps(out, ensure_ascii=False, indent=1))
+    return 0
+
+
 if __name__ == "__main__":
+    if (sys.argv[1:] or [""])[0] == "p0":
+        sys.exit(cmd_p0())
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "run":
         sys.exit(cmd_run())

@@ -4,8 +4,8 @@
     source .cache/evaluators.env && python -I experiments/32_primitive_control/r2.py run   # 기준 덱 A + 표본 덱의 한 선택지씩
     python -I experiments/32_primitive_control/r2.py analyze       # → r2.json · r2.md
 
-바탕은 레이어 끔(`operation.auto: true`, R1의 P와 같다). 메뉴는 R1 `prim_variants`(원시 입력).
-축 = 원시 입력 묶음: burst_who(단계마다 누가) · burst_t(딜레이 · 쿨 대기) · click · cover(cover_at · cover_fb · cancel) · camera.
+바탕은 R1 v2의 P0(레이어 켬 + 컨트롤 축 전부 끔 — 장비 옵션은 남는다). 메뉴는 R1 `prim_variants` v2(원시 입력).
+축 = 원시 입력 묶음: burst_who(단계마다 누가) · burst_t(딜레이 · 쿨 대기) · click(start_hold 포함) · cover(cover_at · cover_fb · cancel) · camera.
 덱마다 「그 축의 선택지 하나만 바꾼」 변형을 모두 재고, 축 이득 = max(1, 그 축 변형 최고 ÷ 바탕).
 """
 
@@ -29,7 +29,7 @@ SEED = 32
 REF_TOP = 200                       # 시즌 기준 덱: 옛 기록 상위 200(바탕만 잰다) → 상위 100 문턱 T · 150위 값
 STRATA = ((0, 100, 10), (100, 1000, 10), (1000, 10000, 6))   # (옛 기록 순위 시작, 끝, 표본 수)
 N_RANK = 4                          # 랭커 대표 5덱 · 1위 5덱 중 무작위
-AXES = {"burst_who": "burst_who", "burst_t": "burst_t", "click": "click", "cover_at": "cover", "cover_fb": "cover",
+AXES = {"burst_who": "burst_who", "burst_t": "burst_t", "click": "click", "start_hold": "click", "cover_at": "cover", "cover_fb": "cover",
         "cancel": "cover", "camera": "camera"}
 X_MIN = 0.05                        # 큰 축: 상위 100 밖 표본 중 그 축만으로 상위 100에 드는 비율 ≥ 5%(임시)
 
@@ -82,7 +82,7 @@ def cmd_run() -> int:
         if not f.exists():
             ref = {}
             for s, qs in D["ref"].items():
-                res = ev.evaluate([EvalRequest(q, boss=None, options=r0.opts(int(s), False)) for q in qs])
+                res = ev.evaluate([EvalRequest(q, boss=None, options=r1.p_base(int(s), q)) for q in qs])
                 ref[s] = {",".join(q): None if r.total_damage is None else r.total_damage / 1e8 for q, r in zip(qs, res)}
                 print(json.dumps({"ref": s, "sims": ev.sim_count, "t": round(time.time() - t0)}), flush=True)
             f.write_text(json.dumps(ref, ensure_ascii=False) + "\n", encoding="utf-8")
