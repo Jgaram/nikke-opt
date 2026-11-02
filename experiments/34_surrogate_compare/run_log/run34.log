@@ -39,3 +39,19 @@ exit 137
 {"fit": "G2", "seconds": 80.5}
 {"fit": "G3", "seconds": 250.6}
 exit 139
+--- 재시작 2(이어 돌기) 13:31
+{"P_obs": 94093, "probe_obs": 27280}
+{"fit": "G1", "seconds": 114.8}
+{"fit": "G2", "seconds": 99.2}
+{"fit": "G3", "seconds": 298.2}
+{"fit": "G4", "seconds": 734.6}
+{"pair": "브리드 : 사일런트 트랙 + 토브", "n": 195}
+{"fit": "G1", "seconds": 102.8}
+{"fit": "G2", "seconds": 94.3}
+{"fit": "G3", "seconds": 280.6}
+{"fit": "G4", "seconds": 716.5}
+{"pair": "아르카나 : 포츈 메이트 + 도로시 : 세렌디피티", "n": 334}
+{"fit": "G1", "seconds": 109.7}
+{"fit": "G2", "seconds": 92.4}
+{"fit": "G3", "seconds": 243.8}
+(2시간 실행 제한으로 중단 15:32 — 짝 2개 끝, 셋째 짝 G4 중)
