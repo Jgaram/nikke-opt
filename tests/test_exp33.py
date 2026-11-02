@@ -203,3 +203,83 @@ class TestFingerprint(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+M = sys.modules.get("roles33") or _load("roles33", ROOT / "experiments" / "33_role_vectors" / "roles33.py")
+
+
+def _world(n_obs=1500, seed=3):
+    """니케 20명: 4명마다 딜러, 5명마다 AR 동료를 1.3배로 올리는 버퍼, 우코면 ×1.3."""
+    import random
+    rng = random.Random(seed)
+    names = [f"n{i}" for i in range(20)]
+    els = list(R.ELEMENTS)
+    adv = {n: R.BEATS[els[i % 5]] for i, n in enumerate(names)}
+    base = {n: (5.0 if i % 4 == 0 else 1.0) * (1 + 0.1 * (i % 3)) for i, n in enumerate(names)}
+    ar = {n: i % 3 == 0 for i, n in enumerate(names)}
+    buf = {n: i % 5 == 1 for i, n in enumerate(names)}
+    recs = []
+    for _ in range(n_obs):
+        sq = rng.sample(names, 5)
+        el = rng.choice(els)
+        m = []
+        for x in sq:
+            f = 1.0
+            for y in sq:
+                if y != x and ar[x] and buf[y]:
+                    f *= 1.3
+            if adv[x] == el:
+                f *= 1.3
+            m.append(base[x] * f * 1e9)
+        recs.append({"squad": sq, "element": el, "total_damage": sum(m), "members": m})
+    return names, els, adv, buf, M.observations(recs)
+
+
+class TestRoles(unittest.TestCase):
+    def test_observations_keep_best_order(self):
+        recs = [{"squad": ["a", "b"], "element": "전격", "total_damage": 5, "members": [2, 3]},
+                {"squad": ["b", "a"], "element": "전격", "total_damage": 7, "members": [4, 3]},
+                {"squad": ["a", "b"], "element": "풍압", "total_damage": 1, "members": None}]
+        obs = M.observations(recs)
+        self.assertEqual(len(obs), 1)
+        self.assertEqual((obs[0].squad, obs[0].total), (("b", "a"), 7.0))
+
+    def test_splits(self):
+        names, els, adv, buf, obs = _world(400)
+        tr, te = M.split_random(obs, 0.2, "x")
+        self.assertFalse({o.comp for o in tr} & {o.comp for o in te})
+        tr, te = M.split_pair(obs, "n1", "n2")
+        self.assertTrue(all("n1" in o.comp and "n2" in o.comp for o in te))
+        self.assertFalse(any("n1" in o.comp and "n2" in o.comp for o in tr))
+        keep = [o for o in obs if "n3" in o.comp][:5]
+        tr, te = M.split_nikke(obs, "n3", keep)
+        self.assertEqual(sum("n3" in o.comp for o in tr), 5)
+        self.assertTrue(all("n3" in o.comp for o in te))
+        self.assertEqual(len(te) + 5, sum("n3" in o.comp for o in obs))
+
+    def test_metrics(self):
+        m = M.top_metrics(list(range(100)), list(range(100)))
+        self.assertAlmostEqual(m["rho"], 1.0)
+        self.assertAlmostEqual(m["rho_top"], 1.0)
+        self.assertEqual(m["hit_k"], [10, 10])
+        self.assertEqual(M.max_shared([M.Obs(frozenset("abcde"), "전격", (), 0, ())],
+                                      [M.Obs(frozenset("abcdz"), "전격", (), 0, ()), M.Obs(frozenset("abcde"), "풍압", (), 0, ())]), [4])
+
+    def test_role_model_learns_buffers(self):
+        names, els, adv, buf, obs = _world()
+        tr, te = M.split_random(obs, 0.2, "y")
+        mod = M.RoleModel(names, els, adv, M.RoleConfig(k=4, iters=300)).fit(tr)
+        self.assertLess(mod.loss_trace[-1], mod.loss_trace[0] / 20)
+        met = M.top_metrics([o.total for o in te], mod.predict_total(te))
+        self.assertGreater(met["rho"], 0.95)
+        import numpy as np
+        vn = {n: float(np.linalg.norm(mod.v[mod.ni[n]])) for n in names}
+        self.assertGreater(min(vn[n] for n in names if buf[n]), max(vn[n] for n in names if not buf[n]))
+        self.assertAlmostEqual(float(mod.c.mean()), __import__("math").log(1.3), delta=0.05)
+
+    def test_prior_for_unseen_nikke(self):
+        names, els, adv, buf, obs = _world(600)
+        tr = [o for o in obs if "n0" not in o.comp]
+        prior = {"n0": {"a": 5.0, "c": 0.0, "u": [0.0] * 4, "v": [0.0] * 4}}
+        mod = M.RoleModel(names, els, adv, M.RoleConfig(k=4, iters=50), prior=prior, lam_prior=1.0).fit(tr)
+        self.assertAlmostEqual(float(mod.a[mod.ni["n0"]]), 5.0, delta=0.05)
