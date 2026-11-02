@@ -1,0 +1,26 @@
+{
+ "id": "r3-S39-A-3",
+ "season": 39,
+ "squad": [
+  "목단",
+  "타키나",
+  "센티",
+  "스노우 화이트 : 헤비암즈",
+  "치사토"
+ ],
+ "value": 53.72666418,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 56.01100427,
+ "base": 53.72666418,
+ "best_variants": [
+  "치사토:reload:B0.1",
+  "타키나:click:tap"
+ ],
+ "keys": 25,
+ "options": 69,
+ "seconds": 246.1
+}

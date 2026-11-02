@@ -1,0 +1,31 @@
+{
+ "id": "r3-S39-A-1",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "민트",
+  "헬름 : 아쿠아마린",
+  "마르차나 : 마린 스터디",
+  "이브"
+ ],
+ "value": 61.02947399,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 65.24237721,
+ "base": 61.02947399,
+ "best_variants": [
+  "squad:camera:민트",
+  "squad:tactic:버충=민트",
+  "마르차나 : 마린 스터디:reload:C0.1_dry",
+  "미란다:reload:B0.1",
+  "민트:reload:C0.5",
+  "이브:reload:B0.5",
+  "헬름 : 아쿠아마린:reload:C0.1_dry"
+ ],
+ "keys": 23,
+ "options": 62,
+ "seconds": 243.8
+}

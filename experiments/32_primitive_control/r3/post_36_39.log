@@ -9,3 +9,16 @@
 {"id": "r3-S36-B-2", "evals": 400, "errors": 0, "gain": 1.0141, "sims": 4432, "t": 500}
 {"id": "r3-S36-B-4", "evals": 400, "errors": 0, "gain": 1.0447, "sims": 4819, "t": 562}
 {"id": "r3-S36-B-3", "evals": 400, "errors": 0, "gain": 1.0568, "sims": 4850, "t": 566}
+{"id": "r3-S36-B-0-rep", "evals": 400, "errors": 0, "gain": 1.0171, "sims": 5055, "t": 591}
+{"id": "r3-S39-A-0", "evals": 400, "errors": 0, "gain": 1.0055, "sims": 6088, "t": 751}
+{"id": "r3-S39-A-2", "evals": 400, "errors": 0, "gain": 1.0042, "sims": 6419, "t": 803}
+{"id": "r3-S39-A-1", "evals": 400, "errors": 0, "gain": 1.069, "sims": 6436, "t": 806}
+{"id": "r3-S39-A-3", "evals": 400, "errors": 0, "gain": 1.0425, "sims": 6637, "t": 837}
+{"id": "r3-S39-A-4", "evals": 400, "errors": 0, "gain": 1.0737, "sims": 7646, "t": 952}
+{"id": "r3-S39-A-0-rep", "evals": 400, "errors": 0, "gain": 1.0055, "sims": 8001, "t": 979}
+{"id": "r3-S39-B-0", "evals": 400, "errors": 0, "gain": 1.016, "sims": 8089, "t": 987}
+{"id": "r3-S39-B-1", "evals": 400, "errors": 0, "gain": 1.0309, "sims": 8357, "t": 1009}
+{"id": "r3-S39-B-2", "evals": 400, "errors": 0, "gain": 1.0061, "sims": 9105, "t": 1069}
+{"id": "r3-S39-B-3", "evals": 400, "errors": 0, "gain": 1.0419, "sims": 9341, "t": 1087}
+{"id": "r3-S39-B-4", "evals": 400, "errors": 0, "gain": 1.073, "sims": 9531, "t": 1106}
+{"id": "r3-S39-B-0-rep", "evals": 400, "errors": 0, "gain": 1.0112, "sims": 9600, "t": 1117}

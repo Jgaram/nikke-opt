@@ -1,0 +1,30 @@
+{
+ "id": "r3-S36-B-0",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "네온 : 비전 아이",
+  "메이든 : 아이스 로즈"
+ ],
+ "value": 96.50846291,
+ "win": "burst_who2:per3=1@2",
+ "arm": "B",
+ "tag": "-rep",
+ "evals": 400,
+ "errors": 0,
+ "best": 98.15834285,
+ "base": 96.50846291,
+ "best_variants": [
+  "squad:camera:slot1",
+  "네온 : 비전 아이:cover_at:fb_end-0.3",
+  "마스트 : 로망틱 메이드:cover_at:next_fb+0.5-rl",
+  "메이든 : 아이스 로즈:click:hold@chain",
+  "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+  "크라운:cover_at:fb_end-0.5-rl"
+ ],
+ "keys": 18,
+ "options": 52,
+ "seconds": 218.1
+}
