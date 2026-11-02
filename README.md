@@ -30,7 +30,7 @@
 | [Jgaram/nikke-calc](https://github.com/Jgaram/nikke-calc) (Python) | **연결됨 · 공개 기준** | 원본. 1회 약 4~8초(기대값 모드). 사전 실험 1–5는 이것으로 했다. Rust 실행 파일이 없으면 이것을 쓴다. 어댑터는 아래 「평가기 어댑터」 |
 | [nikke-calculator-xi.vercel.app](https://nikke-calculator-xi.vercel.app/) | 보류 | moris 포크를 다른 사람이 이어받아 서비스 중. 계산은 브라우저 안에서 돈다(엔진 워커 JS 하나 + 공개 데이터 JSON) → 스냅샷을 떠서 Node에서 블랙박스로 돌릴 수는 있어 보인다(미검증). 소스·라이선스 미확인, 서비스 지속도 불확실 — 쓸지는 나중에 정한다 |
 | moris-kr/nikke-calc (TypeScript/Node) | 사라짐 | 2026-10 레포 삭제(개인 사정). 원본에서 갈라진 TS 엔진(`site/src/engine/`), 기대값 모드 1회 약 0.9초였다 |
-| Rust 포팅 `nikke-sim` (자체) | **연결됨 · 있으면 우선** | 별도 비공개 레포(`nikke-calc-rs`). 원본 `23164e4` 기준 포팅, 요청 v2를 그대로 받는다. S40 5인 기대값 1회 약 0.2초(원본 7.7초와 같은 총딜, 2026-10-29). 이 레포에는 코드·실행 파일을 두지 않고 실행 파일만 부른다. 디버그용 `DebugChar` 요청은 거절하고, 포팅의 정확도 기준은 「원본과 비슷하면 통과」다 |
+| Rust 포팅 `nikke-sim` (자체) | **연결됨 · 있으면 우선** | 별도 비공개 레포(`nikke-calc-rs`). 원본 `37e0030` 기준 포팅(2026-11-02 — `23164e4`에 1·2버 자동 버스트 순환만 바꾼 커밋, [실험 32](experiments/32_primitive_control/README.md)), 요청 v2를 그대로 받는다. S40 5인 기대값 1회 약 0.2초(원본 7.7초와 같은 총딜, 2026-10-29). 이 레포에는 코드·실행 파일을 두지 않고 실행 파일만 부른다. 디버그용 `DebugChar` 요청은 거절하고, 포팅의 정확도 기준은 「원본과 비슷하면 통과」다 |
 | 딜도로 | 비공개 | Rust 포팅, 더 빠른 것으로 알려짐 |
 
 외부 평가기 코드의 저장·공개 범위는 [작업 규칙](rules/workflow.md#저장소-경계)을 따른다.
@@ -57,7 +57,7 @@ python -m unittest discover -s tests -t .      # 가짜 평가기로 돈다. NIK
 ```
 
 Rust 실행 파일은 `nikke-calc-rs`에서 `cargo build --release -p nikke-cli`로 만든다(`target/release/nikke-sim`, 게임 데이터 내장).
-클라우드 세션에서는 `bash tools/setup_evaluators.sh [--python]`이 빌드(+ Python 원본 `23164e4` 준비)를 하고
+클라우드 세션에서는 `bash tools/setup_evaluators.sh [--python]`이 빌드(+ Python 원본 `37e0030` 준비)를 하고
 경로를 `.cache/evaluators.env`에 쓴다 — 평가기를 쓰는 명령 앞에 `source .cache/evaluators.env &&`를 붙인다.
 
 - **기대값 모드가 기본** — `sim.expected: true`, 1회로 결정론적이다. 평가는 언제나 180초(`sim.duration`은 거절).
