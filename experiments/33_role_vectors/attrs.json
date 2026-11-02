@@ -1,0 +1,1090 @@
+{
+ "meta": {
+  "source": "github.com/Jgaram/nikke-calc data/parsed_nikke.json",
+  "commit": "67835ca3033a95482749ea2db35a8ee2a0856a92",
+  "sha256": "5d35bdad6c078e2186e6c462e751150c420dc9a47d05ae225127678b1c71808a",
+  "rule": "SSR 177명(roster_ssr.json) + Q4 신캐 3명 — weapon_type · element_code · burst_stage · class만"
+ },
+ "attrs": {
+  "2B": {
+   "weapon": "AR",
+   "code": "작열",
+   "stage": "3",
+   "class": "방어형"
+  },
+  "A2": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "D": {
+   "weapon": "SMG",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "D : 킬러 와이프": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "E.H.": {
+   "weapon": "SMG",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "K": {
+   "weapon": "SMG",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "test_B1": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "1",
+   "class": "화력형"
+  },
+  "test_B2": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "test_B3": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "그레이브": {
+   "weapon": "AR",
+   "code": "작열",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "길로틴": {
+   "weapon": "MG",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "길로틴 : 윈터 슬레이어": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "길티": {
+   "weapon": "SG",
+   "code": "풍압",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "길티 : 마이티 바니": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "나가": {
+   "weapon": "SG",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "나유타": {
+   "weapon": "SMG",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "네로": {
+   "weapon": "SMG",
+   "code": "작열",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "네온 : 블루 오션": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "네온 : 비전 아이": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "노벨": {
+   "weapon": "SMG",
+   "code": "철갑",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "노아": {
+   "weapon": "RL",
+   "code": "풍압",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "노이즈": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "누아르": {
+   "weapon": "SG",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "니힐리스타": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "델타 : 닌자 시프": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "도라": {
+   "weapon": "SR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "도로시": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "도로시 : 세렌디피티": {
+   "weapon": "SG",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "드레이크": {
+   "weapon": "SG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "드레이크 : 그레이트 빌런": {
+   "weapon": "SG",
+   "code": "풍압",
+   "stage": "3",
+   "class": "방어형"
+  },
+  "디젤": {
+   "weapon": "MG",
+   "code": "풍압",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "디젤 : 윈터 스위츠": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "라이": {
+   "weapon": "SMG",
+   "code": "수냉",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "라푼젤": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "라푼젤 : 퓨어 그레이스": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "라플라스": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "라플라스 : 얼티밋 히어로": {
+   "weapon": "RL",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "라피 : 레드 후드": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "레드 후드": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "A",
+   "class": "화력형"
+  },
+  "레오나": {
+   "weapon": "SG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "레이": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "레이 (가칭)": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "레이븐": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "레이블": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "렘": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "로산나": {
+   "weapon": "MG",
+   "code": "전격",
+   "stage": "1",
+   "class": "화력형"
+  },
+  "로산나 : 시크 오션": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "루드밀라": {
+   "weapon": "SMG",
+   "code": "수냉",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "루드밀라 : 윈터 오너": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "루마니": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "루주": {
+   "weapon": "SR",
+   "code": "전격",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "루피": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "루피 : 윈터 쇼퍼": {
+   "weapon": "AR",
+   "code": "전격",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "리버렐리오": {
+   "weapon": "SR",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "리타": {
+   "weapon": "SMG",
+   "code": "철갑",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "리틀 머메이드": {
+   "weapon": "SMG",
+   "code": "풍압",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "마나": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "마르차나": {
+   "weapon": "SG",
+   "code": "철갑",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "마르차나 : 마린 스터디": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "마리": {
+   "weapon": "SR",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "마스트": {
+   "weapon": "SMG",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "마스트 : 로망틱 메이드": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "마키마": {
+   "weapon": "SMG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "맥스웰": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "weapon": "SR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "메어리": {
+   "weapon": "SG",
+   "code": "수냉",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "메어리 : 베이 갓데스": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "메이든": {
+   "weapon": "SG",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "메이든 : 아이스 로즈": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "3",
+   "class": "방어형"
+  },
+  "모더니아": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "모리": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "목단": {
+   "weapon": "AR",
+   "code": "전격",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "미란다": {
+   "weapon": "SMG",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "미카 : 스노우 버디": {
+   "weapon": "SMG",
+   "code": "철갑",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "미하라 : 본딩 체인": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "민트": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "밀크": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "1",
+   "class": "화력형"
+  },
+  "밀크 : 블루밍 바니": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "바이퍼": {
+   "weapon": "SG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "백학": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "베스티": {
+   "weapon": "RL",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "베스티 : 택티컬 업": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "베이": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "벨로타 : 펌킨 위치": {
+   "weapon": "RL",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "벨벳": {
+   "weapon": "SR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "볼륨": {
+   "weapon": "SMG",
+   "code": "풍압",
+   "stage": "1",
+   "class": "화력형"
+  },
+  "브래디": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "브리드": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "브리드 : 사일런트 트랙": {
+   "weapon": "SG",
+   "code": "작열",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "블랑": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "비스킷": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "사쿠라": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "사쿠라 : 블룸 인 서머": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "센티": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "소다": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "소다 : 트윙클링 바니": {
+   "weapon": "SG",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "소라": {
+   "weapon": "RL",
+   "code": "풍압",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "솔린": {
+   "weapon": "SMG",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "솔린 : 프로스트 티켓": {
+   "weapon": "SG",
+   "code": "수냉",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "슈가": {
+   "weapon": "SG",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "스노우 화이트": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "스노우 화이트 : 이노센트 데이즈": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "시그널": {
+   "weapon": "SMG",
+   "code": "작열",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "신": {
+   "weapon": "AR",
+   "code": "전격",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "신 : 스위프트 바니": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "신데렐라": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "3",
+   "class": "방어형"
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "weapon": "MG",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "아니스 : 스타": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "아니스 : 스파클링 서머": {
+   "weapon": "SG",
+   "code": "전격",
+   "stage": "3",
+   "class": "지원형"
+  },
+  "아르카나": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "아르카나 : 포츈 메이트": {
+   "weapon": "SG",
+   "code": "작열",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "아리아": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "아비스타": {
+   "weapon": "MG",
+   "code": "전격",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "아스카": {
+   "weapon": "AR",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "아스카 : WILLE": {
+   "weapon": "MG",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "아인": {
+   "weapon": "SR",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "아크레인저 블랙": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "애드미": {
+   "weapon": "SR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "앤 : 미라클 페어리": {
+   "weapon": "RL",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "앨리스": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "앨리스 : 원더랜드 바니": {
+   "weapon": "SMG",
+   "code": "수냉",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "앵커 : 이노센트 메이드": {
+   "weapon": "RL",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "얀": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "에밀리아": {
+   "weapon": "RL",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "에이다": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "에이드": {
+   "weapon": "AR",
+   "code": "풍압",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "에이드 : 에이전트 바니": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "에피넬": {
+   "weapon": "SMG",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "엑시아": {
+   "weapon": "SR",
+   "code": "전격",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "엠마": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "엠마 : 택티컬 업": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "유니": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "유키코": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "율리아": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "율하": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "은화": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "은화 : 택티컬 업": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "이브": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "이사벨": {
+   "weapon": "SG",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "일레그": {
+   "weapon": "MG",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "weapon": "MG",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "자칼": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "질": {
+   "weapon": "AR",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "차임": {
+   "weapon": "SMG",
+   "code": "철갑",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "츠바이": {
+   "weapon": "SG",
+   "code": "전격",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "치사토": {
+   "weapon": "SMG",
+   "code": "철갑",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "코코아": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "퀀시": {
+   "weapon": "SMG",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "weapon": "SMG",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "퀸(마코토)": {
+   "weapon": "SG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "크라운": {
+   "weapon": "MG",
+   "code": "철갑",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "크러스트": {
+   "weapon": "RL",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "크로우": {
+   "weapon": "SMG",
+   "code": "작열",
+   "stage": "3",
+   "class": "방어형"
+  },
+  "클레이": {
+   "weapon": "SMG",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "키리": {
+   "weapon": "RL",
+   "code": "풍압",
+   "stage": "3",
+   "class": "지원형"
+  },
+  "킬로": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "방어형"
+  },
+  "타키나": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "토브": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "트로니": {
+   "weapon": "SR",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "트리나": {
+   "weapon": "RL",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "티아": {
+   "weapon": "RL",
+   "code": "철갑",
+   "stage": "1",
+   "class": "방어형"
+  },
+  "파워": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "팬텀": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "페퍼": {
+   "weapon": "SG",
+   "code": "풍압",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "폴리": {
+   "weapon": "SG",
+   "code": "수냉",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "폴크방": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "2",
+   "class": "방어형"
+  },
+  "프리바티": {
+   "weapon": "AR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "프리바티 : 언카인드 메이드": {
+   "weapon": "SG",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "프리카": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "프림": {
+   "weapon": "SR",
+   "code": "철갑",
+   "stage": "1",
+   "class": "지원형"
+  },
+  "플로라": {
+   "weapon": "MG",
+   "code": "전격",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "하란": {
+   "weapon": "SR",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "헬름": {
+   "weapon": "SR",
+   "code": "수냉",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "헬름 : 아쿠아마린": {
+   "weapon": "AR",
+   "code": "철갑",
+   "stage": "2",
+   "class": "화력형"
+  },
+  "홍련": {
+   "weapon": "AR",
+   "code": "전격",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "홍련 : 흑영": {
+   "weapon": "RL",
+   "code": "풍압",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "홍련 : 신살": {
+   "weapon": "AR",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  },
+  "라푼젤 : 생츄어리": {
+   "weapon": "RL",
+   "code": "작열",
+   "stage": "2",
+   "class": "지원형"
+  },
+  "마리안 : 퀸": {
+   "weapon": "MG",
+   "code": "작열",
+   "stage": "3",
+   "class": "화력형"
+  }
+ }
+}
