@@ -194,6 +194,7 @@ def cmd_analyze(an: Path) -> int:
 
 def cmd_p0() -> int:
     """정정(R1 v1에서 발견): A(`operation.auto`)는 장비 옵션까지 뺀다. 같은 덱을 P0(레이어 켬 + 컨트롤 축 전부 끔)으로 다시 잰다."""
+    sys.path.insert(0, str(HERE))
     import r1
     from nikke_opt.evaluator import EvalRequest, make_evaluator
     with make_evaluator("rust", jobs=4, cache=False) as ev:
