@@ -1,0 +1,1 @@
+{"id": "r1-17", "arm": "P", "evals": 400, "errors": 0, "best": 3037269515, "base": 1988035839, "best_variants": ["squad:burst_who3:first=1", "앨리스:click:tap+fc5.5", "프리카:burst_t:wait2"], "keys": 29, "options": 115, "exhausted": true, "seconds": 82.2}

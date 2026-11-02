@@ -1,0 +1,1 @@
+{"id": "r1-32", "arm": "P", "evals": 400, "errors": 0, "best": 10869257794, "base": 10150290730, "best_variants": ["신데렐라:cover_at:fb_end-0.1-rl", "아니스 : 스타:cover_at:fb_end-0.1-rl_dry", "아르카나:click:tap", "아르카나:cover_at:fb_end-0.5-rl", "아르카나:start_hold:hold0-2.2", "이사벨:cover_at:fb_end-0.5-rl", "크라운:cancel:on"], "keys": 25, "options": 94, "exhausted": true, "seconds": 105.3}

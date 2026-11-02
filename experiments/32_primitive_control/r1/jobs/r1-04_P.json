@@ -1,0 +1,1 @@
+{"id": "r1-04", "arm": "P", "evals": 400, "errors": 0, "best": 4993903151, "base": 4819855317, "best_variants": ["squad:burst_who1:alt=2", "미란다:cover_at:fb_end-0.1-rl", "크라운:cover_at:fb_end-0.1-rl_dry", "프리바티:cover_at:fb_end-0.1-rl"], "keys": 22, "options": 83, "exhausted": true, "seconds": 89.8}

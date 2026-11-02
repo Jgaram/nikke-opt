@@ -1,0 +1,1 @@
+{"id": "r1-23", "arm": "P", "evals": 400, "errors": 0, "best": 1259484302, "base": 882872676, "best_variants": ["squad:burst_who3:first=2", "노아:click:tap", "노아:cover_at:next_fb+0.1-rl", "목단:burst_t:wait2", "팬텀:burst_t:delay2"], "keys": 26, "options": 92, "exhausted": true, "seconds": 78.3}

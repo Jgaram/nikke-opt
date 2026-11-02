@@ -1,0 +1,1 @@
+{"id": "r1-33", "arm": "P", "evals": 400, "errors": 0, "best": 5622250453, "base": 5047570158, "best_variants": ["목단:cover_at:fb_end-0.3", "목단:cover_fb:on", "아르카나:click:tap+fc5.5", "이사벨:cover_at:fb_end-0.5-rl"], "keys": 27, "options": 101, "exhausted": true, "seconds": 104.0}

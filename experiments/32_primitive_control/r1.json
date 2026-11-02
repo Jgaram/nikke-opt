@@ -2,93 +2,46 @@
  "summary": {
   "decks": 39,
   "judged": 39,
-  "pass": 20,
-  "share": 0.5128205128205128,
+  "pass": 35,
+  "share": 0.8974358974358975,
   "verdict": "빠진 표현 찾기",
-  "share_without_miranda": 0.5454545454545454,
+  "share_without_miranda": 0.9090909090909091,
   "judged_without_miranda": 33,
   "P_over_L": {
-   "median": 0.9900366264912434,
-   "min": 0.7928877648065086,
-   "max": 1.2084333700570897
+   "median": 1.0023940842430092,
+   "min": 0.9484901490078125,
+   "max": 1.2116030947470047
   },
-  "P200_over_L200_median": 0.9900366264912434,
+  "P200_over_L200_median": 1.0028293160530146,
+  "v1_pass": 20,
+  "v1_P1_over_L_median": 0.9900366264912434,
   "gain_L_median": 1.0800024461959425,
-  "gain_P_over_A_median": 1.1879584274677408,
+  "gain_P_over_P0_median": 1.1879584274677408,
+  "P0_over_A_median": 1.0193731556432066,
   "evals": 31200,
-  "errors": 98,
+  "errors": 0,
   "axes": {
    "L": {
-    " 에이전트 바니": 1,
-    " 아쿠아마린": 3,
+    "click": 28,
+    "reload": 124,
     "tactic": 13,
-    "reload": 77,
-    "burst": 19,
-    "cover": 5,
-    " 윈터 스위츠": 6,
-    "click": 17,
-    " 레드 후드": 1,
-    " 스타": 5,
-    " 본딩 체인": 3,
-    " 비전 아이": 1,
-    " 사일런트 트랙": 3,
-    " 헤비암즈": 1,
+    "burst": 24,
+    "cover": 6,
     "camera": 2,
-    " 로망틱 메이드": 11,
-    " 킬러 와이프": 4,
-    " 블루밍 바니": 1,
-    " 마이티 바니": 1,
-    "cancel": 3,
-    " 스위프트 바니": 1,
-    " 트윙클링 바니": 1,
-    " 프로스트 티켓": 3,
-    " 미라클 페어리": 2,
-    " WILLE": 1,
-    " 세렌디피티": 1,
-    " 그레이트 빌런": 1,
-    " 오디너리 미케닉": 2,
-    " 흑영": 2,
-    " 이노센트 메이드": 11
+    "cancel": 5
    },
    "P": {
-    "click": 35,
-    "burst_t": 19,
-    " 에이전트 바니": 1,
-    "burst_who2": 9,
-    "cover_at": 63,
-    " 윈터 스위츠": 9,
-    " 레드 후드": 1,
-    " 스타": 4,
-    "burst_who1": 5,
-    " 본딩 체인": 2,
-    " 마이티 바니": 4,
+    "click": 51,
+    "cover_at": 103,
+    "start_hold": 20,
+    "burst_t": 29,
+    "burst_who2": 5,
+    "burst_who1": 4,
+    "cancel": 3,
+    "burst_who3": 11,
     "camera": 3,
-    " 비전 아이": 3,
-    " 퓨어 그레이스": 2,
-    " 사일런트 트랙": 3,
-    " 헤비암즈": 2,
-    " 로망틱 메이드": 7,
-    " 킬러 와이프": 6,
-    "cover_fb": 3,
-    " 블루밍 바니": 2,
-    " 스위프트 바니": 3,
-    "burst_who3": 9,
-    " 크리스탈 웨이브": 1,
-    "cancel": 1,
-    " 아쿠아마린": 1,
-    " 트윙클링 바니": 1,
-    " 프로스트 티켓": 2,
-    " 흑영": 3,
-    " 미라클 페어리": 2,
-    " WILLE": 1,
-    " 오디너리 미케닉": 1,
-    " 이노센트 메이드": 10
+    "cover_fb": 3
    }
-  },
-  "run": {
-   "sims": 31200,
-   "seconds": 1552.3,
-   "evaluator": "nikke-calc-rs 8bc51a2"
   }
  },
  "rows": [
@@ -107,28 +60,37 @@
    "L_base": 25.64975665,
    "A_base": 25.64975665,
    "L": 27.98422903,
-   "P": 28.18627747,
-   "P_over_L": 1.0072200824179718,
-   "P200_over_L200": 1.0001865611517975,
+   "P": 28.4344946,
+   "P_over_L": 1.0160899758759585,
+   "P1_over_L": 1.0072200824179718,
+   "P0_base": 25.64975665,
+   "P1": 28.18627747,
+   "P1_base": 25.64975665,
+   "P200_over_L200": 1.003873801914778,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 5,
+   "errors": 0,
+   "P1_errors": 5,
    "L_vars": [
     "에이드 : 에이전트 바니:click:tap",
     "헬름 : 아쿠아마린:reload:C0.1"
    ],
    "P_vars": [
-    "맥스웰:click:tap@charge",
-    "미란다:burst_t:wait2",
-    "에이드 : 에이전트 바니:click:tap"
+    "맥스웰:click:tap",
+    "맥스웰:cover_at:fb_end-0.3",
+    "스노우 화이트:cover_at:fb_end-0.1-rl_dry",
+    "에이드 : 에이전트 바니:click:tap@charge",
+    "에이드 : 에이전트 바니:cover_at:next_fb+0.5-rl",
+    "에이드 : 에이전트 바니:start_hold:hold0-2.2",
+    "헬름 : 아쿠아마린:cover_at:fb_end-0.3"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 67,
-    "P": 79
+    "P": 101
    }
   },
   {
@@ -146,12 +108,17 @@
    "L_base": 20.08267159,
    "A_base": 12.55804721,
    "L": 20.80632088,
-   "P": 18.60945931,
-   "P_over_L": 0.8944137417340455,
-   "P200_over_L200": 0.8935778274895085,
+   "P": 20.64392193,
+   "P_over_L": 0.9921947301045373,
+   "P1_over_L": 0.8944137417340455,
+   "P0_base": 13.02305523,
+   "P1": 18.60945931,
+   "P1_base": 12.55804721,
+   "P200_over_L200": 0.9921947301045373,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 12,
+   "errors": 0,
+   "P1_errors": 12,
    "L_vars": [
     "squad:tactic:버충=레드 후드",
     "민트:reload:A0.3",
@@ -159,19 +126,18 @@
     "프리카:burst:delay1"
    ],
    "P_vars": [
-    "squad:burst_who2:first=2",
-    "레드 후드:click:tap",
-    "민트:cover_at:fb_end-0.1-rl_dry",
-    "앨리스:click:tap@charge",
-    "앨리스:cover_at:fb_end-0.3"
+    "레드 후드:click:tap@charge",
+    "앨리스:click:tap",
+    "앨리스:start_hold:hold0-2.2",
+    "프리카:burst_t:wait2"
    ],
    "keys": {
     "L": 26,
-    "P": 27
+    "P": 31
    },
    "opts": {
     "L": 78,
-    "P": 91
+    "P": 119
    }
   },
   {
@@ -191,10 +157,15 @@
    "L": 26.05265658,
    "P": 26.7882368,
    "P_over_L": 1.0282343651881047,
+   "P1_over_L": 1.0282343651881047,
+   "P0_base": 23.11039963,
+   "P1": 26.7882368,
+   "P1_base": 23.11039963,
    "P200_over_L200": 1.0272479916902202,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 2,
+   "errors": 0,
+   "P1_errors": 2,
    "L_vars": [
     "나유타:cover:on",
     "나유타:reload:A0.3",
@@ -209,15 +180,16 @@
     "루주:cover_at:fb_end-0.5-rl",
     "맥스웰:click:tap",
     "맥스웰:cover_at:fb_end-0.1-rl_dry",
+    "맥스웰:start_hold:hold0-2.2",
     "미란다:cover_at:next_fb+0.1-rl"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 72,
-    "P": 85
+    "P": 110
    }
   },
   {
@@ -235,12 +207,17 @@
    "L_base": 58.64392789,
    "A_base": 55.57187601,
    "L": 59.12917504,
-   "P": 57.02988922,
-   "P_over_L": 0.9644966157809598,
-   "P200_over_L200": 0.9661128267961101,
+   "P": 60.18862375,
+   "P_over_L": 1.0179175290249407,
+   "P1_over_L": 0.9644966157809598,
+   "P0_base": 58.64392789,
+   "P1": 57.02988922,
+   "P1_base": 55.57187601,
+   "P200_over_L200": 1.019623257687962,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "나가:reload:C0.5",
     "라피 : 레드 후드:reload:C0.1_dry",
@@ -253,8 +230,8 @@
     "squad:burst_who2:alt=2",
     "나가:cover_at:fb_end-0.1-rl",
     "라피 : 레드 후드:cover_at:fb_end-0.1-rl_dry",
-    "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
-    "크라운:cover_at:fb_end-0.1-rl_dry"
+    "크라운:cover_at:fb_end-0.3",
+    "프리바티:cover_at:fb_end-0.3"
    ],
    "keys": {
     "L": 21,
@@ -262,7 +239,7 @@
    },
    "opts": {
     "L": 56,
-    "P": 68
+    "P": 84
    }
   },
   {
@@ -280,12 +257,17 @@
    "L_base": 44.30214862,
    "A_base": 45.80833548,
    "L": 48.83720947,
-   "P": 47.02642637,
-   "P_over_L": 0.9629220604606342,
-   "P200_over_L200": 0.9633623688128415,
+   "P": 49.93903151,
+   "P_over_L": 1.022561117884445,
+   "P1_over_L": 0.9629220604606342,
+   "P0_base": 48.19855317,
+   "P1": 47.02642637,
+   "P1_base": 45.80833548,
+   "P200_over_L200": 1.0230579689034882,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "리틀 머메이드:cover:on",
     "리틀 머메이드:reload:C0.5",
@@ -298,10 +280,9 @@
    ],
    "P_vars": [
     "squad:burst_who1:alt=2",
-    "리틀 머메이드:cover_at:fb_end-0.3",
-    "미란다:cover_at:next_fb+0.5-rl",
-    "미하라 : 본딩 체인:cover_at:fb_end-0.1-rl",
-    "크라운:burst_t:wait2"
+    "미란다:cover_at:fb_end-0.1-rl",
+    "크라운:cover_at:fb_end-0.1-rl_dry",
+    "프리바티:cover_at:fb_end-0.1-rl"
    ],
    "keys": {
     "L": 20,
@@ -309,7 +290,7 @@
    },
    "opts": {
     "L": 58,
-    "P": 67
+    "P": 83
    }
   },
   {
@@ -327,12 +308,17 @@
    "L_base": 44.23491486,
    "A_base": 28.40873475,
    "L": 46.47033084,
-   "P": 46.38979836,
-   "P_over_L": 0.9982670129834609,
-   "P200_over_L200": 0.9999466919828834,
+   "P": 45.51483903,
+   "P_over_L": 0.9794386699485783,
+   "P1_over_L": 0.9982670129834609,
+   "P0_base": 28.40873475,
+   "P1": 46.38979836,
+   "P1_base": 28.40873475,
+   "P200_over_L200": 0.9764744364497967,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 2,
+   "errors": 0,
+   "P1_errors": 2,
    "L_vars": [
     "리타:reload:C0.1_dry",
     "타키나:click:tap",
@@ -341,18 +327,20 @@
     "플로라:reload:C0.1_dry"
    ],
    "P_vars": [
-    "길티 : 마이티 바니:click:hold@chain",
     "길티 : 마이티 바니:cover_at:fb_end-0.1-rl_dry",
-    "타키나:click:hold@ownfb+tap",
+    "길티 : 마이티 바니:start_hold:hold0-2.2",
+    "신 : 스위프트 바니:cancel:on",
+    "신 : 스위프트 바니:cover_at:fb_end-0.3",
+    "타키나:click:tap+fc5.5",
     "타키나:cover_at:fb_end-0.1-rl_dry"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 74,
-    "P": 87
+    "P": 118
    }
   },
   {
@@ -370,32 +358,37 @@
    "L_base": 31.71398564,
    "A_base": 28.33551325,
    "L": 33.52319251,
-   "P": 31.95043427,
-   "P_over_L": 0.9530844730993074,
-   "P200_over_L200": 0.9491781652510637,
+   "P": 34.28221355,
+   "P_over_L": 1.022641669339028,
+   "P1_over_L": 0.9530844730993074,
+   "P0_base": 29.93401036,
+   "P1": 31.95043427,
+   "P1_base": 28.33551325,
+   "P200_over_L200": 1.022641669339028,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "네온 : 비전 아이:reload:A0.3",
     "브리드 : 사일런트 트랙:reload:B0.5",
     "스노우 화이트 : 헤비암즈:reload:C0.5"
    ],
    "P_vars": [
-    "squad:camera:slot1",
     "네온 : 비전 아이:cover_at:fb_end-0.3",
-    "라푼젤 : 퓨어 그레이스:click:hold@chain",
+    "라푼젤 : 퓨어 그레이스:click:tap+fc5.5",
     "라푼젤 : 퓨어 그레이스:cover_at:fb_end-0.1-rl_dry",
-    "브리드 : 사일런트 트랙:cover_at:fb_end-0.1-rl_dry",
+    "라푼젤 : 퓨어 그레이스:start_hold:hold0-2.2",
+    "브리드 : 사일런트 트랙:cover_at:next_fb+0.1-rl",
     "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.3"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 67,
-    "P": 81
+    "P": 106
    }
   },
   {
@@ -413,12 +406,17 @@
    "L_base": 67.21840211,
    "A_base": 49.53776522,
    "L": 71.7514039,
-   "P": 56.89081026,
-   "P_over_L": 0.7928877648065086,
-   "P200_over_L200": 0.7928877648065086,
+   "P": 72.12719974,
+   "P_over_L": 1.0052374702037015,
+   "P1_over_L": 0.7928877648065086,
+   "P0_base": 61.82129456,
+   "P1": 56.89081026,
+   "P1_base": 49.53776522,
+   "P200_over_L200": 1.0047215537478842,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "squad:camera:헬름",
     "마스트 : 로망틱 메이드:burst:wait2",
@@ -428,21 +426,22 @@
     "프리바티:reload:C0.1"
    ],
    "P_vars": [
-    "squad:burst_who2:alt=2",
+    "squad:burst_who2:per3=1@2",
+    "squad:burst_who3:first=2",
     "squad:camera:slot4",
-    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
-    "목단:cover_at:next_fb+0.1-rl",
-    "크라운:cover_at:fb_end-0.1-rl_dry",
-    "헬름:click:hold@chain",
-    "헬름:cover_at:fb_end-0.5-rl"
+    "마스트 : 로망틱 메이드:burst_t:wait2",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl",
+    "목단:cover_at:fb_end-0.1-rl",
+    "크라운:cover_at:next_fb+0.5-rl",
+    "프리바티:cover_at:fb_end-0.1-rl"
    ],
    "keys": {
     "L": 22,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 62,
-    "P": 73
+    "P": 92
    }
   },
   {
@@ -460,12 +459,17 @@
    "L_base": 39.73848483,
    "A_base": 26.55867028,
    "L": 41.10379863,
-   "P": 32.67574326,
-   "P_over_L": 0.7949567764802958,
-   "P200_over_L200": 0.7949567764802958,
+   "P": 41.15117025,
+   "P_over_L": 1.0011524876429652,
+   "P1_over_L": 0.7949567764802958,
+   "P0_base": 30.35774385,
+   "P1": 32.67574326,
+   "P1_base": 26.55867028,
+   "P200_over_L200": 0.9827125790393159,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 6,
+   "errors": 0,
+   "P1_errors": 6,
    "L_vars": [
     "D : 킬러 와이프:click:hold_own_fb",
     "D : 킬러 와이프:reload:C0.1_dry",
@@ -474,21 +478,23 @@
     "프리바티:reload:A0.3"
    ],
    "P_vars": [
-    "D : 킬러 와이프:click:tap@charge",
-    "D : 킬러 와이프:cover_at:fb_end-0.1-rl",
+    "D : 킬러 와이프:click:hold@ownfb",
+    "D : 킬러 와이프:cover_at:fb_end-0.1-rl_dry",
+    "D : 킬러 와이프:start_hold:hold0-2.2",
     "squad:burst_who1:none=1",
-    "그레이브:cover_at:fb_end-0.1-rl",
+    "미란다:burst_t:wait2",
     "미란다:cover_at:fb_end-0.1-rl_dry",
-    "앨리스:click:hold@chain",
-    "앨리스:cover_at:fb_end-0.1-rl"
+    "앨리스:click:tap",
+    "앨리스:cover_at:fb_end-0.3",
+    "프리바티:cover_at:fb_end-0.1-rl_dry"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 68,
-    "P": 79
+    "P": 101
    }
   },
   {
@@ -506,12 +512,17 @@
    "L_base": 49.81032398,
    "A_base": 40.3784559,
    "L": 51.37325726,
-   "P": 43.617084,
-   "P_over_L": 0.8490231362838059,
-   "P200_over_L200": 0.8490231362838059,
+   "P": 50.9158321,
+   "P_over_L": 0.9910960452111305,
+   "P1_over_L": 0.8490231362838059,
+   "P0_base": 43.653395,
+   "P1": 43.617084,
+   "P1_base": 40.3784559,
+   "P200_over_L200": 0.9866153865518007,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "도라:click:tap",
     "도라:reload:C0.1",
@@ -520,18 +531,19 @@
     "프리바티:reload:B0.1"
    ],
    "P_vars": [
-    "도라:click:tap",
+    "도라:click:tap@charge",
     "도라:cover_at:fb_end-0.3",
     "미란다:cover_at:fb_end-0.1-rl_dry",
-    "미하라 : 본딩 체인:cover_at:fb_end-0.1-rl_dry"
+    "미하라 : 본딩 체인:cover_at:fb_end-0.1-rl_dry",
+    "미하라 : 본딩 체인:cover_fb:on"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 63,
-    "P": 73
+    "P": 92
    }
   },
   {
@@ -549,12 +561,17 @@
    "L_base": 33.91375223,
    "A_base": 29.31276762,
    "L": 35.31933802,
-   "P": 33.07728873,
-   "P_over_L": 0.93652063102852,
-   "P200_over_L200": 0.9339433751935309,
+   "P": 34.67106045,
+   "P_over_L": 0.9816452514021382,
+   "P1_over_L": 0.93652063102852,
+   "P0_base": 29.87048622,
+   "P1": 33.07728873,
+   "P1_base": 29.31276762,
+   "P200_over_L200": 0.9816452514021382,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 3,
+   "errors": 0,
+   "P1_errors": 3,
    "L_vars": [
     "squad:tactic:버충=레드 후드",
     "그레이브:reload:C0.1",
@@ -565,22 +582,17 @@
     "프리바티:reload:C0.1"
    ],
    "P_vars": [
-    "그레이브:cover_at:fb_end-0.1-rl_dry",
-    "레드 후드:click:tap@charge",
-    "레드 후드:cover_at:fb_end-0.5-rl",
+    "그레이브:cover_at:fb_end-0.5-rl",
     "목단:cover_at:fb_end-0.5-rl",
-    "목단:cover_fb:on",
-    "밀크 : 블루밍 바니:click:tap",
-    "밀크 : 블루밍 바니:cover_at:fb_end-0.5-rl",
-    "프리바티:cover_at:fb_end-0.1-rl"
+    "밀크 : 블루밍 바니:click:judge+tap+fc2.5"
    ],
    "keys": {
     "L": 24,
-    "P": 24
+    "P": 26
    },
    "opts": {
     "L": 67,
-    "P": 74
+    "P": 91
    }
   },
   {
@@ -598,12 +610,17 @@
    "L_base": 44.41458633,
    "A_base": 29.5501312,
    "L": 46.48625654,
-   "P": 43.01851915,
-   "P_over_L": 0.9254029545911894,
-   "P200_over_L200": 0.866576982845716,
+   "P": 46.61187948,
+   "P_over_L": 1.0027023673091833,
+   "P1_over_L": 0.9254029545911894,
+   "P0_base": 29.5501312,
+   "P1": 43.01851915,
+   "P1_base": 29.5501312,
+   "P200_over_L200": 0.9901736211567868,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 6,
+   "errors": 0,
+   "P1_errors": 6,
    "L_vars": [
     "squad:tactic:버충=신 : 스위프트 바니",
     "길티 : 마이티 바니:burst:wait2",
@@ -613,22 +630,22 @@
     "타키나:reload:C0.1_dry"
    ],
    "P_vars": [
-    "길티 : 마이티 바니:cover_at:fb_end-0.1-rl_dry",
-    "목단:cover_at:fb_end-0.3",
-    "신 : 스위프트 바니:burst_t:delay1",
-    "신 : 스위프트 바니:click:hold@chain",
-    "신 : 스위프트 바니:cover_at:fb_end-0.1-rl",
+    "squad:camera:slot4",
+    "길티 : 마이티 바니:burst_t:wait2",
+    "길티 : 마이티 바니:click:hold@chain",
+    "길티 : 마이티 바니:start_hold:hold0-2.2",
+    "목단:cover_at:next_fb+0.5-rl",
     "타키나:click:tap@charge",
-    "플로라:cover_at:next_fb+0.1-rl",
-    "플로라:cover_fb:on"
+    "타키나:cover_at:fb_end-0.1-rl_dry",
+    "플로라:cover_at:next_fb+0.1-rl"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 74,
-    "P": 87
+    "P": 118
    }
   },
   {
@@ -646,12 +663,17 @@
    "L_base": 43.20009995,
    "A_base": 34.21614357,
    "L": 46.16687399,
-   "P": 45.37144746,
-   "P_over_L": 0.9827706218495041,
-   "P200_over_L200": 0.9787097916586153,
+   "P": 43.78882519,
+   "P_over_L": 0.9484901490078125,
+   "P1_over_L": 0.9827706218495041,
+   "P0_base": 34.21614357,
+   "P1": 45.37144746,
+   "P1_base": 34.21614357,
+   "P200_over_L200": 0.954930164125813,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 12,
+   "errors": 0,
+   "P1_errors": 12,
    "L_vars": [
     "D : 킬러 와이프:reload:A0.3",
     "squad:tactic:버충=타키나",
@@ -664,23 +686,24 @@
     "타키나:reload:C0.1"
    ],
    "P_vars": [
-    "D : 킬러 와이프:click:hold@chain",
-    "D : 킬러 와이프:cover_at:fb_end-0.3",
-    "squad:burst_who1:alt=2",
-    "squad:camera:slot4",
-    "미란다:burst_t:wait2",
-    "미란다:cover_at:fb_end-0.3",
+    "D : 킬러 와이프:click:tap@charge",
+    "D : 킬러 와이프:cover_at:next_fb+0.1-rl",
+    "squad:burst_who1:none=1",
+    "미란다:burst_t:delay1",
+    "미란다:cover_at:fb_end-0.1-rl",
     "아인:click:hold@ownfb",
+    "아인:cover_at:next_fb+0.1-rl",
     "에이다:click:hold@ownfb",
-    "타키나:click:tap"
+    "에이다:cover_at:fb_end-0.3",
+    "타키나:click:hold@chain"
    ],
    "keys": {
     "L": 26,
-    "P": 27
+    "P": 31
    },
    "opts": {
     "L": 79,
-    "P": 91
+    "P": 119
    }
   },
   {
@@ -698,34 +721,37 @@
    "L_base": 32.20006314,
    "A_base": 20.30162236,
    "L": 32.42115051,
-   "P": 28.99788651,
-   "P_over_L": 0.8944126304541806,
-   "P200_over_L200": 0.8838931061734243,
+   "P": 33.19009694,
+   "P_over_L": 1.0237174319203393,
+   "P1_over_L": 0.8944126304541806,
+   "P0_base": 21.40134258,
+   "P1": 28.99788651,
+   "P1_base": 20.30162236,
+   "P200_over_L200": 1.0177085776096353,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 9,
+   "errors": 0,
+   "P1_errors": 9,
    "L_vars": [
     "앨리스:reload:B0.5"
    ],
    "P_vars": [
-    "squad:burst_who2:alt=2",
     "squad:burst_who3:first=2",
-    "리타:cover_at:fb_end-0.1-rl_dry",
+    "리타:cover_at:fb_end-0.5-rl",
     "민트:burst_t:wait2",
-    "민트:click:hold@chain",
     "민트:cover_at:fb_end-0.1-rl_dry",
-    "신데렐라 : 크리스탈 웨이브:cover_at:next_fb+0.1-rl",
-    "앨리스:cancel:on",
-    "앨리스:click:tap@charge",
-    "프리카:cover_at:next_fb+0.1-rl"
+    "앨리스:click:tap+fc5.5",
+    "앨리스:start_hold:hold0-2.2",
+    "프리카:burst_t:wait2",
+    "프리카:click:hold@ownfb"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 73,
-    "P": 85
+    "P": 110
    }
   },
   {
@@ -743,28 +769,40 @@
    "L_base": 38.05036932,
    "A_base": 26.21744926,
    "L": 38.14413292,
-   "P": 38.44633562,
-   "P_over_L": 1.0079226522368148,
-   "P200_over_L200": 1.0104063720556813,
+   "P": 38.23353061,
+   "P_over_L": 1.002343681273015,
+   "P1_over_L": 1.0079226522368148,
+   "P0_base": 26.21744926,
+   "P1": 38.44633562,
+   "P1_base": 26.21744926,
+   "P200_over_L200": 0.9958512392173543,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "볼륨:reload:C0.1_dry",
     "에이다:click:tap",
     "에이다:reload:C0.5"
    ],
    "P_vars": [
-    "길티 : 마이티 바니:click:hold@chain",
-    "타키나:click:tap"
+    "길티 : 마이티 바니:cover_at:next_fb+0.5-rl",
+    "길티 : 마이티 바니:start_hold:hold0-2.2",
+    "볼륨:cover_at:next_fb+0.1-rl",
+    "신 : 스위프트 바니:click:tap",
+    "신 : 스위프트 바니:cover_at:fb_end-0.1-rl_dry",
+    "에이다:click:hold@ownfb",
+    "에이다:cover_at:next_fb+0.1-rl",
+    "타키나:click:tap",
+    "타키나:cover_fb:on"
    ],
    "keys": {
     "L": 26,
-    "P": 26
+    "P": 30
    },
    "opts": {
     "L": 80,
-    "P": 87
+    "P": 117
    }
   },
   {
@@ -782,12 +820,17 @@
    "L_base": 29.55535196,
    "A_base": 24.0807686,
    "L": 32.40154334,
-   "P": 32.43352836,
-   "P_over_L": 1.0009871449536947,
-   "P200_over_L200": 1.0009871449536947,
+   "P": 31.00780045,
+   "P_over_L": 0.9569852930962269,
+   "P1_over_L": 1.0009871449536947,
+   "P0_base": 24.0807686,
+   "P1": 32.43352836,
+   "P1_base": 24.0807686,
+   "P200_over_L200": 0.9474304238496807,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "squad:camera:맥스웰",
     "squad:tactic:버충=맥스웰",
@@ -798,17 +841,24 @@
    ],
    "P_vars": [
     "squad:burst_who2:alt=2",
-    "맥스웰:click:tap@charge",
-    "츠바이:cover_at:fb_end-0.1-rl_dry",
-    "헬름 : 아쿠아마린:burst_t:wait2"
+    "squad:camera:slot4",
+    "마스트 : 로망틱 메이드:burst_t:delay1",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+    "맥스웰:click:tap+fc5.5",
+    "맥스웰:cover_at:next_fb+0.1-rl",
+    "스노우 화이트:cover_at:fb_end-0.1-rl_dry",
+    "츠바이:burst_t:wait2",
+    "츠바이:cover_at:next_fb+0.1-rl",
+    "헬름 : 아쿠아마린:burst_t:delay1",
+    "헬름 : 아쿠아마린:cover_at:next_fb+0.5-rl"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 65,
-    "P": 73
+    "P": 92
    }
   },
   {
@@ -828,10 +878,15 @@
    "L": 47.31038361,
    "P": 47.34937294,
    "P_over_L": 1.0008241178156874,
+   "P1_over_L": 1.0008241178156874,
+   "P0_base": 39.8577693,
+   "P1": 47.34937294,
+   "P1_base": 39.8577693,
    "P200_over_L200": 1.0008241178156874,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "드레이크:reload:C0.5",
     "소다 : 트윙클링 바니:reload:C0.5",
@@ -839,10 +894,10 @@
     "토브:reload:C0.5"
    ],
    "P_vars": [
-    "squad:burst_who1:first=2",
     "드레이크:cover_at:fb_end-0.5-rl",
     "소다 : 트윙클링 바니:cover_at:fb_end-0.5-rl",
-    "솔린 : 프로스트 티켓:cover_at:fb_end-0.3"
+    "솔린 : 프로스트 티켓:cover_at:fb_end-0.3",
+    "토브:burst_t:wait2"
    ],
    "keys": {
     "L": 20,
@@ -850,7 +905,7 @@
    },
    "opts": {
     "L": 57,
-    "P": 67
+    "P": 83
    }
   },
   {
@@ -868,12 +923,17 @@
    "L_base": 28.60845999,
    "A_base": 18.60778509,
    "L": 29.46409896,
-   "P": 27.52731337,
-   "P_over_L": 0.934266254242855,
-   "P200_over_L200": 0.934266254242855,
+   "P": 30.37269515,
+   "P_over_L": 1.0308373994817726,
+   "P1_over_L": 0.934266254242855,
+   "P0_base": 19.88035839,
+   "P1": 27.52731337,
+   "P1_base": 18.60778509,
+   "P200_over_L200": 1.021707856088466,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 8,
+   "errors": 0,
+   "P1_errors": 8,
    "L_vars": [
     "squad:tactic:버충=앨리스",
     "앨리스:burst:wait2",
@@ -881,18 +941,17 @@
     "앨리스:reload:C0.1_dry"
    ],
    "P_vars": [
-    "squad:burst_who2:first=2",
-    "squad:burst_who3:first=3",
-    "민트:cover_at:fb_end-0.5-rl",
-    "앨리스:click:tap@charge"
+    "squad:burst_who3:first=1",
+    "앨리스:click:tap+fc5.5",
+    "프리카:burst_t:wait2"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 74,
-    "P": 86
+    "P": 115
    }
   },
   {
@@ -910,36 +969,36 @@
    "L_base": 62.02480705,
    "A_base": 46.49917282,
    "L": 62.91806594,
-   "P": 60.76549662,
-   "P_over_L": 0.9657877385796834,
-   "P200_over_L200": 0.9657877385796834,
+   "P": 62.8033639,
+   "P_over_L": 0.9981769617631066,
+   "P1_over_L": 0.9657877385796834,
+   "P0_base": 48.89900287,
+   "P1": 60.76549662,
+   "P1_base": 46.49917282,
+   "P200_over_L200": 0.9966332588766793,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 4,
+   "errors": 0,
+   "P1_errors": 4,
    "L_vars": [
     "squad:tactic:버충=프리카",
     "민트:reload:A0.3"
    ],
    "P_vars": [
-    "squad:burst_who2:first=2",
-    "리버렐리오:cover_at:next_fb+0.1-rl",
     "민트:burst_t:wait2",
-    "민트:click:hold@chain",
     "민트:cover_at:fb_end-0.1-rl",
     "볼륨:cover_at:fb_end-0.3",
-    "프리카:burst_t:wait2",
+    "프리카:burst_t:delay1",
     "프리카:click:tap@charge",
-    "프리카:cover_at:fb_end-0.5-rl",
-    "홍련 : 흑영:cancel:on",
-    "홍련 : 흑영:cover_at:next_fb+0.1-rl"
+    "프리카:cover_at:fb_end-0.5-rl"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 70,
-    "P": 83
+    "P": 106
    }
   },
   {
@@ -957,12 +1016,17 @@
    "L_base": 21.95131394,
    "A_base": 21.53412989,
    "L": 22.92357343,
-   "P": 22.11200735,
-   "P_over_L": 0.9645968774249696,
-   "P200_over_L200": 0.9613951859337142,
+   "P": 25.13352994,
+   "P_over_L": 1.0964054106463104,
+   "P1_over_L": 0.9645968774249696,
+   "P0_base": 21.95131394,
+   "P1": 22.11200735,
+   "P1_base": 21.53412989,
+   "P200_over_L200": 1.079645642751781,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 1,
+   "errors": 0,
+   "P1_errors": 1,
    "L_vars": [
     "디젤 : 윈터 스위츠:reload:C0.1",
     "리버렐리오:burst:delay1",
@@ -972,24 +1036,23 @@
     "앤 : 미라클 페어리:reload:C0.1_dry"
    ],
    "P_vars": [
-    "squad:burst_who2:first=1",
-    "디젤 : 윈터 스위츠:cancel:on",
+    "squad:burst_who2:only1=2",
+    "squad:burst_who3:only1=1",
     "디젤 : 윈터 스위츠:click:tap",
+    "디젤 : 윈터 스위츠:cover_at:fb_end-0.1-rl",
     "리버렐리오:burst_t:wait2",
     "마스트 : 로망틱 메이드:burst_t:wait2",
-    "마스트 : 로망틱 메이드:cover_at:fb_end-0.3",
-    "목단:burst_t:delay1",
-    "목단:cover_at:fb_end-0.3",
+    "마스트 : 로망틱 메이드:cover_at:next_fb+0.5-rl",
     "앤 : 미라클 페어리:click:tap",
-    "앤 : 미라클 페어리:cover_at:fb_end-0.1-rl"
+    "앤 : 미라클 페어리:cover_at:fb_end-0.1-rl_dry"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 69,
-    "P": 80
+    "P": 102
    }
   },
   {
@@ -1007,12 +1070,17 @@
    "L_base": 43.48700967,
    "A_base": 40.80010422,
    "L": 59.30389297,
-   "P": 59.93488172,
-   "P_over_L": 1.0106399212328134,
-   "P200_over_L200": 1.0106399212328134,
+   "P": 63.98200608,
+   "P_over_L": 1.078883743978941,
+   "P1_over_L": 1.0106399212328134,
+   "P0_base": 43.48700967,
+   "P1": 59.93488172,
+   "P1_base": 40.80010422,
+   "P200_over_L200": 1.078883743978941,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "아스카 : WILLE:reload:A0.3",
     "크라운:reload:C0.1_dry",
@@ -1022,19 +1090,17 @@
    ],
    "P_vars": [
     "squad:burst_who2:first=2",
-    "아스카 : WILLE:cover_at:fb_end-0.3",
+    "아스카 : WILLE:cover_at:fb_end-0.5-rl",
     "크라운:cover_at:fb_end-0.1-rl_dry",
-    "크러스트:click:tap",
-    "크러스트:cover_at:fb_end-0.1-rl_dry",
-    "프리바티:cover_at:next_fb+0.5-rl"
+    "크러스트:click:tap"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 62,
-    "P": 75
+    "P": 97
    }
   },
   {
@@ -1052,12 +1118,17 @@
    "L_base": 5.95512287,
    "A_base": 5.95512287,
    "L": 8.06213661,
-   "P": 9.23449018,
-   "P_over_L": 1.1454147488081325,
-   "P200_over_L200": 1.1557042355920075,
+   "P": 8.86890529,
+   "P_over_L": 1.1000688426687426,
+   "P1_over_L": 1.1454147488081325,
+   "P0_base": 5.95512287,
+   "P1": 9.23449018,
+   "P1_base": 5.95512287,
+   "P200_over_L200": 1.1099509782268633,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "D : 킬러 와이프:reload:B0.5",
     "노아:cancel:on",
@@ -1069,21 +1140,20 @@
     "볼륨:reload:B0.1"
    ],
    "P_vars": [
-    "D : 킬러 와이프:burst_t:delay1",
-    "D : 킬러 와이프:cover_at:next_fb+0.1-rl",
-    "squad:burst_who3:first=2",
+    "D : 킬러 와이프:burst_t:delay2",
+    "squad:burst_who3:none=1",
     "노아:click:tap",
-    "노아:cover_at:next_fb+0.5-rl",
-    "드레이크:burst_t:delay1",
-    "드레이크:cover_at:next_fb+0.5-rl"
+    "도로시 : 세렌디피티:burst_t:delay1",
+    "도로시 : 세렌디피티:cover_at:next_fb+0.1-rl",
+    "드레이크:burst_t:delay1"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 65,
-    "P": 79
+    "P": 101
    }
   },
   {
@@ -1101,12 +1171,17 @@
    "L_base": 14.1234127,
    "A_base": 14.1234127,
    "L": 18.09262148,
-   "P": 18.09195044,
-   "P_over_L": 0.999962910847345,
-   "P200_over_L200": 0.9988974267757686,
+   "P": 18.13593674,
+   "P_over_L": 1.0023940842430092,
+   "P1_over_L": 0.999962910847345,
+   "P0_base": 14.1234127,
+   "P1": 18.09195044,
+   "P1_base": 14.1234127,
+   "P200_over_L200": 1.0023940842430092,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "베스티:burst:delay2",
     "베스티:click:tap",
@@ -1119,18 +1194,16 @@
    "P_vars": [
     "squad:burst_who1:none=2",
     "베스티:burst_t:delay2",
-    "베스티:click:tap",
-    "베스티:cover_at:fb_end-0.3",
-    "솔린 : 프로스트 티켓:burst_t:delay2",
-    "토브:cover_at:fb_end-0.1-rl_dry"
+    "베스티:click:tap+fc5.5",
+    "솔린 : 프로스트 티켓:burst_t:delay2"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 62,
-    "P": 73
+    "P": 92
    }
   },
   {
@@ -1148,12 +1221,17 @@
    "L_base": 8.82872676,
    "A_base": 8.54369612,
    "L": 11.42182769,
-   "P": 12.17441402,
-   "P_over_L": 1.065890184165438,
-   "P200_over_L200": 1.065890184165438,
+   "P": 12.59484302,
+   "P_over_L": 1.1026994419664546,
+   "P1_over_L": 1.065890184165438,
+   "P0_base": 8.82872676,
+   "P1": 12.17441402,
+   "P1_base": 8.54369612,
+   "P200_over_L200": 1.1026994419664546,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "노아:click:tap",
     "노아:reload:A0.3",
@@ -1163,16 +1241,17 @@
    "P_vars": [
     "squad:burst_who3:first=2",
     "노아:click:tap",
+    "노아:cover_at:next_fb+0.1-rl",
     "목단:burst_t:wait2",
     "팬텀:burst_t:delay2"
    ],
    "keys": {
     "L": 24,
-    "P": 24
+    "P": 26
    },
    "opts": {
     "L": 66,
-    "P": 74
+    "P": 92
    }
   },
   {
@@ -1190,12 +1269,17 @@
    "L_base": 54.04423952,
    "A_base": 49.87572946,
    "L": 66.36065232,
-   "P": 60.41493124,
-   "P_over_L": 0.9104029138934782,
-   "P200_over_L200": 0.9104029138934782,
+   "P": 68.10410312,
+   "P_over_L": 1.0262723577760033,
+   "P1_over_L": 0.9104029138934782,
+   "P0_base": 54.04423952,
+   "P1": 60.41493124,
+   "P1_base": 49.87572946,
+   "P200_over_L200": 1.0262723577760033,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "브리드 : 사일런트 트랙:reload:C0.1_dry",
     "아니스 : 스타:reload:C0.1_dry",
@@ -1205,18 +1289,19 @@
    ],
    "P_vars": [
     "squad:burst_who3:first=2",
-    "네온 : 비전 아이:cover_at:fb_end-0.3",
-    "브리드 : 사일런트 트랙:cover_at:fb_end-0.5-rl",
+    "브리드 : 사일런트 트랙:cover_at:fb_end-0.1-rl_dry",
+    "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
     "크러스트:click:tap",
-    "크러스트:cover_at:fb_end-0.5-rl"
+    "크러스트:cover_at:fb_end-0.3",
+    "프리바티:cover_at:fb_end-0.1-rl_dry"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 63,
-    "P": 76
+    "P": 98
    }
   },
   {
@@ -1234,12 +1319,17 @@
    "L_base": 15.25029782,
    "A_base": 15.19128038,
    "L": 21.80582125,
-   "P": 26.35088206,
-   "P_over_L": 1.2084333700570897,
-   "P200_over_L200": 1.2086507737816565,
+   "P": 26.42000051,
+   "P_over_L": 1.2116030947470047,
+   "P1_over_L": 1.2084333700570897,
+   "P0_base": 15.25029782,
+   "P1": 26.35088206,
+   "P1_base": 15.19128038,
+   "P200_over_L200": 1.2118210687222537,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "드레이크 : 그레이트 빌런:cancel:on",
     "맥스웰 : 오디너리 미케닉:click:tap",
@@ -1253,17 +1343,18 @@
    "P_vars": [
     "squad:burst_who3:first=2",
     "맥스웰 : 오디너리 미케닉:cover_at:fb_end-0.1-rl_dry",
-    "사쿠라:click:tap",
+    "사쿠라:click:tap+fc2.5",
+    "사쿠라:start_hold:hold0-2.2",
     "신데렐라:cover_at:fb_end-0.3",
     "헬름:burst_t:delay1"
    ],
    "keys": {
     "L": 25,
-    "P": 25
+    "P": 28
    },
    "opts": {
     "L": 69,
-    "P": 80
+    "P": 101
    }
   },
   {
@@ -1281,12 +1372,17 @@
    "L_base": 14.98215037,
    "A_base": 14.92830636,
    "L": 17.45792562,
-   "P": 18.9251916,
-   "P_over_L": 1.0840458375145718,
-   "P200_over_L200": 1.0840458375145718,
+   "P": 19.33372893,
+   "P_over_L": 1.1074470902689069,
+   "P1_over_L": 1.0840458375145718,
+   "P0_base": 14.98215037,
+   "P1": 18.9251916,
+   "P1_base": 14.92830636,
+   "P200_over_L200": 1.1058542784649577,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 5,
+   "errors": 0,
+   "P1_errors": 5,
    "L_vars": [
     "squad:tactic:버충=디젤 : 윈터 스위츠",
     "레이븐:reload:B0.5",
@@ -1295,21 +1391,20 @@
     "헬름:burst:delay1"
    ],
    "P_vars": [
-    "squad:burst_who3:first=2",
+    "squad:burst_who3:only1=1",
     "디젤 : 윈터 스위츠:click:tap@charge",
-    "디젤 : 윈터 스위츠:cover_at:fb_end-0.3",
     "마스트 : 로망틱 메이드:cover_at:fb_end-0.3",
     "목단:burst_t:delay2",
-    "헬름:burst_t:delay1",
-    "헬름:cover_at:fb_end-0.3"
+    "헬름:burst_t:wait2",
+    "헬름:start_hold:hold0-2.2"
    ],
    "keys": {
     "L": 25,
-    "P": 25
+    "P": 28
    },
    "opts": {
     "L": 69,
-    "P": 76
+    "P": 95
    }
   },
   {
@@ -1327,12 +1422,17 @@
    "L_base": 12.07996143,
    "A_base": 11.71831185,
    "L": 14.47984324,
-   "P": 15.84518043,
-   "P_over_L": 1.0942922632082308,
-   "P200_over_L200": 1.0942922632082308,
+   "P": 16.25595732,
+   "P_over_L": 1.1226611400801325,
+   "P1_over_L": 1.0942922632082308,
+   "P0_base": 12.07996143,
+   "P1": 15.84518043,
+   "P1_base": 11.71831185,
+   "P200_over_L200": 1.1226611400801325,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "squad:tactic:버충=디젤 : 윈터 스위츠",
     "디젤 : 윈터 스위츠:reload:A0.3",
@@ -1342,21 +1442,22 @@
     "폴리:reload:B0.5"
    ],
    "P_vars": [
-    "squad:burst_who3:first=2",
-    "디젤 : 윈터 스위츠:click:tap@charge",
-    "디젤 : 윈터 스위츠:cover_at:fb_end-0.3",
-    "목단:burst_t:delay2",
+    "squad:burst_who3:only1=1",
+    "디젤 : 윈터 스위츠:cover_at:next_fb+0.1-rl",
+    "디젤 : 윈터 스위츠:start_hold:hold0-2.2",
+    "목단:burst_t:delay1",
+    "목단:cover_at:next_fb+0.1-rl",
     "팬텀:burst_t:delay1",
     "팬텀:cover_at:next_fb+0.1-rl",
-    "폴리:cover_at:next_fb+0.1-rl"
+    "폴리:cover_at:next_fb+0.5-rl"
    ],
    "keys": {
     "L": 23,
-    "P": 23
+    "P": 24
    },
    "opts": {
     "L": 61,
-    "P": 68
+    "P": 83
    }
   },
   {
@@ -1374,12 +1475,17 @@
    "L_base": 8.47677798,
    "A_base": 7.97403505,
    "L": 10.00619212,
-   "P": 10.36244436,
-   "P_over_L": 1.0356031780848918,
-   "P200_over_L200": 1.053784763475695,
+   "P": 11.17866059,
+   "P_over_L": 1.1171742912727525,
+   "P1_over_L": 1.0356031780848918,
+   "P0_base": 8.47677798,
+   "P1": 10.36244436,
+   "P1_base": 7.97403505,
+   "P200_over_L200": 1.1356015887504725,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 5,
+   "errors": 0,
+   "P1_errors": 5,
    "L_vars": [
     "squad:tactic:버충=민트",
     "리버렐리오:burst:delay1",
@@ -1393,18 +1499,19 @@
    "P_vars": [
     "squad:burst_who3:first=2",
     "리버렐리오:burst_t:delay1",
-    "민트:click:tap@charge",
-    "민트:cover_at:fb_end-0.1-rl",
+    "리버렐리오:cover_at:fb_end-0.1-rl_dry",
+    "민트:cover_at:fb_end-0.1-rl_dry",
+    "민트:start_hold:hold0-2.2",
     "소라:click:tap",
-    "홍련 : 흑영:cover_at:fb_end-0.3"
+    "홍련 : 흑영:cover_at:fb_end-0.1-rl"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 68,
-    "P": 83
+    "P": 106
    }
   },
   {
@@ -1422,28 +1529,36 @@
    "L_base": 50.11823477,
    "A_base": 50.11823477,
    "L": 51.25626946,
-   "P": 52.77070792,
-   "P_over_L": 1.0295464042926856,
-   "P200_over_L200": 1.0295464042926856,
+   "P": 52.80708189,
+   "P_over_L": 1.0302560534806429,
+   "P1_over_L": 1.0295464042926856,
+   "P0_base": 50.11823477,
+   "P1": 52.77070792,
+   "P1_base": 50.11823477,
+   "P200_over_L200": 1.0302560534806429,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 8,
+   "errors": 0,
+   "P1_errors": 8,
    "L_vars": [
     "마스트 : 로망틱 메이드:reload:C0.1_dry",
     "앵커 : 이노센트 메이드:click:tap",
     "앵커 : 이노센트 메이드:reload:C0.5"
    ],
    "P_vars": [
+    "디젤 : 윈터 스위츠:cover_at:fb_end-0.1-rl_dry",
     "스노우 화이트 : 헤비암즈:click:tap@charge",
-    "앵커 : 이노센트 메이드:click:tap"
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:cover_at:next_fb+0.5-rl",
+    "앵커 : 이노센트 메이드:start_hold:hold0-2.2"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 72,
-    "P": 85
+    "P": 110
    }
   },
   {
@@ -1463,10 +1578,15 @@
    "L": 104.79195728,
    "P": 104.79195728,
    "P_over_L": 1.0,
+   "P1_over_L": 1.0,
+   "P0_base": 96.07999239,
+   "P1": 104.79195728,
+   "P1_base": 96.07999239,
    "P200_over_L200": 1.0,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "아르카나:click:tap",
     "아르카나:reload:C0.1_dry",
@@ -1479,11 +1599,11 @@
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 62,
-    "P": 75
+    "P": 94
    }
   },
   {
@@ -1501,27 +1621,37 @@
    "L_base": 85.17375201,
    "A_base": 80.2320791,
    "L": 88.42459279,
-   "P": 83.13250583,
-   "P_over_L": 0.9401514127119793,
-   "P200_over_L200": 0.9436014160403128,
+   "P": 88.37586578,
+   "P_over_L": 0.9994489427831947,
+   "P1_over_L": 0.9401514127119793,
+   "P0_base": 84.56366536,
+   "P1": 83.13250583,
+   "P1_base": 80.2320791,
+   "P200_over_L200": 1.0013186889164294,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "앵커 : 이노센트 메이드:click:tap",
     "앵커 : 이노센트 메이드:reload:B0.5",
     "홍련 : 흑영:reload:B0.5"
    ],
    "P_vars": [
-    "앵커 : 이노센트 메이드:click:tap"
+    "마스트 : 로망틱 메이드:cover_at:next_fb+0.5-rl",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:cover_at:next_fb+0.5-rl",
+    "앵커 : 이노센트 메이드:start_hold:hold0-2.2",
+    "홍련 : 흑영:cover_at:next_fb+0.5-rl",
+    "홍련 : 흑영:start_hold:hold0-2.2"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 67,
-    "P": 78
+    "P": 98
    }
   },
   {
@@ -1539,12 +1669,17 @@
    "L_base": 101.5029073,
    "A_base": 101.5029073,
    "L": 109.62338818,
-   "P": 108.82698782,
-   "P_over_L": 0.9927351236517856,
-   "P200_over_L200": 1.0,
+   "P": 108.69257794,
+   "P_over_L": 0.9915090177793846,
+   "P1_over_L": 0.9927351236517856,
+   "P0_base": 101.5029073,
+   "P1": 108.82698782,
+   "P1_base": 101.5029073,
+   "P200_over_L200": 1.0059222862910044,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "신데렐라:reload:A0.3",
     "아니스 : 스타:reload:B0.5",
@@ -1555,21 +1690,21 @@
     "크라운:reload:C0.1_dry"
    ],
    "P_vars": [
-    "신데렐라:cover_at:next_fb+0.5-rl",
-    "아니스 : 스타:cover_at:next_fb+0.5-rl",
+    "신데렐라:cover_at:fb_end-0.1-rl",
+    "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
     "아르카나:click:tap",
-    "아르카나:cover_at:fb_end-0.1-rl",
+    "아르카나:cover_at:fb_end-0.5-rl",
+    "아르카나:start_hold:hold0-2.2",
     "이사벨:cover_at:fb_end-0.5-rl",
-    "크라운:burst_t:wait2",
-    "크라운:cover_at:fb_end-0.1-rl_dry"
+    "크라운:cancel:on"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 62,
-    "P": 75
+    "P": 94
    }
   },
   {
@@ -1587,12 +1722,17 @@
    "L_base": 50.47570158,
    "A_base": 50.47570158,
    "L": 56.40381088,
-   "P": 56.13016939,
-   "P_over_L": 0.9951485283400057,
-   "P200_over_L200": 0.9955527352193716,
+   "P": 56.22250453,
+   "P_over_L": 0.9967855655997122,
+   "P1_over_L": 0.9951485283400057,
+   "P0_base": 50.47570158,
+   "P1": 56.13016939,
+   "P1_base": 50.47570158,
+   "P200_over_L200": 0.9977666616465966,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 2,
+   "errors": 0,
+   "P1_errors": 2,
    "L_vars": [
     "squad:tactic:버충=아르카나",
     "디젤 : 윈터 스위츠:reload:A0.3",
@@ -1603,21 +1743,18 @@
     "이사벨:reload:C0.5"
    ],
    "P_vars": [
-    "디젤 : 윈터 스위츠:click:tap",
-    "목단:cover_at:fb_end-0.1-rl_dry",
+    "목단:cover_at:fb_end-0.3",
     "목단:cover_fb:on",
-    "브리드 : 사일런트 트랙:cancel:on",
-    "아르카나:click:tap",
-    "아르카나:cover_at:fb_end-0.1-rl",
+    "아르카나:click:tap+fc5.5",
     "이사벨:cover_at:fb_end-0.5-rl"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 65,
-    "P": 79
+    "P": 101
    }
   },
   {
@@ -1635,12 +1772,17 @@
    "L_base": 52.56319257,
    "A_base": 46.86996338,
    "L": 53.30250607,
-   "P": 48.79162444,
-   "P_over_L": 0.9153720535376696,
-   "P200_over_L200": 0.9153720535376696,
+   "P": 53.22515176,
+   "P_over_L": 0.9985487678590869,
+   "P1_over_L": 0.9153720535376696,
+   "P0_base": 52.56319257,
+   "P1": 48.79162444,
+   "P1_base": 46.86996338,
+   "P200_over_L200": 0.9985487678590869,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "리틀 머메이드:cancel:on",
     "리틀 머메이드:reload:B0.5",
@@ -1648,19 +1790,19 @@
     "앵커 : 이노센트 메이드:click:tap"
    ],
    "P_vars": [
-    "네온 : 비전 아이:cover_at:fb_end-0.3",
-    "리틀 머메이드:cover_at:fb_end-0.5-rl",
+    "리틀 머메이드:cover_at:fb_end-0.1-rl",
+    "마스트 : 로망틱 메이드:cancel:on",
     "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
-    "앵커 : 이노센트 메이드:click:tap",
-    "앵커 : 이노센트 메이드:cover_at:next_fb+0.5-rl"
+    "앵커 : 이노센트 메이드:click:tap+fc5.5",
+    "앵커 : 이노센트 메이드:start_hold:hold0-2.2"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 65,
-    "P": 75
+    "P": 94
    }
   },
   {
@@ -1680,10 +1822,15 @@
    "L": 93.85655443,
    "P": 93.42376894,
    "P_over_L": 0.9953888623695133,
+   "P1_over_L": 0.9953888623695133,
+   "P0_base": 85.32637346,
+   "P1": 93.42376894,
+   "P1_base": 85.32637346,
    "P200_over_L200": 0.9953888623695133,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "아니스 : 스타:reload:C0.5",
     "아르카나:click:hold_own_fb+tap",
@@ -1694,15 +1841,16 @@
     "아니스 : 스타:cover_at:fb_end-0.5-rl",
     "아르카나:click:tap",
     "아르카나:cover_at:fb_end-0.1-rl",
+    "아르카나:start_hold:hold0-2.2",
     "이사벨:cover_at:fb_end-0.5-rl"
    ],
    "keys": {
     "L": 23,
-    "P": 24
+    "P": 25
    },
    "opts": {
     "L": 62,
-    "P": 75
+    "P": 94
    }
   },
   {
@@ -1720,12 +1868,17 @@
    "L_base": 71.37263609,
    "A_base": 61.29039978,
    "L": 79.01550457,
-   "P": 66.42206392,
-   "P_over_L": 0.8406206387147291,
-   "P200_over_L200": 0.8406206387147291,
+   "P": 78.89121774,
+   "P_over_L": 0.9984270576935962,
+   "P1_over_L": 0.8406206387147291,
+   "P0_base": 71.37263609,
+   "P1": 66.42206392,
+   "P1_base": 61.29039978,
+   "P200_over_L200": 0.9984270576935962,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 1,
+   "errors": 0,
+   "P1_errors": 1,
    "L_vars": [
     "squad:tactic:버충=브래디",
     "마스트 : 로망틱 메이드:reload:C0.1_dry",
@@ -1737,19 +1890,18 @@
    ],
    "P_vars": [
     "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
-    "브래디:click:hold@chain",
-    "아니스 : 스타:cover_at:fb_end-0.5-rl",
+    "브래디:click:tap@charge",
+    "브래디:cover_at:fb_end-0.5-rl",
     "앵커 : 이노센트 메이드:click:tap",
-    "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl",
-    "프리바티:cover_at:fb_end-0.5-rl"
+    "프리바티:cover_at:fb_end-0.1-rl"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 69,
-    "P": 80
+    "P": 102
    }
   },
   {
@@ -1767,12 +1919,17 @@
    "L_base": 48.15068604,
    "A_base": 46.61599181,
    "L": 53.47822164,
-   "P": 51.73673492,
-   "P_over_L": 0.9674355902908817,
-   "P200_over_L200": 0.9752596900621229,
+   "P": 53.47822164,
+   "P_over_L": 1.0,
+   "P1_over_L": 0.9674355902908817,
+   "P0_base": 48.15068604,
+   "P1": 51.73673492,
+   "P1_base": 46.61599181,
+   "P200_over_L200": 1.0028293160530146,
    "L_evals": 400,
    "P_evals": 400,
    "errors": 0,
+   "P1_errors": 0,
    "L_vars": [
     "디젤 : 윈터 스위츠:click:tap",
     "디젤 : 윈터 스위츠:reload:B0.5",
@@ -1781,18 +1938,16 @@
     "앵커 : 이노센트 메이드:click:tap"
    ],
    "P_vars": [
-    "디젤 : 윈터 스위츠:click:tap",
     "마스트 : 로망틱 메이드:cover_at:fb_end-0.5-rl",
-    "앵커 : 이노센트 메이드:click:tap",
-    "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl_dry"
+    "앵커 : 이노센트 메이드:click:tap"
    ],
    "keys": {
     "L": 24,
-    "P": 25
+    "P": 27
    },
    "opts": {
     "L": 70,
-    "P": 81
+    "P": 103
    }
   },
   {
@@ -1810,12 +1965,17 @@
    "L_base": 52.97661713,
    "A_base": 52.97661713,
    "L": 60.57461757,
-   "P": 59.97109003,
-   "P_over_L": 0.9900366264912434,
-   "P200_over_L200": 0.9900366264912434,
+   "P": 60.02457559,
+   "P_over_L": 0.9909195963249067,
+   "P1_over_L": 0.9900366264912434,
+   "P0_base": 52.97661713,
+   "P1": 59.97109003,
+   "P1_base": 52.97661713,
+   "P200_over_L200": 0.9909195963249067,
    "L_evals": 400,
    "P_evals": 400,
-   "errors": 7,
+   "errors": 0,
+   "P1_errors": 7,
    "L_vars": [
     "squad:tactic:버충=브래디",
     "마스트 : 로망틱 메이드:reload:C0.1_dry",
@@ -1824,18 +1984,20 @@
     "앵커 : 이노센트 메이드:reload:C0.1_dry"
    ],
    "P_vars": [
+    "디젤 : 윈터 스위츠:click:tap",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
     "브래디:click:tap@charge",
     "브래디:cover_at:fb_end-0.5-rl",
-    "앵커 : 이노센트 메이드:click:tap",
-    "앵커 : 이노센트 메이드:cover_at:next_fb+0.1-rl"
+    "브래디:start_hold:hold0-2.2",
+    "앵커 : 이노센트 메이드:click:tap+fc5.5"
    ],
    "keys": {
     "L": 25,
-    "P": 26
+    "P": 29
    },
    "opts": {
     "L": 74,
-    "P": 86
+    "P": 111
    }
   }
  ]

@@ -1,0 +1,1 @@
+{"id": "r1-10", "arm": "P", "evals": 400, "errors": 0, "best": 3467106045, "base": 2987048622, "best_variants": ["그레이브:cover_at:fb_end-0.5-rl", "목단:cover_at:fb_end-0.5-rl", "밀크 : 블루밍 바니:click:judge+tap+fc2.5"], "keys": 26, "options": 91, "exhausted": true, "seconds": 93.0}

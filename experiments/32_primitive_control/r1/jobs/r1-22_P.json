@@ -1,0 +1,1 @@
+{"id": "r1-22", "arm": "P", "evals": 400, "errors": 0, "best": 1813593674, "base": 1412341270, "best_variants": ["squad:burst_who1:none=2", "베스티:burst_t:delay2", "베스티:click:tap+fc5.5", "솔린 : 프로스트 티켓:burst_t:delay2"], "keys": 25, "options": 92, "exhausted": true, "seconds": 79.9}

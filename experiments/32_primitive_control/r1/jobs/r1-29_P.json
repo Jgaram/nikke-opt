@@ -1,0 +1,1 @@
+{"id": "r1-29", "arm": "P", "evals": 400, "errors": 0, "best": 5280708189, "base": 5011823477, "best_variants": ["디젤 : 윈터 스위츠:cover_at:fb_end-0.1-rl_dry", "스노우 화이트 : 헤비암즈:click:tap@charge", "앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:cover_at:next_fb+0.5-rl", "앵커 : 이노센트 메이드:start_hold:hold0-2.2"], "keys": 29, "options": 110, "exhausted": true, "seconds": 83.1}

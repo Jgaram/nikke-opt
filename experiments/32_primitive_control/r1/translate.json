@@ -1,0 +1,91 @@
+[
+ {
+  "id": "r1-05",
+  "k": 0,
+  "labels": [
+   "길티 : 마이티 바니:start_hold:hold0-2.2",
+   "리타:cover_at:fb_end-0.1-rl_dry",
+   "타키나:click:tap",
+   "타키나:cover_fb:on",
+   "타키나:cover_at:fb_end-0.3",
+   "플로라:cover_at:fb_end-0.1-rl_dry"
+  ],
+  "value": 46.47033084,
+  "L": 46.47033084,
+  "P": 45.51483903
+ },
+ {
+  "id": "r1-12",
+  "k": 0,
+  "labels": [
+   "squad:burst_who1:first=2",
+   "에이다:click:hold@ownfb",
+   "아인:click:hold@ownfb+tap",
+   "D : 킬러 와이프:cover_at:fb_end-0.3",
+   "미란다:cover_at:fb_end-0.3",
+   "아인:cover_at:fb_end-0.3",
+   "에이다:cover_at:next_fb+0.1-rl",
+   "타키나:cover_at:fb_end-0.1-rl",
+   "미란다:burst_t:wait2",
+   "에이다:burst_t:wait2",
+   "타키나:click:tap@charge",
+   "squad:camera:slot3"
+  ],
+  "value": 45.26198968,
+  "L": 46.16687399,
+  "P": 43.78882519
+ },
+ {
+  "id": "r1-12",
+  "k": 1,
+  "labels": [
+   "squad:burst_who1:first=2",
+   "에이다:click:hold@ownfb",
+   "아인:click:hold@ownfb+tap",
+   "D : 킬러 와이프:cover_at:fb_end-0.3",
+   "미란다:cover_at:fb_end-0.3",
+   "아인:cover_at:fb_end-0.3",
+   "에이다:cover_at:next_fb+0.1-rl",
+   "타키나:cover_at:fb_end-0.1-rl",
+   "미란다:burst_t:wait2",
+   "에이다:burst_t:wait2"
+  ],
+  "value": 42.27671862,
+  "L": 46.16687399,
+  "P": 43.78882519
+ },
+ {
+  "id": "r1-10",
+  "k": 0,
+  "labels": [
+   "밀크 : 블루밍 바니:click:judge+tap+fc5.5",
+   "레드 후드:click:tap@charge",
+   "squad:camera:slot4",
+   "레드 후드:cover_fb:on",
+   "레드 후드:cover_at:fb_end-0.5-rl",
+   "그레이브:cover_at:fb_end-0.1-rl",
+   "밀크 : 블루밍 바니:cover_at:fb_end-0.1-rl",
+   "프리바티:cover_at:fb_end-0.1-rl",
+   "목단:cover_at:fb_end-0.3"
+  ],
+  "value": 32.63000198,
+  "L": 35.31933802,
+  "P": 34.67106045
+ },
+ {
+  "id": "r1-10",
+  "k": 1,
+  "labels": [
+   "밀크 : 블루밍 바니:click:judge+tap+fc5.5",
+   "레드 후드:cover_fb:on",
+   "레드 후드:cover_at:fb_end-0.5-rl",
+   "그레이브:cover_at:fb_end-0.1-rl",
+   "밀크 : 블루밍 바니:cover_at:fb_end-0.1-rl",
+   "프리바티:cover_at:fb_end-0.1-rl",
+   "목단:cover_at:fb_end-0.3"
+  ],
+  "value": 33.77330712,
+  "L": 35.31933802,
+  "P": 34.67106045
+ }
+]

@@ -1,0 +1,1 @@
+{"id": "r1-01", "arm": "P", "evals": 400, "errors": 0, "best": 2064392193, "base": 1302305523, "best_variants": ["레드 후드:click:tap@charge", "앨리스:click:tap", "앨리스:start_hold:hold0-2.2", "프리카:burst_t:wait2"], "keys": 31, "options": 119, "exhausted": true, "seconds": 93.3}

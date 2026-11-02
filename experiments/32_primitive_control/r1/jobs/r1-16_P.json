@@ -1,0 +1,1 @@
+{"id": "r1-16", "arm": "P", "evals": 400, "errors": 0, "best": 4734937294, "base": 3985776930, "best_variants": ["드레이크:cover_at:fb_end-0.5-rl", "소다 : 트윙클링 바니:cover_at:fb_end-0.5-rl", "솔린 : 프로스트 티켓:cover_at:fb_end-0.3", "토브:burst_t:wait2"], "keys": 22, "options": 83, "exhausted": true, "seconds": 85.5}

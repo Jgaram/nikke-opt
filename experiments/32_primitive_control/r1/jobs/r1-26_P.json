@@ -1,0 +1,1 @@
+{"id": "r1-26", "arm": "P", "evals": 400, "errors": 0, "best": 1933372893, "base": 1498215037, "best_variants": ["squad:burst_who3:only1=1", "디젤 : 윈터 스위츠:click:tap@charge", "마스트 : 로망틱 메이드:cover_at:fb_end-0.3", "목단:burst_t:delay2", "헬름:burst_t:wait2", "헬름:start_hold:hold0-2.2"], "keys": 28, "options": 95, "exhausted": true, "seconds": 71.0}
