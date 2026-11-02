@@ -291,7 +291,7 @@ Q2 = sys.modules.get("q2_33") or _load("q2_33", ROOT / "experiments" / "33_role_
 class TestQ2(unittest.TestCase):
     def test_registered(self):
         self.assertEqual((Q2.TEST_FRAC, Q2.INNER_FRAC, Q2.WIN_TOP, Q2.WIN_M1, Q2.LAM_PRIOR, Q2.PAIRS_FREQ), (0.2, 0.1, 0.1, 0.05, 1.0, 2))
-        self.assertEqual(len(Q2.GRID_M2), 6)
+        self.assertEqual((len(Q2.GRID_M2), Q2.GRID_R, Q2.GRID_Q, Q2.LAM_M4), (6, (1e-2, 1.0), (1e-3, 1e-1), 0.1))
         self.assertEqual(Q2.HOLD_NIKKES, ("아르카나 : 포츈 메이트", "스노우 화이트 : 헤비암즈", R.BREAD, "아니스 : 스타"))
 
     def test_dualfp_matches_dualfit(self):
@@ -331,3 +331,25 @@ class TestQ2(unittest.TestCase):
         self.assertEqual(Q2.verdict(base)["line"], 3)
         base["random"]["all"]["M1"] = met(0.52, 6)
         self.assertEqual(Q2.verdict(base)["line"], 4)
+
+
+class TestTeamTerm(unittest.TestCase):
+    def test_team_pair_learned(self):
+        import random
+        import numpy as np
+        rng = random.Random(5)
+        names = [f"n{i}" for i in range(15)]
+        els = list(R.ELEMENTS)
+        adv = {n: "없음" for n in names}
+        recs = []
+        for _ in range(1200):
+            sq = rng.sample(names, 5)
+            f = 1.5 if ("n1" in sq and "n2" in sq) else 1.0          # 둘이 같이 있으면 다섯 명 모두 ×1.5
+            m = [(1 + i % 3) * f * 1e9 for i in range(5)]
+            m = [(1 + int(x[1:]) % 3) * f * 1e9 for x in sq]
+            recs.append({"squad": sq, "element": "전격", "total_damage": sum(m), "members": m})
+        obs = M.observations(recs)
+        mod = M.RoleModel(names, els, adv, M.RoleConfig(k=2, iters=400, team=True, lam_q=1e-3, lam_r=1.0)).fit(obs)
+        q12 = mod.q[mod.ni["n1"], mod.ni["n2"]]
+        self.assertAlmostEqual(float(q12), float(mod.q[mod.ni["n2"], mod.ni["n1"]]), places=9)
+        self.assertGreater(float(q12), 0.2)                          # log 1.5 ≈ 0.41 중 상당 부분을 팀 항이 맡는다

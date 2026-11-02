@@ -46,8 +46,11 @@ TEST_FRAC, INNER_FRAC = 0.20, 0.10
 PAIRS_FIXED = ((R.BREAD, R.TOVE), ("아르카나 : 포츈 메이트", "도로시 : 세렌디피티"))
 PAIRS_FREQ = 2                     # + P 속성별 상위 1% 구성에서 가장 자주 함께 나오는 짝 2개(위 둘 제외)
 HOLD_NIKKES = ("아르카나 : 포츈 메이트", "스노우 화이트 : 헤비암즈", R.BREAD, "아니스 : 스타")
-GRID_M2 = [(k, lu) for k in (4, 8, 16) for lu in (1e-3, 1e-2)]   # (차원, u · v 벌점), lam_r = 0.1
+GRID_M2 = [(k, lu) for k in (4, 8, 16) for lu in (1e-3, 1e-2)]   # (차원, u · v 벌점), lam_r = 0.1, 팀 짝 항 lam_q = 0.01
 GRID_R = (1e-2, 1.0)                # 위 최선에서 lam_r 바꿔 보기
+GRID_Q = (1e-3, 1e-1)               # 그다음 lam_q 바꿔 보기
+# 구현 중 정정(본 실행 전, 2026-11-02 시운전 근거 — README §Q2 정정): M2에 팀 짝 항(team)을 켠다. M4(관찰) = M0 커널 + M2 예측 특징.
+LAM_M4 = 0.1
 GRID_F = (0.1, 1.0, 10.0)           # M1 지문 특징 벌점
 LAM_PRIOR = 1.0                     # M3 끌어당김
 WIN_TOP = 0.10                      # 판단: M2(또는 M3) − M0 상위 10% 안 순위 상관 ≥ +0.10
@@ -239,7 +242,7 @@ def choose_m2(train_p, probe_obs, names, at, log) -> M.RoleConfig:
     inner_tr, inner_te = M.split_random(train_p, INNER_FRAC, INNER_SEED)
     best, best_cfg = None, None
     for k, lu in GRID_M2:
-        cfg = M.RoleConfig(k=k, lam_uv=lu, lam_r=0.1)
+        cfg = M.RoleConfig(k=k, lam_uv=lu, lam_r=0.1, team=True, lam_q=1e-2)
         t0 = time.time()
         mod = fit_m2(inner_tr + probe_obs, names, at, cfg)
         m = per_element(inner_te, mod.predict_total(inner_te))["median"]["rho_top"]
@@ -247,15 +250,36 @@ def choose_m2(train_p, probe_obs, names, at, log) -> M.RoleConfig:
         print(json.dumps(log[-1]), flush=True)
         if best is None or (m is not None and m > best):
             best, best_cfg = m, cfg
-    for lr_ in GRID_R:
-        cfg = M.RoleConfig(k=best_cfg.k, lam_uv=best_cfg.lam_uv, lam_r=lr_)
-        mod = fit_m2(inner_tr + probe_obs, names, at, cfg)
-        m = per_element(inner_te, mod.predict_total(inner_te))["median"]["rho_top"]
-        log.append({"k": cfg.k, "lam_uv": cfg.lam_uv, "lam_r": lr_, "inner_rho_top": m})
-        print(json.dumps(log[-1]), flush=True)
-        if m is not None and m > best:
-            best, best_cfg = m, cfg
+    for key, grid in (("lam_r", GRID_R), ("lam_q", GRID_Q)):
+        base = best_cfg
+        for val in grid:
+            cfg = M.RoleConfig(**{**base.__dict__, key: val})
+            mod = fit_m2(inner_tr + probe_obs, names, at, cfg)
+            m = per_element(inner_te, mod.predict_total(inner_te))["median"]["rho_top"]
+            log.append({"k": cfg.k, "lam_uv": cfg.lam_uv, "lam_r": cfg.lam_r, "lam_q": cfg.lam_q, "inner_rho_top": m})
+            print(json.dumps(log[-1]), flush=True)
+            if m is not None and m > best:
+                best, best_cfg = m, cfg
     return best_cfg
+
+
+def fit_m4(train, names, m2) -> dict[str, Any]:
+    """관찰용 혼합: 속성마다 M0 커널 + M2 총딜 예측(억) 특징 하나(lam_f = LAM_M4)."""
+    out = {}
+    for el in sorted({o.element for o in train}):
+        tr = [o for o in train if o.element == el]
+        out[el] = DualFP(tr, names, (m2.predict_total(tr) / 1e8)[:, None], LAM_M4)
+    return out
+
+
+def predict_m4(models, obs, m2):
+    out = np.zeros(len(obs))
+    for el, mdl in models.items():
+        idx = [i for i, o in enumerate(obs) if o.element == el]
+        if idx:
+            part = [obs[i] for i in idx]
+            out[idx] = mdl.predict(part, (m2.predict_total(part) / 1e8)[:, None])
+    return out
 
 
 def choose_m1(train_p, probe_obs, names, fp, at, log) -> float:
@@ -327,6 +351,7 @@ def main() -> int:
              "M1": predict_m1(fit_m1(train, names, fp, at, lam_f), te_p, fp, at)}
     m2 = fit_m2(train, names, at, cfg)
     preds["M2"] = m2.predict_total(te_p)
+    preds["M4"] = predict_m4(fit_m4(train, names, m2), te_p, m2)
     far = [i for i, s in enumerate(M.max_shared(te_p, train)) if s <= 3]
     res["random"] = {"all": {k: per_element(te_p, v) for k, v in preds.items()},
                      "far": {k: per_element([te_p[i] for i in far], [v[i] for i in far]) for k, v in preds.items()},
@@ -345,7 +370,7 @@ def main() -> int:
             continue
         mdl = fit_m2(tr, names, at, cfg)
         pr = {"M0": predict_m0(fit_m0(tr, names), te), "M1": predict_m1(fit_m1(tr, names, fp, at, lam_f), te, fp, at),
-              "M2": mdl.predict_total(te)}
+              "M2": mdl.predict_total(te), "M4": predict_m4(fit_m4(tr, names, mdl), te, mdl)}
         res["pair"][f"{a} + {b}"] = {"n_test": len(te), **{k: per_element(te, v) for k, v in pr.items()},
                                      "member_ratio_" + a: member_ratio(mdl, te, a), "member_ratio_" + b: member_ratio(mdl, te, b)}
         print(json.dumps({"pair": f"{a} + {b}", "n": len(te)}, ensure_ascii=False), flush=True)
@@ -362,7 +387,7 @@ def main() -> int:
         m3 = M.RoleModel(list(names), list(R.ELEMENTS), {n: R.adv_element(at[n]["code"]) for n in names}, cfg,
                          prior=prior, lam_prior=LAM_PRIOR).fit(tr)
         pr = {"M0": predict_m0(fit_m0(tr, names), te), "M1": predict_m1(fit_m1(tr, names, fp, at, lam_f), te, fp, at),
-              "M2": mdl.predict_total(te), "M3": m3.predict_total(te)}
+              "M2": mdl.predict_total(te), "M3": m3.predict_total(te), "M4": predict_m4(fit_m4(tr, names, mdl), te, mdl)}
         res["nikke"][x] = {"n_keep": len(keep), "n_test": len(te), **{k: per_element(te, v) for k, v in pr.items()},
                            "member_ratio": {"M2": member_ratio(mdl, te, x), "M3": member_ratio(m3, te, x)}}
         print(json.dumps({"nikke": x, "n_keep": len(keep), "n_test": len(te)}, ensure_ascii=False), flush=True)
@@ -397,12 +422,12 @@ def report(res) -> str:
     for p, v in res["pair"].items():
         L += [f"**{p}** — 시험 {v['n_test']}", ""]
         if v["n_test"]:
-            L += ["| 모델 | 순위 상관 | 상위 10% 안 | 상위 10 적중 |", "|---|---:|---:|---:|"] + [_row(k, v[k]) for k in ("M0", "M1", "M2")]
+            L += ["| 모델 | 순위 상관 | 상위 10% 안 | 상위 10 적중 |", "|---|---:|---:|---:|"] + [_row(k, v[k]) for k in ("M0", "M1", "M2", "M4")]
             L += ["", " · ".join(f"{k.replace('member_ratio_', '')} 본인 딜 실제/예측 {_f(vv, 2)}" for k, vv in v.items() if k.startswith("member_ratio_")), ""]
     L += ["## (다) 니케 가리기(신캐 모사 — 넣어 보기만 학습에)", ""]
     for x, v in res["nikke"].items():
         L += [f"**{x}** — 넣어 보기 {v['n_keep']} · 시험 {v['n_test']} · 본인 딜 실제/예측 M2 {_f(v['member_ratio']['M2'], 2)} · M3 {_f(v['member_ratio']['M3'], 2)}", "",
-              "| 모델 | 순위 상관 | 상위 10% 안 | 상위 10 적중 |", "|---|---:|---:|---:|"] + [_row(k, v[k]) for k in ("M0", "M1", "M2", "M3")] + [""]
+              "| 모델 | 순위 상관 | 상위 10% 안 | 상위 10 적중 |", "|---|---:|---:|---:|"] + [_row(k, v[k]) for k in ("M0", "M1", "M2", "M3", "M4")] + [""]
     L += [f"걸린 시간 {res['seconds']}초(시뮬 0)."]
     return "\n".join(L) + "\n"
 

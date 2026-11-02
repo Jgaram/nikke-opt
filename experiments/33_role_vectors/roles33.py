@@ -2,9 +2,10 @@
 
 모델 M2: 니케별 딜의 로그를 예측한다(버프는 곱으로 걸리므로 로그에서 더하기가 된다).
 
-    log d(X | S, e) ≈ a_X + g_e + c_X · adv(X, e) + ⟨u_X, Σ_{Y ∈ S, Y ≠ X} v_Y⟩ + Σ_{Y ∈ S, Y ≠ X} r_XY
+    log d(X | S, e) ≈ a_X + g_e + c_X · adv(X, e) + ⟨u_X, Σ_{Y ∈ S, Y ≠ X} v_Y⟩ + Σ_{Y ∈ S, Y ≠ X} r_XY [+ Σ_{Y < Z ∈ S} q_YZ]
 
-- a_X 기본 딜, g_e 보스 속성 배율, c_X 우코 배율(adv = X 코드가 e에 우코면 1), u_X 받는 쪽 · v_Y 주는 쪽(비대칭), r_XY 관측된 짝 보정.
+- a_X 기본 딜, g_e 보스 속성 배율, c_X 우코 배율(adv = X 코드가 e에 우코면 1), u_X 받는 쪽 · v_Y 주는 쪽(비대칭), r_XY 관측된 짝 보정,
+  q_YZ 팀 짝 항(`team`, 그 짝이 든 스쿼드 다섯 명 모두에 같게 — 버스트 사이클처럼 팀 전체를 움직이는 효과).
 - 총딜 예측 = Σ_X exp(예측). 전체 일괄 Adam(numpy, CPU), 난수 시드 고정.
 """
 
@@ -135,6 +136,8 @@ class RoleConfig:
     lam_uv: float = 1e-2        # u · v 벌점(관측 1개당 평균 손실 기준)
     lam_r: float = 1e-1         # 짝 보정 벌점
     lam_ac: float = 1e-4        # a · c 벌점(약하게)
+    team: bool = False          # 팀 짝 항 q_YZ: 그 짝이 든 스쿼드의 모든 니케 딜을 함께 올리고 내린다(버스트 사이클 등)
+    lam_q: float = 1e-1
     lr: float = 0.03
     iters: int = 800
     seed: int = 20261102
@@ -160,6 +163,7 @@ class RoleModel:
         self.u = 0.01 * rng.standard_normal((n, k))
         self.v = 0.01 * rng.standard_normal((n, k))
         self.r = np.zeros((n, n))
+        self.q = np.zeros((n, n))                                # 팀 짝 항(대칭으로 유지된다)
         self.loss_trace: list[float] = []
 
     # 관측 → 배열
@@ -177,7 +181,12 @@ class RoleModel:
         R = self.r[S[:, :, None], S[:, None, :]]                 # N×5×5, R[n,i,j] = r[X_i, Y_j]
         idx = np.arange(S.shape[1])
         R[:, idx, idx] = 0.0
-        return self.a[S] + self.g[E][:, None] + self.c[S] * ADV + inter + R.sum(2), U, V, VS
+        out = self.a[S] + self.g[E][:, None] + self.c[S] * ADV + inter + R.sum(2)
+        if self.cfg.team:
+            Q = self.q[S[:, :, None], S[:, None, :]]
+            Q[:, idx, idx] = 0.0
+            out = out + (Q.sum((1, 2)) / 2)[:, None]
+        return out, U, V, VS
 
     def fit(self, obs: Sequence[Obs]) -> "RoleModel":
         S, E, ADV, T = self._arrays(obs)
@@ -208,6 +217,8 @@ class RoleModel:
                         if key in p:
                             P[key][i] = p[key]
         params = {"a": self.a, "c": self.c, "g": self.g, "u": self.u, "v": self.v, "r": self.r}
+        if cfg_team := self.cfg.team:
+            params["q"] = self.q
         m = {key: np.zeros_like(v) for key, v in params.items()}
         vv = {key: np.zeros_like(v) for key, v in params.items()}
         b1, b2, cfg = 0.9, 0.999, self.cfg
@@ -236,6 +247,11 @@ class RoleModel:
             w[:, pos, pos] = 0.0
             gr = np.bincount((rows * n + cols).ravel(), weights=w.ravel(), minlength=n * n).reshape(n, n)
             grads["r"] = gr + 2 * cfg.lam_r * self.r / n
+            if cfg_team:
+                wq = np.repeat(np.repeat(e2.sum(1)[:, None, None], S.shape[1], 1), S.shape[1], 2) / 2
+                wq[:, pos, pos] = 0.0
+                gq = np.bincount((rows * n + cols).ravel(), weights=wq.ravel(), minlength=n * n).reshape(n, n)
+                grads["q"] = gq + 2 * cfg.lam_q * self.q / n
             if self.lam_prior and prior_mask.any():
                 for key in ("a", "c", "u", "v"):
                     d = params[key] - P[key]
