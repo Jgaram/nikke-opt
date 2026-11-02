@@ -22,3 +22,5 @@
 {"G3": {"d": 32, "weight_decay": 0.0, "inner_rho_top": 0.8052893161617996, "seconds": 236.2, "epochs": 58}}
 {"G3": {"d": 32, "weight_decay": 1e-05, "inner_rho_top": 0.7932883208745278, "seconds": 272.6, "epochs": 55}}
 exit 137
+--- 재시작(이어 돌기) 11:45
+{"P_obs": 94093, "probe_obs": 27280}
