@@ -1,0 +1,1 @@
+{"id": "r1-03", "arm": "P", "evals": 400, "errors": 0, "best": 5702988922, "base": 5557187601, "best_variants": ["squad:burst_who2:alt=2", "나가:cover_at:fb_end-0.1-rl", "라피 : 레드 후드:cover_at:fb_end-0.1-rl_dry", "아니스 : 스타:cover_at:fb_end-0.1-rl_dry", "크라운:cover_at:fb_end-0.1-rl_dry"], "keys": 23, "options": 68, "exhausted": true, "seconds": 100.0}

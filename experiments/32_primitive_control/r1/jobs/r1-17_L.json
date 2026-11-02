@@ -1,0 +1,1 @@
+{"id": "r1-17", "arm": "L", "evals": 400, "errors": 0, "best": 2946409896, "base": 2860845999, "best_variants": ["squad:tactic:버충=앨리스", "앨리스:burst:wait2", "앨리스:click:tap", "앨리스:reload:C0.1_dry"], "keys": 25, "options": 74, "exhausted": true, "seconds": 74.9}

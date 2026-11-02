@@ -1,0 +1,1 @@
+{"id": "r1-31", "arm": "L", "evals": 400, "errors": 0, "best": 8842459279, "base": 8517375201, "best_variants": ["앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:reload:B0.5", "홍련 : 흑영:reload:B0.5"], "keys": 24, "options": 67, "exhausted": true, "seconds": 96.2}

@@ -1,0 +1,1 @@
+{"id": "r1-21", "arm": "P", "evals": 400, "errors": 0, "best": 923449018, "base": 595512287, "best_variants": ["D : 킬러 와이프:burst_t:delay1", "D : 킬러 와이프:cover_at:next_fb+0.1-rl", "squad:burst_who3:first=2", "노아:click:tap", "노아:cover_at:next_fb+0.5-rl", "드레이크:burst_t:delay1", "드레이크:cover_at:next_fb+0.5-rl"], "keys": 25, "options": 79, "exhausted": true, "seconds": 69.0}

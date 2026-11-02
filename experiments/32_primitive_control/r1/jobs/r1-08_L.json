@@ -1,0 +1,1 @@
+{"id": "r1-08", "arm": "L", "evals": 400, "errors": 0, "best": 4110379863, "base": 3973848483, "best_variants": ["D : 킬러 와이프:click:hold_own_fb", "D : 킬러 와이프:reload:C0.1_dry", "미란다:reload:C0.1_dry", "앨리스:reload:C0.1_dry", "프리바티:reload:A0.3"], "keys": 24, "options": 68, "exhausted": true, "seconds": 92.3}

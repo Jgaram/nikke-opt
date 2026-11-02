@@ -1,0 +1,1 @@
+{"id": "r1-18", "arm": "L", "evals": 400, "errors": 0, "best": 6291806594, "base": 6202480705, "best_variants": ["squad:tactic:버충=프리카", "민트:reload:A0.3"], "keys": 25, "options": 70, "exhausted": true, "seconds": 68.6}

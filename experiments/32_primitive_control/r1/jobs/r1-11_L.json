@@ -1,0 +1,1 @@
+{"id": "r1-11", "arm": "L", "evals": 400, "errors": 0, "best": 4648625654, "base": 4441458633, "best_variants": ["squad:tactic:버충=신 : 스위프트 바니", "길티 : 마이티 바니:burst:wait2", "목단:cancel:on", "신 : 스위프트 바니:reload:C0.1_dry", "타키나:click:tap", "타키나:reload:C0.1_dry"], "keys": 25, "options": 74, "exhausted": true, "seconds": 77.1}

@@ -1,0 +1,1 @@
+{"id": "r1-28", "arm": "P", "evals": 400, "errors": 5, "best": 1036244436, "base": 797403505, "best_variants": ["squad:burst_who3:first=2", "리버렐리오:burst_t:delay1", "민트:click:tap@charge", "민트:cover_at:fb_end-0.1-rl", "소라:click:tap", "홍련 : 흑영:cover_at:fb_end-0.3"], "keys": 26, "options": 83, "exhausted": true, "seconds": 67.1}

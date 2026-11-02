@@ -1,0 +1,1 @@
+{"id": "r1-34", "arm": "L", "evals": 400, "errors": 0, "best": 5330250607, "base": 5256319257, "best_variants": ["리틀 머메이드:cancel:on", "리틀 머메이드:reload:B0.5", "마스트 : 로망틱 메이드:reload:C0.1", "앵커 : 이노센트 메이드:click:tap"], "keys": 23, "options": 65, "exhausted": true, "seconds": 90.9}

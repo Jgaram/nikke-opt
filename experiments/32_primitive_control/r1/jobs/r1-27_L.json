@@ -1,0 +1,1 @@
+{"id": "r1-27", "arm": "L", "evals": 400, "errors": 0, "best": 1447984324, "base": 1207996143, "best_variants": ["squad:tactic:버충=디젤 : 윈터 스위츠", "디젤 : 윈터 스위츠:reload:A0.3", "목단:burst:delay1", "목단:reload:B0.5", "팬텀:burst:delay1", "폴리:reload:B0.5"], "keys": 23, "options": 61, "exhausted": true, "seconds": 62.9}

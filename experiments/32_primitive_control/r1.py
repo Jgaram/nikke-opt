@@ -184,6 +184,8 @@ TAP_CHARGE = {"window": "burst_charge", "mode": "tap", "rate": 3.6, "release": 0
 HOLD_FB = {"window": "own_full_burst", "mode": "hold", "lead": 0.5}
 HOLD_CHAIN = {"window": "burst_chain", "mode": "hold_until_close"}
 HOLD_JUDGE = {"window": "after_own_fb", "mode": "hold_judge", "lead": 0.1}
+FCI = (2.5, 5.5)                 # v2: 톡톡이 중 풀차지 간격(초) 격자 — 5.5는 레이어(밀크) 값과 같다
+START_LEN = (2.2,)               # v2: 전투 시작 홀드 길이 — 레이어(길티 · 라푼젤 · 신) 값과 같다
 # 엄폐 진입 = 앵커 + offset(− reload_total). 정책 이름(A · B · C)은 쓰지 않는다 — 같은 시각을 앵커로 적는다
 COVER_AT = (
     ("fb_end-0.3", {"anchor": "fb_end", "offset": -0.3}),
@@ -195,7 +197,7 @@ COVER_AT = (
 )
 
 
-def prim_variants(squad: Sequence[str]) -> dict:
+def prim_variants(squad: Sequence[str], v: int = 2) -> dict:
     """원시 입력 메뉴. 니케 속성(무기 차지 · 입력 방식 · 버스트 단계 · charge_hold 유무)만 보고 이름 · 카탈로그 · 레이어는 보지 않는다.
 
     키: 니케마다 click · cover_at(장전 엄폐 진입 앵커) · cover_fb(본인 풀버스트 엄폐) · cancel(탄충 취소) · burst_t(딜레이 · 쿨 대기),
@@ -216,6 +218,18 @@ def prim_variants(squad: Sequence[str]) -> dict:
             vs.append(_v(who, "click", "hold@chain", _c(who, {"click": [dict(HOLD_CHAIN)]})))
             if n["charge_hold"]:
                 vs.append(_v(who, "click", "judge@ownfb", _c(who, {"click": [dict(HOLD_JUDGE)]})))
+            if v >= 2:   # v2: 풀차지 섞기 · 판정 + 톡톡이 조합, 전투 시작 홀드(별도 키)
+                if not n["full_charge_only"]:
+                    for fci in FCI:
+                        vs.append(_v(who, "click", f"tap+fc{fci:g}", _c(who, {"click": [dict(TAP, full_charge_interval=fci)]})))
+                    if n["charge_hold"]:
+                        vs.append(_v(who, "click", "judge+tap", _c(who, {"click": [dict(HOLD_JUDGE), dict(TAP)]})))
+                        for fci in FCI:
+                            vs.append(_v(who, "click", f"judge+tap+fc{fci:g}",
+                                         _c(who, {"click": [dict(HOLD_JUDGE), dict(TAP, full_charge_interval=fci)]})))
+                # 전투 시작 홀드: 클릭 앵커(combat_start + len)로는 값이 바뀌지 않아(검사) 시각 시퀀스로 적는다
+                out[(who, "start_hold")] = [_v(who, "start_hold", f"hold0-{x:g}",
+                                               _c(who, {"sequence": [{"t": 0.0, "action": "hold", "until": x}]})) for x in START_LEN]
             out[(who, "click")] = vs
         out[(who, "cover_at")] = [_v(who, "cover_at", nm, _c(who, {"reload": dict(r)})) for nm, r in COVER_AT]
         out[(who, "cover_fb")] = [_v(who, "cover_fb", "on", _c(who, {"cover": {"policy": "own_full_burst"}}))]
@@ -237,6 +251,18 @@ def prim_variants(squad: Sequence[str]) -> dict:
                 a, b = cand[i], cand[1 - i]
                 vs.append(_v(None, f"burst_who{s}", f"alt={i + 1}",
                              {"chars": {a: {"control": {"burst": {"pattern": odd}}}, b: {"control": {"burst": {"pattern": even}}}}}))
+        if v >= 2:
+            for i, w in enumerate(cand):                # v2: i번째 후보는 첫 사이클만 우선
+                vs.append(_v(None, f"burst_who{s}", f"only1={i + 1}", {"chars": {w: {"control": {"burst": {"pattern": [1]}}}}}))
+            for i, w in enumerate(cand):                # v2: i번째 후보는 3사이클마다(위상 j) 우선, 나머지는 다른 후보 우선
+                for j in range(3):
+                    mine = [c for c in allc if c % 3 == j]
+                    rest = [c for c in allc if c % 3 != j]
+                    patch = {"chars": {w: {"control": {"burst": {"pattern": mine}}}}}
+                    for o in cand:
+                        if o != w:
+                            patch["chars"][o] = {"control": {"burst": {"pattern": rest}}}
+                    vs.append(_v(None, f"burst_who{s}", f"per3={i + 1}@{j}", patch))
         for i, w in enumerate(cand):                    # i번째 후보는 쓰지 않음
             vs.append(_v(None, f"burst_who{s}", f"none={i + 1}", {"operation": {"no_burst": w}}))
         out[(None, f"burst_who{s}")] = vs
@@ -251,6 +277,10 @@ def prim_apply(options: Mapping[str, Any], chosen: Sequence[Mapping[str, Any]]) 
     nb = [v for v in chosen if "no_burst" in v["patch"].get("operation", {})]
     if len(nb) > 1:
         raise MenuConflict("no_burst는 한 명만")
+    bc = [v for v in chosen if v["axis"] == "click" and any(e.get("window") == "burst_charge"
+                                                             for e in v["patch"]["chars"][v["nikke"]]["control"]["click"])]
+    if len(bc) > 1:
+        raise MenuConflict("버스트 충전 창 톡톡이는 한 명만(평가기: 버충 컨트롤은 카메라를 나눠 가질 수 없다)")
     by: dict[str, dict[str, Any]] = {}
     for v in chosen:
         if v["nikke"]:
@@ -271,10 +301,25 @@ def prim_apply(options: Mapping[str, Any], chosen: Sequence[Mapping[str, Any]]) 
     return out
 
 
+CONTROL_OFF = {"click": False, "reload": False, "cover": False, "hold": False, "tap_fire": False, "burst": False, "sequence": False}
+
+
+def p_base(season: int, squad: Sequence[str]) -> dict[str, Any]:
+    """P 바탕(v2): 레이어를 켜 둔 채 니케마다 컨트롤 축을 모두 끈다(`false` = 레이어 값까지 끄기).
+    `operation.auto`(v1 바탕)는 char_defaults를 통째로 건너뛰어 장비 옵션(`equip_skills` — 육성)까지 빠졌다."""
+    o = r0.opts(season, True)
+    for n in squad:
+        o.setdefault("chars", {}).setdefault(n, {})["control"] = dict(CONTROL_OFF)
+    return o
+
+
 def space(deck: Mapping[str, Any], arm: str) -> Any:
     if arm == "L":
         return M.Space(deck["squad"], variants_fn=l_variants, base=r0.opts(deck["season"], True))
-    return M.Space(deck["squad"], variants_fn=prim_variants, apply_fn=prim_apply, base=r0.opts(deck["season"], False))
+    if arm == "P1":   # v1(실행 기록 r1/v1/): 바탕 = operation.auto, 메뉴 v1
+        return M.Space(deck["squad"], variants_fn=lambda q: prim_variants(q, v=1), apply_fn=prim_apply,
+                       base=r0.opts(deck["season"], False))
+    return M.Space(deck["squad"], variants_fn=prim_variants, apply_fn=prim_apply, base=p_base(deck["season"], deck["squad"]))
 
 
 def cmd_menu(i: int) -> int:
@@ -317,7 +362,7 @@ def run_one(d: Mapping[str, Any], arm: str, ev: Any) -> dict[str, Any]:
     return out
 
 
-def cmd_run(workers: int = 4) -> int:
+def cmd_run(arms: Sequence[str] = ("L", "P"), workers: int = 4) -> int:
     from nikke_opt.evaluator import make_evaluator
     decks = json.loads((OUT / "decks.json").read_text(encoding="utf-8"))
     lock = threading.Lock()
@@ -332,14 +377,25 @@ def cmd_run(workers: int = 4) -> int:
                                   "sims": ev.sim_count, "t": round(time.time() - t0)}, ensure_ascii=False), flush=True)
             return r
         with ThreadPoolExecutor(workers) as pool:
-            list(pool.map(job, [(d, a) for d in decks for a in ("L", "P")]))
-        (OUT / "run_meta.json").write_text(json.dumps({"sims": ev.sim_count, "seconds": round(time.time() - t0, 1),
+            list(pool.map(job, [(d, a) for d in decks for a in arms]))
+        (OUT / f"run_meta_{'_'.join(arms)}.json").write_text(json.dumps({"sims": ev.sim_count, "seconds": round(time.time() - t0, 1),
                                                        "evaluator": f"{ev.version.get('repo')} {str(ev.version.get('commit'))[:7]}"},
                                                       ensure_ascii=False) + "\n", encoding="utf-8")
     return 0
 
 
 # ---------------------------------------------------------------- 분석
+
+AXIS_NAMES = ("click", "reload", "cover", "cancel", "burst", "camera", "tactic", "cover_at", "cover_fb", "burst_t", "start_hold",
+              "burst_who1", "burst_who2", "burst_who3")
+
+
+def label_axis(lb: str) -> str:
+    """label `<니케>:<축>:<이름>` — 니케 · 이름에 ':'가 들 수 있어 아는 축 이름으로 찾는다."""
+    for ax in sorted(AXIS_NAMES, key=len, reverse=True):
+        if f":{ax}:" in lb:
+            return ax
+    return lb
 
 def best_at(rows, budget):
     b = None
@@ -355,14 +411,16 @@ def cmd_analyze() -> int:
     decks = json.loads((OUT / "decks.json").read_text(encoding="utf-8"))
     rows = []
     for d in decks:
-        J = {a: json.loads((OUT / "jobs" / f"{d['id']}_{a}.json").read_text(encoding="utf-8")) for a in ("L", "P")}
+        J = {a: json.loads((OUT / "jobs" / f"{d['id']}_{a}.json").read_text(encoding="utf-8")) for a in ("L", "P", "P1")}
         logs = {a: [json.loads(x) for x in gzip.open(OUT / "logs" / f"{d['id']}_{a}.jsonl.gz", "rt", encoding="utf-8") if x.strip()]
-                for a in ("L", "P")}
+                for a in ("L", "P", "P1")}
         r = {"id": d["id"], "group": d["group"], "season": d["season"], "squad": d["squad"], "judged": d["judged"],
-             "L_base": J["L"]["base"] / 1e8, "A_base": J["P"]["base"] / 1e8, "L": J["L"]["best"] / 1e8, "P": J["P"]["best"] / 1e8,
-             "P_over_L": J["P"]["best"] / J["L"]["best"],
+             "L_base": J["L"]["base"] / 1e8, "A_base": J["P1"]["base"] / 1e8, "L": J["L"]["best"] / 1e8, "P": J["P"]["best"] / 1e8,
+             "P_over_L": J["P"]["best"] / J["L"]["best"], "P1_over_L": J["P1"]["best"] / J["L"]["best"],
+             "P0_base": J["P"]["base"] / 1e8, "P1": J["P1"]["best"] / 1e8, "P1_base": J["P1"]["base"] / 1e8,
              "P200_over_L200": best_at(logs["P"], 200) / best_at(logs["L"], 200),
              "L_evals": J["L"]["evals"], "P_evals": J["P"]["evals"], "errors": J["L"]["errors"] + J["P"]["errors"],
+             "P1_errors": J["P1"]["errors"],
              "L_vars": J["L"]["best_variants"], "P_vars": J["P"]["best_variants"],
              "keys": {"L": J["L"]["keys"], "P": J["P"]["keys"]}, "opts": {"L": J["L"]["options"], "P": J["P"]["options"]}}
         rows.append(r)
@@ -375,7 +433,7 @@ def cmd_analyze() -> int:
     for r in rows:
         for a in ("L", "P"):
             for lb in r[f"{a}_vars"]:
-                ax = lb.split(":")[1] if lb.count(":") >= 2 else lb
+                ax = label_axis(lb)
                 axes[a][ax] = axes[a].get(ax, 0) + 1
     summ = {"decks": len(rows), "judged": len(judged), "pass": ok, "share": share,
             "verdict": "원시 표현으로 충분" if share >= PASS_SHARE else "빠진 표현 찾기",
@@ -383,16 +441,18 @@ def cmd_analyze() -> int:
             "P_over_L": {"median": st.median(r["P_over_L"] for r in judged), "min": min(r["P_over_L"] for r in judged),
                          "max": max(r["P_over_L"] for r in judged)},
             "P200_over_L200_median": st.median(r["P200_over_L200"] for r in judged),
-            "gain_L_median": st.median(r["L"] / r["L_base"] for r in rows), "gain_P_over_A_median": st.median(r["P"] / r["A_base"] for r in rows),
+            "v1_pass": sum(r["P1_over_L"] >= PASS_RATIO for r in judged), "v1_P1_over_L_median": st.median(r["P1_over_L"] for r in judged),
+            "gain_L_median": st.median(r["L"] / r["L_base"] for r in rows), "gain_P_over_P0_median": st.median(r["P"] / r["P0_base"] for r in rows),
+            "P0_over_A_median": st.median(r["P0_base"] / r["A_base"] for r in rows),
             "evals": sum(r["L_evals"] + r["P_evals"] for r in rows), "errors": sum(r["errors"] for r in rows), "axes": axes}
     meta = OUT / "run_meta.json"
     if meta.exists():
         summ["run"] = json.loads(meta.read_text(encoding="utf-8"))
     (HERE / "r1.json").write_text(json.dumps({"summary": summ, "rows": rows}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    md = ["| 덱 | 묶음 | 시즌 | 판단 | L 출발 → L | A 출발 → P | P/L | P/L(200) | 덱 |", "|---|---|---|---|---|---|---|---|---|"]
+    md = ["| 덱 | 묶음 | 시즌 | L 출발 → L | P0 출발 → P(v2) | P/L | P/L(200) | v1 P1/L | 덱 |", "|---|---|---|---|---|---|---|---|---|"]
     for r in sorted(rows, key=lambda r: r["P_over_L"]):
-        md.append(f"| {r['id']} | {r['group']} | S{r['season']} | {'○' if r['judged'] else '참고'} | {r['L_base']:.1f} → {r['L']:.1f} | "
-                  f"{r['A_base']:.1f} → {r['P']:.1f} | {r['P_over_L']:.3f} | {r['P200_over_L200']:.3f} | {' · '.join(r['squad'])} |")
+        md.append(f"| {r['id']} | {r['group']} | S{r['season']} | {r['L_base']:.1f} → {r['L']:.1f} | "
+                  f"{r['P0_base']:.1f} → {r['P']:.1f} | {r['P_over_L']:.3f} | {r['P200_over_L200']:.3f} | {r['P1_over_L']:.3f} | {' · '.join(r['squad'])} |")
     (HERE / "r1.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(json.dumps(summ, ensure_ascii=False, indent=1))
     print("\n".join(md))
@@ -406,7 +466,7 @@ if __name__ == "__main__":
     if cmd == "menu":
         sys.exit(cmd_menu(int(sys.argv[2]) if len(sys.argv) > 2 else 0))
     if cmd == "run":
-        sys.exit(cmd_run())
+        sys.exit(cmd_run(tuple(sys.argv[2].split(",")) if len(sys.argv) > 2 else ("L", "P")))
     if cmd == "analyze":
         sys.exit(cmd_analyze())
     print(__doc__)

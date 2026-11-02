@@ -1,0 +1,8 @@
+{
+ "sims": 3886,
+ "requests": 3964,
+ "assembly_rejects": 0,
+ "errors": [],
+ "start_hold_recheck_sims": 78,
+ "note": "click_start(클릭 앵커 combat_start)는 값이 바뀌지 않아 sequence(start_hold)로 바꾼 뒤 그 선택지만 다시 검사"
+}

@@ -1,0 +1,1 @@
+{"id": "r1-05", "arm": "P", "evals": 400, "errors": 2, "best": 4638979836, "base": 2840873475, "best_variants": ["길티 : 마이티 바니:click:hold@chain", "길티 : 마이티 바니:cover_at:fb_end-0.1-rl_dry", "타키나:click:hold@ownfb+tap", "타키나:cover_at:fb_end-0.1-rl_dry"], "keys": 26, "options": 87, "exhausted": true, "seconds": 101.2}

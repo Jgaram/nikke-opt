@@ -1,0 +1,1 @@
+{"id": "r1-35", "arm": "L", "evals": 400, "errors": 0, "best": 9385655443, "base": 8532637346, "best_variants": ["아니스 : 스타:reload:C0.5", "아르카나:click:hold_own_fb+tap", "아르카나:reload:C0.1", "이사벨:reload:C0.5"], "keys": 23, "options": 62, "exhausted": true, "seconds": 95.1}

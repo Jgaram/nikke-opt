@@ -1,0 +1,1 @@
+{"id": "r1-29", "arm": "L", "evals": 400, "errors": 0, "best": 5125626946, "base": 5011823477, "best_variants": ["마스트 : 로망틱 메이드:reload:C0.1_dry", "앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:reload:C0.5"], "keys": 25, "options": 72, "exhausted": true, "seconds": 86.4}

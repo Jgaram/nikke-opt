@@ -1,0 +1,1 @@
+{"id": "r1-09", "arm": "L", "evals": 400, "errors": 0, "best": 5137325726, "base": 4981032398, "best_variants": ["도라:click:tap", "도라:reload:C0.1", "미란다:reload:C0.5", "미하라 : 본딩 체인:reload:C0.1_dry", "프리바티:reload:B0.1"], "keys": 23, "options": 63, "exhausted": true, "seconds": 85.5}

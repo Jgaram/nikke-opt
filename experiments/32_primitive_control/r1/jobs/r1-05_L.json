@@ -1,0 +1,1 @@
+{"id": "r1-05", "arm": "L", "evals": 400, "errors": 0, "best": 4647033084, "base": 4423491486, "best_variants": ["리타:reload:C0.1_dry", "타키나:click:tap", "타키나:cover:on", "타키나:reload:A0.3", "플로라:reload:C0.1_dry"], "keys": 25, "options": 74, "exhausted": true, "seconds": 111.9}

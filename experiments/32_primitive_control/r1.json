@@ -1,0 +1,1842 @@
+{
+ "summary": {
+  "decks": 39,
+  "judged": 39,
+  "pass": 20,
+  "share": 0.5128205128205128,
+  "verdict": "빠진 표현 찾기",
+  "share_without_miranda": 0.5454545454545454,
+  "judged_without_miranda": 33,
+  "P_over_L": {
+   "median": 0.9900366264912434,
+   "min": 0.7928877648065086,
+   "max": 1.2084333700570897
+  },
+  "P200_over_L200_median": 0.9900366264912434,
+  "gain_L_median": 1.0800024461959425,
+  "gain_P_over_A_median": 1.1879584274677408,
+  "evals": 31200,
+  "errors": 98,
+  "axes": {
+   "L": {
+    " 에이전트 바니": 1,
+    " 아쿠아마린": 3,
+    "tactic": 13,
+    "reload": 77,
+    "burst": 19,
+    "cover": 5,
+    " 윈터 스위츠": 6,
+    "click": 17,
+    " 레드 후드": 1,
+    " 스타": 5,
+    " 본딩 체인": 3,
+    " 비전 아이": 1,
+    " 사일런트 트랙": 3,
+    " 헤비암즈": 1,
+    "camera": 2,
+    " 로망틱 메이드": 11,
+    " 킬러 와이프": 4,
+    " 블루밍 바니": 1,
+    " 마이티 바니": 1,
+    "cancel": 3,
+    " 스위프트 바니": 1,
+    " 트윙클링 바니": 1,
+    " 프로스트 티켓": 3,
+    " 미라클 페어리": 2,
+    " WILLE": 1,
+    " 세렌디피티": 1,
+    " 그레이트 빌런": 1,
+    " 오디너리 미케닉": 2,
+    " 흑영": 2,
+    " 이노센트 메이드": 11
+   },
+   "P": {
+    "click": 35,
+    "burst_t": 19,
+    " 에이전트 바니": 1,
+    "burst_who2": 9,
+    "cover_at": 63,
+    " 윈터 스위츠": 9,
+    " 레드 후드": 1,
+    " 스타": 4,
+    "burst_who1": 5,
+    " 본딩 체인": 2,
+    " 마이티 바니": 4,
+    "camera": 3,
+    " 비전 아이": 3,
+    " 퓨어 그레이스": 2,
+    " 사일런트 트랙": 3,
+    " 헤비암즈": 2,
+    " 로망틱 메이드": 7,
+    " 킬러 와이프": 6,
+    "cover_fb": 3,
+    " 블루밍 바니": 2,
+    " 스위프트 바니": 3,
+    "burst_who3": 9,
+    " 크리스탈 웨이브": 1,
+    "cancel": 1,
+    " 아쿠아마린": 1,
+    " 트윙클링 바니": 1,
+    " 프로스트 티켓": 2,
+    " 흑영": 3,
+    " 미라클 페어리": 2,
+    " WILLE": 1,
+    " 오디너리 미케닉": 1,
+    " 이노센트 메이드": 10
+   }
+  },
+  "run": {
+   "sims": 31200,
+   "seconds": 1552.3,
+   "evaluator": "nikke-calc-rs 8bc51a2"
+  }
+ },
+ "rows": [
+  {
+   "id": "r1-00",
+   "group": "R",
+   "season": 34,
+   "squad": [
+    "미란다",
+    "에이드 : 에이전트 바니",
+    "스노우 화이트",
+    "맥스웰",
+    "헬름 : 아쿠아마린"
+   ],
+   "judged": true,
+   "L_base": 25.64975665,
+   "A_base": 25.64975665,
+   "L": 27.98422903,
+   "P": 28.18627747,
+   "P_over_L": 1.0072200824179718,
+   "P200_over_L200": 1.0001865611517975,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 5,
+   "L_vars": [
+    "에이드 : 에이전트 바니:click:tap",
+    "헬름 : 아쿠아마린:reload:C0.1"
+   ],
+   "P_vars": [
+    "맥스웰:click:tap@charge",
+    "미란다:burst_t:wait2",
+    "에이드 : 에이전트 바니:click:tap"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 67,
+    "P": 79
+   }
+  },
+  {
+   "id": "r1-01",
+   "group": "R",
+   "season": 37,
+   "squad": [
+    "라피 : 레드 후드",
+    "민트",
+    "앨리스",
+    "레드 후드",
+    "프리카"
+   ],
+   "judged": true,
+   "L_base": 20.08267159,
+   "A_base": 12.55804721,
+   "L": 20.80632088,
+   "P": 18.60945931,
+   "P_over_L": 0.8944137417340455,
+   "P200_over_L200": 0.8935778274895085,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 12,
+   "L_vars": [
+    "squad:tactic:버충=레드 후드",
+    "민트:reload:A0.3",
+    "앨리스:reload:C0.1_dry",
+    "프리카:burst:delay1"
+   ],
+   "P_vars": [
+    "squad:burst_who2:first=2",
+    "레드 후드:click:tap",
+    "민트:cover_at:fb_end-0.1-rl_dry",
+    "앨리스:click:tap@charge",
+    "앨리스:cover_at:fb_end-0.3"
+   ],
+   "keys": {
+    "L": 26,
+    "P": 27
+   },
+   "opts": {
+    "L": 78,
+    "P": 91
+   }
+  },
+  {
+   "id": "r1-02",
+   "group": "R",
+   "season": 38,
+   "squad": [
+    "미란다",
+    "맥스웰",
+    "나유타",
+    "루주",
+    "디젤 : 윈터 스위츠"
+   ],
+   "judged": true,
+   "L_base": 23.11039963,
+   "A_base": 23.11039963,
+   "L": 26.05265658,
+   "P": 26.7882368,
+   "P_over_L": 1.0282343651881047,
+   "P200_over_L200": 1.0272479916902202,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 2,
+   "L_vars": [
+    "나유타:cover:on",
+    "나유타:reload:A0.3",
+    "디젤 : 윈터 스위츠:reload:C0.1",
+    "루주:reload:B0.5",
+    "맥스웰:click:tap",
+    "맥스웰:reload:C0.5"
+   ],
+   "P_vars": [
+    "디젤 : 윈터 스위츠:click:hold@chain",
+    "루주:click:hold@ownfb",
+    "루주:cover_at:fb_end-0.5-rl",
+    "맥스웰:click:tap",
+    "맥스웰:cover_at:fb_end-0.1-rl_dry",
+    "미란다:cover_at:next_fb+0.1-rl"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 72,
+    "P": 85
+   }
+  },
+  {
+   "id": "r1-03",
+   "group": "R",
+   "season": 39,
+   "squad": [
+    "크라운",
+    "라피 : 레드 후드",
+    "아니스 : 스타",
+    "프리바티",
+    "나가"
+   ],
+   "judged": true,
+   "L_base": 58.64392789,
+   "A_base": 55.57187601,
+   "L": 59.12917504,
+   "P": 57.02988922,
+   "P_over_L": 0.9644966157809598,
+   "P200_over_L200": 0.9661128267961101,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "나가:reload:C0.5",
+    "라피 : 레드 후드:reload:C0.1_dry",
+    "아니스 : 스타:reload:B0.5",
+    "크라운:burst:delay1",
+    "크라운:reload:C0.1_dry",
+    "프리바티:reload:C0.1"
+   ],
+   "P_vars": [
+    "squad:burst_who2:alt=2",
+    "나가:cover_at:fb_end-0.1-rl",
+    "라피 : 레드 후드:cover_at:fb_end-0.1-rl_dry",
+    "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+    "크라운:cover_at:fb_end-0.1-rl_dry"
+   ],
+   "keys": {
+    "L": 21,
+    "P": 23
+   },
+   "opts": {
+    "L": 56,
+    "P": 68
+   }
+  },
+  {
+   "id": "r1-04",
+   "group": "R",
+   "season": 40,
+   "squad": [
+    "미란다",
+    "크라운",
+    "미하라 : 본딩 체인",
+    "프리바티",
+    "리틀 머메이드"
+   ],
+   "judged": true,
+   "L_base": 44.30214862,
+   "A_base": 45.80833548,
+   "L": 48.83720947,
+   "P": 47.02642637,
+   "P_over_L": 0.9629220604606342,
+   "P200_over_L200": 0.9633623688128415,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "리틀 머메이드:cover:on",
+    "리틀 머메이드:reload:C0.5",
+    "미란다:reload:C0.5",
+    "미하라 : 본딩 체인:cover:off",
+    "미하라 : 본딩 체인:reload:C0.5",
+    "크라운:burst:wait2",
+    "크라운:reload:C0.1_dry",
+    "프리바티:reload:B0.5"
+   ],
+   "P_vars": [
+    "squad:burst_who1:alt=2",
+    "리틀 머메이드:cover_at:fb_end-0.3",
+    "미란다:cover_at:next_fb+0.5-rl",
+    "미하라 : 본딩 체인:cover_at:fb_end-0.1-rl",
+    "크라운:burst_t:wait2"
+   ],
+   "keys": {
+    "L": 20,
+    "P": 22
+   },
+   "opts": {
+    "L": 58,
+    "P": 67
+   }
+  },
+  {
+   "id": "r1-05",
+   "group": "T",
+   "season": 41,
+   "squad": [
+    "길티 : 마이티 바니",
+    "플로라",
+    "신 : 스위프트 바니",
+    "타키나",
+    "리타"
+   ],
+   "judged": true,
+   "L_base": 44.23491486,
+   "A_base": 28.40873475,
+   "L": 46.47033084,
+   "P": 46.38979836,
+   "P_over_L": 0.9982670129834609,
+   "P200_over_L200": 0.9999466919828834,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 2,
+   "L_vars": [
+    "리타:reload:C0.1_dry",
+    "타키나:click:tap",
+    "타키나:cover:on",
+    "타키나:reload:A0.3",
+    "플로라:reload:C0.1_dry"
+   ],
+   "P_vars": [
+    "길티 : 마이티 바니:click:hold@chain",
+    "길티 : 마이티 바니:cover_at:fb_end-0.1-rl_dry",
+    "타키나:click:hold@ownfb+tap",
+    "타키나:cover_at:fb_end-0.1-rl_dry"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 74,
+    "P": 87
+   }
+  },
+  {
+   "id": "r1-06",
+   "group": "T",
+   "season": 42,
+   "squad": [
+    "라푼젤 : 퓨어 그레이스",
+    "브리드 : 사일런트 트랙",
+    "헬름 : 아쿠아마린",
+    "네온 : 비전 아이",
+    "스노우 화이트 : 헤비암즈"
+   ],
+   "judged": true,
+   "L_base": 31.71398564,
+   "A_base": 28.33551325,
+   "L": 33.52319251,
+   "P": 31.95043427,
+   "P_over_L": 0.9530844730993074,
+   "P200_over_L200": 0.9491781652510637,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "네온 : 비전 아이:reload:A0.3",
+    "브리드 : 사일런트 트랙:reload:B0.5",
+    "스노우 화이트 : 헤비암즈:reload:C0.5"
+   ],
+   "P_vars": [
+    "squad:camera:slot1",
+    "네온 : 비전 아이:cover_at:fb_end-0.3",
+    "라푼젤 : 퓨어 그레이스:click:hold@chain",
+    "라푼젤 : 퓨어 그레이스:cover_at:fb_end-0.1-rl_dry",
+    "브리드 : 사일런트 트랙:cover_at:fb_end-0.1-rl_dry",
+    "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.3"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 67,
+    "P": 81
+   }
+  },
+  {
+   "id": "r1-07",
+   "group": "T",
+   "season": 37,
+   "squad": [
+    "목단",
+    "크라운",
+    "마스트 : 로망틱 메이드",
+    "헬름",
+    "프리바티"
+   ],
+   "judged": true,
+   "L_base": 67.21840211,
+   "A_base": 49.53776522,
+   "L": 71.7514039,
+   "P": 56.89081026,
+   "P_over_L": 0.7928877648065086,
+   "P200_over_L200": 0.7928877648065086,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "squad:camera:헬름",
+    "마스트 : 로망틱 메이드:burst:wait2",
+    "마스트 : 로망틱 메이드:reload:C0.1_dry",
+    "목단:reload:A0.3",
+    "크라운:reload:B0.5",
+    "프리바티:reload:C0.1"
+   ],
+   "P_vars": [
+    "squad:burst_who2:alt=2",
+    "squad:camera:slot4",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+    "목단:cover_at:next_fb+0.1-rl",
+    "크라운:cover_at:fb_end-0.1-rl_dry",
+    "헬름:click:hold@chain",
+    "헬름:cover_at:fb_end-0.5-rl"
+   ],
+   "keys": {
+    "L": 22,
+    "P": 24
+   },
+   "opts": {
+    "L": 62,
+    "P": 73
+   }
+  },
+  {
+   "id": "r1-08",
+   "group": "T",
+   "season": 35,
+   "squad": [
+    "D : 킬러 와이프",
+    "미란다",
+    "그레이브",
+    "앨리스",
+    "프리바티"
+   ],
+   "judged": true,
+   "L_base": 39.73848483,
+   "A_base": 26.55867028,
+   "L": 41.10379863,
+   "P": 32.67574326,
+   "P_over_L": 0.7949567764802958,
+   "P200_over_L200": 0.7949567764802958,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 6,
+   "L_vars": [
+    "D : 킬러 와이프:click:hold_own_fb",
+    "D : 킬러 와이프:reload:C0.1_dry",
+    "미란다:reload:C0.1_dry",
+    "앨리스:reload:C0.1_dry",
+    "프리바티:reload:A0.3"
+   ],
+   "P_vars": [
+    "D : 킬러 와이프:click:tap@charge",
+    "D : 킬러 와이프:cover_at:fb_end-0.1-rl",
+    "squad:burst_who1:none=1",
+    "그레이브:cover_at:fb_end-0.1-rl",
+    "미란다:cover_at:fb_end-0.1-rl_dry",
+    "앨리스:click:hold@chain",
+    "앨리스:cover_at:fb_end-0.1-rl"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 68,
+    "P": 79
+   }
+  },
+  {
+   "id": "r1-09",
+   "group": "T",
+   "season": 35,
+   "squad": [
+    "미란다",
+    "나유타",
+    "도라",
+    "프리바티",
+    "미하라 : 본딩 체인"
+   ],
+   "judged": true,
+   "L_base": 49.81032398,
+   "A_base": 40.3784559,
+   "L": 51.37325726,
+   "P": 43.617084,
+   "P_over_L": 0.8490231362838059,
+   "P200_over_L200": 0.8490231362838059,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "도라:click:tap",
+    "도라:reload:C0.1",
+    "미란다:reload:C0.5",
+    "미하라 : 본딩 체인:reload:C0.1_dry",
+    "프리바티:reload:B0.1"
+   ],
+   "P_vars": [
+    "도라:click:tap",
+    "도라:cover_at:fb_end-0.3",
+    "미란다:cover_at:fb_end-0.1-rl_dry",
+    "미하라 : 본딩 체인:cover_at:fb_end-0.1-rl_dry"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 63,
+    "P": 73
+   }
+  },
+  {
+   "id": "r1-10",
+   "group": "T",
+   "season": 34,
+   "squad": [
+    "목단",
+    "그레이브",
+    "밀크 : 블루밍 바니",
+    "레드 후드",
+    "프리바티"
+   ],
+   "judged": true,
+   "L_base": 33.91375223,
+   "A_base": 29.31276762,
+   "L": 35.31933802,
+   "P": 33.07728873,
+   "P_over_L": 0.93652063102852,
+   "P200_over_L200": 0.9339433751935309,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 3,
+   "L_vars": [
+    "squad:tactic:버충=레드 후드",
+    "그레이브:reload:C0.1",
+    "레드 후드:cover:on",
+    "레드 후드:reload:C0.5",
+    "목단:reload:A0.3",
+    "밀크 : 블루밍 바니:reload:C0.1",
+    "프리바티:reload:C0.1"
+   ],
+   "P_vars": [
+    "그레이브:cover_at:fb_end-0.1-rl_dry",
+    "레드 후드:click:tap@charge",
+    "레드 후드:cover_at:fb_end-0.5-rl",
+    "목단:cover_at:fb_end-0.5-rl",
+    "목단:cover_fb:on",
+    "밀크 : 블루밍 바니:click:tap",
+    "밀크 : 블루밍 바니:cover_at:fb_end-0.5-rl",
+    "프리바티:cover_at:fb_end-0.1-rl"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 24
+   },
+   "opts": {
+    "L": 67,
+    "P": 74
+   }
+  },
+  {
+   "id": "r1-11",
+   "group": "T",
+   "season": 41,
+   "squad": [
+    "길티 : 마이티 바니",
+    "플로라",
+    "신 : 스위프트 바니",
+    "타키나",
+    "목단"
+   ],
+   "judged": true,
+   "L_base": 44.41458633,
+   "A_base": 29.5501312,
+   "L": 46.48625654,
+   "P": 43.01851915,
+   "P_over_L": 0.9254029545911894,
+   "P200_over_L200": 0.866576982845716,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 6,
+   "L_vars": [
+    "squad:tactic:버충=신 : 스위프트 바니",
+    "길티 : 마이티 바니:burst:wait2",
+    "목단:cancel:on",
+    "신 : 스위프트 바니:reload:C0.1_dry",
+    "타키나:click:tap",
+    "타키나:reload:C0.1_dry"
+   ],
+   "P_vars": [
+    "길티 : 마이티 바니:cover_at:fb_end-0.1-rl_dry",
+    "목단:cover_at:fb_end-0.3",
+    "신 : 스위프트 바니:burst_t:delay1",
+    "신 : 스위프트 바니:click:hold@chain",
+    "신 : 스위프트 바니:cover_at:fb_end-0.1-rl",
+    "타키나:click:tap@charge",
+    "플로라:cover_at:next_fb+0.1-rl",
+    "플로라:cover_fb:on"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 74,
+    "P": 87
+   }
+  },
+  {
+   "id": "r1-12",
+   "group": "T",
+   "season": 36,
+   "squad": [
+    "D : 킬러 와이프",
+    "미란다",
+    "타키나",
+    "에이다",
+    "아인"
+   ],
+   "judged": true,
+   "L_base": 43.20009995,
+   "A_base": 34.21614357,
+   "L": 46.16687399,
+   "P": 45.37144746,
+   "P_over_L": 0.9827706218495041,
+   "P200_over_L200": 0.9787097916586153,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 12,
+   "L_vars": [
+    "D : 킬러 와이프:reload:A0.3",
+    "squad:tactic:버충=타키나",
+    "미란다:burst:wait2",
+    "미란다:reload:A0.3",
+    "아인:click:hold_own_fb+tap",
+    "아인:reload:A0.3",
+    "에이다:burst:wait2",
+    "에이다:reload:B0.1",
+    "타키나:reload:C0.1"
+   ],
+   "P_vars": [
+    "D : 킬러 와이프:click:hold@chain",
+    "D : 킬러 와이프:cover_at:fb_end-0.3",
+    "squad:burst_who1:alt=2",
+    "squad:camera:slot4",
+    "미란다:burst_t:wait2",
+    "미란다:cover_at:fb_end-0.3",
+    "아인:click:hold@ownfb",
+    "에이다:click:hold@ownfb",
+    "타키나:click:tap"
+   ],
+   "keys": {
+    "L": 26,
+    "P": 27
+   },
+   "opts": {
+    "L": 79,
+    "P": 91
+   }
+  },
+  {
+   "id": "r1-13",
+   "group": "T",
+   "season": 40,
+   "squad": [
+    "리타",
+    "민트",
+    "앨리스",
+    "신데렐라 : 크리스탈 웨이브",
+    "프리카"
+   ],
+   "judged": true,
+   "L_base": 32.20006314,
+   "A_base": 20.30162236,
+   "L": 32.42115051,
+   "P": 28.99788651,
+   "P_over_L": 0.8944126304541806,
+   "P200_over_L200": 0.8838931061734243,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 9,
+   "L_vars": [
+    "앨리스:reload:B0.5"
+   ],
+   "P_vars": [
+    "squad:burst_who2:alt=2",
+    "squad:burst_who3:first=2",
+    "리타:cover_at:fb_end-0.1-rl_dry",
+    "민트:burst_t:wait2",
+    "민트:click:hold@chain",
+    "민트:cover_at:fb_end-0.1-rl_dry",
+    "신데렐라 : 크리스탈 웨이브:cover_at:next_fb+0.1-rl",
+    "앨리스:cancel:on",
+    "앨리스:click:tap@charge",
+    "프리카:cover_at:next_fb+0.1-rl"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 73,
+    "P": 85
+   }
+  },
+  {
+   "id": "r1-14",
+   "group": "T",
+   "season": 41,
+   "squad": [
+    "볼륨",
+    "타키나",
+    "길티 : 마이티 바니",
+    "신 : 스위프트 바니",
+    "에이다"
+   ],
+   "judged": true,
+   "L_base": 38.05036932,
+   "A_base": 26.21744926,
+   "L": 38.14413292,
+   "P": 38.44633562,
+   "P_over_L": 1.0079226522368148,
+   "P200_over_L200": 1.0104063720556813,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "볼륨:reload:C0.1_dry",
+    "에이다:click:tap",
+    "에이다:reload:C0.5"
+   ],
+   "P_vars": [
+    "길티 : 마이티 바니:click:hold@chain",
+    "타키나:click:tap"
+   ],
+   "keys": {
+    "L": 26,
+    "P": 26
+   },
+   "opts": {
+    "L": 80,
+    "P": 87
+   }
+  },
+  {
+   "id": "r1-15",
+   "group": "T",
+   "season": 34,
+   "squad": [
+    "츠바이",
+    "헬름 : 아쿠아마린",
+    "스노우 화이트",
+    "맥스웰",
+    "마스트 : 로망틱 메이드"
+   ],
+   "judged": true,
+   "L_base": 29.55535196,
+   "A_base": 24.0807686,
+   "L": 32.40154334,
+   "P": 32.43352836,
+   "P_over_L": 1.0009871449536947,
+   "P200_over_L200": 1.0009871449536947,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "squad:camera:맥스웰",
+    "squad:tactic:버충=맥스웰",
+    "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+    "맥스웰:reload:C0.1_dry",
+    "츠바이:reload:B0.5",
+    "헬름 : 아쿠아마린:reload:B0.5"
+   ],
+   "P_vars": [
+    "squad:burst_who2:alt=2",
+    "맥스웰:click:tap@charge",
+    "츠바이:cover_at:fb_end-0.1-rl_dry",
+    "헬름 : 아쿠아마린:burst_t:wait2"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 65,
+    "P": 73
+   }
+  },
+  {
+   "id": "r1-16",
+   "group": "T",
+   "season": 39,
+   "squad": [
+    "솔린 : 프로스트 티켓",
+    "토브",
+    "아르카나 : 포츈 메이트",
+    "소다 : 트윙클링 바니",
+    "드레이크"
+   ],
+   "judged": true,
+   "L_base": 45.10459452,
+   "A_base": 39.8577693,
+   "L": 47.31038361,
+   "P": 47.34937294,
+   "P_over_L": 1.0008241178156874,
+   "P200_over_L200": 1.0008241178156874,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "드레이크:reload:C0.5",
+    "소다 : 트윙클링 바니:reload:C0.5",
+    "솔린 : 프로스트 티켓:reload:A0.3",
+    "토브:reload:C0.5"
+   ],
+   "P_vars": [
+    "squad:burst_who1:first=2",
+    "드레이크:cover_at:fb_end-0.5-rl",
+    "소다 : 트윙클링 바니:cover_at:fb_end-0.5-rl",
+    "솔린 : 프로스트 티켓:cover_at:fb_end-0.3"
+   ],
+   "keys": {
+    "L": 20,
+    "P": 22
+   },
+   "opts": {
+    "L": 57,
+    "P": 67
+   }
+  },
+  {
+   "id": "r1-17",
+   "group": "T",
+   "season": 37,
+   "squad": [
+    "민트",
+    "라피 : 레드 후드",
+    "앨리스",
+    "네온 : 비전 아이",
+    "프리카"
+   ],
+   "judged": true,
+   "L_base": 28.60845999,
+   "A_base": 18.60778509,
+   "L": 29.46409896,
+   "P": 27.52731337,
+   "P_over_L": 0.934266254242855,
+   "P200_over_L200": 0.934266254242855,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 8,
+   "L_vars": [
+    "squad:tactic:버충=앨리스",
+    "앨리스:burst:wait2",
+    "앨리스:click:tap",
+    "앨리스:reload:C0.1_dry"
+   ],
+   "P_vars": [
+    "squad:burst_who2:first=2",
+    "squad:burst_who3:first=3",
+    "민트:cover_at:fb_end-0.5-rl",
+    "앨리스:click:tap@charge"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 74,
+    "P": 86
+   }
+  },
+  {
+   "id": "r1-18",
+   "group": "T",
+   "season": 38,
+   "squad": [
+    "볼륨",
+    "민트",
+    "프리카",
+    "리버렐리오",
+    "홍련 : 흑영"
+   ],
+   "judged": true,
+   "L_base": 62.02480705,
+   "A_base": 46.49917282,
+   "L": 62.91806594,
+   "P": 60.76549662,
+   "P_over_L": 0.9657877385796834,
+   "P200_over_L200": 0.9657877385796834,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 4,
+   "L_vars": [
+    "squad:tactic:버충=프리카",
+    "민트:reload:A0.3"
+   ],
+   "P_vars": [
+    "squad:burst_who2:first=2",
+    "리버렐리오:cover_at:next_fb+0.1-rl",
+    "민트:burst_t:wait2",
+    "민트:click:hold@chain",
+    "민트:cover_at:fb_end-0.1-rl",
+    "볼륨:cover_at:fb_end-0.3",
+    "프리카:burst_t:wait2",
+    "프리카:click:tap@charge",
+    "프리카:cover_at:fb_end-0.5-rl",
+    "홍련 : 흑영:cancel:on",
+    "홍련 : 흑영:cover_at:next_fb+0.1-rl"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 70,
+    "P": 83
+   }
+  },
+  {
+   "id": "r1-19",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "목단",
+    "마스트 : 로망틱 메이드",
+    "앤 : 미라클 페어리",
+    "리버렐리오",
+    "디젤 : 윈터 스위츠"
+   ],
+   "judged": true,
+   "L_base": 21.95131394,
+   "A_base": 21.53412989,
+   "L": 22.92357343,
+   "P": 22.11200735,
+   "P_over_L": 0.9645968774249696,
+   "P200_over_L200": 0.9613951859337142,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 1,
+   "L_vars": [
+    "디젤 : 윈터 스위츠:reload:C0.1",
+    "리버렐리오:burst:delay1",
+    "마스트 : 로망틱 메이드:burst:wait2",
+    "마스트 : 로망틱 메이드:reload:A0.3",
+    "앤 : 미라클 페어리:click:tap",
+    "앤 : 미라클 페어리:reload:C0.1_dry"
+   ],
+   "P_vars": [
+    "squad:burst_who2:first=1",
+    "디젤 : 윈터 스위츠:cancel:on",
+    "디젤 : 윈터 스위츠:click:tap",
+    "리버렐리오:burst_t:wait2",
+    "마스트 : 로망틱 메이드:burst_t:wait2",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.3",
+    "목단:burst_t:delay1",
+    "목단:cover_at:fb_end-0.3",
+    "앤 : 미라클 페어리:click:tap",
+    "앤 : 미라클 페어리:cover_at:fb_end-0.1-rl"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 69,
+    "P": 80
+   }
+  },
+  {
+   "id": "r1-20",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "아니스 : 스타",
+    "크러스트",
+    "크라운",
+    "아스카 : WILLE",
+    "프리바티"
+   ],
+   "judged": true,
+   "L_base": 43.48700967,
+   "A_base": 40.80010422,
+   "L": 59.30389297,
+   "P": 59.93488172,
+   "P_over_L": 1.0106399212328134,
+   "P200_over_L200": 1.0106399212328134,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "아스카 : WILLE:reload:A0.3",
+    "크라운:reload:C0.1_dry",
+    "크러스트:click:tap",
+    "크러스트:reload:C0.1_dry",
+    "프리바티:reload:C0.5"
+   ],
+   "P_vars": [
+    "squad:burst_who2:first=2",
+    "아스카 : WILLE:cover_at:fb_end-0.3",
+    "크라운:cover_at:fb_end-0.1-rl_dry",
+    "크러스트:click:tap",
+    "크러스트:cover_at:fb_end-0.1-rl_dry",
+    "프리바티:cover_at:next_fb+0.5-rl"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 62,
+    "P": 75
+   }
+  },
+  {
+   "id": "r1-21",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "D : 킬러 와이프",
+    "볼륨",
+    "노아",
+    "드레이크",
+    "도로시 : 세렌디피티"
+   ],
+   "judged": true,
+   "L_base": 5.95512287,
+   "A_base": 5.95512287,
+   "L": 8.06213661,
+   "P": 9.23449018,
+   "P_over_L": 1.1454147488081325,
+   "P200_over_L200": 1.1557042355920075,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "D : 킬러 와이프:reload:B0.5",
+    "노아:cancel:on",
+    "노아:click:tap",
+    "노아:reload:B0.5",
+    "도로시 : 세렌디피티:reload:B0.5",
+    "드레이크:burst:delay1",
+    "드레이크:reload:B0.1",
+    "볼륨:reload:B0.1"
+   ],
+   "P_vars": [
+    "D : 킬러 와이프:burst_t:delay1",
+    "D : 킬러 와이프:cover_at:next_fb+0.1-rl",
+    "squad:burst_who3:first=2",
+    "노아:click:tap",
+    "노아:cover_at:next_fb+0.5-rl",
+    "드레이크:burst_t:delay1",
+    "드레이크:cover_at:next_fb+0.5-rl"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 65,
+    "P": 79
+   }
+  },
+  {
+   "id": "r1-22",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "토브",
+    "솔린 : 프로스트 티켓",
+    "아르카나 : 포츈 메이트",
+    "베스티",
+    "퀸(마코토)"
+   ],
+   "judged": true,
+   "L_base": 14.1234127,
+   "A_base": 14.1234127,
+   "L": 18.09262148,
+   "P": 18.09195044,
+   "P_over_L": 0.999962910847345,
+   "P200_over_L200": 0.9988974267757686,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "베스티:burst:delay2",
+    "베스티:click:tap",
+    "베스티:reload:A0.3",
+    "솔린 : 프로스트 티켓:burst:delay2",
+    "솔린 : 프로스트 티켓:reload:A0.3",
+    "퀸(마코토):reload:A0.3",
+    "토브:burst:wait2"
+   ],
+   "P_vars": [
+    "squad:burst_who1:none=2",
+    "베스티:burst_t:delay2",
+    "베스티:click:tap",
+    "베스티:cover_at:fb_end-0.3",
+    "솔린 : 프로스트 티켓:burst_t:delay2",
+    "토브:cover_at:fb_end-0.1-rl_dry"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 62,
+    "P": 73
+   }
+  },
+  {
+   "id": "r1-23",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "목단",
+    "노아",
+    "팬텀",
+    "디젤 : 윈터 스위츠",
+    "리버렐리오"
+   ],
+   "judged": true,
+   "L_base": 8.82872676,
+   "A_base": 8.54369612,
+   "L": 11.42182769,
+   "P": 12.17441402,
+   "P_over_L": 1.065890184165438,
+   "P200_over_L200": 1.065890184165438,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "노아:click:tap",
+    "노아:reload:A0.3",
+    "목단:burst:wait2",
+    "팬텀:burst:delay1"
+   ],
+   "P_vars": [
+    "squad:burst_who3:first=2",
+    "노아:click:tap",
+    "목단:burst_t:wait2",
+    "팬텀:burst_t:delay2"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 24
+   },
+   "opts": {
+    "L": 66,
+    "P": 74
+   }
+  },
+  {
+   "id": "r1-24",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "아니스 : 스타",
+    "브리드 : 사일런트 트랙",
+    "크러스트",
+    "프리바티",
+    "네온 : 비전 아이"
+   ],
+   "judged": true,
+   "L_base": 54.04423952,
+   "A_base": 49.87572946,
+   "L": 66.36065232,
+   "P": 60.41493124,
+   "P_over_L": 0.9104029138934782,
+   "P200_over_L200": 0.9104029138934782,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "브리드 : 사일런트 트랙:reload:C0.1_dry",
+    "아니스 : 스타:reload:C0.1_dry",
+    "크러스트:click:tap",
+    "크러스트:reload:C0.1",
+    "프리바티:reload:C0.1"
+   ],
+   "P_vars": [
+    "squad:burst_who3:first=2",
+    "네온 : 비전 아이:cover_at:fb_end-0.3",
+    "브리드 : 사일런트 트랙:cover_at:fb_end-0.5-rl",
+    "크러스트:click:tap",
+    "크러스트:cover_at:fb_end-0.5-rl"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 63,
+    "P": 76
+   }
+  },
+  {
+   "id": "r1-25",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "사쿠라",
+    "맥스웰 : 오디너리 미케닉",
+    "헬름",
+    "신데렐라",
+    "드레이크 : 그레이트 빌런"
+   ],
+   "judged": true,
+   "L_base": 15.25029782,
+   "A_base": 15.19128038,
+   "L": 21.80582125,
+   "P": 26.35088206,
+   "P_over_L": 1.2084333700570897,
+   "P200_over_L200": 1.2086507737816565,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "드레이크 : 그레이트 빌런:cancel:on",
+    "맥스웰 : 오디너리 미케닉:click:tap",
+    "맥스웰 : 오디너리 미케닉:reload:B0.5",
+    "사쿠라:click:tap",
+    "사쿠라:reload:B0.1",
+    "신데렐라:reload:C0.1",
+    "헬름:burst:delay1",
+    "헬름:reload:C0.1"
+   ],
+   "P_vars": [
+    "squad:burst_who3:first=2",
+    "맥스웰 : 오디너리 미케닉:cover_at:fb_end-0.1-rl_dry",
+    "사쿠라:click:tap",
+    "신데렐라:cover_at:fb_end-0.3",
+    "헬름:burst_t:delay1"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 25
+   },
+   "opts": {
+    "L": 69,
+    "P": 80
+   }
+  },
+  {
+   "id": "r1-26",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "목단",
+    "마스트 : 로망틱 메이드",
+    "헬름",
+    "디젤 : 윈터 스위츠",
+    "레이븐"
+   ],
+   "judged": true,
+   "L_base": 14.98215037,
+   "A_base": 14.92830636,
+   "L": 17.45792562,
+   "P": 18.9251916,
+   "P_over_L": 1.0840458375145718,
+   "P200_over_L200": 1.0840458375145718,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 5,
+   "L_vars": [
+    "squad:tactic:버충=디젤 : 윈터 스위츠",
+    "레이븐:reload:B0.5",
+    "마스트 : 로망틱 메이드:reload:A0.3",
+    "목단:burst:delay2",
+    "헬름:burst:delay1"
+   ],
+   "P_vars": [
+    "squad:burst_who3:first=2",
+    "디젤 : 윈터 스위츠:click:tap@charge",
+    "디젤 : 윈터 스위츠:cover_at:fb_end-0.3",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.3",
+    "목단:burst_t:delay2",
+    "헬름:burst_t:delay1",
+    "헬름:cover_at:fb_end-0.3"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 25
+   },
+   "opts": {
+    "L": 69,
+    "P": 76
+   }
+  },
+  {
+   "id": "r1-27",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "목단",
+    "폴리",
+    "팬텀",
+    "디젤 : 윈터 스위츠",
+    "리버렐리오"
+   ],
+   "judged": true,
+   "L_base": 12.07996143,
+   "A_base": 11.71831185,
+   "L": 14.47984324,
+   "P": 15.84518043,
+   "P_over_L": 1.0942922632082308,
+   "P200_over_L200": 1.0942922632082308,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "squad:tactic:버충=디젤 : 윈터 스위츠",
+    "디젤 : 윈터 스위츠:reload:A0.3",
+    "목단:burst:delay1",
+    "목단:reload:B0.5",
+    "팬텀:burst:delay1",
+    "폴리:reload:B0.5"
+   ],
+   "P_vars": [
+    "squad:burst_who3:first=2",
+    "디젤 : 윈터 스위츠:click:tap@charge",
+    "디젤 : 윈터 스위츠:cover_at:fb_end-0.3",
+    "목단:burst_t:delay2",
+    "팬텀:burst_t:delay1",
+    "팬텀:cover_at:next_fb+0.1-rl",
+    "폴리:cover_at:next_fb+0.1-rl"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 23
+   },
+   "opts": {
+    "L": 61,
+    "P": 68
+   }
+  },
+  {
+   "id": "r1-28",
+   "group": "G",
+   "season": 42,
+   "squad": [
+    "소라",
+    "민트",
+    "헬름 : 아쿠아마린",
+    "리버렐리오",
+    "홍련 : 흑영"
+   ],
+   "judged": true,
+   "L_base": 8.47677798,
+   "A_base": 7.97403505,
+   "L": 10.00619212,
+   "P": 10.36244436,
+   "P_over_L": 1.0356031780848918,
+   "P200_over_L200": 1.053784763475695,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 5,
+   "L_vars": [
+    "squad:tactic:버충=민트",
+    "리버렐리오:burst:delay1",
+    "리버렐리오:reload:C0.1",
+    "민트:reload:C0.1_dry",
+    "소라:click:tap",
+    "소라:reload:C0.1_dry",
+    "헬름 : 아쿠아마린:reload:C0.5",
+    "홍련 : 흑영:reload:A0.3"
+   ],
+   "P_vars": [
+    "squad:burst_who3:first=2",
+    "리버렐리오:burst_t:delay1",
+    "민트:click:tap@charge",
+    "민트:cover_at:fb_end-0.1-rl",
+    "소라:click:tap",
+    "홍련 : 흑영:cover_at:fb_end-0.3"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 68,
+    "P": 83
+   }
+  },
+  {
+   "id": "r1-29",
+   "group": "D",
+   "season": 35,
+   "squad": [
+    "목단",
+    "스노우 화이트 : 헤비암즈",
+    "앵커 : 이노센트 메이드",
+    "디젤 : 윈터 스위츠",
+    "마스트 : 로망틱 메이드"
+   ],
+   "judged": true,
+   "L_base": 50.11823477,
+   "A_base": 50.11823477,
+   "L": 51.25626946,
+   "P": 52.77070792,
+   "P_over_L": 1.0295464042926856,
+   "P200_over_L200": 1.0295464042926856,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 8,
+   "L_vars": [
+    "마스트 : 로망틱 메이드:reload:C0.1_dry",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:reload:C0.5"
+   ],
+   "P_vars": [
+    "스노우 화이트 : 헤비암즈:click:tap@charge",
+    "앵커 : 이노센트 메이드:click:tap"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 72,
+    "P": 85
+   }
+  },
+  {
+   "id": "r1-30",
+   "group": "D",
+   "season": 42,
+   "squad": [
+    "이사벨",
+    "아르카나",
+    "아니스 : 스타",
+    "플로라",
+    "신데렐라"
+   ],
+   "judged": true,
+   "L_base": 96.07999239,
+   "A_base": 96.07999239,
+   "L": 104.79195728,
+   "P": 104.79195728,
+   "P_over_L": 1.0,
+   "P200_over_L200": 1.0,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "아르카나:click:tap",
+    "아르카나:reload:C0.1_dry",
+    "이사벨:reload:C0.5"
+   ],
+   "P_vars": [
+    "아르카나:click:tap",
+    "아르카나:cover_at:fb_end-0.1-rl_dry",
+    "이사벨:cover_at:fb_end-0.5-rl"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 62,
+    "P": 75
+   }
+  },
+  {
+   "id": "r1-31",
+   "group": "D",
+   "season": 38,
+   "squad": [
+    "아니스 : 스타",
+    "리버렐리오",
+    "앵커 : 이노센트 메이드",
+    "홍련 : 흑영",
+    "마스트 : 로망틱 메이드"
+   ],
+   "judged": true,
+   "L_base": 85.17375201,
+   "A_base": 80.2320791,
+   "L": 88.42459279,
+   "P": 83.13250583,
+   "P_over_L": 0.9401514127119793,
+   "P200_over_L200": 0.9436014160403128,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:reload:B0.5",
+    "홍련 : 흑영:reload:B0.5"
+   ],
+   "P_vars": [
+    "앵커 : 이노센트 메이드:click:tap"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 67,
+    "P": 78
+   }
+  },
+  {
+   "id": "r1-32",
+   "group": "D",
+   "season": 42,
+   "squad": [
+    "아니스 : 스타",
+    "이사벨",
+    "아르카나",
+    "크라운",
+    "신데렐라"
+   ],
+   "judged": true,
+   "L_base": 101.5029073,
+   "A_base": 101.5029073,
+   "L": 109.62338818,
+   "P": 108.82698782,
+   "P_over_L": 0.9927351236517856,
+   "P200_over_L200": 1.0,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "신데렐라:reload:A0.3",
+    "아니스 : 스타:reload:B0.5",
+    "아르카나:click:tap",
+    "아르카나:reload:B0.1",
+    "이사벨:reload:C0.5",
+    "크라운:burst:wait2",
+    "크라운:reload:C0.1_dry"
+   ],
+   "P_vars": [
+    "신데렐라:cover_at:next_fb+0.5-rl",
+    "아니스 : 스타:cover_at:next_fb+0.5-rl",
+    "아르카나:click:tap",
+    "아르카나:cover_at:fb_end-0.1-rl",
+    "이사벨:cover_at:fb_end-0.5-rl",
+    "크라운:burst_t:wait2",
+    "크라운:cover_at:fb_end-0.1-rl_dry"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 62,
+    "P": 75
+   }
+  },
+  {
+   "id": "r1-33",
+   "group": "D",
+   "season": 35,
+   "squad": [
+    "목단",
+    "이사벨",
+    "아르카나",
+    "디젤 : 윈터 스위츠",
+    "브리드 : 사일런트 트랙"
+   ],
+   "judged": true,
+   "L_base": 50.47570158,
+   "A_base": 50.47570158,
+   "L": 56.40381088,
+   "P": 56.13016939,
+   "P_over_L": 0.9951485283400057,
+   "P200_over_L200": 0.9955527352193716,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 2,
+   "L_vars": [
+    "squad:tactic:버충=아르카나",
+    "디젤 : 윈터 스위츠:reload:A0.3",
+    "목단:reload:C0.1_dry",
+    "브리드 : 사일런트 트랙:reload:A0.3",
+    "아르카나:cover:on",
+    "아르카나:reload:C0.1_dry",
+    "이사벨:reload:C0.5"
+   ],
+   "P_vars": [
+    "디젤 : 윈터 스위츠:click:tap",
+    "목단:cover_at:fb_end-0.1-rl_dry",
+    "목단:cover_fb:on",
+    "브리드 : 사일런트 트랙:cancel:on",
+    "아르카나:click:tap",
+    "아르카나:cover_at:fb_end-0.1-rl",
+    "이사벨:cover_at:fb_end-0.5-rl"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 65,
+    "P": 79
+   }
+  },
+  {
+   "id": "r1-34",
+   "group": "D",
+   "season": 42,
+   "squad": [
+    "리틀 머메이드",
+    "앵커 : 이노센트 메이드",
+    "리버렐리오",
+    "네온 : 비전 아이",
+    "마스트 : 로망틱 메이드"
+   ],
+   "judged": true,
+   "L_base": 52.56319257,
+   "A_base": 46.86996338,
+   "L": 53.30250607,
+   "P": 48.79162444,
+   "P_over_L": 0.9153720535376696,
+   "P200_over_L200": 0.9153720535376696,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "리틀 머메이드:cancel:on",
+    "리틀 머메이드:reload:B0.5",
+    "마스트 : 로망틱 메이드:reload:C0.1",
+    "앵커 : 이노센트 메이드:click:tap"
+   ],
+   "P_vars": [
+    "네온 : 비전 아이:cover_at:fb_end-0.3",
+    "리틀 머메이드:cover_at:fb_end-0.5-rl",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:cover_at:next_fb+0.5-rl"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 65,
+    "P": 75
+   }
+  },
+  {
+   "id": "r1-35",
+   "group": "D",
+   "season": 36,
+   "squad": [
+    "이사벨",
+    "아르카나",
+    "신데렐라",
+    "아니스 : 스타",
+    "나유타"
+   ],
+   "judged": true,
+   "L_base": 85.32637346,
+   "A_base": 85.32637346,
+   "L": 93.85655443,
+   "P": 93.42376894,
+   "P_over_L": 0.9953888623695133,
+   "P200_over_L200": 0.9953888623695133,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "아니스 : 스타:reload:C0.5",
+    "아르카나:click:hold_own_fb+tap",
+    "아르카나:reload:C0.1",
+    "이사벨:reload:C0.5"
+   ],
+   "P_vars": [
+    "아니스 : 스타:cover_at:fb_end-0.5-rl",
+    "아르카나:click:tap",
+    "아르카나:cover_at:fb_end-0.1-rl",
+    "이사벨:cover_at:fb_end-0.5-rl"
+   ],
+   "keys": {
+    "L": 23,
+    "P": 24
+   },
+   "opts": {
+    "L": 62,
+    "P": 75
+   }
+  },
+  {
+   "id": "r1-36",
+   "group": "D",
+   "season": 41,
+   "squad": [
+    "아니스 : 스타",
+    "브래디",
+    "앵커 : 이노센트 메이드",
+    "프리바티",
+    "마스트 : 로망틱 메이드"
+   ],
+   "judged": true,
+   "L_base": 71.37263609,
+   "A_base": 61.29039978,
+   "L": 79.01550457,
+   "P": 66.42206392,
+   "P_over_L": 0.8406206387147291,
+   "P200_over_L200": 0.8406206387147291,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 1,
+   "L_vars": [
+    "squad:tactic:버충=브래디",
+    "마스트 : 로망틱 메이드:reload:C0.1_dry",
+    "브래디:reload:C0.1_dry",
+    "아니스 : 스타:reload:B0.5",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:reload:C0.1_dry",
+    "프리바티:reload:C0.1"
+   ],
+   "P_vars": [
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+    "브래디:click:hold@chain",
+    "아니스 : 스타:cover_at:fb_end-0.5-rl",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl",
+    "프리바티:cover_at:fb_end-0.5-rl"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 69,
+    "P": 80
+   }
+  },
+  {
+   "id": "r1-37",
+   "group": "D",
+   "season": 37,
+   "squad": [
+    "아니스 : 스타",
+    "네온 : 비전 아이",
+    "앵커 : 이노센트 메이드",
+    "마스트 : 로망틱 메이드",
+    "디젤 : 윈터 스위츠"
+   ],
+   "judged": true,
+   "L_base": 48.15068604,
+   "A_base": 46.61599181,
+   "L": 53.47822164,
+   "P": 51.73673492,
+   "P_over_L": 0.9674355902908817,
+   "P200_over_L200": 0.9752596900621229,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 0,
+   "L_vars": [
+    "디젤 : 윈터 스위츠:click:tap",
+    "디젤 : 윈터 스위츠:reload:B0.5",
+    "마스트 : 로망틱 메이드:reload:C0.5",
+    "앵커 : 이노센트 메이드:cancel:on",
+    "앵커 : 이노센트 메이드:click:tap"
+   ],
+   "P_vars": [
+    "디젤 : 윈터 스위츠:click:tap",
+    "마스트 : 로망틱 메이드:cover_at:fb_end-0.5-rl",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl_dry"
+   ],
+   "keys": {
+    "L": 24,
+    "P": 25
+   },
+   "opts": {
+    "L": 70,
+    "P": 81
+   }
+  },
+  {
+   "id": "r1-38",
+   "group": "D",
+   "season": 37,
+   "squad": [
+    "아니스 : 스타",
+    "브래디",
+    "앵커 : 이노센트 메이드",
+    "디젤 : 윈터 스위츠",
+    "마스트 : 로망틱 메이드"
+   ],
+   "judged": true,
+   "L_base": 52.97661713,
+   "A_base": 52.97661713,
+   "L": 60.57461757,
+   "P": 59.97109003,
+   "P_over_L": 0.9900366264912434,
+   "P200_over_L200": 0.9900366264912434,
+   "L_evals": 400,
+   "P_evals": 400,
+   "errors": 7,
+   "L_vars": [
+    "squad:tactic:버충=브래디",
+    "마스트 : 로망틱 메이드:reload:C0.1_dry",
+    "브래디:reload:C0.5",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:reload:C0.1_dry"
+   ],
+   "P_vars": [
+    "브래디:click:tap@charge",
+    "브래디:cover_at:fb_end-0.5-rl",
+    "앵커 : 이노센트 메이드:click:tap",
+    "앵커 : 이노센트 메이드:cover_at:next_fb+0.1-rl"
+   ],
+   "keys": {
+    "L": 25,
+    "P": 26
+   },
+   "opts": {
+    "L": 74,
+    "P": 86
+   }
+  }
+ ]
+}

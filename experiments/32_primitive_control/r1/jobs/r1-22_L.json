@@ -1,0 +1,1 @@
+{"id": "r1-22", "arm": "L", "evals": 400, "errors": 0, "best": 1809262148, "base": 1412341270, "best_variants": ["베스티:burst:delay2", "베스티:click:tap", "베스티:reload:A0.3", "솔린 : 프로스트 티켓:burst:delay2", "솔린 : 프로스트 티켓:reload:A0.3", "퀸(마코토):reload:A0.3", "토브:burst:wait2"], "keys": 23, "options": 62, "exhausted": true, "seconds": 68.1}

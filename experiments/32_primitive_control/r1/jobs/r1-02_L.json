@@ -1,0 +1,1 @@
+{"id": "r1-02", "arm": "L", "evals": 400, "errors": 0, "best": 2605265658, "base": 2311039963, "best_variants": ["나유타:cover:on", "나유타:reload:A0.3", "디젤 : 윈터 스위츠:reload:C0.1", "루주:reload:B0.5", "맥스웰:click:tap", "맥스웰:reload:C0.5"], "keys": 25, "options": 72, "exhausted": true, "seconds": 95.5}

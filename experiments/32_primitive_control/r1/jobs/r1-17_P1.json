@@ -1,0 +1,1 @@
+{"id": "r1-17", "arm": "P", "evals": 400, "errors": 8, "best": 2752731337, "base": 1860778509, "best_variants": ["squad:burst_who2:first=2", "squad:burst_who3:first=3", "민트:cover_at:fb_end-0.5-rl", "앨리스:click:tap@charge"], "keys": 26, "options": 86, "exhausted": true, "seconds": 67.3}

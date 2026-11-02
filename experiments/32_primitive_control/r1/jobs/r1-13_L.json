@@ -1,0 +1,1 @@
+{"id": "r1-13", "arm": "L", "evals": 400, "errors": 0, "best": 3242115051, "base": 3220006314, "best_variants": ["앨리스:reload:B0.5"], "keys": 25, "options": 73, "exhausted": true, "seconds": 69.4}

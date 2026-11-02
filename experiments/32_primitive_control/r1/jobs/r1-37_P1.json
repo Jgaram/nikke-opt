@@ -1,0 +1,1 @@
+{"id": "r1-37", "arm": "P", "evals": 400, "errors": 0, "best": 5173673492, "base": 4661599181, "best_variants": ["디젤 : 윈터 스위츠:click:tap", "마스트 : 로망틱 메이드:cover_at:fb_end-0.5-rl", "앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl_dry"], "keys": 25, "options": 81, "exhausted": true, "seconds": 87.6}

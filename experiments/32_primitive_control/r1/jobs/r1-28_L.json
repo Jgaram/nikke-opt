@@ -1,0 +1,1 @@
+{"id": "r1-28", "arm": "L", "evals": 400, "errors": 0, "best": 1000619212, "base": 847677798, "best_variants": ["squad:tactic:버충=민트", "리버렐리오:burst:delay1", "리버렐리오:reload:C0.1", "민트:reload:C0.1_dry", "소라:click:tap", "소라:reload:C0.1_dry", "헬름 : 아쿠아마린:reload:C0.5", "홍련 : 흑영:reload:A0.3"], "keys": 25, "options": 68, "exhausted": true, "seconds": 78.3}

@@ -1,0 +1,1 @@
+{"id": "r1-20", "arm": "P", "evals": 400, "errors": 0, "best": 5993488172, "base": 4080010422, "best_variants": ["squad:burst_who2:first=2", "아스카 : WILLE:cover_at:fb_end-0.3", "크라운:cover_at:fb_end-0.1-rl_dry", "크러스트:click:tap", "크러스트:cover_at:fb_end-0.1-rl_dry", "프리바티:cover_at:next_fb+0.5-rl"], "keys": 24, "options": 75, "exhausted": true, "seconds": 77.0}

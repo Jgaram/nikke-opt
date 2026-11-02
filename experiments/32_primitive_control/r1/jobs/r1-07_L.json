@@ -1,0 +1,1 @@
+{"id": "r1-07", "arm": "L", "evals": 400, "errors": 0, "best": 7175140390, "base": 6721840211, "best_variants": ["squad:camera:헬름", "마스트 : 로망틱 메이드:burst:wait2", "마스트 : 로망틱 메이드:reload:C0.1_dry", "목단:reload:A0.3", "크라운:reload:B0.5", "프리바티:reload:C0.1"], "keys": 22, "options": 62, "exhausted": true, "seconds": 112.4}

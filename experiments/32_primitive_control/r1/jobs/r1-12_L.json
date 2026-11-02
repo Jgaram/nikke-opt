@@ -1,0 +1,1 @@
+{"id": "r1-12", "arm": "L", "evals": 400, "errors": 0, "best": 4616687399, "base": 4320009995, "best_variants": ["D : 킬러 와이프:reload:A0.3", "squad:tactic:버충=타키나", "미란다:burst:wait2", "미란다:reload:A0.3", "아인:click:hold_own_fb+tap", "아인:reload:A0.3", "에이다:burst:wait2", "에이다:reload:B0.1", "타키나:reload:C0.1"], "keys": 26, "options": 79, "exhausted": true, "seconds": 63.6}

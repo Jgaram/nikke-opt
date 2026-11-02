@@ -1,0 +1,1 @@
+{"id": "r1-36", "arm": "P", "evals": 400, "errors": 1, "best": 6642206392, "base": 6129039978, "best_variants": ["마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry", "브래디:click:hold@chain", "아니스 : 스타:cover_at:fb_end-0.5-rl", "앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl", "프리바티:cover_at:fb_end-0.5-rl"], "keys": 25, "options": 80, "exhausted": true, "seconds": 83.5}

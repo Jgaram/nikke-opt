@@ -1,0 +1,1 @@
+{"id": "r1-04", "arm": "P", "evals": 400, "errors": 0, "best": 4702642637, "base": 4580833548, "best_variants": ["squad:burst_who1:alt=2", "리틀 머메이드:cover_at:fb_end-0.3", "미란다:cover_at:next_fb+0.5-rl", "미하라 : 본딩 체인:cover_at:fb_end-0.1-rl", "크라운:burst_t:wait2"], "keys": 22, "options": 67, "exhausted": true, "seconds": 114.2}

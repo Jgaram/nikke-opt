@@ -1,0 +1,1 @@
+{"id": "r1-33", "arm": "L", "evals": 400, "errors": 0, "best": 5640381088, "base": 5047570158, "best_variants": ["squad:tactic:버충=아르카나", "디젤 : 윈터 스위츠:reload:A0.3", "목단:reload:C0.1_dry", "브리드 : 사일런트 트랙:reload:A0.3", "아르카나:cover:on", "아르카나:reload:C0.1_dry", "이사벨:reload:C0.5"], "keys": 24, "options": 65, "exhausted": true, "seconds": 74.8}

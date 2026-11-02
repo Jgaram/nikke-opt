@@ -1,0 +1,1 @@
+{"id": "r1-24", "arm": "L", "evals": 400, "errors": 0, "best": 6636065232, "base": 5404423952, "best_variants": ["브리드 : 사일런트 트랙:reload:C0.1_dry", "아니스 : 스타:reload:C0.1_dry", "크러스트:click:tap", "크러스트:reload:C0.1", "프리바티:reload:C0.1"], "keys": 23, "options": 63, "exhausted": true, "seconds": 67.4}

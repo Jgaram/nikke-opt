@@ -1,0 +1,1 @@
+{"id": "r1-10", "arm": "L", "evals": 400, "errors": 0, "best": 3531933802, "base": 3391375223, "best_variants": ["squad:tactic:버충=레드 후드", "그레이브:reload:C0.1", "레드 후드:cover:on", "레드 후드:reload:C0.5", "목단:reload:A0.3", "밀크 : 블루밍 바니:reload:C0.1", "프리바티:reload:C0.1"], "keys": 24, "options": 67, "exhausted": true, "seconds": 81.4}

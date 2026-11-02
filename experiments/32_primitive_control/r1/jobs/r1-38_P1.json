@@ -1,0 +1,1 @@
+{"id": "r1-38", "arm": "P", "evals": 400, "errors": 7, "best": 5997109003, "base": 5297661713, "best_variants": ["브래디:click:tap@charge", "브래디:cover_at:fb_end-0.5-rl", "앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:cover_at:next_fb+0.1-rl"], "keys": 26, "options": 86, "exhausted": true, "seconds": 55.5}

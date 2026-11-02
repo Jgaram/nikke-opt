@@ -1,0 +1,1 @@
+{"id": "r1-06", "arm": "L", "evals": 400, "errors": 0, "best": 3352319251, "base": 3171398564, "best_variants": ["네온 : 비전 아이:reload:A0.3", "브리드 : 사일런트 트랙:reload:B0.5", "스노우 화이트 : 헤비암즈:reload:C0.5"], "keys": 24, "options": 67, "exhausted": true, "seconds": 109.2}

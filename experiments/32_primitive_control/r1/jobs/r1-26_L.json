@@ -1,0 +1,1 @@
+{"id": "r1-26", "arm": "L", "evals": 400, "errors": 0, "best": 1745792562, "base": 1498215037, "best_variants": ["squad:tactic:버충=디젤 : 윈터 스위츠", "레이븐:reload:B0.5", "마스트 : 로망틱 메이드:reload:A0.3", "목단:burst:delay2", "헬름:burst:delay1"], "keys": 25, "options": 69, "exhausted": true, "seconds": 59.1}

@@ -1,0 +1,1 @@
+{"id": "r1-35", "arm": "P", "evals": 400, "errors": 0, "best": 9342376894, "base": 8532637346, "best_variants": ["아니스 : 스타:cover_at:fb_end-0.5-rl", "아르카나:click:tap", "아르카나:cover_at:fb_end-0.1-rl", "이사벨:cover_at:fb_end-0.5-rl"], "keys": 24, "options": 75, "exhausted": true, "seconds": 88.9}

@@ -1,0 +1,1 @@
+{"id": "r1-24", "arm": "P", "evals": 400, "errors": 0, "best": 6041493124, "base": 4987572946, "best_variants": ["squad:burst_who3:first=2", "네온 : 비전 아이:cover_at:fb_end-0.3", "브리드 : 사일런트 트랙:cover_at:fb_end-0.5-rl", "크러스트:click:tap", "크러스트:cover_at:fb_end-0.5-rl"], "keys": 24, "options": 76, "exhausted": true, "seconds": 58.3}

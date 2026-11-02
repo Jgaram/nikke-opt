@@ -1,0 +1,1 @@
+{"id": "r1-30", "arm": "L", "evals": 400, "errors": 0, "best": 10479195728, "base": 9607999239, "best_variants": ["아르카나:click:tap", "아르카나:reload:C0.1_dry", "이사벨:reload:C0.5"], "keys": 23, "options": 62, "exhausted": true, "seconds": 96.4}

@@ -1,0 +1,1 @@
+{"id": "r1-33", "arm": "P", "evals": 400, "errors": 2, "best": 5613016939, "base": 5047570158, "best_variants": ["디젤 : 윈터 스위츠:click:tap", "목단:cover_at:fb_end-0.1-rl_dry", "목단:cover_fb:on", "브리드 : 사일런트 트랙:cancel:on", "아르카나:click:tap", "아르카나:cover_at:fb_end-0.1-rl", "이사벨:cover_at:fb_end-0.5-rl"], "keys": 25, "options": 79, "exhausted": true, "seconds": 64.7}

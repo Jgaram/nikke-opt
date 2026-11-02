@@ -1,0 +1,1 @@
+{"id": "r1-36", "arm": "L", "evals": 400, "errors": 0, "best": 7901550457, "base": 7137263609, "best_variants": ["squad:tactic:버충=브래디", "마스트 : 로망틱 메이드:reload:C0.1_dry", "브래디:reload:C0.1_dry", "아니스 : 스타:reload:B0.5", "앵커 : 이노센트 메이드:click:tap", "앵커 : 이노센트 메이드:reload:C0.1_dry", "프리바티:reload:C0.1"], "keys": 24, "options": 69, "exhausted": true, "seconds": 93.7}

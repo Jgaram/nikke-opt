@@ -1,0 +1,1 @@
+{"id": "r1-19", "arm": "L", "evals": 400, "errors": 0, "best": 2292357343, "base": 2195131394, "best_variants": ["디젤 : 윈터 스위츠:reload:C0.1", "리버렐리오:burst:delay1", "마스트 : 로망틱 메이드:burst:wait2", "마스트 : 로망틱 메이드:reload:A0.3", "앤 : 미라클 페어리:click:tap", "앤 : 미라클 페어리:reload:C0.1_dry"], "keys": 24, "options": 69, "exhausted": true, "seconds": 72.1}

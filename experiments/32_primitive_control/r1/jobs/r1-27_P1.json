@@ -1,0 +1,1 @@
+{"id": "r1-27", "arm": "P", "evals": 400, "errors": 0, "best": 1584518043, "base": 1171831185, "best_variants": ["squad:burst_who3:first=2", "디젤 : 윈터 스위츠:click:tap@charge", "디젤 : 윈터 스위츠:cover_at:fb_end-0.3", "목단:burst_t:delay2", "팬텀:burst_t:delay1", "팬텀:cover_at:next_fb+0.1-rl", "폴리:cover_at:next_fb+0.1-rl"], "keys": 23, "options": 68, "exhausted": true, "seconds": 57.3}

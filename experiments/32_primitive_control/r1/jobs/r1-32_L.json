@@ -1,0 +1,1 @@
+{"id": "r1-32", "arm": "L", "evals": 400, "errors": 0, "best": 10962338818, "base": 10150290730, "best_variants": ["신데렐라:reload:A0.3", "아니스 : 스타:reload:B0.5", "아르카나:click:tap", "아르카나:reload:B0.1", "이사벨:reload:C0.5", "크라운:burst:wait2", "크라운:reload:C0.1_dry"], "keys": 23, "options": 62, "exhausted": true, "seconds": 82.1}

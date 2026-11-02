@@ -1,0 +1,1 @@
+{"id": "r1-23", "arm": "L", "evals": 400, "errors": 0, "best": 1142182769, "base": 882872676, "best_variants": ["노아:click:tap", "노아:reload:A0.3", "목단:burst:wait2", "팬텀:burst:delay1"], "keys": 24, "options": 66, "exhausted": true, "seconds": 63.8}

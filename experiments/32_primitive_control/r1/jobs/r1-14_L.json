@@ -1,0 +1,1 @@
+{"id": "r1-14", "arm": "L", "evals": 400, "errors": 0, "best": 3814413292, "base": 3805036932, "best_variants": ["볼륨:reload:C0.1_dry", "에이다:click:tap", "에이다:reload:C0.5"], "keys": 26, "options": 80, "exhausted": true, "seconds": 64.8}
