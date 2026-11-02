@@ -1,0 +1,32 @@
+{
+ "id": "r3-S36-A-3",
+ "season": 36,
+ "squad": [
+  "D : 킬러 와이프",
+  "미란다",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "value": 43.20009995,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 45.85851041,
+ "base": 43.20009995,
+ "best_variants": [
+  "D : 킬러 와이프:reload:A0.3",
+  "미란다:burst:wait2",
+  "미란다:reload:A0.3",
+  "아인:reload:A0.3",
+  "에이다:reload:A0.3",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:reload:C0.1"
+ ],
+ "keys": 26,
+ "options": 79,
+ "seconds": 131.5
+}
