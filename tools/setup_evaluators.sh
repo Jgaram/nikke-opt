@@ -12,7 +12,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RS_DIR="${NIKKE_CALC_RS_DIR:-/home/user/nikke-calc-rs}"
 CALC_DIR="${NIKKE_CALC_DIR:-/home/user/jgaram/nikke-calc}"
-CALC_COMMIT=37e00309b0c853d6c84cd15df1ca61a062079edc  # nikke-calc-rs의 포팅 기준 원본(2026-11-02, 23164e4 + 1·2버 자동 버스트 순환)
+CALC_COMMIT=67835ca3033a95482749ea2db35a8ee2a0856a92  # nikke-calc-rs의 포팅 기준 원본(2026-11-02, 원본 master: 1·2버 자동 버스트 순환 + 신규 니케 3명 · 렐릭 베젤 큐브)
 ENV_FILE="$ROOT/.cache/evaluators.env"
 WITH_PYTHON=0
 [[ "${1:-}" == "--python" ]] && WITH_PYTHON=1
