@@ -1,0 +1,33 @@
+{
+ "id": "r3c-S41-Bc-0",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "프리바티",
+  "팬텀"
+ ],
+ "value": 83.93597396,
+ "win": null,
+ "arm": "Bc",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 89.74925298,
+ "start": 83.93597396,
+ "base": 83.93597396,
+ "p0": 83.93597396,
+ "best_variants": [
+  "마스트 : 로망틱 메이드:burst_t:delay1",
+  "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+  "아니스 : 스타:cover_at:fb_end-0.5-rl",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:cover_at:fb_end-0.1-rl",
+  "팬텀:cover_at:next_fb+0.5-rl",
+  "프리바티:cover_at:fb_end-0.5-rl"
+ ],
+ "keys": 25,
+ "options": 94,
+ "seconds": 129.9
+}

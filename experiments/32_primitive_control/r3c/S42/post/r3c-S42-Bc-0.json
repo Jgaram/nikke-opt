@@ -1,0 +1,33 @@
+{
+ "id": "r3c-S42-Bc-0",
+ "season": 42,
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "에이다",
+  "아니스 : 스파클링 서머"
+ ],
+ "value": 89.59376063,
+ "win": null,
+ "arm": "Bc",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 94.99073813,
+ "start": 89.59376063,
+ "base": 89.59376063,
+ "p0": 89.59376063,
+ "best_variants": [
+  "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+  "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+  "에이다:click:tap",
+  "에이다:cover_at:fb_end-0.3",
+  "에이다:start_hold:hold0-2.2",
+  "크라운:cover_at:next_fb+0.1-rl",
+  "플로라:cover_at:fb_end-0.1-rl"
+ ],
+ "keys": 25,
+ "options": 94,
+ "seconds": 136.9
+}

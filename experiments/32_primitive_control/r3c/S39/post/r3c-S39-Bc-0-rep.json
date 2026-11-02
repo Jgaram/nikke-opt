@@ -1,0 +1,29 @@
+{
+ "id": "r3c-S39-Bc-0",
+ "season": 39,
+ "squad": [
+  "아니스 : 스타",
+  "마스트 : 로망틱 메이드",
+  "크라운",
+  "라피 : 레드 후드",
+  "이브"
+ ],
+ "value": 76.77215034,
+ "win": null,
+ "arm": "Bc",
+ "tag": "-rep",
+ "evals": 400,
+ "errors": 0,
+ "best": 77.12892989,
+ "start": 76.77215034,
+ "base": 76.77215034,
+ "p0": 76.77215034,
+ "best_variants": [
+  "squad:burst_who2:alt=2",
+  "라피 : 레드 후드:cover_at:fb_end-0.5-rl",
+  "이브:cover_at:next_fb+0.5-rl"
+ ],
+ "keys": 23,
+ "options": 84,
+ "seconds": 140.6
+}

@@ -1,0 +1,30 @@
+{
+ "id": "r3c-S42-Bc-4",
+ "season": 42,
+ "squad": [
+  "토브",
+  "솔린 : 프로스트 티켓",
+  "아르카나 : 포츈 메이트",
+  "드레이크",
+  "프리바티 : 언카인드 메이드"
+ ],
+ "value": 43.73714736,
+ "win": null,
+ "arm": "Bc",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 45.18930011,
+ "start": 43.73714736,
+ "base": 43.73714736,
+ "p0": 43.73714736,
+ "best_variants": [
+  "squad:burst_who3:first=2",
+  "드레이크:cover_at:fb_end-0.3",
+  "솔린 : 프로스트 티켓:cover_at:next_fb+0.5-rl",
+  "프리바티 : 언카인드 메이드:cover_at:next_fb+0.1-rl"
+ ],
+ "keys": 22,
+ "options": 83,
+ "seconds": 124.4
+}

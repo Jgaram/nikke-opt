@@ -1,0 +1,32 @@
+{
+ "id": "r3c-S36-Bc-0",
+ "season": 36,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "네온 : 비전 아이",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "value": 102.00921221,
+ "win": "burst_who3:first=2",
+ "arm": "Bc",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 105.28613203,
+ "start": 102.00921221,
+ "base": null,
+ "best_variants": [
+  "squad:burst_who3:first=2",
+  "네온 : 비전 아이:cover_at:fb_end-0.1-rl",
+  "메이든 : 아이스 로즈:click:tap@charge",
+  "메이든 : 아이스 로즈:cover_at:fb_end-0.3",
+  "아니스 : 스타:cover_at:fb_end-0.1-rl",
+  "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+  "크라운:cover_at:fb_end-0.3"
+ ],
+ "keys": 24,
+ "options": 85,
+ "seconds": 136.9
+}

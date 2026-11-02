@@ -1,0 +1,28 @@
+{
+ "id": "r3c-S41-Bc-3",
+ "season": 41,
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "벨벳",
+  "길티 : 마이티 바니",
+  "신 : 스위프트 바니"
+ ],
+ "value": 41.10808747,
+ "win": null,
+ "arm": "Bc",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 41.26103803,
+ "start": 41.10808747,
+ "base": 41.10808747,
+ "p0": 41.10808747,
+ "best_variants": [
+  "squad:camera:slot5",
+  "벨벳:click:hold@chain"
+ ],
+ "keys": 29,
+ "options": 121,
+ "seconds": 134.5
+}
