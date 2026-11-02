@@ -101,7 +101,10 @@ def m3_from(run: Any, start: tuple[int, ...], kick: int = 2, seed: int = 0) -> N
 def post_one_c(d: Mapping[str, Any], ev: Any, tag: str = "") -> dict[str, Any]:
     f = r3b.sdir(d["season"]) / "post" / f"{d['id']}{tag}.json"
     if f.exists():
-        return jload(f)
+        x = jload(f)
+        if x.get("base") is None:      # 빈 선택(P0)을 재지 않은 덱 — 진행 표시의 이득은 시작점 대비로
+            x["base"] = x.get("start")
+        return x
     sp = full_space(d["season"], d["squad"])
     st = start_sel(sp, d["squad"], d["win"])
     log = f.with_suffix(".jsonl")
@@ -118,7 +121,8 @@ def post_one_c(d: Mapping[str, Any], ev: Any, tag: str = "") -> dict[str, Any]:
     log.unlink()
     errs = sum(1 for ln in raw.decode().splitlines() if json.loads(ln)["error"])
     out = {**d, "arm": r3b.ARM, "tag": tag, "evals": run.used, "errors": errs, "best": run.best / E8,
-           "start": None if run.value(st) is None else run.value(st) / E8, "base": run.base_damage and run.base_damage / E8,
+           "start": None if run.value(st) is None else run.value(st) / E8, "base": run.base_damage / E8 if run.base_damage is not None else (None if run.value(st) is None else run.value(st) / E8),
+           "p0": None if run.base_damage is None else run.base_damage / E8,
            "best_variants": list(sp.labels(run.best_sel)), "keys": sp.K, "options": sp.nv, "seconds": round(time.time() - t0, 1)}
     jdump(f, out)
     return out
