@@ -288,6 +288,7 @@ class JaccardGP:
 
     def _factor(self, el):
         from scipy.linalg import cho_factor, cho_solve
+        from threadpoolctl import threadpool_limits
         tr = [o for o in self.train if o.element == el]
         y = log_total(tr)
         m: dict[str, Any] = {"mu": float(y.mean()), "sd": float(y.std())}
@@ -306,14 +307,17 @@ class JaccardGP:
             K[i:i + self.cfg.chunk] = self._k(M[i:i + self.cfg.chunk], A[i:i + self.cfg.chunk], M, A, m)
         K[np.diag_indices(n)] += self.cfg.noise
         # K는 대칭이라 K.T(포트란 순서)를 넘기면 scipy가 복사하지 않고 제자리에서 분해한다
-        m["L"] = cho_factor(K.T, lower=True, overwrite_a=True, check_finite=False)
-        del K
-        m["alpha"] = cho_solve(m["L"], (y - m["mu"]) / m["sd"], check_finite=False)
+        # 여러 스레드 OpenBLAS는 n ≈ 2.45만에서 분해 중 세그폴트가 났다(재현 확인) — 분해 · 풀이만 스레드 1개
+        with threadpool_limits(1):
+            m["L"] = cho_factor(K.T, lower=True, overwrite_a=True, check_finite=False)
+            del K
+            m["alpha"] = cho_solve(m["L"], (y - m["mu"]) / m["sd"], check_finite=False)
         m["M"], m["A"] = M, A
         return m
 
     def predict(self, obs, var: bool = False):
         from scipy.linalg import cho_solve
+        from threadpoolctl import threadpool_limits
         mean, sdv = np.zeros(len(obs)), np.zeros(len(obs))
         for el in sorted({o.element for o in self.train}):
             idx = [i for i, o in enumerate(obs) if o.element == el]
@@ -328,7 +332,8 @@ class JaccardGP:
                 ii = idx[j:j + self.cfg.chunk]
                 mean[ii] = m["mu"] + m["sd"] * (Ks @ m["alpha"])
                 if var:
-                    v = cho_solve(m["L"], Ks.T, check_finite=False)
+                    with threadpool_limits(1):
+                        v = cho_solve(m["L"], Ks.T, check_finite=False)
                     prior = 1.0                                           # 자카드(s = 5 → 1) · RBF(0 → 1)의 대각
                     sdv[ii] = m["sd"] * np.sqrt(np.maximum(prior - (Ks * v.T).sum(1), 0) + self.cfg.noise)
             del m
