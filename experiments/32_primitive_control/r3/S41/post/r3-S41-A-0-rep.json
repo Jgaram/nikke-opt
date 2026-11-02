@@ -1,0 +1,31 @@
+{
+ "id": "r3-S41-A-0",
+ "season": 41,
+ "squad": [
+  "토브",
+  "솔린 : 프로스트 티켓",
+  "아르카나 : 포츈 메이트",
+  "슈가",
+  "도로시 : 세렌디피티"
+ ],
+ "value": 77.06772281,
+ "win": null,
+ "arm": "A",
+ "tag": "-rep",
+ "evals": 400,
+ "errors": 0,
+ "best": 81.56242001,
+ "base": 77.06772281,
+ "best_variants": [
+  "도로시 : 세렌디피티:burst:wait2",
+  "도로시 : 세렌디피티:reload:C0.1_dry",
+  "솔린 : 프로스트 티켓:cancel:on",
+  "솔린 : 프로스트 티켓:reload:B0.1",
+  "슈가:reload:C0.5",
+  "토브:burst:wait2",
+  "토브:reload:C0.1_dry"
+ ],
+ "keys": 20,
+ "options": 57,
+ "seconds": 103.3
+}

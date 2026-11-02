@@ -1,0 +1,25 @@
+{
+ "id": "r3-S41-A-2",
+ "season": 41,
+ "squad": [
+  "목단",
+  "민트",
+  "프리카",
+  "팬텀",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "value": 68.55808058,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 68.76179694,
+ "base": 68.55808058,
+ "best_variants": [
+  "프리카:burst:delay1"
+ ],
+ "keys": 25,
+ "options": 71,
+ "seconds": 96.7
+}

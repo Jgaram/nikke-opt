@@ -1,0 +1,28 @@
+{
+ "id": "r3-S41-B-2",
+ "season": 41,
+ "squad": [
+  "볼륨",
+  "아르카나 : 포츈 메이트",
+  "슈가",
+  "드레이크",
+  "도로시 : 세렌디피티"
+ ],
+ "value": 54.6234101,
+ "win": "burst_who3:none=2",
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 56.52265137,
+ "base": 54.6234101,
+ "best_variants": [
+  "도로시 : 세렌디피티:cover_at:fb_end-0.3",
+  "드레이크:cover_at:fb_end-0.5-rl",
+  "볼륨:cover_at:next_fb+0.5-rl",
+  "슈가:cover_at:fb_end-0.5-rl"
+ ],
+ "keys": 15,
+ "options": 40,
+ "seconds": 108.7
+}

@@ -1,0 +1,28 @@
+{
+ "id": "r3-S41-A-4",
+ "season": 41,
+ "squad": [
+  "리타",
+  "나유타",
+  "헬름",
+  "퀀시 : 이스케이프 퀸",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "value": 44.88811656,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 45.17393308,
+ "base": 44.88811656,
+ "best_variants": [
+  "리타:reload:B0.1",
+  "일레그 : 붐 앤 쇼크:cover:on",
+  "퀀시 : 이스케이프 퀸:reload:C0.1_dry",
+  "헬름:burst:wait2"
+ ],
+ "keys": 22,
+ "options": 59,
+ "seconds": 117.2
+}

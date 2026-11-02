@@ -1,0 +1,27 @@
+{
+ "id": "r3-S42-A-1",
+ "season": 42,
+ "squad": [
+  "목단",
+  "민트",
+  "프리카",
+  "리버렐리오",
+  "네온 : 비전 아이"
+ ],
+ "value": 62.19347751,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 65.61045277,
+ "base": 62.19347751,
+ "best_variants": [
+  "squad:tactic:버충=프리카",
+  "민트:reload:A0.3",
+  "프리카:reload:C0.5"
+ ],
+ "keys": 24,
+ "options": 69,
+ "seconds": 100.6
+}

@@ -1,0 +1,1121 @@
+{
+ "summary": {
+  "sum_ratio_median": -0.03159492961418198,
+  "sum_B_ge_A": 0,
+  "rho_diff_median": -0.04218869365928185,
+  "J_diff_median": -0.04522900887218727,
+  "votes": {
+   "sum": "A",
+   "rho": "A",
+   "J": "-"
+  },
+  "verdict": "A"
+ },
+ "seasons": [
+  {
+   "season": 36,
+   "arms": {
+    "A": {
+     "sims_pre": 22060,
+     "records": 22060,
+     "comps": 19336,
+     "pre_total": 261.81260977,
+     "seed_pack": {
+      "0": 257.13830051,
+      "1": 260.75222233
+     },
+     "post_total": 269.64653596,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "아니스 : 스타",
+        "크라운",
+        "마스트 : 로망틱 메이드",
+        "아니스 : 스파클링 서머",
+        "메이든 : 아이스 로즈"
+       ],
+       "value": 87.3299665,
+       "win": null,
+       "post": 90.77077211,
+       "variants": [
+        "squad:camera:메이든 : 아이스 로즈",
+        "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+        "메이든 : 아이스 로즈:reload:C0.1_dry",
+        "아니스 : 스파클링 서머:reload:C0.5",
+        "크라운:burst:wait2",
+        "크라운:reload:C0.1_dry"
+       ]
+      },
+      {
+       "squad": [
+        "리틀 머메이드",
+        "나유타",
+        "벨벳",
+        "프리바티",
+        "신데렐라"
+       ],
+       "value": 51.08542729,
+       "win": null,
+       "post": 52.11467132,
+       "variants": [
+        "리틀 머메이드:reload:C0.5",
+        "벨벳:burst:wait2",
+        "신데렐라:reload:A0.3",
+        "프리바티:reload:A0.3"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "그레이브",
+        "네온 : 비전 아이",
+        "스노우 화이트 : 헤비암즈",
+        "리버렐리오"
+       ],
+       "value": 47.8803606,
+       "win": null,
+       "post": 47.88101235,
+       "variants": [
+        "그레이브:reload:C0.5"
+       ]
+      },
+      {
+       "squad": [
+        "D : 킬러 와이프",
+        "미란다",
+        "타키나",
+        "에이다",
+        "아인"
+       ],
+       "value": 43.20009995,
+       "win": null,
+       "post": 45.85851041,
+       "variants": [
+        "D : 킬러 와이프:reload:A0.3",
+        "미란다:burst:wait2",
+        "미란다:reload:A0.3",
+        "아인:reload:A0.3",
+        "에이다:reload:A0.3",
+        "타키나:click:tap",
+        "타키나:cover:on",
+        "타키나:reload:C0.1"
+       ]
+      },
+      {
+       "squad": [
+        "목단",
+        "브리드 : 사일런트 트랙",
+        "헬름",
+        "디젤 : 윈터 스위츠",
+        "질"
+       ],
+       "value": 32.31675543,
+       "win": null,
+       "post": 33.02156977,
+       "variants": [
+        "브리드 : 사일런트 트랙:reload:B0.5",
+        "질:reload:A0.3",
+        "헬름:reload:C0.5"
+       ]
+      }
+     ],
+     "J_top": 0.0989010989010989,
+     "targets_in_five": [
+      "마스트 : 로망틱 메이드",
+      "미란다",
+      "아인",
+      "에이다"
+     ],
+     "rep_post": {
+      "best": 90.81822973,
+      "first": 90.77077211
+     },
+     "rho": 0.9473684210526315,
+     "rho_decks": 20,
+     "map": {
+      "reps": 10,
+      "best": 261.81260977,
+      "targets": {
+       "마스트 : 로망틱 메이드": 10,
+       "미란다": 10,
+       "에이다": 10,
+       "아인": 10,
+       "미하라 : 본딩 체인": 1,
+       "츠바이": 3
+      }
+     }
+    },
+    "B": {
+     "sims_pre": 23400,
+     "records": 5708,
+     "comps": 4833,
+     "pre_total": 255.56010033,
+     "seed_pack": {
+      "0": 252.40126740999997,
+      "1": 255.56010033
+     },
+     "post_total": 263.00557547,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "아니스 : 스타",
+        "크라운",
+        "마스트 : 로망틱 메이드",
+        "네온 : 비전 아이",
+        "메이든 : 아이스 로즈"
+       ],
+       "value": 96.50846291,
+       "win": "burst_who2:per3=1@2",
+       "post": 98.15834285,
+       "variants": [
+        "squad:camera:slot1",
+        "네온 : 비전 아이:cover_at:fb_end-0.3",
+        "마스트 : 로망틱 메이드:cover_at:next_fb+0.5-rl",
+        "메이든 : 아이스 로즈:click:hold@chain",
+        "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+        "크라운:cover_at:fb_end-0.5-rl"
+       ]
+      },
+      {
+       "squad": [
+        "목단",
+        "나유타",
+        "스노우 화이트 : 헤비암즈",
+        "프리바티",
+        "아니스 : 스파클링 서머"
+       ],
+       "value": 53.10437739,
+       "win": "burst_who3:none=2",
+       "post": 54.93956568,
+       "variants": [
+        "목단:cover_at:fb_end-0.3",
+        "스노우 화이트 : 헤비암즈:click:tapfire@charge4",
+        "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.1-rl",
+        "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+        "프리바티:cancel:on"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "타키나",
+        "아인",
+        "헬름",
+        "에이다"
+       ],
+       "value": 40.694131,
+       "win": "burst_who3:none=2",
+       "post": 41.26821721,
+       "variants": [
+        "리타:cover_at:next_fb+0.1-rl",
+        "에이다:click:tap+fc5.5",
+        "헬름:click:hold@chain"
+       ]
+      },
+      {
+       "squad": [
+        "리틀 머메이드",
+        "마리",
+        "벨벳",
+        "길로틴",
+        "신데렐라"
+       ],
+       "value": 38.88471229,
+       "win": null,
+       "post": 41.09288984,
+       "variants": [
+        "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+        "마리:click:tapfire@charge4",
+        "벨벳:click:hold@chain",
+        "벨벳:cover_at:fb_end-0.1-rl_dry",
+        "신데렐라:cover_at:fb_end-0.3"
+       ]
+      },
+      {
+       "squad": [
+        "볼륨",
+        "트리나",
+        "앵커 : 이노센트 메이드",
+        "홍련",
+        "리버렐리오"
+       ],
+       "value": 26.36841674,
+       "win": "burst_who3:first=2",
+       "post": 27.54655989,
+       "variants": [
+        "볼륨:cover_at:next_fb+0.1-rl",
+        "앵커 : 이노센트 메이드:click:hold@chain",
+        "트리나:click:tap",
+        "트리나:cover_at:fb_end-0.5-rl",
+        "트리나:start_hold:hold0-2.2"
+       ]
+      }
+     ],
+     "J_top": 0.1111111111111111,
+     "targets_in_five": [
+      "마스트 : 로망틱 메이드",
+      "아인",
+      "에이다"
+     ],
+     "rep_post": {
+      "best": 98.15834285,
+      "first": 98.15834285
+     },
+     "probe": {
+      "probe_errors": 0,
+      "base_sims": 5708,
+      "probe_sims": 17692,
+      "probed": 4423,
+      "gated_out": 1285,
+      "cut": 0
+     },
+     "probe_share": 0.7560683760683761,
+     "rho": 0.9548872180451128,
+     "rho_decks": 20,
+     "map": {
+      "reps": 10,
+      "best": 255.56010033,
+      "targets": {
+       "마스트 : 로망틱 메이드": 9,
+       "아인": 9,
+       "에이다": 10,
+       "미하라 : 본딩 체인": 3,
+       "토브": 2,
+       "츠바이": 1
+      }
+     }
+    }
+   },
+   "sum_ratio": -0.024628391632611768,
+   "rho_diff": 0.007518796992481258,
+   "J_diff": 0.012210012210012208
+  },
+  {
+   "season": 39,
+   "arms": {
+    "A": {
+     "sims_pre": 22037,
+     "records": 22037,
+     "comps": 18916,
+     "pre_total": 296.79198865,
+     "seed_pack": {
+      "0": 293.80280089,
+      "1": 296.49677942
+     },
+     "post_total": 307.36034407,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "아니스 : 스타",
+        "크라운",
+        "레이븐",
+        "라피 : 레드 후드",
+        "프리바티"
+       ],
+       "value": 78.50036553,
+       "win": null,
+       "post": 78.93492373,
+       "variants": [
+        "라피 : 레드 후드:reload:C0.1_dry",
+        "레이븐:reload:C0.5",
+        "크라운:reload:C0.5",
+        "프리바티:reload:C0.5"
+       ]
+      },
+      {
+       "squad": [
+        "미란다",
+        "민트",
+        "헬름 : 아쿠아마린",
+        "마르차나 : 마린 스터디",
+        "이브"
+       ],
+       "value": 61.02947399,
+       "win": null,
+       "post": 65.24237721,
+       "variants": [
+        "squad:camera:민트",
+        "squad:tactic:버충=민트",
+        "마르차나 : 마린 스터디:reload:C0.1_dry",
+        "미란다:reload:B0.1",
+        "민트:reload:C0.5",
+        "이브:reload:B0.5",
+        "헬름 : 아쿠아마린:reload:C0.1_dry"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "나유타",
+        "마스트 : 로망틱 메이드",
+        "신데렐라 : 크리스탈 웨이브",
+        "율리아"
+       ],
+       "value": 57.4635566,
+       "win": null,
+       "post": 57.70544139,
+       "variants": [
+        "나유타:cover:on",
+        "마스트 : 로망틱 메이드:reload:A0.3",
+        "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+        "율리아:reload:C0.1_dry"
+       ]
+      },
+      {
+       "squad": [
+        "목단",
+        "타키나",
+        "센티",
+        "스노우 화이트 : 헤비암즈",
+        "치사토"
+       ],
+       "value": 53.72666418,
+       "win": null,
+       "post": 56.01100427,
+       "variants": [
+        "치사토:reload:B0.1",
+        "타키나:click:tap"
+       ]
+      },
+      {
+       "squad": [
+        "토브",
+        "아르카나 : 포츈 메이트",
+        "소다 : 트윙클링 바니",
+        "슈가",
+        "드레이크"
+       ],
+       "value": 46.07192835,
+       "win": null,
+       "post": 49.46659747,
+       "variants": [
+        "드레이크:reload:B0.1",
+        "소다 : 트윙클링 바니:reload:B0.1",
+        "슈가:reload:B0.5"
+       ]
+      }
+     ],
+     "J_top": 0.19047619047619047,
+     "targets_in_five": [
+      "마스트 : 로망틱 메이드",
+      "미란다",
+      "토브"
+     ],
+     "rep_post": {
+      "best": 78.93492373,
+      "first": 78.93492373
+     },
+     "rho": 0.7132352941176471,
+     "rho_decks": 17,
+     "map": {
+      "reps": 6,
+      "best": 296.79198865,
+      "targets": {
+       "미란다": 5,
+       "마스트 : 로망틱 메이드": 6,
+       "토브": 6,
+       "에이다": 1,
+       "츠바이": 1,
+       "밀크 : 블루밍 바니": 2
+      }
+     }
+    },
+    "B": {
+     "sims_pre": 23130,
+     "records": 5662,
+     "comps": 4843,
+     "pre_total": 295.02396168,
+     "seed_pack": {
+      "0": 290.84666221,
+      "1": 277.57150858
+     },
+     "post_total": 304.22034452,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "리틀 머메이드",
+        "크라운",
+        "마스트 : 로망틱 메이드",
+        "이브",
+        "신데렐라 : 크리스탈 웨이브"
+       ],
+       "value": 70.18799518,
+       "win": "burst_who2:per3=1@2",
+       "post": 71.30753898,
+       "variants": [
+        "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+        "마스트 : 로망틱 메이드:cover_at:next_fb+0.1-rl",
+        "이브:cover_at:fb_end-0.3",
+        "크라운:cover_at:fb_end-0.5-rl"
+       ]
+      },
+      {
+       "squad": [
+        "아니스 : 스타",
+        "나유타",
+        "레이븐",
+        "라피 : 레드 후드",
+        "프리바티"
+       ],
+       "value": 68.655025,
+       "win": "burst_who3:first=2",
+       "post": 70.77956036,
+       "variants": [
+        "squad:camera:slot1",
+        "나유타:cover_at:next_fb+0.5-rl",
+        "라피 : 레드 후드:cover_at:fb_end-0.1-rl_dry",
+        "레이븐:click:hold@chain",
+        "레이븐:cover_at:fb_end-0.3",
+        "아니스 : 스타:cover_at:fb_end-0.5-rl",
+        "프리바티:cover_at:fb_end-0.5-rl"
+       ]
+      },
+      {
+       "squad": [
+        "미란다",
+        "민트",
+        "헬름 : 아쿠아마린",
+        "마르차나 : 마린 스터디",
+        "스노우 화이트 : 헤비암즈"
+       ],
+       "value": 56.38443899,
+       "win": null,
+       "post": 56.73094201,
+       "variants": [
+        "squad:camera:slot2",
+        "마르차나 : 마린 스터디:cover_at:next_fb+0.1-rl",
+        "민트:cover_at:fb_end-0.3",
+        "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.3",
+        "스노우 화이트 : 헤비암즈:start_hold:hold0-2.2"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "타키나",
+        "센티",
+        "헬름",
+        "치사토"
+       ],
+       "value": 54.01447926,
+       "win": "burst_who3:first=2",
+       "post": 56.27781137,
+       "variants": [
+        "리타:cover_at:fb_end-0.1-rl_dry",
+        "치사토:cover_at:next_fb+0.1-rl",
+        "타키나:click:tap"
+       ]
+      },
+      {
+       "squad": [
+        "토브",
+        "아르카나 : 포츈 메이트",
+        "드레이크",
+        "슈가",
+        "소다 : 트윙클링 바니"
+       ],
+       "value": 45.78202325,
+       "win": "burst_who3:only1=1",
+       "post": 49.1244918,
+       "variants": [
+        "드레이크:cover_at:next_fb+0.1-rl",
+        "소다 : 트윙클링 바니:cover_at:next_fb+0.1-rl",
+        "슈가:cover_at:next_fb+0.5-rl"
+       ]
+      }
+     ],
+     "J_top": 0.14942528735632185,
+     "targets_in_five": [
+      "마스트 : 로망틱 메이드",
+      "미란다",
+      "토브"
+     ],
+     "rep_post": {
+      "best": 70.97757986,
+      "first": 71.30753898
+     },
+     "probe": {
+      "probe_errors": 0,
+      "base_sims": 5662,
+      "probe_sims": 17468,
+      "probed": 4367,
+      "gated_out": 1295,
+      "cut": 0
+     },
+     "probe_share": 0.7552096843925638,
+     "rho": 0.6200980392156863,
+     "rho_decks": 17,
+     "map": {
+      "reps": 5,
+      "best": 295.02396168,
+      "targets": {
+       "마스트 : 로망틱 메이드": 5,
+       "미란다": 3,
+       "토브": 5,
+       "에이다": 1
+      }
+     }
+    }
+   },
+   "sum_ratio": -0.0102160204157139,
+   "rho_diff": -0.09313725490196079,
+   "J_diff": -0.041050903119868615
+  },
+  {
+   "season": 41,
+   "arms": {
+    "A": {
+     "sims_pre": 22057,
+     "records": 22057,
+     "comps": 18652,
+     "pre_total": 311.56735585,
+     "seed_pack": {
+      "0": 308.61070207000006,
+      "1": 296.94015048
+     },
+     "post_total": 323.34739337999997,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "토브",
+        "솔린 : 프로스트 티켓",
+        "아르카나 : 포츈 메이트",
+        "슈가",
+        "도로시 : 세렌디피티"
+       ],
+       "value": 77.06772281,
+       "win": null,
+       "post": 81.32543012,
+       "variants": [
+        "도로시 : 세렌디피티:reload:B0.1",
+        "솔린 : 프로스트 티켓:reload:A0.3",
+        "토브:burst:wait2",
+        "토브:reload:B0.5"
+       ]
+      },
+      {
+       "squad": [
+        "아니스 : 스타",
+        "마스트 : 로망틱 메이드",
+        "앵커 : 이노센트 메이드",
+        "프리바티",
+        "브래디"
+       ],
+       "value": 72.72493599,
+       "win": null,
+       "post": 79.6378392,
+       "variants": [
+        "squad:tactic:버충=브래디",
+        "마스트 : 로망틱 메이드:reload:C0.1_dry",
+        "브래디:reload:A0.3",
+        "아니스 : 스타:cancel:on",
+        "앵커 : 이노센트 메이드:click:tap",
+        "앵커 : 이노센트 메이드:reload:C0.1",
+        "프리바티:reload:C0.1_dry"
+       ]
+      },
+      {
+       "squad": [
+        "목단",
+        "민트",
+        "프리카",
+        "팬텀",
+        "스노우 화이트 : 헤비암즈"
+       ],
+       "value": 68.55808058,
+       "win": null,
+       "post": 68.76179694,
+       "variants": [
+        "프리카:burst:delay1"
+       ]
+      },
+      {
+       "squad": [
+        "리틀 머메이드",
+        "플로라",
+        "크라운",
+        "길티 : 마이티 바니",
+        "루드밀라 : 윈터 오너"
+       ],
+       "value": 48.32849991,
+       "win": null,
+       "post": 48.44839404,
+       "variants": [
+        "squad:camera:길티 : 마이티 바니",
+        "길티 : 마이티 바니:cancel:on",
+        "리틀 머메이드:reload:C0.1",
+        "플로라:reload:A0.3"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "나유타",
+        "헬름",
+        "퀀시 : 이스케이프 퀸",
+        "일레그 : 붐 앤 쇼크"
+       ],
+       "value": 44.88811656,
+       "win": null,
+       "post": 45.17393308,
+       "variants": [
+        "리타:reload:B0.1",
+        "일레그 : 붐 앤 쇼크:cover:on",
+        "퀀시 : 이스케이프 퀸:reload:C0.1_dry",
+        "헬름:burst:wait2"
+       ]
+      }
+     ],
+     "J_top": 0.3157894736842105,
+     "targets_in_five": [
+      "길티 : 마이티 바니",
+      "마스트 : 로망틱 메이드",
+      "토브",
+      "프리카"
+     ],
+     "rep_post": {
+      "best": 81.56242001,
+      "first": 81.32543012
+     },
+     "rho": 0.7573529411764706,
+     "rho_decks": 17,
+     "map": {
+      "reps": 5,
+      "best": 311.56735585,
+      "targets": {
+       "토브": 5,
+       "마스트 : 로망틱 메이드": 5,
+       "프리카": 2,
+       "길티 : 마이티 바니": 5,
+       "미란다": 2,
+       "에이다": 1,
+       "신 : 스위프트 바니": 1
+      }
+     }
+    },
+    "B": {
+     "sims_pre": 23121,
+     "records": 5989,
+     "comps": 5018,
+     "pre_total": 286.62128558,
+     "seed_pack": {
+      "0": 278.67070409,
+      "1": 286.62128558
+     },
+     "post_total": 291.97339983,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "아니스 : 스타",
+        "크라운",
+        "마스트 : 로망틱 메이드",
+        "팬텀",
+        "프리바티"
+       ],
+       "value": 88.36068457,
+       "win": "burst_who2:per3=1@2",
+       "post": 90.14260197,
+       "variants": [
+        "squad:camera:slot1",
+        "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl",
+        "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+        "크라운:cover_at:fb_end-0.1-rl",
+        "팬텀:cancel:on",
+        "팬텀:cover_at:next_fb+0.5-rl",
+        "프리바티:cover_at:fb_end-0.1-rl"
+       ]
+      },
+      {
+       "squad": [
+        "목단",
+        "민트",
+        "프리카",
+        "스노우 화이트 : 헤비암즈",
+        "신 : 스위프트 바니"
+       ],
+       "value": 57.93947193,
+       "win": "burst_who2:per3=1@2",
+       "post": 59.04415199,
+       "variants": [
+        "프리카:click:tapfire@charge4"
+       ]
+      },
+      {
+       "squad": [
+        "볼륨",
+        "아르카나 : 포츈 메이트",
+        "슈가",
+        "드레이크",
+        "도로시 : 세렌디피티"
+       ],
+       "value": 54.6234101,
+       "win": "burst_who3:none=2",
+       "post": 56.52265137,
+       "variants": [
+        "도로시 : 세렌디피티:cover_at:fb_end-0.3",
+        "드레이크:cover_at:fb_end-0.5-rl",
+        "볼륨:cover_at:next_fb+0.5-rl",
+        "슈가:cover_at:fb_end-0.5-rl"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "나유타",
+        "헬름",
+        "길티 : 마이티 바니",
+        "일레그 : 붐 앤 쇼크"
+       ],
+       "value": 48.09814168,
+       "win": "burst_who3:first=2",
+       "post": 48.26039707,
+       "variants": [
+        "나유타:cover_at:next_fb+0.5-rl",
+        "리타:cover_at:fb_end-0.1-rl_dry",
+        "헬름:click:hold@chain"
+       ]
+      },
+      {
+       "squad": [
+        "리틀 머메이드",
+        "맥스웰 : 오디너리 미케닉",
+        "루드밀라 : 윈터 오너",
+        "퀀시 : 이스케이프 퀸",
+        "드레이크 : 그레이트 빌런"
+       ],
+       "value": 37.5995773,
+       "win": "burst_who3:first=2",
+       "post": 38.00359743,
+       "variants": [
+        "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+        "맥스웰 : 오디너리 미케닉:click:tapfire@charge4",
+        "퀀시 : 이스케이프 퀸:cover_at:fb_end-0.1-rl"
+       ]
+      }
+     ],
+     "J_top": 0.14942528735632185,
+     "targets_in_five": [
+      "길티 : 마이티 바니",
+      "마스트 : 로망틱 메이드",
+      "신 : 스위프트 바니",
+      "프리카"
+     ],
+     "rep_post": {
+      "best": 89.17071585,
+      "first": 90.14260197
+     },
+     "probe": {
+      "probe_errors": 0,
+      "base_sims": 5989,
+      "probe_sims": 17132,
+      "probed": 4283,
+      "gated_out": 1706,
+      "cut": 0
+     },
+     "probe_share": 0.7409714112711387,
+     "rho": 0.7132352941176471,
+     "rho_decks": 17,
+     "map": {
+      "reps": 8,
+      "best": 286.62128558,
+      "targets": {
+       "마스트 : 로망틱 메이드": 7,
+       "프리카": 7,
+       "신 : 스위프트 바니": 5,
+       "길티 : 마이티 바니": 8
+      }
+     }
+    }
+   },
+   "sum_ratio": -0.09702875047806259,
+   "rho_diff": -0.044117647058823484,
+   "J_diff": -0.16636418632788866
+  },
+  {
+   "season": 42,
+   "arms": {
+    "A": {
+     "sims_pre": 22063,
+     "records": 22063,
+     "comps": 19413,
+     "pre_total": 299.41227321,
+     "seed_pack": {
+      "0": 295.14826394,
+      "1": 285.02328281999996
+     },
+     "post_total": 313.23135848,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "아니스 : 스타",
+        "플로라",
+        "크라운",
+        "아니스 : 스파클링 서머",
+        "메이든 : 아이스 로즈"
+       ],
+       "value": 91.53499196,
+       "win": null,
+       "post": 95.17525485,
+       "variants": [
+        "squad:camera:아니스 : 스타",
+        "squad:tactic:버충=메이든 : 아이스 로즈",
+        "메이든 : 아이스 로즈:reload:A0.3",
+        "아니스 : 스타:reload:C0.1",
+        "아니스 : 스파클링 서머:reload:C0.5",
+        "크라운:reload:C0.1_dry",
+        "플로라:reload:A0.3"
+       ]
+      },
+      {
+       "squad": [
+        "목단",
+        "민트",
+        "프리카",
+        "리버렐리오",
+        "네온 : 비전 아이"
+       ],
+       "value": 62.19347751,
+       "win": null,
+       "post": 65.61045277,
+       "variants": [
+        "squad:tactic:버충=프리카",
+        "민트:reload:A0.3",
+        "프리카:reload:C0.5"
+       ]
+      },
+      {
+       "squad": [
+        "로산나",
+        "리틀 머메이드",
+        "나유타",
+        "프리바티",
+        "신데렐라 : 크리스탈 웨이브"
+       ],
+       "value": 52.53804734,
+       "win": null,
+       "post": 53.50237118,
+       "variants": [
+        "리틀 머메이드:reload:C0.1_dry",
+        "프리바티:reload:C0.5"
+       ]
+      },
+      {
+       "squad": [
+        "볼륨",
+        "맥스웰 : 오디너리 미케닉",
+        "마스트 : 로망틱 메이드",
+        "스노우 화이트 : 헤비암즈",
+        "신데렐라"
+       ],
+       "value": 49.94565645,
+       "win": null,
+       "post": 53.21401464,
+       "variants": [
+        "squad:camera:맥스웰 : 오디너리 미케닉",
+        "마스트 : 로망틱 메이드:reload:C0.1_dry",
+        "맥스웰 : 오디너리 미케닉:reload:C0.5",
+        "볼륨:reload:C0.1_dry",
+        "신데렐라:reload:C0.1"
+       ]
+      },
+      {
+       "squad": [
+        "D : 킬러 와이프",
+        "미란다",
+        "타키나",
+        "에이다",
+        "아인"
+       ],
+       "value": 43.20009995,
+       "win": null,
+       "post": 45.72926504,
+       "variants": [
+        "D : 킬러 와이프:reload:B0.1",
+        "에이다:reload:B0.5",
+        "타키나:reload:B0.1"
+       ]
+      }
+     ],
+     "J_top": 0.13636363636363635,
+     "targets_in_five": [
+      "마스트 : 로망틱 메이드",
+      "미란다",
+      "아인",
+      "에이다",
+      "프리카"
+     ],
+     "rep_post": {
+      "best": 95.17525485,
+      "first": 95.17525485
+     },
+     "rho": 0.9064935064935065,
+     "rho_decks": 21,
+     "map": {
+      "reps": 2,
+      "best": 299.41227320999997,
+      "targets": {
+       "프리카": 2,
+       "마스트 : 로망틱 메이드": 2,
+       "미란다": 1,
+       "에이다": 2,
+       "아인": 2
+      }
+     }
+    },
+    "B": {
+     "sims_pre": 23019,
+     "records": 5911,
+     "comps": 5215,
+     "pre_total": 288.7764819,
+     "seed_pack": {
+      "0": 279.57792867999996,
+      "1": 282.51223341
+     },
+     "post_total": 301.1526976,
+     "post_sims": 2000,
+     "five": [
+      {
+       "squad": [
+        "아니스 : 스타",
+        "플로라",
+        "크라운",
+        "아니스 : 스파클링 서머",
+        "메이든 : 아이스 로즈"
+       ],
+       "value": 91.53499196,
+       "win": null,
+       "post": 96.09602361,
+       "variants": [
+        "squad:camera:slot1",
+        "메이든 : 아이스 로즈:click:hold@chain",
+        "메이든 : 아이스 로즈:cover_at:fb_end-0.1-rl",
+        "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+        "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+        "크라운:cover_at:fb_end-0.1-rl_dry",
+        "플로라:cover_at:fb_end-0.3"
+       ]
+      },
+      {
+       "squad": [
+        "로산나",
+        "목단",
+        "민트",
+        "네온 : 비전 아이",
+        "리버렐리오"
+       ],
+       "value": 64.62639127,
+       "win": "burst_who3:first=2",
+       "post": 65.03896435,
+       "variants": [
+        "squad:camera:slot4",
+        "목단:cover_at:fb_end-0.3",
+        "민트:start_hold:hold0-2.2"
+       ]
+      },
+      {
+       "squad": [
+        "리타",
+        "맥스웰 : 오디너리 미케닉",
+        "스노우 화이트 : 헤비암즈",
+        "신데렐라",
+        "프리바티"
+       ],
+       "value": 50.89999697,
+       "win": null,
+       "post": 54.25298894,
+       "variants": [
+        "squad:camera:slot2",
+        "리타:cover_at:fb_end-0.3",
+        "맥스웰 : 오디너리 미케닉:click:hold@chain",
+        "신데렐라:cover_at:fb_end-0.1-rl",
+        "프리바티:cover_at:fb_end-0.3"
+       ]
+      },
+      {
+       "squad": [
+        "리틀 머메이드",
+        "마스트 : 로망틱 메이드",
+        "타키나",
+        "아인",
+        "에이다"
+       ],
+       "value": 42.44393914,
+       "win": null,
+       "post": 45.36628039,
+       "variants": [
+        "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+        "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+        "아인:cancel:on",
+        "아인:click:hold@chain",
+        "에이다:click:tap",
+        "타키나:click:tapfire@charge4",
+        "타키나:cover_fb:on"
+       ]
+      },
+      {
+       "squad": [
+        "토브",
+        "D : 킬러 와이프",
+        "아르카나 : 포츈 메이트",
+        "프리바티 : 언카인드 메이드",
+        "드레이크"
+       ],
+       "value": 39.27116256,
+       "win": null,
+       "post": 40.39844031,
+       "variants": [
+        "D : 킬러 와이프:click:hold@chain",
+        "D : 킬러 와이프:cover_at:fb_end-0.5-rl",
+        "드레이크:cover_at:fb_end-0.1-rl",
+        "토브:cover_at:next_fb+0.1-rl",
+        "프리바티 : 언카인드 메이드:cover_at:fb_end-0.3"
+       ]
+      }
+     ],
+     "J_top": 0.08695652173913043,
+     "targets_in_five": [
+      "마스트 : 로망틱 메이드",
+      "아인",
+      "에이다",
+      "토브"
+     ],
+     "rep_post": {
+      "best": 95.17525485,
+      "first": 96.09602361
+     },
+     "probe": {
+      "probe_errors": 0,
+      "base_sims": 5911,
+      "probe_sims": 17108,
+      "probed": 4277,
+      "gated_out": 1634,
+      "cut": 0
+     },
+     "probe_share": 0.7432121291107346,
+     "rho": 0.8662337662337662,
+     "rho_decks": 21,
+     "map": {
+      "reps": 3,
+      "best": 288.7764819,
+      "targets": {
+       "마스트 : 로망틱 메이드": 3,
+       "아인": 3,
+       "에이다": 3,
+       "토브": 3
+      }
+     }
+    }
+   },
+   "sum_ratio": -0.038561467595752186,
+   "rho_diff": -0.04025974025974022,
+   "J_diff": -0.04940711462450592
+  }
+ ]
+}

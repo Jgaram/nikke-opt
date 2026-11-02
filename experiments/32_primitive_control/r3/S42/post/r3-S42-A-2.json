@@ -1,0 +1,26 @@
+{
+ "id": "r3-S42-A-2",
+ "season": 42,
+ "squad": [
+  "로산나",
+  "리틀 머메이드",
+  "나유타",
+  "프리바티",
+  "신데렐라 : 크리스탈 웨이브"
+ ],
+ "value": 52.53804734,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 53.50237118,
+ "base": 52.53804734,
+ "best_variants": [
+  "리틀 머메이드:reload:C0.1_dry",
+  "프리바티:reload:C0.5"
+ ],
+ "keys": 20,
+ "options": 55,
+ "seconds": 107.0
+}

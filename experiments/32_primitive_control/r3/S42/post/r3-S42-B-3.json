@@ -1,0 +1,31 @@
+{
+ "id": "r3-S42-B-3",
+ "season": 42,
+ "squad": [
+  "리틀 머메이드",
+  "마스트 : 로망틱 메이드",
+  "타키나",
+  "아인",
+  "에이다"
+ ],
+ "value": 42.44393914,
+ "win": null,
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 45.36628039,
+ "base": 42.44393914,
+ "best_variants": [
+  "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+  "마스트 : 로망틱 메이드:cover_at:fb_end-0.1-rl_dry",
+  "아인:cancel:on",
+  "아인:click:hold@chain",
+  "에이다:click:tap",
+  "타키나:click:tapfire@charge4",
+  "타키나:cover_fb:on"
+ ],
+ "keys": 22,
+ "options": 70,
+ "seconds": 83.9
+}

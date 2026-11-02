@@ -1,0 +1,31 @@
+{
+ "id": "r3-S42-B-0",
+ "season": 42,
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "value": 91.53499196,
+ "win": null,
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 96.09602361,
+ "base": 91.53499196,
+ "best_variants": [
+  "squad:camera:slot1",
+  "메이든 : 아이스 로즈:click:hold@chain",
+  "메이든 : 아이스 로즈:cover_at:fb_end-0.1-rl",
+  "아니스 : 스타:cover_at:fb_end-0.1-rl_dry",
+  "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+  "크라운:cover_at:fb_end-0.1-rl_dry",
+  "플로라:cover_at:fb_end-0.3"
+ ],
+ "keys": 18,
+ "options": 51,
+ "seconds": 95.1
+}

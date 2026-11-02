@@ -1,0 +1,27 @@
+{
+ "id": "r3-S41-B-0",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "팬텀",
+  "프리바티"
+ ],
+ "value": 88.36068457,
+ "win": "burst_who2:per3=1@2",
+ "arm": "B",
+ "tag": "-rep",
+ "evals": 400,
+ "errors": 0,
+ "best": 89.17071585,
+ "base": 88.36068457,
+ "best_variants": [
+  "squad:camera:slot1",
+  "마스트 : 로망틱 메이드:cover_at:next_fb+0.5-rl",
+  "크라운:cover_at:next_fb+0.5-rl"
+ ],
+ "keys": 16,
+ "options": 41,
+ "seconds": 114.7
+}

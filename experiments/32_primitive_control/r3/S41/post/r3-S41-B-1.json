@@ -1,0 +1,25 @@
+{
+ "id": "r3-S41-B-1",
+ "season": 41,
+ "squad": [
+  "목단",
+  "민트",
+  "프리카",
+  "스노우 화이트 : 헤비암즈",
+  "신 : 스위프트 바니"
+ ],
+ "value": 57.93947193,
+ "win": "burst_who2:per3=1@2",
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 59.04415199,
+ "base": 57.93947193,
+ "best_variants": [
+  "프리카:click:tapfire@charge4"
+ ],
+ "keys": 24,
+ "options": 84,
+ "seconds": 95.1
+}

@@ -1,0 +1,31 @@
+{
+ "id": "r3-S42-A-0",
+ "season": 42,
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "value": 91.53499196,
+ "win": null,
+ "arm": "A",
+ "tag": "-rep",
+ "evals": 400,
+ "errors": 0,
+ "best": 95.17525485,
+ "base": 91.53499196,
+ "best_variants": [
+  "squad:camera:아니스 : 스타",
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "메이든 : 아이스 로즈:reload:A0.3",
+  "아니스 : 스타:reload:C0.1",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "크라운:reload:C0.1_dry",
+  "플로라:reload:A0.3"
+ ],
+ "keys": 23,
+ "options": 61,
+ "seconds": 103.0
+}

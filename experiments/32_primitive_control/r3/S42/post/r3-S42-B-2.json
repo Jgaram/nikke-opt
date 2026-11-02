@@ -1,0 +1,29 @@
+{
+ "id": "r3-S42-B-2",
+ "season": 42,
+ "squad": [
+  "리타",
+  "맥스웰 : 오디너리 미케닉",
+  "스노우 화이트 : 헤비암즈",
+  "신데렐라",
+  "프리바티"
+ ],
+ "value": 50.89999697,
+ "win": null,
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 54.25298894,
+ "base": 50.89999697,
+ "best_variants": [
+  "squad:camera:slot2",
+  "리타:cover_at:fb_end-0.3",
+  "맥스웰 : 오디너리 미케닉:click:hold@chain",
+  "신데렐라:cover_at:fb_end-0.1-rl",
+  "프리바티:cover_at:fb_end-0.3"
+ ],
+ "keys": 20,
+ "options": 61,
+ "seconds": 88.3
+}

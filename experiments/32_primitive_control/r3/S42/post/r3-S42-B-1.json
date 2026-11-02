@@ -1,0 +1,27 @@
+{
+ "id": "r3-S42-B-1",
+ "season": 42,
+ "squad": [
+  "로산나",
+  "목단",
+  "민트",
+  "네온 : 비전 아이",
+  "리버렐리오"
+ ],
+ "value": 64.62639127,
+ "win": "burst_who3:first=2",
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 65.03896435,
+ "base": 64.62639127,
+ "best_variants": [
+  "squad:camera:slot4",
+  "목단:cover_at:fb_end-0.3",
+  "민트:start_hold:hold0-2.2"
+ ],
+ "keys": 18,
+ "options": 52,
+ "seconds": 86.5
+}

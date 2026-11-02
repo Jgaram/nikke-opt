@@ -476,8 +476,9 @@ def cmd_analyze(a: argparse.Namespace) -> int:
             ok = [r for r in rr if r.get(arm) is not None]
             x["rho"] = r0.spearman([r["real"] for r in ok], [r[arm] for r in ok])
             x["rho_decks"] = len(ok)
-            if a.maps:
-                m = R30.class_map(bk)
+            mf = sdir(s) / f"map_{arm}.json"
+            if a.maps or mf.exists():
+                m = jload(mf) or R30.class_map(bk)
                 reps = [r for r in m["reps"] if not r.get("below")]
                 x["map"] = {"reps": len(reps), "best": m["best"], "targets": dict(collections.Counter(
                     n for r in reps for q in r["decks"] for n in q if n in targets))}
@@ -521,9 +522,63 @@ def cmd_analyze(a: argparse.Namespace) -> int:
     return 0
 
 
+# ---------------------------------------------------------------- 사후 진단(등록 밖, 판단에 안 씀)
+
+def cmd_cross(a: argparse.Namespace) -> int:
+    """두 판의 최선 5덱을 서로의 덱 평가 방식으로 잰다: A 5덱 → P0 + 탐침 4(문턱 없이) 최고, B 5덱 → 레이어 바탕.
+    A 5덱의 B 값 합 ≥ B 5덱 합이면 B는 그 덱을 「값을 몰라서」가 아니라 「못 봐서」 놓친 것이다."""
+    from nikke_opt.evaluator import EvalRequest, make_evaluator
+    with make_evaluator("rust", jobs=a.jobs, cache=False) as ev:
+        out = {}
+        for s in SEASONS:
+            A, B = jload(sdir(s) / "best5_A.json"), jload(sdir(s) / "best5_B.json")
+            reqs, idx = [], []
+            for i, d in enumerate(A):
+                reqs.append(EvalRequest(d["squad"], boss=None, options=r1.p_base(s, d["squad"])))
+                idx.append(("A", i, None))
+                for t, o in probes(s, d["squad"]):
+                    reqs.append(EvalRequest(d["squad"], boss=None, options=o))
+                    idx.append(("A", i, t))
+            for i, d in enumerate(B):
+                reqs.append(EvalRequest(d["squad"], boss=None, options=r0.opts(s, True)))
+                idx.append(("B", i, "layer"))
+            res = ev.evaluate(reqs)
+            rows = {"A_as_B": [None] * 5, "A_as_B_win": [None] * 5, "B_as_A": [None] * 5}
+            for (arm, i, t), r in zip(idx, res):
+                v = None if r.error else r.total_damage / E8
+                if arm == "B":
+                    rows["B_as_A"][i] = v
+                elif v is not None and (rows["A_as_B"][i] is None or v > rows["A_as_B"][i]):
+                    rows["A_as_B"][i], rows["A_as_B_win"][i] = v, t
+            rows.update(A_pre=[d["value"] for d in A], B_pre=[d["value"] for d in B])
+            out[str(s)] = rows
+            print(s, "A 5덱: A %.2f · B 방식 %.2f | B 5덱: B %.2f · A 방식 %.2f" % (
+                sum(rows["A_pre"]), sum(rows["A_as_B"]), sum(rows["B_pre"]), sum(rows["B_as_A"])), flush=True)
+        jdump(OUT / "cross.json", {"seasons": out, "sims": ev.sim_count})
+    return 0
+
+
+def _map_job(x):
+    s, arm = x
+    f = sdir(s) / f"map_{arm}.json"
+    if not f.exists():
+        bk, _ = book_win(recs_of(s, arm))
+        jdump(f, R30.class_map(bk))
+    return x
+
+
+def cmd_maps(a: argparse.Namespace) -> int:
+    """관찰(등록): 판마다 지도(실험 30 `class_map`) — 여러 프로세스로."""
+    from concurrent.futures import ProcessPoolExecutor
+    with ProcessPoolExecutor(a.workers) as pool:
+        for x in pool.map(_map_job, [(s, arm) for s in SEASONS for arm in ("A", "B")]):
+            print(x, flush=True)
+    return 0
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=("types", "pilot", "run", "post", "rankers", "analyze"))
+    p.add_argument("cmd", choices=("types", "pilot", "run", "post", "rankers", "analyze", "cross", "maps"))
     p.add_argument("--season", default=",".join(map(str, SEASONS)))
     p.add_argument("--arm", default="A,B")
     p.add_argument("--seed", default="0,1")
@@ -534,7 +589,8 @@ def main() -> int:
     a = p.parse_args()
     if a.cmd == "types":
         return cmd_types()
-    return {"pilot": cmd_pilot, "run": cmd_run, "post": cmd_post, "rankers": cmd_rankers, "analyze": cmd_analyze}[a.cmd](a)
+    return {"pilot": cmd_pilot, "run": cmd_run, "post": cmd_post, "rankers": cmd_rankers, "analyze": cmd_analyze,
+            "cross": cmd_cross, "maps": cmd_maps}[a.cmd](a)
 
 
 if __name__ == "__main__":

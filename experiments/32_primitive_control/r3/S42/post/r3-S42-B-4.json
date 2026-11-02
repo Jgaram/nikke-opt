@@ -1,0 +1,29 @@
+{
+ "id": "r3-S42-B-4",
+ "season": 42,
+ "squad": [
+  "토브",
+  "D : 킬러 와이프",
+  "아르카나 : 포츈 메이트",
+  "프리바티 : 언카인드 메이드",
+  "드레이크"
+ ],
+ "value": 39.27116256,
+ "win": null,
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 40.39844031,
+ "base": 39.27116256,
+ "best_variants": [
+  "D : 킬러 와이프:click:hold@chain",
+  "D : 킬러 와이프:cover_at:fb_end-0.5-rl",
+  "드레이크:cover_at:fb_end-0.1-rl",
+  "토브:cover_at:next_fb+0.1-rl",
+  "프리바티 : 언카인드 메이드:cover_at:fb_end-0.3"
+ ],
+ "keys": 18,
+ "options": 50,
+ "seconds": 79.7
+}

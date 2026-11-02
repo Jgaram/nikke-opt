@@ -1,0 +1,27 @@
+{
+ "id": "r3-S42-A-4",
+ "season": 42,
+ "squad": [
+  "D : 킬러 와이프",
+  "미란다",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "value": 43.20009995,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 45.72926504,
+ "base": 43.20009995,
+ "best_variants": [
+  "D : 킬러 와이프:reload:B0.1",
+  "에이다:reload:B0.5",
+  "타키나:reload:B0.1"
+ ],
+ "keys": 26,
+ "options": 79,
+ "seconds": 86.8
+}
