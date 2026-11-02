@@ -12,3 +12,4 @@
 | 여러 세션 운영(관리자·작업 세션) | [작업 규칙 §여러 세션](rules/workflow.md#여러-세션으로-진행할-때), 해당 실험의 `SESSIONS.md` |
 | 실행 방법·평가기 연결 | [README](README.md#평가기계산기) |
 | 현황판 사이트(`web/`, GitHub Pages) | [web/README.md](web/README.md) |
+| 시뮬레이터 기반 티어(나중 과제) 다시 검토 | [시뮬레이터 기반 티어 검토 기록](docs/SIM_TIER.md) |

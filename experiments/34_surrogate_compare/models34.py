@@ -254,7 +254,7 @@ class GPConfig:
     noise: float = 0.1            # 표준화한 log 총딜 기준 잡음 분산
     ell_sample: int = 2000        # RBF 폭 = 학습 속성 벡터 사이 거리의 중앙(무작위 2,000개)
     seed: int = 20261102
-    chunk: int = 2000
+    chunk: int = 500
 
 
 class JaccardGP:
@@ -263,7 +263,6 @@ class JaccardGP:
     def __init__(self, names, elements, at, cfg: GPConfig):
         self.names, self.elements, self.at, self.cfg = list(names), list(elements), at, cfg
         self.ni = {n: i for i, n in enumerate(names)}
-        self.models: dict[str, dict[str, Any]] = {}
 
     def _onehot(self, obs):
         M = np.zeros((len(obs), len(self.names)))
@@ -283,37 +282,44 @@ class JaccardGP:
         return K
 
     def fit(self, train) -> "JaccardGP":
-        from scipy.linalg import cho_factor, cho_solve
-        for el in sorted({o.element for o in train}):
-            tr = [o for o in train if o.element == el]
-            y = log_total(tr)
-            m: dict[str, Any] = {"mu": float(y.mean()), "sd": float(y.std())}
-            M = self._onehot(tr)
-            A = self._attr(tr, el)
-            m["amu"], m["asd"] = A.mean(0), A.std(0) + 1e-12
-            A = (A - m["amu"]) / m["asd"]
-            rng = np.random.default_rng(self.cfg.seed)
-            idx = rng.choice(len(A), size=min(self.cfg.ell_sample, len(A)), replace=False)
-            sub = A[idx]
-            d = np.sqrt(np.maximum((sub ** 2).sum(1)[:, None] + (sub ** 2).sum(1)[None, :] - 2 * sub @ sub.T, 0))
-            m["ell"] = float(np.median(d[np.triu_indices(len(sub), 1)])) or 1.0
-            n = len(tr)
-            K = np.empty((n, n))
-            for i in range(0, n, self.cfg.chunk):
-                K[i:i + self.cfg.chunk] = self._k(M[i:i + self.cfg.chunk], A[i:i + self.cfg.chunk], M, A, m)
-            K[np.diag_indices(n)] += self.cfg.noise
-            m["L"] = cho_factor(K, lower=True, overwrite_a=True, check_finite=False)
-            del K
-            m["alpha"] = cho_solve(m["L"], (y - m["mu"]) / m["sd"], check_finite=False)
-            m["M"], m["A"] = M, A
-            self.models[el] = m
+        """학습 관측만 기억한다. 분해는 predict에서 속성 하나씩 하고 버린다(속성마다 n×n 행렬 — 한꺼번에 들면 메모리가 넘친다)."""
+        self.train = list(train)
         return self
+
+    def _factor(self, el):
+        from scipy.linalg import cho_factor, cho_solve
+        tr = [o for o in self.train if o.element == el]
+        y = log_total(tr)
+        m: dict[str, Any] = {"mu": float(y.mean()), "sd": float(y.std())}
+        M = self._onehot(tr)
+        A = self._attr(tr, el)
+        m["amu"], m["asd"] = A.mean(0), A.std(0) + 1e-12
+        A = (A - m["amu"]) / m["asd"]
+        rng = np.random.default_rng(self.cfg.seed)
+        idx = rng.choice(len(A), size=min(self.cfg.ell_sample, len(A)), replace=False)
+        sub = A[idx]
+        d = np.sqrt(np.maximum((sub ** 2).sum(1)[:, None] + (sub ** 2).sum(1)[None, :] - 2 * sub @ sub.T, 0))
+        m["ell"] = float(np.median(d[np.triu_indices(len(sub), 1)])) or 1.0
+        n = len(tr)
+        K = np.empty((n, n))
+        for i in range(0, n, self.cfg.chunk):
+            K[i:i + self.cfg.chunk] = self._k(M[i:i + self.cfg.chunk], A[i:i + self.cfg.chunk], M, A, m)
+        K[np.diag_indices(n)] += self.cfg.noise
+        # K는 대칭이라 K.T(포트란 순서)를 넘기면 scipy가 복사하지 않고 제자리에서 분해한다
+        m["L"] = cho_factor(K.T, lower=True, overwrite_a=True, check_finite=False)
+        del K
+        m["alpha"] = cho_solve(m["L"], (y - m["mu"]) / m["sd"], check_finite=False)
+        m["M"], m["A"] = M, A
+        return m
 
     def predict(self, obs, var: bool = False):
         from scipy.linalg import cho_solve
         mean, sdv = np.zeros(len(obs)), np.zeros(len(obs))
-        for el, m in self.models.items():
+        for el in sorted({o.element for o in self.train}):
             idx = [i for i, o in enumerate(obs) if o.element == el]
+            if not idx:
+                continue
+            m = self._factor(el)
             for j in range(0, len(idx), self.cfg.chunk):
                 part = [obs[i] for i in idx[j:j + self.cfg.chunk]]
                 Ms = self._onehot(part)
@@ -325,6 +331,7 @@ class JaccardGP:
                     v = cho_solve(m["L"], Ks.T, check_finite=False)
                     prior = 1.0                                           # 자카드(s = 5 → 1) · RBF(0 → 1)의 대각
                     sdv[ii] = m["sd"] * np.sqrt(np.maximum(prior - (Ks * v.T).sum(1), 0) + self.cfg.noise)
+            del m
         return (mean, sdv) if var else mean
 
     def predict_total(self, obs) -> np.ndarray:
