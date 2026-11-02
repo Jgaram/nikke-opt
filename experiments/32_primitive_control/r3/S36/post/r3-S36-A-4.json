@@ -1,0 +1,27 @@
+{
+ "id": "r3-S36-A-4",
+ "season": 36,
+ "squad": [
+  "목단",
+  "브리드 : 사일런트 트랙",
+  "헬름",
+  "디젤 : 윈터 스위츠",
+  "질"
+ ],
+ "value": 32.31675543,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 33.02156977,
+ "base": 32.31675543,
+ "best_variants": [
+  "브리드 : 사일런트 트랙:reload:B0.5",
+  "질:reload:A0.3",
+  "헬름:reload:C0.5"
+ ],
+ "keys": 24,
+ "options": 64,
+ "seconds": 146.7
+}

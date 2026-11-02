@@ -1,0 +1,28 @@
+{
+ "id": "r3-S39-B-0",
+ "season": 39,
+ "squad": [
+  "리틀 머메이드",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "이브",
+  "신데렐라 : 크리스탈 웨이브"
+ ],
+ "value": 70.18799518,
+ "win": "burst_who2:per3=1@2",
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 71.30753898,
+ "base": 70.18799518,
+ "best_variants": [
+  "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+  "마스트 : 로망틱 메이드:cover_at:next_fb+0.1-rl",
+  "이브:cover_at:fb_end-0.3",
+  "크라운:cover_at:fb_end-0.5-rl"
+ ],
+ "keys": 15,
+ "options": 40,
+ "seconds": 181.4
+}

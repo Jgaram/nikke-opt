@@ -1,0 +1,28 @@
+{
+ "id": "r3-S39-A-0",
+ "season": 39,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "레이븐",
+  "라피 : 레드 후드",
+  "프리바티"
+ ],
+ "value": 78.50036553,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 78.93492373,
+ "base": 78.50036553,
+ "best_variants": [
+  "라피 : 레드 후드:reload:C0.1_dry",
+  "레이븐:reload:C0.5",
+  "크라운:reload:C0.5",
+  "프리바티:reload:C0.5"
+ ],
+ "keys": 22,
+ "options": 58,
+ "seconds": 250.4
+}

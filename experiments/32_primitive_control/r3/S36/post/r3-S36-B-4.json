@@ -1,0 +1,29 @@
+{
+ "id": "r3-S36-B-4",
+ "season": 36,
+ "squad": [
+  "볼륨",
+  "트리나",
+  "앵커 : 이노센트 메이드",
+  "홍련",
+  "리버렐리오"
+ ],
+ "value": 26.36841674,
+ "win": "burst_who3:first=2",
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 27.54655989,
+ "base": 26.36841674,
+ "best_variants": [
+  "볼륨:cover_at:next_fb+0.1-rl",
+  "앵커 : 이노센트 메이드:click:hold@chain",
+  "트리나:click:tap",
+  "트리나:cover_at:fb_end-0.5-rl",
+  "트리나:start_hold:hold0-2.2"
+ ],
+ "keys": 20,
+ "options": 61,
+ "seconds": 197.4
+}

@@ -1,0 +1,28 @@
+{
+ "id": "r3-S39-A-2",
+ "season": 39,
+ "squad": [
+  "리타",
+  "나유타",
+  "마스트 : 로망틱 메이드",
+  "신데렐라 : 크리스탈 웨이브",
+  "율리아"
+ ],
+ "value": 57.4635566,
+ "win": null,
+ "arm": "A",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 57.70544139,
+ "base": 57.4635566,
+ "best_variants": [
+  "나유타:cover:on",
+  "마스트 : 로망틱 메이드:reload:A0.3",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "율리아:reload:C0.1_dry"
+ ],
+ "keys": 20,
+ "options": 58,
+ "seconds": 236.4
+}
