@@ -1,0 +1,28 @@
+{
+ "id": "r3b-S39-Bp-1",
+ "season": 39,
+ "squad": [
+  "리타",
+  "나유타",
+  "센티",
+  "신데렐라 : 크리스탈 웨이브",
+  "레이븐"
+ ],
+ "value": 65.27101355,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 66.8497381,
+ "base": 65.27101355,
+ "best_variants": [
+  "레이븐:cover_at:fb_end-0.1-rl_dry",
+  "레이븐:start_hold:hold0-2.2",
+  "리타:cover_at:fb_end-0.1-rl",
+  "센티:click:tapfire@charge4"
+ ],
+ "keys": 20,
+ "options": 54,
+ "seconds": 313.0
+}

@@ -1,0 +1,29 @@
+{
+ "id": "r3b-S41-Bp-2",
+ "season": 41,
+ "squad": [
+  "목단",
+  "크라운",
+  "헬름",
+  "스노우 화이트 : 헤비암즈",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "value": 66.80963885,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 67.79112612,
+ "base": 66.80963885,
+ "best_variants": [
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.1-rl_dry",
+  "일레그 : 붐 앤 쇼크:cover_at:fb_end-0.1-rl",
+  "크라운:cover_at:fb_end-0.1-rl_dry",
+  "헬름:click:hold@chain",
+  "헬름:start_hold:hold0-2.2"
+ ],
+ "keys": 20,
+ "options": 60,
+ "seconds": 168.7
+}

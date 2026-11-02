@@ -1,0 +1,6 @@
+{"id": "r3b-S42-Bp-1", "evals": 400, "errors": 0, "gain": 1.0044, "sims": 736, "t": 124}
+{"id": "r3b-S42-Bp-0", "evals": 400, "errors": 0, "gain": 1.0604, "sims": 869, "t": 148}
+{"id": "r3b-S42-Bp-2", "evals": 400, "errors": 0, "gain": 1.0338, "sims": 1482, "t": 257}
+{"id": "r3b-S42-Bp-3", "evals": 400, "errors": 0, "gain": 1.0184, "sims": 1729, "t": 302}
+{"id": "r3b-S42-Bp-4", "evals": 400, "errors": 0, "gain": 1.0326, "sims": 2269, "t": 400}
+{"id": "r3b-S42-Bp-0-rep", "evals": 400, "errors": 0, "gain": 1.0604, "sims": 2400, "t": 432}

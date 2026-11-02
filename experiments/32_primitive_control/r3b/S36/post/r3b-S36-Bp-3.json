@@ -1,0 +1,31 @@
+{
+ "id": "r3b-S36-Bp-3",
+ "season": 36,
+ "squad": [
+  "리타",
+  "타키나",
+  "아인",
+  "에이다",
+  "헬름"
+ ],
+ "value": 40.69367557,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 41.34037231,
+ "base": 40.69367557,
+ "best_variants": [
+  "리타:cancel:on",
+  "리타:cover_at:fb_end-0.1-rl_dry",
+  "아인:click:tap+fc2.5",
+  "에이다:click:tap+fc5.5",
+  "타키나:click:tap+fc2.5",
+  "타키나:start_hold:hold0-2.2",
+  "헬름:click:hold@chain"
+ ],
+ "keys": 24,
+ "options": 80,
+ "seconds": 254.2
+}

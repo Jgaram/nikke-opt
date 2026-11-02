@@ -1,0 +1,25 @@
+{
+ "id": "r3b-S39-Bp-3",
+ "season": 39,
+ "squad": [
+  "레이블",
+  "리틀 머메이드",
+  "타키나",
+  "치사토",
+  "프리바티"
+ ],
+ "value": 52.89299107,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 52.93228526,
+ "base": 52.89299107,
+ "best_variants": [
+  "타키나:start_hold:hold0-2.2"
+ ],
+ "keys": 18,
+ "options": 50,
+ "seconds": 329.5
+}

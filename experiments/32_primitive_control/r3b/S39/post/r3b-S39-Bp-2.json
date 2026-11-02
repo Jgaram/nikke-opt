@@ -1,0 +1,26 @@
+{
+ "id": "r3b-S39-Bp-2",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "민트",
+  "헬름 : 아쿠아마린",
+  "마르차나 : 마린 스터디",
+  "스노우 화이트 : 헤비암즈"
+ ],
+ "value": 56.38443899,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 56.62155569,
+ "base": 56.38443899,
+ "best_variants": [
+  "마르차나 : 마린 스터디:cover_at:next_fb+0.1-rl",
+  "미란다:cover_at:next_fb+0.1-rl"
+ ],
+ "keys": 20,
+ "options": 60,
+ "seconds": 310.7
+}

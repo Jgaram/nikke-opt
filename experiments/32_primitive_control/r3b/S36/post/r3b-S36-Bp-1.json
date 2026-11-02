@@ -1,0 +1,29 @@
+{
+ "id": "r3b-S36-Bp-1",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "신데렐라",
+  "아스카 : WILLE"
+ ],
+ "value": 45.26416097,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 46.61680954,
+ "base": 45.26416097,
+ "best_variants": [
+  "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+  "신데렐라:cover_at:fb_end-0.5-rl",
+  "아스카 : WILLE:cover_at:fb_end-0.1-rl_dry",
+  "앵커 : 이노센트 메이드:click:tapfire@charge4",
+  "앵커 : 이노센트 메이드:cover_at:fb_end-0.5-rl"
+ ],
+ "keys": 18,
+ "options": 51,
+ "seconds": 319.6
+}

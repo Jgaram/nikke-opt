@@ -1,0 +1,28 @@
+{
+ "id": "r3b-S41-Bp-4",
+ "season": 41,
+ "squad": [
+  "리타",
+  "그레이브",
+  "퀀시 : 이스케이프 퀸",
+  "길로틴 : 윈터 슬레이어",
+  "루드밀라 : 윈터 오너"
+ ],
+ "value": 36.83948963,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 36.98126763,
+ "base": 36.83948963,
+ "best_variants": [
+  "그레이브:cover_at:fb_end-0.1-rl",
+  "길로틴 : 윈터 슬레이어:cover_at:fb_end-0.1-rl_dry",
+  "리타:cover_at:fb_end-0.1-rl_dry",
+  "퀀시 : 이스케이프 퀸:cover_at:fb_end-0.1-rl"
+ ],
+ "keys": 15,
+ "options": 40,
+ "seconds": 168.3
+}

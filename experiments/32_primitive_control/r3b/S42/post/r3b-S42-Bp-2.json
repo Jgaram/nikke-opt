@@ -1,0 +1,31 @@
+{
+ "id": "r3b-S42-Bp-2",
+ "season": 42,
+ "squad": [
+  "볼륨",
+  "마스트 : 로망틱 메이드",
+  "맥스웰 : 오디너리 미케닉",
+  "신데렐라",
+  "메이든 : 아이스 로즈"
+ ],
+ "value": 55.83061862,
+ "win": null,
+ "arm": "Bp",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 57.71493007,
+ "base": 55.83061862,
+ "best_variants": [
+  "맥스웰 : 오디너리 미케닉:click:tapfire@charge4",
+  "맥스웰 : 오디너리 미케닉:cover_at:fb_end-0.1-rl",
+  "메이든 : 아이스 로즈:cancel:on",
+  "메이든 : 아이스 로즈:click:hold@chain",
+  "메이든 : 아이스 로즈:start_hold:hold0-2.2",
+  "볼륨:cover_at:fb_end-0.1-rl_dry",
+  "신데렐라:cover_at:fb_end-0.3"
+ ],
+ "keys": 20,
+ "options": 61,
+ "seconds": 132.6
+}
