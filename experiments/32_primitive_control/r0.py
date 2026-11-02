@@ -131,7 +131,7 @@ def cmd_analyze(an: Path) -> int:
         tot = lambda grp, c: sum(V[key(q)][c] for q in g[grp])  # noqa: E731
         # 1) 실전 덱별 딜과의 순위 상관
         rv = []
-        byset = {frozenset(k.split(",")): k for k in V}
+        byset = {frozenset(k.split(",")): k for k in sorted(V, key=lambda k: k in ov)}  # 같은 5명이면 랭커 순서(옛 값이 있는 키)
         for fs, ds in real[s].items():
             if fs in byset and len(ds) >= MIN_USERS:
                 k = byset[fs]
