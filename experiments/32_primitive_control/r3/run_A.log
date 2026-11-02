@@ -2,3 +2,4 @@
 {"season": 36, "arm": "A", "seed": 1, "evals": 11030, "records": 11030, "sims": 11030, "seconds": 2080.8, "best": 260.75222233, "errors": 0, "kicks": 12, "stat": {}, "evaluator": "nikke-calc-rs 8bc51a2"}
 {"season": 39, "arm": "A", "seed": 0, "evals": 11014, "records": 11014, "sims": 11014, "seconds": 2143.2, "best": 293.80280089, "errors": 0, "kicks": 13, "stat": {}, "evaluator": "nikke-calc-rs 8bc51a2"}
 {"season": 39, "arm": "A", "seed": 1, "evals": 11023, "records": 11023, "sims": 11023, "seconds": 1730.7, "best": 296.49677942, "errors": 0, "kicks": 14, "stat": {}, "evaluator": "nikke-calc-rs 8bc51a2"}
+{"season": 41, "arm": "A", "seed": 0, "evals": 11028, "records": 11028, "sims": 11028, "seconds": 1841.5, "best": 308.61070207000006, "errors": 0, "kicks": 13, "stat": {}, "evaluator": "nikke-calc-rs 8bc51a2"}
