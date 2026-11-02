@@ -240,7 +240,7 @@
       h('td', { class: 'r' }, `${S.pool}`, S.new.length ? h('span', { class: 'muted small', text: ` +${S.new.length}` }) : null),
       h('td', { class: 'r', text: S.favorite0.length ? `${S.favorite0.length}명` : '—' }),
       done ? h('td', { class: 'r', text: `${R.n97}` }) : h('td', { class: 'r muted', text: S.parts && Object.keys(S.parts).length ? '실행 중' : '계산 전' }),
-      h('td', { class: 'small' }, done ? cl.map((c, i) => [i ? ' · ' : '', badge(c.name, true), ` ${pct(c.ratio)}`]) : ''),
+      h('td', { class: 'small nowrap' }, done ? cl.map((c, i) => [i ? ' · ' : '', badge(c.name, true), ` ${pct(c.ratio)}`]) : ''),
       h('td', { class: 'r', text: done ? cl.map((c) => `${int(c.subs_count)}${c.capped ? '+' : ''}`).join(' · ') : '' }),
       h('td', { class: 'r', text: done ? `${R.metrics.N25}` : '' }),
       h('td', { class: 'r', text: done ? pct(R.metrics.V_top) : '' }),

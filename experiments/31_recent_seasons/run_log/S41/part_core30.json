@@ -1,0 +1,13 @@
+{
+ "requests": 2000,
+ "reeval_sims": 2000,
+ "reeval_best": 378.98901543,
+ "extra_evals": 1849,
+ "evals": 3849,
+ "seconds": 367.9,
+ "arm": "B",
+ "season": 41,
+ "part": "core30",
+ "sims": 3849,
+ "evaluator": "nikke-calc-rs 89d2e64"
+}
