@@ -209,6 +209,7 @@ def run_pre(s: int, arm: str, seed: int, ev: Any, out_dir: Path) -> dict[str, An
     f = out_dir / f"{arm}_s{seed}.json"
     if f.exists():
         return jload(f)
+    out_dir.mkdir(parents=True, exist_ok=True)
     acct = run31.account(s, seed)
     sims0 = ev.sim_count
     if arm == "B":
