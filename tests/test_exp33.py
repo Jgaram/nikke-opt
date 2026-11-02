@@ -384,3 +384,24 @@ class TestInspect(unittest.TestCase):
         # 덱 3은 크라운이 이미 있어 2단계 칸 교체 후보에서 빠진다
         self.assertNotIn("크라운", {p["mate"] for p in b if p["deck"] == 3 and p["mate"] != d3[2]})
         self.assertTrue(all(p["squad"][0] in (I.LM, I.MOKDAN) for p in b))
+
+
+class TestBreakdown(unittest.TestCase):
+    def test_parse_breakdown_sums_cycles(self):
+        B = sys.modules.get("breakdown33") or _load("breakdown33", ROOT / "experiments" / "33_role_vectors" / "breakdown33.py")
+        text = "\n".join([
+            "── 사이클 0  (t=0.000s ~ 3.350s) ──", "  리틀 머메이드",
+            "    스킬명                                      딜량     히트수      비율",
+            "    ------------------------------------------------------------",
+            "    일반공격                              1,288,536      80  100.0%",
+            "    합계                                1,288,536", "",
+            "── 사이클 1  (t=3.350s ~ 15.883s) ──", "  리틀 머메이드",
+            "    일반공격                             14,196,769     284   41.2%",
+            "    버블 웨이브                           12,064,472      40   35.0%",
+            "    거품 난사                             8,223,560      20   23.8%",
+            "    합계                               34,484,801"])
+        got = B.parse_breakdown(text)
+        self.assertEqual(got["일반공격"], {"damage": 1288536 + 14196769, "hits": 364})
+        self.assertEqual(got["거품 난사"]["hits"], 20)
+        self.assertNotIn("합계", got)
+        self.assertEqual(len(B.plan()), len(B.B2S) * len(B.DEALERS) * 2)
