@@ -2,3 +2,10 @@
 {"id": "r3-S36-A-0", "evals": 400, "errors": 0, "gain": 1.0394, "sims": 1613, "t": 202}
 {"id": "r3-S36-A-2", "evals": 400, "errors": 0, "gain": 1.0, "sims": 1650, "t": 205}
 {"id": "r3-S36-A-1", "evals": 400, "errors": 0, "gain": 1.0201, "sims": 1723, "t": 210}
+{"id": "r3-S36-A-4", "evals": 400, "errors": 0, "gain": 1.0218, "sims": 2996, "t": 332}
+{"id": "r3-S36-B-0", "evals": 400, "errors": 0, "gain": 1.0171, "sims": 3247, "t": 364}
+{"id": "r3-S36-A-0-rep", "evals": 400, "errors": 0, "gain": 1.0399, "sims": 3250, "t": 364}
+{"id": "r3-S36-B-1", "evals": 400, "errors": 0, "gain": 1.0346, "sims": 3350, "t": 373}
+{"id": "r3-S36-B-2", "evals": 400, "errors": 0, "gain": 1.0141, "sims": 4432, "t": 500}
+{"id": "r3-S36-B-4", "evals": 400, "errors": 0, "gain": 1.0447, "sims": 4819, "t": 562}
+{"id": "r3-S36-B-3", "evals": 400, "errors": 0, "gain": 1.0568, "sims": 4850, "t": 566}

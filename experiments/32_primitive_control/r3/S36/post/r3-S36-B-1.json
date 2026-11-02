@@ -1,0 +1,29 @@
+{
+ "id": "r3-S36-B-1",
+ "season": 36,
+ "squad": [
+  "목단",
+  "나유타",
+  "스노우 화이트 : 헤비암즈",
+  "프리바티",
+  "아니스 : 스파클링 서머"
+ ],
+ "value": 53.10437739,
+ "win": "burst_who3:none=2",
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 54.93956568,
+ "base": 53.10437739,
+ "best_variants": [
+  "목단:cover_at:fb_end-0.3",
+  "스노우 화이트 : 헤비암즈:click:tapfire@charge4",
+  "스노우 화이트 : 헤비암즈:cover_at:fb_end-0.1-rl",
+  "아니스 : 스파클링 서머:cover_at:fb_end-0.5-rl",
+  "프리바티:cancel:on"
+ ],
+ "keys": 18,
+ "options": 50,
+ "seconds": 162.4
+}

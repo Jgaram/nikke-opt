@@ -1,0 +1,29 @@
+{
+ "id": "r3-S36-B-3",
+ "season": 36,
+ "squad": [
+  "리틀 머메이드",
+  "마리",
+  "벨벳",
+  "길로틴",
+  "신데렐라"
+ ],
+ "value": 38.88471229,
+ "win": null,
+ "arm": "B",
+ "tag": "",
+ "evals": 400,
+ "errors": 0,
+ "best": 41.09288984,
+ "base": 38.88471229,
+ "best_variants": [
+  "리틀 머메이드:cover_at:fb_end-0.1-rl_dry",
+  "마리:click:tapfire@charge4",
+  "벨벳:click:hold@chain",
+  "벨벳:cover_at:fb_end-0.1-rl_dry",
+  "신데렐라:cover_at:fb_end-0.3"
+ ],
+ "keys": 20,
+ "options": 61,
+ "seconds": 202.3
+}
