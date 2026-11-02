@@ -1,0 +1,2 @@
+{"squad": ["아니스 : 스타", "나유타", "프리카", "홍련 : 흑영", "리버렐리오"], "base": 6976847088, "v3": [["프리카:click:tapfire@charge4", 6987831355, null]]}
+{"season": 38, "arm": "B", "seed": 0, "evals": 11457, "records": 2669, "sims": 11457, "seconds": 729.4, "best": 259.7470678600001, "errors": 0, "kicks": 2, "stat": {"probe_errors": 0, "base_sims": 2669, "probe_sims": 8788, "probed": 2197, "gated_out": 472, "cut": 0}, "evaluator": "nikke-calc-rs 8bc51a2"}
