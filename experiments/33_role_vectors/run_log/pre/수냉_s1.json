@@ -1,0 +1,20 @@
+{
+ "element": "수냉",
+ "seed": 1,
+ "budget": 12500,
+ "evals": 11020,
+ "sims": 10547,
+ "seconds": 830.5,
+ "best": 289.33290073,
+ "errors": 0,
+ "members_missing": 0,
+ "evaluator": {
+  "repo": "nikke-calc-rs",
+  "commit": "8bc51a2466802c3c6892b7b428a2e15a7fe1ba07",
+  "dirty": false,
+  "port_of": {
+   "repo": "Jgaram/nikke-calc",
+   "commit": "67835ca3033a95482749ea2db35a8ee2a0856a92"
+  }
+ }
+}

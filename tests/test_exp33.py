@@ -353,3 +353,34 @@ class TestTeamTerm(unittest.TestCase):
         q12 = mod.q[mod.ni["n1"], mod.ni["n2"]]
         self.assertAlmostEqual(float(q12), float(mod.q[mod.ni["n2"], mod.ni["n1"]]), places=9)
         self.assertGreater(float(q12), 0.2)                          # log 1.5 ≈ 0.41 중 상당 부분을 팀 항이 맡는다
+
+
+class TestInspect(unittest.TestCase):
+    """Q1 직접 확인(inspect33) 계획 — 평가기 없이."""
+
+    def setUp(self):
+        self.I = sys.modules.get("inspect33") or _load("inspect33", ROOT / "experiments" / "33_role_vectors" / "inspect33.py")
+
+    def test_median_b1_excludes_tove_and_anis(self):
+        st = {"토브": "1", "아니스 : 스타": "1", "a": "1", "b": "1", "c": "1", "test_x": "1", "z": "2"}
+        fp = {n: {"buffer": v} for n, v in (("토브", 9), ("아니스 : 스타", 9), ("a", 0.1), ("b", 0.2), ("c", 0.3),
+                                              ("test_x", 0.25), ("z", 0.5))}
+        self.assertEqual(self.I.median_b1(fp, st), "b")
+
+    def test_plans_keep_slots_and_no_duplicates(self):
+        I = self.I
+        names = {"아니스 : 스타": "1", "토브": "1", "얀": "1", I.LM: "1", I.MOKDAN: "1", "마스트 : 로망틱 메이드": "2",
+                 "나유타": "2", "리버렐리오": "3", "홍련 : 흑영": "3", "크라운": "2", "프리바티": "3",
+                 "스노우 화이트 : 헤비암즈": "3"}
+        names.update({n: "2" for n in I.A_X + I.B_SWAPS if n not in names})
+        d0 = ["아니스 : 스타", "마스트 : 로망틱 메이드", "나유타", "리버렐리오", "홍련 : 흑영"]
+        d3 = ["아니스 : 스타", "크라운", "마스트 : 로망틱 메이드", "프리바티", "스노우 화이트 : 헤비암즈"]
+        refs = {"R": [d0, d0, d0, d3]}
+        a = I.plan_a(refs, names, ("토브", "아니스 : 스타", "얀"))
+        b = I.plan_b(refs, names)
+        for p in a + b:
+            self.assertEqual(len(set(p["squad"])), 5)
+        self.assertEqual(len(a), len(I.A_DECKS) * 3 * len(I.A_X) * len(I.A_ELEMENTS))
+        # 덱 3은 크라운이 이미 있어 2단계 칸 교체 후보에서 빠진다
+        self.assertNotIn("크라운", {p["mate"] for p in b if p["deck"] == 3 and p["mate"] != d3[2]})
+        self.assertTrue(all(p["squad"][0] in (I.LM, I.MOKDAN) for p in b))
