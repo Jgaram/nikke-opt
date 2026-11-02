@@ -1,0 +1,158 @@
+{
+ "season": 39,
+ "arm": "B",
+ "seed": 0,
+ "evals": 11434,
+ "records": 2790,
+ "sims": 11434,
+ "seconds": 965.3,
+ "best": 290.84666221,
+ "errors": 0,
+ "kicks": 2,
+ "stat": {
+  "probe_errors": 0,
+  "base_sims": 2790,
+  "probe_sims": 8644,
+  "probed": 2161,
+  "gated_out": 629,
+  "cut": 0
+ },
+ "history": [
+  {
+   "evals": 683,
+   "pack": 185.90993098,
+   "kick": false
+  },
+  {
+   "evals": 1047,
+   "pack": 207.03220136000002,
+   "kick": false
+  },
+  {
+   "evals": 1483,
+   "pack": 236.90863788999997,
+   "kick": false
+  },
+  {
+   "evals": 1903,
+   "pack": 248.92194937,
+   "kick": false
+  },
+  {
+   "evals": 2371,
+   "pack": 266.30617815,
+   "kick": false
+  },
+  {
+   "evals": 2823,
+   "pack": 272.03492706,
+   "kick": false
+  },
+  {
+   "evals": 3239,
+   "pack": 273.56847207,
+   "kick": false
+  },
+  {
+   "evals": 3679,
+   "pack": 273.60331412,
+   "kick": false
+  },
+  {
+   "evals": 4135,
+   "pack": 274.58828182999997,
+   "kick": false
+  },
+  {
+   "evals": 4559,
+   "pack": 275.38725589,
+   "kick": false
+  },
+  {
+   "evals": 5055,
+   "pack": 276.01789889,
+   "kick": false
+  },
+  {
+   "evals": 5555,
+   "pack": 277.72303568,
+   "kick": false
+  },
+  {
+   "evals": 6055,
+   "pack": 277.72303568,
+   "kick": false
+  },
+  {
+   "evals": 6281,
+   "pack": 277.72303568,
+   "kick": true
+  },
+  {
+   "evals": 6509,
+   "pack": 277.72303568,
+   "kick": false
+  },
+  {
+   "evals": 6761,
+   "pack": 278.26927899,
+   "kick": false
+  },
+  {
+   "evals": 7241,
+   "pack": 278.26927899,
+   "kick": false
+  },
+  {
+   "evals": 7741,
+   "pack": 282.87078674,
+   "kick": false
+  },
+  {
+   "evals": 8233,
+   "pack": 283.87741094,
+   "kick": false
+  },
+  {
+   "evals": 8709,
+   "pack": 290.78999767,
+   "kick": false
+  },
+  {
+   "evals": 9149,
+   "pack": 290.78999767,
+   "kick": false
+  },
+  {
+   "evals": 9375,
+   "pack": 290.78999767,
+   "kick": true
+  },
+  {
+   "evals": 9631,
+   "pack": 290.78999767,
+   "kick": false
+  },
+  {
+   "evals": 10023,
+   "pack": 290.78999767,
+   "kick": false
+  },
+  {
+   "evals": 10507,
+   "pack": 290.78999767,
+   "kick": false
+  },
+  {
+   "evals": 11003,
+   "pack": 290.78999767,
+   "kick": false
+  },
+  {
+   "evals": 11434,
+   "pack": 290.84666221,
+   "kick": false
+  }
+ ],
+ "evaluator": "nikke-calc-rs 8bc51a2"
+}
