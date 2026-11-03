@@ -1,0 +1,125 @@
+{
+ "arm": "d",
+ "params": {
+  "model": "D2",
+  "refit_every": 500,
+  "pretrain": "실험 33 P + 넣어 보기 121,373관측(an40.py pretrain)",
+  "finetune": {
+   "lr": 0.0003,
+   "max_epochs": 400,
+   "patience": 15,
+   "valid_frac": 0.1
+  },
+  "construct": "릿지 그대로(base와 같음)"
+ },
+ "season": 36,
+ "seed": 0,
+ "budget": 2000,
+ "evals": 1842,
+ "seconds": 99.6,
+ "best": 272.64195466,
+ "errors": 0,
+ "kicks": 1,
+ "history": [
+  {
+   "evals": 196,
+   "pack": 192.85956572999999,
+   "kick": false
+  },
+  {
+   "evals": 296,
+   "pack": 221.53343789000002,
+   "kick": false
+  },
+  {
+   "evals": 396,
+   "pack": 238.06025391999998,
+   "kick": false
+  },
+  {
+   "evals": 496,
+   "pack": 241.33830407,
+   "kick": false
+  },
+  {
+   "evals": 596,
+   "pack": 244.41764939,
+   "kick": false
+  },
+  {
+   "evals": 696,
+   "pack": 247.79480253999998,
+   "kick": false
+  },
+  {
+   "evals": 796,
+   "pack": 249.51413219999998,
+   "kick": false
+  },
+  {
+   "evals": 896,
+   "pack": 251.74806989,
+   "kick": false
+  },
+  {
+   "evals": 996,
+   "pack": 251.74806989,
+   "kick": false
+  },
+  {
+   "evals": 1098,
+   "pack": 251.74806989,
+   "kick": true
+  },
+  {
+   "evals": 1198,
+   "pack": 251.74806989,
+   "kick": false
+  },
+  {
+   "evals": 1298,
+   "pack": 251.74806989,
+   "kick": false
+  },
+  {
+   "evals": 1398,
+   "pack": 251.74806989,
+   "kick": false
+  },
+  {
+   "evals": 1498,
+   "pack": 262.85609663,
+   "kick": false
+  },
+  {
+   "evals": 1598,
+   "pack": 271.55096565,
+   "kick": false
+  },
+  {
+   "evals": 1698,
+   "pack": 271.55096565,
+   "kick": false
+  },
+  {
+   "evals": 1750,
+   "pack": 271.55096565,
+   "kick": false
+  },
+  {
+   "evals": 1842,
+   "pack": 272.64195466,
+   "kick": false
+  }
+ ],
+ "d2": {
+  "refits": 4,
+  "train_s": 8.7,
+  "pred_s": 2.5,
+  "predicted": 54491
+ },
+ "sims": 1842,
+ "pack": 272.64195466,
+ "G": 0.08021309540298915,
+ "visit": 0.0
+}
