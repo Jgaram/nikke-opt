@@ -1,0 +1,1 @@
+{"arm": "b", "params": {"explore_share": 0.2, "parents": "best5", "moves": "single(same+cross)", "pick": "uniform", "seed": "exp39b"}, "season": 36, "seed": 0, "budget": 12500, "evals": 11032, "seconds": 1360.1, "best": 276.26048555, "errors": 0, "kicks": 13, "sims": 11032, "pack": 276.26048555, "G": 0.0660641864639624, "visit": 0.19387755102040816}
