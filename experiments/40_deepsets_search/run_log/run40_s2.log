@@ -17,3 +17,4 @@ exit 3
 {"arm": "d", "season": 27, "seed": 0, "budget": 12500, "evals": 11015, "seconds": 2337.9, "best": 186.77989183999998, "errors": 0, "kicks": 14, "d2": {"refits": 22, "train_s": 616.9, "pred_s": 7.0, "predicted": 176030}, "part": "B_s0", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11015, "wall": 2338.1}
 {"stop": "budget", "minutes": 95.5}
 exit 3
+--- 2단계 실행 5 19:52 UTC — 평가기 nikke-calc-rs 8bc51a2, 옵션 안 줌
