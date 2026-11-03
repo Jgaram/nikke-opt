@@ -25,7 +25,7 @@
  ],
  "evaluator": {
   "repo": "nikke-calc-rs",
-  "commit": "8efd7069b69fcd4ce2dcf16935ed83e49f14c1ad",
+  "commit": "1c7c60f83997de68c60815b67617c402ca56baf7",
   "dirty": false,
   "port_of": {
    "repo": "Jgaram/nikke-calc",
@@ -363,8 +363,8 @@
     "always"
    ],
    [
-    14.533,
-    15.917,
+    4.65,
+    14.65,
     1,
     "hold",
     "own_full_burst"
@@ -391,8 +391,8 @@
     "always"
    ],
    [
-    41.267,
-    42.667,
+    31.367,
+    41.367,
     1,
     "hold",
     "own_full_burst"
@@ -420,7 +420,7 @@
    ],
    [
     59.3,
-    68.867,
+    67.567,
     1,
     "hold",
     "own_full_burst"
@@ -447,18 +447,18 @@
     "always"
    ],
    [
+    83.317,
+    93.317,
+    1,
+    "hold",
+    "own_full_burst"
+   ],
+   [
     94.25,
     96.35,
     3,
     "tap",
     "always"
-   ],
-   [
-    93.217,
-    96.633,
-    1,
-    "hold",
-    "own_full_burst"
    ],
    [
     96.35,
@@ -475,8 +475,8 @@
     "always"
    ],
    [
-    118.85,
-    120.25,
+    108.95,
+    118.95,
     1,
     "hold",
     "own_full_burst"
@@ -504,7 +504,7 @@
    ],
    [
     136.783,
-    146.3,
+    145.033,
     1,
     "hold",
     "own_full_burst"
@@ -531,18 +531,18 @@
     "always"
    ],
    [
+    160.55,
+    170.55,
+    1,
+    "hold",
+    "own_full_burst"
+   ],
+   [
     171.45,
     173.083,
     3,
     "tap",
     "always"
-   ],
-   [
-    170.433,
-    173.817,
-    1,
-    "hold",
-    "own_full_burst"
    ],
    [
     173.083,

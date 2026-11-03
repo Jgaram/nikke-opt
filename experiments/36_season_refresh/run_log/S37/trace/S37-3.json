@@ -23,7 +23,7 @@
  ],
  "evaluator": {
   "repo": "nikke-calc-rs",
-  "commit": "8efd7069b69fcd4ce2dcf16935ed83e49f14c1ad",
+  "commit": "1c7c60f83997de68c60815b67617c402ca56baf7",
   "dirty": false,
   "port_of": {
    "repo": "Jgaram/nikke-calc",
@@ -361,25 +361,11 @@
     "always"
    ],
    [
-    29.75,
-    30.567,
-    2,
-    "cover",
-    "엄폐 시작(장전컨)"
-   ],
-   [
     30.567,
     45.017,
     2,
     "tap",
     "always"
-   ],
-   [
-    45.017,
-    45.533,
-    2,
-    "cover",
-    "엄폐 시작(장전컨)"
    ],
    [
     45.533,
