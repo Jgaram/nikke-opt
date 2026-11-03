@@ -1,0 +1,134 @@
+{
+ "id": "S40-3",
+ "season": 40,
+ "squad": [
+  "목단",
+  "미란다",
+  "민트",
+  "리버렐리오",
+  "디젤 : 윈터 스위츠"
+ ],
+ "win": null,
+ "pre": 49.49944676,
+ "ctrl": 50.35301597,
+ "ctrl_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "목단:reload:C0.5",
+  "미란다:burst:wait2",
+  "미란다:reload:B0.5"
+ ],
+ "E0": 56.62025347,
+ "O": 68.53331626,
+ "alloc": {
+  "목단": "공4+장탄2+크확4+크뎀2",
+  "미란다": "우코4+공4+크확1+크뎀3",
+  "민트": "공4+장탄3+차속4+차뎀1",
+  "리버렐리오": "공4+크확4+크뎀4",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.2783387899999994,
+   "max_ammo_pct": 0.09394126000000114,
+   "crit_rate": 0.13130823999999564,
+   "crit_dmg": 0.08311348999999524,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미란다": {
+   "element_bonus": 3.055024160000002,
+   "atk_pct": 1.7500500599999995,
+   "max_ammo_pct": 0.7041106600000049,
+   "crit_rate": 0.9346284900000015,
+   "crit_dmg": 1.177067319999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.2917088300000046,
+   "max_ammo_pct": 0.4145832299999981,
+   "crit_rate": 0.13795939999999973,
+   "crit_dmg": 0.08965420999999907,
+   "charge_speed_pct": 0.81049376,
+   "charge_dmg_pct": 0.15616948999999636,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.565381890000005,
+   "max_ammo_pct": 0.6665745399999992,
+   "crit_rate": 1.3945131999999987,
+   "crit_dmg": 2.1186833199999953,
+   "charge_speed_pct": 3.1998558700000004,
+   "charge_dmg_pct": 0.8847956899999971,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 13.892899990000004,
+   "atk_pct": 15.941092789999999,
+   "max_ammo_pct": 0.2407145299999982,
+   "crit_rate": 7.155281969999997,
+   "crit_dmg": 3.190993049999996,
+   "charge_speed_pct": 1.7595018499999995,
+   "charge_dmg_pct": 0.6584280699999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "미란다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "element_bonus",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 68.99608889,
+ "ctrl2_variants": [
+  "목단:cube:렐릭 어설트 큐브",
+  "목단:reload:C0.1_dry",
+  "미란다:burst:wait2",
+  "미란다:reload:A0.3"
+ ],
+ "final": 68.99608889,
+ "final_variants": [
+  "목단:cube:렐릭 어설트 큐브",
+  "목단:reload:C0.1_dry",
+  "미란다:burst:wait2",
+  "미란다:reload:A0.3"
+ ],
+ "sims": 2319,
+ "seconds": 145.0
+}

@@ -1,0 +1,141 @@
+{
+ "id": "S40-4",
+ "season": 40,
+ "squad": [
+  "리타",
+  "그레이브",
+  "스노우 화이트 : 헤비암즈",
+  "레이",
+  "미하라 : 본딩 체인"
+ ],
+ "win": null,
+ "pre": 44.61109668,
+ "ctrl": 45.16262419,
+ "ctrl_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:C0.1_dry",
+  "레이:cube:택티컬 베어 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "스노우 화이트 : 헤비암즈:reload:A0.3"
+ ],
+ "E0": 53.696308,
+ "O": 59.82860348,
+ "alloc": {
+  "리타": "공4+크확4+크뎀4",
+  "그레이브": "우코4+공4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "레이": "우코4+공4+장탄4",
+  "미하라 : 본딩 체인": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3870932499999995,
+   "max_ammo_pct": -0.19683134999999652,
+   "crit_rate": 0.11287930999999674,
+   "crit_dmg": 0.08516312999999798,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 4.2287531700000045,
+   "atk_pct": 2.197239440000004,
+   "max_ammo_pct": 0.0012365500000015572,
+   "crit_rate": 0.004571319999996604,
+   "crit_dmg": 3.22672635,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9410419599999997,
+   "max_ammo_pct": 0.23124623000000355,
+   "crit_rate": 0.9058364799999978,
+   "crit_dmg": 0.7038557999999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3170312700000011,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이": {
+   "element_bonus": 3.7849432100000016,
+   "atk_pct": 2.60157744,
+   "max_ammo_pct": 2.4961616699999993,
+   "crit_rate": 0.9121823300000003,
+   "crit_dmg": 0.6867605999999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미하라 : 본딩 체인": {
+   "element_bonus": 8.92612098,
+   "atk_pct": 5.551837370000001,
+   "max_ammo_pct": 1.7670111099999986,
+   "crit_rate": 1.7968820699999952,
+   "crit_dmg": 1.3728179199999957,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "그레이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "레이": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "미하라 : 본딩 체인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 61.38849724,
+ "ctrl2_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:A0.3",
+  "레이:cube:택티컬 베어 큐브",
+  "리타:reload:B0.5",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브"
+ ],
+ "final": 61.38849724,
+ "final_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:A0.3",
+  "레이:cube:택티컬 베어 큐브",
+  "리타:reload:B0.5",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브"
+ ],
+ "sims": 1258,
+ "seconds": 108.2
+}
