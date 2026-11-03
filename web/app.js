@@ -229,8 +229,7 @@
         posts.length ? `5덱 합 사전 → 최종 시즌 중앙 ${gain(1, median(posts.map((p) => p.total.final / p.total.pre)))} · 코어 없음` : '계산 중 · 코어 없음 최선 5덱'),
       tile('97% 이상 큰 분류', runs.length ? `${median(runs.map((r) => r.n97))}개` : '—', `시즌 중앙 · ${BOSS_LABEL[state.boss]}`),
       tile('N25', runs.length ? `${median(runs.map((r) => r.metrics.N25))}` : '—', '우리 A 25명 중 랭커 상위 25명 · 시즌 중앙'),
-      tile('V_top', runs.length ? pct(median(runs.map((r) => r.metrics.V_top))) : '—', '랭커 대표 5덱 ÷ 우리 A · 시즌 중앙'),
-      rpostTile());
+      ratioTiles());
     $('#summary-body').replaceChildren(
       h('p', { class: 'sub' }, '시즌마다 그 시즌의 ', h('b', { text: '니케 풀 · 보스 속성 · 그때 있던 애장품' }),
         '만 주고(랭커 정보 없이) 찾은 5덱을 ', h('b', { text: '큰 분류' }), '(덱 나누기가 크게 다른 안)와 ',
@@ -240,17 +239,18 @@
       h('div', { class: 'picker' }, bossSeg((b) => { state.boss = b; renderSummaryBody(); selectSeason(state.season, b); })),
       overviewTable());
   }
-  function rpostTile() {
-    const ok = D.seasons.filter((S) => S.rpost && S.rpost.status === 'done' && S.post.status === 'done' && S.post.total);
-    const med = (k) => {
-      const xs = ok.filter((S) => S.rpost.sets[k]).map((S) => S.rpost.sets[k].total.final / S.post.total.final);
-      return xs.length ? pct(median(xs)) : '—';
-    };
-    return tile('후처리 뒤 랭커 ÷ 우리', ok.length ? `${med('top')} · ${med('pack')}` : '—',
-      ok.length ? `랭커 대표 · 랭커 스쿼드 최선 ÷ 우리 A, ${ok.length}시즌 중앙 · 코어 없음` : '랭커 덱 후처리 계산 전');
+  function ratioTiles() {
+    const ok = D.seasons.filter((S) => runOf(S).status === 'done');
+    return RPOST_SETS.map(([k, lab]) => {
+      const rs = ok.map((S) => rankerRatio(S, runOf(S), k)).filter((r) => r.v != null);
+      const post = rs.length > 0 && rs.every((r) => r.post);
+      const mixed = !post && rs.some((r) => r.post);
+      return tile(`${lab.replace(' 5덱', '')} ÷ 우리 A`, rs.length ? pct(median(rs.map((r) => r.v))) : '—',
+        rs.length ? `${rs.length}시즌 중앙 · ${post ? '후처리 뒤끼리' : mixed ? '후처리 뒤 · 사전 섞임' : '사전 값끼리'}` : '계산 전');
+    });
   }
   function overviewTable() {
-    const head = h('tr', null, ['시즌', '기간', '속성 → 약점', '풀', '애장품 끔', '큰 분류 ≥97%', 'A · B · C (최선 대비)', '세부 분류 A · B · C', 'N25', 'V_top', '랭커 대표 ≈', '후처리 5덱 합', '후처리 랭커 ÷ 우리'].map((t, i) =>
+    const head = h('tr', null, ['시즌', '기간', '속성 → 약점', '풀', '애장품 끔', '큰 분류 ≥97%', 'A · B · C (최선 대비)', '세부 분류 A · B · C', 'N25', '랭커 ÷ 우리 A', '랭커 대표 ≈', '후처리 5덱 합'].map((t, i) =>
       h('th', { class: i >= 3 && i !== 6 && i !== 10 ? 'r' : null, text: t })));
     const rows = D.seasons.map((S) => {
       const R = runOf(S);
@@ -268,16 +268,25 @@
       h('td', { class: 'small nowrap' }, done ? cl.map((c, i) => [i ? ' · ' : '', badge(c.name, true), ` ${pct(c.ratio)}`]) : ''),
       h('td', { class: 'r', text: done ? cl.map((c) => `${int(c.subs_count)}${c.capped ? '+' : ''}`).join(' · ') : '' }),
       h('td', { class: 'r', text: done ? `${R.metrics.N25}` : '' }),
-      h('td', { class: 'r', text: done ? pct(R.metrics.V_top) : '' }),
+      ratioCell(S, R, done),
       h('td', { class: 'small nowrap' }, near ? [badge(near[0], true), ` J ${jf(near[1])}`] : ''),
-      postCell(S), rpostCell(S));
+      postCell(S));
     });
     return h('div', { class: 'card', id: 'overview' }, h('h3', { text: `시즌 10개 · ${BOSS_LABEL[state.boss]}` }),
       h('p', { class: 'sub small' }, '큰 분류 ≥97% = 최선의 97% 이상인 큰 분류 수. 세부 분류 400+ = 400개에서 자름. ',
-        'N25 = 우리 A 25명 중 그 시즌 랭커 사용 상위 25명. V_top = 랭커 대표 5덱의 시뮬 합 ÷ 우리 A. 랭커 대표 ≈ = 랭커 대표 5덱과 J가 가장 큰 큰 분류. ',
-        '후처리 5덱 합 = 코어 없음 최선 5덱의 사전 계산 → 컨트롤 · 장비 옵션 · 큐브 후처리 뒤(값의 기준이 다릅니다). ',
-        '후처리 랭커 ÷ 우리 = 같은 후처리를 한 랭커 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱 ÷ 우리 A(후처리 뒤끼리).'),
+        'N25 = 우리 A 25명 중 그 시즌 랭커 사용 상위 25명. 랭커 ÷ 우리 A = 랭커 대표 · 1위 · 스쿼드로 짠 최선 5덱의 계산 합 ÷ 우리 A — 코어 없음은 둘 다 같은 후처리 뒤, 코어 30은 사전 값끼리. 랭커 대표 ≈ = 랭커 대표 5덱과 J가 가장 큰 큰 분류. ',
+        '후처리 5덱 합 = 코어 없음 최선 5덱의 사전 계산 → 컨트롤 · 장비 옵션 · 큐브 후처리 뒤.'),
       tableWrap(h('table', { class: 'wide' }, h('thead', null, head), h('tbody', null, rows))));
+  }
+  function ratioCell(S, R, done) {
+    if (!done) return h('td', { class: 'r' });
+    const post = postBoth(S);
+    const line = (k, lab) => {
+      const r = rankerRatio(S, R, k);
+      return h('div', null, `${lab} ${pct(r.v)}${post && !r.post ? '(사전)' : ''}`);
+    };
+    return h('td', { class: 'r small nowrap' }, line('top', '대표'), line('r1', '1위'), line('pack', '최선'),
+      h('div', { class: 'muted', text: post ? '후처리 뒤' : '사전' }));
   }
   const nearest = (jmap) => Object.entries(jmap || {}).sort((a, b) => b[1] - a[1])[0] || null;
   function postCell(S) {
@@ -286,14 +295,6 @@
     if (p.status !== 'done' || !p.total) return h('td', { class: 'r small muted', text: p.decks_done ? `계산 중 ${p.decks_done}/5` : '계산 중' });
     return h('td', { class: 'r' }, h('div', null, h('b', { text: eok(p.total.final) }), h('span', { class: 'gain', text: ` ${gain(p.total.pre, p.total.final)}` })),
       h('div', { class: 'small muted', text: `사전 ${nf1.format(p.total.pre)}` }));
-  }
-
-  function rpostCell(S) {
-    if (state.boss !== 'nocore') return h('td', { class: 'r small muted', text: '코어 없음만' });
-    const RP = S.rpost || {}, p = S.post;
-    if (RP.status !== 'done' || p.status !== 'done' || !p.total) return h('td', { class: 'r small muted', text: '계산 전' });
-    const r = (k) => (RP.sets[k] ? pct(RP.sets[k].total.final / p.total.final) : '—');
-    return h('td', { class: 'r small nowrap' }, h('div', null, `대표 ${r('top')}`), h('div', null, `최선 ${r('pack')}`));
   }
 
   // ------------------------------------------------------------ 시즌 상세
@@ -479,28 +480,34 @@
   }
   // 같은 후처리를 한 랭커 두 묶음(rpost36.py): 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱. 값 = 최종 합 · 우리 A 최종 대비
   const RPOST_SETS = [['top', '랭커 대표 5덱', '상위 300명이 5덱을 그대로 가장 많이 쓴 묶음'],
+    ['r1', '랭커 1위 5덱', '그 시즌 1위가 쓴 5덱'],
     ['pack', '랭커 스쿼드로 짠 최선 5덱', '랭커 덱(대표 · 1위 · 상위 40 스쿼드)을 사전 값으로 겹치지 않게 묶은 합 최대']];
+  // 랭커 묶음 ÷ 우리 A: 코어 없음이고 랭커 후처리가 끝났으면 후처리 뒤끼리, 아니면 사전 값끼리(지표 V_top · V_r1 · V_pack)
+  const PRE_KEY = { top: 'V_top', r1: 'V_r1', pack: 'V_pack' };
+  function postBoth(S) {
+    return state.boss === 'nocore' && S.rpost && S.rpost.status === 'done' && S.post.status === 'done' && S.post.total;
+  }
+  function rankerRatio(S, R, k) {
+    if (postBoth(S)) {
+      const x = S.rpost.sets[k];
+      if (x) return { v: x.total.final / S.post.total.final, post: true };
+    }
+    const m = R && R.status === 'done' ? R.metrics || {} : {};
+    return { v: m[PRE_KEY[k]], post: false };
+  }
   function rankerPost(S, T) {
     const RP = S.rpost || {};
     const head = h('h4', { text: '같은 후처리를 한 랭커 덱과 비교' });
     if (RP.status !== 'done') return h('div', { class: 'post-cmp' }, head, h('div', { class: 'empty', text: '랭커 덱 후처리: 계산 전 — 끝나면 채워집니다.' }));
-    const aSet = new Set(S.post.decks.flatMap((d) => d.order));
     const tiles = h('div', { class: 'tiles post-steps' }, tile('우리 A', eok(T.final), `사전 ${eok(T.pre)}`),
       RPOST_SETS.map(([k, lab]) => {
         const x = RP.sets[k];
         return tile(lab, x ? eok(x.total.final) : '—',
           x ? `우리 A 대비 ${pct(x.total.final / T.final)} · 사전 ${eok(x.total.pre)}(우리 A 대비 ${pct(x.total.pre / T.pre)})` : '지원하지 않는 니케가 있어 계산하지 않음');
       }));
-    const grids = RPOST_SETS.filter(([k]) => RP.sets[k]).map(([k, lab, what]) => {
-      const x = RP.sets[k];
-      return lazyDetails('post-rk', h('summary', { text: `${lab} 후처리 뒤 — ${eok(x.total.final)}` }), () => [
-        h('p', { class: 'small muted', text: `${what}. 점선 테두리 = 우리 A에 없는 니케.` }),
-        h('div', { class: 'rep-grid' }, postGrid({ total: x.total.final, decks: x.decks }, `${lab} 후처리 뒤`, S, {
-          otherSet: aSet, note: `사전 ${eok(x.total.pre)} → 최종 ${eok(x.total.final)} (${gain(x.total.pre, x.total.final)})` }))]);
-    });
     return h('div', { class: 'post-cmp' }, head,
       h('p', { class: 'small muted', text: '랭커 덱에도 우리 A와 똑같이 ① 컨트롤 + 큐브 → ② 장비 옵션 12줄 → ③ 컨트롤 + 큐브 다시(각 400평가)를 했습니다. '
-        + '랭커의 실전 육성 · 컨트롤이 아니라 「같은 조건으로 다듬었을 때」의 값입니다.' }), tiles, grids);
+        + '랭커의 실전 육성 · 컨트롤이 아니라 「같은 조건으로 다듬었을 때」의 값입니다. 덱별 배분 · 큐브는 아래 「그 시즌 랭커」 칸.' }), tiles);
   }
   function postCard(S) {
     const title = '후처리 뒤 최선 5덱';
@@ -535,17 +542,40 @@
     const jline = (jm) => (jm ? h('div', { class: 'jline small' }, '큰 분류와 J: ', Object.entries(jm).map(([o, j], i) => [i ? ' · ' : '', badge(o, true), ` ${jf(j)}`])) : null);
     const ratio = (set) => (A && set.total != null ? ` · 우리 A 대비 ${pct(set.total / A.total)}` : '');
     const sets = R.ranker_sets;
-    const grids = h('div', { class: 'sets cmp' },
-      h('div', null, fiveGrid(sets.top_five, { title: '랭커 대표 5덱', size: 'lg', otherSet: aSet,
-        note: `300명 중 ${K.top_five_count}명이 5덱을 그대로 씀${ratio(sets.top_five)}${K.evaluated ? '' : ' · 값은 평가 전'}` }), jline(M.J_top)),
-      h('div', null, fiveGrid(sets.rank1, { title: '랭커 1위 5덱', size: 'lg', otherSet: aSet,
-        note: `${K.rank1_server} 서버 · 실전 ${eok(K.rank1_damage / 1e8)}${ratio(sets.rank1)}${K.evaluated ? '' : ' · 값은 평가 전'}` }), jline(M.J_r1)));
+    const post = postBoth(S);
+    const what = { top: `300명 중 ${K.top_five_count}명이 5덱을 그대로 씀`, r1: `${K.rank1_server} 서버 · 실전 ${eok(K.rank1_damage / 1e8)}(우리 계산과 크기 비교 불가)`,
+      pack: '랭커 덱을 사전 값으로 겹치지 않게 묶은 합 최대' };
+    const preSet = { top: sets.top_five, r1: sets.rank1 };
+    const J = { top: M.J_top, r1: M.J_r1 };
+    let grids;
+    if (post) {
+      const T = S.post.total;
+      const aPost = new Set(S.post.decks.flatMap((d) => d.order));
+      grids = h('div', { class: 'sets cmp' }, RPOST_SETS.map(([k, lab]) => {
+        const x = S.rpost.sets[k];
+        if (!x) {
+          return h('div', null, fiveGrid(preSet[k] || null, { title: `${lab}(사전 값)`, size: 'lg', otherSet: aPost,
+            empty: '계산 안 함', note: `${what[k]} · 지원하지 않는 니케가 있어 후처리하지 않음` }), jline(J[k]));
+        }
+        return h('div', null, postGrid({ total: x.total.final, decks: x.decks }, lab, S, { otherSet: aPost,
+          note: `${what[k]} · 우리 A 대비 ${pct(x.total.final / T.final)}(후처리 뒤끼리) · 사전 ${eok(x.total.pre)}(${pct(x.total.pre / T.pre)})` }), jline(J[k]));
+      }));
+    } else {
+      grids = h('div', { class: 'sets cmp' },
+        h('div', null, fiveGrid(sets.top_five, { title: '랭커 대표 5덱', size: 'lg', otherSet: aSet,
+          note: `${what.top}${ratio(sets.top_five)}${K.evaluated ? '' : ' · 값은 평가 전'}` }), jline(M.J_top)),
+        h('div', null, fiveGrid(sets.rank1, { title: '랭커 1위 5덱', size: 'lg', otherSet: aSet,
+          note: `${what.r1}${ratio(sets.rank1)}${K.evaluated ? '' : ' · 값은 평가 전'}` }), jline(M.J_r1)));
+    }
+    const rt = (k, lab) => {
+      const r = rankerRatio(S, R, k);
+      const pre = r.post && M[PRE_KEY[k]] != null ? ` · 사전 ${pct(M[PRE_KEY[k]])}` : '';
+      return tile(`${lab} ÷ 우리 A`, pct(r.v), `${r.post ? '후처리 뒤끼리' : '사전 값끼리'}${pre}`);
+    };
     const tiles = A ? h('div', { class: 'tiles' },
       tile('N25', `${M.N25}`, '우리 A 25명 중 랭커 사용 상위 25명'),
       tile('D4', `${M.D4}`, '우리 A 덱 중 랭커 상위 40 스쿼드와 4명 이상 같은 덱'),
-      tile('V_top', pct(M.V_top), '랭커 대표 5덱 ÷ 우리 A'),
-      tile('V_r1', pct(M.V_r1), '랭커 1위 5덱 ÷ 우리 A'),
-      tile('V_pack', pct(M.V_pack), '랭커 상위 40 스쿼드로 짠 최선 ÷ 우리 A')) : null;
+      rt('top', '랭커 대표'), rt('r1', '랭커 1위'), rt('pack', '랭커 스쿼드 최선')) : null;
     const top = K.units.map(([n]) => n);
     const usage = h('div', null, h('h4', { text: '랭커 사용 상위 25' }),
       h('p', { class: 'small muted', text: aSet ? '✓ = 우리 A에도 있음. 격자의 점선 테두리 = 우리 A에 없는 니케.' : '우리 쪽은 계산 전입니다.' }),
@@ -559,9 +589,12 @@
         h('tbody', null, K.squads.map((q, i) => h('tr', null, h('td', { class: 'small muted', text: `${i + 1}` }),
           h('td', null, faces(q.order, 'sm', { checkSet: aSet })), h('td', { class: 'r', text: int(q.count) }),
           h('td', { class: 'r', text: eok(q.values[state.boss]) }))))))));
-    return card('rankers', `그 시즌 랭커 · ${BOSS_LABEL[state.boss]}`,
-      '랭커 덱의 값은 같은 보스 조건 · 기본 스펙 · 기본 레이어로 우리가 시뮬한 사전 계산 값입니다(후처리 전 · 랭커의 실전 육성 · 컨트롤과 다릅니다).',
-      tiles, grids, usage, sq);
+    const sub = postBoth(S)
+      ? h('span', null, h('b', { text: '랭커 덱 값 = 우리 A와 같은 후처리(① 컨트롤 + 큐브 → ② 장비 옵션 12줄 → ③ 컨트롤 + 큐브 다시) 뒤의 우리 계산값입니다.' }),
+        ' 우리 A 대비 %도 후처리 뒤끼리입니다. 줄 머리의 「사전」 = 후처리 전 값. 랭커의 실전 육성 · 컨트롤과는 다릅니다. 아래 상위 40 스쿼드 표는 사전 값입니다.')
+      : h('span', null, h('b', { text: '랭커 덱 값 = 같은 보스 조건 · 기본 스펙 · 기본 레이어로 우리가 계산한 사전 값입니다.' }),
+        ` 우리 A 대비 %도 사전 값끼리입니다(${state.boss === 'nocore' ? '랭커 덱 후처리 계산 전' : '코어 30은 후처리하지 않음'}). 랭커의 실전 육성 · 컨트롤과는 다릅니다.`);
+    return card('rankers', `그 시즌 랭커 · ${BOSS_LABEL[state.boss]}`, sub, tiles, grids, usage, sq);
   }
 
   function costCard(S) {

@@ -87,7 +87,7 @@ def _fake_exp(tmp: Path) -> Path:
     rdecks = [_post_deck(s, f"r{i}", list(q), 20.0) for i, q in enumerate(rk["top_five"]["squads"])]   # 랭커 대표 5덱 후처리(rpost36)
     _jdump(d / "rpost.json", {"season": s, "arm": "A", "decks_new": 5, "reused_from_A": [], "sims": 6000,
                               "sets": {"top": {"decks": rdecks, "total": {k: sum(x[k] for x in rdecks) for k in ("pre", "ctrl", "E0", "O", "final")}},
-                                       "pack": None}})
+                                       "pack": None, "r1": None}})
     q41 = sorted(R.season(41)["pool"])[:5]
     _jdump(exp / "run_log" / "S41" / "post" / "S41-0.json", _post_deck(41, 0, q41, 10.0))
     _jdump(exp / "analysis.json", {"arm": "A", "summary": {}, "rows": [row],
@@ -235,6 +235,7 @@ class TestWebBuild(unittest.TestCase):
         self.assertEqual(R["status"], "done")
         self.assertEqual(R["sims"], 6000)
         self.assertIsNone(R["sets"]["pack"])                                # 지원하지 않는 니케가 든 묶음
+        self.assertIsNone(R["sets"]["r1"])
         top, stop = R["sets"]["top"], src["sets"]["top"]
         self.assertEqual(top["total"], stop["total"])
         self.assertEqual([x["order"] for x in top["decks"]], [x["squad"] for x in stop["decks"]])
