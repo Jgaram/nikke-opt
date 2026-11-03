@@ -1,0 +1,568 @@
+{
+ "arm": "base",
+ "params": {},
+ "season": 27,
+ "seed": 0,
+ "budget": 12500,
+ "evals": 11018,
+ "seconds": 1478.7,
+ "best": 187.07515118999999,
+ "errors": 0,
+ "kicks": 11,
+ "history": [
+  {
+   "evals": 159,
+   "pack": 125.97682875,
+   "kick": false
+  },
+  {
+   "evals": 259,
+   "pack": 132.20311028,
+   "kick": false
+  },
+  {
+   "evals": 359,
+   "pack": 142.97109041,
+   "kick": false
+  },
+  {
+   "evals": 459,
+   "pack": 153.91979595,
+   "kick": false
+  },
+  {
+   "evals": 559,
+   "pack": 162.75498136,
+   "kick": false
+  },
+  {
+   "evals": 659,
+   "pack": 165.86191453,
+   "kick": false
+  },
+  {
+   "evals": 759,
+   "pack": 166.9124721,
+   "kick": false
+  },
+  {
+   "evals": 859,
+   "pack": 167.54129178,
+   "kick": false
+  },
+  {
+   "evals": 959,
+   "pack": 168.81626726,
+   "kick": false
+  },
+  {
+   "evals": 1059,
+   "pack": 171.43043949999998,
+   "kick": false
+  },
+  {
+   "evals": 1159,
+   "pack": 178.30655849,
+   "kick": false
+  },
+  {
+   "evals": 1259,
+   "pack": 178.81695687,
+   "kick": false
+  },
+  {
+   "evals": 1359,
+   "pack": 178.81695687,
+   "kick": false
+  },
+  {
+   "evals": 1461,
+   "pack": 178.81695687,
+   "kick": true
+  },
+  {
+   "evals": 1561,
+   "pack": 178.81695687,
+   "kick": false
+  },
+  {
+   "evals": 1661,
+   "pack": 178.81695687,
+   "kick": false
+  },
+  {
+   "evals": 1761,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 1861,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 1961,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 2061,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 2163,
+   "pack": 179.86069953,
+   "kick": true
+  },
+  {
+   "evals": 2263,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 2363,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 2463,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 2563,
+   "pack": 179.86069953,
+   "kick": false
+  },
+  {
+   "evals": 2663,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 2763,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 2863,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 2963,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 3063,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 3163,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 3263,
+   "pack": 181.03092861,
+   "kick": false
+  },
+  {
+   "evals": 3365,
+   "pack": 181.92742955,
+   "kick": true
+  },
+  {
+   "evals": 3465,
+   "pack": 181.92742955,
+   "kick": false
+  },
+  {
+   "evals": 3565,
+   "pack": 181.92742955,
+   "kick": false
+  },
+  {
+   "evals": 3665,
+   "pack": 181.92742955,
+   "kick": false
+  },
+  {
+   "evals": 3765,
+   "pack": 181.92742955,
+   "kick": false
+  },
+  {
+   "evals": 3865,
+   "pack": 181.92742955,
+   "kick": false
+  },
+  {
+   "evals": 3965,
+   "pack": 181.92742955,
+   "kick": false
+  },
+  {
+   "evals": 4065,
+   "pack": 182.59598092000002,
+   "kick": false
+  },
+  {
+   "evals": 4165,
+   "pack": 182.59598092000002,
+   "kick": false
+  },
+  {
+   "evals": 4265,
+   "pack": 183.69708863,
+   "kick": false
+  },
+  {
+   "evals": 4365,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 4465,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 4565,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 4667,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 4767,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 4867,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 4967,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5067,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5167,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5269,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 5369,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5469,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5569,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5669,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5769,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5869,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 5969,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6069,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6171,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 6271,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6371,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6471,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6571,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6671,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6771,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6871,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 6971,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7071,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7171,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7271,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7371,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7471,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7571,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7673,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 7773,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7873,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 7973,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8073,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8173,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8273,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8375,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 8475,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8575,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8675,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8775,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8875,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 8975,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9075,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9177,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 9277,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9377,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9477,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9577,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9677,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9779,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 9879,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 9979,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10079,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10179,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10279,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10379,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10479,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10581,
+   "pack": 186.77957812,
+   "kick": true
+  },
+  {
+   "evals": 10681,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10781,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10881,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 10938,
+   "pack": 186.77957812,
+   "kick": false
+  },
+  {
+   "evals": 11018,
+   "pack": 187.07515118999999,
+   "kick": false
+  }
+ ],
+ "part": "B_s0",
+ "evaluator": "nikke-calc-rs 6e73529",
+ "sims": 11018,
+ "wall": 1478.8
+}
