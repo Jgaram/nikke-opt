@@ -1,0 +1,143 @@
+{
+ "id": "S35-0",
+ "season": 35,
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "브리드 : 사일런트 트랙",
+  "드레이크",
+  "소다 : 트윙클링 바니"
+ ],
+ "win": null,
+ "pre": 67.98775295,
+ "ctrl": 70.92479466,
+ "ctrl_variants": [
+  "드레이크:reload:B0.1",
+  "브리드 : 사일런트 트랙:cube:택티컬 베어 큐브",
+  "브리드 : 사일런트 트랙:reload:B0.1",
+  "소다 : 트윙클링 바니:cube:택티컬 부스트 큐브",
+  "소다 : 트윙클링 바니:reload:B0.1",
+  "아르카나 : 포츈 메이트:reload:A0.3",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "E0": 81.3233555,
+ "O": 90.20322951,
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "우코4+공4+크뎀4",
+  "브리드 : 사일런트 트랙": "우코4+공4+크뎀4",
+  "드레이크": "우코4+공4+크확2+크뎀2",
+  "소다 : 트윙클링 바니": "공4+장탄2+크확4+크뎀2"
+ },
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.28892420000001096,
+   "max_ammo_pct": 0.04542822999999885,
+   "crit_rate": 0.06579914999998948,
+   "crit_dmg": 0.08566378999999813,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 8.871239020000004,
+   "atk_pct": 3.692489910000006,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.5746677300000016,
+   "crit_dmg": 3.5979477300000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 9.700847450000012,
+   "atk_pct": 3.9589037500000046,
+   "max_ammo_pct": 1.941217850000001,
+   "crit_rate": 1.8081148200000001,
+   "crit_dmg": 2.3620502599999895,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 9.3277614,
+   "atk_pct": 4.03922661,
+   "max_ammo_pct": 0.9747839900000059,
+   "crit_rate": 1.8101915199999894,
+   "crit_dmg": 2.3494054099999886,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "소다 : 트윙클링 바니": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.335222580000007,
+   "max_ammo_pct": 1.812367800000004,
+   "crit_rate": 2.0442394800000017,
+   "crit_dmg": 1.364329319999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "드레이크": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "소다 : 트윙클링 바니": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 90.58208287,
+ "ctrl2_variants": [
+  "드레이크:reload:B0.5",
+  "브리드 : 사일런트 트랙:cube:택티컬 부스트 큐브",
+  "브리드 : 사일런트 트랙:reload:B0.1",
+  "소다 : 트윙클링 바니:cube:택티컬 부스트 큐브",
+  "소다 : 트윙클링 바니:reload:B0.1",
+  "아르카나 : 포츈 메이트:cube:택티컬 베어 큐브",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "final": 90.58208287,
+ "final_variants": [
+  "드레이크:reload:B0.5",
+  "브리드 : 사일런트 트랙:cube:택티컬 부스트 큐브",
+  "브리드 : 사일런트 트랙:reload:B0.1",
+  "소다 : 트윙클링 바니:cube:택티컬 부스트 큐브",
+  "소다 : 트윙클링 바니:reload:B0.1",
+  "아르카나 : 포츈 메이트:cube:택티컬 베어 큐브",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "sims": 2412,
+ "seconds": 352.9
+}

@@ -1,0 +1,137 @@
+{
+ "id": "S37-4",
+ "season": 37,
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "길로틴 : 윈터 슬레이어",
+  "퀀시 : 이스케이프 퀸",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "win": null,
+ "pre": 40.08849588,
+ "ctrl": 41.18337587,
+ "ctrl_variants": [
+  "길로틴 : 윈터 슬레이어:cube:택티컬 베어 큐브",
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:reload:C0.1",
+  "일레그 : 붐 앤 쇼크:cube:택티컬 부스트 큐브",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브"
+ ],
+ "E0": 47.80673409,
+ "O": 51.16546832,
+ "alloc": {
+  "리틀 머메이드": "공4+장탄2+크확3+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "길로틴 : 윈터 슬레이어": "우코4+공4+장탄3+크확1",
+  "퀀시 : 이스케이프 퀸": "우코4+공4+장탄1+크뎀3",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3096983599999987,
+   "max_ammo_pct": 0.5690577900000022,
+   "crit_rate": 0.34450368000000253,
+   "crit_dmg": 0.29757941999999815,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.287489100000002,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.34041863000000205,
+   "crit_dmg": 0.29403145999999936,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.4071682800000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴 : 윈터 슬레이어": {
+   "element_bonus": 3.923714689999997,
+   "atk_pct": 1.6798715299999998,
+   "max_ammo_pct": 1.171397380000002,
+   "crit_rate": 0.910591690000004,
+   "crit_dmg": 0.7865250500000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 5.821013549999996,
+   "atk_pct": 2.7972076900000005,
+   "max_ammo_pct": 1.859830549999998,
+   "crit_rate": 1.3322915500000008,
+   "crit_dmg": 2.4313945800000027,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 3.4369831300000016,
+   "atk_pct": 2.7401110099999997,
+   "max_ammo_pct": 2.372644270000002,
+   "crit_rate": 0.7683575200000021,
+   "crit_dmg": 0.6636858900000036,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "길로틴 : 윈터 슬레이어": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 52.03475115,
+ "ctrl2_variants": [
+  "길로틴 : 윈터 슬레이어:cube:택티컬 베어 큐브",
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "일레그 : 붐 앤 쇼크:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브"
+ ],
+ "final": 52.03475115,
+ "final_variants": [
+  "길로틴 : 윈터 슬레이어:cube:택티컬 베어 큐브",
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "일레그 : 붐 앤 쇼크:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브"
+ ],
+ "sims": 1304,
+ "seconds": 177.8
+}
