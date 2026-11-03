@@ -418,6 +418,9 @@ def cmd_analyze(a: argparse.Namespace) -> int:
         p = jload(sdir(row["season"]) / "post.json")
         if p:
             row["post"] = p
+        rp = jload(sdir(row["season"]) / "rpost.json")     # 랭커 덱 후처리(rpost36.py)
+        if rp:
+            row["rpost"] = rp
     jdump(HERE / "analysis.json", an)
     return rc
 

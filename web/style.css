@@ -489,3 +489,10 @@ details.post-more > .lazy { margin-top: 6px; padding: 8px 10px; border-radius: 8
 @media (forced-colors: active) {
   .key, .dot-inline { forced-color-adjust: none; }
 }
+
+/* 같은 후처리를 한 랭커 덱과 비교(rpost36) */
+.post-cmp { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.post-cmp > h4 { margin: 0 0 4px; }
+details.post-rk { margin-top: 10px; }
+details.post-rk > summary { font-weight: 600; }
+details.post-rk > .lazy { margin-top: 8px; }

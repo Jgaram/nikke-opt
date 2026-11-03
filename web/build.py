@@ -10,6 +10,7 @@
 - 화면용으로 더하는 것: 세부 분류 새 덱의 자리 맞춤 · 덱 사이 옮긴 니케(겹침 최대, 되돌린 f83f54a 화면과 같은 규칙),
   덱별 니케 딜(`run_log/S??/members.json`), 랭커 덱 값(`run_log/S??/rankers.json`),
   후처리 뒤 최선 5덱(`run_log/S??/post.json` — 값은 그대로, 니케별 장비 옵션 배분 · 큐브와 선택지 라벨만 화면용으로 펼친다).
+  같은 후처리를 한 랭커 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱(`run_log/S??/rpost.json`, rpost36.py — 비교용).
 - 아직 없는 결과는 「계산 전」(후처리는 「계산 중」)으로 둔다. 시뮬은 하지 않는다. 평가기 · numpy도 필요 없다.
 - 니케 얼굴 · 속성 · 버스트 · 보스 그림은 `web/icons/`(nikke-analysis에서 `web/sync_icons.py`로 받은 것)를
   그대로 복사하고, 이름 → 그림은 `web/icons/icons.json`으로 잇는다.
@@ -43,6 +44,7 @@ BOSSES = tuple(BOSS_INFO)
 PARTS = ("B_s0", "B_s1", "end", "core30", "members", "rankers", "post")   # run36.PARTS
 PART_KEYS = ("evals", "sims", "sims_new", "seconds", "best", "requests", "blocks_n", "arm", "copied_from", "skipped", "squads")
 EVALUATOR = "nikke-calc-rs 8bc51a2(원본 nikke-calc 67835ca 포팅)"   # 실험 36 README
+EVALUATOR_ID = "nikke-calc-rs 8bc51a2"                             # part_*.json의 evaluator 값
 POST_VALUES = ("pre", "ctrl", "E0", "O", "C2", "final")            # run36.post_deck의 단계별 값(억)
 DEFAULT_CUBE = "렐릭 베어 큐브"                                     # 실험 17 cubes.DEFAULT_CUBE(출발 큐브 = 기본 스펙)
 CLASS_SHOW = 3             # 큰 분류: 앞 3개는 펼쳐 두고 나머지는 더보기(2026-11-01 사용자 결정, 실험 28)
@@ -157,12 +159,25 @@ def post_block(d: Path, row: dict[str, Any] | None) -> dict[str, Any]:
             "decks": [post_deck_view(x) for x in p["decks"]]}
 
 
+def rpost_block(p: dict[str, Any] | None) -> dict[str, Any]:
+    """`run_log/S??/rpost.json`(rpost36.py): 랭커 대표 5덱(top) · 랭커 스쿼드로 짠 최선 5덱(pack)을 우리 A와 같은 후처리로.
+    없으면 「계산 전」. 지원하지 않는 니케가 든 묶음은 None."""
+    if not p:
+        return {"status": "pending"}
+    return {"status": "done", "sims": p.get("sims"), "decks_new": p.get("decks_new"),
+            "sets": {k: None if x is None else {"total": x["total"], "decks": [post_deck_view(y) for y in x["decks"]]}
+                     for k, x in (p.get("sets") or {}).items()}}
+
+
 def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Path, boundary: list[dict[str, Any]]) -> dict[str, Any]:
     d = exp / "run_log" / f"S{s:02d}"
     rv = (read_json(d / "rankers.json") or {}).get("squads")
     mem = read_json(d / "members.json") or {}
     rk = v["rankers"]
     parts = {p: x for p in PARTS if (x := read_json(d / f"part_{p}.json"))}
+    rp = read_json(d / "rpost.json") or (row or {}).get("rpost")
+    if rp:                                  # 랭커 덱 후처리(rpost36.py)도 시뮬 비용에 넣는다
+        parts["rpost"] = {"sims": rp.get("sims") or 0, "evaluator": EVALUATOR_ID}
     blk: dict[str, Any] = {
         "season": s, "boss_name": v["boss"], "element": v["element"], "weak": v["weak"], "code": v["code"],
         "start": v["start"], "end": v["end"], "pool": len(v["pool"]), "new": v.get("new") or [], "favorite0": v["favorite0"],
@@ -179,7 +194,7 @@ def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Pat
         "sims_total": sum(x.get("sims") or 0 for x in parts.values()),
         "sims_new": sum(x.get("sims_new", x.get("sims")) or 0 for x in parts.values()),   # 실험 32 기록을 옮긴 부분은 0
         "evaluators": sorted({x["evaluator"] for x in parts.values() if x.get("evaluator")}),
-        "status": "pending", "arm": None, "by_boss": {}, "post": post_block(d, row),
+        "status": "pending", "arm": None, "by_boss": {}, "post": post_block(d, row), "rpost": rpost_block(rp),
     }
     for b in BOSSES:
         blk["by_boss"][b] = {"status": "pending",

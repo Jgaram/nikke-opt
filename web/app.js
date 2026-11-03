@@ -229,7 +229,8 @@
         posts.length ? `5덱 합 사전 → 최종 시즌 중앙 ${gain(1, median(posts.map((p) => p.total.final / p.total.pre)))} · 코어 없음` : '계산 중 · 코어 없음 최선 5덱'),
       tile('97% 이상 큰 분류', runs.length ? `${median(runs.map((r) => r.n97))}개` : '—', `시즌 중앙 · ${BOSS_LABEL[state.boss]}`),
       tile('N25', runs.length ? `${median(runs.map((r) => r.metrics.N25))}` : '—', '우리 A 25명 중 랭커 상위 25명 · 시즌 중앙'),
-      tile('V_top', runs.length ? pct(median(runs.map((r) => r.metrics.V_top))) : '—', '랭커 대표 5덱 ÷ 우리 A · 시즌 중앙'));
+      tile('V_top', runs.length ? pct(median(runs.map((r) => r.metrics.V_top))) : '—', '랭커 대표 5덱 ÷ 우리 A · 시즌 중앙'),
+      rpostTile());
     $('#summary-body').replaceChildren(
       h('p', { class: 'sub' }, '시즌마다 그 시즌의 ', h('b', { text: '니케 풀 · 보스 속성 · 그때 있던 애장품' }),
         '만 주고(랭커 정보 없이) 찾은 5덱을 ', h('b', { text: '큰 분류' }), '(덱 나누기가 크게 다른 안)와 ',
@@ -239,8 +240,17 @@
       h('div', { class: 'picker' }, bossSeg((b) => { state.boss = b; renderSummaryBody(); selectSeason(state.season, b); })),
       overviewTable());
   }
+  function rpostTile() {
+    const ok = D.seasons.filter((S) => S.rpost && S.rpost.status === 'done' && S.post.status === 'done' && S.post.total);
+    const med = (k) => {
+      const xs = ok.filter((S) => S.rpost.sets[k]).map((S) => S.rpost.sets[k].total.final / S.post.total.final);
+      return xs.length ? pct(median(xs)) : '—';
+    };
+    return tile('후처리 뒤 랭커 ÷ 우리', ok.length ? `${med('top')} · ${med('pack')}` : '—',
+      ok.length ? `랭커 대표 · 랭커 스쿼드 최선 ÷ 우리 A, ${ok.length}시즌 중앙 · 코어 없음` : '랭커 덱 후처리 계산 전');
+  }
   function overviewTable() {
-    const head = h('tr', null, ['시즌', '기간', '속성 → 약점', '풀', '애장품 끔', '큰 분류 ≥97%', 'A · B · C (최선 대비)', '세부 분류 A · B · C', 'N25', 'V_top', '랭커 대표 ≈', '후처리 5덱 합'].map((t, i) =>
+    const head = h('tr', null, ['시즌', '기간', '속성 → 약점', '풀', '애장품 끔', '큰 분류 ≥97%', 'A · B · C (최선 대비)', '세부 분류 A · B · C', 'N25', 'V_top', '랭커 대표 ≈', '후처리 5덱 합', '후처리 랭커 ÷ 우리'].map((t, i) =>
       h('th', { class: i >= 3 && i !== 6 && i !== 10 ? 'r' : null, text: t })));
     const rows = D.seasons.map((S) => {
       const R = runOf(S);
@@ -260,12 +270,13 @@
       h('td', { class: 'r', text: done ? `${R.metrics.N25}` : '' }),
       h('td', { class: 'r', text: done ? pct(R.metrics.V_top) : '' }),
       h('td', { class: 'small nowrap' }, near ? [badge(near[0], true), ` J ${jf(near[1])}`] : ''),
-      postCell(S));
+      postCell(S), rpostCell(S));
     });
     return h('div', { class: 'card', id: 'overview' }, h('h3', { text: `시즌 10개 · ${BOSS_LABEL[state.boss]}` }),
       h('p', { class: 'sub small' }, '큰 분류 ≥97% = 최선의 97% 이상인 큰 분류 수. 세부 분류 400+ = 400개에서 자름. ',
         'N25 = 우리 A 25명 중 그 시즌 랭커 사용 상위 25명. V_top = 랭커 대표 5덱의 시뮬 합 ÷ 우리 A. 랭커 대표 ≈ = 랭커 대표 5덱과 J가 가장 큰 큰 분류. ',
-        '후처리 5덱 합 = 코어 없음 최선 5덱의 사전 계산 → 컨트롤 · 장비 옵션 · 큐브 후처리 뒤(값의 기준이 다릅니다).'),
+        '후처리 5덱 합 = 코어 없음 최선 5덱의 사전 계산 → 컨트롤 · 장비 옵션 · 큐브 후처리 뒤(값의 기준이 다릅니다). ',
+        '후처리 랭커 ÷ 우리 = 같은 후처리를 한 랭커 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱 ÷ 우리 A(후처리 뒤끼리).'),
       tableWrap(h('table', { class: 'wide' }, h('thead', null, head), h('tbody', null, rows))));
   }
   const nearest = (jmap) => Object.entries(jmap || {}).sort((a, b) => b[1] - a[1])[0] || null;
@@ -275,6 +286,14 @@
     if (p.status !== 'done' || !p.total) return h('td', { class: 'r small muted', text: p.decks_done ? `계산 중 ${p.decks_done}/5` : '계산 중' });
     return h('td', { class: 'r' }, h('div', null, h('b', { text: eok(p.total.final) }), h('span', { class: 'gain', text: ` ${gain(p.total.pre, p.total.final)}` })),
       h('div', { class: 'small muted', text: `사전 ${nf1.format(p.total.pre)}` }));
+  }
+
+  function rpostCell(S) {
+    if (state.boss !== 'nocore') return h('td', { class: 'r small muted', text: '코어 없음만' });
+    const RP = S.rpost || {}, p = S.post;
+    if (RP.status !== 'done' || p.status !== 'done' || !p.total) return h('td', { class: 'r small muted', text: '계산 전' });
+    const r = (k) => (RP.sets[k] ? pct(RP.sets[k].total.final / p.total.final) : '—');
+    return h('td', { class: 'r small nowrap' }, h('div', null, `대표 ${r('top')}`), h('div', null, `최선 ${r('pack')}`));
   }
 
   // ------------------------------------------------------------ 시즌 상세
@@ -449,6 +468,40 @@
       return [path, n ? list : h('p', { class: 'small muted', text: '컨트롤 · 큐브는 기본 레이어 그대로(바꾼 선택 없음).' })];
     });
   }
+  function postGrid(set, title, S, o = {}) {
+    return fiveGrid(set, {
+      title, size: 'lg', cls: 'fg-post', newSet: new Set(S.new), ...o,
+      lab: (d, i) => [h('span', { class: 'fg-no', text: `${i + 1}` }), h('span', { class: 'fg-val', text: eok(d.final) }),
+        h('span', { class: 'gain', text: gain(d.pre, d.final) }), h('span', { class: 'fg-pre', text: `사전 ${d.pre == null ? '—' : nf1.format(d.pre)}` })],
+      under: (d, n) => gearTag(d.gear[n]),
+      after: (d) => postMore(d),
+    });
+  }
+  // 같은 후처리를 한 랭커 두 묶음(rpost36.py): 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱. 값 = 최종 합 · 우리 A 최종 대비
+  const RPOST_SETS = [['top', '랭커 대표 5덱', '상위 300명이 5덱을 그대로 가장 많이 쓴 묶음'],
+    ['pack', '랭커 스쿼드로 짠 최선 5덱', '랭커 덱(대표 · 1위 · 상위 40 스쿼드)을 사전 값으로 겹치지 않게 묶은 합 최대']];
+  function rankerPost(S, T) {
+    const RP = S.rpost || {};
+    const head = h('h4', { text: '같은 후처리를 한 랭커 덱과 비교' });
+    if (RP.status !== 'done') return h('div', { class: 'post-cmp' }, head, h('div', { class: 'empty', text: '랭커 덱 후처리: 계산 전 — 끝나면 채워집니다.' }));
+    const aSet = new Set(S.post.decks.flatMap((d) => d.order));
+    const tiles = h('div', { class: 'tiles post-steps' }, tile('우리 A', eok(T.final), `사전 ${eok(T.pre)}`),
+      RPOST_SETS.map(([k, lab]) => {
+        const x = RP.sets[k];
+        return tile(lab, x ? eok(x.total.final) : '—',
+          x ? `우리 A 대비 ${pct(x.total.final / T.final)} · 사전 ${eok(x.total.pre)}(우리 A 대비 ${pct(x.total.pre / T.pre)})` : '지원하지 않는 니케가 있어 계산하지 않음');
+      }));
+    const grids = RPOST_SETS.filter(([k]) => RP.sets[k]).map(([k, lab, what]) => {
+      const x = RP.sets[k];
+      return lazyDetails('post-rk', h('summary', { text: `${lab} 후처리 뒤 — ${eok(x.total.final)}` }), () => [
+        h('p', { class: 'small muted', text: `${what}. 점선 테두리 = 우리 A에 없는 니케.` }),
+        h('div', { class: 'rep-grid' }, postGrid({ total: x.total.final, decks: x.decks }, `${lab} 후처리 뒤`, S, {
+          otherSet: aSet, note: `사전 ${eok(x.total.pre)} → 최종 ${eok(x.total.final)} (${gain(x.total.pre, x.total.final)})` }))]);
+    });
+    return h('div', { class: 'post-cmp' }, head,
+      h('p', { class: 'small muted', text: '랭커 덱에도 우리 A와 똑같이 ① 컨트롤 + 큐브 → ② 장비 옵션 12줄 → ③ 컨트롤 + 큐브 다시(각 400평가)를 했습니다. '
+        + '랭커의 실전 육성 · 컨트롤이 아니라 「같은 조건으로 다듬었을 때」의 값입니다.' }), tiles, grids);
+  }
   function postCard(S) {
     const title = '후처리 뒤 최선 5덱';
     if (state.boss !== 'nocore') {
@@ -465,15 +518,9 @@
     const steps = h('div', { class: 'tiles post-steps' }, [['pre', '사전 계산'], ['ctrl', '컨트롤 + 큐브'], ['E0', '옵션 일괄'], ['O', '옵션 탐색'], ['final', '최종']].map(([k, lab]) =>
       tile(lab, eok(T[k]), k === 'pre' ? '5덱 합' : `사전 대비 ${gain(T.pre, T[k])}`)));
     const same = P.same_as_A === true ? ' · 큰 분류 A와 같은 5덱' : P.same_as_A === false ? ' · 큰 분류 A와 다른 5덱' : '';
-    const grid = fiveGrid({ total: T.final, decks: P.decks }, {
-      title: '후처리 뒤 5덱', size: 'lg', ours: true, cls: 'fg-post', newSet: new Set(S.new),
-      note: `사전 ${eok(T.pre)} → 최종 ${eok(T.final)} (${gain(T.pre, T.final)})${same}`,
-      lab: (d, i) => [h('span', { class: 'fg-no', text: `${i + 1}` }), h('span', { class: 'fg-val', text: eok(d.final) }),
-        h('span', { class: 'gain', text: gain(d.pre, d.final) }), h('span', { class: 'fg-pre', text: `사전 ${d.pre == null ? '—' : nf1.format(d.pre)}` })],
-      under: (d, n) => gearTag(d.gear[n]),
-      after: (d) => postMore(d),
-    });
-    return card('post', title, sub, steps, h('div', { class: 'rep-grid' }, grid),
+    const grid = postGrid({ total: T.final, decks: P.decks }, '후처리 뒤 5덱', S, {
+      ours: true, note: `사전 ${eok(T.pre)} → 최종 ${eok(T.final)} (${gain(T.pre, T.final)})${same}` });
+    return card('post', title, sub, steps, h('div', { class: 'rep-grid' }, grid), rankerPost(S, T),
       h('p', { class: 'small muted face-key', text: '줄 머리 = 최종 값 · 사전 대비 · 사전 값. 얼굴 아래 = 장비 옵션 12줄 배분(우 = 우월 코드 대미지, 공 = 공격력, '
         + '장탄 = 최대 장탄 수, 크확 · 크뎀 = 크리티컬 확률 · 대미지, 차속 · 차뎀 = 차지 속도 · 대미지, 숫자 = 줄 수)과 기본(렐릭 베어)이 아닌 큐브. '
         + '줄 아래를 펴면 최종 컨트롤 · 큐브 선택지와 단계별 값.' }));
@@ -520,7 +567,7 @@
   function costCard(S) {
     const P = S.parts || {};
     const names = { B_s0: '사전 계산 시드 0', B_s1: '사전 계산 시드 1', end: '끝 탐침', core30: '코어 30(재평가 + 이어 찾기)',
-      members: '덱별 니케 딜', rankers: '랭커 덱', post: '후처리(코어 없음 최선 5덱)' };
+      members: '덱별 니케 딜', rankers: '랭커 덱', post: '후처리(코어 없음 최선 5덱)', rpost: '랭커 덱 후처리(대표 · 스쿼드 최선)' };
     const keys = Object.keys(names).filter((k) => P[k]);
     if (!keys.length) return card('cost', '시뮬 비용', null, h('div', { class: 'empty', text: '계산 전' }));
     const note = (x) => {

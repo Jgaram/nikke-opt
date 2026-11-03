@@ -49,7 +49,7 @@ def _post_deck(s: int, i: int, q: list[str], pre: float) -> dict:
 
 def _fake_exp(tmp: Path) -> Path:
     """실험 36 모양 결과 폴더(시뮬 0, seasons.json 없음 — 시즌 자료는 늘 실험 31 것).
-    S40 = 끝남(분류 + post.json, 후처리 5덱 = 코어 없음 큰 분류 A), S41 = 후처리 덱 1개만(계산 중), 나머지 = 기록 없음."""
+    S40 = 끝남(분류 + post.json, 후처리 5덱 = 코어 없음 큰 분류 A, rpost.json = 랭커 대표 5덱만), S41 = 후처리 덱 1개만(계산 중), 나머지 = 기록 없음."""
     R = _load("run31", EXP31 / "run31.py")
     s = 40
     pool = sorted(R.season(s)["pool"])
@@ -84,6 +84,10 @@ def _fake_exp(tmp: Path) -> Path:
     pdecks = [_post_deck(s, i, list(q), v) for i, (v, q) in enumerate(A["decks"])]
     _jdump(d / "post.json", {"season": s, "arm": "A", "opt": "final5", "c2": True, "cube": True, "decks": pdecks,
                              "total": {k: sum(x[k] for x in pdecks) for k in ("pre", "ctrl", "E0", "O", "final")}})
+    rdecks = [_post_deck(s, f"r{i}", list(q), 20.0) for i, q in enumerate(rk["top_five"]["squads"])]   # 랭커 대표 5덱 후처리(rpost36)
+    _jdump(d / "rpost.json", {"season": s, "arm": "A", "decks_new": 5, "reused_from_A": [], "sims": 6000,
+                              "sets": {"top": {"decks": rdecks, "total": {k: sum(x[k] for x in rdecks) for k in ("pre", "ctrl", "E0", "O", "final")}},
+                                       "pack": None}})
     q41 = sorted(R.season(41)["pool"])[:5]
     _jdump(exp / "run_log" / "S41" / "post" / "S41-0.json", _post_deck(41, 0, q41, 10.0))
     _jdump(exp / "analysis.json", {"arm": "A", "summary": {}, "rows": [row],
@@ -180,11 +184,11 @@ class TestWebBuild(unittest.TestCase):
     def test_cost_parts(self):
         """비용 표: 실험 36 부분(옮겨 쓴 부분은 새 시뮬 0, 판 A의 끝 탐침은 건너뜀)."""
         S = self.season(40)
-        self.assertEqual(set(S["parts"]), {"B_s0", "B_s1", "end", "post"})
+        self.assertEqual(set(S["parts"]), {"B_s0", "B_s1", "end", "post", "rpost"})
         self.assertIn("copied_from", S["parts"]["B_s0"])
         self.assertEqual(S["parts"]["end"]["skipped"], "A")
-        self.assertEqual(S["sims_total"], 100 + 23 + 0 + 6000)
-        self.assertEqual(S["sims_new"], 0 + 23 + 0 + 6000)
+        self.assertEqual(S["sims_total"], 100 + 23 + 0 + 6000 + 6000)          # 마지막 = 랭커 덱 후처리(rpost.json)
+        self.assertEqual(S["sims_new"], 0 + 23 + 0 + 6000 + 6000)
         self.assertEqual(S["evaluators"], ["nikke-calc-rs 8bc51a2"])
         self.assertEqual(self.fake["progress"]["sims_new"], S["sims_new"])
 
@@ -223,6 +227,21 @@ class TestWebBuild(unittest.TestCase):
         self.assertEqual(p41, {"status": "running", "decks_done": 1})
         self.assertEqual(p33, {"status": "running", "decks_done": 0})
         self.assertEqual(self.fake["progress"]["post"], 1)
+
+    def test_rpost(self):
+        """rpost.json(랭커 덱 후처리)이 있으면 묶음별 값을 그대로 옮기고 덱을 후처리 5덱과 같은 모양으로 펼친다. 없으면 「계산 전」."""
+        src = json.loads((self.exp / "run_log" / "S40" / "rpost.json").read_text(encoding="utf-8"))
+        R = self.season(40)["rpost"]
+        self.assertEqual(R["status"], "done")
+        self.assertEqual(R["sims"], 6000)
+        self.assertIsNone(R["sets"]["pack"])                                # 지원하지 않는 니케가 든 묶음
+        top, stop = R["sets"]["top"], src["sets"]["top"]
+        self.assertEqual(top["total"], stop["total"])
+        self.assertEqual([x["order"] for x in top["decks"]], [x["squad"] for x in stop["decks"]])
+        self.assertEqual([x["value"] for x in top["decks"]], [x["final"] for x in stop["decks"]])
+        self.assertEqual(top["decks"][0]["gear"][stop["decks"][0]["squad"][2]]["cube_short"], "어설트")
+        self.assertEqual(self.season(41)["rpost"], {"status": "pending"})
+        self.assertEqual(self.season(33)["rpost"], {"status": "pending"})
 
     def test_post_from_analysis_row(self):
         """run_log의 post.json이 없어도 analysis.json 줄의 `post`(run36 analyze가 넣는다)가 있으면 그것을 쓴다."""
