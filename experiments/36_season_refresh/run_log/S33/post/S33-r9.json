@@ -1,0 +1,164 @@
+{
+ "id": "S33-r9",
+ "season": 33,
+ "squad": [
+  "미란다",
+  "블랑",
+  "스노우 화이트 : 헤비암즈",
+  "루주",
+  "맥스웰"
+ ],
+ "win": null,
+ "pre": 39.17588227,
+ "ctrl": 43.41395778,
+ "ctrl_variants": [
+  "squad:camera:루주",
+  "squad:tactic:버충=루주",
+  "루주:burst:delay1",
+  "맥스웰:click:tap",
+  "맥스웰:cube:렐릭 피어싱 큐브",
+  "맥스웰:reload:A0.3",
+  "미란다:burst:delay1",
+  "미란다:cube:택티컬 베어 큐브",
+  "미란다:reload:B0.1",
+  "블랑:cube:택티컬 부스트 큐브",
+  "블랑:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "E0": 47.97264364,
+ "O": 52.18433153,
+ "alloc": {
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "블랑": "공4+장탄2+크확4+크뎀2",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크뎀4",
+  "루주": "공4+장탄3+크확1+차뎀4",
+  "맥스웰": "공4+장탄4+크확4"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.673885410000004,
+   "max_ammo_pct": 0.5706904100000045,
+   "crit_rate": 0.24384726999999629,
+   "crit_dmg": 0.3657746999999958,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "블랑": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.2308229300000022,
+   "max_ammo_pct": 0.050957490000001826,
+   "crit_rate": 0.06295289999999909,
+   "crit_dmg": 0.03642885000000007,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 17.626658380000002,
+   "atk_pct": 6.23705657,
+   "max_ammo_pct": 2.900346650000003,
+   "crit_rate": 3.8658000399999963,
+   "crit_dmg": 5.9245789,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.8709528400000011,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.24918440999999802,
+   "max_ammo_pct": 6.773323210000001,
+   "crit_rate": 0.07141346000000226,
+   "crit_dmg": 0.04205163999999684,
+   "charge_speed_pct": -0.39267837999999955,
+   "charge_dmg_pct": 0.09800442000000231,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9196937700000021,
+   "max_ammo_pct": 0.5301927499999977,
+   "crit_rate": 0.4810393599999969,
+   "crit_dmg": 0.15558510999999697,
+   "charge_speed_pct": 0.03049440000000203,
+   "charge_dmg_pct": 0.185051449999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "블랑": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "루주": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "맥스웰": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 55.67330612,
+ "ctrl2_variants": [
+  "squad:camera:루주",
+  "squad:tactic:버충=루주",
+  "루주:burst:delay1",
+  "루주:reload:C0.1_dry",
+  "맥스웰:click:tap",
+  "맥스웰:cube:렐릭 피어싱 큐브",
+  "맥스웰:reload:A0.3",
+  "미란다:burst:wait2",
+  "미란다:cube:택티컬 베어 큐브",
+  "미란다:reload:B0.1",
+  "블랑:burst:delay1",
+  "블랑:cube:택티컬 부스트 큐브",
+  "블랑:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "스노우 화이트 : 헤비암즈:reload:A0.3"
+ ],
+ "final": 55.67330612,
+ "final_variants": [
+  "squad:camera:루주",
+  "squad:tactic:버충=루주",
+  "루주:burst:delay1",
+  "루주:reload:C0.1_dry",
+  "맥스웰:click:tap",
+  "맥스웰:cube:렐릭 피어싱 큐브",
+  "맥스웰:reload:A0.3",
+  "미란다:burst:wait2",
+  "미란다:cube:택티컬 베어 큐브",
+  "미란다:reload:B0.1",
+  "블랑:burst:delay1",
+  "블랑:cube:택티컬 부스트 큐브",
+  "블랑:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "스노우 화이트 : 헤비암즈:reload:A0.3"
+ ],
+ "sims": 2399,
+ "seconds": 246.0
+}

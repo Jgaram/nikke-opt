@@ -1,0 +1,146 @@
+{
+ "id": "S38-r9",
+ "season": 38,
+ "squad": [
+  "프리바티",
+  "벨벳",
+  "헬름",
+  "리틀 머메이드",
+  "크라운"
+ ],
+ "win": null,
+ "pre": 61.86667271,
+ "ctrl": 63.88393041,
+ "ctrl_variants": [
+  "리틀 머메이드:reload:B0.5",
+  "벨벳:cube:택티컬 어설트 큐브",
+  "크라운:cube:택티컬 어설트 큐브",
+  "크라운:reload:A0.3",
+  "프리바티:cancel:on",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:C0.5",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "E0": 62.54191231,
+ "O": 83.9654569,
+ "alloc": {
+  "프리바티": "공4+크확4+크뎀4",
+  "벨벳": "우코4+공4+크확2+크뎀2",
+  "헬름": "공4+크확4+크뎀4",
+  "리틀 머메이드": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5517710299999976,
+   "max_ammo_pct": -10.772071269999998,
+   "crit_rate": 0.1497751400000027,
+   "crit_dmg": 0.13227004000000164,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "벨벳": {
+   "element_bonus": 9.85806101,
+   "atk_pct": 5.13190015,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.7176514199999957,
+   "crit_dmg": 1.5063766100000038,
+   "charge_speed_pct": -0.2916402299999987,
+   "charge_dmg_pct": 0.07331957999999617,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.542962960000004,
+   "max_ammo_pct": -0.8843864299999993,
+   "crit_rate": 0.4291799199999957,
+   "crit_dmg": 0.3747286999999986,
+   "charge_speed_pct": 0.4620785500000011,
+   "charge_dmg_pct": 0.23777237000000184,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 12.808398949999997,
+   "atk_pct": 6.511888669999998,
+   "max_ammo_pct": 0.009853470000003028,
+   "crit_rate": 2.2420490599999994,
+   "crit_dmg": 1.948269510000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6469390800000028,
+   "max_ammo_pct": 0.03793145000000209,
+   "crit_rate": 0.13555283000000173,
+   "crit_dmg": 0.1201167500000011,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "벨벳": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 84.26475072,
+ "ctrl2_variants": [
+  "리틀 머메이드:reload:B0.5",
+  "벨벳:cube:택티컬 어설트 큐브",
+  "크라운:cube:택티컬 부스트 큐브",
+  "크라운:reload:A0.3",
+  "프리바티:cancel:on",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:C0.5",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "final": 84.26475072,
+ "final_variants": [
+  "리틀 머메이드:reload:B0.5",
+  "벨벳:cube:택티컬 어설트 큐브",
+  "크라운:cube:택티컬 부스트 큐브",
+  "크라운:reload:A0.3",
+  "프리바티:cancel:on",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:C0.5",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "sims": 2389,
+ "seconds": 537.5
+}

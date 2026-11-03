@@ -1,0 +1,143 @@
+{
+ "id": "S35-r8",
+ "season": 35,
+ "squad": [
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "리틀 머메이드",
+  "라피 : 레드 후드",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 50.46637453,
+ "ctrl": 52.72333274,
+ "ctrl_variants": [
+  "squad:camera:헬름",
+  "라피 : 레드 후드:reload:C0.5",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 부스트 큐브",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "E0": 58.82798061,
+ "O": 71.63475422,
+ "alloc": {
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄4+크확1+크뎀3",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "라피 : 레드 후드": "우코4+공4+크확1+크뎀3",
+  "헬름": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7624066399999947,
+   "max_ammo_pct": 0.10352478000000076,
+   "crit_rate": 0.31329407000000487,
+   "crit_dmg": 0.5006601100000054,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6824619599999977,
+   "max_ammo_pct": 0.7400942499999985,
+   "crit_rate": 0.29384955000000446,
+   "crit_dmg": 0.41584253000000615,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.224873819999999,
+   "max_ammo_pct": 1.303683399999997,
+   "crit_rate": 1.0632547300000041,
+   "crit_dmg": 1.6132494000000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 13.91792564,
+   "atk_pct": 5.309933629999996,
+   "max_ammo_pct": 0.4526050499999954,
+   "crit_rate": 3.110264530000002,
+   "crit_dmg": 4.476799509999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9452668599999967,
+   "max_ammo_pct": -0.6158191700000017,
+   "crit_rate": 0.703728500000004,
+   "crit_dmg": 1.1731300900000008,
+   "charge_speed_pct": -0.2577327899999986,
+   "charge_dmg_pct": 0.3180836900000017,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "헬름": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 71.94979762,
+ "ctrl2_variants": [
+  "squad:camera:헬름",
+  "라피 : 레드 후드:reload:C0.5",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "크라운:reload:A0.3",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "final": 71.94979762,
+ "final_variants": [
+  "squad:camera:헬름",
+  "라피 : 레드 후드:reload:C0.5",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "크라운:reload:A0.3",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "sims": 2361,
+ "seconds": 422.0
+}

@@ -1,0 +1,133 @@
+{
+ "id": "S40-r7",
+ "season": 40,
+ "squad": [
+  "아니스 : 스타",
+  "라피 : 레드 후드",
+  "디젤 : 윈터 스위츠",
+  "브리드 : 사일런트 트랙",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 85.94520675,
+ "ctrl": 88.84422255,
+ "ctrl_variants": [
+  "squad:camera:아니스 : 스타",
+  "squad:tactic:버충=디젤 : 윈터 스위츠",
+  "디젤 : 윈터 스위츠:cube:렐릭 부스트 큐브",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "브리드 : 사일런트 트랙:reload:C0.5"
+ ],
+ "E0": 103.48103677,
+ "O": 109.3077391,
+ "alloc": {
+  "아니스 : 스타": "공4+장탄1+크확3+크뎀4",
+  "라피 : 레드 후드": "우코4+공4+장탄4",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확1+크뎀3",
+  "브리드 : 사일런트 트랙": "우코4+공4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+장탄4+크확1+크뎀3"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8160132000000004,
+   "max_ammo_pct": 1.7194018200000016,
+   "crit_rate": 0.9603887899999961,
+   "crit_dmg": 1.5737453600000038,
+   "charge_speed_pct": 0.2068158799999935,
+   "charge_dmg_pct": 0.9159376100000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 13.527461200000005,
+   "atk_pct": 4.8075855200000035,
+   "max_ammo_pct": 7.963877490000002,
+   "crit_rate": 2.670990180000004,
+   "crit_dmg": 4.344836759999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 17.984098520000003,
+   "atk_pct": 8.710103920000009,
+   "max_ammo_pct": 2.926314259999998,
+   "crit_rate": 4.4677833599999985,
+   "crit_dmg": 5.504839279999999,
+   "charge_speed_pct": 1.0025193799999954,
+   "charge_dmg_pct": 1.0262911399999979,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 6.004268140000008,
+   "atk_pct": 3.4108974399999994,
+   "max_ammo_pct": 1.0369223600000055,
+   "crit_rate": 1.251070999999996,
+   "crit_dmg": 1.93645669,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.597392769999999,
+   "max_ammo_pct": 1.847218319999996,
+   "crit_rate": 0.26564145999999766,
+   "crit_dmg": 0.40702545999999984,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 112.60300547,
+ "ctrl2_variants": [
+  "squad:camera:아니스 : 스타",
+  "마스트 : 로망틱 메이드:cube:렐릭 퀀텀 큐브",
+  "브리드 : 사일런트 트랙:reload:C0.5"
+ ],
+ "final": 112.60300547,
+ "final_variants": [
+  "squad:camera:아니스 : 스타",
+  "마스트 : 로망틱 메이드:cube:렐릭 퀀텀 큐브",
+  "브리드 : 사일런트 트랙:reload:C0.5"
+ ],
+ "sims": 2448,
+ "seconds": 245.8
+}

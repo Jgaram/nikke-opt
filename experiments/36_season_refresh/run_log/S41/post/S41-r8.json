@@ -1,0 +1,141 @@
+{
+ "id": "S41-r8",
+ "season": 41,
+ "squad": [
+  "마스트 : 로망틱 메이드",
+  "퀀시 : 이스케이프 퀸",
+  "라피 : 레드 후드",
+  "팬텀",
+  "앵커 : 이노센트 메이드"
+ ],
+ "win": null,
+ "pre": 46.24164023,
+ "ctrl": 51.47263435,
+ "ctrl_variants": [
+  "라피 : 레드 후드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.1",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "퀀시 : 이스케이프 퀸:reload:A0.3",
+  "팬텀:cube:렐릭 디바이드 큐브"
+ ],
+ "E0": 57.49175048,
+ "O": 65.2114248,
+ "alloc": {
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3",
+  "퀀시 : 이스케이프 퀸": "우코4+공1+크확3+크뎀4",
+  "라피 : 레드 후드": "공4+장탄3+크확2+크뎀3",
+  "팬텀": "우코4+공4+크확1+크뎀3",
+  "앵커 : 이노센트 메이드": "우코4+공4+장탄3+크뎀1"
+ },
+ "screen": {
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.9704430900000034,
+   "atk_pct": 1.3931611000000004,
+   "max_ammo_pct": 0.6585353500000011,
+   "crit_rate": 0.6830105100000026,
+   "crit_dmg": 0.9880605099999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 8.301828470000004,
+   "atk_pct": 2.686539940000003,
+   "max_ammo_pct": 0.6666397700000033,
+   "crit_rate": 2.1645739499999976,
+   "crit_dmg": 4.047469300000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0556376199999988,
+   "max_ammo_pct": 0.5325379300000037,
+   "crit_rate": 0.4884357800000032,
+   "crit_dmg": 0.7033082999999962,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 9.08484378,
+   "atk_pct": 3.3105258499999977,
+   "max_ammo_pct": 0.7088066499999996,
+   "crit_rate": 2.0693213099999994,
+   "crit_dmg": 3.2564349800000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 1.7673091899999989,
+   "atk_pct": 0.8230239700000013,
+   "max_ammo_pct": 0.5426980499999985,
+   "crit_rate": 0.4059047499999977,
+   "crit_dmg": 0.5851451400000016,
+   "charge_speed_pct": -0.008830250000002593,
+   "charge_dmg_pct": 0.011683560000001592,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 66.04592438,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:reload:C0.1_dry",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.5",
+  "팬텀:cube:택티컬 베어 큐브"
+ ],
+ "final": 66.04592438,
+ "final_variants": [
+  "라피 : 레드 후드:reload:C0.1_dry",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.5",
+  "팬텀:cube:택티컬 베어 큐브"
+ ],
+ "sims": 2456,
+ "seconds": 421.4
+}

@@ -1,0 +1,144 @@
+{
+ "id": "S36-r9",
+ "season": 36,
+ "squad": [
+  "이사벨",
+  "아니스 : 스타",
+  "신데렐라",
+  "아르카나",
+  "크라운"
+ ],
+ "win": null,
+ "pre": 99.23140589,
+ "ctrl": 108.1185438,
+ "ctrl_variants": [
+  "신데렐라:reload:C0.5",
+  "아니스 : 스타:reload:A0.3",
+  "아르카나:click:tap",
+  "아르카나:reload:B0.5",
+  "이사벨:reload:C0.5",
+  "크라운:reload:B0.1"
+ ],
+ "E0": 120.07001063,
+ "O": 128.69954071,
+ "alloc": {
+  "이사벨": "우코4+공4+크확2+크뎀2",
+  "아니스 : 스타": "우코4+공3+장탄3+차속2",
+  "신데렐라": "우코4+공4+크확2+크뎀2",
+  "아르카나": "우코4+공3+장탄2+방어3",
+  "크라운": "공4+장탄4+크확4"
+ },
+ "screen": {
+  "이사벨": {
+   "element_bonus": 14.503146959999995,
+   "atk_pct": 4.988528549999998,
+   "max_ammo_pct": 1.0984432999999996,
+   "crit_rate": 3.4801312000000024,
+   "crit_dmg": 3.2192515200000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스타": {
+   "element_bonus": 10.872828650000002,
+   "atk_pct": 3.9718126100000006,
+   "max_ammo_pct": 3.7329778400000038,
+   "crit_rate": 1.9696066799999983,
+   "crit_dmg": 1.7012426900000008,
+   "charge_speed_pct": 2.4516610000000014,
+   "charge_dmg_pct": 2.004880220000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 21.079051919999998,
+   "atk_pct": 6.943964309999998,
+   "max_ammo_pct": 1.8310585299999929,
+   "crit_rate": 4.3779081299999945,
+   "crit_dmg": 3.7814088399999974,
+   "charge_speed_pct": 0.03366411000000369,
+   "charge_dmg_pct": 2.089448219999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.47788862000000165
+  },
+  "아르카나": {
+   "element_bonus": 2.9251547199999948,
+   "atk_pct": 1.5780126300000035,
+   "max_ammo_pct": 2.6020069500000034,
+   "crit_rate": 0.5450637900000004,
+   "crit_dmg": 0.47079800999999577,
+   "charge_speed_pct": -0.025757929999997486,
+   "charge_dmg_pct": 0.06786307000000136,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.640200440000001
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6834982799999949,
+   "max_ammo_pct": 0.23613034999999627,
+   "crit_rate": 0.2368466799999993,
+   "crit_dmg": 0.2045669700000019,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 2.2696986300000077
+  }
+ },
+ "top": {
+  "이사벨": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아니스 : 스타": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_speed_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아르카나": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "def_pct"
+  ],
+  "크라운": [
+   "def_pct",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 128.9523896,
+ "ctrl2_variants": [
+  "신데렐라:reload:C0.5",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "아니스 : 스타:reload:A0.3",
+  "아르카나:click:tap",
+  "아르카나:reload:B0.5",
+  "이사벨:reload:C0.5",
+  "크라운:cube:렐릭 인듀어 큐브",
+  "크라운:reload:B0.1"
+ ],
+ "final": 128.9523896,
+ "final_variants": [
+  "신데렐라:reload:C0.5",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "아니스 : 스타:reload:A0.3",
+  "아르카나:click:tap",
+  "아르카나:reload:B0.5",
+  "이사벨:reload:C0.5",
+  "크라운:cube:렐릭 인듀어 큐브",
+  "크라운:reload:B0.1"
+ ],
+ "sims": 2407,
+ "seconds": 374.8
+}

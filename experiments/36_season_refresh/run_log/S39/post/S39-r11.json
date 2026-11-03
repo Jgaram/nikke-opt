@@ -1,0 +1,139 @@
+{
+ "id": "S39-r11",
+ "season": 39,
+ "squad": [
+  "크라운",
+  "라피 : 레드 후드",
+  "아니스 : 스타",
+  "밀크 : 블루밍 바니",
+  "나가"
+ ],
+ "win": null,
+ "pre": 53.11722629,
+ "ctrl": 53.44592437,
+ "ctrl_variants": [
+  "나가:cover:on",
+  "나가:cube:택티컬 베어 큐브",
+  "라피 : 레드 후드:reload:A0.3",
+  "밀크 : 블루밍 바니:reload:C0.1_dry",
+  "아니스 : 스타:reload:C0.1_dry"
+ ],
+ "E0": 60.22756211,
+ "O": 62.63392247,
+ "alloc": {
+  "크라운": "우코4+공4+장탄2+크확2",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "아니스 : 스타": "공4+장탄2+크확2+차뎀4",
+  "밀크 : 블루밍 바니": "우코4+공4+장탄2+크확2",
+  "나가": "공4+장탄2+크확3+크뎀3"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 2.9270961,
+   "atk_pct": 1.492039730000002,
+   "max_ammo_pct": 1.0619241799999983,
+   "crit_rate": 0.5275233300000011,
+   "crit_dmg": 0.45566765999999603,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 11.10152008,
+   "atk_pct": 4.655378499999998,
+   "max_ammo_pct": 1.4305434800000043,
+   "crit_rate": 1.9417719699999978,
+   "crit_dmg": 1.6771849399999965,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5140017700000001,
+   "max_ammo_pct": 0.9278402799999981,
+   "crit_rate": 0.632632969999996,
+   "crit_dmg": 0.5464364199999991,
+   "charge_speed_pct": -0.0928566700000033,
+   "charge_dmg_pct": 0.6680951000000022,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "밀크 : 블루밍 바니": {
+   "element_bonus": 6.735062560000003,
+   "atk_pct": 2.160349400000001,
+   "max_ammo_pct": 1.796850390000003,
+   "crit_rate": 1.1827542899999983,
+   "crit_dmg": 1.0216016700000026,
+   "charge_speed_pct": 0.6566114099999965,
+   "charge_dmg_pct": 0.21929405000000202,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나가": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8321821000000043,
+   "max_ammo_pct": 0.18183284999999927,
+   "crit_rate": 0.19253450000000072,
+   "crit_dmg": 0.1663069999999962,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아니스 : 스타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "밀크 : 블루밍 바니": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "나가": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 62.82275543,
+ "ctrl2_variants": [
+  "나가:cover:on",
+  "나가:cube:택티컬 베어 큐브",
+  "밀크 : 블루밍 바니:cancel:on",
+  "밀크 : 블루밍 바니:reload:C0.1_dry",
+  "아니스 : 스타:reload:C0.1_dry",
+  "크라운:reload:B0.1"
+ ],
+ "final": 62.82275543,
+ "final_variants": [
+  "나가:cover:on",
+  "나가:cube:택티컬 베어 큐브",
+  "밀크 : 블루밍 바니:cancel:on",
+  "밀크 : 블루밍 바니:reload:C0.1_dry",
+  "아니스 : 스타:reload:C0.1_dry",
+  "크라운:reload:B0.1"
+ ],
+ "sims": 2347,
+ "seconds": 311.4
+}

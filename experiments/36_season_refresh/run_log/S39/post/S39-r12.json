@@ -1,0 +1,136 @@
+{
+ "id": "S39-r12",
+ "season": 39,
+ "squad": [
+  "리타",
+  "민트",
+  "레이븐",
+  "프리카",
+  "레드 후드"
+ ],
+ "win": null,
+ "pre": 44.77286349,
+ "ctrl": 47.97338754,
+ "ctrl_variants": [
+  "레드 후드:click:tap",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "레이븐:cube:렐릭 부스트 큐브",
+  "리타:cube:택티컬 베어 큐브"
+ ],
+ "E0": 53.98801111,
+ "O": 59.75526816,
+ "alloc": {
+  "리타": "우코4+공4+장탄2+크확2",
+  "민트": "우코4+공4+차속4",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "프리카": "공4+차속4+차뎀4",
+  "레드 후드": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 1.9285551900000044,
+   "atk_pct": 1.0035119899999998,
+   "max_ammo_pct": 0.5626896600000038,
+   "crit_rate": 0.5638432999999949,
+   "crit_dmg": 0.5428810899999945,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 1.5670355300000054,
+   "atk_pct": 0.8208467400000004,
+   "max_ammo_pct": 0.06857895000000269,
+   "crit_rate": 0.45734779000000003,
+   "crit_dmg": 0.4437385299999974,
+   "charge_speed_pct": 1.1944034899999991,
+   "charge_dmg_pct": 0.5875378599999976,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 11.669031320000002,
+   "atk_pct": 5.191043630000003,
+   "max_ammo_pct": 0.4450018799999995,
+   "crit_rate": 3.4480331500000005,
+   "crit_dmg": 3.3505061799999964,
+   "charge_speed_pct": 1.1566521899999955,
+   "charge_dmg_pct": 0.5312013399999955,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3728497100000041,
+   "max_ammo_pct": -0.16861929999999603,
+   "crit_rate": 0.20758176999999733,
+   "crit_dmg": 0.20124751999999546,
+   "charge_speed_pct": 0.7090031400000001,
+   "charge_dmg_pct": 0.2670559600000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레드 후드": {
+   "element_bonus": 6.904777120000006,
+   "atk_pct": 2.9294429400000013,
+   "max_ammo_pct": 1.8097266000000047,
+   "crit_rate": 2.0471121599999975,
+   "crit_dmg": 2.0093379099999993,
+   "charge_speed_pct": 1.5702316799999991,
+   "charge_dmg_pct": 1.5704968000000008,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "민트": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리카": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 60.85291146,
+ "ctrl2_variants": [
+  "레드 후드:click:tap",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "레이븐:cube:렐릭 부스트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:C0.1_dry"
+ ],
+ "final": 60.85291146,
+ "final_variants": [
+  "레드 후드:click:tap",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "레이븐:cube:렐릭 부스트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:C0.1_dry"
+ ],
+ "sims": 2350,
+ "seconds": 306.4
+}
