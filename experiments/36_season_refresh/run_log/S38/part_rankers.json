@@ -1,0 +1,8 @@
+{
+ "squads": 43,
+ "season": 38,
+ "part": "rankers",
+ "arm": "A",
+ "evaluator": "nikke-calc-rs 8bc51a2",
+ "sims": 86
+}

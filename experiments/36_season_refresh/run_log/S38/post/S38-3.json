@@ -1,0 +1,143 @@
+{
+ "id": "S38-3",
+ "season": 38,
+ "squad": [
+  "목단",
+  "나유타",
+  "마나",
+  "네온 : 비전 아이",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 40.12338306,
+ "ctrl": 41.48639684,
+ "ctrl_variants": [
+  "squad:camera:헬름",
+  "나유타:cube:택티컬 어설트 큐브",
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "네온 : 비전 아이:reload:B0.1",
+  "마나:cube:택티컬 베어 큐브",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "헬름:reload:C0.1_dry"
+ ],
+ "E0": 44.68483955,
+ "O": 51.83890717,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "나유타": "우코4+공4+차뎀4",
+  "마나": "우코4+공4+장탄1+크확3",
+  "네온 : 비전 아이": "공4+장탄4+차속4",
+  "헬름": "공4+크확4+차뎀4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.926847549999998,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.27536787999999746,
+   "crit_dmg": 0.2523288800000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 5.4991749200000015,
+   "atk_pct": 3.206776529999999,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.9851431299999973,
+   "crit_dmg": 0.8509172600000028,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.2304968899999977,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마나": {
+   "element_bonus": 5.307470549999998,
+   "atk_pct": 2.3425438499999984,
+   "max_ammo_pct": 1.364542710000002,
+   "crit_rate": 0.9293810599999972,
+   "crit_dmg": 0.8359243399999983,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.3108356299999997,
+   "max_ammo_pct": 3.5028136299999986,
+   "crit_rate": 0.95130889,
+   "crit_dmg": 0.84389161,
+   "charge_speed_pct": 4.295824350000004,
+   "charge_dmg_pct": 0.5516956499999992,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6349719099999973,
+   "max_ammo_pct": 0.2616495400000005,
+   "crit_rate": 0.17852509000000083,
+   "crit_dmg": 0.158294699999999,
+   "charge_speed_pct": -0.19047893999999843,
+   "charge_dmg_pct": 0.206801310000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "나유타": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "마나": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "헬름": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 52.61329423,
+ "ctrl2_variants": [
+  "squad:camera:헬름",
+  "나유타:cube:택티컬 어설트 큐브",
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "네온 : 비전 아이:reload:A0.3",
+  "마나:burst:wait2",
+  "목단:cube:렐릭 어설트 큐브",
+  "헬름:reload:C0.5"
+ ],
+ "final": 52.61329423,
+ "final_variants": [
+  "squad:camera:헬름",
+  "나유타:cube:택티컬 어설트 큐브",
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "네온 : 비전 아이:reload:A0.3",
+  "마나:burst:wait2",
+  "목단:cube:렐릭 어설트 큐브",
+  "헬름:reload:C0.5"
+ ],
+ "sims": 2334,
+ "seconds": 242.0
+}
