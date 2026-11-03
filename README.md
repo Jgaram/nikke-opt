@@ -114,6 +114,9 @@ Rust 실행 파일은 `nikke-calc-rs`에서 `cargo build --release -p nikke-cli`
   ```
 
   요청 줄이 곧 육성이라 캐시 키가 내용을 따라간다. 프로필을 *이름*으로 주면(내 계정 `me` 등) 파일 내용 해시를 키에 넣는다.
+- **컨트롤 타임라인** — Rust 평가기(nikke-calc-rs `8efd706`부터)는 `options={"sim": {"trace": True}}`면 결과에 그 전투의 입력 타임라인
+  `trace`(버스트 · 풀버스트 · 클릭/엄폐 구간 · 카메라)를 붙인다. 총딜은 그대로다. 화면용 모양으로 줄이는 것은 `nikke_opt/timeline.py`(`traced` · `compact`),
+  쓰는 곳은 실험 36 `trace36.py`(현황판 후처리 덱의 「컨트롤 타임라인」). Python 원본에는 이 칸이 없다.
 
 조사 결과 (2026-10-07, nikke-calc `ba9f29c`):
 

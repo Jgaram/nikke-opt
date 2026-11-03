@@ -1,6 +1,6 @@
 """현황판 사이트(web/build.py, 실험 36) — 결과 전에도 만들어지는지(「계산 전」 · 후처리 「계산 중」), analysis.json의 분류를 값 그대로
 옮기는지, 세부 분류 새 덱을 바뀐 덱 자리에 놓는지, 후처리 5덱(post.json)을 값 그대로 옮기고 배분 · 큐브 · 선택지를 펼치는지,
-화면에 나오는 니케 · 보스 · 속성 그림이 빠짐없이 있는지.
+후처리 덱의 컨트롤 타임라인(trace36.py)을 값이 같은 덱만 시즌 파일로 내는지, 화면에 나오는 니케 · 보스 · 속성 그림이 빠짐없이 있는지.
 
 실험 36 결과는 아직 git에 없을 수 있어서, 결과가 있는 경우는 임시 폴더에 지은 실험 36 모양 기록(시뮬 0)으로 시험한다."""
 
@@ -88,6 +88,12 @@ def _fake_exp(tmp: Path) -> Path:
     _jdump(d / "rpost.json", {"season": s, "arm": "A", "decks_new": 5, "reused_from_A": [], "sims": 6000,
                               "sets": {"top": {"decks": rdecks, "total": {k: sum(x[k] for x in rdecks) for k in ("pre", "ctrl", "E0", "O", "final")}},
                                        "pack": None, "r1": None}})
+    for x, ok in ((pdecks[0], True), (pdecks[1], False), (rdecks[0], True)):   # 컨트롤 타임라인(trace36) — S40-1은 다시 돈 값이 달랐다
+        q = x["squad"]
+        tl = {"v": 1, "squad": q, "dur": 180.0, "fb": [[4.0, 14.0]], "b": [[3.4, 1, 0, 0], [3.5, 2, 1, 0], [3.6, 3, 2, 0]],
+              "c": [[13.3, 13.47, 3, "cover", "엄폐 시작(장전컨)"]], "cam": [[0.0, 2], [13.3, 3], [13.48, 2]]}
+        _jdump(d / "trace" / f"{x['id']}.json", {"id": x["id"], "season": s, "squad": q, "final": x["final"],
+                                                  "total_damage": round(x["final"] * 1e8) + (0 if ok else 5), "match": ok, "timeline": tl})
     q41 = sorted(R.season(41)["pool"])[:5]
     _jdump(exp / "run_log" / "S41" / "post" / "S41-0.json", _post_deck(41, 0, q41, 10.0))
     _jdump(exp / "analysis.json", {"arm": "A", "summary": {}, "rows": [row],
@@ -184,11 +190,11 @@ class TestWebBuild(unittest.TestCase):
     def test_cost_parts(self):
         """비용 표: 실험 36 부분(옮겨 쓴 부분은 새 시뮬 0, 판 A의 끝 탐침은 건너뜀)."""
         S = self.season(40)
-        self.assertEqual(set(S["parts"]), {"B_s0", "B_s1", "end", "post", "rpost"})
+        self.assertEqual(set(S["parts"]), {"B_s0", "B_s1", "end", "post", "rpost", "trace"})
         self.assertIn("copied_from", S["parts"]["B_s0"])
         self.assertEqual(S["parts"]["end"]["skipped"], "A")
-        self.assertEqual(S["sims_total"], 100 + 23 + 0 + 6000 + 6000)          # 마지막 = 랭커 덱 후처리(rpost.json)
-        self.assertEqual(S["sims_new"], 0 + 23 + 0 + 6000 + 6000)
+        self.assertEqual(S["sims_total"], 100 + 23 + 0 + 6000 + 6000 + 3)      # 랭커 덱 후처리(rpost.json) · 컨트롤 타임라인 덱 3개(trace/)
+        self.assertEqual(S["sims_new"], 0 + 23 + 0 + 6000 + 6000 + 3)
         self.assertEqual(S["evaluators"], ["nikke-calc-rs 8bc51a2"])
         self.assertEqual(self.fake["progress"]["sims_new"], S["sims_new"])
 
@@ -243,6 +249,21 @@ class TestWebBuild(unittest.TestCase):
         self.assertEqual(top["decks"][0]["gear"][stop["decks"][0]["squad"][2]]["cube_short"], "어설트")
         self.assertEqual(self.season(41)["rpost"], {"status": "pending"})
         self.assertEqual(self.season(33)["rpost"], {"status": "pending"})
+
+    def test_traces(self):
+        """trace/<덱 id>.json(trace36.py)이 있고 값이 같은(match) 덱만 타임라인을 싣는다 — data.json에는 있는지만, 본문은 traces/S??.json."""
+        S = self.season(40)
+        self.assertEqual([x["trace"] for x in S["post"]["decks"]], [True, False, False, False, False])
+        self.assertEqual([x["trace"] for x in S["rpost"]["sets"]["top"]["decks"]], [True, False, False, False, False])
+        self.assertEqual(S["traces"], 2)
+        self.assertEqual(self.season(41)["traces"], 0)
+        out = self.tmp / "site-fake"
+        B.build(out, self.exp)
+        tr = json.loads((out / "traces" / "S40.json").read_text(encoding="utf-8"))
+        self.assertEqual(sorted(tr), ["S40-0", "S40-r0"])
+        self.assertEqual(tr["S40-0"]["cam"], [[0.0, 2], [13.3, 3], [13.48, 2]])
+        self.assertEqual(sorted(p.name for p in (out / "traces").iterdir()), ["S40.json"])
+        self.assertNotIn('"cam":', (out / "data.json").read_text(encoding="utf-8"))   # 본문은 data.json에 넣지 않는다
 
     def test_post_from_analysis_row(self):
         """run_log의 post.json이 없어도 analysis.json 줄의 `post`(run36 analyze가 넣는다)가 있으면 그것을 쓴다."""
