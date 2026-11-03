@@ -1,0 +1,9 @@
+{
+ "squads": 43,
+ "errors": 0,
+ "season": 30,
+ "part": "rankers",
+ "evaluator": "nikke-calc-rs 6e73529",
+ "sims": 43,
+ "wall": 3.4
+}
