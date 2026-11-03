@@ -55,3 +55,17 @@ exit 139
 {"fit": "G2", "seconds": 92.4}
 {"fit": "G3", "seconds": 243.8}
 (2시간 실행 제한으로 중단 15:32 — 짝 2개 끝, 셋째 짝 G4 중)
+--- 재시작 3(니케 가리기 먼저) 07:08
+{"P_obs": 94093, "probe_obs": 27280}
+{"fit": "G1", "seconds": 123.3}
+{"fit": "G2", "seconds": 92.8}
+{"fit": "G3", "seconds": 305.1}
+{"fit": "G4", "seconds": 705.4}
+{"nikke": "아르카나 : 포츈 메이트", "n_keep": 85, "n_test": 2589}
+{"fit": "G1", "seconds": 114.3}
+{"fit": "G2", "seconds": 77.8}
+{"fit": "G3", "seconds": 234.9}
+{"fit": "G4", "seconds": 564.7}
+{"nikke": "스노우 화이트 : 헤비암즈", "n_keep": 85, "n_test": 14042}
+{"stop": "budget", "minutes": 80.3}
+exit 3
