@@ -1,3 +1,7 @@
 --- 2단계 실행 1 13:36 UTC — 사용자 지시로 멈춤(계산기 수정), 끝난 부분 없음
 --- 2단계 실행 2 15:22 UTC — 평가기 nikke-calc-rs 8bc51a2, sim.camera_reload_cancel 안 줌
 {"arm": "d", "season": 23, "seed": 0, "budget": 12500, "evals": 11014, "seconds": 1405.0, "best": 159.08475164000004, "errors": 0, "kicks": 12, "d2": {"refits": 22, "train_s": 647.0, "pred_s": 7.7, "predicted": 151154}, "part": "B_s0", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11014, "wall": 1405.1}
+{"arm": "d", "season": 23, "seed": 1, "budget": 12500, "evals": 11018, "seconds": 2185.0, "best": 159.29634732, "errors": 0, "kicks": 15, "d2": {"refits": 22, "train_s": 596.7, "pred_s": 7.4, "predicted": 150568}, "part": "B_s1", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11018, "wall": 2185.1}
+{"arm": "d", "season": 24, "seed": 0, "budget": 12500, "evals": 11016, "seconds": 1839.2, "best": 157.89189206, "errors": 0, "kicks": 14, "d2": {"refits": 22, "train_s": 788.8, "pred_s": 6.7, "predicted": 154828}, "part": "B_s0", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11016, "wall": 1839.4}
+{"stop": "budget", "minutes": 90.5}
+exit 3
