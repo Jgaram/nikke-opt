@@ -1,0 +1,54 @@
+{
+ "arm": "a",
+ "params": {
+  "pack_share": 0.6,
+  "top_share": 0.1,
+  "slot_k": 8,
+  "per_parent": 8,
+  "slot_lineage": true
+ },
+ "season": 36,
+ "seed": 0,
+ "budget": 600,
+ "evals": 600,
+ "seconds": 43.6,
+ "best": 237.17044758999998,
+ "errors": 0,
+ "kicks": 0,
+ "history": [
+  {
+   "evals": 196,
+   "pack": 192.85956572999999,
+   "kick": false
+  },
+  {
+   "evals": 296,
+   "pack": 202.49411686,
+   "kick": false
+  },
+  {
+   "evals": 396,
+   "pack": 217.32357160000004,
+   "kick": false
+  },
+  {
+   "evals": 496,
+   "pack": 227.7179587,
+   "kick": false
+  },
+  {
+   "evals": 525,
+   "pack": 230.80593860999997,
+   "kick": false
+  },
+  {
+   "evals": 600,
+   "pack": 237.17044758999998,
+   "kick": false
+  }
+ ],
+ "sims": 600,
+ "pack": 237.17044758999998,
+ "G": 0.1970835754832505,
+ "visit": 0.0
+}
