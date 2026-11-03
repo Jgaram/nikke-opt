@@ -84,7 +84,8 @@ def cmd_facts(a: argparse.Namespace) -> int:
         out[n] = {"code": v["element_code"], "stage": str(v.get("burst_stage") or ""), "cd": float(v.get("burst_cooldown") or 40.0),
                   "own_cdr": any(e.get("stat") in CDR_STATS for e in effs),
                   "reentry": str(v.get("burst_stage")) == "A" or any(e.get("stat") == "burst_reentry" for e in effs),
-                  "fb_delta": round(fb, 2)}
+                  "fb_delta": round(fb, 2),
+                  "adv_codes": [BEATS[v["element_code"]]] + [e["target_code"] for e in effs if e.get("stat") == "element_code_override"]}
     jdump(FACTS, {"_source": f"nikke-calc-rs upstream/data (원본 67835ca)", "nikke": out})
     print(f"{len(out)}명 → {FACTS}")
     return 0
@@ -198,7 +199,7 @@ def cmd_presets(a: argparse.Namespace) -> int:
 def preset_for(name: str, season: int) -> dict[str, int]:
     p = jload(PRESETS)["presets"]
     code = r36().run31.season(season)["code"]
-    adv = BEATS[facts()[name]["code"]] == code
+    adv = code in facts()[name]["adv_codes"]   # 자기 스킬로 상성을 만드는 니케(라피 : 레드 후드 · 슈가) 포함
     return run35.parse(p[f"{name}|{int(adv)}"])
 
 
@@ -226,13 +227,17 @@ def cmd_check(a: argparse.Namespace) -> int:
             pre = {n: preset_for(n, d["season"]) for n in d["squad"]}
             reqs += [EvalRequest(d["squad"], boss=None, options=final_options(d, al)),
                      EvalRequest(d["squad"], boss=None, options=final_options(d, pre))]
+            # 니케 하나만 프리셋으로(나머지는 실험 36 배분) — 손해가 어느 니케에서 나는지
+            reqs += [EvalRequest(d["squad"], boss=None, options=final_options(d, {**al, n: pre[n]})) for n in d["squad"]]
         res = ev.evaluate(reqs)
         rows = []
+        w = 2 + 5
         for i, d in enumerate(decks):
-            r_re, r_v1 = res[2 * i], res[2 * i + 1]
+            r_re, r_v1 = res[w * i], res[w * i + 1]
+            single = {n: (None if r.error else r.total_damage / E8) for n, r in zip(d["squad"], res[w * i + 2:w * i + w])}
             rows.append({"id": d["id"], "season": d["season"], "final": d["final"],
                          "reproduced": None if r_re.error else r_re.total_damage / E8,
-                         "V1": None if r_v1.error else r_v1.total_damage / E8,
+                         "V1": None if r_v1.error else r_v1.total_damage / E8, "single": single,
                          "preset": {n: run35.label(preset_for(n, d["season"])) for n in d["squad"]}, "alloc": d["alloc"]})
         jdump(OUT / "check.json", {"evaluator": f"{ev.version.get('repo')} {str(ev.version.get('commit'))[:7]}",
                                    "sims": ev.sim_count, "rows": rows})
@@ -246,6 +251,7 @@ def post_one(d: Mapping[str, Any], ev: Any) -> dict[str, Any]:
     f = OUT / "post" / f"{d['id']}.json"
     if f.exists():
         return jload(f)
+    f.parent.mkdir(parents=True, exist_ok=True)
     pre = {n: preset_for(n, d["season"]) for n in d["squad"]}
     sp = r36().control_space(d["season"], d["squad"], pre)
     n0, t0 = ev.sim_count, time.time()
@@ -260,6 +266,8 @@ def cmd_post(a: argparse.Namespace) -> int:
     from concurrent.futures import ThreadPoolExecutor
     from nikke_opt.evaluator import make_evaluator
     decks = exp36_decks()
+    if a.ids:
+        decks = [d for d in decks if d["id"] in a.ids.split(",")]
     with make_evaluator("rust", jobs=a.jobs, cache=False) as ev:
         with ThreadPoolExecutor(a.workers) as pool:
             for r in pool.map(lambda d: post_one(d, ev), decks):
@@ -271,37 +279,36 @@ def cmd_post(a: argparse.Namespace) -> int:
 
 def cmd_analyze(a: argparse.Namespace) -> int:
     chk = jload(OUT / "check.json")
-    posts = [jload(f) for f in sorted((OUT / "post").glob("S*-[0-9].json"))]
-    v2 = {p["id"]: p for p in posts}
-    seasons = sorted({r["season"] for r in chk["rows"]})
-    tab = []
-    for s in seasons:
-        rs = [r for r in chk["rows"] if r["season"] == s]
-        f36 = sum(r["final"] for r in rs)
-        v1 = sum(r["V1"] for r in rs)
-        v2s = sum(v2[r["id"]]["V2"] for r in rs) if all(r["id"] in v2 for r in rs) else None
-        tab.append({"season": s, "final36": f36, "V1": v1, "V2": v2s, "loss_V1": 1 - v1 / f36,
-                    "loss_V2": None if v2s is None else 1 - v2s / f36})
-    deck_v1 = [1 - r["V1"] / r["final"] for r in chk["rows"]]
-    deck_v2 = [1 - v2[r["id"]]["V2"] / r["final"] for r in chk["rows"] if r["id"] in v2]
-    pr = jload(PRESETS)
-    out = {"presets_sims": pr.get("sims"), "presets_seconds": pr.get("seconds"), "check_sims": chk["sims"],
-           "post_sims": sum(p["sims"] for p in posts), "seasons": tab,
-           "deck_loss_V1": deck_v1, "deck_loss_V2": deck_v2}
-    jdump(HERE / "r0.json", out)
+    rows = chk["rows"]
+    v2 = {p["id"]: p for p in (jload(f) for f in sorted((OUT / "post").glob("S*-[0-9].json")))}
 
     def q(xs, p):
         xs = sorted(xs)
         return xs[min(len(xs) - 1, int(p * (len(xs) - 1) + 0.5))]
-    lines = ["| 시즌 | 실험 36 후처리 5덱 합 | V1 프리셋 바꿔 끼우기 | V2 간소화 후처리 | 손해 V1 | 손해 V2 |", "|---|---|---|---|---|---|"]
-    for t in tab:
-        v2c = "" if t["V2"] is None else f"{t['V2']:.2f}"
-        l2c = "" if t["loss_V2"] is None else f"{t['loss_V2']:+.2%}"
-        lines.append(f"| S{t['season']} | {t['final36']:.2f} | {t['V1']:.2f} | {v2c} | {t['loss_V1']:+.2%} | {l2c} |")
-    for nm, xs in (("V1", deck_v1), ("V2", deck_v2)):
-        if xs:
-            lines.append(f"\n덱별 손해 {nm}: 중앙 {st.median(xs):+.2%} · 75% {q(xs, .75):+.2%} · 90% {q(xs, .9):+.2%} · 최대 {max(xs):+.2%} · "
-                         f"1% 넘는 덱 {sum(x > 0.01 for x in xs)}/{len(xs)}")
+
+    def dist(xs):
+        return {"median": st.median(xs), "p75": q(xs, .75), "p90": q(xs, .9), "max": max(xs), "over1": sum(x > 0.01 for x in xs), "n": len(xs)}
+    seasons = []
+    for s in sorted({r["season"] for r in rows}):
+        rs = [r for r in rows if r["season"] == s]
+        f36, v1 = sum(r["final"] for r in rs), sum(r["V1"] for r in rs)
+        seasons.append({"season": s, "final36": f36, "V1": v1, "loss_V1": 1 - v1 / f36})
+    deck_v1 = [1 - r["V1"] / r["final"] for r in rows]
+    single = [1 - v / r["final"] for r in rows for v in r["single"].values()]
+    deck_v2 = {i: 1 - p["V2"] / p["final36"] for i, p in v2.items()}
+    pr = jload(PRESETS)
+    out = {"presets_sims": pr.get("sims"), "presets_seconds": pr.get("seconds"), "check_sims": chk["sims"],
+           "post_sims": sum(p["sims"] for p in v2.values()), "seasons": seasons, "V1_deck": dist(deck_v1),
+           "V1_single": dist(single), "V2_deck": dist(list(deck_v2.values())) if deck_v2 else None, "V2_by_deck": deck_v2}
+    jdump(HERE / "r0.json", out)
+    lines = ["| 시즌 | 실험 36 후처리 5덱 합 | V1(프리셋 바꿔 끼우기) | 손해 V1 | V2 최선 덱 손해 |", "|---|---|---|---|---|"]
+    for t in seasons:
+        k = f"S{t['season']}-0"
+        lines.append(f"| S{t['season']} | {t['final36']:.2f} | {t['V1']:.2f} | {t['loss_V1']:+.2%} | "
+                     f"{'' if k not in deck_v2 else f'{deck_v2[k]:+.2%}'} |")
+    for nm, d in (("V1 덱", out["V1_deck"]), ("V1 니케 하나만", out["V1_single"]), ("V2 덱", out["V2_deck"])):
+        if d:
+            lines.append(f"\n{nm} 손해: 중앙 {d['median']:+.2%} · 75% {d['p75']:+.2%} · 90% {d['p90']:+.2%} · 최대 {d['max']:+.2%} · 1% 넘음 {d['over1']}/{d['n']}")
     (HERE / "r0.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
     return 0
@@ -321,6 +328,7 @@ def main() -> int:
     p = sub.add_parser("post")
     p.add_argument("--jobs", type=int, default=4)
     p.add_argument("--workers", type=int, default=2)
+    p.add_argument("--ids", help="덱 id만(쉼표) — 예: 시즌마다 최선 덱 S33-0,S34-0,…")
     sub.add_parser("analyze")
     a = ap.parse_args()
     return {"facts": cmd_facts, "presets": cmd_presets, "check": cmd_check, "post": cmd_post, "analyze": cmd_analyze}[a.cmd](a)

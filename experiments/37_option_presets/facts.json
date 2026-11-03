@@ -7,7 +7,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "아니스 : 스파클링 서머": {
    "code": "전격",
@@ -15,7 +18,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "라피 : 레드 후드": {
    "code": "작열",
@@ -23,7 +29,11 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압",
+    "전격"
+   ]
   },
   "아니스 : 스타": {
    "code": "전격",
@@ -31,7 +41,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "네온 : 비전 아이": {
    "code": "전격",
@@ -39,7 +52,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "마리안 : 퀸": {
    "code": "작열",
@@ -47,7 +63,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "시그널": {
    "code": "작열",
@@ -55,7 +74,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "델타 : 닌자 시프": {
    "code": "수냉",
@@ -63,7 +85,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "폴리": {
    "code": "수냉",
@@ -71,7 +96,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "미란다": {
    "code": "작열",
@@ -79,7 +107,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "키리": {
    "code": "풍압",
@@ -87,7 +118,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "D": {
    "code": "풍압",
@@ -95,7 +129,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 5.04
+   "fb_delta": 5.04,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "K": {
    "code": "전격",
@@ -103,7 +140,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "D : 킬러 와이프": {
    "code": "작열",
@@ -111,7 +151,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "미카 : 스노우 버디": {
    "code": "철갑",
@@ -119,7 +162,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "벨로타 : 펌킨 위치": {
    "code": "수냉",
@@ -127,7 +173,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "브리드": {
    "code": "수냉",
@@ -135,7 +184,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "솔린": {
    "code": "철갑",
@@ -143,7 +195,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "디젤": {
    "code": "풍압",
@@ -151,7 +206,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "브리드 : 사일런트 트랙": {
    "code": "작열",
@@ -159,7 +217,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "솔린 : 프로스트 티켓": {
    "code": "수냉",
@@ -167,7 +228,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "디젤 : 윈터 스위츠": {
    "code": "작열",
@@ -175,7 +239,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "센티": {
    "code": "철갑",
@@ -183,7 +250,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "리타": {
    "code": "철갑",
@@ -191,7 +261,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "엠마": {
    "code": "작열",
@@ -199,7 +272,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "베스티": {
    "code": "수냉",
@@ -207,7 +283,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": -5.0
+   "fb_delta": -5.0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "은화": {
    "code": "작열",
@@ -215,7 +294,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "엠마 : 택티컬 업": {
    "code": "작열",
@@ -223,7 +305,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "베스티 : 택티컬 업": {
    "code": "작열",
@@ -231,7 +316,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "은화 : 택티컬 업": {
    "code": "작열",
@@ -239,7 +327,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "라플라스": {
    "code": "철갑",
@@ -247,7 +338,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "드레이크": {
    "code": "작열",
@@ -255,7 +349,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "맥스웰": {
    "code": "철갑",
@@ -263,7 +360,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "라플라스 : 얼티밋 히어로": {
    "code": "풍압",
@@ -271,7 +371,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "드레이크 : 그레이트 빌런": {
    "code": "풍압",
@@ -279,7 +382,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "맥스웰 : 오디너리 미케닉": {
    "code": "풍압",
@@ -287,7 +393,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "크로우": {
    "code": "작열",
@@ -295,7 +404,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "자칼": {
    "code": "철갑",
@@ -303,7 +415,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "바이퍼": {
    "code": "수냉",
@@ -311,7 +426,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "E.H.": {
    "code": "풍압",
@@ -319,7 +437,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "앤 : 미라클 페어리": {
    "code": "풍압",
@@ -327,7 +448,10 @@
    "cd": 60.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "메어리": {
    "code": "수냉",
@@ -335,7 +459,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "페퍼": {
    "code": "풍압",
@@ -343,7 +470,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "메어리 : 베이 갓데스": {
    "code": "수냉",
@@ -351,7 +481,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "슈가": {
    "code": "철갑",
@@ -359,7 +492,11 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격",
+    "작열"
+   ]
   },
   "밀크": {
    "code": "수냉",
@@ -367,7 +504,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "프림": {
    "code": "철갑",
@@ -375,7 +515,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "밀크 : 블루밍 바니": {
    "code": "철갑",
@@ -383,7 +526,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "율리아": {
    "code": "철갑",
@@ -391,7 +537,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "유니": {
    "code": "작열",
@@ -399,7 +548,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "미하라 : 본딩 체인": {
    "code": "작열",
@@ -407,7 +559,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "프리바티": {
    "code": "수냉",
@@ -415,7 +570,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "율하": {
    "code": "작열",
@@ -423,7 +581,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "애드미": {
    "code": "풍압",
@@ -431,7 +592,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "길로틴": {
    "code": "전격",
@@ -439,7 +603,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "메이든": {
    "code": "전격",
@@ -447,7 +614,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "길로틴 : 윈터 슬레이어": {
    "code": "수냉",
@@ -455,7 +625,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "메이든 : 아이스 로즈": {
    "code": "전격",
@@ -463,7 +636,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "루드밀라": {
    "code": "수냉",
@@ -471,7 +647,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "앨리스": {
    "code": "작열",
@@ -479,7 +658,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "토브": {
    "code": "수냉",
@@ -487,7 +669,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "루드밀라 : 윈터 오너": {
    "code": "수냉",
@@ -495,7 +680,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "앨리스 : 원더랜드 바니": {
    "code": "수냉",
@@ -503,7 +691,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "루피": {
    "code": "철갑",
@@ -511,7 +702,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "얀": {
    "code": "작열",
@@ -519,7 +713,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "도라": {
    "code": "풍압",
@@ -527,7 +724,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "루피 : 윈터 쇼퍼": {
    "code": "전격",
@@ -535,7 +735,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "엑시아": {
    "code": "전격",
@@ -543,7 +746,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "노벨": {
    "code": "철갑",
@@ -551,7 +757,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "스노우 화이트": {
    "code": "철갑",
@@ -559,7 +768,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "라푼젤": {
    "code": "철갑",
@@ -567,7 +779,10 @@
    "cd": 60.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "홍련": {
    "code": "전격",
@@ -575,7 +790,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "나유타": {
    "code": "풍압",
@@ -583,7 +801,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "스노우 화이트 : 이노센트 데이즈": {
    "code": "철갑",
@@ -591,7 +812,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "홍련 : 흑영": {
    "code": "풍압",
@@ -599,7 +823,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "라푼젤 : 퓨어 그레이스": {
    "code": "철갑",
@@ -607,7 +834,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "하란": {
    "code": "전격",
@@ -615,7 +845,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "이사벨": {
    "code": "전격",
@@ -623,7 +856,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": -5.0
+   "fb_delta": -5.0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "노아": {
    "code": "풍압",
@@ -631,7 +867,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "도로시": {
    "code": "수냉",
@@ -639,7 +878,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "도로시 : 세렌디피티": {
    "code": "수냉",
@@ -647,7 +889,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "루마니": {
    "code": "작열",
@@ -655,7 +900,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "에피넬": {
    "code": "풍압",
@@ -663,7 +911,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "폴크방": {
    "code": "수냉",
@@ -671,7 +922,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "모더니아": {
    "code": "작열",
@@ -679,7 +933,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 5.0
+   "fb_delta": 5.0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "니힐리스타": {
    "code": "작열",
@@ -687,7 +944,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "리버렐리오": {
    "code": "풍압",
@@ -695,7 +955,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "블랑": {
    "code": "풍압",
@@ -703,7 +966,10 @@
    "cd": 60.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "누아르": {
    "code": "풍압",
@@ -711,7 +977,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "루주": {
    "code": "전격",
@@ -719,7 +988,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "로산나": {
    "code": "전격",
@@ -727,7 +999,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "목단": {
    "code": "전격",
@@ -735,7 +1010,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "사쿠라": {
    "code": "작열",
@@ -743,7 +1021,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "로산나 : 시크 오션": {
    "code": "풍압",
@@ -751,7 +1032,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "사쿠라 : 블룸 인 서머": {
    "code": "풍압",
@@ -759,7 +1043,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "마나": {
    "code": "풍압",
@@ -767,7 +1054,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "에이드": {
    "code": "풍압",
@@ -775,7 +1065,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "코코아": {
    "code": "작열",
@@ -783,7 +1076,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "소다": {
    "code": "작열",
@@ -791,7 +1087,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "프리바티 : 언카인드 메이드": {
    "code": "전격",
@@ -799,7 +1098,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "소다 : 트윙클링 바니": {
    "code": "철갑",
@@ -807,7 +1109,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 5.0
+   "fb_delta": 5.0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "에이드 : 에이전트 바니": {
    "code": "철갑",
@@ -815,7 +1120,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "벨벳": {
    "code": "풍압",
@@ -823,7 +1131,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "마르차나": {
    "code": "철갑",
@@ -831,7 +1142,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "마르차나 : 마린 스터디": {
    "code": "철갑",
@@ -839,7 +1153,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "크라운": {
    "code": "철갑",
@@ -847,7 +1164,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "차임": {
    "code": "철갑",
@@ -855,7 +1175,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "마스트": {
    "code": "전격",
@@ -863,7 +1186,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "헬름": {
    "code": "수냉",
@@ -871,7 +1197,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "헬름 : 아쿠아마린": {
    "code": "철갑",
@@ -879,7 +1208,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "마스트 : 로망틱 메이드": {
    "code": "수냉",
@@ -887,7 +1219,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "앵커 : 이노센트 메이드": {
    "code": "수냉",
@@ -895,7 +1230,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "킬로": {
    "code": "작열",
@@ -903,7 +1241,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "네로": {
    "code": "작열",
@@ -911,7 +1252,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "비스킷": {
    "code": "전격",
@@ -919,7 +1263,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "레오나": {
    "code": "수냉",
@@ -927,7 +1274,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "츠바이": {
    "code": "전격",
@@ -935,7 +1285,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "아인": {
    "code": "전격",
@@ -943,7 +1296,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "라이": {
    "code": "수냉",
@@ -951,7 +1307,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "길티": {
    "code": "풍압",
@@ -959,7 +1318,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "신": {
    "code": "전격",
@@ -967,7 +1329,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "퀀시": {
    "code": "전격",
@@ -975,7 +1340,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "퀀시 : 이스케이프 퀸": {
    "code": "수냉",
@@ -983,7 +1351,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "길티 : 마이티 바니": {
    "code": "수냉",
@@ -991,7 +1362,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "신 : 스위프트 바니": {
    "code": "수냉",
@@ -999,7 +1373,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "플로라": {
    "code": "전격",
@@ -1007,7 +1384,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "트리나": {
    "code": "전격",
@@ -1015,7 +1395,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "노이즈": {
    "code": "전격",
@@ -1023,7 +1406,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "볼륨": {
    "code": "풍압",
@@ -1031,7 +1417,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "아리아": {
    "code": "수냉",
@@ -1039,7 +1428,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "아비스타": {
    "code": "전격",
@@ -1047,7 +1439,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "나가": {
    "code": "전격",
@@ -1055,7 +1450,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "티아": {
    "code": "철갑",
@@ -1063,7 +1461,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "레드 후드": {
    "code": "철갑",
@@ -1071,7 +1472,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": true,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "스노우 화이트 : 헤비암즈": {
    "code": "수냉",
@@ -1079,7 +1483,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "홍련 : 신살": {
    "code": "작열",
@@ -1087,7 +1494,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "라푼젤 : 생츄어리": {
    "code": "작열",
@@ -1095,7 +1505,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "일레그": {
    "code": "전격",
@@ -1103,7 +1516,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "트로니": {
    "code": "작열",
@@ -1111,7 +1527,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "일레그 : 붐 앤 쇼크": {
    "code": "수냉",
@@ -1119,7 +1538,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "신데렐라": {
    "code": "전격",
@@ -1127,7 +1549,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "리틀 머메이드": {
    "code": "풍압",
@@ -1135,7 +1560,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "그레이브": {
    "code": "작열",
@@ -1143,7 +1571,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "신데렐라 : 크리스탈 웨이브": {
    "code": "철갑",
@@ -1151,7 +1582,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "브래디": {
    "code": "수냉",
@@ -1159,7 +1593,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "크러스트": {
    "code": "수냉",
@@ -1167,7 +1604,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "소라": {
    "code": "풍압",
@@ -1175,7 +1615,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "베이": {
    "code": "작열",
@@ -1183,7 +1626,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "클레이": {
    "code": "전격",
@@ -1191,7 +1637,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "아크레인저 블랙": {
    "code": "풍압",
@@ -1199,7 +1648,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "팬텀": {
    "code": "수냉",
@@ -1207,7 +1659,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "아르카나": {
    "code": "전격",
@@ -1215,7 +1670,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "레이블": {
    "code": "철갑",
@@ -1223,7 +1681,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "아르카나 : 포츈 메이트": {
    "code": "작열",
@@ -1231,7 +1692,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "모리": {
    "code": "풍압",
@@ -1239,7 +1703,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "민트": {
    "code": "철갑",
@@ -1247,7 +1714,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "프리카": {
    "code": "수냉",
@@ -1255,7 +1725,10 @@
    "cd": 40.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "백학": {
    "code": "수냉",
@@ -1263,7 +1736,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "마키마": {
    "code": "수냉",
@@ -1271,7 +1747,10 @@
    "cd": 20.0,
    "own_cdr": true,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "파워": {
    "code": "작열",
@@ -1279,7 +1758,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "2B": {
    "code": "작열",
@@ -1287,7 +1769,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "A2": {
    "code": "작열",
@@ -1295,7 +1780,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "렘": {
    "code": "수냉",
@@ -1303,7 +1791,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "에밀리아": {
    "code": "수냉",
@@ -1311,7 +1802,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "작열"
+   ]
   },
   "아스카": {
    "code": "작열",
@@ -1319,7 +1813,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "레이": {
    "code": "작열",
@@ -1327,7 +1824,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "마리": {
    "code": "전격",
@@ -1335,7 +1835,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "레이 (가칭)": {
    "code": "풍압",
@@ -1343,7 +1846,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "아스카 : WILLE": {
    "code": "풍압",
@@ -1351,7 +1857,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "철갑"
+   ]
   },
   "에이다": {
    "code": "전격",
@@ -1359,7 +1868,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "질": {
    "code": "전격",
@@ -1367,7 +1879,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "수냉"
+   ]
   },
   "이브": {
    "code": "철갑",
@@ -1375,7 +1890,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "레이븐": {
    "code": "철갑",
@@ -1383,7 +1901,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "치사토": {
    "code": "철갑",
@@ -1391,7 +1912,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "타키나": {
    "code": "철갑",
@@ -1399,7 +1923,10 @@
    "cd": 20.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "전격"
+   ]
   },
   "퀸(마코토)": {
    "code": "작열",
@@ -1407,7 +1934,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   },
   "유키코": {
    "code": "작열",
@@ -1415,7 +1945,10 @@
    "cd": 40.0,
    "own_cdr": false,
    "reentry": false,
-   "fb_delta": 0
+   "fb_delta": 0,
+   "adv_codes": [
+    "풍압"
+   ]
   }
  }
 }
