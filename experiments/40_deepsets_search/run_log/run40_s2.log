@@ -32,3 +32,50 @@ exit 3
 {"stop": "budget", "minutes": 76.0}
 exit 3
 --- 2단계 실행 7 22:56 UTC — 평가기 nikke-calc-rs 8bc51a2, 옵션 안 줌, 시간 한도 70분
+{"arm": "d", "season": 31, "seed": 1, "budget": 12500, "evals": 11014, "seconds": 1070.2, "best": 212.27450084999998, "errors": 0, "kicks": 14, "d2": {"refits": 22, "train_s": 431.1, "pred_s": 6.5, "predicted": 178109}, "part": "B_s1", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11014, "wall": 1070.3}
+{"arm": "d", "season": 32, "seed": 0, "budget": 12500, "evals": 11018, "seconds": 950.9, "best": 227.75902348, "errors": 0, "kicks": 14, "d2": {"refits": 22, "train_s": 372.9, "pred_s": 7.7, "predicted": 205648}, "part": "B_s0", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11018, "wall": 951.0}
+{"arm": "d", "season": 32, "seed": 1, "budget": 12500, "evals": 11020, "seconds": 876.2, "best": 228.49998474999998, "errors": 0, "kicks": 12, "d2": {"refits": 22, "train_s": 340.3, "pred_s": 7.1, "predicted": 212412}, "part": "B_s1", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11020, "wall": 876.4}
+exit 0
+--- 값 대조 23:45
+{"arm": "base", "season": 23, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "base", "season": 23, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "base", "season": 24, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "base", "season": 24, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "base", "season": 25, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 25, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 26, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 26, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 27, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 27, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 28, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 28, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 29, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 29, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 30, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 30, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 31, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 31, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 32, "seed": 0, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "base", "season": 32, "seed": 1, "recorded": "nikke-calc-rs 6e73529", "n": 60, "diff": 0}
+{"arm": "d", "season": 23, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 23, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 24, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 24, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 25, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 25, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 26, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 26, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 27, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 27, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 28, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 28, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 29, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 29, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 30, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 30, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 31, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 31, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 32, "seed": 0, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"arm": "d", "season": 32, "seed": 1, "recorded": "nikke-calc-rs 8bc51a2", "n": 60, "diff": 0}
+{"evaluator": "nikke-calc-rs 8bc51a2", "parts": 40, "decks": 2400, "diff": 0}
+check exit 0

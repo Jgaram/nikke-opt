@@ -1,0 +1,369 @@
+{
+ "evaluator": "nikke-calc-rs 8bc51a2",
+ "per_part": 60,
+ "parts": 40,
+ "decks": 2400,
+ "diff": 0,
+ "rows": [
+  {
+   "arm": "base",
+   "season": 23,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 23,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 24,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 24,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 25,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 25,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 26,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 26,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 27,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 27,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 28,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 28,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 29,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 29,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 30,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 30,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 31,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 31,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 32,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "base",
+   "season": 32,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 6e73529",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 23,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 23,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 24,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 24,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 25,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 25,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 26,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 26,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 27,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 27,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 28,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 28,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 29,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 29,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 30,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 30,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 31,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 31,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 32,
+   "seed": 0,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  },
+  {
+   "arm": "d",
+   "season": 32,
+   "seed": 1,
+   "recorded": "nikke-calc-rs 8bc51a2",
+   "n": 60,
+   "diff": 0,
+   "examples": []
+  }
+ ]
+}
