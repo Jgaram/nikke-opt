@@ -1,0 +1,138 @@
+{
+ "id": "S36-2",
+ "season": 36,
+ "squad": [
+  "리타",
+  "그레이브",
+  "네온 : 비전 아이",
+  "스노우 화이트 : 헤비암즈",
+  "리버렐리오"
+ ],
+ "win": null,
+ "pre": 47.8803606,
+ "ctrl": 48.03744997,
+ "ctrl_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:A0.3"
+ ],
+ "E0": 51.33040747,
+ "O": 59.9425416,
+ "alloc": {
+  "리타": "공4+장탄4+크확2+크뎀2",
+  "그레이브": "공4+크확4+크뎀4",
+  "네온 : 비전 아이": "우코4+공4+장탄2+차속2",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "리버렐리오": "공4+크확3+차속4+차뎀1"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.44050717999999733,
+   "max_ammo_pct": 0.9725067699999954,
+   "crit_rate": 0.12078516000000405,
+   "crit_dmg": 0.09261778000000476,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9135709999999975,
+   "max_ammo_pct": -0.005097890000001826,
+   "crit_rate": 0.001604450000002089,
+   "crit_dmg": 1.1611192700000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 12.062331619999995,
+   "atk_pct": 5.52269708,
+   "max_ammo_pct": 4.7897922699999995,
+   "crit_rate": 2.3545204099999992,
+   "crit_dmg": 1.8247862300000008,
+   "charge_speed_pct": 8.512933920000002,
+   "charge_dmg_pct": 1.190415140000006,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 7.555075819999999,
+   "max_ammo_pct": 0.8248965699999999,
+   "crit_rate": 0.9242397699999998,
+   "crit_dmg": 0.7160031500000059,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3142044400000046,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.886476199999997,
+   "max_ammo_pct": 0.00553507000000053,
+   "crit_rate": 0.5515349200000017,
+   "crit_dmg": 0.41646536000000367,
+   "charge_speed_pct": 1.595179630000004,
+   "charge_dmg_pct": 0.5374245900000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 61.62926281,
+ "ctrl2_variants": [
+  "squad:camera:리버렐리오",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:A0.3",
+  "네온 : 비전 아이:cube:택티컬 베어 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "final": 61.62926281,
+ "final_variants": [
+  "squad:camera:리버렐리오",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:A0.3",
+  "네온 : 비전 아이:cube:택티컬 베어 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "sims": 2416,
+ "seconds": 553.8
+}

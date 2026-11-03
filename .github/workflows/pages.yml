@@ -1,7 +1,7 @@
 name: pages
 
 # 현황판 사이트(web/)를 GitHub Pages에 올린다. main에 실험 결과나 사이트 코드가 올라올 때마다 다시 만든다.
-# web/build.py가 실험 31(최근 10시즌 편성안 지도)의 seasons.json · analysis.json · run_log에서 data.json을 만들고,
+# web/build.py가 실험 36(최근 10시즌 현황판 다시 계산)의 analysis.json · run_log와 실험 31의 seasons.json에서 data.json을 만들고,
 # 정적 파일과 함께 배포한다(시뮬은 하지 않는다).
 #
 # 처음 한 번: 레포를 공개로 바꾸고 Settings → Pages → Build and deployment → Source를 「GitHub Actions」로 둔다.
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0          # 데이터 출처 = 실험 31 폴더를 마지막으로 바꾼 커밋
+          fetch-depth: 0          # 데이터 출처 = 실험 36 폴더를 마지막으로 바꾼 커밋
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"

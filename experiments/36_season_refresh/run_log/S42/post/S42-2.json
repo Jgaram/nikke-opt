@@ -1,0 +1,140 @@
+{
+ "id": "S42-2",
+ "season": 42,
+ "squad": [
+  "로산나",
+  "리틀 머메이드",
+  "나유타",
+  "프리바티",
+  "신데렐라 : 크리스탈 웨이브"
+ ],
+ "win": null,
+ "pre": 52.53804734,
+ "ctrl": 54.23180025,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "로산나:burst:wait2",
+  "로산나:reload:C0.1_dry",
+  "리틀 머메이드:reload:C0.5",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "프리바티:reload:C0.5"
+ ],
+ "E0": 53.8371055,
+ "O": 71.28292847,
+ "alloc": {
+  "로산나": "우코4+공4+장탄1+크뎀3",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "프리바티": "공4+크확4+크뎀4",
+  "신데렐라 : 크리스탈 웨이브": "공4+장탄3+크확3+크뎀2"
+ },
+ "screen": {
+  "로산나": {
+   "element_bonus": 7.926905169999998,
+   "atk_pct": 2.915236059999998,
+   "max_ammo_pct": 2.2730843100000016,
+   "crit_rate": 1.538081120000001,
+   "crit_dmg": 3.026158019999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.136284660000001,
+   "max_ammo_pct": 0.007544869999996706,
+   "crit_rate": 0.5912799999999976,
+   "crit_dmg": 0.5107221800000019,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8586493600000011,
+   "max_ammo_pct": 0.02774694000000011,
+   "crit_rate": 0.5415416199999967,
+   "crit_dmg": 0.4677551500000021,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.6798937000000009,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6424298800000017,
+   "max_ammo_pct": -8.484276630000004,
+   "crit_rate": 0.1804709399999993,
+   "crit_dmg": 0.15588639999999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.2229542099999975,
+   "max_ammo_pct": 3.473140270000002,
+   "crit_rate": 1.3550709200000028,
+   "crit_dmg": 1.1704096400000026,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "로산나": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 71.28292847,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "로산나:burst:wait2",
+  "로산나:reload:C0.1_dry",
+  "리틀 머메이드:reload:C0.5",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "프리바티:reload:C0.5"
+ ],
+ "final": 71.28292847,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "로산나:burst:wait2",
+  "로산나:reload:C0.1_dry",
+  "리틀 머메이드:reload:C0.5",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "프리바티:reload:C0.5"
+ ],
+ "sims": 2417,
+ "seconds": 609.9
+}

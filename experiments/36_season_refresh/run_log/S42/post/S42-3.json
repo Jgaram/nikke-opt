@@ -1,0 +1,145 @@
+{
+ "id": "S42-3",
+ "season": 42,
+ "squad": [
+  "볼륨",
+  "맥스웰 : 오디너리 미케닉",
+  "마스트 : 로망틱 메이드",
+  "스노우 화이트 : 헤비암즈",
+  "신데렐라"
+ ],
+ "win": null,
+ "pre": 49.94565645,
+ "ctrl": 52.70473486,
+ "ctrl_variants": [
+  "맥스웰 : 오디너리 미케닉:click:hold_own_fb+tap",
+  "맥스웰 : 오디너리 미케닉:reload:C0.5",
+  "볼륨:cube:택티컬 베어 큐브",
+  "볼륨:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:click:tap",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 부스트 큐브",
+  "신데렐라:reload:C0.1"
+ ],
+ "E0": 57.92227537,
+ "O": 69.17257921,
+ "alloc": {
+  "볼륨": "공4+장탄2+크확2+크뎀4",
+  "맥스웰 : 오디너리 미케닉": "공4+장탄1+크뎀4+차속3",
+  "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "신데렐라": "우코4+공1+크확3+크뎀4"
+ },
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5360666500000022,
+   "max_ammo_pct": 0.25171179000000166,
+   "crit_rate": 0.20237602999999638,
+   "crit_dmg": 0.3780245399999984,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3558097900000021,
+   "max_ammo_pct": 0.8857266400000015,
+   "crit_rate": 0.24278229000000096,
+   "crit_dmg": 0.4437480899999997,
+   "charge_speed_pct": 0.30485664999999784,
+   "charge_dmg_pct": 0.1847814999999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.44682672999999795,
+   "max_ammo_pct": 0.396571950000002,
+   "crit_rate": 0.1881219999999999,
+   "crit_dmg": 0.332632849999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.025042660000004,
+   "max_ammo_pct": 0.3517843700000043,
+   "crit_rate": 1.2060074299999997,
+   "crit_dmg": 2.205372529999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.291220789999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 16.27041904,
+   "atk_pct": 4.92393113,
+   "max_ammo_pct": 2.9083723500000005,
+   "crit_rate": 4.4330095899999975,
+   "crit_dmg": 8.507185150000005,
+   "charge_speed_pct": -0.012266780000004474,
+   "charge_dmg_pct": 1.1867617799999977,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "max_ammo_pct",
+   "crit_dmg",
+   "atk_pct",
+   "charge_speed_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "신데렐라": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 71.81838719,
+ "ctrl2_variants": [
+  "맥스웰 : 오디너리 미케닉:click:hold_own_fb+tap",
+  "맥스웰 : 오디너리 미케닉:cube:택티컬 베어 큐브",
+  "맥스웰 : 오디너리 미케닉:reload:C0.5",
+  "볼륨:cube:렐릭 퀀텀 큐브",
+  "볼륨:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:click:tap",
+  "신데렐라:cube:택티컬 베어 큐브",
+  "신데렐라:reload:C0.1_dry"
+ ],
+ "final": 71.81838719,
+ "final_variants": [
+  "맥스웰 : 오디너리 미케닉:click:hold_own_fb+tap",
+  "맥스웰 : 오디너리 미케닉:cube:택티컬 베어 큐브",
+  "맥스웰 : 오디너리 미케닉:reload:C0.5",
+  "볼륨:cube:렐릭 퀀텀 큐브",
+  "볼륨:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:click:tap",
+  "신데렐라:cube:택티컬 베어 큐브",
+  "신데렐라:reload:C0.1_dry"
+ ],
+ "sims": 2384,
+ "seconds": 603.2
+}

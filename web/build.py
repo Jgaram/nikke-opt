@@ -1,15 +1,16 @@
-"""현황판 — 실험 31(최근 10시즌 편성안 지도) GitHub Pages 정적 사이트 만들기.
+"""현황판 — 실험 36(최근 10시즌 현황판 다시 계산) GitHub Pages 정적 사이트 만들기.
 
     python web/build.py --out _site          → _site/index.html · app.js · style.css · data.json
     python -m http.server -d _site 8000       (로컬에서 보기: http://localhost:8000)
     python web/build.py --out _site --exp <폴더>   (개발용: 다른 폴더의 analysis.json · run_log를 읽는다)
 
-- 시즌 자료(풀 · 새 니케 · 그때 없던 애장품 · 날짜 경계로 뺀 것 · 랭커 덱)는 `experiments/31_recent_seasons/seasons.json`,
-  우리 쪽(큰 분류 · 세부 분류 · 랭커 대조 지표)은 `run31.py analyze`가 만든 `analysis.json`을 그대로 옮긴다.
-  정의 · 계산을 여기서 다시 하지 않는다(실험 모듈도 불러오지 않는다).
+- 시즌 자료(풀 · 새 니케 · 그때 없던 애장품 · 날짜 경계로 뺀 것 · 랭커 덱)는 계속 `experiments/31_recent_seasons/seasons.json`,
+  우리 쪽(큰 분류 · 세부 분류 · 랭커 대조 지표)은 `run36.py analyze`(= run31 analyze 모양 + 맨 위 `procedure`)가 만든
+  `experiments/36_season_refresh/analysis.json`을 그대로 옮긴다. 정의 · 계산을 여기서 다시 하지 않는다(실험 모듈도 불러오지 않는다).
 - 화면용으로 더하는 것: 세부 분류 새 덱의 자리 맞춤 · 덱 사이 옮긴 니케(겹침 최대, 되돌린 f83f54a 화면과 같은 규칙),
-  덱별 니케 딜(`run_log/S??/members.json`), 랭커 덱 값(`run_log/S??/rankers.json`).
-- 아직 없는 결과는 「계산 전」으로 둔다. 시뮬은 하지 않는다. 평가기 · numpy도 필요 없다.
+  덱별 니케 딜(`run_log/S??/members.json`), 랭커 덱 값(`run_log/S??/rankers.json`),
+  후처리 뒤 최선 5덱(`run_log/S??/post.json` — 값은 그대로, 니케별 장비 옵션 배분 · 큐브와 선택지 라벨만 화면용으로 펼친다).
+- 아직 없는 결과는 「계산 전」(후처리는 「계산 중」)으로 둔다. 시뮬은 하지 않는다. 평가기 · numpy도 필요 없다.
 - 니케 얼굴 · 속성 · 버스트 · 보스 그림은 `web/icons/`(nikke-analysis에서 `web/sync_icons.py`로 받은 것)를
   그대로 복사하고, 이름 → 그림은 `web/icons/icons.json`으로 잇는다.
 """
@@ -28,7 +29,8 @@ from typing import Any
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-EXP = ROOT / "experiments" / "31_recent_seasons"
+EXP = ROOT / "experiments" / "36_season_refresh"                       # 결과(analysis.json · run_log)
+SEASONS = ROOT / "experiments" / "31_recent_seasons" / "seasons.json"   # 시즌 자료(실험 36도 이것을 쓴다)
 NIKKE_INFO = ROOT / "experiments" / "06_control_menu" / "nikke_info.json"
 STATIC = ("index.html", "app.js", "style.css")
 ICONS = HERE / "icons"
@@ -38,7 +40,11 @@ BURST_STAGE = {"I": "1", "II": "2", "III": "3", "I-II-III": "A"}   # 로스터 �
 EL_EN = {"전격": "Electric", "풍압": "Wind", "철갑": "Iron", "수냉": "Water", "작열": "Fire"}
 BOSS_INFO = {"nocore": {"label": "코어 없음", "core_px": 0}, "core30": {"label": "코어 30px", "core_px": 30}}
 BOSSES = tuple(BOSS_INFO)
-PARTS = ("B_s0", "B_s1", "W", "core30", "members")
+PARTS = ("B_s0", "B_s1", "end", "core30", "members", "rankers", "post")   # run36.PARTS
+PART_KEYS = ("evals", "sims", "sims_new", "seconds", "best", "requests", "blocks_n", "arm", "copied_from", "skipped", "squads")
+EVALUATOR = "nikke-calc-rs 8bc51a2(원본 nikke-calc 67835ca 포팅)"   # 실험 36 README
+POST_VALUES = ("pre", "ctrl", "E0", "O", "C2", "final")            # run36.post_deck의 단계별 값(억)
+DEFAULT_CUBE = "렐릭 베어 큐브"                                     # 실험 17 cubes.DEFAULT_CUBE(출발 큐브 = 기본 스펙)
 CLASS_SHOW = 3             # 큰 분류: 앞 3개는 펼쳐 두고 나머지는 더보기(2026-11-01 사용자 결정, 실험 28)
 SUB_SHOW = 3               # 세부 분류: 앞 3개 = 보일 것, 나머지 = 더보기(실험 28 tree28.SHOW)
 
@@ -55,7 +61,7 @@ def git(*args: str) -> str:
 
 
 def provenance(exp: Path) -> dict[str, Any]:
-    """데이터의 출처 커밋: 실험 31 폴더를 마지막으로 바꾼 커밋(얕은 clone이면 HEAD)."""
+    """데이터의 출처 커밋: 결과 폴더(기본 실험 36)를 마지막으로 바꾼 커밋(얕은 clone이면 HEAD)."""
     rel = exp.relative_to(ROOT).as_posix() if exp.is_relative_to(ROOT) else None
     line = (git("log", "-1", "--format=%H|%cI|%s", "--", rel) if rel else "") or git("log", "-1", "--format=%H|%cI|%s")
     h, date, subj = (line.split("|", 2) + ["", "", ""])[:3] if line else ("", "", "")
@@ -101,6 +107,56 @@ def ranker_set(squads: list[list[str]], rv: dict[str, Any] | None, b: str) -> di
     return {"total": sum(vals) if vals and all(v is not None for v in vals) else None, "decks": decks}
 
 
+# ---------------------------------------------------------------- 후처리 5덱(run36 part_post · post_deck)
+
+def short_alloc(lb: str | None) -> list[str]:
+    """장비 옵션 배분 라벨(run35.label) → 화면용 짧은 조각. 「우코4+공4+크확2+크뎀2」 → [우4, 공4, 크확2, 크뎀2]."""
+    return [("우" + p[2:]) if p.startswith("우코") else p for p in (lb or "").split("+") if p]
+
+
+def short_cube(name: str) -> str:
+    """「렐릭 어설트 큐브」 → 「어설트」, 「택티컬 베어 큐브」 → 「택티컬 베어」(원래 이름은 cube에 그대로 둔다)."""
+    n = name.removesuffix(" 큐브")
+    return n.removeprefix("렐릭 ") or n
+
+
+def choice(label: str, squad: list[str]) -> dict[str, Any]:
+    """선택지 라벨 `<니케|squad>:<축>:<값>` → {who, axis, value, target, label}. 니케 이름에 「 : 」가 있어 앞에서 자르지 않고
+    스쿼드 이름과 맞춘다. 값이 스쿼드 니케(카메라)거나 `이름=니케`(버충 담당)면 그 니케를 target으로 뗀다."""
+    who = next((n for n in sorted(squad, key=len, reverse=True) if label.startswith(f"{n}:")), None)
+    rest = label[len(who) + 1:] if who else label.removeprefix("squad:")
+    axis, _, value = rest.partition(":")
+    target = None
+    head, eq, tail = value.rpartition("=")
+    if value in squad:
+        target, value = value, ""
+    elif eq and tail in squad:
+        target, value = tail, head
+    return {"who": who, "axis": axis, "value": value, "target": target, "label": label}
+
+
+def post_deck_view(x: dict[str, Any]) -> dict[str, Any]:
+    """덱 하나: 값(사전 · 단계별 · 최종)은 그대로, 니케별 배분 · 큐브(최종 선택에 없으면 기본 큐브)와 큐브 밖 선택지를 펼친다."""
+    q = list(x["squad"])
+    alloc = x.get("alloc") or {}
+    picks = [choice(lb, q) for lb in x.get("final_variants") or []]
+    cubes = {c["who"]: c["value"] for c in picks if c["axis"] == "cube" and c["who"]}
+    gear = {n: {"alloc": alloc.get(n), "alloc_short": short_alloc(alloc.get(n)), "cube": cubes.get(n, DEFAULT_CUBE),
+                "cube_short": short_cube(cubes[n]) if n in cubes else None} for n in q}
+    return {"id": x.get("id"), "order": q, "win": x.get("win"), **{k: x.get(k) for k in POST_VALUES}, "value": x.get("final"),
+            "gear": gear, "choices": [c for c in picks if c["axis"] != "cube"], "sims": x.get("sims"), "seconds": x.get("seconds")}
+
+
+def post_block(d: Path, row: dict[str, Any] | None) -> dict[str, Any]:
+    """`run_log/S??/post.json`(없으면 analysis.json 줄의 `post`). 없으면 「계산 중」 — 끝난 덱 수만 센다(덱 값은 5덱이 다 끝난 뒤 보인다)."""
+    p = read_json(d / "post.json") or (row or {}).get("post")
+    if not p:
+        return {"status": "running", "decks_done": len(list((d / "post").glob("S*-[0-9].json"))) if (d / "post").is_dir() else 0}
+    return {"status": "done", "decks_done": len(p["decks"]), "total": p.get("total"),
+            "procedure": {k: p.get(k) for k in ("arm", "opt", "c2", "cube")},
+            "decks": [post_deck_view(x) for x in p["decks"]]}
+
+
 def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Path, boundary: list[dict[str, Any]]) -> dict[str, Any]:
     d = exp / "run_log" / f"S{s:02d}"
     rv = (read_json(d / "rankers.json") or {}).get("squads")
@@ -119,10 +175,11 @@ def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Pat
                                 "values": {b: ((rv or {}).get(",".join(q["order"])) or {}).get(b) for b in BOSSES}}
                                for q in rk["squads"]],
                     "evaluated": rv is not None},
-        "parts": {p: {k: x.get(k) for k in ("evals", "sims", "seconds", "best", "requests", "blocks_n", "arm") if x.get(k) is not None}
-                  for p, x in parts.items()},
+        "parts": {p: {k: x.get(k) for k in PART_KEYS if x.get(k) is not None} for p, x in parts.items()},
         "sims_total": sum(x.get("sims") or 0 for x in parts.values()),
-        "status": "pending", "arm": None, "by_boss": {},
+        "sims_new": sum(x.get("sims_new", x.get("sims")) or 0 for x in parts.values()),   # 실험 32 기록을 옮긴 부분은 0
+        "evaluators": sorted({x["evaluator"] for x in parts.values() if x.get("evaluator")}),
+        "status": "pending", "arm": None, "by_boss": {}, "post": post_block(d, row),
     }
     for b in BOSSES:
         blk["by_boss"][b] = {"status": "pending",
@@ -136,6 +193,9 @@ def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Pat
                 "classes": [class_block(c, mem.get(b)) for c in x["classes"]],
                 "metrics": x["rankers"],
             })
+    A = (blk["by_boss"]["nocore"].get("classes") or [None])[0]
+    if A and blk["post"]["status"] == "done":   # 후처리한 5덱이 코어 없음 큰 분류 A와 같은 5덱인가(화면 안내용)
+        blk["post"]["same_as_A"] = {frozenset(x["order"]) for x in A["decks"]} == {frozenset(x["order"]) for x in blk["post"]["decks"]}
     return blk
 
 
@@ -175,7 +235,7 @@ def site_names(seasons: list[dict[str, Any]]) -> set[str]:
 
 def pool_names() -> set[str]:
     """10시즌 풀 전원. 그림은 이것까지 받아 둔다 — 결과가 들어와 새 니케가 화면에 나와도 다시 받지 않게."""
-    sd = read_json(EXP / "seasons.json") or {"seasons": {}}
+    sd = read_json(SEASONS) or {"seasons": {}}
     return set().union(*(set(v["pool"]) for v in sd["seasons"].values()))
 
 
@@ -206,7 +266,7 @@ def boss_image(s: int, icons: dict[str, Any]) -> str | None:
 # ---------------------------------------------------------------- 전체
 
 def build_data(exp: Path = EXP) -> dict[str, Any]:
-    sd = read_json(EXP / "seasons.json")
+    sd = read_json(SEASONS)
     an = read_json(exp / "analysis.json") or {}
     rows = {r["season"]: r for r in an.get("rows") or []}
     seasons = [season_block(int(k), v, rows.get(int(k)), exp, sd.get("boundary") or []) for k, v in sd["seasons"].items()]
@@ -216,18 +276,24 @@ def build_data(exp: Path = EXP) -> dict[str, Any]:
     names = site_names(seasons)
     nikke = nikke_table(names, icons)
     done = [x for x in seasons if x["status"] == "done"]
+
+    def readme(d: str) -> str:
+        return f"{REPO_URL}/blob/main/experiments/{d}/README.md"
+
     return {
         "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "source": provenance(exp), "repo": REPO_URL,
-        "experiment": {"id": 31, "title": "최근 10시즌 편성안 지도",
-                       "readme": f"{REPO_URL}/blob/main/experiments/31_recent_seasons/README.md",
-                       "exp28_readme": f"{REPO_URL}/blob/main/experiments/28_plan_tree/README.md",
-                       "exp30_readme": f"{REPO_URL}/blob/main/experiments/30_element_map/README.md",
+        "experiment": {"id": 36, "title": "최근 10시즌 현황판 다시 계산",
+                       "readme": readme("36_season_refresh"), "exp31_readme": readme("31_recent_seasons"),
+                       "exp28_readme": readme("28_plan_tree"), "exp30_readme": readme("30_element_map"),
+                       "exp32_readme": readme("32_primitive_control"), "exp35_readme": readme("35_equip_options"),
                        "ranker_repo": "https://github.com/Jgaram/nikke-analysis",
                        "analysis_repo_commit": (sd.get("source") or {}).get("commit"),
-                       "arm": an.get("arm")},
+                       "evaluator": EVALUATOR, "arm": an.get("arm"), "procedure": an.get("procedure")},
         "summary": an.get("summary"),
         "progress": {"done": len(done), "total": len(seasons), "sims": sum(x["sims_total"] for x in seasons),
+                     "sims_new": sum(x["sims_new"] for x in seasons),
+                     "post": sum(1 for x in seasons if x["post"]["status"] == "done"),
                      "started": sum(1 for x in seasons if x["parts"])},
         "show": {"classes": CLASS_SHOW, "subs": SUB_SHOW},
         "bosses": BOSS_INFO, "seasons": seasons, "nikke": nikke,
@@ -252,11 +318,12 @@ def build(out: Path, exp: Path = EXP) -> dict[str, Any]:
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--out", type=Path, default=ROOT / "_site")
-    p.add_argument("--exp", type=Path, default=EXP, help="analysis.json · run_log가 있는 폴더(개발용, 기본은 실험 31 폴더)")
+    p.add_argument("--exp", type=Path, default=EXP, help="analysis.json · run_log가 있는 폴더(개발용, 기본은 실험 36 폴더). "
+                   "시즌 자료는 늘 실험 31의 seasons.json")
     a = p.parse_args(argv)
     d = build(a.out, a.exp)
     pr = d["progress"]
-    print(f"{a.out}: 시즌 {pr['done']}/{pr['total']} 완료 · 시작 {pr['started']} · 새 시뮬 {pr['sims']} · data.json "
+    print(f"{a.out}: 시즌 {pr['done']}/{pr['total']} 완료 · 후처리 {pr['post']} · 시작 {pr['started']} · 시뮬 {pr['sims']} · data.json "
           f"{(a.out / 'data.json').stat().st_size / 1024:.0f} KB")
     if d["icons"]["missing"]:
         print(f"얼굴 그림 없는 니케 {len(d['icons']['missing'])}명: {', '.join(d['icons']['missing'])} "

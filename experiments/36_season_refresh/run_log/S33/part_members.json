@@ -1,0 +1,11 @@
+{
+ "decks": {
+  "nocore": 19,
+  "core30": 29
+ },
+ "season": 33,
+ "part": "members",
+ "arm": "A",
+ "evaluator": "nikke-calc-rs 8bc51a2",
+ "sims": 48
+}

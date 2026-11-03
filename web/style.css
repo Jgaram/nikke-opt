@@ -30,6 +30,8 @@
   --c-class-c: #7a5bc7;
   --chg-bg: #fdf1dc;
   --chg-ink: #8a5a00;
+  --cube-bg: #efeafb;
+  --cube-ink: #553a9e;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -58,6 +60,8 @@
     --c-class-c: #9a7ee0;
     --chg-bg: #33280f;
     --chg-ink: #f2c25c;
+    --cube-bg: #2a2340;
+    --cube-ink: #cbbaf3;
     --shadow: none;
   }
 }
@@ -87,6 +91,8 @@
   --c-class-c: #9a7ee0;
   --chg-bg: #33280f;
   --chg-ink: #f2c25c;
+  --cube-bg: #2a2340;
+  --cube-ink: #cbbaf3;
   --shadow: none;
 }
 
@@ -354,7 +360,7 @@ details .inner li { margin: 2px 0; }
 .empty {
   border: 1px dashed var(--axis); border-radius: 10px; padding: 14px; color: var(--ink-2); background: transparent; font-size: 14px;
 }
-table.wide { min-width: 920px; }
+table.wide { min-width: 1000px; }
 table.mid { min-width: 620px; }
 td.nowrap, .tbl-wrap td:first-child { white-space: nowrap; }
 /* 랭커 사용 상위 25명: 얼굴 카드 격자(사용 순) */
@@ -428,6 +434,36 @@ details.more > .lazy { margin-top: 8px; }
 .fg-row.chg { background: var(--chg-bg); border-radius: 8px; box-shadow: inset 3px 0 0 var(--chg-ink); padding: 2px 0 4px; }
 .fg-row.chg .fg-lab { padding-left: 7px; }
 .fg-chg { font-size: 11px; color: var(--chg-ink); font-weight: 650; }
+
+/* 후처리 뒤 5덱: 줄 머리 = 최종 · 사전 대비 · 사전, 얼굴 아래 = 장비 옵션 배분 · 큐브, 줄 아래 = 선택지 펼치기 */
+.fg-post .fg-body { --lab: 64px; }
+.fg-group { display: grid; gap: 2px; }
+.gain { color: var(--good-ink); font-weight: 650; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fg-pre { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gear { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; max-width: 100%; }
+.alloc { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4px; font-size: 11px; line-height: 1.3; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.alloc span { white-space: nowrap; }
+.cube-tag {
+  font-size: 10.5px; line-height: 1.35; padding: 0 4px; border-radius: 4px; background: var(--cube-bg); color: var(--cube-ink); font-weight: 600;
+  max-width: 100%; text-align: center;
+}
+details.post-more { margin: 0 0 4px var(--lab); }
+details.post-more > summary { font-size: 12.5px; }
+details.post-more > .lazy { margin-top: 6px; padding: 8px 10px; border-radius: 8px; background: var(--surface-2); font-size: 13px; }
+.post-path { list-style: none; display: flex; flex-wrap: wrap; gap: 2px 8px; padding: 0; margin: 0 0 8px; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.post-path li + li::before { content: "→"; color: var(--muted); margin-right: 8px; }
+.post-path li.won b, .post-path li.fin b { color: var(--good-ink); }
+.choice-list { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 5px; }
+.choice-list li { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.choice-list .ax { font-size: 12.5px; color: var(--ink-2); }
+.fgrid .choice-list .face { --fs: 30px; }
+.post-steps .tile .value { font-size: 20px; }
+.link-btn { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+@media (max-width: 560px) {
+  .fg-post .fg-body { --lab: 56px; }
+  .alloc { font-size: 10px; gap: 0 3px; }
+  details.post-more { margin-left: 0; }
+}
 @media (max-width: 640px) {
   .sub-item > summary.sub-sum { grid-template-columns: 18px auto minmax(0, 1fr); }
   .sub-nums { grid-column: 2 / -1; justify-content: flex-start; }

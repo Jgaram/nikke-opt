@@ -1,0 +1,130 @@
+{
+ "id": "S41-3",
+ "season": 41,
+ "squad": [
+  "리틀 머메이드",
+  "플로라",
+  "크라운",
+  "길티 : 마이티 바니",
+  "루드밀라 : 윈터 오너"
+ ],
+ "win": null,
+ "pre": 48.32849991,
+ "ctrl": 49.50865814,
+ "ctrl_variants": [
+  "길티 : 마이티 바니:cube:렐릭 크래시 큐브",
+  "플로라:reload:C0.1"
+ ],
+ "E0": 56.35843289,
+ "O": 61.79367697,
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "플로라": "공4+장탄2+크확3+크뎀3",
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "길티 : 마이티 바니": "우코4+공4+크확1+차속3",
+  "루드밀라 : 윈터 오너": "우코4+공4+크확1+크뎀3"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9137593300000049,
+   "max_ammo_pct": 0.4152222400000056,
+   "crit_rate": 0.8371572,
+   "crit_dmg": 0.723083299999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7315139800000026,
+   "max_ammo_pct": 0.3915750700000018,
+   "crit_rate": 0.2632765799999959,
+   "crit_dmg": 0.2274135499999943,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6336005100000008,
+   "max_ammo_pct": 0.4827303500000042,
+   "crit_rate": 0.2440888699999988,
+   "crit_dmg": 0.2108107199999978,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티 : 마이티 바니": {
+   "element_bonus": 10.228292350000004,
+   "atk_pct": 4.6757065800000035,
+   "max_ammo_pct": 1.3098815700000017,
+   "crit_rate": 1.8166218,
+   "crit_dmg": 1.5691032499999977,
+   "charge_speed_pct": 2.931962579999997,
+   "charge_dmg_pct": 1.1718199999999968,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 6.056726410000003,
+   "atk_pct": 3.2375031300000003,
+   "max_ammo_pct": 0.39859092000000373,
+   "crit_rate": 1.0486564699999974,
+   "crit_dmg": 1.657642409999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "플로라": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 61.98640299,
+ "ctrl2_variants": [
+  "squad:camera:길티 : 마이티 바니",
+  "길티 : 마이티 바니:cube:택티컬 부스트 큐브",
+  "플로라:reload:C0.1"
+ ],
+ "final": 61.98640299,
+ "final_variants": [
+  "squad:camera:길티 : 마이티 바니",
+  "길티 : 마이티 바니:cube:택티컬 부스트 큐브",
+  "플로라:reload:C0.1"
+ ],
+ "sims": 2394,
+ "seconds": 561.2
+}

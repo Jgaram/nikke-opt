@@ -1,0 +1,149 @@
+{
+ "id": "S42-4",
+ "season": 42,
+ "squad": [
+  "D : 킬러 와이프",
+  "미란다",
+  "타키나",
+  "에이다",
+  "아인"
+ ],
+ "win": null,
+ "pre": 43.20009995,
+ "ctrl": 46.45472408,
+ "ctrl_variants": [
+  "D : 킬러 와이프:reload:C0.1_dry",
+  "squad:camera:D : 킬러 와이프",
+  "squad:tactic:버충=아인",
+  "미란다:reload:A0.3",
+  "아인:cube:렐릭 크래시 큐브",
+  "에이다:cube:렐릭 크래시 큐브",
+  "에이다:reload:B0.5",
+  "타키나:cube:렐릭 크래시 큐브",
+  "타키나:reload:B0.1"
+ ],
+ "E0": 52.99043827,
+ "O": 64.3641348,
+ "alloc": {
+  "D : 킬러 와이프": "공4+장탄4+차속1+차뎀3",
+  "미란다": "공4+장탄1+크확3+크뎀4",
+  "타키나": "공4+크확4+크뎀4",
+  "에이다": "우코4+공4+크뎀4",
+  "아인": "우코4+공3+장탄1+크뎀4"
+ },
+ "screen": {
+  "D : 킬러 와이프": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.21073114000000004,
+   "max_ammo_pct": 0.5556058800000017,
+   "crit_rate": 0.06054692000000017,
+   "crit_dmg": 0.03510754999999932,
+   "charge_speed_pct": 0.08671447000000398,
+   "charge_dmg_pct": 0.09109508000000233,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5670760699999988,
+   "max_ammo_pct": 0.22936977999999897,
+   "crit_rate": 0.20570315999999877,
+   "crit_dmg": 0.30026206000000144,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5809208999999953,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.257980719999999,
+   "crit_dmg": 0.3992368199999987,
+   "charge_speed_pct": -0.13086229999999688,
+   "charge_dmg_pct": 0.024139279999999985,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 11.24388708,
+   "atk_pct": 8.600614369999995,
+   "max_ammo_pct": 0.0932444299999986,
+   "crit_rate": 1.114360689999998,
+   "crit_dmg": 5.0087734600000005,
+   "charge_speed_pct": 0.1834528899999981,
+   "charge_dmg_pct": 0.22864291999999864,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 7.166118820000001,
+   "atk_pct": 3.2012519600000005,
+   "max_ammo_pct": 2.6421098299999954,
+   "crit_rate": 0.3513508899999991,
+   "crit_dmg": 4.191785629999998,
+   "charge_speed_pct": -0.22883863999999932,
+   "charge_dmg_pct": 0.16306527000000415,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "D : 킬러 와이프": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "charge_speed_pct"
+  ],
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "타키나": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "에이다": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "아인": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 64.3641348,
+ "ctrl2_variants": [
+  "D : 킬러 와이프:reload:C0.1_dry",
+  "squad:camera:D : 킬러 와이프",
+  "squad:tactic:버충=아인",
+  "미란다:reload:A0.3",
+  "아인:cube:렐릭 크래시 큐브",
+  "에이다:cube:렐릭 크래시 큐브",
+  "에이다:reload:B0.5",
+  "타키나:cube:렐릭 크래시 큐브",
+  "타키나:reload:B0.1"
+ ],
+ "final": 64.3641348,
+ "final_variants": [
+  "D : 킬러 와이프:reload:C0.1_dry",
+  "squad:camera:D : 킬러 와이프",
+  "squad:tactic:버충=아인",
+  "미란다:reload:A0.3",
+  "아인:cube:렐릭 크래시 큐브",
+  "에이다:cube:렐릭 크래시 큐브",
+  "에이다:reload:B0.5",
+  "타키나:cube:렐릭 크래시 큐브",
+  "타키나:reload:B0.1"
+ ],
+ "sims": 1204,
+ "seconds": 193.2
+}
