@@ -1,0 +1,1779 @@
+{
+ "season": 38,
+ "seed": 1,
+ "evals": 11022,
+ "order_at": 10938,
+ "bounds": 122,
+ "fits": [
+  {
+   "at": 1000,
+   "comps": 1000,
+   "ref_n": 500,
+   "ref_ratio_med": 0.9476561271869954,
+   "ref_ratio_q": [
+    0.9002804838334115,
+    1.0085715342302493
+   ],
+   "pred_40th": 67.84984777176722,
+   "actual_40th": 70.49100617,
+   "other_hi_n": 300,
+   "other_hi_ratio_med": 0.8829548888933363,
+   "other_hi_value_range": [
+    61.97966074,
+    85.17375201
+   ],
+   "other_hi_beat40": 0.0
+  },
+  {
+   "at": 3000,
+   "comps": 3000,
+   "ref_n": 500,
+   "ref_ratio_med": 0.9967417738025894,
+   "ref_ratio_q": [
+    0.8932245236665455,
+    1.097880476964993
+   ],
+   "pred_40th": 68.20051252392867,
+   "actual_40th": 71.60711671,
+   "other_hi_n": 300,
+   "other_hi_ratio_med": 0.9099657207299734,
+   "other_hi_value_range": [
+    59.5025962,
+    69.70333919
+   ],
+   "other_hi_beat40": 0.0
+  },
+  {
+   "at": 6000,
+   "comps": 6000,
+   "ref_n": 500,
+   "ref_ratio_med": 1.0167313233650808,
+   "ref_ratio_q": [
+    0.9820969949765742,
+    1.0563232683739427
+   ],
+   "pred_40th": 68.12806643593991,
+   "actual_40th": 71.6683424,
+   "other_hi_n": 300,
+   "other_hi_ratio_med": 0.9322749600297087,
+   "other_hi_value_range": [
+    57.75276286,
+    68.44860382
+   ],
+   "other_hi_beat40": 0.0
+  },
+  {
+   "at": 9000,
+   "comps": 9000,
+   "ref_n": 500,
+   "ref_ratio_med": 0.9810492361080616,
+   "ref_ratio_q": [
+    0.9216149189753344,
+    1.0381213756428274
+   ],
+   "pred_40th": 68.59662392777234,
+   "actual_40th": 71.6683424,
+   "other_hi_n": 300,
+   "other_hi_ratio_med": 0.9433844508669066,
+   "other_hi_value_range": [
+    56.70497854,
+    68.44860382
+   ],
+   "other_hi_beat40": 0.0
+  }
+ ],
+ "decks": [
+  {
+   "members": [
+    "나유타",
+    "리틀 머메이드",
+    "벨벳",
+    "신데렐라 : 크리스탈 웨이브",
+    "프리바티"
+   ],
+   "count": 120,
+   "value": 57.60434707,
+   "visited_at": 8015,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 48.19127519781307,
+     "ratio": 0.8365909458057341,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 56.89725531915589,
+     "ratio": 0.9877250279395604,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 59.36581289690308,
+     "ratio": 1.0305786961661516,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "네온 : 비전 아이",
+    "민트",
+    "볼륨",
+    "신데렐라",
+    "프리카"
+   ],
+   "count": 16,
+   "value": 33.68083827,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 20.126881812820585,
+     "ratio": 0.5975766295207647,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 21.289133776247155,
+     "ratio": 0.6320844393950161,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 25.954341672347443,
+     "ratio": 0.7705966658040498,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 31.007122074468363,
+     "ratio": 0.9206161030168553,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "나유타",
+    "디젤 : 윈터 스위츠",
+    "라피 : 레드 후드",
+    "벨벳",
+    "스노우 화이트 : 헤비암즈"
+   ],
+   "count": 26,
+   "value": 41.63446885,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 31.536955621306525,
+     "ratio": 0.7574722697899033,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 35.23019053063436,
+     "ratio": 0.8461784551055792,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 39.6425416222519,
+     "ratio": 0.9521567757973668,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 39.28800079920016,
+     "ratio": 0.9436412156654705,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "나유타",
+    "디젤 : 윈터 스위츠",
+    "라피 : 레드 후드",
+    "벨벳",
+    "헬름"
+   ],
+   "count": 18,
+   "value": 38.27899207,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 29.46372691678494,
+     "ratio": 0.7697101026825688,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 32.40193949787347,
+     "ratio": 0.8464679383046637,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 37.603787987745505,
+     "ratio": 0.9823609754138833,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 36.18426863517404,
+     "ratio": 0.945277466266735,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "라피 : 레드 후드",
+    "민트",
+    "스노우 화이트 : 헤비암즈",
+    "아크레인저 블랙",
+    "프리카"
+   ],
+   "count": 55,
+   "value": 39.93973723,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 25.158934159164193,
+     "ratio": 0.6299223756601614,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 26.766648686061224,
+     "ratio": 0.6701758835297481,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 30.91307790330466,
+     "ratio": 0.7739930216687773,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 28.077199376304037,
+     "ratio": 0.7029890861478769,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "라피 : 레드 후드",
+    "레이 (가칭)",
+    "민트",
+    "아스카 : WILLE",
+    "프리카"
+   ],
+   "count": 16,
+   "value": 45.80489358,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 28.335836045317777,
+     "ratio": 0.6186202789845621,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 29.82026972960247,
+     "ratio": 0.651028032136353,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 34.763239314518174,
+     "ratio": 0.7589416020321682,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 38.861596854084134,
+     "ratio": 0.8484158310773251,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "라피 : 레드 후드",
+    "민트",
+    "사쿠라 : 블룸 인 서머",
+    "아크레인저 블랙",
+    "프리카"
+   ],
+   "count": 8,
+   "value": 35.49729651,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 23.132453826634805,
+     "ratio": 0.6516680452022064,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 24.780869735209343,
+     "ratio": 0.6981058326013162,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 29.91264129775495,
+     "ratio": 0.8426737875468407,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 27.530942115652586,
+     "ratio": 0.7755785601277213,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "그레이브",
+    "네온 : 비전 아이",
+    "리타",
+    "마나",
+    "미하라 : 본딩 체인"
+   ],
+   "count": 9,
+   "value": 29.56620578,
+   "visited_at": 10753,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 23.20094889340054,
+     "ratio": 0.7847117437400363,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 25.027726489946136,
+     "ratio": 0.8464977439504967,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 25.095907216523717,
+     "ratio": 0.8488037796686037,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 23.25739967241276,
+     "ratio": 0.7866210444948327,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "네온 : 비전 아이",
+    "리타",
+    "마나",
+    "미하라 : 본딩 체인",
+    "에이드 : 에이전트 바니"
+   ],
+   "count": 8,
+   "value": 25.68448826,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 22.02450786578797,
+     "ratio": 0.8575023042249226,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 22.777728959728666,
+     "ratio": 0.8868282182285795,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 23.319331362077268,
+     "ratio": 0.9079149689890402,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 21.633627667263738,
+     "ratio": 0.8422837725350009,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "리틀 머메이드",
+    "벨벳",
+    "신데렐라 : 크리스탈 웨이브",
+    "크라운",
+    "프리바티"
+   ],
+   "count": 7,
+   "value": 59.40114482,
+   "visited_at": 6205,
+   "cand_n": 57,
+   "cand_p": 0,
+   "cand_first": {
+    "at": 1099,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 46.860119586537394,
+     "ratio": 0.7888756980784634,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 52.527164518987426,
+     "ratio": 0.8842786562137411,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 86,
+     "nb_global_rank": null,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    },
+    {
+     "at": 6000,
+     "pred": 55.36969751902976,
+     "ratio": 0.9321318248463643,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 1,
+     "nb_global_rank": 117,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "리틀 머메이드",
+    "벨벳",
+    "크라운",
+    "프리바티",
+    "헬름"
+   ],
+   "count": 11,
+   "value": 62.02592576,
+   "visited_at": 7294,
+   "cand_n": 69,
+   "cand_p": 0,
+   "cand_first": {
+    "at": 1099,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 48.06831841143925,
+     "ratio": 0.7749713982090712,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 52.55848165886472,
+     "ratio": 0.8473631149373226,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 85,
+     "nb_global_rank": null,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    },
+    {
+     "at": 6000,
+     "pred": 54.2195953829479,
+     "ratio": 0.8741440731210119,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 11,
+     "nb_global_rank": null,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "리틀 머메이드",
+    "마나",
+    "벨벳",
+    "크라운",
+    "프리바티"
+   ],
+   "count": 13,
+   "value": 61.90538389,
+   "visited_at": 6187,
+   "cand_n": 57,
+   "cand_p": 0,
+   "cand_first": {
+    "at": 1099,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 45.8791532514452,
+     "ratio": 0.7411173369503388,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 52.09014245155677,
+     "ratio": 0.8414476928875203,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 93,
+     "nb_global_rank": null,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    },
+    {
+     "at": 6000,
+     "pred": 55.26175993208135,
+     "ratio": 0.8926809989624853,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 3,
+     "nb_global_rank": 149,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "리버렐리오",
+    "마스트 : 로망틱 메이드",
+    "아니스 : 스타",
+    "앵커 : 이노센트 메이드",
+    "홍련 : 흑영"
+   ],
+   "count": 300,
+   "value": 85.17375201,
+   "visited_at": 2474,
+   "cand_n": 23,
+   "cand_p": 17,
+   "cand_first": {
+    "at": 399,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 50.510095426823085,
+     "ratio": 0.5930241915478004,
+     "beat_40th": false,
+     "actual_top40": true,
+     "nb_parent_rank": 249,
+     "nb_global_rank": null,
+     "nb_pick": false,
+     "pk_rank": 1286,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "나유타",
+    "디젤 : 윈터 스위츠",
+    "목단",
+    "벨벳",
+    "스노우 화이트 : 헤비암즈"
+   ],
+   "count": 10,
+   "value": 42.11067172,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 33.16679361292719,
+     "ratio": 0.7876101771412728,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 36.817203165640734,
+     "ratio": 0.8742962688993349,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 44.2671728221255,
+     "ratio": 1.051210323037932,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 44.423644289588395,
+     "ratio": 1.0549260430934868,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "네온 : 비전 아이",
+    "마나",
+    "목단",
+    "미하라 : 본딩 체인",
+    "에이드 : 에이전트 바니"
+   ],
+   "count": 8,
+   "value": 26.55029832,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 21.76219387883427,
+     "ratio": 0.8196591095340382,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 22.95906375043095,
+     "ratio": 0.8647384475200485,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 23.632632014538373,
+     "ratio": 0.890107965255374,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 22.54919001378037,
+     "ratio": 0.849300815456162,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "로산나 : 시크 오션",
+    "목단",
+    "미하라 : 본딩 체인",
+    "스노우 화이트 : 헤비암즈",
+    "아크레인저 블랙"
+   ],
+   "count": 13,
+   "value": 35.86245709,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 30.797701973299343,
+     "ratio": 0.8587727800136448,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 32.25750678971776,
+     "ratio": 0.8994784353109074,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 32.99830321838779,
+     "ratio": 0.9201350352424441,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 34.59796124251645,
+     "ratio": 0.9647404012416052,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "목단",
+    "민트",
+    "스노우 화이트 : 헤비암즈",
+    "아크레인저 블랙",
+    "프리카"
+   ],
+   "count": 32,
+   "value": 42.00508304,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 27.719919495259244,
+     "ratio": 0.6599182167753963,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 28.991304354393822,
+     "ratio": 0.6901856217445492,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 34.591569122936065,
+     "ratio": 0.8235091236457192,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 36.21119016907951,
+     "ratio": 0.8620668630650445,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "목단",
+    "미하라 : 본딩 체인",
+    "스노우 화이트 : 헤비암즈",
+    "아크레인저 블랙",
+    "에이드 : 에이전트 바니"
+   ],
+   "count": 8,
+   "value": 32.88647605,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 30.754269303283014,
+     "ratio": 0.9351646329185523,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 30.741623357331612,
+     "ratio": 0.9347800995945145,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 31.295876889645246,
+     "ratio": 0.9516336393739349,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 31.698152526299424,
+     "ratio": 0.9638658905899838,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "레이 (가칭)",
+    "루드밀라 : 윈터 오너",
+    "목단",
+    "아스카 : WILLE",
+    "에이드 : 에이전트 바니"
+   ],
+   "count": 7,
+   "value": 36.55291533,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 31.707208693027948,
+     "ratio": 0.8674331009380518,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 34.007005129363975,
+     "ratio": 0.930350009632569,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 33.980489528786265,
+     "ratio": 0.9296246064646321,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 33.90015486074549,
+     "ratio": 0.9274268428303086,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "목단",
+    "미하라 : 본딩 체인",
+    "사쿠라 : 블룸 인 서머",
+    "아크레인저 블랙",
+    "에이드 : 에이전트 바니"
+   ],
+   "count": 15,
+   "value": 28.74554616,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 27.927186110279763,
+     "ratio": 0.9715308922931859,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 27.71582952354975,
+     "ratio": 0.9641782197938156,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 26.92122781672164,
+     "ratio": 0.936535617270096,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 27.347201114168,
+     "ratio": 0.9513543754552897,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "나유타",
+    "디젤 : 윈터 스위츠",
+    "미란다",
+    "솔린 : 프로스트 티켓",
+    "헬름"
+   ],
+   "count": 15,
+   "value": 30.35119209,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 20.96654445338362,
+     "ratio": 0.6907980546929358,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 18.244948744457016,
+     "ratio": 0.6011279125497115,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 17.314686852397717,
+     "ratio": 0.5704779832388361,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 15.635037028974153,
+     "ratio": 0.5151374938622436,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "나유타",
+    "미란다",
+    "솔린 : 프로스트 티켓",
+    "프리바티",
+    "헬름"
+   ],
+   "count": 8,
+   "value": 31.75149485,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 31.246938151213378,
+     "ratio": 0.9841091986008771,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 29.009264944724784,
+     "ratio": 0.9136346204098413,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 19.71945515363372,
+     "ratio": 0.6210559612009486,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 18.936299357312596,
+     "ratio": 0.5963907981898557,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "나유타",
+    "디젤 : 윈터 스위츠",
+    "루주",
+    "맥스웰",
+    "미란다"
+   ],
+   "count": 13,
+   "value": 23.11039963,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 20.069798166214753,
+     "ratio": 0.8684314632171833,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 17.671372357873803,
+     "ratio": 0.7646502285029418,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 23.979609647698073,
+     "ratio": 1.037611206712745,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 22.895933925780835,
+     "ratio": 0.9907199482634319,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "네온 : 비전 아이",
+    "민트",
+    "볼륨",
+    "신데렐라 : 크리스탈 웨이브",
+    "프리카"
+   ],
+   "count": 7,
+   "value": 33.7781829,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 20.811375271988048,
+     "ratio": 0.6161188520294278,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 22.32149869158126,
+     "ratio": 0.6608259170620235,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 27.340273642979145,
+     "ratio": 0.8094062881925821,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 32.72722081796339,
+     "ratio": 0.9688863641615072,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "민트",
+    "볼륨",
+    "스노우 화이트 : 헤비암즈",
+    "신데렐라",
+    "프리카"
+   ],
+   "count": 40,
+   "value": 35.7138846,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 21.583387953429366,
+     "ratio": 0.6043416501779637,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 22.3630631539075,
+     "ratio": 0.6261728009813724,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 28.49935229485214,
+     "ratio": 0.7979908266504322,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 31.363311506572373,
+     "ratio": 0.8781825852282776,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "민트",
+    "볼륨",
+    "스노우 화이트 : 헤비암즈",
+    "신데렐라 : 크리스탈 웨이브",
+    "프리카"
+   ],
+   "count": 12,
+   "value": 36.47343546,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 21.88582127087819,
+     "ratio": 0.6000482541569225,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 23.407484622519213,
+     "ratio": 0.6417680245171842,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 30.201038294431992,
+     "ratio": 0.82802834209443,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 33.80033091117622,
+     "ratio": 0.9267109194647885,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "로산나 : 시크 오션",
+    "맥스웰",
+    "목단",
+    "사쿠라 : 블룸 인 서머",
+    "아크레인저 블랙"
+   ],
+   "count": 23,
+   "value": 32.65136486,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 25.64141719743186,
+     "ratio": 0.7853091993971814,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 27.209004307955947,
+     "ratio": 0.8333190488244707,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 28.49036706125821,
+     "ratio": 0.8725628219039848,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 28.472409676819424,
+     "ratio": 0.8720128484337859,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "라피 : 레드 후드",
+    "민트",
+    "사쿠라 : 블룸 인 서머",
+    "스노우 화이트 : 헤비암즈",
+    "프리카"
+   ],
+   "count": 11,
+   "value": 32.25292264,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 18.874700934909644,
+     "ratio": 0.5852090102216437,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 20.51627916842367,
+     "ratio": 0.6361060483548063,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 26.20165009147978,
+     "ratio": 0.8123806448158765,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 27.150984578898978,
+     "ratio": 0.8418147056610116,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "민트",
+    "볼륨",
+    "신데렐라",
+    "신데렐라 : 크리스탈 웨이브",
+    "프리카"
+   ],
+   "count": 37,
+   "value": 34.04014384,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 19.349540908818746,
+     "ratio": 0.5684329948712328,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 20.55935353129637,
+     "ratio": 0.6039737560432227,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 27.483239344864604,
+     "ratio": 0.8073772976414252,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 30.780686249642436,
+     "ratio": 0.9042466563690771,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "로산나 : 시크 오션",
+    "목단",
+    "사쿠라 : 블룸 인 서머",
+    "아크레인저 블랙",
+    "헬름"
+   ],
+   "count": 15,
+   "value": 35.52816902,
+   "visited_at": 951,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": []
+  },
+  {
+   "members": [
+    "라피 : 레드 후드",
+    "레이 (가칭)",
+    "아스카 : WILLE",
+    "크라운",
+    "헬름"
+   ],
+   "count": 96,
+   "value": 52.75418567,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 49.14734911430368,
+     "ratio": 0.9316293767046538,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 51.65724585521638,
+     "ratio": 0.9792065823621002,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 52.001477172949635,
+     "ratio": 0.9857317767776973,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 49.81690250149609,
+     "ratio": 0.944321324816236,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "라피 : 레드 후드",
+    "리틀 머메이드",
+    "아스카 : WILLE",
+    "크라운",
+    "프리바티"
+   ],
+   "count": 7,
+   "value": 64.03217515,
+   "visited_at": 2192,
+   "cand_n": 15,
+   "cand_p": 13,
+   "cand_first": {
+    "at": 799,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 60.19173855155759,
+     "ratio": 0.9400233306233013,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 11,
+     "nb_global_rank": null,
+     "nb_pick": false,
+     "pk_rank": 724,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "레이 (가칭)",
+    "리틀 머메이드",
+    "벨벳",
+    "아스카 : WILLE",
+    "크라운"
+   ],
+   "count": 14,
+   "value": 66.53088117,
+   "visited_at": 1176,
+   "cand_n": 5,
+   "cand_p": 0,
+   "cand_first": {
+    "at": 699,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 60.7299442648368,
+     "ratio": 0.9128083560122913,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 6,
+     "nb_global_rank": 272,
+     "nb_pick": false,
+     "pk_rank": null,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "레이 (가칭)",
+    "목단",
+    "아스카 : WILLE",
+    "크라운",
+    "헬름"
+   ],
+   "count": 17,
+   "value": 53.79012618,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 50.09028928670398,
+     "ratio": 0.9312171739304884,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 51.89116435216052,
+     "ratio": 0.9646968326215687,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 51.889512398214464,
+     "ratio": 0.9646661215215327,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 50.817851622131116,
+     "ratio": 0.9447431198074783,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "리틀 머메이드",
+    "신데렐라 : 크리스탈 웨이브",
+    "아스카 : WILLE",
+    "크라운",
+    "프리바티"
+   ],
+   "count": 20,
+   "value": 66.05892866,
+   "visited_at": 1072,
+   "cand_n": 3,
+   "cand_p": 1,
+   "cand_first": {
+    "at": 799,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 63.35843021576045,
+     "ratio": 0.9591198570879221,
+     "beat_40th": false,
+     "actual_top40": false,
+     "nb_parent_rank": 0,
+     "nb_global_rank": 2,
+     "nb_pick": true,
+     "pk_rank": 557,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "레이 (가칭)",
+    "리틀 머메이드",
+    "아스카 : WILLE",
+    "크라운",
+    "프리바티"
+   ],
+   "count": 86,
+   "value": 73.53898927,
+   "visited_at": 701,
+   "cand_n": 1,
+   "cand_p": 0,
+   "cand_first": {
+    "at": 699,
+    "route": "n"
+   },
+   "fits": []
+  },
+  {
+   "members": [
+    "리틀 머메이드",
+    "벨벳",
+    "아스카 : WILLE",
+    "크라운",
+    "프리바티"
+   ],
+   "count": 9,
+   "value": 71.862856,
+   "visited_at": 1069,
+   "cand_n": 4,
+   "cand_p": 0,
+   "cand_first": {
+    "at": 699,
+    "route": "n"
+   },
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 63.37921945414536,
+     "ratio": 0.8819468496234739,
+     "beat_40th": false,
+     "actual_top40": true,
+     "nb_parent_rank": 0,
+     "nb_global_rank": 0,
+     "nb_pick": true,
+     "pk_rank": null,
+     "pk_pick": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "도로시 : 세렌디피티",
+    "드레이크",
+    "루주",
+    "블랑",
+    "토브"
+   ],
+   "count": 8,
+   "value": 23.09525629,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 5.915826919783033,
+     "ratio": 0.25614900503808324,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 8.84527694074286,
+     "ratio": 0.3829910709660655,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 14.33191507851976,
+     "ratio": 0.6205566588462292,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 14.486024614096566,
+     "ratio": 0.6272294376039838,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "누아르",
+    "드레이크",
+    "솔린 : 프로스트 티켓",
+    "아르카나 : 포츈 메이트",
+    "토브"
+   ],
+   "count": 10,
+   "value": 37.14438236,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 6.899591281699262,
+     "ratio": 0.18575059923810405,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 10.45254865392863,
+     "ratio": 0.28140321604013957,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 15.973952461503334,
+     "ratio": 0.4300502914999428,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 17.05321918613528,
+     "ratio": 0.45910627940604903,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  },
+  {
+   "members": [
+    "누아르",
+    "도로시 : 세렌디피티",
+    "솔린 : 프로스트 티켓",
+    "아르카나 : 포츈 메이트",
+    "토브"
+   ],
+   "count": 37,
+   "value": 34.99177906,
+   "visited_at": null,
+   "cand_n": 0,
+   "cand_p": 0,
+   "cand_first": null,
+   "fits": [
+    {
+     "at": 1000,
+     "pred": 3.8407224358279493,
+     "ratio": 0.10976070777202573,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 3000,
+     "pred": 8.764546282402396,
+     "ratio": 0.250474440507124,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 6000,
+     "pred": 13.645755451947917,
+     "ratio": 0.38997032498832646,
+     "beat_40th": false,
+     "actual_top40": false
+    },
+    {
+     "at": 9000,
+     "pred": 14.311073091955537,
+     "ratio": 0.4089838663937751,
+     "beat_40th": false,
+     "actual_top40": false
+    }
+   ]
+  }
+ ],
+ "seconds": 81.3
+}
