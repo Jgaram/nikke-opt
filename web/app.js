@@ -475,8 +475,196 @@
       lab: (d, i) => [h('span', { class: 'fg-no', text: `${i + 1}` }), h('span', { class: 'fg-val', text: eok(d.final) }),
         h('span', { class: 'gain', text: gain(d.pre, d.final) }), h('span', { class: 'fg-pre', text: `사전 ${d.pre == null ? '—' : nf1.format(d.pre)}` })],
       under: (d, n) => gearTag(d.gear[n]),
-      after: (d) => postMore(d),
+      after: (d) => [postMore(d), timelineMore(d, S)],
     });
+  }
+
+  // ------------------------------------------------------------ 컨트롤 타임라인(trace36.py · nikke_opt/timeline.py)
+  // 후처리 최종 선택지로 한 번 더 돈 전투의 키 입력. 줄 = 입력(풀버스트 · 버스트 Ⅰ Ⅱ Ⅲ · 카메라 · 마우스 · Shift · Space), 색 = 배치 자리(카메라 키 Z~B)
+  const CAM_KEYS = ['Z', 'X', 'C', 'V', 'B'];
+  const CTRL_KO = { tap: '좌클릭 톡톡이', hold: '좌클릭 홀드', cover: 'Shift 엄폐', all: 'Space 전체 엄폐' };
+  const WHY_KO = { '엄폐 시작(장전컨)': '장전컨(엄폐로 재장전)', '엄폐 시작(버스트 엄폐컨)': '버스트 엄폐컨', always: '상시', burst_charge: '버충(게이지 채우기)', own_full_burst: '자기 풀버스트 동안' };
+  const TL_ZOOM = 8;   // 크게 보기: 1초 = 8px
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const traceCache = {};
+  function traceSeason(s) {
+    if (!traceCache[s]) {
+      traceCache[s] = fetch(`traces/S${String(s).padStart(2, '0')}.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    }
+    return traceCache[s];
+  }
+  function sv(tag, attrs, ...kids) {
+    const e = document.createElementNS(SVGNS, tag);
+    for (const [k, v] of Object.entries(attrs || {})) if (v != null) e.setAttribute(k, v);
+    for (const c of kids.flat(Infinity)) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c)));
+    return e;
+  }
+  const secs = (t) => `${t.toFixed(t < 10 ? 2 : 1)}초`;
+  function timelineMore(d, S) {
+    if (!d.trace) return null;
+    return lazyDetails('post-more tl-more', h('summary', { text: '컨트롤 타임라인 — 언제 무슨 키를 누르나' }), () => {
+      const box = h('div', { class: 'tl' }, h('div', { class: 'small muted', text: '불러오는 중…' }));
+      traceSeason(S.season).then((all) => {
+        const tl = all[d.id];
+        if (!tl) { box.replaceChildren(h('div', { class: 'empty', text: '이 덱의 타임라인을 찾지 못했습니다.' })); return; }
+        const v = timelineView(tl);
+        box.replaceChildren(...v.nodes);
+        v.draw();
+      });
+      return [box];
+    });
+  }
+  function timelineView(tl) {
+    const sq = tl.squad;
+    const dur = tl.dur || 180;
+    const clicks = tl.c.filter((c) => c[3] === 'tap' || c[3] === 'hold');
+    const covers = tl.c.filter((c) => c[3] === 'cover');
+    const alls = tl.c.filter((c) => c[3] === 'all');
+    const AXIS = 16;
+    const lanes = [['fb', '풀버스트', 12], ['b1', 1, 24], ['b2', 2, 24], ['b3', 3, 24], ['cam', '카메라', 32],
+      ['click', '마우스', 24], ['cover', 'Shift', 24]];
+    if (alls.length) lanes.push(['all', 'Space', 24]);
+    const top = {};
+    let y = AXIS;
+    for (const [k, , hgt] of lanes) { top[k] = y; y += hgt; }
+    const H = y + 2;
+    const H_OF = Object.fromEntries(lanes.map(([k, , hgt]) => [k, hgt]));
+    const color = (i) => (i >= 0 && i < 5 ? `var(--s${i + 1})` : 'var(--axis)');
+
+    const keys = h('div', { class: 'tl-keys' }, h('span', { class: 'muted', text: '배치 · 카메라 키' }),
+      sq.map((n, i) => h('span', { class: 'tl-key-item', style: `--sc:${color(i)}` }, h('kbd', { text: CAM_KEYS[i] }), face(n, 'sm'))));
+    const nSwitch = Math.max(0, tl.cam.length - 1);
+    const summary = h('p', { class: 'small tl-sum' },
+      `풀버스트 ${tl.fb.length}회 · 버스트 ${tl.b.length}번 · 카메라 전환 ${nSwitch}번 · 좌클릭 ${clicks.length}구간 · Shift 엄폐 ${covers.length}번`
+      + (alls.length ? ` · Space ${alls.length}번` : ' · Space 안 씀'));
+    let mode = null;   // 처음 그릴 때 정한다: 좁아서 전체 보기의 1초가 2.5px보다 작으면 크게 보기
+    const seg = h('div', { class: 'seg tl-zoom', role: 'group', 'aria-label': '타임라인 크기' });
+    const labels = h('div', { class: 'tl-labels', 'aria-hidden': 'true' }, h('div', { class: 'tl-lab', style: `height:${AXIS}px` }),
+      lanes.map(([k, lab, hgt]) => h('div', { class: 'tl-lab', style: `height:${hgt}px` },
+        typeof lab === 'number' ? [lab === 1 ? h('span', { class: 'tl-lab-name', text: '버스트' }) : null, burstGlyph(String(lab), 11)] : lab)));
+    const scroll = h('div', { class: 'tl-scroll' });
+    const info = h('div', { class: 'tl-info', 'aria-live': 'polite' }, h('span', { class: 'muted', text: '그림의 표시를 누르면 시각 · 니케 · 조작이 나옵니다.' }));
+    const marks = [];   // 누르면 보일 설명(인덱스 = data-i)
+    const note = h('p', { class: 'small muted' },
+      '후처리 최종 선택지로 한 번 더 돈 전투입니다(총딜이 기록 값과 같음). 음영 = 풀버스트. 버스트 = 그 단계를 누른 니케(Ⅰ · Ⅱ · Ⅲ 줄). ',
+      '카메라 = 그 시각에 보고 있는 니케 — 색이 바뀌는 곳이 키 입력(Z~B = 배치 1~5번). 엄폐 · 클릭은 보고 있는 니케에만 걸려 카메라가 그 니케로 옮겨 갑니다. ',
+      '마우스 = 좌클릭(채움 = 홀드, 빗금 = 톡톡이). Shift = 엄폐(장전컨은 엄폐로 재장전을 거는 짧은 엄폐).');
+
+    function pick(i, el) {
+      scroll.querySelectorAll('.tl-on').forEach((x) => x.classList.remove('tl-on'));
+      if (el) el.classList.add('tl-on');
+      info.replaceChildren(...marks[i]());
+    }
+    function draw() {
+      const avail = Math.max(120, scroll.clientWidth - 2);
+      if (!mode) mode = avail / dur < 2.5 ? 'zoom' : 'fit';
+      const px = mode === 'fit' ? avail / dur : TL_ZOOM;
+      const W = Math.round(dur * px);
+      const X = (t) => Math.max(0, Math.min(W, t * px));
+      marks.length = 0;
+      const uid = `tl${Math.random().toString(36).slice(2, 8)}`;
+      const g = [];
+      const defs = sv('defs', null,
+        sv('clipPath', { id: `${uid}c`, clipPathUnits: 'objectBoundingBox' }, sv('rect', { width: 1, height: 1, rx: 0.22 })),
+        sv('pattern', { id: `${uid}h`, width: 5, height: 5, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' },
+          sv('rect', { width: 2.2, height: 5, class: 'tl-hatch' })));
+      // 축 · 눈금 · 풀버스트 음영
+      const step = [10, 30, 60].find((x) => px * x >= 44) || 90;
+      for (let t = 0; t <= dur + 1e-9; t += step) {
+        g.push(sv('line', { x1: X(t), x2: X(t), y1: AXIS - 3, y2: H, class: 'tl-grid' }));
+        if (t > 0 && X(dur) - X(t) < 40 && t < dur - 1e-9) continue;   // 끝 눈금 글자와 겹치면 생략
+        g.push(sv('text', { x: Math.min(W - 2, X(t) + 2), y: AXIS - 5, class: 'tl-tick', 'text-anchor': t >= dur - 1e-9 ? 'end' : 'start' }, `${t}초`));
+      }
+      if (dur % step > 1e-6) {
+        g.push(sv('text', { x: W - 2, y: AXIS - 5, class: 'tl-tick', 'text-anchor': 'end' }, `${dur}초`));
+      }
+      tl.fb.forEach(([t0, t1]) => g.push(sv('rect', { x: X(t0), y: AXIS, width: Math.max(1, X(t1) - X(t0)), height: H - AXIS, class: 'tl-fbband' })));
+      for (const [k] of lanes.slice(1)) g.push(sv('line', { x1: 0, x2: W, y1: top[k], y2: top[k], class: 'tl-lane' }));
+      const hit = (x, w, yy, hh, i) => sv('rect', { x: x + w / 2 - Math.max(w, 12) / 2, y: yy, width: Math.max(w, 12), height: hh, class: 'tl-hit', 'data-i': i });
+      const faceAt = (n, x, yy, sz, slot) => {
+        const img = nk(n).img;
+        return [img ? sv('image', { href: img, x, y: yy, width: sz, height: sz, 'clip-path': `url(#${uid}c)`, preserveAspectRatio: 'xMidYMid slice' }) : null,
+          sv('rect', { x, y: yy, width: sz, height: sz, rx: sz * 0.22, class: 'tl-ring', style: `stroke:${color(slot)}` })];
+      };
+      // 풀버스트 줄
+      tl.fb.forEach(([t0, t1]) => {
+        const i = marks.push(() => [h('b', { text: `${secs(t0)} ~ ${secs(t1)}` }), ` 풀버스트 ${(t1 - t0).toFixed(1)}초`]) - 1;
+        const x = X(t0); const w = Math.max(2, X(t1) - x);
+        g.push(sv('rect', { x, y: top.fb + 3, width: w, height: H_OF.fb - 6, rx: 2, class: 'tl-fb' }), hit(x, w, top.fb, H_OF.fb, i));
+      });
+      // 버스트 Ⅰ Ⅱ Ⅲ — 누른 니케 얼굴(키 글자 대신)
+      tl.b.forEach(([t, st, slot, re]) => {
+        const k = `b${st}`;
+        if (top[k] == null) return;
+        const n = sq[slot];
+        const sz = mode === 'fit' ? Math.min(H_OF[k] - 4, Math.round(px * 11)) : H_OF[k] - 4;   // 전체 보기에서 사이클끼리 덜 겹치게
+        const dot = sz < 14;                                                                     // 얼굴이 너무 작으면 자리 색 점
+        const x = Math.max(0, Math.min(W - sz, X(t) - sz / 2));
+        const i = marks.push(() => [h('b', { text: secs(t) }), ` 버스트 ${st}단계${re ? '(재진입)' : ''} · `, n ? face(n, 'sm') : '스쿼드 밖']) - 1;
+        const yy = top[k] + (H_OF[k] - sz) / 2;
+        g.push(sv('g', { class: `tl-burst${re ? ' tl-re' : ''}` }, n && !dot ? faceAt(n, x, yy, sz, slot)
+          : sv('circle', { cx: X(t), cy: top[k] + H_OF[k] / 2, r: 4.5, class: 'tl-dot', style: `fill:${color(n ? slot : -1)}` })),
+        hit(dot ? X(t) - 4.5 : x, dot ? 9 : sz, top[k], H_OF[k], i));
+      });
+      // 카메라 — 구간 = 보고 있는 니케, 바뀐 곳 = 키 입력(위에 키 글자, 겹치면 생략)
+      // 구간 사이 경계선 없음. 아주 짧은 구간(장전컨 1프레임 등)은 3px로 넓혀 긴 구간 위에 그린다
+      let lastKey = -1e9;
+      const camLong = []; const camShort = [];
+      tl.cam.forEach(([t0, slot], j) => {
+        const t1 = j + 1 < tl.cam.length ? tl.cam[j + 1][0] : dur;
+        const x0 = X(t0); const x1 = X(t1);
+        const short = x1 - x0 < 4;
+        const w = short ? Math.max(3, x1 - x0) : x1 - x0;   // 이웃 구간과 틈 없이 붙인다(색으로 구분)
+        const x = short ? Math.min(W - 3, x0) : x0;
+        const yy = top.cam + 11; const hh = H_OF.cam - 13;
+        const n = sq[slot];
+        const i = marks.push(() => [h('b', { text: `${secs(t0)} ~ ${secs(t1)}` }), ' 카메라 ', n ? face(n, 'sm') : '아무도 안 봄',
+          n ? h('kbd', { class: 'tl-kbd', text: CAM_KEYS[slot] }) : null, j ? ' (이 시각에 키 입력)' : ' (전투 시작 카메라)']) - 1;
+        const out = short ? camShort : camLong;
+        out.push(sv('rect', { x, y: yy, width: w, height: hh, class: 'tl-cam', style: `fill:${color(slot)}` }));
+        if (n && !short && w >= hh + 4) out.push(...faceAt(n, x0 + 2, yy + 1, hh - 2, slot));
+        if (j && slot >= 0 && x0 - lastKey >= 11) {
+          out.push(sv('text', { x: x0, y: top.cam + 9, class: 'tl-keytxt', 'text-anchor': 'middle' }, CAM_KEYS[slot]));
+          lastKey = x0;
+        }
+        out.push(hit(x, w, top.cam, H_OF.cam, i));
+      });
+      g.push(...camLong, ...camShort);
+      // 마우스 · Shift · Space — 조작 구간(누른 니케 색, 너무 짧아도 3px)
+      const spans = (rows, k) => rows.forEach(([t0, t1, slot, kind, why]) => {
+        const n = sq[slot];
+        const x = X(t0); const w = Math.max(3, X(t1) - x);
+        const yy = top[k] + 3; const hh = H_OF[k] - 6;
+        const i = marks.push(() => [h('b', { text: `${secs(t0)} ~ ${secs(t1)}` }), ` ${CTRL_KO[kind] || kind} · `, n ? face(n, 'sm') : '—',
+          why ? h('span', { class: 'muted', text: ` · ${WHY_KO[why] || why}` }) : null]) - 1;
+        g.push(sv('rect', { x, y: yy, width: w, height: hh, rx: 2, class: 'tl-seg', style: `fill:${color(slot)}` }));
+        if (kind === 'tap') g.push(sv('rect', { x, y: yy, width: w, height: hh, rx: 2, fill: `url(#${uid}h)` }));
+        if (n && w >= hh + 4) g.push(...faceAt(n, x + 2, yy + 1, hh - 2, slot));
+        g.push(hit(x, w, top[k], H_OF[k], i));
+      });
+      spans(clicks, 'click');
+      spans(covers, 'cover');
+      for (const [k, rows] of [['click', clicks], ['cover', covers]]) {
+        if (!rows.length) g.push(sv('text', { x: 6, y: top[k] + H_OF[k] / 2 + 4, class: 'tl-tick' }, '안 씀'));
+      }
+      if (alls.length) spans(alls, 'all');
+      const svg = sv('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img',
+        'aria-label': `컨트롤 타임라인 ${dur}초: ${summary.textContent}` }, defs, g);
+      svg.addEventListener('click', (e) => {
+        const t = e.target.closest('[data-i]');
+        if (t) pick(Number(t.getAttribute('data-i')), t);
+      });
+      scroll.replaceChildren(svg);
+      seg.replaceChildren(...[['fit', '전체 보기'], ['zoom', '크게 보기']].map(([m, lab]) => h('button', {
+        type: 'button', 'aria-pressed': String(m === mode), onclick: () => { mode = m; draw(); } }, lab)));
+    }
+    let rz = 0;
+    window.addEventListener('resize', () => {
+      if (mode !== 'fit' || !scroll.isConnected) return;
+      cancelAnimationFrame(rz);
+      rz = requestAnimationFrame(draw);
+    });
+    return { nodes: [keys, summary, h('div', { class: 'tl-bar' }, seg), h('div', { class: 'tl-chart' }, labels, scroll), info, note], draw };
   }
   // 같은 후처리를 한 랭커 두 묶음(rpost36.py): 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱. 값 = 최종 합 · 우리 A 최종 대비
   const RPOST_SETS = [['top', '랭커 대표 5덱', '상위 300명이 5덱을 그대로 가장 많이 쓴 묶음'],
@@ -600,7 +788,8 @@
   function costCard(S) {
     const P = S.parts || {};
     const names = { B_s0: '사전 계산 시드 0', B_s1: '사전 계산 시드 1', end: '끝 탐침', core30: '코어 30(재평가 + 이어 찾기)',
-      members: '덱별 니케 딜', rankers: '랭커 덱', post: '후처리(코어 없음 최선 5덱)', rpost: '랭커 덱 후처리(대표 · 스쿼드 최선)' };
+      members: '덱별 니케 딜', rankers: '랭커 덱', post: '후처리(코어 없음 최선 5덱)', rpost: '랭커 덱 후처리(대표 · 스쿼드 최선)',
+      trace: '컨트롤 타임라인(후처리 덱마다 1번 다시)' };
     const keys = Object.keys(names).filter((k) => P[k]);
     if (!keys.length) return card('cost', '시뮬 비용', null, h('div', { class: 'empty', text: '계산 전' }));
     const note = (x) => {

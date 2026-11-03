@@ -11,6 +11,8 @@
   덱별 니케 딜(`run_log/S??/members.json`), 랭커 덱 값(`run_log/S??/rankers.json`),
   후처리 뒤 최선 5덱(`run_log/S??/post.json` — 값은 그대로, 니케별 장비 옵션 배분 · 큐브와 선택지 라벨만 화면용으로 펼친다).
   같은 후처리를 한 랭커 대표 5덱 · 랭커 스쿼드로 짠 최선 5덱(`run_log/S??/rpost.json`, rpost36.py — 비교용).
+  후처리 덱의 컨트롤 타임라인(`run_log/S??/trace/<덱 id>.json`, trace36.py)은 시즌마다 `traces/S??.json`으로 따로 내고
+  (덱을 펼칠 때만 받는다), data.json의 덱에는 있는지(`trace`)만 적는다. 다시 돈 총딜이 기록 값과 다른 덱은 싣지 않는다.
 - 아직 없는 결과는 「계산 전」(후처리는 「계산 중」)으로 둔다. 시뮬은 하지 않는다. 평가기 · numpy도 필요 없다.
 - 니케 얼굴 · 속성 · 버스트 · 보스 그림은 `web/icons/`(nikke-analysis에서 `web/sync_icons.py`로 받은 것)를
   그대로 복사하고, 이름 → 그림은 `web/icons/icons.json`으로 잇는다.
@@ -169,6 +171,20 @@ def rpost_block(p: dict[str, Any] | None) -> dict[str, Any]:
                      for k, x in (p.get("sets") or {}).items()}}
 
 
+def trace_index(d: Path) -> dict[str, Any]:
+    """`run_log/S??/trace/<덱 id>.json`(trace36.py) → {덱 id: timeline}(nikke_opt/timeline.py 모양 그대로).
+    다시 돈 총딜이 후처리 기록 값과 다르면(`match` 거짓) 그 타임라인은 그 값의 전투가 아니라 뺀다."""
+    t = d / "trace"
+    if not t.is_dir():
+        return {}
+    out = {}
+    for f in sorted(t.glob("*.json")):
+        x = read_json(f) or {}
+        if x.get("match") and x.get("timeline"):
+            out[x["id"]] = x["timeline"]
+    return out
+
+
 def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Path, boundary: list[dict[str, Any]]) -> dict[str, Any]:
     d = exp / "run_log" / f"S{s:02d}"
     rv = (read_json(d / "rankers.json") or {}).get("squads")
@@ -178,6 +194,10 @@ def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Pat
     rp = read_json(d / "rpost.json") or (row or {}).get("rpost")
     if rp:                                  # 랭커 덱 후처리(rpost36.py)도 시뮬 비용에 넣는다
         parts["rpost"] = {"sims": rp.get("sims") or 0, "evaluator": EVALUATOR_ID}
+    tfiles = sorted((d / "trace").glob("*.json")) if (d / "trace").is_dir() else []
+    if tfiles:                              # 컨트롤 타임라인(trace36.py) — 덱마다 시뮬 1번
+        ev = {((read_json(f) or {}).get("evaluator") or {}).get("commit") for f in tfiles}
+        parts["trace"] = {"sims": len(tfiles), "evaluator": " · ".join(f"nikke-calc-rs {c[:7]}" for c in sorted(c for c in ev if c))}
     blk: dict[str, Any] = {
         "season": s, "boss_name": v["boss"], "element": v["element"], "weak": v["weak"], "code": v["code"],
         "start": v["start"], "end": v["end"], "pool": len(v["pool"]), "new": v.get("new") or [], "favorite0": v["favorite0"],
@@ -208,6 +228,10 @@ def season_block(s: int, v: dict[str, Any], row: dict[str, Any] | None, exp: Pat
                 "classes": [class_block(c, mem.get(b)) for c in x["classes"]],
                 "metrics": x["rankers"],
             })
+    tr = trace_index(d)                     # 후처리 덱의 컨트롤 타임라인이 있나(본문은 traces/S??.json, 값이 같은 덱만)
+    for x in (blk["post"].get("decks") or []) + [y for st in (blk["rpost"].get("sets") or {}).values() for y in (st or {}).get("decks") or []]:
+        x["trace"] = x.get("id") in tr
+    blk["traces"] = len(tr)
     A = (blk["by_boss"]["nocore"].get("classes") or [None])[0]
     if A and blk["post"]["status"] == "done":   # 후처리한 5덱이 코어 없음 큰 분류 A와 같은 5덱인가(화면 안내용)
         blk["post"]["same_as_A"] = {frozenset(x["order"]) for x in A["decks"]} == {frozenset(x["order"]) for x in blk["post"]["decks"]}
@@ -326,6 +350,14 @@ def build(out: Path, exp: Path = EXP) -> dict[str, Any]:
         if (ICONS / d).is_dir():
             shutil.copytree(ICONS / d, out / "icons" / d, dirs_exist_ok=True)
     (out / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    tdir = out / "traces"                   # 덱을 펼칠 때 받는 시즌별 컨트롤 타임라인
+    if tdir.is_dir():
+        shutil.rmtree(tdir)
+    for x in data["seasons"]:
+        tr = trace_index(exp / "run_log" / f"S{x['season']:02d}")
+        if tr:
+            tdir.mkdir(exist_ok=True)
+            (tdir / f"S{x['season']:02d}.json").write_text(json.dumps(tr, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (out / ".nojekyll").write_text("", encoding="utf-8")
     return data
 

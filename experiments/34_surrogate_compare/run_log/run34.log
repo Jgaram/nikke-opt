@@ -88,3 +88,12 @@ exit 3
 {"pair": "아니스 : 스타 + 크라운", "n": 8936}
 {"stop": "budget", "minutes": 101.9}
 exit 3
+--- 재시작 5 10:12
+{"P_obs": 94093, "probe_obs": 27280}
+{"fit": "G1", "seconds": 131.8}
+{"fit": "G2", "seconds": 99.3}
+{"fit": "G3", "seconds": 311.2}
+{"fit": "G4", "seconds": 612.0}
+{"pair": "아니스 : 스타 + 프리바티", "n": 4402}
+{"M2": {"line": 4, "text": "기각(이 자료 · 지표 범위)", "delta_rho_top": -0.04997077117686555, "boot_p5": -0.1231328530529123, "holdout_wins": 0}, "G1": {"line": 2, "text": "구성 예측만 후보 — 신캐(니케 가리기)는 릿지보다 못함", "delta_rho_top": 0.11538097699843008, "boot_p5": 0.0586941662958805, "holdout_wins": 2}, "G2": {"line": 4, "text": "기각(이 자료 · 지표 범위)", "delta_rho_top": -0.19145328126515948, "boot_p5": -0.26853262800300853, "holdout_wins": 1}, "G3": {"line": 1, "text": "후보 — 다음 회차에 계정 탐색의 대리 모델로 붙여 시뮬로 비교", "delta_rho_top": 0.11180479225265982, "boot_p5": 0.056951155088494264, "holdout_wins": 3}, "G4": {"line": 2, "text": "구성 예측만 후보 — 신캐(니케 가리기)는 릿지보다 못함", "delta_rho_top": 0.0691248290891564, "boot_p5": 0.021315596076590573, "holdout_wins": 0}, "summary": "새 모델 후보: G1 LightGBM(2줄), G3 Deep Sets(1줄), G4 자카드 커널 GP(2줄)"}
+exit 0
