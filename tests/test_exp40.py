@@ -103,5 +103,82 @@ class Verdict(unittest.TestCase):
         self.assertEqual(A.verdict(rows)["stage2"], "D2")
 
 
+class TwoPass(unittest.TestCase):
+    """판 d의 두 번 돌기(기록 → 한꺼번에 예측 → 다시 돌기)가 같은 점수로 base `local_round`와 똑같이 고른다."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.R = _load("run40", ROOT / "experiments" / "40_deepsets_search" / "run40.py")
+
+    def _sess(self, seed=0):
+        from types import SimpleNamespace
+        R = self.R
+        rng = random.Random(seed)
+        names = [f"m{i}" for i in range(24)]
+        owned = {n: {"burst": "123"[i % 3]} for i, n in enumerate(names)}
+        book = SimpleNamespace(best={})
+        while len(book.best) < 80:
+            sq = tuple(sorted(rng.sample(names, 5)))
+            book.best[frozenset(sq)] = (rng.uniform(10, 50), sq)
+        acct = SimpleNamespace(owned=owned, names=names)
+        return SimpleNamespace(acct=acct, book=book, fresh=lambda sq: True, pack=lambda: R.R9.pack_vals(book.best))
+
+    def _check(self, lineage):
+        R = self.R
+        sess = self._sess()
+        ridge = R.R10.DualFit(sess.book, sess.acct.names)
+
+        class Same:
+            def __init__(s):
+                s.calls = 0
+            def refresh(s, book):
+                pass
+            def prefill(s, comps):
+                s.calls += 1
+            def __call__(s, c):
+                return ridge(c)
+
+        lin_a = None if lineage is None else set(lineage)
+        lin_b = None if lineage is None else set(lineage)
+        want = R.BASE_ROUND(sess, 100, lin_a, lambda book, names: ridge)
+        st = Same()
+        got = R.make_round(st)(sess, 100, lin_b, None)
+        self.assertEqual(want, got)
+        self.assertEqual(lin_a, lin_b)          # 기록용 첫 번째 돌기가 계보를 건드리지 않는다
+        self.assertEqual(st.calls, 1)
+
+    def test_same_pick_no_lineage(self):
+        self._check(None)
+
+    def test_same_pick_lineage(self):
+        sess = self._sess()
+        top = sorted(sess.book.best.values(), reverse=True)[:30]
+        self._check({frozenset(q) for _, q in top})
+
+
+@unittest.skipUnless(HAS_TORCH, "torch 없음")
+class D2StateTest(unittest.TestCase):
+    def test_refit_schedule_and_cache(self):
+        R = _load("run40", ROOT / "experiments" / "40_deepsets_search" / "run40.py")
+        comps, vals = world(300)
+        cfg = G.DSConfig(d=4, hidden=16, max_epochs=10, patience=3, seeds=(1,), batch=64, lr=3e-3)
+        pre = G.DeepSets(NAMES, (EL, "수냉"), AT, cfg).fit(A.obs_of(comps[:200], vals[:200], EL))
+        st = R.D2State(pre, EL, "t")
+        book = {c: (v / A.E8, tuple(sorted(c))) for c, v in zip(comps[:100], vals[:100])}
+        st.refresh(book)
+        st.refresh(book)
+        self.assertEqual(st.refits, 1)
+        st.prefill(comps[200:250])
+        self.assertEqual(st.predicted, 50)
+        x = st(comps[200])
+        self.assertEqual(st.predicted, 50)       # 캐시에서
+        self.assertGreater(x, 0)
+        book.update({c: (v / A.E8, tuple(sorted(c))) for c, v in zip(comps[100:100 + R.REFIT], vals[100:100 + R.REFIT])})
+        if len(book) - st.n_fit >= R.REFIT:
+            st.refresh(book)
+            self.assertEqual(st.refits, 2)
+            self.assertEqual(st.cache, {})
+
+
 if __name__ == "__main__":
     unittest.main()
