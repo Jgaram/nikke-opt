@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import gc
 import json
+import os
 import statistics
 import sys
 import time
@@ -181,6 +182,16 @@ def verdict(res: Mapping[str, Any]) -> dict[str, Any]:
 
 
 # ---------------------------------------------------------------- 실행
+
+def _out_of_time(t0: float) -> bool:
+    """RUN34_BUDGET_MIN(분)이 지났으면 새 단계를 시작하지 않는다(실행 시간 제한 대비). 다시 돌리면 이어서 한다."""
+    budget = os.environ.get("RUN34_BUDGET_MIN")
+    if budget and time.time() - t0 > float(budget) * 60:
+        print(json.dumps({"stop": "budget", "minutes": round((time.time() - t0) / 60, 1)}), flush=True)
+        return True
+    return False
+
+
 def main() -> int:
     t_all = time.time()
     part = _partial()
@@ -225,13 +236,30 @@ def main() -> int:
         _save(part)
         print(json.dumps({"random": {k: v["median"] for k, v in res_r["all"].items()}}, ensure_ascii=False), flush=True)
 
-    # 3. (나) 짝 가리기 — 관찰
+    # 3. (다) 니케 가리기(판정에 쓰여 먼저 돈다) — 그 니케의 넣어 보기(R 세트)만 학습에
+    part.setdefault("nikke", {})
+    for x in Q.HOLD_NIKKES:
+        if x in part["nikke"]:
+            continue
+        if _out_of_time(t_all):
+            return 3
+        keep = M.observations([r for r in probe if r["set"] == "R" and r["x"] == x])
+        tr, _ = M.split_nikke(p_obs + pr_obs, x, keep)
+        te = [o for o in p_obs if x in o.comp]
+        preds, secs = fit_predict_all(tr, te, names, at, cfgs)
+        part["nikke"][x] = {"n_keep": len(keep), "n_test": len(te), **{k: Q.per_element(te, v) for k, v in preds.items()}}
+        _save(part)
+        print(json.dumps({"nikke": x, "n_keep": len(keep), "n_test": len(te)}, ensure_ascii=False), flush=True)
+
+    # 4. (나) 짝 가리기 — 관찰
     pairs = list(Q.PAIRS_FIXED) + Q.freq_pairs(p_obs, Q.PAIRS_FREQ, Q.PAIRS_FIXED)
     part.setdefault("pair", {})
     for a, b in pairs:
         tag = f"{a} + {b}"
         if tag in part["pair"]:
             continue
+        if _out_of_time(t_all):
+            return 3
         tr, _ = M.split_pair(p_obs + pr_obs, a, b)
         te = [o for o in p_obs if a in o.comp and b in o.comp]
         if not te:
@@ -241,19 +269,6 @@ def main() -> int:
             part["pair"][tag] = {"n_test": len(te), **{k: Q.per_element(te, v) for k, v in preds.items()}}
         _save(part)
         print(json.dumps({"pair": tag, "n": len(te)}, ensure_ascii=False), flush=True)
-
-    # 4. (다) 니케 가리기 — 그 니케의 넣어 보기(R 세트)만 학습에
-    part.setdefault("nikke", {})
-    for x in Q.HOLD_NIKKES:
-        if x in part["nikke"]:
-            continue
-        keep = M.observations([r for r in probe if r["set"] == "R" and r["x"] == x])
-        tr, _ = M.split_nikke(p_obs + pr_obs, x, keep)
-        te = [o for o in p_obs if x in o.comp]
-        preds, secs = fit_predict_all(tr, te, names, at, cfgs)
-        part["nikke"][x] = {"n_keep": len(keep), "n_test": len(te), **{k: Q.per_element(te, v) for k, v in preds.items()}}
-        _save(part)
-        print(json.dumps({"nikke": x, "n_keep": len(keep), "n_test": len(te)}, ensure_ascii=False), flush=True)
 
     res = dict(part)
     res["n"] = {"P": len(p_obs), "probe": len(pr_obs)}

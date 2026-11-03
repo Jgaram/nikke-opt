@@ -90,6 +90,8 @@ Q2와 같은 안쪽 나누기((가) 학습 P 구성의 10%, `exp33-q2-inner`)에
   G4의 분해 · 풀이만 스레드 1개로 돌리게 고쳤다(식 같음, 부동소수 반올림 차이만). (가) 결과는 다시 돌리지 않는다.
 - 관찰: G1(LightGBM)은 네 설정 모두 최대 5,000회까지, G3(Deep Sets)는 50~59에포크(최대 60)까지 안쪽 시험 손실이 줄었다 — 조기 종료가 거의 걸리지 않았다.
   등록한 최대치를 바꾸지 않는다. 두 모델은 덜 학습된 쪽이라 결과는 그 모델의 하한에 가깝다.
+- 셋째 본 실행은 (나) 짝 2개를 마친 뒤 세션의 실행 시간 제한(2시간)에 걸려 꺼졌다. 남은 단계 순서만 바꿨다 — 판정에 쓰는 (다) 니케 가리기를 먼저,
+  관찰용 (나) 짝 나머지를 뒤에. `RUN34_BUDGET_MIN`(분)이 지나면 새 단계를 시작하지 않고 멈춘다(다시 돌리면 이어서). 모델 · 자료 · 판정은 같다.
 
 ## 한계 (미리 적음)
 
@@ -104,6 +106,7 @@ Q2와 같은 안쪽 나누기((가) 학습 P 구성의 10%, `exp33-q2-inner`)에
 ```bash
 pip install lightgbm scikit-learn scipy torch      # torch는 CPU 판이면 된다
 OPENBLAS_NUM_THREADS=4 python experiments/34_surrogate_compare/run34.py   # → results.md · run_log/res34.json
+RUN34_BUDGET_MIN=70 OPENBLAS_NUM_THREADS=4 python experiments/34_surrogate_compare/run34.py   # 70분 넘으면 새 단계 시작 안 함
 ```
 
 단계마다 `run_log/partial34.json`에 저장해 끊겨도 이어 돈다. 비용: 시뮬 0회. 어림 계산 시간 3~5시간(CPU 4개).
