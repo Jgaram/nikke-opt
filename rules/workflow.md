@@ -58,7 +58,6 @@ git push origin HEAD:main
 Claude 원격 세션에서는 [.claude/settings.json](../.claude/settings.json)이
 [single-branch.mjs](../.claude/hooks/single-branch.mjs)를 호출한다. 로컬 작업이 있으면 이를 보존하며 처리한다.
 
-- permissions.allow `mcp__claude-code-remote__add_repo`: 작업 세션이 비공개 평가기 레포(Jgaram/nikke-calc-rs)를 붙일 수 있게 한다(2026-11-03 사용자 승인 — auto mode 권한 검사가 작업 세션의 add_repo를 거부해 왔다).
 - SessionStart: 배정 브랜치를 확인하고 가능한 경우 `main`으로 전환·최신화한다.
 - PreToolUse(Bash): `main`이 아닌 브랜치로의 push를 막는다. 브랜치 삭제는 이 검사에서 허용한다.
 - Stop: `main`에 반영하지 않은 커밋이 있으면 종료를 막는다. 커밋하지 않은 변경은 경고한다.
