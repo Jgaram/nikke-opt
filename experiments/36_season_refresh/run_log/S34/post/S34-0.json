@@ -1,0 +1,139 @@
+{
+ "id": "S34-0",
+ "season": 34,
+ "squad": [
+  "리틀 머메이드",
+  "크라운",
+  "레이븐",
+  "라피 : 레드 후드",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 63.02689034,
+ "ctrl": 63.85452838,
+ "ctrl_variants": [
+  "레이븐:cube:렐릭 부스트 큐브",
+  "레이븐:reload:C0.1",
+  "리틀 머메이드:reload:C0.5",
+  "크라운:reload:C0.1",
+  "프리바티:reload:C0.1"
+ ],
+ "E0": 65.21143396,
+ "O": 78.56146258,
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "크라운": "우코4+공4+크확2+크뎀2",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8087047799999922,
+   "max_ammo_pct": 1.08060377999999,
+   "crit_rate": 0.6203242500000101,
+   "crit_dmg": 0.5358058000000057,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 2.6790277599999968,
+   "atk_pct": 1.4443481199999937,
+   "max_ammo_pct": 0.013931429999999523,
+   "crit_rate": 0.48561345000000244,
+   "crit_dmg": 0.4194659999999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 10.406641319999991,
+   "atk_pct": 5.445379229999993,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.8603110900000104,
+   "crit_dmg": 1.6068393600000093,
+   "charge_speed_pct": 0.3119187400000101,
+   "charge_dmg_pct": 0.3720621600000129,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 10.31373546999999,
+   "atk_pct": 4.353994109999995,
+   "max_ammo_pct": 1.3201826299999908,
+   "crit_rate": 1.80383178000001,
+   "crit_dmg": 1.5580638500000106,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4538132999999931,
+   "max_ammo_pct": -7.251779000000013,
+   "crit_rate": 0.10518122999999946,
+   "crit_dmg": 0.0908508900000129,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 81.47845377,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:reload:A0.3",
+  "레이븐:cube:렐릭 부스트 큐브",
+  "레이븐:reload:C0.1",
+  "리틀 머메이드:reload:C0.1",
+  "크라운:reload:A0.3",
+  "프리바티:reload:A0.3"
+ ],
+ "final": 81.47845377,
+ "final_variants": [
+  "라피 : 레드 후드:reload:A0.3",
+  "레이븐:cube:렐릭 부스트 큐브",
+  "레이븐:reload:C0.1",
+  "리틀 머메이드:reload:C0.1",
+  "크라운:reload:A0.3",
+  "프리바티:reload:A0.3"
+ ],
+ "sims": 2420,
+ "seconds": 307.0
+}

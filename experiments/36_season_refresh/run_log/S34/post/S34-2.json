@@ -1,0 +1,154 @@
+{
+ "id": "S34-2",
+ "season": 34,
+ "squad": [
+  "미란다",
+  "그레이브",
+  "헬름 : 아쿠아마린",
+  "스노우 화이트 : 헤비암즈",
+  "이브"
+ ],
+ "win": null,
+ "pre": 46.81694334,
+ "ctrl": 47.6413947,
+ "ctrl_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:A0.3",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브",
+  "이브:cube:택티컬 베어 큐브",
+  "이브:reload:A0.3",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1_dry"
+ ],
+ "E0": 54.24102004,
+ "O": 68.02234621,
+ "alloc": {
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "그레이브": "공4+크확4+크뎀4",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "이브": "우코4+공3+크확3+크뎀2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9186726800000002,
+   "max_ammo_pct": 0.455862180000004,
+   "crit_rate": 0.33249159999999733,
+   "crit_dmg": 0.49836695999999847,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.274509540000004,
+   "max_ammo_pct": -0.008930569999996862,
+   "crit_rate": 0.002722909999995693,
+   "crit_dmg": 1.1523049299999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.7787140000000008,
+   "atk_pct": 1.6246618600000033,
+   "max_ammo_pct": 0.23399541000000568,
+   "crit_rate": 0.48489003999999625,
+   "crit_dmg": 0.27662004999999823,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 6.312442830000002,
+   "max_ammo_pct": 0.4861925599999992,
+   "crit_rate": 1.9259303499999945,
+   "crit_dmg": 2.7012521300000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5024257799999958,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 9.698623959999999,
+   "atk_pct": 8.491624890000004,
+   "max_ammo_pct": 0.4232188000000008,
+   "crit_rate": 6.028715299999995,
+   "crit_dmg": 5.0244175499999955,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "그레이브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "이브": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 68.69069558,
+ "ctrl2_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:C0.1_dry",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브",
+  "스노우 화이트 : 헤비암즈:reload:A0.3",
+  "이브:cube:택티컬 베어 큐브",
+  "이브:reload:C0.1_dry",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1"
+ ],
+ "final": 68.69069558,
+ "final_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:C0.1_dry",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브",
+  "스노우 화이트 : 헤비암즈:reload:A0.3",
+  "이브:cube:택티컬 베어 큐브",
+  "이브:reload:C0.1_dry",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1"
+ ],
+ "sims": 2353,
+ "seconds": 368.2
+}
