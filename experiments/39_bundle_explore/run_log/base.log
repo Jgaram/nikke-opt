@@ -17,3 +17,4 @@
 {"arm": "base", "params": {}, "season": 28, "seed": 0, "budget": 12500, "evals": 11035, "seconds": 1701.0, "best": 187.29359764, "errors": 0, "kicks": 13, "part": "B_s0", "evaluator": "nikke-calc-rs 6e73529", "sims": 11035, "wall": 1701.2}
 {"arm": "base", "params": {}, "season": 28, "seed": 1, "budget": 12500, "evals": 11035, "seconds": 1540.5, "best": 186.19842501, "errors": 0, "kicks": 13, "part": "B_s1", "evaluator": "nikke-calc-rs 6e73529", "sims": 11035, "wall": 1540.6}
 {"squads": 41, "errors": 0, "season": 29, "part": "rankers", "evaluator": "nikke-calc-rs 6e73529", "sims": 41, "wall": 4.1}
+{"arm": "base", "params": {}, "season": 29, "seed": 0, "budget": 12500, "evals": 11021, "seconds": 1730.6, "best": 194.89827009, "errors": 0, "kicks": 13, "part": "B_s0", "evaluator": "nikke-calc-rs 6e73529", "sims": 11021, "wall": 1730.7}
