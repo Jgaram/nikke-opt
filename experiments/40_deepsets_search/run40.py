@@ -4,6 +4,8 @@
       시즌 · 부분을 쉼표로 여럿. 끝난 부분은 건너뛴다. RUN40_BUDGET_MIN(분)이 지나면 새 부분을 시작하지 않는다.
     source .cache/evaluators.env && python -I experiments/40_deepsets_search/run40.py dev --season 36 --budget 2000
       개발 시즌(S33~S42) 짧은 시운전 — dev/에 쓴다. 판정에 쓰지 않는다.
+    source .cache/evaluators.env && python -I experiments/40_deepsets_search/run40.py check --n 60
+      base · d 기록을 부분마다 60덱씩 지금 평가기로 다시 계산해 값이 같은지 → run_log/eval_check.json (analyze 전에)
     python -I experiments/40_deepsets_search/run40.py analyze     # 시뮬 0 → analysis2.json · results2.md (base = 실험 39 기록)
 
 - 판 d는 실험 10 `run_method` G+E에서 **라운드 고르기(`local_round`)의 대리 모델만** 릿지 → D2로 바꾼다. 고르는 규칙(ⓐ 덱 고치기 70 · ⓑ 이웃 30) ·
@@ -52,6 +54,7 @@ REFIT = 500                               # 세션 기록이 이만큼 늘면 �
 ARM = "d"
 LOG = HERE / "run_log" / ARM
 DEV = HERE / "dev"
+CHECK = HERE / "run_log" / "eval_check.json"     # run40.py check — 평가기 이름이 다른 기록끼리 값 대조
 PARAMS = {"model": "D2", "refit_every": REFIT, "pretrain": "실험 33 P + 넣어 보기 121,373관측(an40.py pretrain)",
           "finetune": {"lr": A40.FT_LR, "max_epochs": A40.MAX_EPOCHS, "patience": A40.PATIENCE, "valid_frac": A40.VALID_FRAC},
           "construct": "릿지 그대로(base와 같음)"}
@@ -207,12 +210,14 @@ def analyze() -> dict[str, Any]:
     rs = [r["pack"] / b["pack"] - 1 for r, b in pair]
     per_seed = [r["seed"][k]["pack"] / b["seed"][k]["pack"] - 1 for r, b in pair for k in SEEDS]
     noise = [abs(b["seed"][1]["pack"] / b["seed"][0]["pack"] - 1) for b in base.values()]
-    same_eval = all(r["evaluator"] == b["evaluator"] for r, b in pair)
+    names = {"base": sorted({v for _, b in pair for v in b["evaluator"]}), "d": sorted({v for r, _ in pair for v in r["evaluator"]})}
+    chk = R39.jload(CHECK)
     out = {"seasons": list(SEASONS), "base": base, "d": arm, "ratio": dict(zip([r["season"] for r, _ in pair], rs)),
            "median": R39.med(rs), "drops": sum(x < R39.DROP for x in rs), "per_seed_median": R39.med(per_seed),
            "G_base": R39.med([b["G"] for _, b in pair]), "G_d": R39.med([r["G"] for r, _ in pair]),
            "visit_base": R39.med([b["visit"] for _, b in pair]), "visit_d": R39.med([r["visit"] for r, _ in pair]),
-           "seed_noise_median": R39.med(noise), "same_evaluator": same_eval,
+           "seed_noise_median": R39.med(noise), "evaluator_names": names,
+           "value_check": None if chk is None else {k: chk[k] for k in ("evaluator", "parts", "decks", "diff")},
            "verdict": R39.verdict(rs) if len(pair) == len(SEASONS) else f"진행 중 {len(pair)}/{len(SEASONS)}"}
     return out
 
@@ -232,8 +237,41 @@ def write_md(an: Mapping[str, Any]) -> str:
                  f"{pct(b['visit'], 1, False)} → {pct(r['visit'], 1, False)} | {sum(x['refits'] for x in d2)} · {sum(x['train_s'] for x in d2):.0f} |")
     L += ["", f"- 판정(실험 39와 같은 표): **{an['verdict']}** — 시즌 중앙 {pct(an['median'])} · −1% 밑 {an['drops']}시즌 · 시드별 중앙 {pct(an['per_seed_median'])}",
           f"- G 중앙 {pct(an['G_base'])} → {pct(an['G_d'])} · 방문 중앙 {pct(an['visit_base'], 1, False)} → {pct(an['visit_d'], 1, False)}",
-          f"- 시드 잡음(base s1 ÷ s0 − 1 절댓값, 시즌 중앙): {pct(an['seed_noise_median'], sign=False)} · 평가기 같음: {an['same_evaluator']}"]
+          f"- 시드 잡음(base s1 ÷ s0 − 1 절댓값, 시즌 중앙): {pct(an['seed_noise_median'], sign=False)}",
+          f"- 평가기 이름: base {', '.join(an['evaluator_names']['base'])} · d {', '.join(an['evaluator_names']['d'])}"]
+    vc = an["value_check"]
+    L.append("- 값 대조: 안 함(`run40.py check`)" if vc is None else
+             f"- 값 대조(`run40.py check`, 평가기 {vc['evaluator']}로 기록을 다시 계산): 부분 {vc['parts']}개 · {vc['decks']}덱 중 다른 값 **{vc['diff']}**")
     return "\n".join(L) + "\n"
+
+
+def cmd_check(a: argparse.Namespace) -> int:
+    """평가기 이름이 섞인 기록(실험 39 base 재개 뒤 · 판 d)이 같은 값인지 — 부분마다 a.n덱을 지금 평가기로 다시 계산해 대조한다.
+
+    카메라 재장전 규칙(`sim.camera_reload_cancel`, nikke-calc-rs 83a6d54)은 요청에 주지 않으면 꺼진다. 이 실험은 주지 않는다.
+    """
+    from nikke_opt.evaluator import EvalRequest, make_evaluator
+    rng = random.Random(f"exp40-check-{a.n}")
+    rows = []
+    with make_evaluator("rust", jobs=a.jobs, cache=False) as ev:
+        ver = f"{ev.version.get('repo')} {str(ev.version.get('commit'))[:7]}"
+        for arm, root in (("base", R39.LOG / "base"), (ARM, LOG)):
+            for s in SEASONS:
+                for k in SEEDS:
+                    d = root / f"S{s:02d}"
+                    part = R39.jload(d / f"part_B_s{k}.json")
+                    if part is None:
+                        continue
+                    recs = [r for r in run31.load_recs(d / f"B_s{k}.jsonl.gz") if not r.get("error")]
+                    pick = rng.sample(recs, min(a.n, len(recs)))
+                    res = ev.evaluate([EvalRequest(list(r["squad"]), boss=None, options=run31.options(s, 0)) for r in pick])
+                    bad = [[r["squad"], r["total_damage"], x.total_damage] for r, x in zip(pick, res) if x.total_damage != r["total_damage"]]
+                    rows.append({"arm": arm, "season": s, "seed": k, "recorded": part.get("evaluator"), "n": len(pick), "diff": len(bad), "examples": bad[:3]})
+                    print(json.dumps({x: rows[-1][x] for x in ("arm", "season", "seed", "recorded", "n", "diff")}, ensure_ascii=False), flush=True)
+    out = {"evaluator": ver, "per_part": a.n, "parts": len(rows), "decks": sum(r["n"] for r in rows), "diff": sum(r["diff"] for r in rows), "rows": rows}
+    R39.jdump(CHECK, out)
+    print(json.dumps({k: out[k] for k in ("evaluator", "parts", "decks", "diff")}, ensure_ascii=False))
+    return 0 if out["diff"] == 0 else 1
 
 
 def cmd_analyze(a: argparse.Namespace) -> int:
@@ -258,8 +296,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     d.add_argument("--budget", type=int, default=2000)
     d.add_argument("--jobs", type=int, default=None)
     sub.add_parser("analyze")
+    c = sub.add_parser("check")
+    c.add_argument("--n", type=int, default=60)
+    c.add_argument("--jobs", type=int, default=None)
     a = p.parse_args(argv)
-    return {"run": cmd_run, "dev": cmd_dev, "analyze": cmd_analyze}[a.cmd](a)
+    return {"run": cmd_run, "dev": cmd_dev, "analyze": cmd_analyze, "check": cmd_check}[a.cmd](a)
 
 
 if __name__ == "__main__":
