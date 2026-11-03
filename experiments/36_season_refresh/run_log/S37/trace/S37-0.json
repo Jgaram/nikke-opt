@@ -19,7 +19,7 @@
  ],
  "evaluator": {
   "repo": "nikke-calc-rs",
-  "commit": "8efd7069b69fcd4ce2dcf16935ed83e49f14c1ad",
+  "commit": "1c7c60f83997de68c60815b67617c402ca56baf7",
   "dirty": false,
   "port_of": {
    "repo": "Jgaram/nikke-calc",
