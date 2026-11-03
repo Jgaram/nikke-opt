@@ -607,21 +607,21 @@
         hit(dot ? X(t) - 4.5 : x, dot ? 9 : sz, top[k], H_OF[k], i));
       });
       // 카메라 — 구간 = 보고 있는 니케, 바뀐 곳 = 키 입력(위에 키 글자, 겹치면 생략)
-      // 아주 짧은 구간(장전컨 1프레임 등)은 3px로 넓혀 긴 구간 위에 그린다
+      // 구간 사이 경계선 없음. 아주 짧은 구간(장전컨 1프레임 등)은 3px로 넓혀 긴 구간 위에 그린다
       let lastKey = -1e9;
       const camLong = []; const camShort = [];
       tl.cam.forEach(([t0, slot], j) => {
         const t1 = j + 1 < tl.cam.length ? tl.cam[j + 1][0] : dur;
         const x0 = X(t0); const x1 = X(t1);
         const short = x1 - x0 < 4;
-        const w = short ? 3 : x1 - x0 - (j + 1 < tl.cam.length ? 1 : 0);
+        const w = short ? Math.max(3, x1 - x0) : x1 - x0;   // 이웃 구간과 틈 없이 붙인다(색으로 구분)
         const x = short ? Math.min(W - 3, x0) : x0;
         const yy = top.cam + 11; const hh = H_OF.cam - 13;
         const n = sq[slot];
         const i = marks.push(() => [h('b', { text: `${secs(t0)} ~ ${secs(t1)}` }), ' 카메라 ', n ? face(n, 'sm') : '아무도 안 봄',
           n ? h('kbd', { class: 'tl-kbd', text: CAM_KEYS[slot] }) : null, j ? ' (이 시각에 키 입력)' : ' (전투 시작 카메라)']) - 1;
         const out = short ? camShort : camLong;
-        out.push(sv('rect', { x, y: yy, width: w, height: hh, class: `tl-seg${short ? ' tl-short' : ''}`, style: `fill:${color(slot)}` }));
+        out.push(sv('rect', { x, y: yy, width: w, height: hh, class: 'tl-cam', style: `fill:${color(slot)}` }));
         if (n && !short && w >= hh + 4) out.push(...faceAt(n, x0 + 2, yy + 1, hh - 2, slot));
         if (j && slot >= 0 && x0 - lastKey >= 11) {
           out.push(sv('text', { x: x0, y: top.cam + 9, class: 'tl-keytxt', 'text-anchor': 'middle' }, CAM_KEYS[slot]));

@@ -536,4 +536,4 @@ details.tl-more > .lazy { padding: 10px; }
 .tl-hit.tl-on { fill: var(--ink); opacity: 0.12; }
 .tl-info { min-height: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 12.5px; }
 .tl-dot { stroke: var(--surface); stroke-width: 1; }
-.tl-short { stroke: var(--surface); stroke-width: 0.75; }
+.tl-cam { shape-rendering: crispEdges; }   /* 카메라 구간: 테두리 · 틈 없이 붙인다 */
