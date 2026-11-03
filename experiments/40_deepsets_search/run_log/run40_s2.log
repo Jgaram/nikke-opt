@@ -12,3 +12,8 @@ exit 3
 {"stop": "budget", "minutes": 81.4}
 exit 3
 --- 2단계 실행 4 18:16 UTC — 평가기 nikke-calc-rs 8bc51a2, 옵션 안 줌
+{"arm": "d", "season": 26, "seed": 0, "budget": 12500, "evals": 11029, "seconds": 2145.5, "best": 182.6918413, "errors": 0, "kicks": 16, "d2": {"refits": 22, "train_s": 828.3, "pred_s": 12.1, "predicted": 175237}, "part": "B_s0", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11029, "wall": 2145.7}
+{"arm": "d", "season": 26, "seed": 1, "budget": 12500, "evals": 11018, "seconds": 1244.0, "best": 183.15742239, "errors": 0, "kicks": 14, "d2": {"refits": 22, "train_s": 456.1, "pred_s": 6.3, "predicted": 168916}, "part": "B_s1", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11018, "wall": 1244.2}
+{"arm": "d", "season": 27, "seed": 0, "budget": 12500, "evals": 11015, "seconds": 2337.9, "best": 186.77989183999998, "errors": 0, "kicks": 14, "d2": {"refits": 22, "train_s": 616.9, "pred_s": 7.0, "predicted": 176030}, "part": "B_s0", "evaluator": "nikke-calc-rs 8bc51a2", "sims": 11015, "wall": 2338.1}
+{"stop": "budget", "minutes": 95.5}
+exit 3
