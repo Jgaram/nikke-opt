@@ -1,0 +1,131 @@
+{
+ "id": "S35-r5",
+ "season": 35,
+ "squad": [
+  "크라운",
+  "라피 : 레드 후드",
+  "리틀 머메이드",
+  "아스카 : WILLE",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 51.97211655,
+ "ctrl": 51.97549016,
+ "ctrl_variants": [
+  "리틀 머메이드:reload:B0.1"
+ ],
+ "E0": 54.55734625,
+ "O": 66.34139783,
+ "alloc": {
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "아스카 : WILLE": "공4+장탄2+크확3+크뎀3",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7019632000000016,
+   "max_ammo_pct": 0.12495709000000232,
+   "crit_rate": 0.2345160799999988,
+   "crit_dmg": 0.20256648999999527,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 11.36132782,
+   "atk_pct": 4.777216010000004,
+   "max_ammo_pct": 0.8293950099999989,
+   "crit_rate": 1.98745495,
+   "crit_dmg": 1.716667109999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.1923731700000033,
+   "max_ammo_pct": 0.31392077000000285,
+   "crit_rate": 0.7567572199999972,
+   "crit_dmg": 0.6536475699999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아스카 : WILLE": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.114984910000004,
+   "max_ammo_pct": 1.1453316999999998,
+   "crit_rate": 0.9675377699999999,
+   "crit_dmg": 0.8357044099999982,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5265889300000026,
+   "max_ammo_pct": -3.5355018200000004,
+   "crit_rate": 0.12158164999999599,
+   "crit_dmg": 0.10501915999999767,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "아스카 : WILLE": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 67.7391926,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:reload:C0.1",
+  "리틀 머메이드:reload:C0.5",
+  "아스카 : WILLE:reload:A0.3",
+  "프리바티:reload:C0.1"
+ ],
+ "final": 67.7391926,
+ "final_variants": [
+  "라피 : 레드 후드:reload:C0.1",
+  "리틀 머메이드:reload:C0.5",
+  "아스카 : WILLE:reload:A0.3",
+  "프리바티:reload:C0.1"
+ ],
+ "sims": 2380,
+ "seconds": 318.0
+}

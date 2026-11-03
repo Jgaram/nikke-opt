@@ -1,0 +1,140 @@
+{
+ "id": "S39-r6",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "마르차나 : 마린 스터디",
+  "스노우 화이트 : 헤비암즈",
+  "나유타",
+  "헬름 : 아쿠아마린"
+ ],
+ "win": null,
+ "pre": 53.87412624,
+ "ctrl": 54.42455846,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "마르차나 : 마린 스터디:cube:택티컬 베어 큐브",
+  "마르차나 : 마린 스터디:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:reload:A0.3",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1_dry"
+ ],
+ "E0": 61.200114,
+ "O": 71.17017921,
+ "alloc": {
+  "미란다": "공4+장탄3+크확1+크뎀4",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확4+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8292605199999983,
+   "max_ammo_pct": 0.48066382999999746,
+   "crit_rate": 0.35064263000000295,
+   "crit_dmg": 0.5066401099999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 11.813417049999998,
+   "atk_pct": 8.554342740000003,
+   "max_ammo_pct": 1.4078160099999977,
+   "crit_rate": 2.3738988300000017,
+   "crit_dmg": 5.4432553799999965,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.225627899999999,
+   "max_ammo_pct": 0.8780748499999973,
+   "crit_rate": 2.5673661400000043,
+   "crit_dmg": 0.8605135500000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3486310500000016,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5592213600000022,
+   "max_ammo_pct": 0.015337549999998146,
+   "crit_rate": 0.6116707099999985,
+   "crit_dmg": 0.3439018300000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.4771679999999989,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.9152628800000002,
+   "atk_pct": 1.4704517500000023,
+   "max_ammo_pct": 0.4421066600000003,
+   "crit_rate": 0.5193106899999975,
+   "crit_dmg": 0.3063936599999977,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 71.6221494,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "마르차나 : 마린 스터디:cube:택티컬 베어 큐브",
+  "미란다:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "헬름 : 아쿠아마린:cube:택티컬 부스트 큐브",
+  "헬름 : 아쿠아마린:reload:B0.5"
+ ],
+ "final": 71.6221494,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "마르차나 : 마린 스터디:cube:택티컬 베어 큐브",
+  "미란다:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "헬름 : 아쿠아마린:cube:택티컬 부스트 큐브",
+  "헬름 : 아쿠아마린:reload:B0.5"
+ ],
+ "sims": 2311,
+ "seconds": 362.4
+}

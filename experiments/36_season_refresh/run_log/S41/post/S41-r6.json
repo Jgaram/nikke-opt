@@ -1,0 +1,137 @@
+{
+ "id": "S41-r6",
+ "season": 41,
+ "squad": [
+  "마스트 : 로망틱 메이드",
+  "리틀 머메이드",
+  "팬텀",
+  "신데렐라 : 크리스탈 웨이브",
+  "크라운"
+ ],
+ "win": null,
+ "pre": 56.12690061,
+ "ctrl": 57.37670263,
+ "ctrl_variants": [
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:B0.5",
+  "마스트 : 로망틱 메이드:burst:pattern=3의 배수",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "팬텀:reload:C0.1"
+ ],
+ "E0": 63.60846062,
+ "O": 78.14248328,
+ "alloc": {
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "팬텀": "우코4+공4+크확1+크뎀3",
+  "신데렐라 : 크리스탈 웨이브": "공4+크확4+크뎀4",
+  "크라운": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.6016587100000024,
+   "atk_pct": 1.4545240400000026,
+   "max_ammo_pct": 0.0096396900000002,
+   "crit_rate": 0.5706489800000014,
+   "crit_dmg": 0.858933289999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.173915800000003,
+   "max_ammo_pct": 0.12447536999999897,
+   "crit_rate": 1.0005440599999957,
+   "crit_dmg": 1.6295917199999934,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 9.944290180000003,
+   "atk_pct": 3.9748156100000003,
+   "max_ammo_pct": -0.009843119999999317,
+   "crit_rate": 2.1993094399999933,
+   "crit_dmg": 3.5099074799999954,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.242289310000004,
+   "max_ammo_pct": -0.7507709899999924,
+   "crit_rate": 1.7502717200000006,
+   "crit_dmg": 2.8342330499999946,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7329022900000055,
+   "max_ammo_pct": -0.7700520500000039,
+   "crit_rate": 0.3106870499999985,
+   "crit_dmg": 0.5188176500000026,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ]
+ },
+ "C2": 78.61813496,
+ "ctrl2_variants": [
+  "리틀 머메이드:reload:A0.3",
+  "마스트 : 로망틱 메이드:burst:wait2",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "크라운:reload:C0.1_dry",
+  "팬텀:reload:C0.1_dry"
+ ],
+ "final": 78.61813496,
+ "final_variants": [
+  "리틀 머메이드:reload:A0.3",
+  "마스트 : 로망틱 메이드:burst:wait2",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "크라운:reload:C0.1_dry",
+  "팬텀:reload:C0.1_dry"
+ ],
+ "sims": 2397,
+ "seconds": 367.5
+}

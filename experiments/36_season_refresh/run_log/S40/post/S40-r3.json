@@ -1,0 +1,147 @@
+{
+ "id": "S40-r3",
+ "season": 40,
+ "squad": [
+  "크라운",
+  "유키코",
+  "리틀 머메이드",
+  "퀸(마코토)",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 65.44480396,
+ "ctrl": 67.80206794,
+ "ctrl_variants": [
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:A0.3",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 베어 큐브",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "유키코:reload:C0.5",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:B0.5",
+  "크라운:reload:C0.1"
+ ],
+ "E0": 75.02849274,
+ "O": 87.00641592,
+ "alloc": {
+  "크라운": "공4+크확4+크뎀4",
+  "유키코": "우코4+공1+크확3+크뎀4",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "퀸(마코토)": "우코4+공2+크확2+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄4+크확1+크뎀3"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6194870000000066,
+   "max_ammo_pct": -0.06069949999999835,
+   "crit_rate": 0.25520748999998943,
+   "crit_dmg": 0.3947720700000019,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "유키코": {
+   "element_bonus": 10.897578809999999,
+   "atk_pct": 4.08615128000001,
+   "max_ammo_pct": 1.2877551500000095,
+   "crit_rate": 3.0996457299999918,
+   "crit_dmg": 4.480687289999992,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8750483299999985,
+   "max_ammo_pct": 0.08579518999999891,
+   "crit_rate": 0.8822252499999905,
+   "crit_dmg": 1.3312486199999967,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀸(마코토)": {
+   "element_bonus": 10.925084840000011,
+   "atk_pct": 4.258809560000003,
+   "max_ammo_pct": 0.9160492100000113,
+   "crit_rate": 2.853921529999994,
+   "crit_dmg": 4.549241260000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5931309400000089,
+   "max_ammo_pct": 0.990886549999999,
+   "crit_rate": 0.24733542999999258,
+   "crit_dmg": 0.3510494199999954,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "유키코": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "퀸(마코토)": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 88.36763946,
+ "ctrl2_variants": [
+  "리틀 머메이드:reload:A0.3",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 베어 큐브",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "유키코:reload:C0.5",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:C0.5",
+  "크라운:reload:C0.1_dry"
+ ],
+ "final": 88.36763946,
+ "final_variants": [
+  "리틀 머메이드:reload:A0.3",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 베어 큐브",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "유키코:reload:C0.5",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:C0.5",
+  "크라운:reload:C0.1_dry"
+ ],
+ "sims": 2383,
+ "seconds": 168.1
+}

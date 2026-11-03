@@ -1,0 +1,126 @@
+{
+ "id": "S34-r6",
+ "season": 34,
+ "squad": [
+  "리타",
+  "그레이브",
+  "밀크 : 블루밍 바니",
+  "레이븐",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 44.90980511,
+ "ctrl": 45.09541633,
+ "ctrl_variants": [
+  "그레이브:reload:A0.3",
+  "레이븐:cube:렐릭 부스트 큐브"
+ ],
+ "E0": 49.23687412,
+ "O": 56.10922075,
+ "alloc": {
+  "리타": "우코4+공4+장탄4",
+  "그레이브": "공4+장탄1+크확3+크뎀4",
+  "밀크 : 블루밍 바니": "우코4+공4+장탄2+크확2",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 1.6427793400000041,
+   "atk_pct": 1.0718118099999998,
+   "max_ammo_pct": 0.5329653400000041,
+   "crit_rate": 0.33251707999999525,
+   "crit_dmg": 0.2559806699999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8687429200000025,
+   "max_ammo_pct": 0.004600350000004028,
+   "crit_rate": 0.013329199999994046,
+   "crit_dmg": 1.1932514799999936,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "밀크 : 블루밍 바니": {
+   "element_bonus": 7.118842270000002,
+   "atk_pct": 2.2218495500000017,
+   "max_ammo_pct": 2.559822920000002,
+   "crit_rate": 1.4154897099999957,
+   "crit_dmg": 1.0837430099999992,
+   "charge_speed_pct": 0.9412757999999997,
+   "charge_dmg_pct": 0.16762792999999476,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 9.727660870000001,
+   "atk_pct": 4.986277720000004,
+   "max_ammo_pct": 0.22565899000000655,
+   "crit_rate": 1.960901629999995,
+   "crit_dmg": 1.4984546199999969,
+   "charge_speed_pct": 0.03371590999999796,
+   "charge_dmg_pct": 0.3549560099999951,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4365643900000009,
+   "max_ammo_pct": -2.2291668499999986,
+   "crit_rate": 0.13875011999999742,
+   "crit_dmg": 0.10686079999999976,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "밀크 : 블루밍 바니": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 56.24389585,
+ "ctrl2_variants": [
+  "레이븐:cube:렐릭 부스트 큐브"
+ ],
+ "final": 56.24389585,
+ "final_variants": [
+  "레이븐:cube:렐릭 부스트 큐브"
+ ],
+ "sims": 2391,
+ "seconds": 293.9
+}

@@ -1,0 +1,140 @@
+{
+ "id": "S38-r5",
+ "season": 38,
+ "squad": [
+  "크라운",
+  "아스카 : WILLE",
+  "리틀 머메이드",
+  "레이 (가칭)",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 73.53898927,
+ "ctrl": 73.97059122,
+ "ctrl_variants": [
+  "레이 (가칭):cube:렐릭 퀀텀 큐브",
+  "리틀 머메이드:reload:C0.5",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:C0.1"
+ ],
+ "E0": 76.69220083,
+ "O": 90.15172198,
+ "alloc": {
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "아스카 : WILLE": "우코4+공4+크확2+크뎀2",
+  "리틀 머메이드": "우코4+공4+크확2+크뎀2",
+  "레이 (가칭)": "우코4+공4+장탄2+크확2",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6920045100000038,
+   "max_ammo_pct": 0.5393127399999997,
+   "crit_rate": 0.24656197999999563,
+   "crit_dmg": 0.21297312999999463,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아스카 : WILLE": {
+   "element_bonus": 13.335026700000007,
+   "atk_pct": 6.887121730000004,
+   "max_ammo_pct": 1.558866750000007,
+   "crit_rate": 2.3715259699999933,
+   "crit_dmg": 2.0483945399999897,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 8.993582990000007,
+   "atk_pct": 4.3770741600000065,
+   "max_ammo_pct": 0.41307510000000036,
+   "crit_rate": 1.5953128399999912,
+   "crit_dmg": 1.3779503599999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이 (가칭)": {
+   "element_bonus": 7.984441290000007,
+   "atk_pct": 4.127519480000004,
+   "max_ammo_pct": 1.447631940000008,
+   "crit_rate": 1.4151659999999993,
+   "crit_dmg": 1.2223476699999907,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.48990139,
+   "max_ammo_pct": -8.027036359999997,
+   "crit_rate": 0.12085799999999836,
+   "crit_dmg": 0.10438975999998945,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아스카 : WILLE": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "레이 (가칭)": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 92.91420929,
+ "ctrl2_variants": [
+  "레이 (가칭):cube:렐릭 퀀텀 큐브",
+  "레이 (가칭):reload:C0.5",
+  "리틀 머메이드:reload:A0.3",
+  "아스카 : WILLE:reload:A0.3",
+  "크라운:reload:C0.1_dry",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:A0.3"
+ ],
+ "final": 92.91420929,
+ "final_variants": [
+  "레이 (가칭):cube:렐릭 퀀텀 큐브",
+  "레이 (가칭):reload:C0.5",
+  "리틀 머메이드:reload:A0.3",
+  "아스카 : WILLE:reload:A0.3",
+  "크라운:reload:C0.1_dry",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:A0.3"
+ ],
+ "sims": 2399,
+ "seconds": 336.5
+}

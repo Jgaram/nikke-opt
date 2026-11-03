@@ -1,0 +1,145 @@
+{
+ "id": "S41-r3",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "팬텀",
+  "앵커 : 이노센트 메이드",
+  "브래디",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 66.47953939,
+ "ctrl": 74.07261623,
+ "ctrl_variants": [
+  "squad:tactic:버충=브래디",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브래디:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "팬텀:cube:렐릭 디바이드 큐브"
+ ],
+ "E0": 80.78141321,
+ "O": 93.20659553,
+ "alloc": {
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "팬텀": "우코4+공2+크확2+크뎀4",
+  "앵커 : 이노센트 메이드": "우코4+공4+크확1+크뎀3",
+  "브래디": "우코4+공4+크뎀1+차속3",
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.643094359999992,
+   "max_ammo_pct": -0.46917801000000736,
+   "crit_rate": 1.0312219000000056,
+   "crit_dmg": 1.4779733299999975,
+   "charge_speed_pct": 1.4038100100000008,
+   "charge_dmg_pct": 0.8811570299999971,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "팬텀": {
+   "element_bonus": 11.112357239999994,
+   "atk_pct": 3.926131699999999,
+   "max_ammo_pct": -1.4328374899999972,
+   "crit_rate": 2.8123814599999974,
+   "crit_dmg": 3.8378662200000093,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 3.6664751599999903,
+   "atk_pct": 1.6201518299999975,
+   "max_ammo_pct": 0.04671141000000034,
+   "crit_rate": 0.811229830000002,
+   "crit_dmg": 1.1642502100000058,
+   "charge_speed_pct": 0.8093171400000045,
+   "charge_dmg_pct": 0.1094379000000032,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브래디": {
+   "element_bonus": 10.84279386,
+   "atk_pct": 3.63896514999999,
+   "max_ammo_pct": 0.2935223599999972,
+   "crit_rate": 2.2567913299999987,
+   "crit_dmg": 3.4935504800000103,
+   "charge_speed_pct": 5.142087200000006,
+   "charge_dmg_pct": 1.3412705500000044,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 3.82177544999999,
+   "atk_pct": 1.713791349999994,
+   "max_ammo_pct": -0.30954309000000535,
+   "crit_rate": 0.8544989700000087,
+   "crit_dmg": 1.2408513000000028,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "팬텀": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브래디": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 93.59586287,
+ "ctrl2_variants": [
+  "squad:tactic:버충=브래디",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브래디:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.1_dry",
+  "팬텀:cube:렐릭 디바이드 큐브"
+ ],
+ "final": 93.59586287,
+ "final_variants": [
+  "squad:tactic:버충=브래디",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브래디:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.1_dry",
+  "팬텀:cube:렐릭 디바이드 큐브"
+ ],
+ "sims": 2422,
+ "seconds": 371.1
+}

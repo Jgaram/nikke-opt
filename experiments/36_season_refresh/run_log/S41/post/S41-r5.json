@@ -1,0 +1,131 @@
+{
+ "id": "S41-r5",
+ "season": 41,
+ "squad": [
+  "아니스 : 스타",
+  "민트",
+  "스노우 화이트 : 헤비암즈",
+  "프리바티",
+  "프리카"
+ ],
+ "win": null,
+ "pre": 83.00484188,
+ "ctrl": 83.51510676,
+ "ctrl_variants": [
+  "민트:cube:택티컬 베어 큐브",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "프리카:click:hold_own_fb"
+ ],
+ "E0": 80.00226477,
+ "O": 107.96851036,
+ "alloc": {
+  "아니스 : 스타": "공4+장탄2+크확3+크뎀3",
+  "민트": "공4+장탄3+크뎀1+차뎀4",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크확2+크뎀2",
+  "프리바티": "우코4+공4+크확2+크뎀2",
+  "프리카": "우코4+공4+차속2+차뎀2"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.3015189300000003,
+   "max_ammo_pct": 2.8080841199999895,
+   "crit_rate": 1.5914961900000009,
+   "crit_dmg": 1.6679363300000034,
+   "charge_speed_pct": 1.2085308500000025,
+   "charge_dmg_pct": 1.0518647900000104,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6994127899999967,
+   "max_ammo_pct": 0.9108380499999953,
+   "crit_rate": 0.39074840000000677,
+   "crit_dmg": 0.408841289999998,
+   "charge_speed_pct": 0.17017248000000507,
+   "charge_dmg_pct": 0.5302011600000043,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 18.879990099999993,
+   "atk_pct": 6.3159799299999975,
+   "max_ammo_pct": -1.2384171599999974,
+   "crit_rate": 5.15848462000001,
+   "crit_dmg": 5.38714069000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.2632730300000077,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 3.8619887199999994,
+   "atk_pct": 2.7997964399999944,
+   "max_ammo_pct": -13.416028280000006,
+   "crit_rate": 1.540984960000003,
+   "crit_dmg": 1.6182736300000045,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 2.447575180000001,
+   "atk_pct": 1.2020428299999963,
+   "max_ammo_pct": -0.17937380000000758,
+   "crit_rate": 0.676660670000004,
+   "crit_dmg": 0.7072979600000053,
+   "charge_speed_pct": 1.731207420000004,
+   "charge_dmg_pct": 0.9175926500000031,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리카": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 107.96851036,
+ "ctrl2_variants": [
+  "민트:cube:택티컬 베어 큐브",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "프리카:click:hold_own_fb"
+ ],
+ "final": 107.96851036,
+ "final_variants": [
+  "민트:cube:택티컬 베어 큐브",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "프리카:click:hold_own_fb"
+ ],
+ "sims": 2368,
+ "seconds": 329.6
+}

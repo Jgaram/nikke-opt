@@ -1,0 +1,137 @@
+{
+ "id": "S40-r1",
+ "season": 40,
+ "squad": [
+  "목단",
+  "민트",
+  "스노우 화이트 : 헤비암즈",
+  "프리카",
+  "디젤 : 윈터 스위츠"
+ ],
+ "win": null,
+ "pre": 50.08687105,
+ "ctrl": 51.09955663,
+ "ctrl_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:reload:C0.5",
+  "프리카:reload:A0.3"
+ ],
+ "E0": 58.32995838,
+ "O": 69.20635216,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "민트": "공4+크뎀1+차속3+차뎀4",
+  "스노우 화이트 : 헤비암즈": "공3+장탄1+크확4+크뎀4",
+  "프리카": "공4+크뎀1+차속3+차뎀4",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확2+크뎀2"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1339959900000025,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.650871869999996,
+   "crit_dmg": 0.6837436599999975,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4533161800000016,
+   "max_ammo_pct": 0.16377402999999902,
+   "crit_rate": 0.2394432999999978,
+   "crit_dmg": 0.24988294999999994,
+   "charge_speed_pct": 0.36819589000000263,
+   "charge_dmg_pct": 0.3232726099999965,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.059588490000003,
+   "max_ammo_pct": 2.723537130000004,
+   "crit_rate": 1.597758429999999,
+   "crit_dmg": 1.6648267699999977,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.36088269999999767,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4585526299999998,
+   "max_ammo_pct": 0.1604771100000022,
+   "crit_rate": 0.2422555200000005,
+   "crit_dmg": 0.2526475299999973,
+   "charge_speed_pct": 0.36760169000000076,
+   "charge_dmg_pct": 0.32743758000000156,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 14.698406120000001,
+   "atk_pct": 7.947884430000002,
+   "max_ammo_pct": 0.6967368700000023,
+   "crit_rate": 4.799931479999998,
+   "crit_dmg": 4.165689659999998,
+   "charge_speed_pct": 0.9417743099999996,
+   "charge_dmg_pct": 0.8345515099999972,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리카": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 69.48971759,
+ "ctrl2_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.5",
+  "목단:reload:C0.1",
+  "민트:cube:택티컬 부스트 큐브",
+  "민트:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:reload:C0.5",
+  "프리카:reload:A0.3"
+ ],
+ "final": 69.48971759,
+ "final_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.5",
+  "목단:reload:C0.1",
+  "민트:cube:택티컬 부스트 큐브",
+  "민트:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:reload:C0.5",
+  "프리카:reload:A0.3"
+ ],
+ "sims": 2347,
+ "seconds": 244.9
+}

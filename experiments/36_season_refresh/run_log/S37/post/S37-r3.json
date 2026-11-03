@@ -1,0 +1,142 @@
+{
+ "id": "S37-r3",
+ "season": 37,
+ "squad": [
+  "아니스 : 스타",
+  "브래디",
+  "앵커 : 이노센트 메이드",
+  "디젤 : 윈터 스위츠",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 52.97661713,
+ "ctrl": 60.48682333,
+ "ctrl_variants": [
+  "squad:tactic:버충=브래디",
+  "디젤 : 윈터 스위츠:cube:택티컬 어설트 큐브",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "브래디:reload:C0.1_dry",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "앵커 : 이노센트 메이드:click:tap"
+ ],
+ "E0": 67.84380403,
+ "O": 77.81301907,
+ "alloc": {
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "브래디": "우코4+공4+크뎀1+차속3",
+  "앵커 : 이노센트 메이드": "우코4+공4+크확1+크뎀3",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.547336180000002,
+   "max_ammo_pct": 0.5703314600000056,
+   "crit_rate": 0.9630679699999973,
+   "crit_dmg": 1.3491483699999947,
+   "charge_speed_pct": 0.168295999999998,
+   "charge_dmg_pct": 0.8019565599999936,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브래디": {
+   "element_bonus": 10.133879659999998,
+   "atk_pct": 3.480188190000007,
+   "max_ammo_pct": 0.8067951000000022,
+   "crit_rate": 2.1709101299999958,
+   "crit_dmg": 3.2487660299999988,
+   "charge_speed_pct": 3.754419619999993,
+   "charge_dmg_pct": 1.243623679999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 3.39682277,
+   "atk_pct": 1.5400170300000013,
+   "max_ammo_pct": 0.2966386300000039,
+   "crit_rate": 0.7736526900000058,
+   "crit_dmg": 1.0724980699999946,
+   "charge_speed_pct": 0.17984296999999572,
+   "charge_dmg_pct": 0.09939067000000534,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.3861610900000016,
+   "max_ammo_pct": 0.04832516999999825,
+   "crit_rate": 2.1790959199999946,
+   "crit_dmg": 2.144977549999993,
+   "charge_speed_pct": 0.4862479399999984,
+   "charge_dmg_pct": 0.44138261999999884,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 3.553984970000002,
+   "atk_pct": 1.6302705199999963,
+   "max_ammo_pct": 1.7274510999999961,
+   "crit_rate": 0.811927819999994,
+   "crit_dmg": 1.1486005699999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "브래디": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_speed_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 79.42710976,
+ "ctrl2_variants": [
+  "squad:tactic:버충=브래디",
+  "디젤 : 윈터 스위츠:cube:택티컬 부스트 큐브",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브래디:reload:C0.5",
+  "아니스 : 스타:reload:B0.5",
+  "앵커 : 이노센트 메이드:click:tap"
+ ],
+ "final": 79.42710976,
+ "final_variants": [
+  "squad:tactic:버충=브래디",
+  "디젤 : 윈터 스위츠:cube:택티컬 부스트 큐브",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브래디:reload:C0.5",
+  "아니스 : 스타:reload:B0.5",
+  "앵커 : 이노센트 메이드:click:tap"
+ ],
+ "sims": 2441,
+ "seconds": 352.7
+}

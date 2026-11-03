@@ -1,0 +1,148 @@
+{
+ "id": "S33-r7",
+ "season": 33,
+ "squad": [
+  "라피 : 레드 후드",
+  "그레이브",
+  "퀀시 : 이스케이프 퀸",
+  "길로틴 : 윈터 슬레이어",
+  "바이퍼"
+ ],
+ "win": null,
+ "pre": 30.6489929,
+ "ctrl": 31.3990157,
+ "ctrl_variants": [
+  "그레이브:burst:delay1",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "길로틴 : 윈터 슬레이어:reload:C0.1_dry",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "바이퍼:cube:택티컬 베어 큐브",
+  "바이퍼:reload:B0.1",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.1_dry"
+ ],
+ "E0": 36.89262111,
+ "O": 39.88599392,
+ "alloc": {
+  "라피 : 레드 후드": "공4+장탄4+크확2+크뎀2",
+  "그레이브": "공4+크확4+크뎀4",
+  "퀀시 : 이스케이프 퀸": "우코4+공4+크확1+크뎀3",
+  "길로틴 : 윈터 슬레이어": "우코4+공4+장탄2+크확2",
+  "바이퍼": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "라피 : 레드 후드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9091810600000017,
+   "max_ammo_pct": 0.9211375100000012,
+   "crit_rate": 0.20948625999999848,
+   "crit_dmg": 0.18092920000000134,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8040230300000033,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.0016606399999972155,
+   "crit_dmg": 0.9722965599999966,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 5.255325920000001,
+   "atk_pct": 2.4039825300000004,
+   "max_ammo_pct": 0.6305104099999994,
+   "crit_rate": 1.059191140000003,
+   "crit_dmg": 1.9265613700000017,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길로틴 : 윈터 슬레이어": {
+   "element_bonus": 3.4276604000000006,
+   "atk_pct": 1.3954035499999975,
+   "max_ammo_pct": 0.9631011100000038,
+   "crit_rate": 0.6995935200000005,
+   "crit_dmg": 0.6042739600000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "바이퍼": {
+   "element_bonus": 3.379199479999997,
+   "atk_pct": 2.7265099000000035,
+   "max_ammo_pct": 0.6029295399999981,
+   "crit_rate": 0.6835097900000022,
+   "crit_dmg": 0.5903855899999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "라피 : 레드 후드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "길로틴 : 윈터 슬레이어": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "바이퍼": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 40.16820625,
+ "ctrl2_variants": [
+  "그레이브:burst:wait2",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:C0.1",
+  "길로틴 : 윈터 슬레이어:reload:B0.1",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "바이퍼:cube:택티컬 베어 큐브",
+  "바이퍼:reload:B0.1",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:reload:A0.3"
+ ],
+ "final": 40.16820625,
+ "final_variants": [
+  "그레이브:burst:wait2",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "그레이브:reload:C0.1",
+  "길로틴 : 윈터 슬레이어:reload:B0.1",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "바이퍼:cube:택티컬 베어 큐브",
+  "바이퍼:reload:B0.1",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:reload:A0.3"
+ ],
+ "sims": 2121,
+ "seconds": 226.6
+}

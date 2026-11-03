@@ -1,0 +1,136 @@
+{
+ "id": "S36-r5",
+ "season": 36,
+ "squad": [
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈",
+  "목단",
+  "나유타",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 52.44526671,
+ "ctrl": 54.28722701,
+ "ctrl_variants": [
+  "squad:camera:메이든 : 아이스 로즈",
+  "나유타:cube:택티컬 어설트 큐브",
+  "아니스 : 스파클링 서머:reload:C0.1_dry",
+  "헬름:reload:C0.1_dry"
+ ],
+ "E0": 52.95945661,
+ "O": 68.42213528,
+ "alloc": {
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "메이든 : 아이스 로즈": "우코4+공4+차속4",
+  "목단": "우코4+공4+크확2+크뎀2",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름": "공4+차속4+차뎀4"
+ },
+ "screen": {
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 4.4983504,
+   "atk_pct": 2.5051227299999965,
+   "max_ammo_pct": -7.989581320000006,
+   "crit_rate": 0.9392819600000024,
+   "crit_dmg": 0.8834808600000059,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 7.7986554899999945,
+   "atk_pct": 2.42451071,
+   "max_ammo_pct": 0.7255760499999937,
+   "crit_rate": 1.605813480000002,
+   "crit_dmg": 1.4081674900000039,
+   "charge_speed_pct": 2.6052280200000055,
+   "charge_dmg_pct": 0.6171959900000061,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "목단": {
+   "element_bonus": 4.841363919999999,
+   "atk_pct": 2.2557745399999973,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.9221617500000008,
+   "crit_dmg": 0.8480523000000062,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4383076699999933,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.4425958600000044,
+   "crit_dmg": 0.38228647000000393,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5500703700000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6324729899999966,
+   "max_ammo_pct": -0.039759950000004096,
+   "crit_rate": 0.17834675000000288,
+   "crit_dmg": 0.15814067000000165,
+   "charge_speed_pct": 0.5973390700000039,
+   "charge_dmg_pct": 0.2062468400000057,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 69.36404925,
+ "ctrl2_variants": [
+  "squad:camera:메이든 : 아이스 로즈",
+  "나유타:cube:택티컬 어설트 큐브",
+  "메이든 : 아이스 로즈:reload:C0.1",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "헬름:reload:C0.1_dry"
+ ],
+ "final": 69.36404925,
+ "final_variants": [
+  "squad:camera:메이든 : 아이스 로즈",
+  "나유타:cube:택티컬 어설트 큐브",
+  "메이든 : 아이스 로즈:reload:C0.1",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "헬름:reload:C0.1_dry"
+ ],
+ "sims": 2311,
+ "seconds": 310.6
+}

@@ -1,0 +1,140 @@
+{
+ "id": "S35-r6",
+ "season": 35,
+ "squad": [
+  "미란다",
+  "나유타",
+  "에이다",
+  "D : 킬러 와이프",
+  "미하라 : 본딩 체인"
+ ],
+ "win": null,
+ "pre": 43.77094331,
+ "ctrl": 47.50812116,
+ "ctrl_variants": [
+  "D : 킬러 와이프:cube:렐릭 부스트 큐브",
+  "squad:camera:D : 킬러 와이프",
+  "나유타:cube:택티컬 어설트 큐브",
+  "미란다:reload:C0.1",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "에이다:cube:렐릭 크래시 큐브"
+ ],
+ "E0": 47.66543574,
+ "O": 56.89956969,
+ "alloc": {
+  "미란다": "우코4+공4+장탄3+크뎀1",
+  "나유타": "공4+크확4+크뎀4",
+  "에이다": "장탄3+크확4+크뎀4+차뎀1",
+  "D : 킬러 와이프": "우코4+공4+장탄2+차뎀2",
+  "미하라 : 본딩 체인": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 2.484177029999998,
+   "atk_pct": 1.4035612200000003,
+   "max_ammo_pct": 1.1777291200000022,
+   "crit_rate": 0.6012350399999988,
+   "crit_dmg": 0.857022299999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2021390700000012,
+   "max_ammo_pct": 0.10985993999999977,
+   "crit_rate": 0.4787927300000021,
+   "crit_dmg": 0.27046725000000293,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.37007496999999745,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 0.0,
+   "atk_pct": -3.7532670900000014,
+   "max_ammo_pct": 0.7167863299999979,
+   "crit_rate": 0.305442130000003,
+   "crit_dmg": 1.9298261500000038,
+   "charge_speed_pct": -0.211482629999999,
+   "charge_dmg_pct": 0.1263412300000013,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "D : 킬러 와이프": {
+   "element_bonus": 0.7496931000000018,
+   "atk_pct": 0.5662610099999981,
+   "max_ammo_pct": 1.2736193399999962,
+   "crit_rate": 0.20329851999999704,
+   "crit_dmg": 0.11976517000000086,
+   "charge_speed_pct": 0.15730442000000266,
+   "charge_dmg_pct": 0.3066690300000019,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미하라 : 본딩 체인": {
+   "element_bonus": 10.9823485,
+   "atk_pct": 9.52779503,
+   "max_ammo_pct": 4.231598210000001,
+   "crit_rate": 4.676200899999998,
+   "crit_dmg": 1.606970650000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "D : 킬러 와이프": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "미하라 : 본딩 체인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 56.89956969,
+ "ctrl2_variants": [
+  "D : 킬러 와이프:cube:렐릭 부스트 큐브",
+  "squad:camera:D : 킬러 와이프",
+  "나유타:cube:택티컬 어설트 큐브",
+  "미란다:reload:C0.1",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "에이다:cube:렐릭 크래시 큐브"
+ ],
+ "final": 56.89956969,
+ "final_variants": [
+  "D : 킬러 와이프:cube:렐릭 부스트 큐브",
+  "squad:camera:D : 킬러 와이프",
+  "나유타:cube:택티컬 어설트 큐브",
+  "미란다:reload:C0.1",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "에이다:cube:렐릭 크래시 큐브"
+ ],
+ "sims": 1419,
+ "seconds": 174.3
+}

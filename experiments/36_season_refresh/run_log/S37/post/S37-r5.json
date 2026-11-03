@@ -1,0 +1,143 @@
+{
+ "id": "S37-r5",
+ "season": 37,
+ "squad": [
+  "미란다",
+  "나유타",
+  "스노우 화이트 : 헤비암즈",
+  "프리바티",
+  "리틀 머메이드"
+ ],
+ "win": null,
+ "pre": 67.97629091,
+ "ctrl": 70.68420008,
+ "ctrl_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "리틀 머메이드:reload:C0.1_dry",
+  "미란다:burst:wait2",
+  "스노우 화이트 : 헤비암즈:reload:C0.1",
+  "프리바티:reload:C0.1_dry"
+ ],
+ "E0": 66.84471464,
+ "O": 92.00765957,
+ "alloc": {
+  "미란다": "공4+장탄3+크확1+크뎀4",
+  "나유타": "공4+장탄1+크확4+차뎀3",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크뎀4",
+  "프리바티": "우코4+공4+크확4",
+  "리틀 머메이드": "공4+장탄3+크확4+크뎀1"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8456986600000107,
+   "max_ammo_pct": 1.6072248700000102,
+   "crit_rate": 0.39509821999999417,
+   "crit_dmg": 0.5901558499999879,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5721589700000038,
+   "max_ammo_pct": 0.5394724400000115,
+   "crit_rate": 0.7029492899999923,
+   "crit_dmg": 0.3845547499999924,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5816661599999975,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 17.644251380000007,
+   "atk_pct": 6.07100856000001,
+   "max_ammo_pct": 0.3544284400000066,
+   "crit_rate": 4.124790919999995,
+   "crit_dmg": 5.715808359999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.9260135399999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 3.117208550000008,
+   "atk_pct": 3.125881630000009,
+   "max_ammo_pct": -13.548514049999994,
+   "crit_rate": 1.877252129999988,
+   "crit_dmg": 0.6391957699999864,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4004474600000094,
+   "max_ammo_pct": 1.2490622600000023,
+   "crit_rate": 0.5755166399999894,
+   "crit_dmg": 0.31402375999999776,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct",
+   "max_ammo_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "element_bonus",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 94.35929603,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:burst:delay2",
+  "리틀 머메이드:cover:on",
+  "리틀 머메이드:reload:C0.1_dry",
+  "미란다:burst:pattern=전담",
+  "미란다:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:reload:C0.1",
+  "프리바티:reload:C0.1_dry"
+ ],
+ "final": 94.35929603,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:burst:delay2",
+  "리틀 머메이드:cover:on",
+  "리틀 머메이드:reload:C0.1_dry",
+  "미란다:burst:pattern=전담",
+  "미란다:reload:A0.3",
+  "스노우 화이트 : 헤비암즈:reload:C0.1",
+  "프리바티:reload:C0.1_dry"
+ ],
+ "sims": 2549,
+ "seconds": 366.0
+}

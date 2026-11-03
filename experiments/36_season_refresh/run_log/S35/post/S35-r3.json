@@ -1,0 +1,133 @@
+{
+ "id": "S35-r3",
+ "season": 35,
+ "squad": [
+  "크라운",
+  "라피 : 레드 후드",
+  "헬름",
+  "리틀 머메이드",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 50.12659811,
+ "ctrl": 51.38665627,
+ "ctrl_variants": [
+  "라피 : 레드 후드:reload:A0.3",
+  "리틀 머메이드:reload:B0.5",
+  "프리바티:cube:렐릭 어설트 큐브",
+  "프리바티:reload:C0.5",
+  "헬름:cube:택티컬 부스트 큐브"
+ ],
+ "E0": 51.39736115,
+ "O": 68.15817978,
+ "alloc": {
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "헬름": "공4+크확4+크뎀4",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7726034400000046,
+   "max_ammo_pct": 0.17783349999999842,
+   "crit_rate": 0.26018325999999803,
+   "crit_dmg": 0.22716035999999917,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 12.616083690000004,
+   "atk_pct": 5.308902930000002,
+   "max_ammo_pct": -0.05522622999999527,
+   "crit_rate": 2.2090038199999995,
+   "crit_dmg": 1.9232017200000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8706489300000015,
+   "max_ammo_pct": -0.8712348999999975,
+   "crit_rate": 0.5251544400000014,
+   "crit_dmg": 0.45601283999999964,
+   "charge_speed_pct": 0.6767413799999957,
+   "charge_dmg_pct": 0.2813559800000007,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.168913680000003,
+   "max_ammo_pct": 0.24033049000000517,
+   "crit_rate": 0.7523083999999969,
+   "crit_dmg": 0.6522156699999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5476874900000013,
+   "max_ammo_pct": -5.872564489999995,
+   "crit_rate": 0.1262034000000014,
+   "crit_dmg": 0.11001698999999832,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 69.0010525,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:reload:C0.1",
+  "프리바티:reload:C0.5",
+  "헬름:cube:택티컬 어설트 큐브"
+ ],
+ "final": 69.0010525,
+ "final_variants": [
+  "라피 : 레드 후드:reload:C0.1",
+  "프리바티:reload:C0.5",
+  "헬름:cube:택티컬 어설트 큐브"
+ ],
+ "sims": 2486,
+ "seconds": 341.0
+}

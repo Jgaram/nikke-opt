@@ -1,0 +1,143 @@
+{
+ "id": "S37-r0",
+ "season": 37,
+ "squad": [
+  "라피 : 레드 후드",
+  "민트",
+  "레드 후드",
+  "퀀시 : 이스케이프 퀸",
+  "프리카"
+ ],
+ "win": null,
+ "pre": 27.58325161,
+ "ctrl": 29.85705923,
+ "ctrl_variants": [
+  "라피 : 레드 후드:cancel:on",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "레드 후드:click:tap",
+  "레드 후드:cover:on",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "프리카:cube:렐릭 피어싱 큐브"
+ ],
+ "E0": 34.85412646,
+ "O": 38.89073334,
+ "alloc": {
+  "라피 : 레드 후드": "공4+장탄4+크확2+크뎀2",
+  "민트": "공4+차속4+차뎀4",
+  "레드 후드": "공4+장탄2+크확3+크뎀3",
+  "퀀시 : 이스케이프 퀸": "우코4+공3+크확1+크뎀4",
+  "프리카": "우코4+공3+장탄3+차속2"
+ },
+ "screen": {
+  "라피 : 레드 후드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0865772600000057,
+   "max_ammo_pct": 1.270498510000003,
+   "crit_rate": 0.509445889999995,
+   "crit_dmg": 0.5282350199999968,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.39690481000000233,
+   "max_ammo_pct": 0.15145930000000618,
+   "crit_rate": 0.19455066999999815,
+   "crit_dmg": 0.20226716999999894,
+   "charge_speed_pct": 0.3421362799999983,
+   "charge_dmg_pct": 0.2649061499999945,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레드 후드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4413081000000005,
+   "max_ammo_pct": 2.743786320000005,
+   "crit_rate": 0.8672932099999997,
+   "crit_dmg": 0.9058574099999959,
+   "charge_speed_pct": 0.7179133299999947,
+   "charge_dmg_pct": 0.7180350999999945,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 7.349878450000002,
+   "atk_pct": 2.7422237100000046,
+   "max_ammo_pct": 1.883470360000004,
+   "crit_rate": 2.0855230299999974,
+   "crit_dmg": 3.2699134199999946,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 1.6490744000000035,
+   "atk_pct": 0.9305426500000067,
+   "max_ammo_pct": 0.6281225100000043,
+   "crit_rate": 0.4541464799999986,
+   "crit_dmg": 0.4704666299999971,
+   "charge_speed_pct": 0.6962056699999977,
+   "charge_dmg_pct": 0.61829058,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "라피 : 레드 후드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "레드 후드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "프리카": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 39.69316948,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:cancel:on",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "레드 후드:click:tap",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.1_dry",
+  "프리카:cube:렐릭 피어싱 큐브"
+ ],
+ "final": 39.69316948,
+ "final_variants": [
+  "라피 : 레드 후드:cancel:on",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "레드 후드:click:tap",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.1_dry",
+  "프리카:cube:렐릭 피어싱 큐브"
+ ],
+ "sims": 2414,
+ "seconds": 412.4
+}

@@ -1,0 +1,139 @@
+{
+ "id": "S38-r0",
+ "season": 38,
+ "squad": [
+  "나유타",
+  "신데렐라 : 크리스탈 웨이브",
+  "리틀 머메이드",
+  "프리바티",
+  "벨벳"
+ ],
+ "win": null,
+ "pre": 57.60434707,
+ "ctrl": 59.3855146,
+ "ctrl_variants": [
+  "squad:camera:벨벳",
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "프리바티:reload:C0.1"
+ ],
+ "E0": 58.71761333,
+ "O": 75.80306517,
+ "alloc": {
+  "나유타": "우코4+공4+크확1+차뎀3",
+  "신데렐라 : 크리스탈 웨이브": "공4+장탄2+크확3+크뎀3",
+  "리틀 머메이드": "우코4+공4+크확2+크뎀2",
+  "프리바티": "공4+크확4+크뎀4",
+  "벨벳": "우코4+공4+차속2+차뎀2"
+ },
+ "screen": {
+  "나유타": {
+   "element_bonus": 7.313195110000002,
+   "atk_pct": 3.9554138399999985,
+   "max_ammo_pct": 0.005340849999996067,
+   "crit_rate": 1.2981853799999996,
+   "crit_dmg": 1.1213046399999982,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.3671373700000018,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.651960019999997,
+   "max_ammo_pct": 2.8326797699999986,
+   "crit_rate": 1.1884049100000027,
+   "crit_dmg": 1.026472670000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 9.039526539999997,
+   "atk_pct": 4.910079449999998,
+   "max_ammo_pct": 0.6246464199999977,
+   "crit_rate": 1.5989912000000004,
+   "crit_dmg": 1.3811338699999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5170878099999996,
+   "max_ammo_pct": -9.811595860000004,
+   "crit_rate": 0.15995621999999798,
+   "crit_dmg": 0.13816665000000228,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "벨벳": {
+   "element_bonus": 1.6786872200000005,
+   "atk_pct": 0.94784954,
+   "max_ammo_pct": 0.42448182999999773,
+   "crit_rate": 0.30682515000000166,
+   "crit_dmg": 0.26501955999999893,
+   "charge_speed_pct": 2.0953167400000012,
+   "charge_dmg_pct": 0.5160394400000001,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "나유타": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "벨벳": [
+   "charge_speed_pct",
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 76.17655316,
+ "ctrl2_variants": [
+  "squad:camera:벨벳",
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1",
+  "벨벳:reload:A0.3",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "프리바티:reload:C0.1"
+ ],
+ "final": 76.17655316,
+ "final_variants": [
+  "squad:camera:벨벳",
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1",
+  "벨벳:reload:A0.3",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+  "프리바티:reload:C0.1"
+ ],
+ "sims": 2359,
+ "seconds": 326.9
+}

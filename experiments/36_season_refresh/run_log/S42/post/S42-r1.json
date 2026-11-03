@@ -1,0 +1,146 @@
+{
+ "id": "S42-r1",
+ "season": 42,
+ "squad": [
+  "리틀 머메이드",
+  "크라운",
+  "네온 : 비전 아이",
+  "리버렐리오",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 58.44580158,
+ "ctrl": 60.23278848,
+ "ctrl_variants": [
+  "squad:camera:리버렐리오",
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "리버렐리오:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:cancel:on",
+  "리틀 머메이드:reload:B0.1",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "크라운:reload:C0.5"
+ ],
+ "E0": 62.98860871,
+ "O": 76.02615242,
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "크라운": "공4+크확4+크뎀4",
+  "네온 : 비전 아이": "우코4+공3+장탄1+차속4",
+  "리버렐리오": "공4+크확1+크뎀3+차속4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5679496700000044,
+   "max_ammo_pct": 0.032711100000000215,
+   "crit_rate": 0.7553974300000021,
+   "crit_dmg": 1.1312750699999938,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6091771399999999,
+   "max_ammo_pct": -0.2676444000000018,
+   "crit_rate": 0.25191404999999634,
+   "crit_dmg": 0.39222223000000156,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 16.158968880000003,
+   "atk_pct": 5.8323297000000025,
+   "max_ammo_pct": 6.5201622499999985,
+   "crit_rate": 3.4813821699999963,
+   "crit_dmg": 5.143625890000003,
+   "charge_speed_pct": 11.202813720000002,
+   "charge_dmg_pct": 1.6315002600000028,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.7025036300000025,
+   "max_ammo_pct": 0.6520646000000028,
+   "crit_rate": 0.9694159299999967,
+   "crit_dmg": 1.5401855600000047,
+   "charge_speed_pct": 2.0399073799999954,
+   "charge_dmg_pct": 0.7424901099999985,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5261566300000027,
+   "max_ammo_pct": 0.2146060000000034,
+   "crit_rate": 0.22384508999999753,
+   "crit_dmg": 0.3134750199999985,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 78.11374516,
+ "ctrl2_variants": [
+  "squad:camera:리버렐리오",
+  "리버렐리오:cube:택티컬 부스트 큐브",
+  "리틀 머메이드:cancel:on",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "크라운:reload:C0.5"
+ ],
+ "final": 78.11374516,
+ "final_variants": [
+  "squad:camera:리버렐리오",
+  "리버렐리오:cube:택티컬 부스트 큐브",
+  "리틀 머메이드:cancel:on",
+  "리틀 머메이드:cube:택티컬 베어 큐브",
+  "리틀 머메이드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "크라운:reload:C0.5"
+ ],
+ "sims": 2359,
+ "seconds": 367.0
+}

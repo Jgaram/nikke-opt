@@ -1,0 +1,137 @@
+{
+ "id": "S33-r2",
+ "season": 33,
+ "squad": [
+  "리틀 머메이드",
+  "리버렐리오",
+  "앵커 : 이노센트 메이드",
+  "브래디",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 42.33280174,
+ "ctrl": 45.75606713,
+ "ctrl_variants": [
+  "리틀 머메이드:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5"
+ ],
+ "E0": 50.19228423,
+ "O": 58.81468032,
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "리버렐리오": "공4+크확2+크뎀4+차속2",
+  "앵커 : 이노센트 메이드": "우코4+공4+크확1+크뎀3",
+  "브래디": "우코4+공4+차속4",
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1141387699999967,
+   "max_ammo_pct": -0.22058192000000076,
+   "crit_rate": 0.520656890000005,
+   "crit_dmg": 0.7448630499999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.836995860000002,
+   "max_ammo_pct": 0.084636500000002,
+   "crit_rate": 0.9221227700000014,
+   "crit_dmg": 1.4660040700000039,
+   "charge_speed_pct": 2.632119320000001,
+   "charge_dmg_pct": 0.7147279100000006,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 1.4696569199999985,
+   "atk_pct": 0.7586334499999978,
+   "max_ammo_pct": 0.1245838500000005,
+   "crit_rate": 0.3316657599999999,
+   "crit_dmg": 0.47761998000000006,
+   "charge_speed_pct": 0.14229216000000378,
+   "charge_dmg_pct": 0.015395990000001802,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브래디": {
+   "element_bonus": 10.49300031,
+   "atk_pct": 3.7850095199999956,
+   "max_ammo_pct": 1.2105244699999957,
+   "crit_rate": 2.468646679999999,
+   "crit_dmg": 3.3338011399999985,
+   "charge_speed_pct": 4.402582110000004,
+   "charge_dmg_pct": 1.2004742900000025,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.442301569999998,
+   "atk_pct": 1.2611795400000005,
+   "max_ammo_pct": 0.17692837999999966,
+   "crit_rate": 0.5523341200000047,
+   "crit_dmg": 0.7997004099999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브래디": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 58.82562328,
+ "ctrl2_variants": [
+  "리틀 머메이드:reload:B0.5",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5"
+ ],
+ "final": 58.82562328,
+ "final_variants": [
+  "리틀 머메이드:reload:B0.5",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5"
+ ],
+ "sims": 2401,
+ "seconds": 163.0
+}

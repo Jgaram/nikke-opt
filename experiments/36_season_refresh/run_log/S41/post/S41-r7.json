@@ -1,0 +1,149 @@
+{
+ "id": "S41-r7",
+ "season": 41,
+ "squad": [
+  "길티 : 마이티 바니",
+  "플로라",
+  "신 : 스위프트 바니",
+  "타키나",
+  "목단"
+ ],
+ "win": null,
+ "pre": 44.41458633,
+ "ctrl": 50.05606507,
+ "ctrl_variants": [
+  "길티 : 마이티 바니:burst:wait2",
+  "길티 : 마이티 바니:cube:렐릭 크래시 큐브",
+  "길티 : 마이티 바니:reload:C0.1_dry",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "신 : 스위프트 바니:cube:렐릭 크래시 큐브",
+  "타키나:click:hold_own_fb+tap",
+  "타키나:cube:렐릭 퀀텀 큐브",
+  "타키나:reload:C0.5",
+  "플로라:cube:렐릭 비고르 큐브"
+ ],
+ "E0": 57.01574194,
+ "O": 59.0347675,
+ "alloc": {
+  "길티 : 마이티 바니": "우코4+공4+장탄2+차속2",
+  "플로라": "우코4+공4+장탄4",
+  "신 : 스위프트 바니": "우코4+공4+장탄4",
+  "타키나": "공4+장탄2+크확3+크뎀3",
+  "목단": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "길티 : 마이티 바니": {
+   "element_bonus": 11.85374866,
+   "atk_pct": 4.887502779999998,
+   "max_ammo_pct": 4.658361329999998,
+   "crit_rate": 2.0969503800000027,
+   "crit_dmg": 1.8112361300000046,
+   "charge_speed_pct": 3.821001250000002,
+   "charge_dmg_pct": 1.3986808400000044,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.38250242000000156,
+   "max_ammo_pct": -0.28616389000000453,
+   "crit_rate": 0.1399704300000053,
+   "crit_dmg": 0.12088735000000383,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신 : 스위프트 바니": {
+   "element_bonus": 8.691054059999999,
+   "atk_pct": 3.4483361099999996,
+   "max_ammo_pct": 1.7335499200000015,
+   "crit_rate": 1.6150421700000024,
+   "crit_dmg": 1.3964685600000024,
+   "charge_speed_pct": 3.231144790000002,
+   "charge_dmg_pct": 2.728662849999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8915615800000012,
+   "max_ammo_pct": 1.0104066399999994,
+   "crit_rate": 0.2984126400000022,
+   "crit_dmg": 0.25775356999999843,
+   "charge_speed_pct": -0.011025459999999043,
+   "charge_dmg_pct": 0.0064647900000025516,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6067927299999951,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.19177394000000447,
+   "crit_dmg": 0.16565645000000018,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "길티 : 마이티 바니": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_speed_pct"
+  ],
+  "플로라": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "신 : 스위프트 바니": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "타키나": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 59.0347675,
+ "ctrl2_variants": [
+  "길티 : 마이티 바니:burst:wait2",
+  "길티 : 마이티 바니:cube:렐릭 크래시 큐브",
+  "길티 : 마이티 바니:reload:C0.1_dry",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "신 : 스위프트 바니:cube:렐릭 크래시 큐브",
+  "타키나:click:hold_own_fb+tap",
+  "타키나:cube:렐릭 퀀텀 큐브",
+  "타키나:reload:C0.5",
+  "플로라:cube:렐릭 비고르 큐브"
+ ],
+ "final": 59.0347675,
+ "final_variants": [
+  "길티 : 마이티 바니:burst:wait2",
+  "길티 : 마이티 바니:cube:렐릭 크래시 큐브",
+  "길티 : 마이티 바니:reload:C0.1_dry",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "신 : 스위프트 바니:cube:렐릭 크래시 큐브",
+  "타키나:click:hold_own_fb+tap",
+  "타키나:cube:렐릭 퀀텀 큐브",
+  "타키나:reload:C0.5",
+  "플로라:cube:렐릭 비고르 큐브"
+ ],
+ "sims": 2393,
+ "seconds": 366.8
+}

@@ -1,0 +1,139 @@
+{
+ "id": "S38-r3",
+ "season": 38,
+ "squad": [
+  "아니스 : 스타",
+  "리버렐리오",
+  "앵커 : 이노센트 메이드",
+  "홍련 : 흑영",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 85.17375201,
+ "ctrl": 91.03397199,
+ "ctrl_variants": [
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5",
+  "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+  "홍련 : 흑영:reload:B0.5"
+ ],
+ "E0": 95.15332522,
+ "O": 106.39302558,
+ "alloc": {
+  "아니스 : 스타": "공4+장탄1+크확3+크뎀4",
+  "리버렐리오": "우코4+공4+차속4",
+  "앵커 : 이노센트 메이드": "공4+장탄1+크확3+크뎀4",
+  "홍련 : 흑영": "우코4+공4+차속4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.390419769999994,
+   "max_ammo_pct": 0.8164237000000014,
+   "crit_rate": 0.8477470400000016,
+   "crit_dmg": 1.2157622000000003,
+   "charge_speed_pct": -0.14251801999999714,
+   "charge_dmg_pct": 0.7234791999999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 11.292407339999997,
+   "atk_pct": 15.751525900000004,
+   "max_ammo_pct": 1.3392718700000046,
+   "crit_rate": 2.362844039999999,
+   "crit_dmg": 3.6794543999999973,
+   "charge_speed_pct": 5.4143742499999945,
+   "charge_dmg_pct": 1.810614650000005,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6132013699999987,
+   "max_ammo_pct": 0.29510632999999586,
+   "crit_rate": 0.2955325799999997,
+   "crit_dmg": 0.4264935000000065,
+   "charge_speed_pct": -0.2439867500000048,
+   "charge_dmg_pct": 0.044863629999994714,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "홍련 : 흑영": {
+   "element_bonus": 22.290380650000003,
+   "atk_pct": 7.699056959999993,
+   "max_ammo_pct": 2.9749426999999997,
+   "crit_rate": 5.594767149999996,
+   "crit_dmg": 6.8412241300000005,
+   "charge_speed_pct": 6.403783880000006,
+   "charge_dmg_pct": 2.3293213000000037,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6507410199999981,
+   "max_ammo_pct": 0.16409654000000273,
+   "crit_rate": 0.3169900000000041,
+   "crit_dmg": 0.4584966299999991,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "element_bonus",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "홍련 : 흑영": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "charge_speed_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 107.53446179,
+ "ctrl2_variants": [
+  "리버렐리오:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5",
+  "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+  "홍련 : 흑영:reload:C0.1_dry"
+ ],
+ "final": 107.53446179,
+ "final_variants": [
+  "리버렐리오:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5",
+  "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+  "홍련 : 흑영:reload:C0.1_dry"
+ ],
+ "sims": 2375,
+ "seconds": 412.9
+}

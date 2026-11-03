@@ -1,0 +1,140 @@
+{
+ "id": "S33-r4",
+ "season": 33,
+ "squad": [
+  "토브",
+  "나유타",
+  "도로시 : 세렌디피티",
+  "드레이크",
+  "솔린 : 프로스트 티켓"
+ ],
+ "win": null,
+ "pre": 52.01659453,
+ "ctrl": 53.42738031,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1",
+  "드레이크:reload:B0.5",
+  "솔린 : 프로스트 티켓:reload:C0.1_dry",
+  "토브:cube:택티컬 베어 큐브",
+  "토브:reload:A0.3"
+ ],
+ "E0": 59.97084877,
+ "O": 64.78563817,
+ "alloc": {
+  "토브": "우코4+공4+장탄1+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "도로시 : 세렌디피티": "우코4+공4+장탄2+크뎀2",
+  "드레이크": "공4+장탄1+크확3+크뎀4",
+  "솔린 : 프로스트 티켓": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "토브": {
+   "element_bonus": 1.0793112600000043,
+   "atk_pct": 0.7322974400000035,
+   "max_ammo_pct": 0.24674631000000602,
+   "crit_rate": 0.21021562999999333,
+   "crit_dmg": 0.274040829999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.242476570000001,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.38053810999999627,
+   "crit_dmg": 0.4969946299999961,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.45624169999999964,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "도로시 : 세렌디피티": {
+   "element_bonus": 13.316349360000004,
+   "atk_pct": 3.7041145300000053,
+   "max_ammo_pct": 3.0272271200000063,
+   "crit_rate": 2.5449105999999944,
+   "crit_dmg": 3.3248690699999983,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6191880200000028,
+   "max_ammo_pct": 0.9918869000000043,
+   "crit_rate": 0.780951519999995,
+   "crit_dmg": 1.0199969999999965,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "솔린 : 프로스트 티켓": {
+   "element_bonus": 4.961997000000004,
+   "atk_pct": 1.913727300000005,
+   "max_ammo_pct": 1.0569853300000034,
+   "crit_rate": 0.9576923999999991,
+   "crit_dmg": 1.2503921999999932,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "도로시 : 세렌디피티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "솔린 : 프로스트 티켓": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 64.79362588,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1",
+  "드레이크:reload:B0.5",
+  "솔린 : 프로스트 티켓:reload:C0.1_dry",
+  "토브:cube:택티컬 베어 큐브",
+  "토브:reload:C0.1_dry"
+ ],
+ "final": 64.79362588,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1",
+  "드레이크:reload:B0.5",
+  "솔린 : 프로스트 티켓:reload:C0.1_dry",
+  "토브:cube:택티컬 베어 큐브",
+  "토브:reload:C0.1_dry"
+ ],
+ "sims": 2273,
+ "seconds": 164.7
+}

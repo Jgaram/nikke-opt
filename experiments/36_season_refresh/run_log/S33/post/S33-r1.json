@@ -1,0 +1,138 @@
+{
+ "id": "S33-r1",
+ "season": 33,
+ "squad": [
+  "리타",
+  "크라운",
+  "헬름",
+  "루드밀라 : 윈터 오너",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "win": null,
+ "pre": 50.00607755,
+ "ctrl": 51.59178776,
+ "ctrl_variants": [
+  "루드밀라 : 윈터 오너:reload:A0.3",
+  "리타:reload:C0.1_dry",
+  "크라운:reload:C0.1_dry",
+  "헬름:reload:C0.5"
+ ],
+ "E0": 59.54877288,
+ "O": 66.00738289,
+ "alloc": {
+  "리타": "공4+장탄1+크확3+크뎀4",
+  "크라운": "공4+장탄2+크확3+크뎀3",
+  "헬름": "우코4+공4+크확1+차속3",
+  "루드밀라 : 윈터 오너": "우코4+공4+크확1+크뎀3",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.613645720000001,
+   "max_ammo_pct": 0.039056469999998455,
+   "crit_rate": 0.2371417600000001,
+   "crit_dmg": 0.18282366999999766,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7179141000000016,
+   "max_ammo_pct": 0.6469926000000044,
+   "crit_rate": 0.28875195999999903,
+   "crit_dmg": 0.22207020999999827,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 7.509815940000003,
+   "atk_pct": 4.525507740000002,
+   "max_ammo_pct": -0.4342944599999967,
+   "crit_rate": 2.0772581599999995,
+   "crit_dmg": 1.5366493100000014,
+   "charge_speed_pct": 2.0722148500000017,
+   "charge_dmg_pct": 0.7259626800000021,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 7.3836128599999995,
+   "atk_pct": 4.189292860000002,
+   "max_ammo_pct": -0.11411910999999719,
+   "crit_rate": 1.6337484800000013,
+   "crit_dmg": 2.2936793299999962,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 4.80613589,
+   "atk_pct": 3.55233106,
+   "max_ammo_pct": 0.8588669900000028,
+   "crit_rate": 1.1304361299999997,
+   "crit_dmg": 0.8646331300000014,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 66.28112729,
+ "ctrl2_variants": [
+  "squad:camera:헬름",
+  "루드밀라 : 윈터 오너:cube:택티컬 부스트 큐브",
+  "루드밀라 : 윈터 오너:reload:A0.3",
+  "리타:reload:A0.3",
+  "크라운:reload:A0.3",
+  "헬름:reload:C0.5"
+ ],
+ "final": 66.28112729,
+ "final_variants": [
+  "squad:camera:헬름",
+  "루드밀라 : 윈터 오너:cube:택티컬 부스트 큐브",
+  "루드밀라 : 윈터 오너:reload:A0.3",
+  "리타:reload:A0.3",
+  "크라운:reload:A0.3",
+  "헬름:reload:C0.5"
+ ],
+ "sims": 2311,
+ "seconds": 210.6
+}

@@ -1,0 +1,151 @@
+{
+ "id": "S39-r5",
+ "season": 39,
+ "squad": [
+  "리타",
+  "레이븐",
+  "이브",
+  "민트",
+  "프리카"
+ ],
+ "win": null,
+ "pre": 56.58298877,
+ "ctrl": 59.78547449,
+ "ctrl_variants": [
+  "squad:tactic:버충=프리카",
+  "레이븐:cube:택티컬 어설트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "이브:cube:택티컬 베어 큐브",
+  "프리카:reload:C0.1_dry"
+ ],
+ "E0": 66.64080898,
+ "O": 80.25048788,
+ "alloc": {
+  "리타": "우코4+공4+크확2+크뎀2",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "이브": "우코4+공3+크확1+크뎀4",
+  "민트": "우코4+공4+차속4",
+  "프리카": "공4+장탄2+차속4+차뎀2"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 2.1771491300000037,
+   "atk_pct": 1.140114120000007,
+   "max_ammo_pct": 0.48324415999999815,
+   "crit_rate": 0.6371123499999953,
+   "crit_dmg": 0.6161443799999944,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 13.119717100000003,
+   "atk_pct": 5.842370200000005,
+   "max_ammo_pct": -0.07644284999999229,
+   "crit_rate": 3.8744414800000015,
+   "crit_dmg": 3.7747446799999977,
+   "charge_speed_pct": 0.9804104800000033,
+   "charge_dmg_pct": 0.6024640600000026,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 10.288877750000005,
+   "atk_pct": 3.9981212900000003,
+   "max_ammo_pct": -0.28661737000000187,
+   "crit_rate": 2.091293219999997,
+   "crit_dmg": 6.6293802,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 1.7395065299999999,
+   "atk_pct": 0.9193831999999986,
+   "max_ammo_pct": 0.541736720000003,
+   "crit_rate": 0.507004809999998,
+   "crit_dmg": 0.4936338400000011,
+   "charge_speed_pct": 0.7405250099999989,
+   "charge_dmg_pct": 0.6521528999999902,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4282073100000048,
+   "max_ammo_pct": 2.2858436300000022,
+   "crit_rate": 0.2304807799999935,
+   "crit_dmg": 0.22429207000000417,
+   "charge_speed_pct": 0.8049690699999985,
+   "charge_dmg_pct": 0.2700380200000012,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "민트": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "프리카": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 80.81720383,
+ "ctrl2_variants": [
+  "squad:tactic:버충=프리카",
+  "레이븐:cube:택티컬 부스트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:B0.1",
+  "민트:burst:wait2",
+  "민트:reload:B0.1",
+  "이브:cancel:on",
+  "이브:cube:택티컬 베어 큐브",
+  "이브:reload:A0.3",
+  "프리카:burst:delay1",
+  "프리카:cover:on",
+  "프리카:reload:C0.5"
+ ],
+ "final": 80.81720383,
+ "final_variants": [
+  "squad:tactic:버충=프리카",
+  "레이븐:cube:택티컬 부스트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:B0.1",
+  "민트:burst:wait2",
+  "민트:reload:B0.1",
+  "이브:cancel:on",
+  "이브:cube:택티컬 베어 큐브",
+  "이브:reload:A0.3",
+  "프리카:burst:delay1",
+  "프리카:cover:on",
+  "프리카:reload:C0.5"
+ ],
+ "sims": 2410,
+ "seconds": 294.3
+}

@@ -1,0 +1,138 @@
+{
+ "id": "S41-r4",
+ "season": 41,
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "도로시 : 세렌디피티",
+  "슈가",
+  "솔린 : 프로스트 티켓"
+ ],
+ "win": null,
+ "pre": 73.94056766,
+ "ctrl": 82.27508862,
+ "ctrl_variants": [
+  "도로시 : 세렌디피티:reload:B0.5",
+  "솔린 : 프로스트 티켓:reload:B0.1",
+  "슈가:reload:C0.1",
+  "토브:burst:wait2",
+  "토브:cube:택티컬 베어 큐브",
+  "토브:reload:C0.1_dry"
+ ],
+ "E0": 91.83287347,
+ "O": 99.81603873,
+ "alloc": {
+  "토브": "우코4+공4+장탄1+크뎀3",
+  "아르카나 : 포츈 메이트": "공4+장탄1+크확3+크뎀4",
+  "도로시 : 세렌디피티": "우코4+공4+장탄2+크뎀2",
+  "슈가": "우코4+공4+크확1+크뎀3",
+  "솔린 : 프로스트 티켓": "우코4+공4+장탄1+크뎀3"
+ },
+ "screen": {
+  "토브": {
+   "element_bonus": 0.6081925999999953,
+   "atk_pct": 0.5438743699999975,
+   "max_ammo_pct": 0.8340410499999962,
+   "crit_rate": 0.11875775000000033,
+   "crit_dmg": 0.15448233000000755,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.412949519999998,
+   "max_ammo_pct": 1.150895449999993,
+   "crit_rate": 0.5314342000000067,
+   "crit_dmg": 1.1916161999999986,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "도로시 : 세렌디피티": {
+   "element_bonus": 12.372176929999995,
+   "atk_pct": 5.118656449999989,
+   "max_ammo_pct": 4.115402160000002,
+   "crit_rate": 3.0189340700000002,
+   "crit_dmg": 3.9445168499999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "슈가": {
+   "element_bonus": 9.528774999999996,
+   "atk_pct": 5.526553199999995,
+   "max_ammo_pct": 2.024273100000002,
+   "crit_rate": 2.4031705000000017,
+   "crit_dmg": 4.509957700000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "솔린 : 프로스트 티켓": {
+   "element_bonus": 4.543217499999997,
+   "atk_pct": 2.8358526999999896,
+   "max_ammo_pct": 1.9088031099999938,
+   "crit_rate": 1.1410126000000105,
+   "crit_dmg": 1.4900082999999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "도로시 : 세렌디피티": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "슈가": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "솔린 : 프로스트 티켓": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 99.82591013,
+ "ctrl2_variants": [
+  "도로시 : 세렌디피티:reload:B0.5",
+  "솔린 : 프로스트 티켓:reload:B0.1",
+  "슈가:reload:C0.1",
+  "토브:burst:wait2",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "final": 99.82591013,
+ "final_variants": [
+  "도로시 : 세렌디피티:reload:B0.5",
+  "솔린 : 프로스트 티켓:reload:B0.1",
+  "슈가:reload:C0.1",
+  "토브:burst:wait2",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "sims": 2456,
+ "seconds": 341.2
+}

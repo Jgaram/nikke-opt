@@ -1,0 +1,139 @@
+{
+ "id": "S42-r0",
+ "season": 42,
+ "squad": [
+  "로산나",
+  "나유타",
+  "스노우 화이트 : 헤비암즈",
+  "신데렐라 : 크리스탈 웨이브",
+  "리타"
+ ],
+ "win": null,
+ "pre": 42.56765118,
+ "ctrl": 44.59663448,
+ "ctrl_variants": [
+  "나유타:cover:on",
+  "나유타:cube:택티컬 어설트 큐브",
+  "로산나:burst:wait2",
+  "리타:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 부스트 큐브"
+ ],
+ "E0": 49.91908128,
+ "O": 55.78955166,
+ "alloc": {
+  "로산나": "우코4+공4+장탄3+크뎀1",
+  "나유타": "공4+크확4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "신데렐라 : 크리스탈 웨이브": "공4+장탄2+크확3+크뎀3",
+  "리타": "공4+장탄4+크확2+크뎀2"
+ },
+ "screen": {
+  "로산나": {
+   "element_bonus": 5.9208211099999986,
+   "atk_pct": 2.244555009999999,
+   "max_ammo_pct": 5.296567320000001,
+   "crit_rate": 1.2211774900000023,
+   "crit_dmg": 2.265631120000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.571985980000001,
+   "max_ammo_pct": 0.05420286999999746,
+   "crit_rate": 0.48002790000000317,
+   "crit_dmg": 0.3906458399999977,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.542654749999997,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.261291759999999,
+   "max_ammo_pct": 0.7886775899999989,
+   "crit_rate": 1.0570569699999979,
+   "crit_dmg": 0.8574533500000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.30763238000000115,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.7825751000000025,
+   "max_ammo_pct": 2.2562222000000034,
+   "crit_rate": 1.2081664500000002,
+   "crit_dmg": 1.0210178499999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5172071699999989,
+   "max_ammo_pct": 0.18954004999999796,
+   "crit_rate": 0.1482354199999989,
+   "crit_dmg": 0.12085888000000011,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "로산나": [
+   "element_bonus",
+   "max_ammo_pct",
+   "crit_dmg",
+   "atk_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 58.98300392,
+ "ctrl2_variants": [
+  "나유타:cover:on",
+  "나유타:cube:택티컬 어설트 큐브",
+  "로산나:burst:wait2",
+  "로산나:cube:택티컬 베어 큐브",
+  "리타:reload:C0.1",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브"
+ ],
+ "final": 58.98300392,
+ "final_variants": [
+  "나유타:cover:on",
+  "나유타:cube:택티컬 어설트 큐브",
+  "로산나:burst:wait2",
+  "로산나:cube:택티컬 베어 큐브",
+  "리타:reload:C0.1",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브"
+ ],
+ "sims": 2446,
+ "seconds": 377.5
+}

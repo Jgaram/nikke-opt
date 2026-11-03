@@ -1,0 +1,128 @@
+{
+ "id": "S35-r1",
+ "season": 35,
+ "squad": [
+  "목단",
+  "브리드 : 사일런트 트랙",
+  "스노우 화이트 : 헤비암즈",
+  "디젤 : 윈터 스위츠",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 66.10609619,
+ "ctrl": 66.25543805,
+ "ctrl_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "브리드 : 사일런트 트랙:reload:C0.5"
+ ],
+ "E0": 73.60123628,
+ "O": 87.32921844,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "브리드 : 사일런트 트랙": "우코4+공4+크확1+크뎀3",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9076356499999889,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.43508337000000097,
+   "crit_dmg": 0.7028525400000092,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 4.882747139999992,
+   "atk_pct": 2.733565639999995,
+   "max_ammo_pct": 0.9564375100000007,
+   "crit_rate": 1.0291055900000003,
+   "crit_dmg": 1.5906163300000031,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.1636212499999914,
+   "max_ammo_pct": -0.9904927099999981,
+   "crit_rate": 1.306943750000002,
+   "crit_dmg": 2.1268939899999992,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.34781270999999947,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 16.401119379999997,
+   "atk_pct": 7.7756104699999895,
+   "max_ammo_pct": 0.35141935000000046,
+   "crit_rate": 4.089965849999999,
+   "crit_dmg": 5.021180990000005,
+   "charge_speed_pct": 0.8022408300000023,
+   "charge_dmg_pct": 0.5505034600000016,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.47246305000000177,
+   "max_ammo_pct": 1.62411483999999,
+   "crit_rate": 0.21631213999999943,
+   "crit_dmg": 0.3275339200000076,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 87.36192884,
+ "ctrl2_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "브리드 : 사일런트 트랙:reload:C0.1_dry"
+ ],
+ "final": 87.36192884,
+ "final_variants": [
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "브리드 : 사일런트 트랙:reload:C0.1_dry"
+ ],
+ "sims": 2322,
+ "seconds": 390.4
+}

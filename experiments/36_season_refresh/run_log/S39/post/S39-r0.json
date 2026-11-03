@@ -1,0 +1,139 @@
+{
+ "id": "S39-r0",
+ "season": 39,
+ "squad": [
+  "리타",
+  "민트",
+  "레드 후드",
+  "프리카",
+  "레이븐"
+ ],
+ "win": null,
+ "pre": 44.68384309,
+ "ctrl": 48.7935216,
+ "ctrl_variants": [
+  "squad:tactic:버충=프리카",
+  "레드 후드:click:tap",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "레이븐:reload:C0.1",
+  "리타:reload:C0.1_dry",
+  "민트:reload:C0.1_dry",
+  "프리카:reload:C0.1_dry"
+ ],
+ "E0": 55.39232071,
+ "O": 62.18564812,
+ "alloc": {
+  "리타": "우코4+공4+장탄1+크확3",
+  "민트": "우코4+공4+차속3+차뎀1",
+  "레드 후드": "우코4+공4+크확3+차속1",
+  "프리카": "공4+장탄2+크확2+차뎀4",
+  "레이븐": "우코4+공4+크확2+크뎀2"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 1.9469078600000032,
+   "atk_pct": 1.027592669999997,
+   "max_ammo_pct": 0.6164847200000025,
+   "crit_rate": 0.5690050600000021,
+   "crit_dmg": 0.5512951899999976,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 1.5684694300000004,
+   "atk_pct": 0.823626560000001,
+   "max_ammo_pct": 0.34490672999999816,
+   "crit_rate": 0.45736631999999844,
+   "crit_dmg": 0.44433051000000034,
+   "charge_speed_pct": 0.7166123499999983,
+   "charge_dmg_pct": 0.5880448200000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레드 후드": {
+   "element_bonus": 7.184579069999998,
+   "atk_pct": 3.040192959999999,
+   "max_ammo_pct": 0.7437142400000027,
+   "crit_rate": 2.0898023399999985,
+   "crit_dmg": 2.039325990000002,
+   "charge_speed_pct": 2.4133331000000027,
+   "charge_dmg_pct": 1.8046035300000014,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.392218960000001,
+   "max_ammo_pct": 3.214960470000001,
+   "crit_rate": 0.2105667300000036,
+   "crit_dmg": 0.20490362000000317,
+   "charge_speed_pct": -0.31214251000000104,
+   "charge_dmg_pct": 0.24777710000000042,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 11.946737829999996,
+   "atk_pct": 5.298026129999997,
+   "max_ammo_pct": 0.0905810599999981,
+   "crit_rate": 3.554989980000002,
+   "crit_dmg": 3.4652313300000017,
+   "charge_speed_pct": 0.6086548399999998,
+   "charge_dmg_pct": 0.5417543300000034,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "민트": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "프리카": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ]
+ },
+ "C2": 62.27758353,
+ "ctrl2_variants": [
+  "squad:tactic:버충=프리카",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "레이븐:reload:A0.3",
+  "리타:reload:B0.1",
+  "프리카:reload:C0.1_dry"
+ ],
+ "final": 62.27758353,
+ "final_variants": [
+  "squad:tactic:버충=프리카",
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "레이븐:reload:A0.3",
+  "리타:reload:B0.1",
+  "프리카:reload:C0.1_dry"
+ ],
+ "sims": 2384,
+ "seconds": 328.5
+}
