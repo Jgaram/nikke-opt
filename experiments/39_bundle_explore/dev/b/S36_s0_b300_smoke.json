@@ -1,0 +1,41 @@
+{
+ "arm": "b",
+ "params": {
+  "explore_share": 0.2,
+  "band": [
+   8,
+   80
+  ],
+  "parents": "best5+top40",
+  "seed": "exp39b"
+ },
+ "season": 36,
+ "seed": 0,
+ "budget": 300,
+ "evals": 300,
+ "seconds": 25.6,
+ "best": 203.81256322,
+ "errors": 0,
+ "kicks": 0,
+ "history": [
+  {
+   "evals": 196,
+   "pack": 192.85956572999999,
+   "kick": false
+  },
+  {
+   "evals": 263,
+   "pack": 202.49411686,
+   "kick": false
+  },
+  {
+   "evals": 300,
+   "pack": 203.81256322,
+   "kick": false
+  }
+ ],
+ "sims": 300,
+ "pack": 203.81256322,
+ "G": 0.39300955208309674,
+ "visit": 0.0
+}
