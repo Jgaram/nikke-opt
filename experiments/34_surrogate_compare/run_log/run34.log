@@ -69,3 +69,22 @@ exit 139
 {"nikke": "스노우 화이트 : 헤비암즈", "n_keep": 85, "n_test": 14042}
 {"stop": "budget", "minutes": 80.3}
 exit 3
+--- 재시작 4 08:29
+{"P_obs": 94093, "probe_obs": 27280}
+{"fit": "G1", "seconds": 126.5}
+{"fit": "G2", "seconds": 84.5}
+{"fit": "G3", "seconds": 269.7}
+{"fit": "G4", "seconds": 605.8}
+{"nikke": "브리드 : 사일런트 트랙", "n_keep": 75, "n_test": 5732}
+{"fit": "G1", "seconds": 108.9}
+{"fit": "G2", "seconds": 62.9}
+{"fit": "G3", "seconds": 183.2}
+{"fit": "G4", "seconds": 310.7}
+{"nikke": "아니스 : 스타", "n_keep": 20, "n_test": 21736}
+{"fit": "G1", "seconds": 109.5}
+{"fit": "G2", "seconds": 84.7}
+{"fit": "G3", "seconds": 255.1}
+{"fit": "G4", "seconds": 554.8}
+{"pair": "아니스 : 스타 + 크라운", "n": 8936}
+{"stop": "budget", "minutes": 101.9}
+exit 3
