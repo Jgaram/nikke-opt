@@ -989,6 +989,14 @@ def analyze_season(s: int) -> dict[str, Any]:
     a_tab = five_sum(T, "ref", e36["A_decks"])
     all_rk = [q for v in rsets.values() for q in v]
     rk_best, rk_best_decks = pack_fixed(T, "ref", all_rk, extra)
+    in_tab = [q for q in all_rk if frozenset(q) in T.idx]
+    rk_in, _ = pack_fixed(T, "ref", in_tab, extra)          # 표 공간(풀 안 · 구조 규칙 통과)만, 랭커 순서 값 포함
+    rk_in_tab, _ = pack_fixed(T, "ref", in_tab, None)       # 표 공간만, 표 값만
+    pset = set(pool(s))
+    outside = {frozenset(q) for q in all_rk if frozenset(q) not in T.idx}
+    out_struct = sum(1 for c in outside if c <= pset and not P41.passes(sorted(c)))
+    out_pool = sum(1 for c in outside if not c <= pset)
+    used_out = [list(q) for _, q in rk_best_decks if frozenset(q) not in T.idx]
     top5 = five_sum(T, "ref", rsets["top_five"], extra)
     rank1 = five_sum(T, "ref", rsets["rank1"], extra)
     top5_36 = sum(extra[frozenset(q)] for q in rsets["top_five"]) if all(frozenset(q) in extra for q in rsets["top_five"]) else None
@@ -1029,6 +1037,8 @@ def analyze_season(s: int) -> dict[str, Any]:
         "opt_members": [mem.get(i) for i in opt_idx],
         "A_exp36": e36["A_total"], "A_table": a_tab, "A_ranks_ref": [rk_ref.get(i) if i is not None else None for i in a_idx],
         "ranker_best": rk_best, "ranker_best_decks": [list(x) for _, x in rk_best_decks],
+        "ranker_best_in_table": rk_in, "ranker_best_in_table_tablevals": rk_in_tab,
+        "ranker_outside": {"structure": out_struct, "pool": out_pool, "in_best": used_out},
         "top_five": top5, "top_five_exp36": top5_36, "rank1": rank1, "rank1_exp36": rank1_36,
         "J_top_five": j(opt_decks, rsets["top_five"]), "J_rank1": j(opt_decks, rsets["rank1"]),
         "J_A": j(opt_decks, e36["A_decks"]),
@@ -1080,6 +1090,14 @@ def write_md(rows: Sequence[Mapping[str, Any]]) -> str:
                  f"{r['A_exp36']:.2f} ({pct(r['A_exp36'] / o, 1)}) | {r['A_table']:.2f} ({pct(r['A_table'] / o, 1)}) | "
                  f"{r['ranker_best']:.2f} ({pct(r['ranker_best'] / o, 1)}) | {r['top_five']:.2f} ({pct(r['top_five'] / o, 1)}) | "
                  f"{r['rank1']:.2f} ({pct(r['rank1'] / o, 1)}) | {r['J_top_five']:.2f} | {r['J_A']:.2f} |")
+    L += ["", "랭커 스쿼드 최선의 분해 — 표 공간(풀 안 · 구조 규칙 통과) 밖 스쿼드와 랭커 순서 값을 빼면:", "",
+          "| 시즌 | 랭커 스쿼드 최선(전부) | 표 공간만(랭커 순서 포함) | 표 공간만 · 표 값만 | 표 밖 랭커 스쿼드: 구조 규칙 밖 · 풀 밖 | 최선에 든 표 밖 스쿼드 |",
+          "|---|---|---|---|---|---|"]
+    for r in rows:
+        o, ro = r["opt"], r["ranker_outside"]
+        L.append(f"| S{r['season']} | {pct(r['ranker_best'] / o, 1)} | {pct(r['ranker_best_in_table'] / o, 1)} | "
+                 f"{pct(r['ranker_best_in_table_tablevals'] / o, 1)} | {ro['structure']} · {ro['pool']} | "
+                 f"{'; '.join(' · '.join(q) for q in ro['in_best']) or '—'} |")
     L += ["", "## 순위 · 경치", "", "| 시즌 | OPT 스쿼드 순위(다듬은 값) | (기본 순서 값) | R_need 100 · 99 · 97% | 99% · 97% 5덱 수 | 큰 분류 99 · 97% | 우리 A 스쿼드 순위 |",
           "|---|---|---|---|---|---|---|"]
     for r in rows:
