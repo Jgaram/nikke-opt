@@ -1,0 +1,73 @@
+{
+ "season": 36,
+ "top": 2000,
+ "x": 0.97,
+ "rounds": [
+  {
+   "round": 0,
+   "kind": "base",
+   "opt": 274.17945271,
+   "opt_exact": true,
+   "opt_kept": 182784,
+   "b_comps": 1497,
+   "b_new": 1450,
+   "b_exact": true,
+   "b_count": 12667,
+   "b_complete": true,
+   "targets": {
+    "a": 2000,
+    "c": 26,
+    "b": 1450
+   },
+   "orders": 14164,
+   "sims": 14164,
+   "seconds": 1002.7,
+   "evaluator": "nikke-calc-rs f0f648c",
+   "errors": 0
+  },
+  {
+   "round": 1,
+   "kind": "ref",
+   "opt": 282.75001007,
+   "opt_exact": true,
+   "opt_kept": 182784,
+   "b_comps": 845,
+   "b_new": 353,
+   "b_exact": true,
+   "b_count": 5283,
+   "b_complete": true,
+   "targets": {
+    "a": 2000,
+    "c": 26,
+    "b": 1450,
+    "b1": 353
+   },
+   "orders": 1429,
+   "sims": 1429,
+   "seconds": 134.6,
+   "evaluator": "nikke-calc-rs f0f648c",
+   "errors": 0
+  },
+  {
+   "round": 2,
+   "kind": "ref",
+   "opt": 282.75001007,
+   "opt_exact": true,
+   "opt_kept": 182784,
+   "b_comps": 851,
+   "b_new": 0,
+   "b_exact": true,
+   "b_count": 6166,
+   "b_complete": true,
+   "targets": {
+    "a": 2000,
+    "c": 26,
+    "b": 1450,
+    "b1": 353
+   },
+   "orders": 0,
+   "stop": "97% 안에 새로 든 구성 없음",
+   "sims": 0
+  }
+ ]
+}
