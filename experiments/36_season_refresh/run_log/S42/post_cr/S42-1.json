@@ -1,0 +1,144 @@
+{
+ "id": "S42-1",
+ "season": 42,
+ "squad": [
+  "목단",
+  "민트",
+  "프리카",
+  "리버렐리오",
+  "네온 : 비전 아이"
+ ],
+ "win": null,
+ "pre": 62.19347751,
+ "ctrl": 65.51850418,
+ "ctrl_variants": [
+  "squad:tactic:버충=프리카",
+  "네온 : 비전 아이:reload:A0.3",
+  "리버렐리오:cube:택티컬 어설트 큐브",
+  "민트:cube:택티컬 부스트 큐브",
+  "민트:reload:C0.5",
+  "프리카:reload:C0.5"
+ ],
+ "E0": 64.46769406,
+ "O": 76.0609544,
+ "alloc": {
+  "목단": "우코4+공4+크확2+크뎀2",
+  "민트": "공4+장탄4+차속2+차뎀2",
+  "프리카": "우코4+공4+장탄4",
+  "리버렐리오": "공4+크확3+크뎀4+차속1",
+  "네온 : 비전 아이": "우코4+공1+장탄3+차속4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 4.465057619999996,
+   "atk_pct": 2.1874310700000024,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.2497938399999953,
+   "crit_dmg": 1.3118700699999977,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3564683200000047,
+   "max_ammo_pct": 0.44827273999999306,
+   "crit_rate": 0.1919737900000058,
+   "crit_dmg": 0.20090611000000536,
+   "charge_speed_pct": 0.6740221700000006,
+   "charge_dmg_pct": 0.2531859399999945,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3578296299999977,
+   "max_ammo_pct": 0.11284200999999427,
+   "crit_rate": 0.18807434999999373,
+   "crit_dmg": 0.19526686000000382,
+   "charge_speed_pct": 1.0786484200000075,
+   "charge_dmg_pct": 0.23617719000000648,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.312955690000003,
+   "max_ammo_pct": 0.9630359299999967,
+   "crit_rate": 1.356492650000007,
+   "crit_dmg": 1.4099153700000073,
+   "charge_speed_pct": 2.920074040000003,
+   "charge_dmg_pct": 0.7447882499999992,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 16.435923000000003,
+   "atk_pct": 6.364197449999999,
+   "max_ammo_pct": 5.110056010000001,
+   "crit_rate": 4.597437110000001,
+   "crit_dmg": 4.829393690000003,
+   "charge_speed_pct": 11.848857359999997,
+   "charge_dmg_pct": 1.945540109999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "charge_speed_pct",
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "프리카": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 79.90803226,
+ "ctrl2_variants": [
+  "squad:tactic:버충=프리카",
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "네온 : 비전 아이:reload:A0.3",
+  "리버렐리오:cube:택티컬 어설트 큐브",
+  "프리카:burst:wait2",
+  "프리카:click:hold_own_fb",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:C0.1_dry"
+ ],
+ "final": 79.90803226,
+ "final_variants": [
+  "squad:tactic:버충=프리카",
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "네온 : 비전 아이:reload:A0.3",
+  "리버렐리오:cube:택티컬 어설트 큐브",
+  "프리카:burst:wait2",
+  "프리카:click:hold_own_fb",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:C0.1_dry"
+ ],
+ "sims": 2319,
+ "seconds": 268.9
+}

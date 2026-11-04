@@ -1,0 +1,146 @@
+{
+ "id": "S40-r7",
+ "season": 40,
+ "squad": [
+  "아니스 : 스타",
+  "라피 : 레드 후드",
+  "디젤 : 윈터 스위츠",
+  "브리드 : 사일런트 트랙",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 85.94520675,
+ "ctrl": 87.78009051,
+ "ctrl_variants": [
+  "squad:tactic:버충=디젤 : 윈터 스위츠",
+  "디젤 : 윈터 스위츠:cube:택티컬 어설트 큐브",
+  "디젤 : 윈터 스위츠:reload:C0.5",
+  "라피 : 레드 후드:cube:택티컬 베어 큐브",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "브리드 : 사일런트 트랙:reload:A0.3",
+  "아니스 : 스타:cube:렐릭 퀀텀 큐브",
+  "아니스 : 스타:reload:A0.3"
+ ],
+ "E0": 102.05605395,
+ "O": 107.4141097,
+ "alloc": {
+  "아니스 : 스타": "공4+장탄2+크확2+크뎀4",
+  "라피 : 레드 후드": "우코4+공4+장탄4",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확1+크뎀3",
+  "브리드 : 사일런트 트랙": "우코4+공4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확1+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.7321980300000064,
+   "max_ammo_pct": 0.9505716800000101,
+   "crit_rate": 0.924801389999999,
+   "crit_dmg": 1.5063482699999895,
+   "charge_speed_pct": 0.418731539999996,
+   "charge_dmg_pct": 0.8615703499999938,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 13.418804460000004,
+   "atk_pct": 4.76653343000001,
+   "max_ammo_pct": 7.7343647,
+   "crit_rate": 2.65562199,
+   "crit_dmg": 4.309189249999989,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 17.717636260000006,
+   "atk_pct": 8.59014495000001,
+   "max_ammo_pct": 3.9485785100000044,
+   "crit_rate": 4.39722089,
+   "crit_dmg": 5.426583249999993,
+   "charge_speed_pct": 0.9800334599999871,
+   "charge_dmg_pct": 0.9544685199999918,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 5.974936400000004,
+   "atk_pct": 3.4088309500000094,
+   "max_ammo_pct": 0.6545150500000005,
+   "crit_rate": 1.2306940199999872,
+   "crit_dmg": 1.9353784699999892,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5980234100000104,
+   "max_ammo_pct": 2.8023681100000033,
+   "crit_rate": 0.2658033599999925,
+   "crit_dmg": 0.4073521400000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 110.89758934,
+ "ctrl2_variants": [
+  "squad:tactic:버충=디젤 : 윈터 스위츠",
+  "디젤 : 윈터 스위츠:reload:C0.1",
+  "라피 : 레드 후드:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브리드 : 사일런트 트랙:reload:B0.1",
+  "아니스 : 스타:cube:택티컬 어설트 큐브",
+  "아니스 : 스타:reload:C0.1_dry"
+ ],
+ "final": 110.89758934,
+ "final_variants": [
+  "squad:tactic:버충=디젤 : 윈터 스위츠",
+  "디젤 : 윈터 스위츠:reload:C0.1",
+  "라피 : 레드 후드:cube:택티컬 부스트 큐브",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "마스트 : 로망틱 메이드:reload:B0.1",
+  "브리드 : 사일런트 트랙:reload:B0.1",
+  "아니스 : 스타:cube:택티컬 어설트 큐브",
+  "아니스 : 스타:reload:C0.1_dry"
+ ],
+ "sims": 2411,
+ "seconds": 261.5
+}

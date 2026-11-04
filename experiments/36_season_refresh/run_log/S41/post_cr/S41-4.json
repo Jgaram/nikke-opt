@@ -1,0 +1,135 @@
+{
+ "id": "S41-4",
+ "season": 41,
+ "squad": [
+  "리타",
+  "나유타",
+  "헬름",
+  "퀀시 : 이스케이프 퀸",
+  "일레그 : 붐 앤 쇼크"
+ ],
+ "win": null,
+ "pre": 44.88811656,
+ "ctrl": 45.58050307,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "리타:reload:B0.1",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브"
+ ],
+ "E0": 52.11140239,
+ "O": 58.05829554,
+ "alloc": {
+  "리타": "공4+크확4+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "헬름": "우코4+공4+크확4",
+  "퀀시 : 이스케이프 퀸": "우코4+공3+크확1+크뎀4",
+  "일레그 : 붐 앤 쇼크": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4647324700000013,
+   "max_ammo_pct": 0.2397003200000043,
+   "crit_rate": 0.14908748999999943,
+   "crit_dmg": 0.13142798999999883,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4000396899999998,
+   "max_ammo_pct": -0.07604368999999878,
+   "crit_rate": 0.49609499999999684,
+   "crit_dmg": 0.3857307600000013,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5379379999999969,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 6.026424609999999,
+   "atk_pct": 3.618979639999999,
+   "max_ammo_pct": -0.3425054799999998,
+   "crit_rate": 1.6701285899999974,
+   "crit_dmg": 1.2763787299999976,
+   "charge_speed_pct": 1.761924350000001,
+   "charge_dmg_pct": 0.5926920399999958,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 6.636210470000002,
+   "atk_pct": 2.692077140000002,
+   "max_ammo_pct": 0.5297953100000043,
+   "crit_rate": 1.6323326199999997,
+   "crit_dmg": 2.61477541,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "일레그 : 붐 앤 쇼크": {
+   "element_bonus": 3.7454722200000035,
+   "atk_pct": 2.4509206399999997,
+   "max_ammo_pct": 2.596162800000002,
+   "crit_rate": 0.8718023499999958,
+   "crit_dmg": 0.7508201200000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "일레그 : 붐 앤 쇼크": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 58.12200819,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:B0.5",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "헬름:cancel:on"
+ ],
+ "final": 58.12200819,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:B0.5",
+  "퀀시 : 이스케이프 퀸:cube:택티컬 베어 큐브",
+  "헬름:cancel:on"
+ ],
+ "sims": 1207,
+ "seconds": 195.4
+}

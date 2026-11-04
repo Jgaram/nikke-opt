@@ -1,0 +1,143 @@
+{
+ "id": "S42-r11",
+ "season": 42,
+ "squad": [
+  "아니스 : 스파클링 서머",
+  "루주",
+  "메이든 : 아이스 로즈",
+  "맥스웰 : 오디너리 미케닉",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 54.13359118,
+ "ctrl": 60.21109172,
+ "ctrl_variants": [
+  "squad:camera:루주",
+  "squad:tactic:버충=루주",
+  "루주:cube:택티컬 어설트 큐브",
+  "맥스웰 : 오디너리 미케닉:reload:C0.1",
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "아니스 : 스파클링 서머:cube:택티컬 베어 큐브",
+  "아니스 : 스파클링 서머:reload:C0.5"
+ ],
+ "E0": 51.4328386,
+ "O": 72.68865419,
+ "alloc": {
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "루주": "우코4+공4+장탄4",
+  "메이든 : 아이스 로즈": "우코4+공4+크확3+차속1",
+  "맥스웰 : 오디너리 미케닉": "공4+장탄2+크확2+차뎀4",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 5.17388905,
+   "atk_pct": 2.569748319999995,
+   "max_ammo_pct": -11.846210490000004,
+   "crit_rate": 1.0802532500000055,
+   "crit_dmg": 0.9330664600000063,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 1.6485051499999983,
+   "atk_pct": 0.772872409999998,
+   "max_ammo_pct": 2.7480171499999955,
+   "crit_rate": 0.32090269000000404,
+   "crit_dmg": 0.27717916000000287,
+   "charge_speed_pct": 0.9994827600000065,
+   "charge_dmg_pct": 0.6637956500000044,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 11.012450769999994,
+   "atk_pct": 2.440377589999997,
+   "max_ammo_pct": 0.19842688999999325,
+   "crit_rate": 2.3062556400000034,
+   "crit_dmg": 1.9920232500000026,
+   "charge_speed_pct": 2.9105175000000045,
+   "charge_dmg_pct": 0.8138459300000065,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰 : 오디너리 미케닉": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4506324499999934,
+   "max_ammo_pct": 0.8257609099999996,
+   "crit_rate": 0.24208850000000126,
+   "crit_dmg": 0.2091035500000018,
+   "charge_speed_pct": -0.650699859999996,
+   "charge_dmg_pct": 0.5156931,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4192613399999985,
+   "max_ammo_pct": -2.477440290000004,
+   "crit_rate": 0.13390292000000414,
+   "crit_dmg": 0.11565824000000191,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "루주": [
+   "max_ammo_pct",
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "맥스웰 : 오디너리 미케닉": [
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 73.84685685,
+ "ctrl2_variants": [
+  "squad:camera:루주",
+  "squad:tactic:버충=루주",
+  "루주:cube:택티컬 어설트 큐브",
+  "맥스웰 : 오디너리 미케닉:reload:C0.1",
+  "메이든 : 아이스 로즈:cube:렐릭 부스트 큐브",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "아니스 : 스파클링 서머:reload:C0.5"
+ ],
+ "final": 73.84685685,
+ "final_variants": [
+  "squad:camera:루주",
+  "squad:tactic:버충=루주",
+  "루주:cube:택티컬 어설트 큐브",
+  "맥스웰 : 오디너리 미케닉:reload:C0.1",
+  "메이든 : 아이스 로즈:cube:렐릭 부스트 큐브",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "아니스 : 스파클링 서머:reload:C0.5"
+ ],
+ "sims": 2457,
+ "seconds": 241.1
+}

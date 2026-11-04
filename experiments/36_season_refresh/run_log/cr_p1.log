@@ -1,3 +1,9 @@
 --- 시작 05:51 UTC · 평가기 f0f648c · 시즌 33,34,35,36,37
 {"season": 33, "sims": 18000, "seconds": 2238.3, "A_final": 302.95}
 {"season": 34, "sims": 19200, "seconds": 2202.3, "A_final": 331.88}
+--- 아래는 part_post_cr.json에서 다시 적음(2026-11-04 09:3x UTC) — 실행 중 로그를 커밋한 뒤 git pull --rebase가 파일을 바꿔 써서 그 뒤 출력이 지워진 파일로 갔다
+{"season": 33, "sims": 18000, "seconds": 2238.3, "A_final": 302.95, "checked": 18000, "evaluator": "nikke-calc-rs f0f648c"}
+{"season": 34, "sims": 19200, "seconds": 2202.3, "A_final": 331.88, "checked": 37200, "evaluator": "nikke-calc-rs f0f648c"}
+{"season": 35, "sims": 18000, "seconds": 2436.5, "A_final": 334.66, "checked": 55200, "evaluator": "nikke-calc-rs f0f648c"}
+{"season": 36, "sims": 19200, "seconds": 2191.3, "A_final": 355.68, "checked": 74400, "evaluator": "nikke-calc-rs f0f648c"}
+{"season": 37, "sims": 22800, "seconds": 3098.9, "A_final": 353.37, "checked": 97200, "evaluator": "nikke-calc-rs f0f648c"}

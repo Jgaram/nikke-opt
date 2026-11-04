@@ -1,0 +1,134 @@
+{
+ "id": "S36-r3",
+ "season": 36,
+ "squad": [
+  "아니스 : 스파클링 서머",
+  "에이드 : 에이전트 바니",
+  "목단",
+  "메이든 : 아이스 로즈",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 50.53713129,
+ "ctrl": 57.94019135,
+ "ctrl_variants": [
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1"
+ ],
+ "E0": 52.32917165,
+ "O": 71.7348775,
+ "alloc": {
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "에이드 : 에이전트 바니": "공4+장탄3+크확3+크뎀2",
+  "목단": "우코4+공4+장탄4",
+  "메이든 : 아이스 로즈": "우코4+공4+차속4",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 4.981794129999997,
+   "atk_pct": 2.8609129600000003,
+   "max_ammo_pct": -9.955441659999998,
+   "crit_rate": 1.032473270000004,
+   "crit_dmg": 0.8917965999999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이드 : 에이전트 바니": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5010960799999964,
+   "max_ammo_pct": 2.8393971899999997,
+   "crit_rate": 0.1368280499999983,
+   "crit_dmg": 0.11818595999999815,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "목단": {
+   "element_bonus": 5.050725800000002,
+   "atk_pct": 2.4779296299999984,
+   "max_ammo_pct": 0.007460979999997619,
+   "crit_rate": 0.9614692399999996,
+   "crit_dmg": 0.8304631600000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 8.626694839999999,
+   "atk_pct": 2.666415029999996,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.7795149900000027,
+   "crit_dmg": 1.5370521800000034,
+   "charge_speed_pct": 3.02289485,
+   "charge_dmg_pct": 0.6633744000000021,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4782417799999976,
+   "max_ammo_pct": -2.959737170000004,
+   "crit_rate": 0.12981060999999983,
+   "crit_dmg": 0.112123160000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "에이드 : 에이전트 바니": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 71.7348775,
+ "ctrl2_variants": [
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1"
+ ],
+ "final": 71.7348775,
+ "final_variants": [
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1"
+ ],
+ "sims": 2397,
+ "seconds": 219.5
+}

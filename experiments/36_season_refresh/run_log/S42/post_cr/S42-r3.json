@@ -1,0 +1,156 @@
+{
+ "id": "S42-r3",
+ "season": 42,
+ "squad": [
+  "미란다",
+  "타키나",
+  "아인",
+  "루주",
+  "에이다"
+ ],
+ "win": null,
+ "pre": 39.35900793,
+ "ctrl": 45.10307927,
+ "ctrl_variants": [
+  "루주:click:tap",
+  "루주:reload:C0.1",
+  "미란다:burst:delay2",
+  "미란다:cube:렐릭 퀀텀 큐브",
+  "미란다:reload:C0.1_dry",
+  "아인:reload:C0.1_dry",
+  "에이다:cube:렐릭 크래시 큐브",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:cube:렐릭 부스트 큐브"
+ ],
+ "E0": 44.6994541,
+ "O": 54.61203034,
+ "alloc": {
+  "미란다": "공4+크확4+크뎀4",
+  "타키나": "공4+장탄1+크확4+크뎀3",
+  "아인": "우코4+공3+크확1+크뎀4",
+  "루주": "우코4+공4+장탄2+차뎀2",
+  "에이다": "우코4+공4+크뎀4"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.48423893999999734,
+   "max_ammo_pct": 0.9259347299999945,
+   "crit_rate": 0.17733566000000422,
+   "crit_dmg": 0.24812254000000422,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0969208100000003,
+   "max_ammo_pct": 0.8681630499999997,
+   "crit_rate": 0.45717941000000195,
+   "crit_dmg": 0.23730763000000366,
+   "charge_speed_pct": -1.8460214399999941,
+   "charge_dmg_pct": 0.02525630000000234,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아인": {
+   "element_bonus": 7.991121629999995,
+   "atk_pct": 6.493794569999999,
+   "max_ammo_pct": 0.6999696399999991,
+   "crit_rate": 0.8830021900000062,
+   "crit_dmg": 3.455620780000004,
+   "charge_speed_pct": -0.6169641699999957,
+   "charge_dmg_pct": 0.2859389800000045,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 0.50324174,
+   "atk_pct": 0.4726111700000004,
+   "max_ammo_pct": 1.3061743299999975,
+   "crit_rate": 0.13542392000000092,
+   "crit_dmg": 0.08349079999999987,
+   "charge_speed_pct": -3.6936570199999963,
+   "charge_dmg_pct": 0.16349893000000293,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 8.08322767,
+   "atk_pct": 9.375291769999997,
+   "max_ammo_pct": 0.9613883699999946,
+   "crit_rate": 0.8306074300000006,
+   "crit_dmg": 3.6636312200000063,
+   "charge_speed_pct": -0.5295033599999996,
+   "charge_dmg_pct": 0.20742194000000325,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "타키나": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "루주": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "에이다": [
+   "atk_pct",
+   "element_bonus",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 64.59389244,
+ "ctrl2_variants": [
+  "squad:tactic:버충=루주",
+  "루주:click:hold_own_fb",
+  "루주:reload:C0.1",
+  "미란다:burst:wait2",
+  "미란다:cube:렐릭 퀀텀 큐브",
+  "미란다:reload:A0.3",
+  "아인:click:hold_own_fb+tap",
+  "아인:reload:B0.5",
+  "에이다:cube:렐릭 크래시 큐브",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:cube:렐릭 크래시 큐브"
+ ],
+ "final": 64.59389244,
+ "final_variants": [
+  "squad:tactic:버충=루주",
+  "루주:click:hold_own_fb",
+  "루주:reload:C0.1",
+  "미란다:burst:wait2",
+  "미란다:cube:렐릭 퀀텀 큐브",
+  "미란다:reload:A0.3",
+  "아인:click:hold_own_fb+tap",
+  "아인:reload:B0.5",
+  "에이다:cube:렐릭 크래시 큐브",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:cube:렐릭 크래시 큐브"
+ ],
+ "sims": 2391,
+ "seconds": 244.8
+}

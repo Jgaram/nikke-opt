@@ -1,0 +1,146 @@
+{
+ "id": "S37-1",
+ "season": 37,
+ "squad": [
+  "목단",
+  "바이퍼",
+  "크라운",
+  "프리바티",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 63.3791293,
+ "ctrl": 64.64382989,
+ "ctrl_variants": [
+  "목단:cube:렐릭 퀀텀 큐브",
+  "목단:reload:A0.3",
+  "바이퍼:cube:렐릭 퀀텀 큐브",
+  "바이퍼:reload:C0.1",
+  "크라운:reload:C0.5",
+  "헬름:reload:C0.1"
+ ],
+ "E0": 55.17772935,
+ "O": 82.7007626,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "바이퍼": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "프리바티": "우코4+공4+크확2+크뎀2",
+  "헬름": "우코4+공4+크확4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1641843199999968,
+   "max_ammo_pct": 0.00581494000000049,
+   "crit_rate": 0.46946180999999854,
+   "crit_dmg": 0.40549953000000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "바이퍼": {
+   "element_bonus": 7.628096859999999,
+   "atk_pct": 3.8700829699999986,
+   "max_ammo_pct": 0.68422451,
+   "crit_rate": 1.408562879999998,
+   "crit_dmg": 1.2166473300000007,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7674193900000006,
+   "max_ammo_pct": 0.21197155000000123,
+   "crit_rate": 0.3046264700000023,
+   "crit_dmg": 0.2631111800000028,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 3.2619146999999984,
+   "atk_pct": 2.5260402400000004,
+   "max_ammo_pct": -19.43848637,
+   "crit_rate": 0.8331654300000011,
+   "crit_dmg": 0.7196497099999988,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 6.858782920000003,
+   "atk_pct": 4.136324299999998,
+   "max_ammo_pct": -0.2735626300000007,
+   "crit_rate": 1.3763494600000001,
+   "crit_dmg": 1.188818519999998,
+   "charge_speed_pct": 3.024904390000003,
+   "charge_dmg_pct": 0.7260643799999968,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "바이퍼": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 83.14871781,
+ "ctrl2_variants": [
+  "squad:camera:헬름",
+  "목단:cube:택티컬 부스트 큐브",
+  "바이퍼:reload:C0.1_dry",
+  "크라운:burst:wait2",
+  "크라운:cube:렐릭 퀀텀 큐브",
+  "크라운:reload:A0.3",
+  "프리바티:reload:C0.5",
+  "헬름:cube:택티컬 어설트 큐브",
+  "헬름:reload:C0.5"
+ ],
+ "final": 83.14871781,
+ "final_variants": [
+  "squad:camera:헬름",
+  "목단:cube:택티컬 부스트 큐브",
+  "바이퍼:reload:C0.1_dry",
+  "크라운:burst:wait2",
+  "크라운:cube:렐릭 퀀텀 큐브",
+  "크라운:reload:A0.3",
+  "프리바티:reload:C0.5",
+  "헬름:cube:택티컬 어설트 큐브",
+  "헬름:reload:C0.5"
+ ],
+ "sims": 2412,
+ "seconds": 270.4
+}

@@ -1,0 +1,132 @@
+{
+ "id": "S37-r8",
+ "season": 37,
+ "squad": [
+  "민트",
+  "라피 : 레드 후드",
+  "앨리스",
+  "네온 : 비전 아이",
+  "프리카"
+ ],
+ "win": null,
+ "pre": 28.60845999,
+ "ctrl": 30.50626633,
+ "ctrl_variants": [
+  "네온 : 비전 아이:cube:택티컬 부스트 큐브",
+  "민트:reload:C0.1_dry",
+  "프리카:burst:delay1",
+  "프리카:cube:택티컬 베어 큐브"
+ ],
+ "E0": 28.3440304,
+ "O": 37.79237872,
+ "alloc": {
+  "민트": "공4+차속4+차뎀4",
+  "라피 : 레드 후드": "공4+장탄2+크확3+크뎀3",
+  "앨리스": "공4+크확3+크뎀3+차속2",
+  "네온 : 비전 아이": "공4+장탄3+크뎀1+차속4",
+  "프리카": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3759241400000022,
+   "max_ammo_pct": 0.01493678000000287,
+   "crit_rate": 0.1827914299999982,
+   "crit_dmg": 0.1893471499999997,
+   "charge_speed_pct": 0.6960700600000003,
+   "charge_dmg_pct": 0.2496805199999983,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6986905000000014,
+   "max_ammo_pct": 1.0626764800000004,
+   "crit_rate": 0.4712899799999981,
+   "crit_dmg": 0.4867052100000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앨리스": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9423333400000011,
+   "max_ammo_pct": 0.4063185200000028,
+   "crit_rate": 0.5366412099999991,
+   "crit_dmg": 0.5599181599999987,
+   "charge_speed_pct": 3.16424164,
+   "charge_dmg_pct": 0.5273734099999992,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.5131484800000017,
+   "max_ammo_pct": 1.835883550000002,
+   "crit_rate": 1.6766140400000005,
+   "crit_dmg": 1.7489816000000005,
+   "charge_speed_pct": 5.268099960000001,
+   "charge_dmg_pct": 0.7405206,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 1.5138872000000028,
+   "atk_pct": 0.8544593700000007,
+   "max_ammo_pct": 0.3399136000000027,
+   "crit_rate": 0.4172068600000003,
+   "crit_dmg": 0.43207108000000005,
+   "charge_speed_pct": 0.8051440299999975,
+   "charge_dmg_pct": 0.5678198099999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "민트": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "라피 : 레드 후드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앨리스": [
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "네온 : 비전 아이": [
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "프리카": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ]
+ },
+ "C2": 38.96696402,
+ "ctrl2_variants": [
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "민트:reload:C0.1",
+  "프리카:burst:delay1"
+ ],
+ "final": 38.96696402,
+ "final_variants": [
+  "네온 : 비전 아이:cube:렐릭 부스트 큐브",
+  "민트:reload:C0.1",
+  "프리카:burst:delay1"
+ ],
+ "sims": 2323,
+ "seconds": 357.8
+}
