@@ -482,6 +482,7 @@ def pack_fixed(T: Table, kind: str, squads: Sequence[Sequence[str]], extra: Mapp
 REFINE_TOP = 2000
 REFINE_X = 0.97
 REFINE_ROUNDS = 2
+REFINE_BATCH = 2000
 
 
 def ranker_squads(s: int) -> list[list[str]]:
@@ -526,7 +527,9 @@ def cmd_refine(a: argparse.Namespace) -> int:
     s = a.season
     f = sdir(s) / "refine.jsonl.gz"
     meta_f = sdir(s) / "refine_meta.json"
-    meta = {"season": s, "top": REFINE_TOP, "x": REFINE_X, "rounds": []}
+    meta = jload(meta_f) or {"season": s, "top": REFINE_TOP, "x": REFINE_X, "rounds": []}
+    if meta["rounds"]:
+        meta.setdefault("resumed", []).append(len(meta["rounds"]))
     T = Table.load(s)
     targets: dict[int, str] = {}
     for i in T.sorted_idx("base")[:REFINE_TOP]:
@@ -550,18 +553,22 @@ def cmd_refine(a: argparse.Namespace) -> int:
             if rnd > 0 and not new:
                 info["stop"] = "97% 안에 새로 든 구성 없음"
             if todo:
-                t0, n0 = time.time(), ev.sim_count
-                got = run_orders(s, [o for _, o in todo], ev)
-                with gzip.open(f, "at", encoding="utf-8") as fh:
-                    for (i, o), (v, m) in zip(todo, got):
-                        fh.write(json.dumps({"i": i, "order": list(o), "value": v, "members": m, "round": rnd,
-                                             "why": targets[i]}, ensure_ascii=False) + "\n")
-                        if v is not None:
+                t0, n0, errs = time.time(), ev.sim_count, 0
+                for b0 in range(0, len(todo), REFINE_BATCH):     # 조각마다 써서 끊겨도 잰 순서는 남는다(다시 돌면 건너뜀)
+                    part = todo[b0:b0 + REFINE_BATCH]
+                    got = run_orders(s, [o for _, o in part], ev)
+                    with gzip.open(f, "at", encoding="utf-8") as fh:
+                        for (i, o), (v, m) in zip(part, got):
+                            fh.write(json.dumps({"i": i, "order": list(o), "value": v, "members": m, "round": rnd,
+                                                 "why": targets[i]}, ensure_ascii=False) + "\n")
+                            if v is None:
+                                errs += 1
+                                continue
                             T.refined.setdefault(i, {})[stage_key(o)] = (v, tuple(o))
                             if T.ref[i] is None or v > T.ref[i]:
                                 T.ref[i], T.best_order[i] = v, tuple(o)
-                info.update(sims=ev.sim_count - n0, seconds=round(time.time() - t0, 1), evaluator=ver,
-                            errors=sum(v is None for v, _ in got))
+                    print(f"S{s} 다듬기 {rnd}회 {min(b0 + REFINE_BATCH, len(todo))}/{len(todo)}", flush=True)
+                info.update(sims=ev.sim_count - n0, seconds=round(time.time() - t0, 1), evaluator=ver, errors=errs)
             else:
                 info["sims"] = 0
             meta["rounds"].append(info)
