@@ -329,11 +329,20 @@ def prune(T: Table, kind: str, thr: float, k: int = 5) -> tuple[list[int], dict[
     return keep, info
 
 
-def exact_opt(T: Table, kind: str, seed_limit: int = 5000, deadline_s: float = 3600.0) -> dict[str, Any]:
-    """OPT: 값 상위 seed_limit로 하한 LB → 상한 < LB 구성 빼기 → 남은 구성으로 정확히 묶기(`pack_vals`)."""
+SEED_LIMITS = (5000, 20000, 80000)
+
+
+def exact_opt(T: Table, kind: str, seed_limit: int | None = None, deadline_s: float = 3600.0) -> dict[str, Any]:
+    """OPT: 값 상위 seed_limit로 하한 LB → 상한 < LB 구성 빼기 → 남은 구성으로 정확히 묶기(`pack_vals`).
+    값 상위 몇천 구성은 같은 강한 니케를 나눠 써서 겹치지 않는 5덱이 안 나올 수 있다(S36 상위 5,000) → 5덱이 나올 때까지 넓힌다."""
     t0 = time.time()
     order = T.sorted_idx(kind)
-    lb, lb_decks = R9.pack_vals(T.book(kind, order[:seed_limit]))
+    lb, lb_decks = 0.0, []
+    for lim in ((seed_limit,) if seed_limit else SEED_LIMITS):
+        seed_limit = lim
+        lb, lb_decks = R9.pack_vals(T.book(kind, order[:lim]))
+        if lb_decks:
+            break
     keep, pinfo = prune(T, kind, lb - 1e-9)
     exact = True
     try:
