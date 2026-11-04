@@ -1,0 +1,2 @@
+# cr36.py 실행 중 쓰는 압축 전 로그 — 덱이 끝나면 .jsonl.gz로 바뀌고 지워진다
+S*/post_cr/*.jsonl

@@ -1,0 +1,1512 @@
+{
+ "evaluator": "nikke-calc-rs f0f648c",
+ "decks": 167,
+ "off_match": 167,
+ "changed": 85,
+ "seconds": 19.4,
+ "rows": [
+  {
+   "id": "S33-0",
+   "season": 33,
+   "ours": true,
+   "final": 67.25301613,
+   "off": 67.25301613,
+   "on": 66.94326515,
+   "off_match": true
+  },
+  {
+   "id": "S33-1",
+   "season": 33,
+   "ours": true,
+   "final": 64.68955159,
+   "off": 64.68955159,
+   "on": 64.66384027,
+   "off_match": true
+  },
+  {
+   "id": "S33-2",
+   "season": 33,
+   "ours": true,
+   "final": 65.24193274,
+   "off": 65.24193274,
+   "on": 63.84360773,
+   "off_match": true
+  },
+  {
+   "id": "S33-3",
+   "season": 33,
+   "ours": true,
+   "final": 56.96160723,
+   "off": 56.96160723,
+   "on": 56.96944064,
+   "off_match": true
+  },
+  {
+   "id": "S33-4",
+   "season": 33,
+   "ours": true,
+   "final": 48.46303745,
+   "off": 48.46303745,
+   "on": 48.29696384,
+   "off_match": true
+  },
+  {
+   "id": "S33-r0",
+   "season": 33,
+   "ours": false,
+   "final": 40.92241539,
+   "off": 40.92241539,
+   "on": 40.92241539,
+   "off_match": true
+  },
+  {
+   "id": "S33-r1",
+   "season": 33,
+   "ours": false,
+   "final": 66.28112729,
+   "off": 66.28112729,
+   "on": 66.28112729,
+   "off_match": true
+  },
+  {
+   "id": "S33-r2",
+   "season": 33,
+   "ours": false,
+   "final": 58.82562328,
+   "off": 58.82562328,
+   "on": 58.82562328,
+   "off_match": true
+  },
+  {
+   "id": "S33-r3",
+   "season": 33,
+   "ours": false,
+   "final": 62.15153936,
+   "off": 62.15153936,
+   "on": 61.88459291,
+   "off_match": true
+  },
+  {
+   "id": "S33-r4",
+   "season": 33,
+   "ours": false,
+   "final": 64.79362588,
+   "off": 64.79362588,
+   "on": 64.59950365,
+   "off_match": true
+  },
+  {
+   "id": "S33-r5",
+   "season": 33,
+   "ours": false,
+   "final": 69.05842353,
+   "off": 69.05842353,
+   "on": 69.05842353,
+   "off_match": true
+  },
+  {
+   "id": "S33-r6",
+   "season": 33,
+   "ours": false,
+   "final": 56.11786608,
+   "off": 56.11786608,
+   "on": 56.00230316,
+   "off_match": true
+  },
+  {
+   "id": "S33-r7",
+   "season": 33,
+   "ours": false,
+   "final": 40.16820625,
+   "off": 40.16820625,
+   "on": 40.00717809,
+   "off_match": true
+  },
+  {
+   "id": "S33-r8",
+   "season": 33,
+   "ours": false,
+   "final": 58.11161312,
+   "off": 58.11161312,
+   "on": 58.11161312,
+   "off_match": true
+  },
+  {
+   "id": "S33-r9",
+   "season": 33,
+   "ours": false,
+   "final": 55.67330612,
+   "off": 55.67330612,
+   "on": 55.27665732,
+   "off_match": true
+  },
+  {
+   "id": "S34-0",
+   "season": 34,
+   "ours": true,
+   "final": 81.47845377,
+   "off": 81.47845377,
+   "on": 81.42728969,
+   "off_match": true
+  },
+  {
+   "id": "S34-1",
+   "season": 34,
+   "ours": true,
+   "final": 71.68643807,
+   "off": 71.68643807,
+   "on": 71.68643807,
+   "off_match": true
+  },
+  {
+   "id": "S34-2",
+   "season": 34,
+   "ours": true,
+   "final": 68.69069558,
+   "off": 68.69069558,
+   "on": 68.69069558,
+   "off_match": true
+  },
+  {
+   "id": "S34-3",
+   "season": 34,
+   "ours": true,
+   "final": 58.56087509,
+   "off": 58.56087509,
+   "on": 54.15851803,
+   "off_match": true
+  },
+  {
+   "id": "S34-4",
+   "season": 34,
+   "ours": true,
+   "final": 52.43941501,
+   "off": 52.43941501,
+   "on": 52.43941501,
+   "off_match": true
+  },
+  {
+   "id": "S34-r0",
+   "season": 34,
+   "ours": false,
+   "final": 68.89121032,
+   "off": 68.89121032,
+   "on": 68.4136251,
+   "off_match": true
+  },
+  {
+   "id": "S34-r1",
+   "season": 34,
+   "ours": false,
+   "final": 48.97304398,
+   "off": 48.97304398,
+   "on": 48.97304398,
+   "off_match": true
+  },
+  {
+   "id": "S34-r2",
+   "season": 34,
+   "ours": false,
+   "final": 46.61921311,
+   "off": 46.61921311,
+   "on": 46.61921311,
+   "off_match": true
+  },
+  {
+   "id": "S34-r3",
+   "season": 34,
+   "ours": false,
+   "final": 86.91741921,
+   "off": 86.91741921,
+   "on": 86.17472604,
+   "off_match": true
+  },
+  {
+   "id": "S34-r4",
+   "season": 34,
+   "ours": false,
+   "final": 54.82082135,
+   "off": 54.82082135,
+   "on": 51.51801687,
+   "off_match": true
+  },
+  {
+   "id": "S34-r5",
+   "season": 34,
+   "ours": false,
+   "final": 66.79073412,
+   "off": 66.79073412,
+   "on": 66.79073412,
+   "off_match": true
+  },
+  {
+   "id": "S34-r6",
+   "season": 34,
+   "ours": false,
+   "final": 56.24389585,
+   "off": 56.24389585,
+   "on": 56.24389585,
+   "off_match": true
+  },
+  {
+   "id": "S34-r7",
+   "season": 34,
+   "ours": false,
+   "final": 47.98009314,
+   "off": 47.98009314,
+   "on": 47.55457909,
+   "off_match": true
+  },
+  {
+   "id": "S34-r8",
+   "season": 34,
+   "ours": false,
+   "final": 68.59082511,
+   "off": 68.59082511,
+   "on": 68.59082511,
+   "off_match": true
+  },
+  {
+   "id": "S34-r9",
+   "season": 34,
+   "ours": false,
+   "final": 47.55578271,
+   "off": 47.55578271,
+   "on": 46.97034626,
+   "off_match": true
+  },
+  {
+   "id": "S34-r10",
+   "season": 34,
+   "ours": false,
+   "final": 39.7962391,
+   "off": 39.7962391,
+   "on": 39.7962391,
+   "off_match": true
+  },
+  {
+   "id": "S35-0",
+   "season": 35,
+   "ours": true,
+   "final": 90.58208287,
+   "off": 90.58208287,
+   "on": 87.29408961,
+   "off_match": true
+  },
+  {
+   "id": "S35-1",
+   "season": 35,
+   "ours": true,
+   "final": 69.29026622,
+   "off": 69.29026622,
+   "on": 69.0154749,
+   "off_match": true
+  },
+  {
+   "id": "S35-2",
+   "season": 35,
+   "ours": true,
+   "final": 62.49808963,
+   "off": 62.49808963,
+   "on": 62.49808963,
+   "off_match": true
+  },
+  {
+   "id": "S35-3",
+   "season": 35,
+   "ours": true,
+   "final": 67.5897019,
+   "off": 67.5897019,
+   "on": 67.21381088,
+   "off_match": true
+  },
+  {
+   "id": "S35-4",
+   "season": 35,
+   "ours": true,
+   "final": 48.58376805,
+   "off": 48.58376805,
+   "on": 44.66082088,
+   "off_match": true
+  },
+  {
+   "id": "S35-r0",
+   "season": 35,
+   "ours": false,
+   "final": 50.78112304,
+   "off": 50.78112304,
+   "on": 50.78112304,
+   "off_match": true
+  },
+  {
+   "id": "S35-r1",
+   "season": 35,
+   "ours": false,
+   "final": 87.36192884,
+   "off": 87.36192884,
+   "on": 86.46802938,
+   "off_match": true
+  },
+  {
+   "id": "S35-r2",
+   "season": 35,
+   "ours": false,
+   "final": 56.02577843,
+   "off": 56.02577843,
+   "on": 56.02577843,
+   "off_match": true
+  },
+  {
+   "id": "S35-r3",
+   "season": 35,
+   "ours": false,
+   "final": 69.0010525,
+   "off": 69.0010525,
+   "on": 69.0010525,
+   "off_match": true
+  },
+  {
+   "id": "S35-r4",
+   "season": 35,
+   "ours": false,
+   "final": 74.73264691,
+   "off": 74.73264691,
+   "on": 74.73264691,
+   "off_match": true
+  },
+  {
+   "id": "S35-r5",
+   "season": 35,
+   "ours": false,
+   "final": 67.7391926,
+   "off": 67.7391926,
+   "on": 67.7391926,
+   "off_match": true
+  },
+  {
+   "id": "S35-r6",
+   "season": 35,
+   "ours": false,
+   "final": 56.89956969,
+   "off": 56.89956969,
+   "on": 56.89956969,
+   "off_match": true
+  },
+  {
+   "id": "S35-r7",
+   "season": 35,
+   "ours": false,
+   "final": 57.86895514,
+   "off": 57.86895514,
+   "on": 55.6042596,
+   "off_match": true
+  },
+  {
+   "id": "S35-r8",
+   "season": 35,
+   "ours": false,
+   "final": 71.94979762,
+   "off": 71.94979762,
+   "on": 70.28032955,
+   "off_match": true
+  },
+  {
+   "id": "S35-r9",
+   "season": 35,
+   "ours": false,
+   "final": 71.30324427,
+   "off": 71.30324427,
+   "on": 71.30324427,
+   "off_match": true
+  },
+  {
+   "id": "S36-0",
+   "season": 36,
+   "ours": true,
+   "final": 115.94349671,
+   "off": 115.94349671,
+   "on": 115.09118363,
+   "off_match": true
+  },
+  {
+   "id": "S36-1",
+   "season": 36,
+   "ours": true,
+   "final": 69.26308368,
+   "off": 69.26308368,
+   "on": 65.90112748,
+   "off_match": true
+  },
+  {
+   "id": "S36-2",
+   "season": 36,
+   "ours": true,
+   "final": 61.62926281,
+   "off": 61.62926281,
+   "on": 61.62926281,
+   "off_match": true
+  },
+  {
+   "id": "S36-3",
+   "season": 36,
+   "ours": true,
+   "final": 65.45731264,
+   "off": 65.45731264,
+   "on": 62.90136821,
+   "off_match": true
+  },
+  {
+   "id": "S36-4",
+   "season": 36,
+   "ours": true,
+   "final": 44.7325741,
+   "off": 44.7325741,
+   "on": 44.7325741,
+   "off_match": true
+  },
+  {
+   "id": "S36-r0",
+   "season": 36,
+   "ours": false,
+   "final": 44.24592515,
+   "off": 44.24592515,
+   "on": 44.24592515,
+   "off_match": true
+  },
+  {
+   "id": "S36-r1",
+   "season": 36,
+   "ours": false,
+   "final": 66.02713392,
+   "off": 66.02713392,
+   "on": 65.83459985,
+   "off_match": true
+  },
+  {
+   "id": "S36-r2",
+   "season": 36,
+   "ours": false,
+   "final": 66.02582005,
+   "off": 66.02582005,
+   "on": 65.29181406,
+   "off_match": true
+  },
+  {
+   "id": "S36-r3",
+   "season": 36,
+   "ours": false,
+   "final": 71.7348775,
+   "off": 71.7348775,
+   "on": 71.7348775,
+   "off_match": true
+  },
+  {
+   "id": "S36-r4",
+   "season": 36,
+   "ours": false,
+   "final": 128.29495289,
+   "off": 128.29495289,
+   "on": 127.40463207,
+   "off_match": true
+  },
+  {
+   "id": "S36-r5",
+   "season": 36,
+   "ours": false,
+   "final": 69.36404925,
+   "off": 69.36404925,
+   "on": 67.73511627,
+   "off_match": true
+  },
+  {
+   "id": "S36-r6",
+   "season": 36,
+   "ours": false,
+   "final": 48.63433499,
+   "off": 48.63433499,
+   "on": 48.42099763,
+   "off_match": true
+  },
+  {
+   "id": "S36-r7",
+   "season": 36,
+   "ours": false,
+   "final": 76.30363996,
+   "off": 76.30363996,
+   "on": 76.03450076,
+   "off_match": true
+  },
+  {
+   "id": "S36-r8",
+   "season": 36,
+   "ours": false,
+   "final": 62.89121716,
+   "off": 62.89121716,
+   "on": 60.79021996,
+   "off_match": true
+  },
+  {
+   "id": "S36-r9",
+   "season": 36,
+   "ours": false,
+   "final": 128.9523896,
+   "off": 128.9523896,
+   "on": 127.11293371,
+   "off_match": true
+  },
+  {
+   "id": "S36-r10",
+   "season": 36,
+   "ours": false,
+   "final": 63.614983,
+   "off": 63.614983,
+   "on": 63.05153104,
+   "off_match": true
+  },
+  {
+   "id": "S37-0",
+   "season": 37,
+   "ours": true,
+   "final": 95.16712571,
+   "off": 95.16712571,
+   "on": 94.96317728,
+   "off_match": true
+  },
+  {
+   "id": "S37-1",
+   "season": 37,
+   "ours": true,
+   "final": 83.19229921,
+   "off": 83.19229921,
+   "on": 82.51044452,
+   "off_match": true
+  },
+  {
+   "id": "S37-2",
+   "season": 37,
+   "ours": true,
+   "final": 67.01156438,
+   "off": 67.01156438,
+   "on": 67.01156438,
+   "off_match": true
+  },
+  {
+   "id": "S37-3",
+   "season": 37,
+   "ours": true,
+   "final": 56.12848888,
+   "off": 56.12848888,
+   "on": 56.12848888,
+   "off_match": true
+  },
+  {
+   "id": "S37-4",
+   "season": 37,
+   "ours": true,
+   "final": 52.03475115,
+   "off": 52.03475115,
+   "on": 52.03475115,
+   "off_match": true
+  },
+  {
+   "id": "S37-r0",
+   "season": 37,
+   "ours": false,
+   "final": 39.69316948,
+   "off": 39.69316948,
+   "on": 39.69316948,
+   "off_match": true
+  },
+  {
+   "id": "S37-r1",
+   "season": 37,
+   "ours": false,
+   "final": 61.03543765,
+   "off": 61.03543765,
+   "on": 61.03543765,
+   "off_match": true
+  },
+  {
+   "id": "S37-r2",
+   "season": 37,
+   "ours": false,
+   "final": 100.01908785,
+   "off": 100.01908785,
+   "on": 99.4691712,
+   "off_match": true
+  },
+  {
+   "id": "S37-r3",
+   "season": 37,
+   "ours": false,
+   "final": 79.42710976,
+   "off": 79.42710976,
+   "on": 79.09997048,
+   "off_match": true
+  },
+  {
+   "id": "S37-r4",
+   "season": 37,
+   "ours": false,
+   "final": 76.05140375,
+   "off": 76.05140375,
+   "on": 76.05140375,
+   "off_match": true
+  },
+  {
+   "id": "S37-r5",
+   "season": 37,
+   "ours": false,
+   "final": 94.35929603,
+   "off": 94.35929603,
+   "on": 93.69000604,
+   "off_match": true
+  },
+  {
+   "id": "S37-r6",
+   "season": 37,
+   "ours": false,
+   "final": 76.97210581,
+   "off": 76.97210581,
+   "on": 76.97210581,
+   "off_match": true
+  },
+  {
+   "id": "S37-r7",
+   "season": 37,
+   "ours": false,
+   "final": 68.05417194,
+   "off": 68.05417194,
+   "on": 68.05417194,
+   "off_match": true
+  },
+  {
+   "id": "S37-r8",
+   "season": 37,
+   "ours": false,
+   "final": 38.96696402,
+   "off": 38.96696402,
+   "on": 38.96696402,
+   "off_match": true
+  },
+  {
+   "id": "S37-r9",
+   "season": 37,
+   "ours": false,
+   "final": 36.98530917,
+   "off": 36.98530917,
+   "on": 36.98530917,
+   "off_match": true
+  },
+  {
+   "id": "S37-r10",
+   "season": 37,
+   "ours": false,
+   "final": 94.11265548,
+   "off": 94.11265548,
+   "on": 94.11235567,
+   "off_match": true
+  },
+  {
+   "id": "S37-r11",
+   "season": 37,
+   "ours": false,
+   "final": 62.26138242,
+   "off": 62.26138242,
+   "on": 62.26138242,
+   "off_match": true
+  },
+  {
+   "id": "S37-r12",
+   "season": 37,
+   "ours": false,
+   "final": 76.05140375,
+   "off": 76.05140375,
+   "on": 76.05140375,
+   "off_match": true
+  },
+  {
+   "id": "S37-r13",
+   "season": 37,
+   "ours": false,
+   "final": 66.39388689,
+   "off": 66.39388689,
+   "on": 66.24850515,
+   "off_match": true
+  },
+  {
+   "id": "S38-0",
+   "season": 38,
+   "ours": true,
+   "final": 107.13051292,
+   "off": 107.13051292,
+   "on": 107.13051292,
+   "off_match": true
+  },
+  {
+   "id": "S38-1",
+   "season": 38,
+   "ours": true,
+   "final": 93.02017051,
+   "off": 93.02017051,
+   "on": 93.02017051,
+   "off_match": true
+  },
+  {
+   "id": "S38-2",
+   "season": 38,
+   "ours": true,
+   "final": 57.29573826,
+   "off": 57.29573826,
+   "on": 56.19714477,
+   "off_match": true
+  },
+  {
+   "id": "S38-3",
+   "season": 38,
+   "ours": true,
+   "final": 52.61329423,
+   "off": 52.61329423,
+   "on": 52.61329423,
+   "off_match": true
+  },
+  {
+   "id": "S38-4",
+   "season": 38,
+   "ours": true,
+   "final": 47.91298706,
+   "off": 47.91298706,
+   "on": 47.71037923,
+   "off_match": true
+  },
+  {
+   "id": "S38-r0",
+   "season": 38,
+   "ours": false,
+   "final": 76.17655316,
+   "off": 76.17655316,
+   "on": 73.92184157,
+   "off_match": true
+  },
+  {
+   "id": "S38-r1",
+   "season": 38,
+   "ours": false,
+   "final": 55.50345828,
+   "off": 55.50345828,
+   "on": 52.99869558,
+   "off_match": true
+  },
+  {
+   "id": "S38-r2",
+   "season": 38,
+   "ours": false,
+   "final": 43.87178712,
+   "off": 43.87178712,
+   "on": 43.87178712,
+   "off_match": true
+  },
+  {
+   "id": "S38-r3",
+   "season": 38,
+   "ours": false,
+   "final": 107.53446179,
+   "off": 107.53446179,
+   "on": 107.53446179,
+   "off_match": true
+  },
+  {
+   "id": "S38-r4",
+   "season": 38,
+   "ours": false,
+   "final": 67.63353411,
+   "off": 67.63353411,
+   "on": 67.63427823,
+   "off_match": true
+  },
+  {
+   "id": "S38-r5",
+   "season": 38,
+   "ours": false,
+   "final": 92.91420929,
+   "off": 92.91420929,
+   "on": 92.91420929,
+   "off_match": true
+  },
+  {
+   "id": "S38-r6",
+   "season": 38,
+   "ours": false,
+   "final": 57.35844267,
+   "off": 57.35844267,
+   "on": 57.05906076,
+   "off_match": true
+  },
+  {
+   "id": "S38-r7",
+   "season": 38,
+   "ours": false,
+   "final": 52.69812674,
+   "off": 52.69812674,
+   "on": 52.69812674,
+   "off_match": true
+  },
+  {
+   "id": "S38-r8",
+   "season": 38,
+   "ours": false,
+   "final": 55.45779567,
+   "off": 55.45779567,
+   "on": 53.88404106,
+   "off_match": true
+  },
+  {
+   "id": "S38-r9",
+   "season": 38,
+   "ours": false,
+   "final": 84.26475072,
+   "off": 84.26475072,
+   "on": 84.26475072,
+   "off_match": true
+  },
+  {
+   "id": "S38-r10",
+   "season": 38,
+   "ours": false,
+   "final": 55.30436248,
+   "off": 55.30436248,
+   "on": 55.30436248,
+   "off_match": true
+  },
+  {
+   "id": "S38-r11",
+   "season": 38,
+   "ours": false,
+   "final": 106.54998419,
+   "off": 106.54998419,
+   "on": 106.54998419,
+   "off_match": true
+  },
+  {
+   "id": "S38-r12",
+   "season": 38,
+   "ours": false,
+   "final": 51.98286337,
+   "off": 51.98286337,
+   "on": 51.98286337,
+   "off_match": true
+  },
+  {
+   "id": "S38-r13",
+   "season": 38,
+   "ours": false,
+   "final": 42.68111887,
+   "off": 42.68111887,
+   "on": 41.30772563,
+   "off_match": true
+  },
+  {
+   "id": "S39-0",
+   "season": 39,
+   "ours": true,
+   "final": 98.02964286,
+   "off": 98.02964286,
+   "on": 98.02964286,
+   "off_match": true
+  },
+  {
+   "id": "S39-1",
+   "season": 39,
+   "ours": true,
+   "final": 84.74076835,
+   "off": 84.74076835,
+   "on": 84.60420156,
+   "off_match": true
+  },
+  {
+   "id": "S39-2",
+   "season": 39,
+   "ours": true,
+   "final": 73.93060725,
+   "off": 73.93060725,
+   "on": 70.38957208,
+   "off_match": true
+  },
+  {
+   "id": "S39-3",
+   "season": 39,
+   "ours": true,
+   "final": 70.88187853,
+   "off": 70.88187853,
+   "on": 70.88187853,
+   "off_match": true
+  },
+  {
+   "id": "S39-4",
+   "season": 39,
+   "ours": true,
+   "final": 64.06449593,
+   "off": 64.06449593,
+   "on": 58.87486621,
+   "off_match": true
+  },
+  {
+   "id": "S39-r0",
+   "season": 39,
+   "ours": false,
+   "final": 62.27758353,
+   "off": 62.27758353,
+   "on": 62.34397299,
+   "off_match": true
+  },
+  {
+   "id": "S39-r1",
+   "season": 39,
+   "ours": false,
+   "final": 80.17310071,
+   "off": 80.17310071,
+   "on": 80.0278596,
+   "off_match": true
+  },
+  {
+   "id": "S39-r2",
+   "season": 39,
+   "ours": false,
+   "final": 64.1086416,
+   "off": 64.1086416,
+   "on": 64.1086416,
+   "off_match": true
+  },
+  {
+   "id": "S39-r3",
+   "season": 39,
+   "ours": false,
+   "final": 66.17801367,
+   "off": 66.17801367,
+   "on": 66.17801367,
+   "off_match": true
+  },
+  {
+   "id": "S39-r4",
+   "season": 39,
+   "ours": false,
+   "final": 74.27105978,
+   "off": 74.27105978,
+   "on": 73.76197294,
+   "off_match": true
+  },
+  {
+   "id": "S39-r5",
+   "season": 39,
+   "ours": false,
+   "final": 80.81720383,
+   "off": 80.81720383,
+   "on": 80.01676404,
+   "off_match": true
+  },
+  {
+   "id": "S39-r6",
+   "season": 39,
+   "ours": false,
+   "final": 71.6221494,
+   "off": 71.6221494,
+   "on": 71.6221494,
+   "off_match": true
+  },
+  {
+   "id": "S39-r7",
+   "season": 39,
+   "ours": false,
+   "final": 67.7490901,
+   "off": 67.7490901,
+   "on": 67.7490901,
+   "off_match": true
+  },
+  {
+   "id": "S39-r8",
+   "season": 39,
+   "ours": false,
+   "final": 66.79073412,
+   "off": 66.79073412,
+   "on": 66.79073412,
+   "off_match": true
+  },
+  {
+   "id": "S39-r9",
+   "season": 39,
+   "ours": false,
+   "final": 65.79333968,
+   "off": 65.79333968,
+   "on": 65.79333968,
+   "off_match": true
+  },
+  {
+   "id": "S39-r10",
+   "season": 39,
+   "ours": false,
+   "final": 68.59082511,
+   "off": 68.59082511,
+   "on": 68.59082511,
+   "off_match": true
+  },
+  {
+   "id": "S39-r11",
+   "season": 39,
+   "ours": false,
+   "final": 62.82275543,
+   "off": 62.82275543,
+   "on": 62.83240565,
+   "off_match": true
+  },
+  {
+   "id": "S39-r12",
+   "season": 39,
+   "ours": false,
+   "final": 60.85291146,
+   "off": 60.85291146,
+   "on": 60.85291146,
+   "off_match": true
+  },
+  {
+   "id": "S40-0",
+   "season": 40,
+   "ours": true,
+   "final": 100.42661896,
+   "off": 100.42661896,
+   "on": 100.42661896,
+   "off_match": true
+  },
+  {
+   "id": "S40-1",
+   "season": 40,
+   "ours": true,
+   "final": 90.58208287,
+   "off": 90.58208287,
+   "on": 87.29408961,
+   "off_match": true
+  },
+  {
+   "id": "S40-2",
+   "season": 40,
+   "ours": true,
+   "final": 66.77326703,
+   "off": 66.77326703,
+   "on": 66.77326703,
+   "off_match": true
+  },
+  {
+   "id": "S40-3",
+   "season": 40,
+   "ours": true,
+   "final": 68.99608889,
+   "off": 68.99608889,
+   "on": 68.99608889,
+   "off_match": true
+  },
+  {
+   "id": "S40-4",
+   "season": 40,
+   "ours": true,
+   "final": 61.38849724,
+   "off": 61.38849724,
+   "on": 61.38849724,
+   "off_match": true
+  },
+  {
+   "id": "S40-r0",
+   "season": 40,
+   "ours": false,
+   "final": 50.78112304,
+   "off": 50.78112304,
+   "on": 50.78112304,
+   "off_match": true
+  },
+  {
+   "id": "S40-r1",
+   "season": 40,
+   "ours": false,
+   "final": 69.48971759,
+   "off": 69.48971759,
+   "on": 68.76728175,
+   "off_match": true
+  },
+  {
+   "id": "S40-r2",
+   "season": 40,
+   "ours": false,
+   "final": 106.6574802,
+   "off": 106.6574802,
+   "on": 99.20600631,
+   "off_match": true
+  },
+  {
+   "id": "S40-r3",
+   "season": 40,
+   "ours": false,
+   "final": 88.36763946,
+   "off": 88.36763946,
+   "on": 86.70837359,
+   "off_match": true
+  },
+  {
+   "id": "S40-r4",
+   "season": 40,
+   "ours": false,
+   "final": 75.20888341,
+   "off": 75.20888341,
+   "on": 73.21085116,
+   "off_match": true
+  },
+  {
+   "id": "S40-r5",
+   "season": 40,
+   "ours": false,
+   "final": 50.78112304,
+   "off": 50.78112304,
+   "on": 50.78112304,
+   "off_match": true
+  },
+  {
+   "id": "S40-r6",
+   "season": 40,
+   "ours": false,
+   "final": 67.61651933,
+   "off": 67.61651933,
+   "on": 61.77265298,
+   "off_match": true
+  },
+  {
+   "id": "S40-r7",
+   "season": 40,
+   "ours": false,
+   "final": 112.60300547,
+   "off": 112.60300547,
+   "on": 112.60300547,
+   "off_match": true
+  },
+  {
+   "id": "S40-r8",
+   "season": 40,
+   "ours": false,
+   "final": 72.69598765,
+   "off": 72.69598765,
+   "on": 72.69598765,
+   "off_match": true
+  },
+  {
+   "id": "S41-0",
+   "season": 41,
+   "ours": true,
+   "final": 99.38469432,
+   "off": 99.38469432,
+   "on": 99.38469432,
+   "off_match": true
+  },
+  {
+   "id": "S41-1",
+   "season": 41,
+   "ours": true,
+   "final": 99.79095874,
+   "off": 99.79095874,
+   "on": 99.66617627,
+   "off_match": true
+  },
+  {
+   "id": "S41-2",
+   "season": 41,
+   "ours": true,
+   "final": 86.88908158,
+   "off": 86.88908158,
+   "on": 84.81015953,
+   "off_match": true
+  },
+  {
+   "id": "S41-3",
+   "season": 41,
+   "ours": true,
+   "final": 61.98640299,
+   "off": 61.98640299,
+   "on": 61.98640299,
+   "off_match": true
+  },
+  {
+   "id": "S41-4",
+   "season": 41,
+   "ours": true,
+   "final": 58.12200819,
+   "off": 58.12200819,
+   "on": 58.12200819,
+   "off_match": true
+  },
+  {
+   "id": "S41-r0",
+   "season": 41,
+   "ours": false,
+   "final": 59.62176783,
+   "off": 59.62176783,
+   "on": 59.62176783,
+   "off_match": true
+  },
+  {
+   "id": "S41-r1",
+   "season": 41,
+   "ours": false,
+   "final": 61.03543765,
+   "off": 61.03543765,
+   "on": 61.03543765,
+   "off_match": true
+  },
+  {
+   "id": "S41-r2",
+   "season": 41,
+   "ours": false,
+   "final": 100.01908785,
+   "off": 100.01908785,
+   "on": 99.4691712,
+   "off_match": true
+  },
+  {
+   "id": "S41-r3",
+   "season": 41,
+   "ours": false,
+   "final": 93.59586287,
+   "off": 93.59586287,
+   "on": 93.48866617,
+   "off_match": true
+  },
+  {
+   "id": "S41-r4",
+   "season": 41,
+   "ours": false,
+   "final": 99.82591013,
+   "off": 99.82591013,
+   "on": 99.20038543,
+   "off_match": true
+  },
+  {
+   "id": "S41-r5",
+   "season": 41,
+   "ours": false,
+   "final": 107.96851036,
+   "off": 107.96851036,
+   "on": 107.96851036,
+   "off_match": true
+  },
+  {
+   "id": "S41-r6",
+   "season": 41,
+   "ours": false,
+   "final": 78.61813496,
+   "off": 78.61813496,
+   "on": 77.64206063,
+   "off_match": true
+  },
+  {
+   "id": "S41-r7",
+   "season": 41,
+   "ours": false,
+   "final": 59.0347675,
+   "off": 59.0347675,
+   "on": 59.0347675,
+   "off_match": true
+  },
+  {
+   "id": "S41-r8",
+   "season": 41,
+   "ours": false,
+   "final": 66.04592438,
+   "off": 66.04592438,
+   "on": 64.20491656,
+   "off_match": true
+  },
+  {
+   "id": "S41-r9",
+   "season": 41,
+   "ours": false,
+   "final": 92.72215498,
+   "off": 92.72215498,
+   "on": 92.13427706,
+   "off_match": true
+  },
+  {
+   "id": "S41-r10",
+   "season": 41,
+   "ours": false,
+   "final": 66.39388689,
+   "off": 66.39388689,
+   "on": 66.24850515,
+   "off_match": true
+  },
+  {
+   "id": "S41-r11",
+   "season": 41,
+   "ours": false,
+   "final": 65.78103492,
+   "off": 65.78103492,
+   "on": 65.78103492,
+   "off_match": true
+  },
+  {
+   "id": "S42-0",
+   "season": 42,
+   "ours": true,
+   "final": 114.20060401,
+   "off": 114.20060401,
+   "on": 114.22795444,
+   "off_match": true
+  },
+  {
+   "id": "S42-1",
+   "season": 42,
+   "ours": true,
+   "final": 78.23395626,
+   "off": 78.23395626,
+   "on": 78.47860516,
+   "off_match": true
+  },
+  {
+   "id": "S42-2",
+   "season": 42,
+   "ours": true,
+   "final": 71.28292847,
+   "off": 71.28292847,
+   "on": 71.18797418,
+   "off_match": true
+  },
+  {
+   "id": "S42-3",
+   "season": 42,
+   "ours": true,
+   "final": 71.81838719,
+   "off": 71.81838719,
+   "on": 69.9625391,
+   "off_match": true
+  },
+  {
+   "id": "S42-4",
+   "season": 42,
+   "ours": true,
+   "final": 64.3641348,
+   "off": 64.3641348,
+   "on": 61.55336587,
+   "off_match": true
+  },
+  {
+   "id": "S42-r0",
+   "season": 42,
+   "ours": false,
+   "final": 58.98300392,
+   "off": 58.98300392,
+   "on": 58.98300392,
+   "off_match": true
+  },
+  {
+   "id": "S42-r1",
+   "season": 42,
+   "ours": false,
+   "final": 78.11374516,
+   "off": 78.11374516,
+   "on": 77.63027629,
+   "off_match": true
+  },
+  {
+   "id": "S42-r2",
+   "season": 42,
+   "ours": false,
+   "final": 71.63631549,
+   "off": 71.63631549,
+   "on": 71.63631549,
+   "off_match": true
+  },
+  {
+   "id": "S42-r3",
+   "season": 42,
+   "ours": false,
+   "final": 62.6326555,
+   "off": 62.6326555,
+   "on": 62.6326555,
+   "off_match": true
+  },
+  {
+   "id": "S42-r4",
+   "season": 42,
+   "ours": false,
+   "final": 121.35167232,
+   "off": 121.35167232,
+   "on": 120.21547767,
+   "off_match": true
+  },
+  {
+   "id": "S42-r5",
+   "season": 42,
+   "ours": false,
+   "final": 89.20413988,
+   "off": 89.20413988,
+   "on": 88.38942783,
+   "off_match": true
+  },
+  {
+   "id": "S42-r6",
+   "season": 42,
+   "ours": false,
+   "final": 80.18964326,
+   "off": 80.18964326,
+   "on": 75.395268,
+   "off_match": true
+  },
+  {
+   "id": "S42-r7",
+   "season": 42,
+   "ours": false,
+   "final": 59.9830394,
+   "off": 59.9830394,
+   "on": 59.27683825,
+   "off_match": true
+  },
+  {
+   "id": "S42-r8",
+   "season": 42,
+   "ours": false,
+   "final": 60.73263903,
+   "off": 60.73263903,
+   "on": 55.69151257,
+   "off_match": true
+  },
+  {
+   "id": "S42-r9",
+   "season": 42,
+   "ours": false,
+   "final": 69.76035984,
+   "off": 69.76035984,
+   "on": 69.76035984,
+   "off_match": true
+  },
+  {
+   "id": "S42-r10",
+   "season": 42,
+   "ours": false,
+   "final": 82.07215427,
+   "off": 82.07215427,
+   "on": 82.07215427,
+   "off_match": true
+  },
+  {
+   "id": "S42-r11",
+   "season": 42,
+   "ours": false,
+   "final": 73.82104768,
+   "off": 73.82104768,
+   "on": 73.82104768,
+   "off_match": true
+  },
+  {
+   "id": "S42-r12",
+   "season": 42,
+   "ours": false,
+   "final": 56.00528437,
+   "off": 56.00528437,
+   "on": 56.00528437,
+   "off_match": true
+  }
+ ]
+}
