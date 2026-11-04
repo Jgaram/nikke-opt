@@ -1,0 +1,7 @@
+{
+ "season": 36,
+ "targets": 40,
+ "sims": 4601,
+ "seconds": 467.2,
+ "evaluator": "nikke-calc-rs f0f648c"
+}
