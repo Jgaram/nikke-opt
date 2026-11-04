@@ -59,6 +59,24 @@
    "seconds": 176.9,
    "errors": 0,
    "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "5": {
+   "sims": 5000,
+   "seconds": 184.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "6": {
+   "sims": 5000,
+   "seconds": 209.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "7": {
+   "sims": 5000,
+   "seconds": 179.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
   }
  }
 }

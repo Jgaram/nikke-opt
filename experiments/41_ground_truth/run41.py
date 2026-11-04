@@ -271,27 +271,61 @@ def load_refine(s: int) -> dict[int, dict[tuple, tuple[float, tuple]]]:
 
 # ---------------------------------------------------------------- 3단계 도구: 상한 가지치기 · 정확 묶기 · 경치 · R_need
 
-def top_disjoint_ub(T: Table, kind: str, cand: Sequence[int], order: Sequence[int], k: int = 4) -> dict[int, float]:
-    """구성 i의 상한 = v(i) + (i와 니케가 겹치지 않는 구성 중 값 상위 k개의 합 — 서로 겹침은 무시). 못 채우면 −inf."""
+LAG_SLACK = 1e-6       # 라그랑주 상한의 부동소수 여유(실험 9 PACK_SLACK과 같다)
+PRUNE_PASSES = 3
+
+
+def _lag(vs: Any, inc: Any, m: int, k: int, thr: float) -> Any:
+    """니케별 λ ≥ 0(실험 9 `_pack_lagrange` — 겹치지 않는 k덱 합의 쌍대 상한을 thr 쪽으로 줄이는 λ)."""
+    import numpy as np
+    return np.asarray(R9._pack_lagrange(list(vs), inc, m, k, inc.shape[1], thr), dtype=float)
+
+
+def prune(T: Table, kind: str, thr: float, k: int = 5) -> tuple[list[int], dict[str, Any]]:
+    """합 ≥ thr인 겹치지 않는 k덱에 들 수 있는 구성(값 순). 아래 상한 중 하나라도 thr 미만이면 뺀다.
+
+    - 라그랑주: 덱 P ∋ i의 합 ≤ v(i) + (i 말고 감한 값 red = v − Σλ 상위 k−1개) + (i에 없는 니케의 λ 상위 5(k−1)개).
+    - 겹치지 않는 값: v(i) + (i와 니케가 겹치지 않는 남은 후보 중 값 상위 k−1개).
+    합 ≥ thr인 덱의 구성은 모두 살아남으므로 남은 후보 안에서 다시 재도 맞다 → 줄지 않을 때까지(최대 PRUNE_PASSES번) 되풀이한다."""
     import numpy as np
     v = T.values(kind)
-    om = np.array([T.masks[j] for j in order], dtype=np.uint64)
-    ov = np.array([v[j] for j in order], dtype=float)
-    out = {}
-    for i in cand:
-        hit = np.flatnonzero((om & np.uint64(T.masks[i])) == 0)[:k]
-        out[i] = v[i] + float(ov[hit].sum()) if len(hit) == k else float("-inf")
-    return out
-
-
-def prune(T: Table, kind: str, thr: float, k: int = 5) -> tuple[list[int], dict[int, float]]:
-    """상한 ≥ thr인 구성(값 순). 상한 < thr인 구성은 합 ≥ thr인 어떤 k덱에도 들 수 없다."""
-    order = T.sorted_idx(kind)
-    v = T.values(kind)
-    top = sum(v[j] for j in order[:k - 1])
-    cand = [i for i in order if v[i] + top >= thr]          # 겹침을 보지 않은 첫 거르기(값 순이라 앞쪽만 남는다)
-    ub = top_disjoint_ub(T, kind, cand, order, k - 1)
-    return [i for i in cand if ub[i] >= thr], ub
+    keep = T.sorted_idx(kind)
+    m = len(T.bit)
+    info: dict[str, Any] = {"start": len(keep), "passes": []}
+    need = 5 * (k - 1)
+    for _ in range(PRUNE_PASSES):
+        n0 = len(keep)
+        if n0 < k:
+            break
+        vs = np.array([v[i] for i in keep], dtype=float)
+        inc = np.array([[T.bit[x] for x in T.cs[i]] for i in keep], dtype=np.int64)
+        lam = _lag(vs, inc, m, k, thr)
+        red = vs - lam[inc].sum(1)
+        top = np.argsort(-red, kind="stable")[:k]
+        s_k1 = float(red[top[:k - 1]].sum())
+        others = np.full(n0, s_k1)
+        others[top[:k - 1]] = s_k1 - red[top[:k - 1]] + red[top[k - 1]]
+        L = np.argsort(-lam, kind="stable")[:min(m, need + inc.shape[1])]
+        mem = (inc[:, :, None] == L[None, None, :]).any(1)
+        free = ~mem
+        sel = free & (np.cumsum(free, axis=1) <= need)
+        lam_part = (sel * lam[L][None, :]).sum(1)
+        ub = vs + others + lam_part
+        keep = [i for i, u in zip(keep, ub) if u + LAG_SLACK >= thr]
+        # 겹치지 않는 값 상한(남은 후보 안에서)
+        if len(keep) >= k:
+            om = np.array([T.masks[j] for j in keep], dtype=np.uint64)
+            ov = np.array([v[j] for j in keep], dtype=float)
+            ok = []
+            for i in keep:
+                hit = np.flatnonzero((om & np.uint64(T.masks[i])) == 0)[:k - 1]
+                if len(hit) == k - 1 and v[i] + float(ov[hit].sum()) + 1e-9 >= thr:
+                    ok.append(i)
+            keep = ok
+        info["passes"].append(len(keep))
+        if len(keep) == n0:
+            break
+    return keep, info
 
 
 def exact_opt(T: Table, kind: str, seed_limit: int = 5000, deadline_s: float = 3600.0) -> dict[str, Any]:
@@ -299,7 +333,7 @@ def exact_opt(T: Table, kind: str, seed_limit: int = 5000, deadline_s: float = 3
     t0 = time.time()
     order = T.sorted_idx(kind)
     lb, lb_decks = R9.pack_vals(T.book(kind, order[:seed_limit]))
-    keep, _ = prune(T, kind, lb - 1e-9)
+    keep, pinfo = prune(T, kind, lb - 1e-9)
     exact = True
     try:
         total, decks = R9.pack_vals(T.book(kind, keep), deadline=time.monotonic() + deadline_s)
@@ -309,42 +343,75 @@ def exact_opt(T: Table, kind: str, seed_limit: int = 5000, deadline_s: float = 3
         total, decks, exact = lb, lb_decks, False
     return {"kind": kind, "total": total, "decks": [list(q) for _, q in decks], "values": [v for v, _ in decks],
             "idx": [T.idx[frozenset(q)] for _, q in decks], "lb": lb, "seed_limit": seed_limit, "kept": len(keep),
-            "exact": exact, "seconds": round(time.time() - t0, 1)}
+            "prune": pinfo, "exact": exact, "seconds": round(time.time() - t0, 1)}
 
 
-def enum_packs(vals: Sequence[float], masks: Sequence[int], thr: float, k: int = 5, cap: int = 2_000_000,
-               deadline_s: float = 600.0) -> dict[str, Any]:
-    """값 내림차순 후보에서 합 ≥ thr인 겹치지 않는 k덱을 모두 센다(상한: 남은 후보 앞 r개 합). cap · 시간에 닿으면 하한."""
+def enum_packs(vals: Sequence[float], rows: Sequence[Sequence[int]], m: int, thr: float, k: int = 5,
+               cap: int = 2_000_000, deadline_s: float = 600.0) -> dict[str, Any]:
+    """값 내림차순 후보(rows = 구성마다 니케 번호)에서 합 ≥ thr인 겹치지 않는 k덱을 모두 센다.
+    상한은 `pack_vals`와 같다: 「남은 후보 앞 r개 값 합」과 「감한 값 상위 r개 + 안 쓴 니케 λ 상위 5r개」 중 작은 쪽.
+    cap · 시간에 닿으면 그때까지 센 수(하한)와 complete = False."""
+    import heapq
+    import numpy as np
     n = len(vals)
-    state = {"count": 0, "stop": None, "used": set()}
+    state: dict[str, Any] = {"count": 0, "stop": None, "used": set()}
+    if n < k:
+        return {"count": 0, "complete": True, "stop": None, "members": []}
+    masks = [sum(1 << x for x in r) for r in rows]
+    inc = np.array(rows, dtype=np.int64)
+    lam = _lag(vals, inc, m, k, thr).tolist()
+    red = [vals[j] - sum(lam[x] for x in rows[j]) for j in range(n)]
+    lam_order = sorted(range(m), key=lambda x: -lam[x])
+    smax = inc.shape[1]
     end = time.monotonic() + deadline_s
     ticks = [0]
 
     def dfs(L: list[int], used: int, total: float, r: int, path: list[int]) -> None:
-        if state["stop"]:
-            return
         ticks[0] += 1
-        if not ticks[0] & 4095 and time.monotonic() > end:
+        if not ticks[0] & 1023 and time.monotonic() > end:
             state["stop"] = "time"
             return
-        for p in range(len(L) - r + 1):
-            b = total
-            for q in range(p, p + r):
-                b += vals[L[q]]
-            if b < thr:
-                return
-            i = L[p]
-            if r == 1:
+        nL = len(L)
+        if nL < r:
+            return
+        if r == 1:
+            for i in L:
+                if total + vals[i] < thr:
+                    return
                 state["count"] += 1
-                state["used"].update(path + [i])
+                state["used"].update(path)
+                state["used"].add(i)
                 if state["count"] >= cap:
                     state["stop"] = "cap"
                     return
-                continue
+            return
+        need, lam_top, got = smax * r, 0.0, 0
+        for x in lam_order:
+            if got == need:
+                break
+            if not (used >> x) & 1:
+                lam_top += lam[x]
+                got += 1
+        suf = [float("-inf")] * (nL + 1)
+        top: list[float] = []
+        for p in range(nL - 1, -1, -1):
+            x = red[L[p]]
+            if len(top) < r:
+                heapq.heappush(top, x)
+            elif x > top[0]:
+                heapq.heapreplace(top, x)
+            if len(top) == r:
+                suf[p] = sum(top)
+        for p in range(nL - r + 1):
+            b = total
+            for q in range(p, p + r):
+                b += vals[L[q]]
+            if b < thr or total + suf[p] + lam_top + LAG_SLACK < thr:
+                return
+            i = L[p]
             mi = masks[i]
-            child = [j for j in L[p + 1:] if not masks[j] & mi]
             path.append(i)
-            dfs(child, used | mi, total + vals[i], r - 1, path)
+            dfs([j for j in L[p + 1:] if not masks[j] & mi], used | mi, total + vals[i], r - 1, path)
             path.pop()
             if state["stop"]:
                 return
@@ -358,7 +425,8 @@ def landscape(T: Table, kind: str, opt: float, x: float, cap: int = 2_000_000, d
     thr = x * opt - 1e-9
     keep, _ = prune(T, kind, thr)
     v = T.values(kind)
-    got = enum_packs([v[i] for i in keep], [T.masks[i] for i in keep], thr, cap=cap, deadline_s=deadline_s)
+    got = enum_packs([v[i] for i in keep], [[T.bit[n] for n in T.cs[i]] for i in keep], len(T.bit), thr,
+                     cap=cap, deadline_s=deadline_s)
     return {"x": x, "candidates": len(keep), "count": got["count"], "complete": got["complete"], "stop": got["stop"],
             "comps_in": [keep[j] for j in got["members"]], "keep": keep}
 
