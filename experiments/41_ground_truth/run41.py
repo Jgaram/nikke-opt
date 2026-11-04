@@ -671,9 +671,14 @@ def perm_summary(s: int, T: Table) -> dict[str, Any] | None:
     T2 = Table(s, T.cs, vals, None, sorted(T.bit))
     opt2 = exact_opt(T2, "base")
     xs = sorted(gains.values())
+    e36 = exp36_values(s)
+    rs = P41.ranker_sets(s)
+    rb2, _ = pack_fixed(T2, "base", [q for v in rs.values() for q in v], e36["rankers"])
     return {"comps": len(tg), "gain_median": median(xs), "gain_max": xs[-1], "gain_ge_1pct": sum(x >= 0.01 for x in xs),
             "by_why": {w: median([gains[i] for i in tg if tg[i] == w]) for w in sorted(set(tg.values()))},
-            "opt_perm_lb": opt2["total"], "opt_perm_decks": opt2["decks"], "opt_perm_exact": opt2["exact"]}
+            "opt_perm_lb": opt2["total"], "opt_perm_decks": opt2["decks"], "opt_perm_exact": opt2["exact"],
+            "A_perm": five_sum(T2, "base", e36["A_decks"]), "ranker_best_perm": rb2,
+            "miss_perm": opt2["total"] / e36["A_total"] - 1, "ranker_ratio_perm": rb2 / opt2["total"]}
 
 
 # ---------------------------------------------------------------- 3단계: 답안지 묶기 · 채점(시뮬 0)
@@ -981,6 +986,9 @@ def analyze_season(s: int) -> dict[str, Any]:
         "refine_gain": {"comps": len(gains), "median": median(gains), "p90": sorted(gains)[int(0.9 * (len(gains) - 1))] if gains else None,
                         "max": max(gains) if gains else None},
         "ranker_squad_ranks_ref": sorted(rk_ref[T.idx[frozenset(x)]] for x in rsets["squads"] if frozenset(x) in T.idx),
+        "ranker_order_over_table": sum(1 for c, x in extra.items() if c in T.idx and x > T.ref[T.idx[c]] + 1e-6),
+        "ranker_in_table": sum(1 for c in extra if c in T.idx),
+        "perm": perm_summary(s, T),
         "questions": q,
     }
 
@@ -1032,6 +1040,19 @@ def write_md(rows: Sequence[Mapping[str, Any]]) -> str:
         L.append(f"| S{r['season']} | {' · '.join(pct(x['final_ratio'], 1) for x in rp)} | "
                  f"{' · '.join(str(x['reach']['0.99']) for x in rp)} | {' · '.join(str(x['reach']['0.97']) for x in rp)} | "
                  f"{' · '.join(fb_share(x) for x in rp)} |")
+    L += ["", "## 관찰: 자리 순서 120가지(stage_key 가정 점검)", "",
+          "2단계 · 지금 절차의 순서 다듬기는 「단계 안 순서(stage_key)가 같으면 값이 같다」고 보고 stage_key마다 한 순서만 잰다. "
+          "지금 평가기에서는 자리 순서로도 값이 달라서, 대상 구성(OPT · 랭커 최선 · 우리 A 5덱 · 상위 30)의 120가지를 모두 쟀다. "
+          "그 값으로 바꿔 다시 묶은 합은 자리 순서까지 본 OPT의 **하한**이다(다른 구성은 그대로).", "",
+          "| 시즌 | 랭커 순서 > 표 최고(랭커 스쿼드) | 대상 | 이득 중앙 · 최대 · ≥1% | OPT 하한(억) | ÷ OPT − 1 | 놓친 몫(하한 기준) | 랭커 최선 ÷ 하한 |",
+          "|---|---|---|---|---|---|---|---|"]
+    for r in rows:
+        p = r.get("perm")
+        if not p:
+            continue
+        L.append(f"| S{r['season']} | {r['ranker_order_over_table']}/{r['ranker_in_table']} | {p['comps']} | "
+                 f"{pct(p['gain_median'], 1)} · {pct(p['gain_max'], 1)} · {p['gain_ge_1pct']} | {p['opt_perm_lb']:.2f} | "
+                 f"{pct(p['opt_perm_lb'] / r['opt'] - 1)} | {pct(p['miss_perm'])} | {pct(p['ranker_ratio_perm'], 1)} |")
     L += ["", "## OPT 5덱(다듬은 값)", ""]
     for r in rows:
         L.append(f"- **S{r['season']}** OPT {r['opt']:.2f}억:")
