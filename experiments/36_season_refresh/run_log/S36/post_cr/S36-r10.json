@@ -1,0 +1,140 @@
+{
+ "id": "S36-r10",
+ "season": 36,
+ "squad": [
+  "마스트 : 로망틱 메이드",
+  "리타",
+  "네온 : 비전 아이",
+  "리버렐리오",
+  "앵커 : 이노센트 메이드"
+ ],
+ "win": null,
+ "pre": 49.72656625,
+ "ctrl": 52.03104169,
+ "ctrl_variants": [
+  "네온 : 비전 아이:cube:택티컬 베어 큐브",
+  "리버렐리오:cube:렐릭 부스트 큐브",
+  "리타:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:A0.3",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.1"
+ ],
+ "E0": 52.89969689,
+ "O": 63.42410603,
+ "alloc": {
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "리타": "공4+크확4+크뎀4",
+  "네온 : 비전 아이": "우코4+공4+차속4",
+  "리버렐리오": "공4+크확1+크뎀3+차속4",
+  "앵커 : 이노센트 메이드": "공4+크확2+크뎀3+차속3"
+ },
+ "screen": {
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5125090400000047,
+   "max_ammo_pct": 0.8107600700000006,
+   "crit_rate": 0.2749089799999993,
+   "crit_dmg": 0.36843095999999775,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.36235565999999864,
+   "max_ammo_pct": -0.22688061000000204,
+   "crit_rate": 0.1948439099999959,
+   "crit_dmg": 0.26048698999999687,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "네온 : 비전 아이": {
+   "element_bonus": 14.89169082,
+   "atk_pct": 5.03893669,
+   "max_ammo_pct": 3.4712283699999986,
+   "crit_rate": 3.8944003900000013,
+   "crit_dmg": 4.624595819999996,
+   "charge_speed_pct": 10.341047670000002,
+   "charge_dmg_pct": 1.4648679499999986,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 4.785487029999999,
+   "max_ammo_pct": 0.7660450500000024,
+   "crit_rate": 1.1002619699999983,
+   "crit_dmg": 1.5649157499999973,
+   "charge_speed_pct": 3.654944880000002,
+   "charge_dmg_pct": 0.7514475999999988,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3045255700000027,
+   "max_ammo_pct": 0.071029639999999,
+   "crit_rate": 0.16636274999999756,
+   "crit_dmg": 0.22076627999999943,
+   "charge_speed_pct": 0.2368724499999999,
+   "charge_dmg_pct": 0.0028163599999970756,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "리타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "네온 : 비전 아이": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 63.42410603,
+ "ctrl2_variants": [
+  "네온 : 비전 아이:cube:택티컬 베어 큐브",
+  "리버렐리오:cube:렐릭 부스트 큐브",
+  "리타:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:A0.3",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.1"
+ ],
+ "final": 63.42410603,
+ "final_variants": [
+  "네온 : 비전 아이:cube:택티컬 베어 큐브",
+  "리버렐리오:cube:렐릭 부스트 큐브",
+  "리타:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:reload:A0.3",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.1"
+ ],
+ "sims": 1376,
+ "seconds": 161.8
+}

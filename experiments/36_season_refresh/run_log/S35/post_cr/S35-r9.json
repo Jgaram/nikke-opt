@@ -1,0 +1,138 @@
+{
+ "id": "S35-r9",
+ "season": 35,
+ "squad": [
+  "레이",
+  "디젤 : 윈터 스위츠",
+  "맥스웰",
+  "브리드 : 사일런트 트랙",
+  "목단"
+ ],
+ "win": null,
+ "pre": 53.58184767,
+ "ctrl": 55.7989199,
+ "ctrl_variants": [
+  "레이:reload:C0.1",
+  "맥스웰:click:tap",
+  "목단:cover:on",
+  "브리드 : 사일런트 트랙:reload:B0.1"
+ ],
+ "E0": 62.9608411,
+ "O": 68.99685368,
+ "alloc": {
+  "레이": "우코4+공4+장탄2+크확2",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확3+크뎀1",
+  "맥스웰": "공4+장탄4+크확3+차속1",
+  "브리드 : 사일런트 트랙": "우코4+공4+장탄3+크확1",
+  "목단": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "레이": {
+   "element_bonus": 4.3479365300000055,
+   "atk_pct": 2.5734023700000037,
+   "max_ammo_pct": 4.544230480000003,
+   "crit_rate": 0.8956159199999973,
+   "crit_dmg": 0.7736077100000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 15.470686870000002,
+   "atk_pct": 11.143921390000003,
+   "max_ammo_pct": -0.06875520999999907,
+   "crit_rate": 3.6785441500000005,
+   "crit_dmg": 2.2608198299999955,
+   "charge_speed_pct": 1.168192029999993,
+   "charge_dmg_pct": 0.6130474199999938,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.36830474000000635,
+   "max_ammo_pct": 1.9570936600000053,
+   "crit_rate": 0.1163964799999988,
+   "crit_dmg": 0.100537089999996,
+   "charge_speed_pct": 0.6725299499999977,
+   "charge_dmg_pct": 0.03696526999999605,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 4.076197180000001,
+   "atk_pct": 2.6333903800000016,
+   "max_ammo_pct": 0.908042530000003,
+   "crit_rate": 0.7310498299999963,
+   "crit_dmg": 0.6314349399999983,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7238694900000056,
+   "max_ammo_pct": -0.0014249599999942575,
+   "crit_rate": 0.25854963999999825,
+   "crit_dmg": 0.22331142999999543,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "레이": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "맥스웰": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "브리드 : 사일런트 트랙": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 71.30324427,
+ "ctrl2_variants": [
+  "레이:cube:택티컬 베어 큐브",
+  "레이:reload:A0.3",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "브리드 : 사일런트 트랙:reload:A0.3"
+ ],
+ "final": 71.30324427,
+ "final_variants": [
+  "레이:cube:택티컬 베어 큐브",
+  "레이:reload:A0.3",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "브리드 : 사일런트 트랙:reload:A0.3"
+ ],
+ "sims": 2136,
+ "seconds": 260.8
+}

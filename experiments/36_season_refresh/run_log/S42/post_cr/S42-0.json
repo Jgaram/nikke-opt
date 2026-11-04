@@ -1,0 +1,145 @@
+{
+ "id": "S42-0",
+ "season": 42,
+ "squad": [
+  "아니스 : 스타",
+  "플로라",
+  "크라운",
+  "아니스 : 스파클링 서머",
+  "메이든 : 아이스 로즈"
+ ],
+ "win": null,
+ "pre": 91.53499196,
+ "ctrl": 94.88067604,
+ "ctrl_variants": [
+  "squad:camera:아니스 : 스타",
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "메이든 : 아이스 로즈:reload:C0.1",
+  "아니스 : 스타:cube:택티컬 어설트 큐브",
+  "아니스 : 스타:reload:C0.1_dry",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "플로라:reload:A0.3"
+ ],
+ "E0": 93.05665159,
+ "O": 113.30761999,
+ "alloc": {
+  "아니스 : 스타": "우코4+공4+장탄2+차뎀2",
+  "플로라": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+장탄1+크확4+크뎀3",
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "메이든 : 아이스 로즈": "우코4+공4+차속4"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 13.029671610000008,
+   "atk_pct": 3.6161319899999995,
+   "max_ammo_pct": 3.6911700800000062,
+   "crit_rate": 2.487870270000002,
+   "crit_dmg": 2.148893169999994,
+   "charge_speed_pct": -1.1014425400000079,
+   "charge_dmg_pct": 2.680057689999998,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "플로라": {
+   "element_bonus": 4.684223419999995,
+   "atk_pct": 1.8577542799999947,
+   "max_ammo_pct": 0.03500959000000137,
+   "crit_rate": 0.9082930600000054,
+   "crit_dmg": 0.784535390000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6155875500000008,
+   "max_ammo_pct": 0.7581612099999973,
+   "crit_rate": 0.2675010100000037,
+   "crit_dmg": 0.23105304999999987,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 5.6466273099999995,
+   "atk_pct": 2.770230859999998,
+   "max_ammo_pct": -12.043512039999996,
+   "crit_rate": 1.2022805600000055,
+   "crit_dmg": 1.0384687199999973,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 10.771302849999998,
+   "atk_pct": 2.9422422600000004,
+   "max_ammo_pct": 0.9095024399999971,
+   "crit_rate": 2.1684356800000018,
+   "crit_dmg": 1.8729812899999985,
+   "charge_speed_pct": 2.0921053,
+   "charge_dmg_pct": 1.207757049999998,
+   "accuracy_pct": 0.0,
+   "def_pct": -1.4799093000000028
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "플로라": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct"
+  ]
+ },
+ "C2": 114.11002926,
+ "ctrl2_variants": [
+  "squad:camera:아니스 : 스타",
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "메이든 : 아이스 로즈:reload:C0.1",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "아니스 : 스타:reload:C0.5",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "크라운:reload:B0.1",
+  "플로라:reload:C0.1_dry"
+ ],
+ "final": 114.11002926,
+ "final_variants": [
+  "squad:camera:아니스 : 스타",
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "메이든 : 아이스 로즈:reload:C0.1",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "아니스 : 스타:reload:C0.5",
+  "아니스 : 스파클링 서머:reload:C0.5",
+  "크라운:reload:B0.1",
+  "플로라:reload:C0.1_dry"
+ ],
+ "sims": 2430,
+ "seconds": 282.9
+}

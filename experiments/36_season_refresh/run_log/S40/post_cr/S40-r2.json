@@ -1,0 +1,138 @@
+{
+ "id": "S40-r2",
+ "season": 40,
+ "squad": [
+  "브리드 : 사일런트 트랙",
+  "라피 : 레드 후드",
+  "아니스 : 스타",
+  "미하라 : 본딩 체인",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 83.13833176,
+ "ctrl": 88.10192948,
+ "ctrl_variants": [
+  "라피 : 레드 후드:reload:C0.1_dry",
+  "미하라 : 본딩 체인:reload:C0.5",
+  "브리드 : 사일런트 트랙:reload:C0.1",
+  "프리바티:reload:C0.5"
+ ],
+ "E0": 92.50332113,
+ "O": 102.67638468,
+ "alloc": {
+  "브리드 : 사일런트 트랙": "우코4+공4+장탄3+크확1",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "아니스 : 스타": "공4+장탄1+크확3+차뎀4",
+  "미하라 : 본딩 체인": "우코4+공4+장탄4",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "브리드 : 사일런트 트랙": {
+   "element_bonus": 4.842208249999999,
+   "atk_pct": 3.3119846600000074,
+   "max_ammo_pct": 1.3664914900000014,
+   "crit_rate": 0.8517805500000009,
+   "crit_dmg": 0.7357207700000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 13.971469220000003,
+   "atk_pct": 5.0384784499999995,
+   "max_ammo_pct": -0.05200580000000343,
+   "crit_rate": 2.4278230399999927,
+   "crit_dmg": 2.0970209799999964,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6786135700000102,
+   "max_ammo_pct": 1.3245838800000058,
+   "crit_rate": 0.7400493600000004,
+   "crit_dmg": 0.639215440000001,
+   "charge_speed_pct": -0.08505001999999706,
+   "charge_dmg_pct": 0.804046679999999,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미하라 : 본딩 체인": {
+   "element_bonus": 15.03779788,
+   "atk_pct": 7.654324450000004,
+   "max_ammo_pct": 4.406957930000004,
+   "crit_rate": 2.6534241899999955,
+   "crit_dmg": 2.2919028999999966,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.47735309000000825,
+   "max_ammo_pct": -7.635953419999993,
+   "crit_rate": 0.16267059999999844,
+   "crit_dmg": 0.14051202000000274,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "브리드 : 사일런트 트랙": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아니스 : 스타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "미하라 : 본딩 체인": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 103.54611618,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:burst:wait2",
+  "라피 : 레드 후드:reload:A0.3",
+  "미하라 : 본딩 체인:reload:C0.5",
+  "브리드 : 사일런트 트랙:reload:C0.1",
+  "아니스 : 스타:reload:A0.3",
+  "프리바티:reload:B0.1"
+ ],
+ "final": 103.54611618,
+ "final_variants": [
+  "라피 : 레드 후드:burst:wait2",
+  "라피 : 레드 후드:reload:A0.3",
+  "미하라 : 본딩 체인:reload:C0.5",
+  "브리드 : 사일런트 트랙:reload:C0.1",
+  "아니스 : 스타:reload:A0.3",
+  "프리바티:reload:B0.1"
+ ],
+ "sims": 2320,
+ "seconds": 293.3
+}

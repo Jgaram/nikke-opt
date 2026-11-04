@@ -1,0 +1,134 @@
+{
+ "id": "S37-r11",
+ "season": 37,
+ "squad": [
+  "마스트 : 로망틱 메이드",
+  "앨리스",
+  "아니스 : 스타",
+  "브래디",
+  "앵커 : 이노센트 메이드"
+ ],
+ "win": null,
+ "pre": 46.35279275,
+ "ctrl": 49.67083038,
+ "ctrl_variants": [
+  "마스트 : 로망틱 메이드:burst:pattern=3의 배수",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:cube:렐릭 부스트 큐브"
+ ],
+ "E0": 49.47623191,
+ "O": 61.90005998,
+ "alloc": {
+  "마스트 : 로망틱 메이드": "우코4+공4+크확1+크뎀3",
+  "앨리스": "공2+크뎀4+차속3+차뎀3",
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "브래디": "우코4+공4+차속4",
+  "앵커 : 이노센트 메이드": "우코4+공4+차속2+차뎀2"
+ },
+ "screen": {
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.9698338399999997,
+   "atk_pct": 1.3989168700000008,
+   "max_ammo_pct": 0.3784370500000023,
+   "crit_rate": 0.6573004299999994,
+   "crit_dmg": 0.9765815999999958,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앨리스": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7078479400000006,
+   "max_ammo_pct": 0.12717313000000274,
+   "crit_rate": 0.30398304999999937,
+   "crit_dmg": 0.5295617199999967,
+   "charge_speed_pct": 5.910938889999997,
+   "charge_dmg_pct": 0.46211106999999885,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3098073000000028,
+   "max_ammo_pct": -0.03333561999999546,
+   "crit_rate": 0.7701181199999994,
+   "crit_dmg": 1.1303893899999977,
+   "charge_speed_pct": 1.224929319999994,
+   "charge_dmg_pct": 0.6720054500000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브래디": {
+   "element_bonus": 11.019721150000002,
+   "atk_pct": 3.78563269,
+   "max_ammo_pct": 1.45163522,
+   "crit_rate": 2.532248249999995,
+   "crit_dmg": 3.5075997900000004,
+   "charge_speed_pct": 4.8293458599999965,
+   "charge_dmg_pct": 1.2573319099999978,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 1.746649380000001,
+   "atk_pct": 0.8199230900000032,
+   "max_ammo_pct": 0.30319187000000625,
+   "crit_rate": 0.3834155199999998,
+   "crit_dmg": 0.5644070999999968,
+   "charge_speed_pct": 0.6787283399999993,
+   "charge_dmg_pct": 0.7144842199999957,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앨리스": [
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "아니스 : 스타": [
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브래디": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct",
+   "charge_speed_pct"
+  ]
+ },
+ "C2": 61.90005998,
+ "ctrl2_variants": [
+  "마스트 : 로망틱 메이드:burst:pattern=3의 배수",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:cube:렐릭 부스트 큐브"
+ ],
+ "final": 61.90005998,
+ "final_variants": [
+  "마스트 : 로망틱 메이드:burst:pattern=3의 배수",
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:cube:렐릭 부스트 큐브"
+ ],
+ "sims": 2333,
+ "seconds": 293.4
+}

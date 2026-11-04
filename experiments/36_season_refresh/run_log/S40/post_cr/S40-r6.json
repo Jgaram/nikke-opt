@@ -1,0 +1,145 @@
+{
+ "id": "S40-r6",
+ "season": 40,
+ "squad": [
+  "볼륨",
+  "민트",
+  "프리카",
+  "퀸(마코토)",
+  "유키코"
+ ],
+ "win": null,
+ "pre": 51.04728022,
+ "ctrl": 53.90892992,
+ "ctrl_variants": [
+  "squad:tactic:버충=프리카",
+  "볼륨:cube:택티컬 부스트 큐브",
+  "볼륨:reload:C0.1",
+  "유키코:cube:택티컬 베어 큐브",
+  "유키코:reload:A0.3",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "프리카:reload:A0.3"
+ ],
+ "E0": 59.68480385,
+ "O": 66.87504176,
+ "alloc": {
+  "볼륨": "공4+장탄2+크확2+크뎀4",
+  "민트": "공4+크뎀2+차속3+차뎀3",
+  "프리카": "공4+장탄2+크뎀3+차속3",
+  "퀸(마코토)": "우코4+공2+크확2+크뎀4",
+  "유키코": "우코4+공1+장탄3+크뎀4"
+ },
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.530441070000002,
+   "max_ammo_pct": 0.1773590000000027,
+   "crit_rate": 0.2332195999999982,
+   "crit_dmg": 0.2954917899999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4169915300000042,
+   "max_ammo_pct": 0.1664627199999984,
+   "crit_rate": 0.19090731000000005,
+   "crit_dmg": 0.24316755999999629,
+   "charge_speed_pct": 0.3587373099999951,
+   "charge_dmg_pct": 0.24809782999999896,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.42298728000000096,
+   "max_ammo_pct": 1.0677105800000035,
+   "crit_rate": 0.18955297000000115,
+   "crit_dmg": 0.23529528999999627,
+   "charge_speed_pct": 0.2711340600000014,
+   "charge_dmg_pct": 0.22280590999999816,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀸(마코토)": {
+   "element_bonus": 10.43901966,
+   "atk_pct": 4.387698900000004,
+   "max_ammo_pct": 1.9516523200000009,
+   "crit_rate": 3.773694159999998,
+   "crit_dmg": 5.129869949999993,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "유키코": {
+   "element_bonus": 9.435434650000005,
+   "atk_pct": 3.686510560000002,
+   "max_ammo_pct": 6.491904300000002,
+   "crit_rate": 3.4207175700000008,
+   "crit_dmg": 4.498022709999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "프리카": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_dmg"
+  ],
+  "퀸(마코토)": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "유키코": [
+   "element_bonus",
+   "max_ammo_pct",
+   "crit_dmg",
+   "atk_pct"
+  ]
+ },
+ "C2": 68.15387124,
+ "ctrl2_variants": [
+  "squad:tactic:버충=프리카",
+  "민트:reload:A0.3",
+  "볼륨:cube:택티컬 베어 큐브",
+  "유키코:cube:택티컬 베어 큐브",
+  "유키코:reload:C0.1_dry",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:B0.1",
+  "프리카:reload:C0.1_dry"
+ ],
+ "final": 68.15387124,
+ "final_variants": [
+  "squad:tactic:버충=프리카",
+  "민트:reload:A0.3",
+  "볼륨:cube:택티컬 베어 큐브",
+  "유키코:cube:택티컬 베어 큐브",
+  "유키코:reload:C0.1_dry",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:B0.1",
+  "프리카:reload:C0.1_dry"
+ ],
+ "sims": 2294,
+ "seconds": 251.7
+}

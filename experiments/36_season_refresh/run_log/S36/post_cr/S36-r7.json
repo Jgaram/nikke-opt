@@ -1,0 +1,146 @@
+{
+ "id": "S36-r7",
+ "season": 36,
+ "squad": [
+  "아니스 : 스파클링 서머",
+  "마리",
+  "목단",
+  "메이든 : 아이스 로즈",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 52.41320819,
+ "ctrl": 61.96999654,
+ "ctrl_variants": [
+  "마리:click:tap",
+  "마리:cube:렐릭 피어싱 큐브",
+  "마리:reload:C0.1",
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "목단:reload:C0.5",
+  "아니스 : 스파클링 서머:reload:C0.5"
+ ],
+ "E0": 56.92149793,
+ "O": 75.02815585,
+ "alloc": {
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "마리": "우코4+공4+장탄3+크확1",
+  "목단": "우코4+공4+장탄4",
+  "메이든 : 아이스 로즈": "우코4+공4+크확3+차속1",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 4.9785113300000035,
+   "atk_pct": 2.6838722800000028,
+   "max_ammo_pct": -9.309915239999995,
+   "crit_rate": 1.0337285600000001,
+   "crit_dmg": 0.8928808000000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마리": {
+   "element_bonus": 2.8297094200000004,
+   "atk_pct": 1.3579710400000025,
+   "max_ammo_pct": 4.556853760000003,
+   "crit_rate": 0.5557092499999996,
+   "crit_dmg": 0.47999289999999917,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "목단": {
+   "element_bonus": 5.011758139999998,
+   "atk_pct": 2.2945150900000044,
+   "max_ammo_pct": -0.262552129999996,
+   "crit_rate": 0.9540842999999981,
+   "crit_dmg": 0.8240902699999992,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 8.336781190000004,
+   "atk_pct": 2.482661560000004,
+   "max_ammo_pct": 0.0018806200000014428,
+   "crit_rate": 1.7161539299999973,
+   "crit_dmg": 1.4823245299999996,
+   "charge_speed_pct": 3.4640593299999978,
+   "charge_dmg_pct": 0.6474818800000008,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4472502200000008,
+   "max_ammo_pct": -3.1346254899999977,
+   "crit_rate": 0.130285090000001,
+   "crit_dmg": 0.112529600000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "마리": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "목단": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 75.25534911,
+ "ctrl2_variants": [
+  "마리:click:tap",
+  "마리:cube:렐릭 피어싱 큐브",
+  "마리:reload:C0.1",
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "목단:reload:A0.3",
+  "아니스 : 스파클링 서머:reload:C0.5"
+ ],
+ "final": 75.25534911,
+ "final_variants": [
+  "마리:click:tap",
+  "마리:cube:렐릭 피어싱 큐브",
+  "마리:reload:C0.1",
+  "메이든 : 아이스 로즈:cube:렐릭 비고르 큐브",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "목단:reload:A0.3",
+  "아니스 : 스파클링 서머:reload:C0.5"
+ ],
+ "sims": 2400,
+ "seconds": 261.3
+}

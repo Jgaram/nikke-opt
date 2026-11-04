@@ -1,0 +1,142 @@
+{
+ "id": "S41-r9",
+ "season": 41,
+ "squad": [
+  "츠바이",
+  "스노우 화이트 : 헤비암즈",
+  "민트",
+  "프리바티",
+  "리틀 머메이드"
+ ],
+ "win": null,
+ "pre": 61.04235895,
+ "ctrl": 65.07803807,
+ "ctrl_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "리틀 머메이드:cube:렐릭 어설트 큐브",
+  "민트:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:reload:A0.3",
+  "츠바이:burst:wait2",
+  "츠바이:cube:렐릭 피어싱 큐브"
+ ],
+ "E0": 64.13594035,
+ "O": 92.82148273,
+ "alloc": {
+  "츠바이": "공4+장탄2+크확2+크뎀4",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크뎀4",
+  "민트": "공4+크뎀4+차뎀4",
+  "프리바티": "우코4+공4+크뎀4",
+  "리틀 머메이드": "공4+장탄1+크확3+크뎀4"
+ },
+ "screen": {
+  "츠바이": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0643655800000005,
+   "max_ammo_pct": 2.0460939899999957,
+   "crit_rate": 0.16919357000000446,
+   "crit_dmg": 0.9382106799999974,
+   "charge_speed_pct": -0.27319169999999815,
+   "charge_dmg_pct": 0.041268779999995786,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 18.3212836,
+   "atk_pct": 7.273951490000002,
+   "max_ammo_pct": 2.3045963200000017,
+   "crit_rate": 2.7741944800000056,
+   "crit_dmg": 10.556102640000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 1.5678499300000084,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3962724100000017,
+   "max_ammo_pct": -0.21602678000000708,
+   "crit_rate": 0.05839706000000433,
+   "crit_dmg": 0.35102534000000674,
+   "charge_speed_pct": -0.4818586099999962,
+   "charge_dmg_pct": 0.23731935000000703,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 2.9870516199999955,
+   "atk_pct": 2.9096585899999994,
+   "max_ammo_pct": -8.993749340000008,
+   "crit_rate": 0.43415966999999966,
+   "crit_dmg": 2.596088590000008,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6917169199999975,
+   "max_ammo_pct": 0.21539741999999507,
+   "crit_rate": 0.26650691999999765,
+   "crit_dmg": 1.4862976000000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "츠바이": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "민트": [
+   "atk_pct",
+   "crit_dmg",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "프리바티": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 93.87094199,
+ "ctrl2_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "리틀 머메이드:cube:렐릭 어설트 큐브",
+  "민트:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:reload:C0.1",
+  "츠바이:burst:wait2",
+  "츠바이:cube:렐릭 피어싱 큐브",
+  "프리바티:reload:A0.3"
+ ],
+ "final": 93.87094199,
+ "final_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "리틀 머메이드:cube:렐릭 어설트 큐브",
+  "민트:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:reload:C0.1",
+  "츠바이:burst:wait2",
+  "츠바이:cube:렐릭 피어싱 큐브",
+  "프리바티:reload:A0.3"
+ ],
+ "sims": 2396,
+ "seconds": 340.7
+}

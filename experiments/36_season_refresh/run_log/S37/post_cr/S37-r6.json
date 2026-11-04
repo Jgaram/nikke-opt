@@ -1,0 +1,137 @@
+{
+ "id": "S37-r6",
+ "season": 37,
+ "squad": [
+  "마스트 : 로망틱 메이드",
+  "퀀시 : 이스케이프 퀸",
+  "아니스 : 스타",
+  "앵커 : 이노센트 메이드",
+  "브래디"
+ ],
+ "win": null,
+ "pre": 55.52207416,
+ "ctrl": 60.32575967,
+ "ctrl_variants": [
+  "브래디:cube:렐릭 디바이드 큐브",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.5"
+ ],
+ "E0": 67.75527756,
+ "O": 76.65405804,
+ "alloc": {
+  "마스트 : 로망틱 메이드": "우코4+공4+장탄2+크뎀2",
+  "퀀시 : 이스케이프 퀸": "우코4+공2+크확2+크뎀4",
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "앵커 : 이노센트 메이드": "우코4+공4+크확1+크뎀3",
+  "브래디": "우코4+공4+크뎀3+차속1"
+ },
+ "screen": {
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 3.16322559999999,
+   "atk_pct": 1.4692777399999954,
+   "max_ammo_pct": 1.5468793999999946,
+   "crit_rate": 0.7099030400000004,
+   "crit_dmg": 1.027719410000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀀시 : 이스케이프 퀸": {
+   "element_bonus": 8.368505989999996,
+   "atk_pct": 2.769833140000003,
+   "max_ammo_pct": 0.4310194199999984,
+   "crit_rate": 2.153338810000008,
+   "crit_dmg": 4.040488379999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.3969685099999936,
+   "max_ammo_pct": 0.6958667399999996,
+   "crit_rate": 0.8525526900000102,
+   "crit_dmg": 1.2109370100000092,
+   "charge_speed_pct": -0.06998661000000084,
+   "charge_dmg_pct": 0.7233498900000086,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 3.040611169999991,
+   "atk_pct": 1.397033609999994,
+   "max_ammo_pct": 0.6261153899999954,
+   "crit_rate": 0.6753575099999978,
+   "crit_dmg": 0.9721475999999996,
+   "charge_speed_pct": 0.048844690000009905,
+   "charge_dmg_pct": 0.015618260000010764,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브래디": {
+   "element_bonus": 10.205966999999994,
+   "atk_pct": 3.5402327500000013,
+   "max_ammo_pct": 0.6965933299999989,
+   "crit_rate": 2.1412967500000093,
+   "crit_dmg": 3.3037139400000086,
+   "charge_speed_pct": 3.823834430000005,
+   "charge_dmg_pct": 1.1690257300000013,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "퀀시 : 이스케이프 퀸": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브래디": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 76.67018184,
+ "ctrl2_variants": [
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:A0.3",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.5"
+ ],
+ "final": 76.67018184,
+ "final_variants": [
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:A0.3",
+  "퀀시 : 이스케이프 퀸:cube:렐릭 디바이드 큐브",
+  "퀀시 : 이스케이프 퀸:reload:C0.5"
+ ],
+ "sims": 2405,
+ "seconds": 404.8
+}

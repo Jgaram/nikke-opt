@@ -1,0 +1,137 @@
+{
+ "id": "S42-r5",
+ "season": 42,
+ "squad": [
+  "크라운",
+  "메이든 : 아이스 로즈",
+  "아니스 : 스파클링 서머",
+  "로산나",
+  "리틀 머메이드"
+ ],
+ "win": null,
+ "pre": 66.8495187,
+ "ctrl": 70.38720132,
+ "ctrl_variants": [
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "로산나:reload:C0.5",
+  "메이든 : 아이스 로즈:reload:A0.3",
+  "아니스 : 스파클링 서머:cube:택티컬 베어 큐브",
+  "아니스 : 스파클링 서머:reload:C0.1"
+ ],
+ "E0": 68.12855672,
+ "O": 89.77432732,
+ "alloc": {
+  "크라운": "공4+장탄3+크확3+크뎀2",
+  "메이든 : 아이스 로즈": "우코4+공4+차속4",
+  "아니스 : 스파클링 서머": "우코4+공4+크확2+크뎀2",
+  "로산나": "우코4+공2+크확2+크뎀4",
+  "리틀 머메이드": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7114919700000115,
+   "max_ammo_pct": 2.1043124900000123,
+   "crit_rate": 0.2187885499999993,
+   "crit_dmg": 0.18896814999999378,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "메이든 : 아이스 로즈": {
+   "element_bonus": 8.984079600000008,
+   "atk_pct": 2.9923557000000045,
+   "max_ammo_pct": 2.410986930000007,
+   "crit_rate": 1.8761994799999968,
+   "crit_dmg": 1.620563329999996,
+   "charge_speed_pct": 3.658726189999996,
+   "charge_dmg_pct": 0.6574100299999941,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아니스 : 스파클링 서머": {
+   "element_bonus": 4.777954100000009,
+   "atk_pct": 3.0072582000000097,
+   "max_ammo_pct": -10.432496299999997,
+   "crit_rate": 1.0097746,
+   "crit_dmg": 0.8721915999999936,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "로산나": {
+   "element_bonus": 8.229743070000005,
+   "atk_pct": 3.0180664000000093,
+   "max_ammo_pct": 0.3336414300000001,
+   "crit_rate": 1.6933409299999909,
+   "crit_dmg": 3.333959099999987,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9127165800000085,
+   "max_ammo_pct": -1.1078871399999883,
+   "crit_rate": 0.4872986899999887,
+   "crit_dmg": 0.42089916999999843,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "메이든 : 아이스 로즈": [
+   "element_bonus",
+   "charge_speed_pct",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "아니스 : 스파클링 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "로산나": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 89.94643129,
+ "ctrl2_variants": [
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "로산나:reload:A0.3",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "아니스 : 스파클링 서머:cube:택티컬 베어 큐브",
+  "아니스 : 스파클링 서머:reload:C0.1"
+ ],
+ "final": 89.94643129,
+ "final_variants": [
+  "squad:tactic:버충=메이든 : 아이스 로즈",
+  "로산나:reload:A0.3",
+  "메이든 : 아이스 로즈:reload:C0.5",
+  "아니스 : 스파클링 서머:cube:택티컬 베어 큐브",
+  "아니스 : 스파클링 서머:reload:C0.1"
+ ],
+ "sims": 2388,
+ "seconds": 292.7
+}
