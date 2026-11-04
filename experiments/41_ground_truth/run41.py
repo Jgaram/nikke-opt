@@ -681,6 +681,60 @@ def perm_summary(s: int, T: Table) -> dict[str, Any] | None:
             "miss_perm": opt2["total"] / e36["A_total"] - 1, "ranker_ratio_perm": rb2 / opt2["total"]}
 
 
+# ---------------------------------------------------------------- 관찰: 다듬기 밖 표본 — 다듬지 않은 구성이 다듬으면 얼마나 오르나
+
+SAMPLE_N = 500
+SAMPLE_RANK = 50000
+
+
+def cmd_sample(a: argparse.Namespace) -> int:
+    """관찰(판단에 안 씀): 2단계에서 다듬지 않은 구성 중 기본 순서 값 상위 SAMPLE_RANK 안에서 무작위 SAMPLE_N개의
+    「딜이 달라질 수 있는 순서」(2단계와 같은 순서 공간)를 모두 잰다 — 다듬기 밖에 숨은 값의 크기."""
+    s = a.season
+    f = sdir(s) / "sample.jsonl.gz"
+    if f.exists():
+        return 0
+    T = Table.load(s)
+    pool_ = [i for i in T.sorted_idx("base")[:SAMPLE_RANK] if i not in T.refined]
+    pick = sorted(random.Random(f"exp41-sample-{s}").sample(pool_, min(SAMPLE_N, len(pool_))))
+    todo = [(i, o) for i in pick for o in refine_orders(T, i)]
+    t0 = time.time()
+    with evaluator(a.jobs) as ev:
+        n0 = ev.sim_count
+        got = run_orders(s, [o for _, o in todo], ev)
+        tmp = f.with_suffix(".tmp")
+        with gzip.open(tmp, "wt", encoding="utf-8") as fh:
+            for (i, o), (v, _) in zip(todo, got):
+                fh.write(json.dumps({"i": i, "order": list(o), "value": v}, ensure_ascii=False) + "\n")
+        tmp.rename(f)
+        jdump(sdir(s) / "sample_meta.json", {"season": s, "comps": len(pick), "orders": len(todo), "sims": ev.sim_count - n0,
+                                             "seconds": round(time.time() - t0, 1), "evaluator": ev_version(ev)})
+    return 0
+
+
+def sample_summary(s: int, T: Table) -> dict[str, Any] | None:
+    f = sdir(s) / "sample.jsonl.gz"
+    if not f.exists():
+        return None
+    best: dict[int, float] = {}
+    with gzip.open(f, "rt", encoding="utf-8") as fh:
+        for line in fh:
+            r = json.loads(line)
+            if r["value"] is not None:
+                best[r["i"]] = max(best.get(r["i"], T.base[r["i"]]), r["value"])
+    gains = sorted(best[i] / T.base[i] - 1 for i in best)
+    rb = T.ranks("base")
+    refv = sorted((x for x in T.ref if x is not None), reverse=True)
+    import bisect
+    neg = [-x for x in refv]
+    new_rank = {i: bisect.bisect_left(neg, -best[i]) + 1 for i in best}
+    q = lambda p: gains[min(len(gains) - 1, int(p * (len(gains) - 1)))]  # noqa: E731
+    return {"comps": len(best), "gain_median": median(gains), "gain_p90": q(0.9), "gain_p99": q(0.99), "gain_max": gains[-1],
+            "gain_ge_5pct": sum(g >= 0.05 for g in gains), "gain_ge_10pct": sum(g >= 0.10 for g in gains),
+            "rank_jump_into_top2000": sum(1 for i in best if rb[i] > REFINE_TOP and new_rank[i] <= REFINE_TOP),
+            "rank_base_median": median([rb[i] for i in best])}
+
+
 # ---------------------------------------------------------------- 3단계: 답안지 묶기 · 채점(시뮬 0)
 
 LAND_X = (0.99, 0.97)
@@ -989,6 +1043,7 @@ def analyze_season(s: int) -> dict[str, Any]:
         "ranker_order_over_table": sum(1 for c, x in extra.items() if c in T.idx and x > T.ref[T.idx[c]] + 1e-6),
         "ranker_in_table": sum(1 for c in extra if c in T.idx),
         "perm": perm_summary(s, T),
+        "sample": sample_summary(s, T),
         "questions": q,
     }
 
@@ -1053,6 +1108,15 @@ def write_md(rows: Sequence[Mapping[str, Any]]) -> str:
         L.append(f"| S{r['season']} | {r['ranker_order_over_table']}/{r['ranker_in_table']} | {p['comps']} | "
                  f"{pct(p['gain_median'], 1)} · {pct(p['gain_max'], 1)} · {p['gain_ge_1pct']} | {p['opt_perm_lb']:.2f} | "
                  f"{pct(p['opt_perm_lb'] / r['opt'] - 1)} | {pct(p['miss_perm'])} | {pct(p['ranker_ratio_perm'], 1)} |")
+    L += ["", "## 관찰: 다듬기 밖 표본(2단계에서 다듬지 않은 구성, 기본 순서 값 상위 5만 안 무작위 500)", "",
+          "| 시즌 | 표본 | 기본 순위 중앙 | 다듬기 이득 중앙 · 90% · 99% · 최대 | ≥ 5% · ≥ 10% | 다듬으면 상위 2,000 안으로 |",
+          "|---|---|---|---|---|---|"]
+    for r in rows:
+        p = r.get("sample")
+        if not p:
+            continue
+        L.append(f"| S{r['season']} | {p['comps']} | {p['rank_base_median']:,.0f} | {pct(p['gain_median'], 1)} · {pct(p['gain_p90'], 1)} · "
+                 f"{pct(p['gain_p99'], 1)} · {pct(p['gain_max'], 1)} | {p['gain_ge_5pct']} · {p['gain_ge_10pct']} | {p['rank_jump_into_top2000']} |")
     L += ["", "## OPT 5덱(다듬은 값)", ""]
     for r in rows:
         L.append(f"- **S{r['season']}** OPT {r['opt']:.2f}억:")
@@ -1103,11 +1167,14 @@ def main(argv: list[str] | None = None) -> int:
     q = sub.add_parser("perm")
     q.add_argument("--season", type=int, required=True)
     q.add_argument("--jobs", type=int, default=4)
+    m = sub.add_parser("sample")
+    m.add_argument("--season", type=int, required=True)
+    m.add_argument("--jobs", type=int, default=4)
     n = sub.add_parser("analyze")
     n.add_argument("--season", default=None)
     a = p.parse_args(argv)
     return {"check": cmd_check, "table": cmd_table, "refine": cmd_refine, "pack": cmd_pack, "replay": cmd_replay,
-            "perm": cmd_perm, "analyze": cmd_analyze}[a.cmd](a)
+            "perm": cmd_perm, "sample": cmd_sample, "analyze": cmd_analyze}[a.cmd](a)
 
 
 if __name__ == "__main__":
