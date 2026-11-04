@@ -1,0 +1,47 @@
+{
+ "season": 42,
+ "comps": 268840,
+ "chunk": 5000,
+ "chunks": 54,
+ "options": {
+  "enemy": {
+   "code": "수냉"
+  },
+  "sim": {
+   "camera_reload_cancel": true
+  }
+ },
+ "order": "단계 1 · 2 · A · 3, 같은 단계 안 이름순",
+ "parts": {
+  "0": {
+   "sims": 5000,
+   "seconds": 271.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "1": {
+   "sims": 5000,
+   "seconds": 275.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "2": {
+   "sims": 5000,
+   "seconds": 264.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "3": {
+   "sims": 5000,
+   "seconds": 247.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "4": {
+   "sims": 5000,
+   "seconds": 415.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  }
+ }
+}
