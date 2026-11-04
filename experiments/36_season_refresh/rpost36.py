@@ -46,12 +46,12 @@ def ranker_sets(s: int) -> dict[str, list[tuple[tuple[str, ...], float]] | None]
 
 
 def run_season(s: int, ev: Any, workers: int = 2) -> dict[str, Any]:
-    f = X.sdir(s) / "rpost.json"
+    f = X.sdir(s) / f"r{X.POST_NAME}.json"
     old = X.jload(f) or {}
     if set(old.get("sets") or {}) >= set(SETS):
         return old
     sets = ranker_sets(s)
-    ours = {tuple(d["squad"]): d for d in (X.jload(X.sdir(s) / "post.json") or {}).get("decks", [])}
+    ours = {tuple(d["squad"]): d for d in (X.jload(X.sdir(s) / f"{X.POST_NAME}.json") or {}).get("decks", [])}
     todo: list[tuple[tuple[str, ...], float]] = []
     for v in sets.values():
         for q, pre in v or []:

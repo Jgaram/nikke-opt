@@ -37,8 +37,8 @@ def seasons_arg(v: str) -> list[int]:
 def decks(s: int) -> list[dict[str, Any]]:
     """그 시즌 후처리 덱 기록: 우리 A(post.json) 다음 랭커 묶음(rpost.json) — 같은 id는 한 번."""
     d = X.sdir(s)
-    recs = list((X.jload(d / "post.json") or {}).get("decks") or [])
-    for x in ((X.jload(d / "rpost.json") or {}).get("sets") or {}).values():
+    recs = list((X.jload(d / f"{X.POST_NAME}.json") or {}).get("decks") or [])
+    for x in ((X.jload(d / f"r{X.POST_NAME}.json") or {}).get("sets") or {}).values():
         recs += (x or {}).get("decks") or []
     seen: dict[str, dict[str, Any]] = {}
     for r in recs:
@@ -68,7 +68,7 @@ def main(argv: list[str] | None = None) -> int:
     t0, bad = time.time(), []
     with make_evaluator("rust", jobs=a.jobs, cache=False) as ev:
         for s in seasons_arg(a.season):
-            out = X.sdir(s) / "trace"
+            out = X.sdir(s) / X.POST_NAME.replace("post", "trace")
             todo = [x for x in decks(s) if a.force or not (out / f"{x['id']}.json").exists()]
             if not todo:
                 continue

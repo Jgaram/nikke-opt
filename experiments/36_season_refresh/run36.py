@@ -43,6 +43,8 @@ C2: bool | None = True     # 옵션 뒤 컨트롤 + 큐브를 한 번 더 찾는
 CUBE = True                # 후처리에 큐브를 같이 찾는다(지금 운용 기본 JT와 같은 뜻 — 사용자에게 알림, 2026-11-02)
 POST_BUDGET = 400          # 컨트롤(+큐브) · 옵션 · 다시 찾기 각각
 SPEC = "M3:k2"
+POST_NAME = "post"         # 후처리 기록 이름(post/ · post.json · rpost.json · trace/). cr36.py가 카메라 재장전 판(post_cr)으로 바꾼다
+SIM_EXTRA: dict[str, Any] = {}  # 후처리 요청 options.sim에 더할 것(cr36.py: camera_reload_cancel). 비면 그대로
 
 R3_SEASONS = set(r3.SEASONS)
 SEASONS = run31.SEASONS
@@ -292,14 +294,18 @@ def cube_keys(squad: Sequence[str]) -> dict:
     return {(w, "cube"): cv for w in squad if (cv := CB.cube_variants(w, inv, start=CB.DEFAULT_CUBE))}
 
 
+def sim_extra(o: Any) -> Any:
+    return {**o, "sim": {**(o.get("sim") or {}), **SIM_EXTRA}} if SIM_EXTRA else o  # 비면 같은 객체(옛 동작 그대로)
+
+
 def control_space(s: int, squad: Sequence[str], per: Mapping[str, Mapping[str, int]] | None) -> Any:
     """판의 후처리 메뉴(+ 큐브). per가 있으면 바탕에 장비 옵션 배분을 얹는다."""
     if ARM == "A":
         fn = (lambda q: {**r1.l_variants(q), **cube_keys(q)}) if CUBE else r1.l_variants
-        base = r0.opts(s, True)
+        base = sim_extra(r0.opts(s, True))
         return M.Space(list(squad), variants_fn=fn, base=run35.with_alloc(base, per) if per else base)
     fn = (lambda q: {**r3c.full_variants(q), **cube_keys(q)}) if CUBE else r3c.full_variants
-    base = r1.p_base(s, squad)
+    base = sim_extra(r1.p_base(s, squad))
     return M.Space(list(squad), variants_fn=fn, apply_fn=r3c.full_apply, base=run35.with_alloc(base, per) if per else base)
 
 
@@ -315,7 +321,7 @@ def _run(job_id: str, squad: Sequence[str], sp: Any, start: tuple[int, ...], ev:
 
 
 def post_deck(s: int, i: int, squad: Sequence[str], win: str | None, pre: float, ev: Any) -> dict[str, Any]:
-    out_dir = sdir(s) / "post"
+    out_dir = sdir(s) / POST_NAME
     f = out_dir / f"S{s}-{i}.json"
     if f.exists():
         return jload(f)
@@ -374,7 +380,7 @@ def part_post(s: int, ev: Any, workers: int = 2) -> dict[str, Any]:
         recs = list(pool.map(lambda x: post_deck(s, x[0], x[1][0], x[1][1], x[1][2], ev), enumerate(targets)))
     out = {"season": s, "arm": ARM, "opt": OPT, "c2": C2, "cube": CUBE, "decks": recs,
            "total": {k: sum(r[k] for r in recs) for k in ("pre", "ctrl", "E0", "O", "final")}}
-    jdump(sdir(s) / "post.json", out)
+    jdump(sdir(s) / f"{POST_NAME}.json", out)
     return {"total": out["total"]}
 
 
