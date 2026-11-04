@@ -1,0 +1,30 @@
+{
+ "36": {
+  "decks": 344,
+  "diff": 0,
+  "examples": [],
+  "sims": 344,
+  "seconds": 12.0,
+  "evaluator": "nikke-calc-rs f0f648c",
+  "sims_per_s": 28.68
+ },
+ "39": {
+  "decks": 342,
+  "diff": 0,
+  "examples": [],
+  "sims": 342,
+  "seconds": 12.9,
+  "evaluator": "nikke-calc-rs f0f648c",
+  "sims_per_s": 26.51
+ },
+ "42": {
+  "decks": 342,
+  "diff": 0,
+  "examples": [],
+  "sims": 342,
+  "seconds": 12.3,
+  "evaluator": "nikke-calc-rs f0f648c",
+  "sims_per_s": 27.9
+ },
+ "camera_reload_cancel": true
+}
