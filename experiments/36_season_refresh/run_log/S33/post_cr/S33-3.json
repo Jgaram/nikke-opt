@@ -1,0 +1,138 @@
+{
+ "id": "S33-3",
+ "season": 33,
+ "squad": [
+  "볼륨",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "브래디",
+  "리버렐리오"
+ ],
+ "win": null,
+ "pre": 40.25952647,
+ "ctrl": 42.95382358,
+ "ctrl_variants": [
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5"
+ ],
+ "E0": 48.17643157,
+ "O": 56.85631574,
+ "alloc": {
+  "볼륨": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "우코4+공4+크뎀4",
+  "앵커 : 이노센트 메이드": "우코4+공4+크뎀4",
+  "브래디": "우코4+공4+크뎀4",
+  "리버렐리오": "공4+크확1+크뎀4+차속3"
+ },
+ "screen": {
+  "볼륨": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.474670169999996,
+   "max_ammo_pct": 0.05957808999999514,
+   "crit_rate": 0.21290567999999865,
+   "crit_dmg": 0.3555313200000043,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 2.4398729999999986,
+   "atk_pct": 1.2646024900000015,
+   "max_ammo_pct": 0.3766726899999995,
+   "crit_rate": 0.6044719400000034,
+   "crit_dmg": 1.0017436700000033,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 1.4653751600000007,
+   "atk_pct": 0.7581972300000004,
+   "max_ammo_pct": 0.26467730999999617,
+   "crit_rate": 0.3631133200000036,
+   "crit_dmg": 0.6035557400000044,
+   "charge_speed_pct": -0.013961139999999261,
+   "charge_dmg_pct": 0.0047173499999999535,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "브래디": {
+   "element_bonus": 10.770256609999997,
+   "atk_pct": 3.8634306299999963,
+   "max_ammo_pct": 1.3054476699999995,
+   "crit_rate": 2.7086976599999986,
+   "crit_dmg": 4.252089980000001,
+   "charge_speed_pct": 4.530222780000003,
+   "charge_dmg_pct": 1.23530272,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리버렐리오": {
+   "element_bonus": 0.0,
+   "atk_pct": 4.514106839999997,
+   "max_ammo_pct": 0.5102078299999988,
+   "crit_rate": 1.142791299999999,
+   "crit_dmg": 2.109098979999999,
+   "charge_speed_pct": 2.065638580000005,
+   "charge_dmg_pct": 0.7456655400000045,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "브래디": [
+   "element_bonus",
+   "charge_speed_pct",
+   "crit_dmg",
+   "atk_pct"
+  ],
+  "리버렐리오": [
+   "atk_pct",
+   "crit_dmg",
+   "charge_speed_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 57.05021554,
+ "ctrl2_variants": [
+  "리버렐리오:reload:A0.3",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "볼륨:reload:B0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5"
+ ],
+ "final": 57.05021554,
+ "final_variants": [
+  "리버렐리오:reload:A0.3",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "볼륨:reload:B0.5",
+  "브래디:cube:렐릭 디바이드 큐브",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5"
+ ],
+ "sims": 2358,
+ "seconds": 249.1
+}

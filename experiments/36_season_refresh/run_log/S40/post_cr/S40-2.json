@@ -1,0 +1,133 @@
+{
+ "id": "S40-2",
+ "season": 40,
+ "squad": [
+  "리틀 머메이드",
+  "나유타",
+  "프리바티",
+  "라피 : 레드 후드",
+  "모더니아"
+ ],
+ "win": null,
+ "pre": 52.24297856,
+ "ctrl": 52.78303774,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "리틀 머메이드:cube:렐릭 어설트 큐브",
+  "프리바티:reload:C0.5"
+ ],
+ "E0": 51.70317302,
+ "O": 66.60308155,
+ "alloc": {
+  "리틀 머메이드": "공4+장탄1+크확4+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "프리바티": "공4+크확4+크뎀4",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "모더니아": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6455186800000021,
+   "max_ammo_pct": 0.5834566300000006,
+   "crit_rate": 0.4769838399999955,
+   "crit_dmg": 0.41199462999999525,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.457922570000001,
+   "max_ammo_pct": 0.2969216999999986,
+   "crit_rate": 0.42491804000000144,
+   "crit_dmg": 0.3670181700000015,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5314679800000022,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5144970799999982,
+   "max_ammo_pct": -7.287262460000001,
+   "crit_rate": 0.14488829999999808,
+   "crit_dmg": 0.12514947999999748,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 9.242953759999999,
+   "atk_pct": 4.018683969999998,
+   "max_ammo_pct": 1.166951619999999,
+   "crit_rate": 1.6171109200000018,
+   "crit_dmg": 1.3967380300000016,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "모더니아": {
+   "element_bonus": 6.765513990000002,
+   "atk_pct": 3.8713921499999984,
+   "max_ammo_pct": 7.0795403199999996,
+   "crit_rate": 2.6912463899999963,
+   "crit_dmg": 0.989234119999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "모더니아": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 66.86017726,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "라피 : 레드 후드:reload:A0.3",
+  "리틀 머메이드:reload:A0.3",
+  "프리바티:reload:C0.5"
+ ],
+ "final": 66.86017726,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "라피 : 레드 후드:reload:A0.3",
+  "리틀 머메이드:reload:A0.3",
+  "프리바티:reload:C0.5"
+ ],
+ "sims": 2494,
+ "seconds": 301.2
+}

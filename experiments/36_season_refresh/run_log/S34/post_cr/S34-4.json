@@ -1,0 +1,139 @@
+{
+ "id": "S34-4",
+ "season": 34,
+ "squad": [
+  "리타",
+  "마스트 : 로망틱 메이드",
+  "앵커 : 이노센트 메이드",
+  "율리아",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 35.63729777,
+ "ctrl": 36.46746836,
+ "ctrl_variants": [
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "율리아:reload:B0.1",
+  "헬름:cube:렐릭 부스트 큐브"
+ ],
+ "E0": 40.14827364,
+ "O": 51.98386729,
+ "alloc": {
+  "리타": "우코4+공4+크확1+크뎀3",
+  "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4",
+  "앵커 : 이노센트 메이드": "공4+장탄1+크확3+크뎀4",
+  "율리아": "우코4+공4+크확4",
+  "헬름": "공4+크확3+크뎀4+차속1"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 2.176077790000001,
+   "atk_pct": 0.9918368399999977,
+   "max_ammo_pct": 0.1540968699999965,
+   "crit_rate": 0.5244182699999982,
+   "crit_dmg": 0.7371794100000031,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6241693300000009,
+   "max_ammo_pct": 0.49732148999999737,
+   "crit_rate": 0.3346767600000007,
+   "crit_dmg": 0.46840988000000294,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3759846999999965,
+   "max_ammo_pct": 0.40214269999999885,
+   "crit_rate": 0.20198858999999914,
+   "crit_dmg": 0.28348924000000153,
+   "charge_speed_pct": 0.0190478299999981,
+   "charge_dmg_pct": 0.005491230000004066,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "율리아": {
+   "element_bonus": 9.774833389999998,
+   "atk_pct": 3.955877700000002,
+   "max_ammo_pct": 0.37525644000000113,
+   "crit_rate": 6.949677530000002,
+   "crit_dmg": 3.400301050000003,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2368011200000026,
+   "max_ammo_pct": -0.7400790100000023,
+   "crit_rate": 0.6893202700000032,
+   "crit_dmg": 1.0490666399999995,
+   "charge_speed_pct": 0.5912944700000011,
+   "charge_dmg_pct": 0.26535720000000396,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "율리아": [
+   "element_bonus",
+   "crit_rate",
+   "atk_pct",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_speed_pct"
+  ]
+ },
+ "C2": 52.30694823,
+ "ctrl2_variants": [
+  "리타:burst:wait2",
+  "리타:reload:B0.1",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "율리아:reload:B0.1",
+  "헬름:cube:렐릭 퀀텀 큐브"
+ ],
+ "final": 52.30694823,
+ "final_variants": [
+  "리타:burst:wait2",
+  "리타:reload:B0.1",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "율리아:reload:B0.1",
+  "헬름:cube:렐릭 퀀텀 큐브"
+ ],
+ "sims": 1249,
+ "seconds": 170.7
+}

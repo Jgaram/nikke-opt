@@ -1,0 +1,145 @@
+{
+ "id": "S38-r2",
+ "season": 38,
+ "squad": [
+  "사쿠라 : 블룸 인 서머",
+  "아크레인저 블랙",
+  "맥스웰",
+  "로산나 : 시크 오션",
+  "목단"
+ ],
+ "win": null,
+ "pre": 32.65136486,
+ "ctrl": 34.3353766,
+ "ctrl_variants": [
+  "로산나 : 시크 오션:reload:C0.1",
+  "맥스웰:burst:wait2",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1_dry",
+  "사쿠라 : 블룸 인 서머:reload:C0.1_dry",
+  "아크레인저 블랙:cube:택티컬 베어 큐브",
+  "아크레인저 블랙:reload:B0.1"
+ ],
+ "E0": 38.75671213,
+ "O": 41.61837321,
+ "alloc": {
+  "사쿠라 : 블룸 인 서머": "우코4+공4+크확2+크뎀2",
+  "아크레인저 블랙": "우코4+공4+크확2+크뎀2",
+  "맥스웰": "공4+장탄2+크확2+차속4",
+  "로산나 : 시크 오션": "우코4+공4+장탄3+크확1",
+  "목단": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "사쿠라 : 블룸 인 서머": {
+   "element_bonus": 6.035437269999996,
+   "atk_pct": 5.962677099999993,
+   "max_ammo_pct": 0.44819657999999407,
+   "crit_rate": 1.1381109800000004,
+   "crit_dmg": 0.9830456900000044,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아크레인저 블랙": {
+   "element_bonus": 7.843226439999995,
+   "atk_pct": 2.599611209999999,
+   "max_ammo_pct": 0.41567301999999984,
+   "crit_rate": 1.3872524500000054,
+   "crit_dmg": 1.1982393500000015,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3532283699999965,
+   "max_ammo_pct": 0.7922219399999975,
+   "crit_rate": 0.0861663200000038,
+   "crit_dmg": 0.07442616000000157,
+   "charge_speed_pct": 0.6625330900000037,
+   "charge_dmg_pct": 0.014981480000002989,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "로산나 : 시크 오션": {
+   "element_bonus": 1.043408889999995,
+   "atk_pct": 0.7863940899999946,
+   "max_ammo_pct": 0.2398255999999961,
+   "crit_rate": 0.190474480000006,
+   "crit_dmg": 0.1645145800000023,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.708960249999997,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.17143523000000016,
+   "crit_dmg": 0.14809443000000044,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "사쿠라 : 블룸 인 서머": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "아크레인저 블랙": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "맥스웰": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "로산나 : 시크 오션": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 44.27837648,
+ "ctrl2_variants": [
+  "로산나 : 시크 오션:reload:C0.1",
+  "맥스웰:burst:wait2",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1_dry",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "사쿠라 : 블룸 인 서머:reload:B0.1",
+  "아크레인저 블랙:cube:택티컬 베어 큐브",
+  "아크레인저 블랙:reload:B0.5"
+ ],
+ "final": 44.27837648,
+ "final_variants": [
+  "로산나 : 시크 오션:reload:C0.1",
+  "맥스웰:burst:wait2",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1_dry",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "사쿠라 : 블룸 인 서머:reload:B0.1",
+  "아크레인저 블랙:cube:택티컬 베어 큐브",
+  "아크레인저 블랙:reload:B0.5"
+ ],
+ "sims": 2412,
+ "seconds": 363.7
+}

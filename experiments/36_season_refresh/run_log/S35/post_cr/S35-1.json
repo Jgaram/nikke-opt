@@ -1,0 +1,137 @@
+{
+ "id": "S35-1",
+ "season": 35,
+ "squad": [
+  "미란다",
+  "리틀 머메이드",
+  "나유타",
+  "프리바티",
+  "미하라 : 본딩 체인"
+ ],
+ "win": null,
+ "pre": 53.95902807,
+ "ctrl": 55.3919289,
+ "ctrl_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "리틀 머메이드:reload:C0.5",
+  "미란다:reload:C0.5",
+  "미하라 : 본딩 체인:reload:C0.5",
+  "프리바티:reload:C0.5"
+ ],
+ "E0": 48.9955542,
+ "O": 68.29578986,
+ "alloc": {
+  "미란다": "우코4+공4+장탄1+크뎀3",
+  "리틀 머메이드": "공4+장탄1+크확4+크뎀3",
+  "나유타": "공4+장탄1+크확4+차뎀3",
+  "프리바티": "크확4+크뎀4+차속4",
+  "미하라 : 본딩 체인": "우코4+공4+장탄1+크확3"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 3.2641112900000024,
+   "atk_pct": 1.6866233699999995,
+   "max_ammo_pct": 1.2166667400000009,
+   "crit_rate": 0.7869856199999958,
+   "crit_dmg": 1.1678611899999964,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4324799199999987,
+   "max_ammo_pct": 0.18541322000000093,
+   "crit_rate": 0.5854307299999988,
+   "crit_dmg": 0.323297359999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4043240000000026,
+   "max_ammo_pct": 0.54264723,
+   "crit_rate": 0.626716039999998,
+   "crit_dmg": 0.34449996000000027,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.514778899999996,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": -6.44758581,
+   "max_ammo_pct": -8.777323089999996,
+   "crit_rate": 0.3972564500000004,
+   "crit_dmg": 0.1482394199999959,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미하라 : 본딩 체인": {
+   "element_bonus": 12.06107728,
+   "atk_pct": 11.192084229999999,
+   "max_ammo_pct": 2.7403300900000005,
+   "crit_rate": 5.180825229999996,
+   "crit_dmg": 1.7460961399999988,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "charge_dmg_pct"
+  ],
+  "프리바티": [
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus",
+   "charge_speed_pct"
+  ],
+  "미하라 : 본딩 체인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 68.66940543,
+ "ctrl2_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "리틀 머메이드:reload:C0.5",
+  "미란다:reload:C0.1",
+  "미하라 : 본딩 체인:reload:C0.5",
+  "프리바티:reload:C0.5"
+ ],
+ "final": 68.66940543,
+ "final_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "리틀 머메이드:reload:C0.5",
+  "미란다:reload:C0.1",
+  "미하라 : 본딩 체인:reload:C0.5",
+  "프리바티:reload:C0.5"
+ ],
+ "sims": 2400,
+ "seconds": 314.3
+}

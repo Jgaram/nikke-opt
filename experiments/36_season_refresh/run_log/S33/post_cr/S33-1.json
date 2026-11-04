@@ -1,0 +1,145 @@
+{
+ "id": "S33-1",
+ "season": 33,
+ "squad": [
+  "D : 킬러 와이프",
+  "미란다",
+  "나유타",
+  "스노우 화이트 : 헤비암즈",
+  "디젤 : 윈터 스위츠"
+ ],
+ "win": null,
+ "pre": 48.40796825,
+ "ctrl": 49.01804817,
+ "ctrl_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "squad:tactic:버충=디젤 : 윈터 스위츠",
+  "나유타:cube:택티컬 어설트 큐브",
+  "디젤 : 윈터 스위츠:burst:delay1",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "미란다:reload:B0.5",
+  "스노우 화이트 : 헤비암즈:burst:delay1"
+ ],
+ "E0": 55.48752884,
+ "O": 64.5055508,
+ "alloc": {
+  "D : 킬러 와이프": "공4+장탄4+차속3+차뎀1",
+  "미란다": "공4+장탄3+크확1+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "우코4+공4+크뎀4",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "D : 킬러 와이프": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.29200177000000593,
+   "max_ammo_pct": 0.16820498999999955,
+   "crit_rate": 0.10547661999999747,
+   "crit_dmg": 0.060829099999999414,
+   "charge_speed_pct": 0.14504960999999383,
+   "charge_dmg_pct": 0.15816448999999722,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7444068400000035,
+   "max_ammo_pct": 0.4320506000000037,
+   "crit_rate": 0.3180521199999973,
+   "crit_dmg": 0.4661354599999967,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4349578100000002,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.5736711999999997,
+   "crit_dmg": 0.3161060499999948,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.44947687999999886,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 15.226940930000005,
+   "atk_pct": 5.80469712,
+   "max_ammo_pct": 1.8669038600000007,
+   "crit_rate": 3.2664885799999936,
+   "crit_dmg": 5.091582409999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.8552575499999975,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.7411610400000015,
+   "max_ammo_pct": 0.5532271900000012,
+   "crit_rate": 2.114159479999998,
+   "crit_dmg": 0.6008710199999996,
+   "charge_speed_pct": 0.15735510999999747,
+   "charge_dmg_pct": 0.1875099399999982,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "D : 킬러 와이프": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "charge_speed_pct"
+  ],
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 65.52617498,
+ "ctrl2_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "squad:tactic:버충=D : 킬러 와이프",
+  "나유타:cube:택티컬 어설트 큐브",
+  "디젤 : 윈터 스위츠:burst:delay1",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "미란다:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:burst:delay1",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "final": 65.52617498,
+ "final_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "squad:tactic:버충=D : 킬러 와이프",
+  "나유타:cube:택티컬 어설트 큐브",
+  "디젤 : 윈터 스위츠:burst:delay1",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "미란다:reload:C0.5",
+  "스노우 화이트 : 헤비암즈:burst:delay1",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "sims": 2395,
+ "seconds": 249.0
+}

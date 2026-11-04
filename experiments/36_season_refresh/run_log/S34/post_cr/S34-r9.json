@@ -1,0 +1,134 @@
+{
+ "id": "S34-r9",
+ "season": 34,
+ "squad": [
+  "리타",
+  "로산나 : 시크 오션",
+  "밀크 : 블루밍 바니",
+  "레이븐",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 37.07630172,
+ "ctrl": 37.57078099,
+ "ctrl_variants": [
+  "레이븐:cube:렐릭 부스트 큐브",
+  "로산나 : 시크 오션:reload:A0.3",
+  "리타:reload:B0.1",
+  "밀크 : 블루밍 바니:reload:C0.1_dry"
+ ],
+ "E0": 43.88704554,
+ "O": 46.85365132,
+ "alloc": {
+  "리타": "우코4+공4+장탄1+크확3",
+  "로산나 : 시크 오션": "공4+장탄1+크확3+크뎀4",
+  "밀크 : 블루밍 바니": "우코4+공4+장탄4",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "헬름": "공4+크확4+차뎀4"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 1.3606842500000056,
+   "atk_pct": 1.0032737200000028,
+   "max_ammo_pct": 0.2897380700000056,
+   "crit_rate": 0.2730463799999967,
+   "crit_dmg": 0.23693724999999688,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "로산나 : 시크 오션": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.39821754000000453,
+   "max_ammo_pct": 0.2274737200000061,
+   "crit_rate": 0.10757087999999726,
+   "crit_dmg": 0.09188520000000011,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "밀크 : 블루밍 바니": {
+   "element_bonus": 5.884030810000006,
+   "atk_pct": 1.9170845000000014,
+   "max_ammo_pct": 2.5644925300000025,
+   "crit_rate": 1.1640401699999998,
+   "crit_dmg": 0.9625838799999968,
+   "charge_speed_pct": 0.6375948600000001,
+   "charge_dmg_pct": 0.1952770199999989,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 9.892287090000004,
+   "atk_pct": 5.556032739999999,
+   "max_ammo_pct": 0.2782516500000014,
+   "crit_rate": 1.9801123700000005,
+   "crit_dmg": 1.5281980999999973,
+   "charge_speed_pct": 0.2160671699999952,
+   "charge_dmg_pct": 0.3212616799999992,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6175963300000049,
+   "max_ammo_pct": -0.24795100000000048,
+   "crit_rate": 0.16984575000000035,
+   "crit_dmg": 0.13711385999999948,
+   "charge_speed_pct": 1.0440835799999988,
+   "charge_dmg_pct": 0.1783015599999942,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "로산나 : 시크 오션": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "밀크 : 블루밍 바니": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 46.94225719,
+ "ctrl2_variants": [
+  "레이븐:cube:렐릭 부스트 큐브",
+  "로산나 : 시크 오션:reload:A0.3",
+  "리타:reload:B0.1",
+  "밀크 : 블루밍 바니:reload:B0.1"
+ ],
+ "final": 46.94225719,
+ "final_variants": [
+  "레이븐:cube:렐릭 부스트 큐브",
+  "로산나 : 시크 오션:reload:A0.3",
+  "리타:reload:B0.1",
+  "밀크 : 블루밍 바니:reload:B0.1"
+ ],
+ "sims": 2383,
+ "seconds": 217.0
+}

@@ -1,0 +1,126 @@
+{
+ "id": "S35-4",
+ "season": 35,
+ "squad": [
+  "엠마 : 택티컬 업",
+  "D : 킬러 와이프",
+  "은화 : 택티컬 업",
+  "레이",
+  "베스티 : 택티컬 업"
+ ],
+ "win": null,
+ "pre": 34.83530082,
+ "ctrl": 35.31246007,
+ "ctrl_variants": [
+  "엠마 : 택티컬 업:reload:C0.1_dry",
+  "은화 : 택티컬 업:cube:렐릭 크래시 큐브"
+ ],
+ "E0": 43.08628086,
+ "O": 45.35885702,
+ "alloc": {
+  "엠마 : 택티컬 업": "우코4+공4+장탄4",
+  "D : 킬러 와이프": "우코4+공4+장탄1+차속3",
+  "은화 : 택티컬 업": "우코4+공2+장탄2+차속4",
+  "레이": "우코4+공4+장탄4",
+  "베스티 : 택티컬 업": "우코4+공4+장탄2+차속2"
+ },
+ "screen": {
+  "엠마 : 택티컬 업": {
+   "element_bonus": 2.1259738800000036,
+   "atk_pct": 1.353560790000003,
+   "max_ammo_pct": 3.1786149100000003,
+   "crit_rate": 0.5344084199999983,
+   "crit_dmg": 0.48477136999999715,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "D : 킬러 와이프": {
+   "element_bonus": 1.1295687300000026,
+   "atk_pct": 0.7214639800000029,
+   "max_ammo_pct": 0.6940411300000022,
+   "crit_rate": 0.20531916999999567,
+   "crit_dmg": 0.17734373999999775,
+   "charge_speed_pct": 0.4988982499999963,
+   "charge_dmg_pct": 0.4008256999999986,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "은화 : 택티컬 업": {
+   "element_bonus": 4.21299965,
+   "atk_pct": 1.9888898399999988,
+   "max_ammo_pct": 2.3983130200000033,
+   "crit_rate": 1.0707281199999983,
+   "crit_dmg": 0.9712638699999943,
+   "charge_speed_pct": 1.9157957099999976,
+   "charge_dmg_pct": 1.462358689999995,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이": {
+   "element_bonus": 3.054739160000004,
+   "atk_pct": 2.248801990000004,
+   "max_ammo_pct": 3.3380348600000005,
+   "crit_rate": 0.6518260199999943,
+   "crit_dmg": 0.5630281899999972,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "베스티 : 택티컬 업": {
+   "element_bonus": 7.258682409999999,
+   "atk_pct": 3.869201320000002,
+   "max_ammo_pct": 1.8858981000000057,
+   "crit_rate": 1.837589709999996,
+   "crit_dmg": 1.6668880299999955,
+   "charge_speed_pct": 1.8736778899999962,
+   "charge_dmg_pct": 0.3615548000000004,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "엠마 : 택티컬 업": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "D : 킬러 와이프": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_speed_pct"
+  ],
+  "은화 : 택티컬 업": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_speed_pct"
+  ],
+  "레이": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "베스티 : 택티컬 업": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_speed_pct"
+  ]
+ },
+ "C2": 46.36720791,
+ "ctrl2_variants": [
+  "은화 : 택티컬 업:cube:렐릭 크래시 큐브"
+ ],
+ "final": 46.36720791,
+ "final_variants": [
+  "은화 : 택티컬 업:cube:렐릭 크래시 큐브"
+ ],
+ "sims": 1245,
+ "seconds": 210.4
+}

@@ -1,0 +1,138 @@
+{
+ "id": "S35-3",
+ "season": 35,
+ "squad": [
+  "리타",
+  "마스트 : 로망틱 메이드",
+  "그레이브",
+  "스노우 화이트 : 헤비암즈",
+  "디젤 : 윈터 스위츠"
+ ],
+ "win": null,
+ "pre": 48.60504352,
+ "ctrl": 49.88620477,
+ "ctrl_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "리타:reload:C0.5",
+  "마스트 : 로망틱 메이드:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브"
+ ],
+ "E0": 54.74904403,
+ "O": 67.47611581,
+ "alloc": {
+  "리타": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확2+크뎀3",
+  "그레이브": "우코4+공4+크뎀4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "디젤 : 윈터 스위츠": "우코4+공4+크확2+크뎀2"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.47946284999999733,
+   "max_ammo_pct": -1.8179367199999987,
+   "crit_rate": 0.1902830499999979,
+   "crit_dmg": 0.2801848800000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.47788685999999814,
+   "max_ammo_pct": 0.7300832199999974,
+   "crit_rate": 0.2007604900000004,
+   "crit_dmg": 0.2862166500000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 3.5143592800000008,
+   "atk_pct": 1.7533377700000017,
+   "max_ammo_pct": -0.49373878000000104,
+   "crit_rate": 0.15876369000000068,
+   "crit_dmg": 2.420516919999997,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.1045950000000033,
+   "max_ammo_pct": -1.286703690000003,
+   "crit_rate": 1.238238899999999,
+   "crit_dmg": 1.878410719999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3773685000000029,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 11.97818719,
+   "atk_pct": 6.53244213,
+   "max_ammo_pct": -1.8755411699999982,
+   "crit_rate": 3.2576542600000025,
+   "crit_dmg": 3.609582379999999,
+   "charge_speed_pct": 1.8301236799999998,
+   "charge_dmg_pct": 0.5053926699999991,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "그레이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 68.04193625,
+ "ctrl2_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "리타:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "final": 68.04193625,
+ "final_variants": [
+  "squad:camera:스노우 화이트 : 헤비암즈",
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "디젤 : 윈터 스위츠:reload:C0.1_dry",
+  "리타:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브"
+ ],
+ "sims": 2355,
+ "seconds": 346.3
+}

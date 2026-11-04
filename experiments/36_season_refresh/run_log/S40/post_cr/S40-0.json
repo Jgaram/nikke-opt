@@ -1,0 +1,143 @@
+{
+ "id": "S40-0",
+ "season": 40,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "마스트 : 로망틱 메이드",
+  "퀸(마코토)",
+  "유키코"
+ ],
+ "win": null,
+ "pre": 76.00587409,
+ "ctrl": 77.64128355,
+ "ctrl_variants": [
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "아니스 : 스타:reload:A0.3",
+  "유키코:reload:C0.1_dry",
+  "퀸(마코토):reload:C0.1_dry",
+  "크라운:reload:A0.3"
+ ],
+ "E0": 85.08602646,
+ "O": 99.45051068,
+ "alloc": {
+  "아니스 : 스타": "공4+크확4+크뎀4",
+  "크라운": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄1+크확3+크뎀4",
+  "퀸(마코토)": "우코4+공1+크확3+크뎀4",
+  "유키코": "우코4+크확4+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6348491100000047,
+   "max_ammo_pct": 0.839855220000004,
+   "crit_rate": 1.0282219599999962,
+   "crit_dmg": 1.5223318999999975,
+   "charge_speed_pct": 0.19796213000000762,
+   "charge_dmg_pct": 0.902560010000002,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.720758189999998,
+   "max_ammo_pct": 0.1386680899999959,
+   "crit_rate": 0.33766923000000304,
+   "crit_dmg": 0.5211498200000051,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6519494599999973,
+   "max_ammo_pct": 0.16229595000000074,
+   "crit_rate": 0.3143152300000054,
+   "crit_dmg": 0.43688799999999617,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "퀸(마코토)": {
+   "element_bonus": 12.016273920000003,
+   "atk_pct": 4.454451050000003,
+   "max_ammo_pct": 0.27993146000000024,
+   "crit_rate": 3.354542929999994,
+   "crit_dmg": 4.821014840000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "유키코": {
+   "element_bonus": 12.196404729999998,
+   "atk_pct": 4.292231549999997,
+   "max_ammo_pct": 0.6674349299999989,
+   "crit_rate": 3.169001769999994,
+   "crit_dmg": 5.027613040000006,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "크라운": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "퀸(마코토)": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "유키코": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 101.33253814,
+ "ctrl2_variants": [
+  "squad:camera:아니스 : 스타",
+  "마스트 : 로망틱 메이드:burst:wait2",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "유키코:reload:C0.1_dry",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:C0.5",
+  "크라운:reload:C0.1_dry"
+ ],
+ "final": 101.33253814,
+ "final_variants": [
+  "squad:camera:아니스 : 스타",
+  "마스트 : 로망틱 메이드:burst:wait2",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "유키코:reload:C0.1_dry",
+  "퀸(마코토):cube:렐릭 디바이드 큐브",
+  "퀸(마코토):reload:C0.5",
+  "크라운:reload:C0.1_dry"
+ ],
+ "sims": 2418,
+ "seconds": 306.9
+}

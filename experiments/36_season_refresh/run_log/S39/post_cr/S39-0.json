@@ -1,0 +1,141 @@
+{
+ "id": "S39-0",
+ "season": 39,
+ "squad": [
+  "아니스 : 스타",
+  "크라운",
+  "레이븐",
+  "라피 : 레드 후드",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 78.50036553,
+ "ctrl": 78.99865195,
+ "ctrl_variants": [
+  "라피 : 레드 후드:reload:C0.1_dry",
+  "레이븐:cube:택티컬 어설트 큐브",
+  "레이븐:reload:A0.3",
+  "아니스 : 스타:cube:택티컬 베어 큐브",
+  "크라운:cube:렐릭 퀀텀 큐브",
+  "크라운:reload:C0.1_dry",
+  "프리바티:reload:C0.5"
+ ],
+ "E0": 80.89995047,
+ "O": 97.55130801,
+ "alloc": {
+  "아니스 : 스타": "공4+장탄2+크확2+차뎀4",
+  "크라운": "우코4+공4+장탄1+크확3",
+  "레이븐": "우코4+공4+크확2+크뎀2",
+  "라피 : 레드 후드": "우코4+공4+크확2+크뎀2",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "아니스 : 스타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5933377799999988,
+   "max_ammo_pct": 1.2640465199999937,
+   "crit_rate": 0.7157873500000136,
+   "crit_dmg": 0.6182609400000132,
+   "charge_speed_pct": -0.34192756999999574,
+   "charge_dmg_pct": 0.7733867000000032,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 3.419581489999999,
+   "atk_pct": 1.586741499999988,
+   "max_ammo_pct": 0.7394526899999931,
+   "crit_rate": 0.6106810000000138,
+   "crit_dmg": 0.5275094200000012,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이븐": {
+   "element_bonus": 13.093539949999993,
+   "atk_pct": 6.169027109999988,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 2.3170381800000115,
+   "crit_dmg": 2.0013366900000022,
+   "charge_speed_pct": 0.4796855000000022,
+   "charge_dmg_pct": 0.7002634500000084,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 12.790427529999988,
+   "atk_pct": 4.941528609999992,
+   "max_ammo_pct": 0.4954566599999879,
+   "crit_rate": 2.2333064000000036,
+   "crit_dmg": 1.9290124000000048,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.5008839999999992,
+   "max_ammo_pct": -8.940065230000002,
+   "crit_rate": 0.13216979000000606,
+   "crit_dmg": 0.11416556000000355,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "아니스 : 스타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "레이븐": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 98.17800819,
+ "ctrl2_variants": [
+  "squad:camera:아니스 : 스타",
+  "라피 : 레드 후드:reload:C0.1",
+  "레이븐:cube:택티컬 어설트 큐브",
+  "레이븐:reload:A0.3",
+  "크라운:reload:C0.1",
+  "프리바티:reload:B0.5"
+ ],
+ "final": 98.17800819,
+ "final_variants": [
+  "squad:camera:아니스 : 스타",
+  "라피 : 레드 후드:reload:C0.1",
+  "레이븐:cube:택티컬 어설트 큐브",
+  "레이븐:reload:A0.3",
+  "크라운:reload:C0.1",
+  "프리바티:reload:B0.5"
+ ],
+ "sims": 2410,
+ "seconds": 242.5
+}

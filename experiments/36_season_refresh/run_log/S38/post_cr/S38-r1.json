@@ -1,0 +1,142 @@
+{
+ "id": "S38-r1",
+ "season": 38,
+ "squad": [
+  "볼륨",
+  "민트",
+  "스노우 화이트 : 헤비암즈",
+  "신데렐라",
+  "프리카"
+ ],
+ "win": null,
+ "pre": 35.7138846,
+ "ctrl": 38.07942591,
+ "ctrl_variants": [
+  "볼륨:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:reload:C0.5",
+  "신데렐라:reload:A0.3",
+  "프리카:reload:B0.1"
+ ],
+ "E0": 42.1925602,
+ "O": 54.11835499,
+ "alloc": {
+  "볼륨": "우코4+공4+크확1+크뎀3",
+  "민트": "공4+크뎀2+차속3+차뎀3",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확3+크뎀4",
+  "신데렐라": "공3+장탄1+크확4+크뎀4",
+  "프리카": "공4+크뎀3+차속1+차뎀4"
+ },
+ "screen": {
+  "볼륨": {
+   "element_bonus": 2.217450420000006,
+   "atk_pct": 1.41530925,
+   "max_ammo_pct": 0.34617485000000414,
+   "crit_rate": 0.6257445699999948,
+   "crit_dmg": 0.7841626599999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4518229500000004,
+   "max_ammo_pct": 0.20875417999999968,
+   "crit_rate": 0.20953461999999945,
+   "crit_dmg": 0.26443234999999987,
+   "charge_speed_pct": 0.2613786900000008,
+   "charge_dmg_pct": 0.2729624899999976,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.180928680000001,
+   "max_ammo_pct": 2.09948567,
+   "crit_rate": 1.59706817,
+   "crit_dmg": 2.061437049999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3220867599999977,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라": {
+   "element_bonus": 0.0,
+   "atk_pct": 3.0547287400000016,
+   "max_ammo_pct": 1.8292572500000048,
+   "crit_rate": 2.777455549999999,
+   "crit_dmg": 3.864241149999998,
+   "charge_speed_pct": -0.0016601400000055833,
+   "charge_dmg_pct": 0.8180147399999953,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4571912600000019,
+   "max_ammo_pct": 0.11869670000000099,
+   "crit_rate": 0.20728258999999838,
+   "crit_dmg": 0.26594658999999865,
+   "charge_speed_pct": 0.22408567999999462,
+   "charge_dmg_pct": 0.27629179999999565,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "볼륨": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "민트": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg",
+   "charge_speed_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "프리카": [
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg",
+   "charge_speed_pct"
+  ]
+ },
+ "C2": 55.06917017,
+ "ctrl2_variants": [
+  "squad:camera:신데렐라",
+  "볼륨:cube:택티컬 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:reload:C0.5",
+  "신데렐라:cancel:on",
+  "신데렐라:cube:렐릭 비고르 큐브",
+  "신데렐라:reload:C0.1_dry",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:A0.3"
+ ],
+ "final": 55.06917017,
+ "final_variants": [
+  "squad:camera:신데렐라",
+  "볼륨:cube:택티컬 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:reload:C0.5",
+  "신데렐라:cancel:on",
+  "신데렐라:cube:렐릭 비고르 큐브",
+  "신데렐라:reload:C0.1_dry",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:A0.3"
+ ],
+ "sims": 2395,
+ "seconds": 285.4
+}

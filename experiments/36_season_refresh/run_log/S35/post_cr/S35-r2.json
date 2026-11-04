@@ -1,0 +1,141 @@
+{
+ "id": "S35-r2",
+ "season": 35,
+ "squad": [
+  "미란다",
+  "나유타",
+  "에이다",
+  "루주",
+  "미하라 : 본딩 체인"
+ ],
+ "win": null,
+ "pre": 42.58467821,
+ "ctrl": 46.63852736,
+ "ctrl_variants": [
+  "squad:camera:루주",
+  "나유타:cube:택티컬 어설트 큐브",
+  "루주:cube:렐릭 부스트 큐브",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:A0.3",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "에이다:cube:렐릭 크래시 큐브"
+ ],
+ "E0": 45.5406446,
+ "O": 55.69842218,
+ "alloc": {
+  "미란다": "우코4+공4+장탄1+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "에이다": "장탄2+크확4+크뎀4+차뎀2",
+  "루주": "공4+장탄1+차속4+차뎀3",
+  "미하라 : 본딩 체인": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 2.340864019999998,
+   "atk_pct": 1.3227467000000033,
+   "max_ammo_pct": 0.8410895499999995,
+   "crit_rate": 0.5663102999999978,
+   "crit_dmg": 0.8094098700000032,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1354750599999974,
+   "max_ammo_pct": 0.018909170000000586,
+   "crit_rate": 0.45189117999999695,
+   "crit_dmg": 0.2562388999999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.3465332399999994,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이다": {
+   "element_bonus": 0.0,
+   "atk_pct": -4.937858929999997,
+   "max_ammo_pct": 0.0008899199999987673,
+   "crit_rate": 0.27126639000000097,
+   "crit_dmg": 1.8674506799999975,
+   "charge_speed_pct": -0.27803564999999963,
+   "charge_dmg_pct": 0.1186046300000001,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.25271527000000304,
+   "max_ammo_pct": 0.3136001199999967,
+   "crit_rate": 0.090490029999998,
+   "crit_dmg": 0.05410653999999937,
+   "charge_speed_pct": 0.24987694000000005,
+   "charge_dmg_pct": 0.13683969000000218,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "미하라 : 본딩 체인": {
+   "element_bonus": 11.00772481,
+   "atk_pct": 9.524742879999998,
+   "max_ammo_pct": 2.8687023399999987,
+   "crit_rate": 4.660843739999997,
+   "crit_dmg": 1.6200634100000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "에이다": [
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct",
+   "max_ammo_pct"
+  ],
+  "루주": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_speed_pct",
+   "charge_dmg_pct"
+  ],
+  "미하라 : 본딩 체인": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 56.02577843,
+ "ctrl2_variants": [
+  "squad:camera:루주",
+  "나유타:cube:택티컬 어설트 큐브",
+  "미란다:cube:택티컬 베어 큐브",
+  "미란다:reload:A0.3",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "에이다:cube:렐릭 크래시 큐브"
+ ],
+ "final": 56.02577843,
+ "final_variants": [
+  "squad:camera:루주",
+  "나유타:cube:택티컬 어설트 큐브",
+  "미란다:cube:택티컬 베어 큐브",
+  "미란다:reload:A0.3",
+  "미하라 : 본딩 체인:cube:택티컬 베어 큐브",
+  "에이다:cube:렐릭 크래시 큐브"
+ ],
+ "sims": 2341,
+ "seconds": 283.1
+}

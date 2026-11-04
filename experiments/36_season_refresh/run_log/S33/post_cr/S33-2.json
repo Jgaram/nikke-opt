@@ -1,0 +1,138 @@
+{
+ "id": "S33-2",
+ "season": 33,
+ "squad": [
+  "리틀 머메이드",
+  "바이퍼",
+  "크라운",
+  "헬름",
+  "루드밀라 : 윈터 오너"
+ ],
+ "win": null,
+ "pre": 48.22005823,
+ "ctrl": 48.72093294,
+ "ctrl_variants": [
+  "리틀 머메이드:cube:렐릭 퀀텀 큐브",
+  "바이퍼:reload:C0.1",
+  "크라운:cancel:on",
+  "크라운:reload:B0.1"
+ ],
+ "E0": 57.51350363,
+ "O": 64.84328145,
+ "alloc": {
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "바이퍼": "우코4+공4+크확2+크뎀2",
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "헬름": "우코4+공4+차속4",
+  "루드밀라 : 윈터 오너": "우코4+공4+크확1+크뎀3"
+ },
+ "screen": {
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.1199893000000003,
+   "max_ammo_pct": 0.3739531400000047,
+   "crit_rate": 0.6831253799999999,
+   "crit_dmg": 0.5905076399999984,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "바이퍼": {
+   "element_bonus": 6.620470610000005,
+   "atk_pct": 4.095435170000002,
+   "max_ammo_pct": 0.5077146100000007,
+   "crit_rate": 1.222224220000001,
+   "crit_dmg": 1.0576766999999947,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7759822100000022,
+   "max_ammo_pct": 0.7758815200000058,
+   "crit_rate": 0.24269757999999797,
+   "crit_dmg": 0.21010756999999813,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 5.899298470000005,
+   "atk_pct": 4.403305080000003,
+   "max_ammo_pct": -0.5351038399999979,
+   "crit_rate": 1.2043919099999982,
+   "crit_dmg": 1.0402908399999973,
+   "charge_speed_pct": 1.2063469199999943,
+   "charge_dmg_pct": 0.5904594000000003,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 6.567076840000006,
+   "atk_pct": 4.044439850000003,
+   "max_ammo_pct": 0.042106090000004315,
+   "crit_rate": 1.13692305,
+   "crit_dmg": 1.79816881,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "바이퍼": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "크라운": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "element_bonus",
+   "atk_pct",
+   "charge_speed_pct",
+   "crit_rate"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 65.6822071,
+ "ctrl2_variants": [
+  "squad:camera:헬름",
+  "리틀 머메이드:cube:택티컬 부스트 큐브",
+  "리틀 머메이드:reload:A0.3",
+  "바이퍼:reload:C0.1",
+  "크라운:cancel:on",
+  "크라운:reload:B0.1"
+ ],
+ "final": 65.6822071,
+ "final_variants": [
+  "squad:camera:헬름",
+  "리틀 머메이드:cube:택티컬 부스트 큐브",
+  "리틀 머메이드:reload:A0.3",
+  "바이퍼:reload:C0.1",
+  "크라운:cancel:on",
+  "크라운:reload:B0.1"
+ ],
+ "sims": 2425,
+ "seconds": 257.4
+}
