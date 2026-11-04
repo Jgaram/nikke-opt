@@ -80,5 +80,123 @@ class Pool41(unittest.TestCase):
         self.assertNotIn("core_px", o["enemy"])
 
 
+def small_table(seed: int, n: int = 140):
+    """구조 통과 구성 n개를 무작위로 고른 작은 표(니케 27명 — 겹치지 않는 5덱이 드물게만 생긴다)."""
+    import random
+    r = load("run41", "run41.py")
+    rng = random.Random(seed)
+    by = {k: sorted(x for x in r.pool(36) if r.BURST[x] == k) for k in "123"}
+    names = by["1"][:7] + by["2"][:8] + by["3"][:12]
+    allc = list(r.P41.iter_comps(names))
+    cs = sorted(rng.sample(allc, n))
+    vals = [round(rng.uniform(10, 60), 3) for _ in cs]
+    return r, r.Table(36, cs, vals, None, names)
+
+
+def all_packs(T, vals, k=5):
+    """겹치지 않는 k덱 전부(가지치기 없음) — (합, 구성 번호들)."""
+    out = []
+    n = len(T.cs)
+
+    def dfs(start, used, path, tot):
+        if len(path) == k:
+            out.append((tot, tuple(path)))
+            return
+        for i in range(start, n):
+            if not T.masks[i] & used:
+                dfs(i + 1, used | T.masks[i], path + [i], tot + vals[i])
+    dfs(0, 0, [], 0.0)
+    return out
+
+
+class Pack41(unittest.TestCase):
+    def test_pruned_exact_equals_full(self):
+        for seed in range(6):
+            r, T = small_table(seed)
+            packs = all_packs(T, T.base)
+            if not packs:
+                continue
+            best = max(t for t, _ in packs)
+            full, _ = r.R9.pack_vals(T.book("base", range(len(T.cs))))
+            got = r.exact_opt(T, "base", seed_limit=20)          # 하한을 일부러 약하게
+            self.assertAlmostEqual(got["total"], best, places=9)
+            self.assertAlmostEqual(full, best, places=9)
+            self.assertTrue(got["exact"])
+
+    def test_landscape_counts_and_members(self):
+        for seed in range(6):
+            r, T = small_table(seed)
+            packs = all_packs(T, T.base)
+            if not packs:
+                continue
+            best = max(t for t, _ in packs)
+            for x in (1.0, 0.97, 0.9, 0.8):
+                thr = x * best
+                want = [p for t, p in packs if t >= thr - 1e-9]
+                L = r.landscape(T, "base", best, x)
+                self.assertTrue(L["complete"])
+                self.assertEqual(L["count"], len(want))
+                self.assertEqual(set(L["comps_in"]), {i for p in want for i in p})
+                b = r.in_some_pack(T, "base", thr - 1e-9)
+                self.assertEqual(set(b["comps"]), {i for p in want for i in p})
+
+    def test_r_need_bruteforce(self):
+        for seed in range(6):
+            r, T = small_table(seed)
+            packs = all_packs(T, T.base)
+            if not packs:
+                continue
+            best = max(t for t, _ in packs)
+            rk = T.ranks("base")
+            for x in (1.0, 0.95, 0.85):
+                want = min(max(rk[i] for i in p) for t, p in packs if t >= x * best - 1e-9)
+                self.assertEqual(r.r_need(T, "base", x * best)["K"], want)
+
+    def test_in_some_pack_fallback(self):
+        """5덱 셈이 바로 끊겨도(시간 0) 구성별 판정이 같은 답을 낸다."""
+        r, T = small_table(3)
+        packs = all_packs(T, T.base)
+        best = max(t for t, _ in packs)
+        orig = r.enum_packs
+        try:
+            r.enum_packs = lambda *a, **k: {"count": 0, "complete": False, "stop": "time", "members": []}
+            b = r.in_some_pack(T, "base", 0.9 * best - 1e-9)
+        finally:
+            r.enum_packs = orig
+        self.assertEqual(set(b["comps"]), {i for t, p in packs if t >= 0.9 * best - 1e-9 for i in p})
+
+    def test_table_evaluator(self):
+        from nikke_opt.evaluator import EvalRequest
+        r, T = small_table(1, n=30)
+        c = T.cs[0]
+        o = r.base_order(c)
+        others = [x for x in r.R2.distinct_orders(o, r.BURST) if r.stage_key(x) != r.stage_key(o)]
+        T.refined[0] = {r.stage_key(others[0]): (99.0, others[0])} if others else {}
+        ev = r.TableEvaluator(T)
+        got = ev.evaluate([EvalRequest(o, options={})])
+        self.assertEqual(got[0].total_damage, round(T.base[0] * 1e8))
+        if others:
+            got = ev.evaluate([EvalRequest(others[0], options={})])
+            self.assertEqual(got[0].total_damage, round(99.0 * 1e8))
+            if len(others) > 1:
+                got = ev.evaluate([EvalRequest(others[1], options={})])
+                self.assertEqual(got[0].total_damage, round(T.base[0] * 1e8))
+                self.assertEqual(ev.fallback, 1)
+        outside = [x for x in r.P41.iter_comps(sorted(T.bit)) if frozenset(x) not in T.idx][0]
+        with self.assertRaises(KeyError):
+            ev.evaluate([EvalRequest(outside, options={})])
+
+    def test_table_refined_best(self):
+        r, T = small_table(2, n=20)
+        o = r.base_order(T.cs[0])
+        others = [x for x in r.R2.distinct_orders(o, r.BURST) if r.stage_key(x) != r.stage_key(o)]
+        if not others:
+            self.skipTest("순서 하나뿐")
+        T2 = r.Table(36, T.cs, T.base, {0: {r.stage_key(others[0]): (T.base[0] + 5, others[0])}}, sorted(T.bit))
+        self.assertAlmostEqual(T2.ref[0], T.base[0] + 5)
+        self.assertEqual(T2.best_order[0], tuple(others[0]))
+        self.assertEqual(T2.base[0], T.base[0])
+
+
 if __name__ == "__main__":
     unittest.main()

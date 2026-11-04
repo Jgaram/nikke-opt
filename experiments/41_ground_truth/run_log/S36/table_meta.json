@@ -1,0 +1,64 @@
+{
+ "season": 36,
+ "comps": 182784,
+ "chunk": 5000,
+ "chunks": 37,
+ "options": {
+  "enemy": {
+   "code": "수냉"
+  },
+  "profile": {
+   "base": "default",
+   "chars": {
+    "로산나": {
+     "favorite_stage": 0
+    },
+    "슈가": {
+     "favorite_stage": 0
+    },
+    "팬텀": {
+     "favorite_stage": 0
+    },
+    "플로라": {
+     "favorite_stage": 0
+    }
+   }
+  },
+  "sim": {
+   "camera_reload_cancel": true
+  }
+ },
+ "order": "단계 1 · 2 · A · 3, 같은 단계 안 이름순",
+ "parts": {
+  "0": {
+   "sims": 5000,
+   "seconds": 158.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "1": {
+   "sims": 5000,
+   "seconds": 151.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "2": {
+   "sims": 5000,
+   "seconds": 142.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "3": {
+   "sims": 5000,
+   "seconds": 187.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "4": {
+   "sims": 5000,
+   "seconds": 176.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  }
+ }
+}
