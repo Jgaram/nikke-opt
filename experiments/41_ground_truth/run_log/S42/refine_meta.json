@@ -1,0 +1,76 @@
+{
+ "season": 42,
+ "top": 2000,
+ "x": 0.97,
+ "rounds": [
+  {
+   "round": 0,
+   "kind": "base",
+   "opt": 301.32646633,
+   "opt_exact": true,
+   "opt_kept": 93035,
+   "b_comps": 1167,
+   "b_new": 1045,
+   "b_exact": true,
+   "b_count": 6398,
+   "b_complete": true,
+   "targets": {
+    "a": 2000,
+    "c": 26,
+    "b": 1045
+   },
+   "orders": 11405,
+   "sims": 11405,
+   "seconds": 457.0,
+   "evaluator": "nikke-calc-rs f0f648c",
+   "errors": 0
+  },
+  {
+   "round": 1,
+   "kind": "ref",
+   "opt": 305.78081456,
+   "opt_exact": true,
+   "opt_kept": 116995,
+   "b_comps": 811,
+   "b_new": 176,
+   "b_exact": true,
+   "b_count": 6915,
+   "b_complete": true,
+   "targets": {
+    "a": 2000,
+    "c": 26,
+    "b": 1045,
+    "b1": 176
+   },
+   "orders": 606,
+   "sims": 606,
+   "seconds": 25.7,
+   "evaluator": "nikke-calc-rs f0f648c",
+   "errors": 0
+  },
+  {
+   "round": 2,
+   "kind": "ref",
+   "opt": 305.78081456,
+   "opt_exact": true,
+   "opt_kept": 116995,
+   "b_comps": 823,
+   "b_new": 7,
+   "b_exact": true,
+   "b_count": 7349,
+   "b_complete": true,
+   "targets": {
+    "a": 2000,
+    "c": 26,
+    "b": 1045,
+    "b1": 176,
+    "b2": 7
+   },
+   "orders": 27,
+   "sims": 27,
+   "seconds": 1.2,
+   "evaluator": "nikke-calc-rs f0f648c",
+   "errors": 0
+  }
+ ]
+}
