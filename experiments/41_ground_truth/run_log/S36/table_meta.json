@@ -143,6 +143,12 @@
    "seconds": 165.5,
    "errors": 0,
    "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "19": {
+   "sims": 5000,
+   "seconds": 165.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
   }
  }
 }

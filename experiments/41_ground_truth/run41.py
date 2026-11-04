@@ -19,6 +19,7 @@ import argparse
 import gzip
 import importlib.util
 import json
+import os
 import random
 import sys
 import time
@@ -48,7 +49,7 @@ E8 = 1e8
 CAMERA_RELOAD_CANCEL = True    # 평가기 옵션 켬(사용자 결정)
 SEASONS = P41.SEASONS          # (36, 39, 42)
 CHUNK = 5000
-LOG = HERE / "run_log"
+LOG = Path(os.environ.get("NIKKE41_LOG") or HERE / "run_log")   # 실행 중에는 레포 밖 작업 폴더에 쓰고 옮겨 커밋할 수 있다
 EXP36_LOG = EXPS / "36_season_refresh" / "run_log"
 POOLS = json.loads(P41.OUT.read_text(encoding="utf-8"))["seasons"] if P41.OUT.exists() else {}
 BURST = P41.BURST
@@ -133,8 +134,8 @@ def cmd_check(a: argparse.Namespace) -> int:
                            "sims": ev.sim_count - n0, "seconds": round(time.time() - t0, 1), "evaluator": ev_version(ev),
                            "sims_per_s": round((ev.sim_count - n0) / max(time.time() - t0, 1e-9), 2)}
             print(json.dumps({"season": s, **out[str(s)]}, ensure_ascii=False), flush=True)
-    prev = jload(HERE / "run_log" / "check.json") or {}
-    jdump(HERE / "run_log" / "check.json", {**prev, **out, "camera_reload_cancel": CAMERA_RELOAD_CANCEL})
+    prev = jload(LOG / "check.json") or {}
+    jdump(LOG / "check.json", {**prev, **out, "camera_reload_cancel": CAMERA_RELOAD_CANCEL})
     return 0
 
 
