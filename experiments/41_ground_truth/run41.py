@@ -594,6 +594,88 @@ def collections_count(xs: Any) -> dict[str, int]:
     return dict(collections.Counter(xs))
 
 
+# ---------------------------------------------------------------- 관찰: 자리 순서 전부(120가지) — stage_key 가정 점검
+
+PERM_TOP = 30
+
+
+def load_perm(s: int) -> dict[int, dict[tuple, float]]:
+    f = sdir(s) / "perm.jsonl.gz"
+    out: dict[int, dict[tuple, float]] = {}
+    if f.exists():
+        with gzip.open(f, "rt", encoding="utf-8") as fh:
+            for line in fh:
+                r = json.loads(line)
+                if r["value"] is not None:
+                    out.setdefault(r["i"], {})[tuple(r["order"])] = r["value"]
+    return out
+
+
+def perm_targets(s: int, T: Table) -> dict[int, str]:
+    """OPT(다듬은 값) 5덱 · 랭커 스쿼드 최선 5덱 · 우리 A 5덱 · 다듬은 값 상위 PERM_TOP."""
+    pk = jload(sdir(s) / "pack.json")
+    e36 = exp36_values(s)
+    out: dict[int, str] = {}
+    for i in pk["ref"]["opt"]["idx"]:
+        out.setdefault(i, "opt")
+    rs = P41.ranker_sets(s)
+    _, rb = pack_fixed(T, "ref", [q for v in rs.values() for q in v], e36["rankers"])
+    for _, q in rb:
+        if frozenset(q) in T.idx:
+            out.setdefault(T.idx[frozenset(q)], "ranker_best")
+    for q in e36["A_decks"]:
+        if frozenset(q) in T.idx:
+            out.setdefault(T.idx[frozenset(q)], "A")
+    for i in T.sorted_idx("ref")[:PERM_TOP]:
+        out.setdefault(i, "top")
+    return out
+
+
+def cmd_perm(a: argparse.Namespace) -> int:
+    """관찰(판단에 안 씀): 대상 구성의 자리 순서 120가지를 모두 잰다(표 · 2단계에서 잰 순서는 다시 재지 않는다)."""
+    from itertools import permutations
+    s = a.season
+    T = Table.load(s)
+    done = load_perm(s)
+    tg = perm_targets(s, T)
+    measured: dict[int, set] = {i: {tuple(o) for _, o in T.refined.get(i, {}).values()} | {base_order(T.cs[i])} for i in tg}
+    todo = [(i, o) for i in sorted(tg) for o in permutations(base_order(T.cs[i]))
+            if o not in measured[i] and o not in done.get(i, {})]
+    t0 = time.time()
+    with evaluator(a.jobs) as ev:
+        n0 = ev.sim_count
+        for b0 in range(0, len(todo), REFINE_BATCH):
+            part = todo[b0:b0 + REFINE_BATCH]
+            got = run_orders(s, [o for _, o in part], ev)
+            with gzip.open(sdir(s) / "perm.jsonl.gz", "at", encoding="utf-8") as fh:
+                for (i, o), (v, _) in zip(part, got):
+                    fh.write(json.dumps({"i": i, "order": list(o), "value": v, "why": tg[i]}, ensure_ascii=False) + "\n")
+            print(f"S{s} 자리 순서 {min(b0 + REFINE_BATCH, len(todo))}/{len(todo)}", flush=True)
+        jdump(sdir(s) / "perm_meta.json", {"season": s, "targets": len(tg), "sims": ev.sim_count - n0,
+                                           "seconds": round(time.time() - t0, 1), "evaluator": ev_version(ev)})
+    return 0
+
+
+def perm_summary(s: int, T: Table) -> dict[str, Any] | None:
+    """자리 순서 전부의 최고 ÷ 2단계 값(stage_key 대표 순서 최고) − 1, 그 값으로 바꿔 다시 묶은 5덱(OPT의 하한)."""
+    P = load_perm(s)
+    if not P:
+        return None
+    tg = perm_targets(s, T)
+    gains, vals = {}, list(T.ref)
+    for i in tg:
+        allv = list(P.get(i, {}).values()) + [v for v, _ in T.refined.get(i, {}).values()] + [T.base[i]]
+        best = max(x for x in allv if x is not None)
+        gains[i] = best / T.ref[i] - 1
+        vals[i] = best
+    T2 = Table(s, T.cs, vals, None, sorted(T.bit))
+    opt2 = exact_opt(T2, "base")
+    xs = sorted(gains.values())
+    return {"comps": len(tg), "gain_median": median(xs), "gain_max": xs[-1], "gain_ge_1pct": sum(x >= 0.01 for x in xs),
+            "by_why": {w: median([gains[i] for i in tg if tg[i] == w]) for w in sorted(set(tg.values()))},
+            "opt_perm_lb": opt2["total"], "opt_perm_decks": opt2["decks"], "opt_perm_exact": opt2["exact"]}
+
+
 # ---------------------------------------------------------------- 3단계: 답안지 묶기 · 채점(시뮬 0)
 
 LAND_X = (0.99, 0.97)
@@ -997,11 +1079,14 @@ def main(argv: list[str] | None = None) -> int:
     y.add_argument("--season", type=int, required=True)
     y.add_argument("--seed", type=int, default=None)
     y.add_argument("--force", action="store_true")
+    q = sub.add_parser("perm")
+    q.add_argument("--season", type=int, required=True)
+    q.add_argument("--jobs", type=int, default=4)
     n = sub.add_parser("analyze")
     n.add_argument("--season", default=None)
     a = p.parse_args(argv)
     return {"check": cmd_check, "table": cmd_table, "refine": cmd_refine, "pack": cmd_pack, "replay": cmd_replay,
-            "analyze": cmd_analyze}[a.cmd](a)
+            "perm": cmd_perm, "analyze": cmd_analyze}[a.cmd](a)
 
 
 if __name__ == "__main__":
