@@ -1,0 +1,142 @@
+{
+ "id": "S34-r10",
+ "season": 34,
+ "squad": [
+  "미란다",
+  "스노우 화이트",
+  "에이드 : 에이전트 바니",
+  "맥스웰",
+  "헬름 : 아쿠아마린"
+ ],
+ "win": null,
+ "pre": 25.82548147,
+ "ctrl": 28.93885554,
+ "ctrl_variants": [
+  "맥스웰:cube:택티컬 베어 큐브",
+  "미란다:reload:B0.1",
+  "스노우 화이트:cube:렐릭 피어싱 큐브",
+  "에이드 : 에이전트 바니:click:tap",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1"
+ ],
+ "E0": 34.64247747,
+ "O": 39.31735668,
+ "alloc": {
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "스노우 화이트": "우코4+공4+크뎀4",
+  "에이드 : 에이전트 바니": "우코4+공4+장탄4",
+  "맥스웰": "우코4+공4+크확4",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8337768600000004,
+   "max_ammo_pct": 2.5068955900000063,
+   "crit_rate": 0.302154569999999,
+   "crit_dmg": 0.4463809799999936,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트": {
+   "element_bonus": 7.816434290000004,
+   "atk_pct": 9.384388050000002,
+   "max_ammo_pct": 0.6891430400000047,
+   "crit_rate": 0.8008393900000002,
+   "crit_dmg": 3.569314839999997,
+   "charge_speed_pct": 0.5354949399999995,
+   "charge_dmg_pct": 0.6383254399999956,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이드 : 에이전트 바니": {
+   "element_bonus": 1.0440474700000024,
+   "atk_pct": 0.9879635600000043,
+   "max_ammo_pct": 2.997003150000001,
+   "crit_rate": 0.2849317999999954,
+   "crit_dmg": 0.16283938999999492,
+   "charge_speed_pct": -1.931050540000001,
+   "charge_dmg_pct": 0.03740166999999417,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰": {
+   "element_bonus": 2.9269675400000033,
+   "atk_pct": 2.1742140899999995,
+   "max_ammo_pct": 2.6495833200000014,
+   "crit_rate": 1.2567645199999973,
+   "crit_dmg": 0.41157970999999804,
+   "charge_speed_pct": 0.5876213399999983,
+   "charge_dmg_pct": 1.0984005099999976,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.5778065000000012,
+   "atk_pct": 1.441156620000001,
+   "max_ammo_pct": 0.3115031300000055,
+   "crit_rate": 0.4290109299999969,
+   "crit_dmg": 0.24868003999999644,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "스노우 화이트": [
+   "atk_pct",
+   "element_bonus",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "에이드 : 에이전트 바니": [
+   "max_ammo_pct",
+   "element_bonus",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "맥스웰": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 39.81576992,
+ "ctrl2_variants": [
+  "맥스웰:cube:렐릭 피어싱 큐브",
+  "맥스웰:reload:A0.3",
+  "스노우 화이트:cube:렐릭 피어싱 큐브",
+  "스노우 화이트:reload:A0.3",
+  "에이드 : 에이전트 바니:click:tap",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1_dry"
+ ],
+ "final": 39.81576992,
+ "final_variants": [
+  "맥스웰:cube:렐릭 피어싱 큐브",
+  "맥스웰:reload:A0.3",
+  "스노우 화이트:cube:렐릭 피어싱 큐브",
+  "스노우 화이트:reload:A0.3",
+  "에이드 : 에이전트 바니:click:tap",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:C0.1_dry"
+ ],
+ "sims": 1396,
+ "seconds": 155.9
+}

@@ -1,0 +1,139 @@
+{
+ "id": "S34-r3",
+ "season": 34,
+ "squad": [
+  "크라운",
+  "라피 : 레드 후드",
+  "리틀 머메이드",
+  "이브",
+  "마스트 : 로망틱 메이드"
+ ],
+ "win": null,
+ "pre": 61.05680153,
+ "ctrl": 63.0785893,
+ "ctrl_variants": [
+  "라피 : 레드 후드:reload:C0.5",
+  "리틀 머메이드:reload:C0.1",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "이브:cube:택티컬 부스트 큐브",
+  "이브:reload:C0.1_dry",
+  "크라운:reload:B0.5"
+ ],
+ "E0": 71.32863771,
+ "O": 84.99044343,
+ "alloc": {
+  "크라운": "우코4+공4+장탄1+크뎀3",
+  "라피 : 레드 후드": "우코4+공4+크확1+크뎀3",
+  "리틀 머메이드": "공4+크확4+크뎀4",
+  "이브": "우코4+공3+장탄1+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄4+크확1+크뎀3"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 2.8823126099999996,
+   "atk_pct": 1.480512179999991,
+   "max_ammo_pct": 1.0782114799999931,
+   "crit_rate": 0.6060532900000055,
+   "crit_dmg": 0.9436256900000046,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 12.554467359999997,
+   "atk_pct": 4.80566902999999,
+   "max_ammo_pct": 0.7337045399999909,
+   "crit_rate": 2.836967560000005,
+   "crit_dmg": 3.9658207800000014,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.9689837499999925,
+   "max_ammo_pct": 0.02260486000000128,
+   "crit_rate": 0.9319119499999999,
+   "crit_dmg": 1.4046846300000055,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 9.214686209999996,
+   "atk_pct": 3.9999444299999993,
+   "max_ammo_pct": 2.2357764699999905,
+   "crit_rate": 1.3693141300000065,
+   "crit_dmg": 7.045804270000005,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6036256699999996,
+   "max_ammo_pct": 0.7802796799999925,
+   "crit_rate": 0.254353100000003,
+   "crit_dmg": 0.35831337000000474,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "라피 : 레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "max_ammo_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 85.66534066,
+ "ctrl2_variants": [
+  "라피 : 레드 후드:reload:C0.5",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "마스트 : 로망틱 메이드:cube:택티컬 베어 큐브",
+  "이브:reload:B0.5"
+ ],
+ "final": 85.66534066,
+ "final_variants": [
+  "라피 : 레드 후드:reload:C0.5",
+  "마스트 : 로망틱 메이드:burst:pattern=1,3,5,9,11,14",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "마스트 : 로망틱 메이드:cube:택티컬 베어 큐브",
+  "이브:reload:B0.5"
+ ],
+ "sims": 2409,
+ "seconds": 282.9
+}

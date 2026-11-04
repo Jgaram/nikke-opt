@@ -1,0 +1,141 @@
+{
+ "id": "S34-r7",
+ "season": 34,
+ "squad": [
+  "미란다",
+  "에이드 : 에이전트 바니",
+  "스노우 화이트 : 헤비암즈",
+  "레드 후드",
+  "헬름 : 아쿠아마린"
+ ],
+ "win": null,
+ "pre": 33.45613259,
+ "ctrl": 35.12088634,
+ "ctrl_variants": [
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:B0.1",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 베어 큐브",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1_dry",
+  "헬름 : 아쿠아마린:cube:택티컬 부스트 큐브"
+ ],
+ "E0": 40.67203372,
+ "O": 47.41948079,
+ "alloc": {
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "에이드 : 에이전트 바니": "우코4+공4+장탄4",
+  "스노우 화이트 : 헤비암즈": "공4+크확4+크뎀4",
+  "레드 후드": "우코4+공4+크확4",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.8850120900000036,
+   "max_ammo_pct": 0.4442633000000029,
+   "crit_rate": 0.3202624500000013,
+   "crit_dmg": 0.48064435999999944,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이드 : 에이전트 바니": {
+   "element_bonus": 1.1211748600000035,
+   "atk_pct": 1.0609463700000035,
+   "max_ammo_pct": 0.9031181799999999,
+   "crit_rate": 0.3053965599999984,
+   "crit_dmg": 0.17506189999999577,
+   "charge_speed_pct": -0.02210385000000059,
+   "charge_dmg_pct": 0.02302225999999763,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 5.638204729999998,
+   "max_ammo_pct": 0.7007745499999984,
+   "crit_rate": 1.7570492899999977,
+   "crit_dmg": 2.5048898699999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.40560406999999543,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레드 후드": {
+   "element_bonus": 5.338450630000004,
+   "atk_pct": 4.091779150000001,
+   "max_ammo_pct": 0.6534761200000005,
+   "crit_rate": 2.31286875,
+   "crit_dmg": 0.7626345299999997,
+   "charge_speed_pct": 1.955602649999996,
+   "charge_dmg_pct": 1.752102359999995,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 1.7048961799999987,
+   "atk_pct": 1.5572392899999983,
+   "max_ammo_pct": 0.3459849600000027,
+   "crit_rate": 0.4651454099999981,
+   "crit_dmg": 0.2642616599999954,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "에이드 : 에이전트 바니": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "레드 후드": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_speed_pct"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 47.95156268,
+ "ctrl2_variants": [
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:B0.1",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:B0.1",
+  "헬름 : 아쿠아마린:cube:택티컬 부스트 큐브"
+ ],
+ "final": 47.95156268,
+ "final_variants": [
+  "레드 후드:cube:렐릭 피어싱 큐브",
+  "미란다:cube:택티컬 부스트 큐브",
+  "미란다:reload:B0.1",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:B0.1",
+  "헬름 : 아쿠아마린:cube:택티컬 부스트 큐브"
+ ],
+ "sims": 2422,
+ "seconds": 254.3
+}

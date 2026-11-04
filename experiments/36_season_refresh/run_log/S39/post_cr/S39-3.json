@@ -1,0 +1,148 @@
+{
+ "id": "S39-3",
+ "season": 39,
+ "squad": [
+  "목단",
+  "타키나",
+  "센티",
+  "스노우 화이트 : 헤비암즈",
+  "치사토"
+ ],
+ "win": null,
+ "pre": 53.72666418,
+ "ctrl": 58.12102283,
+ "ctrl_variants": [
+  "센티:cube:렐릭 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 부스트 큐브",
+  "치사토:cube:렐릭 크래시 큐브",
+  "치사토:reload:B0.5",
+  "타키나:click:tap",
+  "타키나:cube:렐릭 크래시 큐브"
+ ],
+ "E0": 64.3893846,
+ "O": 70.27687072,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "타키나": "우코4+공4+크확2+크뎀2",
+  "센티": "우코4+공3+장탄2+차속3",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확4+크뎀3",
+  "치사토": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6598924799999963,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.19758480000000134,
+   "crit_dmg": 0.1706684600000017,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "타키나": {
+   "element_bonus": 7.54546835,
+   "atk_pct": 4.292017319999999,
+   "max_ammo_pct": 0.37388319999999453,
+   "crit_rate": 1.6364082500000023,
+   "crit_dmg": 1.413443749999999,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "센티": {
+   "element_bonus": 0.5551463500000011,
+   "atk_pct": 0.4052714999999978,
+   "max_ammo_pct": 0.3369462800000065,
+   "crit_rate": 0.12230707999999879,
+   "crit_dmg": 0.10564241999999524,
+   "charge_speed_pct": 0.2821719500000057,
+   "charge_dmg_pct": 0.2743954400000064,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.6548917100000011,
+   "max_ammo_pct": 1.2415409700000026,
+   "crit_rate": 0.7583638699999966,
+   "crit_dmg": 0.6550343800000036,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.22752217999999402,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "치사토": {
+   "element_bonus": 9.907107269999997,
+   "atk_pct": 4.65922904,
+   "max_ammo_pct": 3.241119789999999,
+   "crit_rate": 2.139283370000001,
+   "crit_dmg": 1.8478068600000057,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "타키나": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "센티": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "charge_speed_pct"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "치사토": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 71.04195202,
+ "ctrl2_variants": [
+  "목단:reload:B0.1",
+  "센티:cancel:on",
+  "센티:cube:렐릭 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:reload:C0.1_dry",
+  "치사토:cube:렐릭 크래시 큐브",
+  "치사토:reload:B0.1",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:cube:렐릭 크래시 큐브"
+ ],
+ "final": 71.04195202,
+ "final_variants": [
+  "목단:reload:B0.1",
+  "센티:cancel:on",
+  "센티:cube:렐릭 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:cube:택티컬 부스트 큐브",
+  "스노우 화이트 : 헤비암즈:reload:C0.1_dry",
+  "치사토:cube:렐릭 크래시 큐브",
+  "치사토:reload:B0.1",
+  "타키나:click:tap",
+  "타키나:cover:on",
+  "타키나:cube:렐릭 크래시 큐브"
+ ],
+ "sims": 2444,
+ "seconds": 281.3
+}

@@ -1,0 +1,145 @@
+{
+ "id": "S38-r13",
+ "season": 38,
+ "squad": [
+  "미란다",
+  "맥스웰",
+  "나유타",
+  "루주",
+  "디젤 : 윈터 스위츠"
+ ],
+ "win": null,
+ "pre": 23.11039963,
+ "ctrl": 26.14778632,
+ "ctrl_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "디젤 : 윈터 스위츠:reload:B0.5",
+  "루주:burst:delay1",
+  "루주:reload:B0.5",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.5",
+  "미란다:reload:B0.5"
+ ],
+ "E0": 29.72041449,
+ "O": 42.39496234,
+ "alloc": {
+  "미란다": "공4+크확4+크뎀4",
+  "맥스웰": "장탄3+크확4+크뎀4+차뎀1",
+  "나유타": "우코4+공4+크확4",
+  "루주": "공4+차속4+차뎀4",
+  "디젤 : 윈터 스위츠": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7014822999999986,
+   "max_ammo_pct": -0.6109439200000004,
+   "crit_rate": 0.29965024000000184,
+   "crit_dmg": 0.44003409000000104,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "맥스웰": {
+   "element_bonus": 0.0,
+   "atk_pct": -4.163201789999999,
+   "max_ammo_pct": 0.638360930000001,
+   "crit_rate": 0.337291350000001,
+   "crit_dmg": 0.2592071500000017,
+   "charge_speed_pct": -0.017799189999998077,
+   "charge_dmg_pct": 0.10779411000000039,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 4.4542755199999995,
+   "atk_pct": 3.0534353900000006,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 1.2190715000000019,
+   "crit_dmg": 0.6793808299999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.9779877200000016,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루주": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.27039530000000056,
+   "max_ammo_pct": -0.16016541000000117,
+   "crit_rate": 0.09750534000000144,
+   "crit_dmg": 0.0559012800000005,
+   "charge_speed_pct": 0.4771655800000012,
+   "charge_dmg_pct": 0.14643106000000117,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "디젤 : 윈터 스위츠": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.6937943900000008,
+   "max_ammo_pct": 0.5331627999999995,
+   "crit_rate": 2.687161960000001,
+   "crit_dmg": 0.7353920000000009,
+   "charge_speed_pct": 0.19599760000000188,
+   "charge_dmg_pct": 0.24508563999999922,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "맥스웰": [
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg",
+   "charge_dmg_pct"
+  ],
+  "나유타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "루주": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ],
+  "디젤 : 윈터 스위츠": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 42.78785222,
+ "ctrl2_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "디젤 : 윈터 스위츠:click:tap",
+  "디젤 : 윈터 스위츠:reload:B0.5",
+  "루주:burst:delay1",
+  "루주:reload:B0.5",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1",
+  "미란다:reload:B0.5"
+ ],
+ "final": 42.78785222,
+ "final_variants": [
+  "나유타:cube:렐릭 퀀텀 큐브",
+  "디젤 : 윈터 스위츠:click:tap",
+  "디젤 : 윈터 스위츠:reload:B0.5",
+  "루주:burst:delay1",
+  "루주:reload:B0.5",
+  "맥스웰:click:tap",
+  "맥스웰:reload:C0.1",
+  "미란다:reload:B0.5"
+ ],
+ "sims": 2238,
+ "seconds": 261.1
+}

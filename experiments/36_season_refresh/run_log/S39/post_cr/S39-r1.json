@@ -1,0 +1,136 @@
+{
+ "id": "S39-r1",
+ "season": 39,
+ "squad": [
+  "마스트 : 로망틱 메이드",
+  "신데렐라 : 크리스탈 웨이브",
+  "앵커 : 이노센트 메이드",
+  "이브",
+  "리틀 머메이드"
+ ],
+ "win": null,
+ "pre": 55.13881523,
+ "ctrl": 57.92406275,
+ "ctrl_variants": [
+  "마스트 : 로망틱 메이드:reload:C0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:B0.5",
+  "이브:reload:B0.1"
+ ],
+ "E0": 65.67672288,
+ "O": 79.59204578,
+ "alloc": {
+  "마스트 : 로망틱 메이드": "공4+크확4+크뎀4",
+  "신데렐라 : 크리스탈 웨이브": "우코4+공4+크확1+크뎀3",
+  "앵커 : 이노센트 메이드": "공4+장탄4+크확1+크뎀3",
+  "이브": "우코4+공3+크확1+크뎀4",
+  "리틀 머메이드": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.6244460799999985,
+   "max_ammo_pct": 0.05229253000000256,
+   "crit_rate": 0.2708268699999934,
+   "crit_dmg": 0.39428227000000504,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 15.255805950000003,
+   "atk_pct": 5.919453330000003,
+   "max_ammo_pct": 1.2284730500000052,
+   "crit_rate": 4.375095220000006,
+   "crit_dmg": 5.420231670000007,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앵커 : 이노센트 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.37979914999999664,
+   "max_ammo_pct": 0.27513270999999406,
+   "crit_rate": 0.1640105400000067,
+   "crit_dmg": 0.23813237000000242,
+   "charge_speed_pct": 0.02543568000000107,
+   "charge_dmg_pct": 0.006251570000003426,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "이브": {
+   "element_bonus": 7.575105729999997,
+   "atk_pct": 3.106886850000002,
+   "max_ammo_pct": -0.14913160000000403,
+   "crit_rate": 0.9834061100000042,
+   "crit_dmg": 5.774956829999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "리틀 머메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4400986200000006,
+   "max_ammo_pct": -0.16700604999999769,
+   "crit_rate": 0.6558905100000061,
+   "crit_dmg": 0.9559919099999945,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "마스트 : 로망틱 메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "앵커 : 이노센트 메이드": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "리틀 머메이드": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ]
+ },
+ "C2": 80.1103928,
+ "ctrl2_variants": [
+  "리틀 머메이드:reload:B0.1",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "이브:reload:B0.1"
+ ],
+ "final": 80.1103928,
+ "final_variants": [
+  "리틀 머메이드:reload:B0.1",
+  "마스트 : 로망틱 메이드:reload:B0.5",
+  "앵커 : 이노센트 메이드:click:tap",
+  "앵커 : 이노센트 메이드:reload:C0.5",
+  "이브:reload:B0.1"
+ ],
+ "sims": 2437,
+ "seconds": 284.8
+}

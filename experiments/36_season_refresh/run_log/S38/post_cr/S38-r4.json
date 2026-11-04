@@ -1,0 +1,130 @@
+{
+ "id": "S38-r4",
+ "season": 38,
+ "squad": [
+  "크라운",
+  "라피 : 레드 후드",
+  "아스카 : WILLE",
+  "레이 (가칭)",
+  "헬름"
+ ],
+ "win": null,
+ "pre": 52.75418567,
+ "ctrl": 54.78743574,
+ "ctrl_variants": [
+  "squad:camera:헬름",
+  "레이 (가칭):reload:B0.1",
+  "크라운:reload:C0.1_dry",
+  "헬름:reload:C0.5"
+ ],
+ "E0": 61.89146295,
+ "O": 67.24521769,
+ "alloc": {
+  "크라운": "공4+장탄1+크확3+크뎀4",
+  "라피 : 레드 후드": "공4+장탄1+크확3+크뎀4",
+  "아스카 : WILLE": "우코4+공4+크확2+크뎀2",
+  "레이 (가칭)": "우코4+공4+크확2+크뎀2",
+  "헬름": "공4+차속4+차뎀4"
+ },
+ "screen": {
+  "크라운": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7281836299999966,
+   "max_ammo_pct": 0.2607050299999969,
+   "crit_rate": 0.2632313100000019,
+   "crit_dmg": 0.22735520999999892,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "라피 : 레드 후드": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4097451700000008,
+   "max_ammo_pct": 0.28429532999999907,
+   "crit_rate": 0.45734966999999926,
+   "crit_dmg": 0.39504259000000275,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아스카 : WILLE": {
+   "element_bonus": 12.84261051,
+   "atk_pct": 6.869249269999997,
+   "max_ammo_pct": 1.548032659999997,
+   "crit_rate": 2.2912147000000047,
+   "crit_dmg": 1.9790450500000034,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이 (가칭)": {
+   "element_bonus": 8.268051759999999,
+   "atk_pct": 4.338592759999997,
+   "max_ammo_pct": 0.9991708099999954,
+   "crit_rate": 1.468540400000002,
+   "crit_dmg": 1.2684449999999998,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.7469022599999988,
+   "max_ammo_pct": -0.45994042000000235,
+   "crit_rate": 0.1794474699999995,
+   "crit_dmg": 0.1549973300000005,
+   "charge_speed_pct": 0.8710053799999997,
+   "charge_dmg_pct": 0.2079690700000043,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "크라운": [
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "라피 : 레드 후드": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "아스카 : WILLE": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "레이 (가칭)": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "헬름": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 67.52506835,
+ "ctrl2_variants": [
+  "squad:camera:헬름",
+  "레이 (가칭):reload:B0.5"
+ ],
+ "final": 67.52506835,
+ "final_variants": [
+  "squad:camera:헬름",
+  "레이 (가칭):reload:B0.5"
+ ],
+ "sims": 2446,
+ "seconds": 275.2
+}

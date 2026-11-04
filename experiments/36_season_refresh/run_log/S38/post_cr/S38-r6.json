@@ -1,0 +1,141 @@
+{
+ "id": "S38-r6",
+ "season": 38,
+ "squad": [
+  "목단",
+  "민트",
+  "스노우 화이트 : 헤비암즈",
+  "아크레인저 블랙",
+  "프리카"
+ ],
+ "win": null,
+ "pre": 42.00508304,
+ "ctrl": 43.00163213,
+ "ctrl_variants": [
+  "squad:tactic:버충=프리카",
+  "목단:reload:B0.5",
+  "아크레인저 블랙:cube:택티컬 부스트 큐브",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:C0.1_dry"
+ ],
+ "E0": 47.65704538,
+ "O": 56.50288549,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "민트": "공4+차속4+차뎀4",
+  "스노우 화이트 : 헤비암즈": "공3+장탄1+크확4+크뎀4",
+  "아크레인저 블랙": "우코4+공2+크확3+크뎀3",
+  "프리카": "공4+장탄4+차뎀4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0248818099999966,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.5863892300000018,
+   "crit_dmg": 0.6155677100000005,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "민트": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4105226399999964,
+   "max_ammo_pct": 0.16683603999999974,
+   "crit_rate": 0.2186595699999998,
+   "crit_dmg": 0.22818749000000338,
+   "charge_speed_pct": 0.4157874200000009,
+   "charge_dmg_pct": 0.29227673999999837,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.270944479999997,
+   "max_ammo_pct": 1.2278021899999985,
+   "crit_rate": 1.764845120000004,
+   "crit_dmg": 1.8411508900000015,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.4283374500000008,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아크레인저 블랙": {
+   "element_bonus": 9.943981350000001,
+   "atk_pct": 3.3000007899999986,
+   "max_ammo_pct": 0.41497250999999835,
+   "crit_rate": 2.82970976,
+   "crit_dmg": 2.984165400000002,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리카": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.441100040000002,
+   "max_ammo_pct": 1.0046222699999987,
+   "crit_rate": 0.22612794999999863,
+   "crit_dmg": 0.2341991799999974,
+   "charge_speed_pct": 0.1393994499999991,
+   "charge_dmg_pct": 0.2886286100000035,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "민트": [
+   "charge_speed_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아크레인저 블랙": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "프리카": [
+   "max_ammo_pct",
+   "atk_pct",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 56.67523579,
+ "ctrl2_variants": [
+  "squad:tactic:버충=프리카",
+  "목단:cube:렐릭 어설트 큐브",
+  "목단:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 퀀텀 큐브",
+  "아크레인저 블랙:cube:택티컬 부스트 큐브",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:C0.1_dry"
+ ],
+ "final": 56.67523579,
+ "final_variants": [
+  "squad:tactic:버충=프리카",
+  "목단:cube:렐릭 어설트 큐브",
+  "목단:reload:C0.1_dry",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 퀀텀 큐브",
+  "아크레인저 블랙:cube:택티컬 부스트 큐브",
+  "프리카:cube:렐릭 피어싱 큐브",
+  "프리카:reload:C0.1_dry"
+ ],
+ "sims": 2371,
+ "seconds": 357.9
+}

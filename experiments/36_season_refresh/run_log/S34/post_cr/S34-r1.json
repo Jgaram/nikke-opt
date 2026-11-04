@@ -1,0 +1,134 @@
+{
+ "id": "S34-r1",
+ "season": 34,
+ "squad": [
+  "목단",
+  "그레이브",
+  "밀크 : 블루밍 바니",
+  "스노우 화이트 : 헤비암즈",
+  "프리바티"
+ ],
+ "win": null,
+ "pre": 37.7022238,
+ "ctrl": 37.99782533,
+ "ctrl_variants": [
+  "스노우 화이트 : 헤비암즈:reload:B0.1",
+  "프리바티:reload:A0.3"
+ ],
+ "E0": 39.93933124,
+ "O": 47.48728045,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "그레이브": "공4+크확4+크뎀4",
+  "밀크 : 블루밍 바니": "우코4+공4+장탄3+크확1",
+  "스노우 화이트 : 헤비암즈": "공4+장탄1+크확4+크뎀3",
+  "프리바티": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.0102628100000004,
+   "max_ammo_pct": -0.14798006000000186,
+   "crit_rate": 0.2776012200000011,
+   "crit_dmg": 0.23976080999999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9531647700000008,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.01091480000000189,
+   "crit_dmg": 1.3417152299999984,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "밀크 : 블루밍 바니": {
+   "element_bonus": 7.090823,
+   "atk_pct": 2.294812460000003,
+   "max_ammo_pct": 2.1697838600000026,
+   "crit_rate": 1.2397744999999958,
+   "crit_dmg": 1.0708531000000008,
+   "charge_speed_pct": 0.907523740000002,
+   "charge_dmg_pct": 0.31743089999999796,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "스노우 화이트 : 헤비암즈": {
+   "element_bonus": 0.0,
+   "atk_pct": 2.195247690000002,
+   "max_ammo_pct": 0.5472652300000007,
+   "crit_rate": 0.997771059999998,
+   "crit_dmg": 0.8618225700000011,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.37208059999999676,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "프리바티": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4634519100000034,
+   "max_ammo_pct": -2.3722817700000007,
+   "crit_rate": 0.12648913999999678,
+   "crit_dmg": 0.1092501699999957,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "그레이브": [
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate",
+   "element_bonus"
+  ],
+  "밀크 : 블루밍 바니": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "스노우 화이트 : 헤비암즈": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "프리바티": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ]
+ },
+ "C2": 48.45423809,
+ "ctrl2_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "목단:cube:렐릭 어설트 큐브",
+  "스노우 화이트 : 헤비암즈:click:tap",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "스노우 화이트 : 헤비암즈:reload:B0.1"
+ ],
+ "final": 48.45423809,
+ "final_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "목단:cube:렐릭 어설트 큐브",
+  "스노우 화이트 : 헤비암즈:click:tap",
+  "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+  "스노우 화이트 : 헤비암즈:reload:B0.1"
+ ],
+ "sims": 2554,
+ "seconds": 286.6
+}

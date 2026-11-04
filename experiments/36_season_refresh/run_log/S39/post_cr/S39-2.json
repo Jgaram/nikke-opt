@@ -1,0 +1,136 @@
+{
+ "id": "S39-2",
+ "season": 39,
+ "squad": [
+  "리타",
+  "나유타",
+  "마스트 : 로망틱 메이드",
+  "신데렐라 : 크리스탈 웨이브",
+  "율리아"
+ ],
+ "win": null,
+ "pre": 57.4635566,
+ "ctrl": 57.61379338,
+ "ctrl_variants": [
+  "리타:reload:C0.1_dry",
+  "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry"
+ ],
+ "E0": 65.45601901,
+ "O": 72.30298576,
+ "alloc": {
+  "리타": "우코4+공4+크확1+크뎀3",
+  "나유타": "공4+크확4+크뎀4",
+  "마스트 : 로망틱 메이드": "공4+장탄3+크확2+크뎀3",
+  "신데렐라 : 크리스탈 웨이브": "우코4+공4+장탄1+크뎀3",
+  "율리아": "우코4+공4+크확4"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 1.8716429200000064,
+   "atk_pct": 0.9190098900000123,
+   "max_ammo_pct": 0.32285643000000164,
+   "crit_rate": 0.41980944999998826,
+   "crit_dmg": 0.619015730000001,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9629099300000092,
+   "max_ammo_pct": -0.24550243999999566,
+   "crit_rate": 0.4226626899999957,
+   "crit_dmg": 0.683044069999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.35641401999998834,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마스트 : 로망틱 메이드": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.4173717400000072,
+   "max_ammo_pct": 1.0068613500000083,
+   "crit_rate": 0.19297914999999932,
+   "crit_dmg": 0.2849075199999902,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "신데렐라 : 크리스탈 웨이브": {
+   "element_bonus": 14.492197270000005,
+   "atk_pct": 5.169406760000008,
+   "max_ammo_pct": 5.511142780000007,
+   "crit_rate": 3.7573054699999915,
+   "crit_dmg": 5.360416609999987,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "율리아": {
+   "element_bonus": 8.363443530000005,
+   "atk_pct": 3.6498852800000066,
+   "max_ammo_pct": 0.694613369999999,
+   "crit_rate": 5.303879219999999,
+   "crit_dmg": 2.9965926699999983,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "마스트 : 로망틱 메이드": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "신데렐라 : 크리스탈 웨이브": [
+   "element_bonus",
+   "max_ammo_pct",
+   "crit_dmg",
+   "atk_pct"
+  ],
+  "율리아": [
+   "element_bonus",
+   "crit_rate",
+   "atk_pct",
+   "crit_dmg"
+  ]
+ },
+ "C2": 73.21917187,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1_dry",
+  "리타:cube:택티컬 어설트 큐브",
+  "리타:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "마스트 : 로망틱 메이드:reload:B0.5"
+ ],
+ "final": 73.21917187,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1_dry",
+  "리타:cube:택티컬 어설트 큐브",
+  "리타:reload:C0.1_dry",
+  "마스트 : 로망틱 메이드:cancel:on",
+  "마스트 : 로망틱 메이드:reload:B0.5"
+ ],
+ "sims": 2321,
+ "seconds": 267.6
+}

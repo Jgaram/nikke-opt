@@ -1,0 +1,140 @@
+{
+ "id": "S38-r12",
+ "season": 38,
+ "squad": [
+  "목단",
+  "에이드 : 에이전트 바니",
+  "아스카 : WILLE",
+  "레이 (가칭)",
+  "루드밀라 : 윈터 오너"
+ ],
+ "win": null,
+ "pre": 36.55291533,
+ "ctrl": 39.36801876,
+ "ctrl_variants": [
+  "레이 (가칭):reload:B0.1",
+  "루드밀라 : 윈터 오너:reload:C0.1_dry",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "아스카 : WILLE:reload:A0.3",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1_dry"
+ ],
+ "E0": 48.16610442,
+ "O": 50.5593001,
+ "alloc": {
+  "목단": "공4+크확4+크뎀4",
+  "에이드 : 에이전트 바니": "공4+장탄3+크확4+차속1",
+  "아스카 : WILLE": "우코4+공4+장탄4",
+  "레이 (가칭)": "우코4+공4+장탄3+크확1",
+  "루드밀라 : 윈터 오너": "공4+장탄4+크확1+크뎀3"
+ },
+ "screen": {
+  "목단": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9992240000000052,
+   "max_ammo_pct": 0.0,
+   "crit_rate": 0.26433402999999345,
+   "crit_dmg": 0.2283189799999974,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "에이드 : 에이전트 바니": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.41877791000000286,
+   "max_ammo_pct": 1.968100800000002,
+   "crit_rate": 0.10828153999999302,
+   "crit_dmg": 0.09352776999999435,
+   "charge_speed_pct": 0.573745339999995,
+   "charge_dmg_pct": 0.02708381999999432,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아스카 : WILLE": {
+   "element_bonus": 10.050264870000007,
+   "atk_pct": 5.693237890000006,
+   "max_ammo_pct": 8.824254690000004,
+   "crit_rate": 1.7751107099999999,
+   "crit_dmg": 1.5332640599999934,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이 (가칭)": {
+   "element_bonus": 6.3561639600000035,
+   "atk_pct": 3.6381209800000036,
+   "max_ammo_pct": 1.8443902700000052,
+   "crit_rate": 1.1349791899999957,
+   "crit_dmg": 0.9803333299999935,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "루드밀라 : 윈터 오너": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2708102000000068,
+   "max_ammo_pct": 3.614349510000004,
+   "crit_rate": 0.31245298999999704,
+   "crit_dmg": 0.4986188099999964,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "목단": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "element_bonus"
+  ],
+  "에이드 : 에이전트 바니": [
+   "max_ammo_pct",
+   "charge_speed_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "아스카 : WILLE": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "레이 (가칭)": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "루드밀라 : 윈터 오너": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 51.98286337,
+ "ctrl2_variants": [
+  "레이 (가칭):reload:A0.3",
+  "루드밀라 : 윈터 오너:cube:택티컬 베어 큐브",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "아스카 : WILLE:reload:A0.3",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1"
+ ],
+ "final": 51.98286337,
+ "final_variants": [
+  "레이 (가칭):reload:A0.3",
+  "루드밀라 : 윈터 오너:cube:택티컬 베어 큐브",
+  "목단:cube:렐릭 퀀텀 큐브",
+  "아스카 : WILLE:reload:A0.3",
+  "에이드 : 에이전트 바니:click:tap",
+  "에이드 : 에이전트 바니:reload:C0.1"
+ ],
+ "sims": 2342,
+ "seconds": 267.7
+}

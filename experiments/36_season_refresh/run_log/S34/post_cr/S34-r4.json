@@ -1,0 +1,149 @@
+{
+ "id": "S34-r4",
+ "season": 34,
+ "squad": [
+  "토브",
+  "나유타",
+  "소다 : 트윙클링 바니",
+  "도로시 : 세렌디피티",
+  "드레이크"
+ ],
+ "win": null,
+ "pre": 40.85316502,
+ "ctrl": 42.92053264,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "도로시 : 세렌디피티:cube:렐릭 피어싱 큐브",
+  "도로시 : 세렌디피티:reload:A0.3",
+  "드레이크:cube:택티컬 베어 큐브",
+  "드레이크:reload:C0.1",
+  "소다 : 트윙클링 바니:cube:택티컬 부스트 큐브",
+  "소다 : 트윙클링 바니:reload:B0.1",
+  "토브:cube:렐릭 어설트 큐브",
+  "토브:reload:C0.1_dry"
+ ],
+ "E0": 48.8249958,
+ "O": 54.12724492,
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "소다 : 트윙클링 바니": "우코4+공4+장탄2+크확2",
+  "도로시 : 세렌디피티": "공3+장탄1+크확4+크뎀4",
+  "드레이크": "공4+크확4+크뎀4"
+ },
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3093994500000008,
+   "max_ammo_pct": 0.3889272800000043,
+   "crit_rate": 0.08593091999999558,
+   "crit_dmg": 0.11197187999999869,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9778186600000041,
+   "max_ammo_pct": 0.0809355400000058,
+   "crit_rate": 0.2972953699999934,
+   "crit_dmg": 0.3874469399999967,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.2909169499999962,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "소다 : 트윙클링 바니": {
+   "element_bonus": 10.932982770000002,
+   "atk_pct": 4.247564170000004,
+   "max_ammo_pct": 4.046493810000001,
+   "crit_rate": 3.650010419999994,
+   "crit_dmg": 2.455802119999994,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "도로시 : 세렌디피티": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.5260083800000004,
+   "max_ammo_pct": 1.4484552100000059,
+   "crit_rate": 0.9222141299999933,
+   "crit_dmg": 1.2046833799999987,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.2088939000000067,
+   "max_ammo_pct": 0.6473411000000056,
+   "crit_rate": 0.5163615699999937,
+   "crit_dmg": 0.6741208699999959,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "charge_dmg_pct"
+  ],
+  "소다 : 트윙클링 바니": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate"
+  ],
+  "도로시 : 세렌디피티": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "max_ammo_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 54.52798227,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1_dry",
+  "도로시 : 세렌디피티:reload:C0.1",
+  "드레이크:cube:택티컬 베어 큐브",
+  "드레이크:reload:C0.5",
+  "소다 : 트윙클링 바니:cube:택티컬 부스트 큐브",
+  "소다 : 트윙클링 바니:reload:B0.1",
+  "토브:cube:택티컬 베어 큐브",
+  "토브:reload:C0.1"
+ ],
+ "final": 54.52798227,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "나유타:reload:C0.1_dry",
+  "도로시 : 세렌디피티:reload:C0.1",
+  "드레이크:cube:택티컬 베어 큐브",
+  "드레이크:reload:C0.5",
+  "소다 : 트윙클링 바니:cube:택티컬 부스트 큐브",
+  "소다 : 트윙클링 바니:reload:B0.1",
+  "토브:cube:택티컬 베어 큐브",
+  "토브:reload:C0.1"
+ ],
+ "sims": 2384,
+ "seconds": 300.6
+}

@@ -1,0 +1,140 @@
+{
+ "id": "S39-r9",
+ "season": 39,
+ "squad": [
+  "미란다",
+  "나유타",
+  "마르차나 : 마린 스터디",
+  "헬름",
+  "헬름 : 아쿠아마린"
+ ],
+ "win": null,
+ "pre": 49.40513356,
+ "ctrl": 49.79910266,
+ "ctrl_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "마르차나 : 마린 스터디:cube:택티컬 베어 큐브",
+  "미란다:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:B0.1",
+  "헬름:burst:wait2"
+ ],
+ "E0": 56.63299435,
+ "O": 65.74636865,
+ "alloc": {
+  "미란다": "공4+장탄2+크확2+크뎀4",
+  "나유타": "공4+크확4+크뎀4",
+  "마르차나 : 마린 스터디": "우코4+공4+크뎀4",
+  "헬름": "공4+장탄1+크확4+크뎀3",
+  "헬름 : 아쿠아마린": "우코4+공4+장탄2+크확2"
+ },
+ "screen": {
+  "미란다": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.9321390499999964,
+   "max_ammo_pct": 0.6089281599999978,
+   "crit_rate": 0.38986496000000415,
+   "crit_dmg": 0.5991384200000027,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "나유타": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.749024409999997,
+   "max_ammo_pct": 0.015245759999999109,
+   "crit_rate": 0.6862188300000014,
+   "crit_dmg": 0.3910801900000038,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.5459814500000064,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "마르차나 : 마린 스터디": {
+   "element_bonus": 12.249740509999995,
+   "atk_pct": 4.716209389999996,
+   "max_ammo_pct": 1.3748999199999972,
+   "crit_rate": 2.6632453700000056,
+   "crit_dmg": 5.488633310000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.8278713399999944,
+   "max_ammo_pct": 0.34666868999999423,
+   "crit_rate": 1.282761530000002,
+   "crit_dmg": 0.4953717100000006,
+   "charge_speed_pct": 0.20796895000000148,
+   "charge_dmg_pct": 0.2831668399999998,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "헬름 : 아쿠아마린": {
+   "element_bonus": 2.1603880499999946,
+   "atk_pct": 1.664409599999999,
+   "max_ammo_pct": 0.5168617499999968,
+   "crit_rate": 0.5854393900000048,
+   "crit_dmg": 0.36357401000000067,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "미란다": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg",
+   "crit_rate"
+  ],
+  "나유타": [
+   "atk_pct",
+   "crit_rate",
+   "charge_dmg_pct",
+   "crit_dmg"
+  ],
+  "마르차나 : 마린 스터디": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "헬름": [
+   "atk_pct",
+   "crit_rate",
+   "crit_dmg",
+   "max_ammo_pct"
+  ],
+  "헬름 : 아쿠아마린": [
+   "element_bonus",
+   "atk_pct",
+   "crit_rate",
+   "max_ammo_pct"
+  ]
+ },
+ "C2": 65.79333968,
+ "ctrl2_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "마르차나 : 마린 스터디:cube:택티컬 베어 큐브",
+  "미란다:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:A0.3",
+  "헬름:burst:wait2"
+ ],
+ "final": 65.79333968,
+ "final_variants": [
+  "나유타:cube:택티컬 어설트 큐브",
+  "마르차나 : 마린 스터디:cube:택티컬 베어 큐브",
+  "미란다:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:cube:택티컬 베어 큐브",
+  "헬름 : 아쿠아마린:reload:A0.3",
+  "헬름:burst:wait2"
+ ],
+ "sims": 2478,
+ "seconds": 274.1
+}

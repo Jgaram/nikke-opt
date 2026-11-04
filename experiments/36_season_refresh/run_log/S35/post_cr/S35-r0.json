@@ -1,0 +1,135 @@
+{
+ "id": "S35-r0",
+ "season": 35,
+ "squad": [
+  "리타",
+  "그레이브",
+  "앨리스",
+  "레이",
+  "모더니아"
+ ],
+ "win": null,
+ "pre": 39.04552811,
+ "ctrl": 39.93026375,
+ "ctrl_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "리타:cube:택티컬 베어 큐브",
+  "리타:reload:C0.5"
+ ],
+ "E0": 43.84648499,
+ "O": 50.1151901,
+ "alloc": {
+  "리타": "공4+장탄1+크확4+크뎀3",
+  "그레이브": "우코4+공4+크뎀4",
+  "앨리스": "우코4+공4+차속2+차뎀2",
+  "레이": "우코4+공4+장탄4",
+  "모더니아": "우코4+공4+장탄4"
+ },
+ "screen": {
+  "리타": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.3821702899999977,
+   "max_ammo_pct": 0.16675447000000077,
+   "crit_rate": 0.11090353000000164,
+   "crit_dmg": 0.08394529999999634,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "그레이브": {
+   "element_bonus": 4.063570540000001,
+   "atk_pct": 2.111653600000004,
+   "max_ammo_pct": -0.014638179999998613,
+   "crit_rate": 0.004959300000002997,
+   "crit_dmg": 3.0989593400000004,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "앨리스": {
+   "element_bonus": 3.841511590000003,
+   "atk_pct": 1.933270610000001,
+   "max_ammo_pct": 0.8300902499999978,
+   "crit_rate": 0.7634195699999964,
+   "crit_dmg": 0.5814098899999962,
+   "charge_speed_pct": 4.827557130000002,
+   "charge_dmg_pct": 1.103443900000002,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "레이": {
+   "element_bonus": 3.5970942300000033,
+   "atk_pct": 2.4262135800000024,
+   "max_ammo_pct": 2.6796730699999998,
+   "crit_rate": 0.8459902499999998,
+   "crit_dmg": 0.6374186299999991,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "모더니아": {
+   "element_bonus": 6.047948259999998,
+   "atk_pct": 3.2836182500000035,
+   "max_ammo_pct": 5.216030019999998,
+   "crit_rate": 2.5001954000000026,
+   "crit_dmg": 0.8766177299999995,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.009629920000001846,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "리타": [
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_rate",
+   "crit_dmg"
+  ],
+  "그레이브": [
+   "element_bonus",
+   "crit_dmg",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "앨리스": [
+   "charge_speed_pct",
+   "element_bonus",
+   "atk_pct",
+   "charge_dmg_pct"
+  ],
+  "레이": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ],
+  "모더니아": [
+   "element_bonus",
+   "max_ammo_pct",
+   "atk_pct",
+   "crit_rate"
+  ]
+ },
+ "C2": 51.09693137,
+ "ctrl2_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "레이:cube:택티컬 베어 큐브",
+  "리타:cube:택티컬 부스트 큐브",
+  "리타:reload:B0.1",
+  "모더니아:cube:택티컬 베어 큐브"
+ ],
+ "final": 51.09693137,
+ "final_variants": [
+  "그레이브:cube:렐릭 피어싱 큐브",
+  "레이:cube:택티컬 베어 큐브",
+  "리타:cube:택티컬 부스트 큐브",
+  "리타:reload:B0.1",
+  "모더니아:cube:택티컬 베어 큐브"
+ ],
+ "sims": 2546,
+ "seconds": 341.5
+}

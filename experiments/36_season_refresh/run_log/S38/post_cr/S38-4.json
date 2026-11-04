@@ -1,0 +1,151 @@
+{
+ "id": "S38-4",
+ "season": 38,
+ "squad": [
+  "토브",
+  "아르카나 : 포츈 메이트",
+  "길티",
+  "드레이크",
+  "누아르"
+ ],
+ "win": null,
+ "pre": 36.49884363,
+ "ctrl": 36.84241788,
+ "ctrl_variants": [
+  "누아르:reload:B0.1",
+  "드레이크:cube:택티컬 베어 큐브",
+  "드레이크:reload:B0.1",
+  "아르카나 : 포츈 메이트:cube:택티컬 베어 큐브",
+  "아르카나 : 포츈 메이트:reload:B0.5",
+  "토브:cancel:on",
+  "토브:reload:B0.5"
+ ],
+ "E0": 41.37222984,
+ "O": 47.90319022,
+ "alloc": {
+  "토브": "공4+장탄1+크확3+크뎀4",
+  "아르카나 : 포츈 메이트": "공4+크확4+크뎀4",
+  "길티": "우코4+공4+장탄2+크뎀2",
+  "드레이크": "공4+크확4+크뎀4",
+  "누아르": "우코4+공4+크확1+크뎀3"
+ },
+ "screen": {
+  "토브": {
+   "element_bonus": 0.0,
+   "atk_pct": 0.2199483900000061,
+   "max_ammo_pct": 0.024910560000002135,
+   "crit_rate": 0.0616293799999994,
+   "crit_dmg": 0.08017602999999696,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "아르카나 : 포츈 메이트": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.1196641000000014,
+   "max_ammo_pct": 0.1133220000000037,
+   "crit_rate": 0.5217744999999994,
+   "crit_dmg": 1.0838029700000007,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "길티": {
+   "element_bonus": 5.723694200000004,
+   "atk_pct": 2.352737700000006,
+   "max_ammo_pct": 1.6053327000000053,
+   "crit_rate": 1.1496694999999946,
+   "crit_dmg": 1.5005074999999977,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "드레이크": {
+   "element_bonus": 0.0,
+   "atk_pct": 1.4602594999999994,
+   "max_ammo_pct": 0.3089623100000054,
+   "crit_rate": 0.7172178799999998,
+   "crit_dmg": 0.9293338099999957,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  },
+  "누아르": {
+   "element_bonus": 5.252167720000003,
+   "atk_pct": 2.1571479400000015,
+   "max_ammo_pct": 0.1522783099999998,
+   "crit_rate": 1.0631876199999937,
+   "crit_dmg": 1.387714779999996,
+   "charge_speed_pct": 0.0,
+   "charge_dmg_pct": 0.0,
+   "accuracy_pct": 0.0,
+   "def_pct": 0.0
+  }
+ },
+ "top": {
+  "토브": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "아르카나 : 포츈 메이트": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "길티": [
+   "element_bonus",
+   "atk_pct",
+   "max_ammo_pct",
+   "crit_dmg"
+  ],
+  "드레이크": [
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate",
+   "max_ammo_pct"
+  ],
+  "누아르": [
+   "element_bonus",
+   "atk_pct",
+   "crit_dmg",
+   "crit_rate"
+  ]
+ },
+ "C2": 48.08994085,
+ "ctrl2_variants": [
+  "길티:cube:택티컬 베어 큐브",
+  "길티:reload:B0.5",
+  "누아르:cancel:on",
+  "누아르:cube:택티컬 베어 큐브",
+  "누아르:reload:B0.1",
+  "드레이크:cube:택티컬 베어 큐브",
+  "드레이크:reload:B0.1",
+  "아르카나 : 포츈 메이트:cube:택티컬 베어 큐브",
+  "아르카나 : 포츈 메이트:reload:B0.5",
+  "토브:cancel:on",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "final": 48.08994085,
+ "final_variants": [
+  "길티:cube:택티컬 베어 큐브",
+  "길티:reload:B0.5",
+  "누아르:cancel:on",
+  "누아르:cube:택티컬 베어 큐브",
+  "누아르:reload:B0.1",
+  "드레이크:cube:택티컬 베어 큐브",
+  "드레이크:reload:B0.1",
+  "아르카나 : 포츈 메이트:cube:택티컬 베어 큐브",
+  "아르카나 : 포츈 메이트:reload:B0.5",
+  "토브:cancel:on",
+  "토브:cube:택티컬 베어 큐브"
+ ],
+ "sims": 1217,
+ "seconds": 134.3
+}

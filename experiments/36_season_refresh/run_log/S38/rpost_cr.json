@@ -1,0 +1,2168 @@
+{
+ "season": 38,
+ "arm": "A",
+ "sets": {
+  "top": {
+   "decks": [
+    {
+     "id": "S38-r0",
+     "season": 38,
+     "squad": [
+      "나유타",
+      "신데렐라 : 크리스탈 웨이브",
+      "리틀 머메이드",
+      "프리바티",
+      "벨벳"
+     ],
+     "win": null,
+     "pre": 57.60434707,
+     "ctrl": 59.31413223,
+     "ctrl_variants": [
+      "squad:tactic:버충=벨벳",
+      "나유타:cover:on",
+      "나유타:cube:택티컬 어설트 큐브",
+      "벨벳:reload:C0.1_dry",
+      "신데렐라 : 크리스탈 웨이브:reload:C0.1_dry",
+      "프리바티:reload:C0.1"
+     ],
+     "E0": 57.13980221,
+     "O": 75.41844224,
+     "alloc": {
+      "나유타": "우코4+공4+크확1+차뎀3",
+      "신데렐라 : 크리스탈 웨이브": "공4+장탄3+크확3+크뎀2",
+      "리틀 머메이드": "우코4+공4+크확2+크뎀2",
+      "프리바티": "공4+크확4+크뎀4",
+      "벨벳": "우코4+공1+장탄3+차속4"
+     },
+     "screen": {
+      "나유타": {
+       "element_bonus": 7.215170979999996,
+       "atk_pct": 3.9156489599999986,
+       "max_ammo_pct": 0.4353165300000015,
+       "crit_rate": 1.2805912100000043,
+       "crit_dmg": 1.1061078800000033,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 1.3623422499999975,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "신데렐라 : 크리스탈 웨이브": {
+       "element_bonus": 0.0,
+       "atk_pct": 2.4656528599999987,
+       "max_ammo_pct": 3.3953003000000024,
+       "crit_rate": 1.0985418699999983,
+       "crit_dmg": 0.9488524900000002,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "리틀 머메이드": {
+       "element_bonus": 8.956109329999997,
+       "atk_pct": 4.859394799999997,
+       "max_ammo_pct": 0.38507833999999974,
+       "crit_rate": 1.574481470000002,
+       "crit_dmg": 1.3599637100000024,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "프리바티": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.5168021200000013,
+       "max_ammo_pct": -10.135751350000007,
+       "crit_rate": 0.16060839000000016,
+       "crit_dmg": 0.1387299399999975,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "벨벳": {
+       "element_bonus": 1.6091161399999976,
+       "atk_pct": 0.9343974399999979,
+       "max_ammo_pct": 1.1668373999999986,
+       "crit_rate": 0.2931691500000042,
+       "crit_dmg": 0.25322368999999867,
+       "charge_speed_pct": 2.8215620799999996,
+       "charge_dmg_pct": 0.45300848000000116,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "나유타": [
+       "element_bonus",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_rate"
+      ],
+      "신데렐라 : 크리스탈 웨이브": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "리틀 머메이드": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "프리바티": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "element_bonus"
+      ],
+      "벨벳": [
+       "charge_speed_pct",
+       "element_bonus",
+       "max_ammo_pct",
+       "atk_pct"
+      ]
+     },
+     "C2": 76.80878066,
+     "ctrl2_variants": [
+      "squad:camera:벨벳",
+      "squad:tactic:버충=벨벳",
+      "나유타:cube:택티컬 어설트 큐브",
+      "벨벳:click:hold_own_fb",
+      "벨벳:cube:렐릭 부스트 큐브",
+      "벨벳:reload:A0.3",
+      "신데렐라 : 크리스탈 웨이브:reload:C0.5",
+      "프리바티:reload:C0.1"
+     ],
+     "final": 76.80878066,
+     "final_variants": [
+      "squad:camera:벨벳",
+      "squad:tactic:버충=벨벳",
+      "나유타:cube:택티컬 어설트 큐브",
+      "벨벳:click:hold_own_fb",
+      "벨벳:cube:렐릭 부스트 큐브",
+      "벨벳:reload:A0.3",
+      "신데렐라 : 크리스탈 웨이브:reload:C0.5",
+      "프리바티:reload:C0.1"
+     ],
+     "sims": 2407,
+     "seconds": 287.3
+    },
+    {
+     "id": "S38-r1",
+     "season": 38,
+     "squad": [
+      "볼륨",
+      "민트",
+      "스노우 화이트 : 헤비암즈",
+      "신데렐라",
+      "프리카"
+     ],
+     "win": null,
+     "pre": 35.7138846,
+     "ctrl": 38.07942591,
+     "ctrl_variants": [
+      "볼륨:reload:B0.1",
+      "스노우 화이트 : 헤비암즈:reload:C0.5",
+      "신데렐라:reload:A0.3",
+      "프리카:reload:B0.1"
+     ],
+     "E0": 42.1925602,
+     "O": 54.11835499,
+     "alloc": {
+      "볼륨": "우코4+공4+크확1+크뎀3",
+      "민트": "공4+크뎀2+차속3+차뎀3",
+      "스노우 화이트 : 헤비암즈": "공4+장탄1+크확3+크뎀4",
+      "신데렐라": "공3+장탄1+크확4+크뎀4",
+      "프리카": "공4+크뎀3+차속1+차뎀4"
+     },
+     "screen": {
+      "볼륨": {
+       "element_bonus": 2.217450420000006,
+       "atk_pct": 1.41530925,
+       "max_ammo_pct": 0.34617485000000414,
+       "crit_rate": 0.6257445699999948,
+       "crit_dmg": 0.7841626599999998,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "민트": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.4518229500000004,
+       "max_ammo_pct": 0.20875417999999968,
+       "crit_rate": 0.20953461999999945,
+       "crit_dmg": 0.26443234999999987,
+       "charge_speed_pct": 0.2613786900000008,
+       "charge_dmg_pct": 0.2729624899999976,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "스노우 화이트 : 헤비암즈": {
+       "element_bonus": 0.0,
+       "atk_pct": 2.180928680000001,
+       "max_ammo_pct": 2.09948567,
+       "crit_rate": 1.59706817,
+       "crit_dmg": 2.061437049999995,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.3220867599999977,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "신데렐라": {
+       "element_bonus": 0.0,
+       "atk_pct": 3.0547287400000016,
+       "max_ammo_pct": 1.8292572500000048,
+       "crit_rate": 2.777455549999999,
+       "crit_dmg": 3.864241149999998,
+       "charge_speed_pct": -0.0016601400000055833,
+       "charge_dmg_pct": 0.8180147399999953,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "프리카": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.4571912600000019,
+       "max_ammo_pct": 0.11869670000000099,
+       "crit_rate": 0.20728258999999838,
+       "crit_dmg": 0.26594658999999865,
+       "charge_speed_pct": 0.22408567999999462,
+       "charge_dmg_pct": 0.27629179999999565,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "볼륨": [
+       "element_bonus",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "민트": [
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_dmg",
+       "charge_speed_pct"
+      ],
+      "스노우 화이트 : 헤비암즈": [
+       "atk_pct",
+       "max_ammo_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "신데렐라": [
+       "crit_dmg",
+       "atk_pct",
+       "crit_rate",
+       "max_ammo_pct"
+      ],
+      "프리카": [
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_dmg",
+       "charge_speed_pct"
+      ]
+     },
+     "C2": 55.06917017,
+     "ctrl2_variants": [
+      "squad:camera:신데렐라",
+      "볼륨:cube:택티컬 부스트 큐브",
+      "스노우 화이트 : 헤비암즈:reload:C0.5",
+      "신데렐라:cancel:on",
+      "신데렐라:cube:렐릭 비고르 큐브",
+      "신데렐라:reload:C0.1_dry",
+      "프리카:cube:렐릭 피어싱 큐브",
+      "프리카:reload:A0.3"
+     ],
+     "final": 55.06917017,
+     "final_variants": [
+      "squad:camera:신데렐라",
+      "볼륨:cube:택티컬 부스트 큐브",
+      "스노우 화이트 : 헤비암즈:reload:C0.5",
+      "신데렐라:cancel:on",
+      "신데렐라:cube:렐릭 비고르 큐브",
+      "신데렐라:reload:C0.1_dry",
+      "프리카:cube:렐릭 피어싱 큐브",
+      "프리카:reload:A0.3"
+     ],
+     "sims": 2395,
+     "seconds": 285.4
+    },
+    {
+     "id": "S38-r2",
+     "season": 38,
+     "squad": [
+      "사쿠라 : 블룸 인 서머",
+      "아크레인저 블랙",
+      "맥스웰",
+      "로산나 : 시크 오션",
+      "목단"
+     ],
+     "win": null,
+     "pre": 32.65136486,
+     "ctrl": 34.3353766,
+     "ctrl_variants": [
+      "로산나 : 시크 오션:reload:C0.1",
+      "맥스웰:burst:wait2",
+      "맥스웰:click:tap",
+      "맥스웰:reload:C0.1_dry",
+      "사쿠라 : 블룸 인 서머:reload:C0.1_dry",
+      "아크레인저 블랙:cube:택티컬 베어 큐브",
+      "아크레인저 블랙:reload:B0.1"
+     ],
+     "E0": 38.75671213,
+     "O": 41.61837321,
+     "alloc": {
+      "사쿠라 : 블룸 인 서머": "우코4+공4+크확2+크뎀2",
+      "아크레인저 블랙": "우코4+공4+크확2+크뎀2",
+      "맥스웰": "공4+장탄2+크확2+차속4",
+      "로산나 : 시크 오션": "우코4+공4+장탄3+크확1",
+      "목단": "공4+크확4+크뎀4"
+     },
+     "screen": {
+      "사쿠라 : 블룸 인 서머": {
+       "element_bonus": 6.035437269999996,
+       "atk_pct": 5.962677099999993,
+       "max_ammo_pct": 0.44819657999999407,
+       "crit_rate": 1.1381109800000004,
+       "crit_dmg": 0.9830456900000044,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아크레인저 블랙": {
+       "element_bonus": 7.843226439999995,
+       "atk_pct": 2.599611209999999,
+       "max_ammo_pct": 0.41567301999999984,
+       "crit_rate": 1.3872524500000054,
+       "crit_dmg": 1.1982393500000015,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "맥스웰": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.3532283699999965,
+       "max_ammo_pct": 0.7922219399999975,
+       "crit_rate": 0.0861663200000038,
+       "crit_dmg": 0.07442616000000157,
+       "charge_speed_pct": 0.6625330900000037,
+       "charge_dmg_pct": 0.014981480000002989,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "로산나 : 시크 오션": {
+       "element_bonus": 1.043408889999995,
+       "atk_pct": 0.7863940899999946,
+       "max_ammo_pct": 0.2398255999999961,
+       "crit_rate": 0.190474480000006,
+       "crit_dmg": 0.1645145800000023,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "목단": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.708960249999997,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 0.17143523000000016,
+       "crit_dmg": 0.14809443000000044,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "사쿠라 : 블룸 인 서머": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "아크레인저 블랙": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "맥스웰": [
+       "max_ammo_pct",
+       "charge_speed_pct",
+       "atk_pct",
+       "crit_rate"
+      ],
+      "로산나 : 시크 오션": [
+       "element_bonus",
+       "atk_pct",
+       "max_ammo_pct",
+       "crit_rate"
+      ],
+      "목단": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "element_bonus"
+      ]
+     },
+     "C2": 44.27837648,
+     "ctrl2_variants": [
+      "로산나 : 시크 오션:reload:C0.1",
+      "맥스웰:burst:wait2",
+      "맥스웰:click:tap",
+      "맥스웰:reload:C0.1_dry",
+      "목단:cube:렐릭 퀀텀 큐브",
+      "사쿠라 : 블룸 인 서머:reload:B0.1",
+      "아크레인저 블랙:cube:택티컬 베어 큐브",
+      "아크레인저 블랙:reload:B0.5"
+     ],
+     "final": 44.27837648,
+     "final_variants": [
+      "로산나 : 시크 오션:reload:C0.1",
+      "맥스웰:burst:wait2",
+      "맥스웰:click:tap",
+      "맥스웰:reload:C0.1_dry",
+      "목단:cube:렐릭 퀀텀 큐브",
+      "사쿠라 : 블룸 인 서머:reload:B0.1",
+      "아크레인저 블랙:cube:택티컬 베어 큐브",
+      "아크레인저 블랙:reload:B0.5"
+     ],
+     "sims": 2412,
+     "seconds": 363.7
+    },
+    {
+     "id": "S38-r3",
+     "season": 38,
+     "squad": [
+      "아니스 : 스타",
+      "리버렐리오",
+      "앵커 : 이노센트 메이드",
+      "홍련 : 흑영",
+      "마스트 : 로망틱 메이드"
+     ],
+     "win": null,
+     "pre": 85.17375201,
+     "ctrl": 91.29027704,
+     "ctrl_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:B0.5",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:B0.5"
+     ],
+     "E0": 95.773364,
+     "O": 106.13997405,
+     "alloc": {
+      "아니스 : 스타": "공4+크확4+크뎀4",
+      "리버렐리오": "우코4+공4+차속4",
+      "앵커 : 이노센트 메이드": "공4+장탄2+크확2+크뎀4",
+      "홍련 : 흑영": "우코4+공4+크뎀3+차속1",
+      "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4"
+     },
+     "screen": {
+      "아니스 : 스타": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.3932019399999973,
+       "max_ammo_pct": 0.6950330699999938,
+       "crit_rate": 0.8504978400000027,
+       "crit_dmg": 1.2208583999999973,
+       "charge_speed_pct": 0.13302081000000499,
+       "charge_dmg_pct": 0.7243721199999982,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "리버렐리오": {
+       "element_bonus": 11.508292650000001,
+       "atk_pct": 16.392005550000007,
+       "max_ammo_pct": 2.213769020000001,
+       "crit_rate": 2.3656391499999927,
+       "crit_dmg": 3.7554508399999946,
+       "charge_speed_pct": 5.676933070000004,
+       "charge_dmg_pct": 1.7927199100000024,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "앵커 : 이노센트 메이드": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.624017809999998,
+       "max_ammo_pct": 1.4416738299999992,
+       "crit_rate": 0.30058329000000583,
+       "crit_dmg": 0.4337194799999935,
+       "charge_speed_pct": 0.05563582999999994,
+       "charge_dmg_pct": 0.03946863000000178,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "홍련 : 흑영": {
+       "element_bonus": 22.296519329999995,
+       "atk_pct": 7.700559389999995,
+       "max_ammo_pct": 2.6444816599999967,
+       "crit_rate": 5.595926969999994,
+       "crit_dmg": 6.843564990000004,
+       "charge_speed_pct": 6.936680129999999,
+       "charge_dmg_pct": 2.333506420000006,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "마스트 : 로망틱 메이드": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.6552001099999956,
+       "max_ammo_pct": 0.9568172900000036,
+       "crit_rate": 0.31577459000000374,
+       "crit_dmg": 0.46148320000000354,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "아니스 : 스타": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "charge_dmg_pct"
+      ],
+      "리버렐리오": [
+       "atk_pct",
+       "element_bonus",
+       "charge_speed_pct",
+       "crit_dmg"
+      ],
+      "앵커 : 이노센트 메이드": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "홍련 : 흑영": [
+       "element_bonus",
+       "atk_pct",
+       "charge_speed_pct",
+       "crit_dmg"
+      ],
+      "마스트 : 로망틱 메이드": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ]
+     },
+     "C2": 106.81773768,
+     "ctrl2_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "아니스 : 스타:reload:B0.5",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:C0.5",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:B0.5"
+     ],
+     "final": 106.81773768,
+     "final_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "아니스 : 스타:reload:B0.5",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:C0.5",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:B0.5"
+     ],
+     "sims": 2387,
+     "seconds": 359.9
+    },
+    {
+     "id": "S38-r4",
+     "season": 38,
+     "squad": [
+      "크라운",
+      "라피 : 레드 후드",
+      "아스카 : WILLE",
+      "레이 (가칭)",
+      "헬름"
+     ],
+     "win": null,
+     "pre": 52.75418567,
+     "ctrl": 54.78743574,
+     "ctrl_variants": [
+      "squad:camera:헬름",
+      "레이 (가칭):reload:B0.1",
+      "크라운:reload:C0.1_dry",
+      "헬름:reload:C0.5"
+     ],
+     "E0": 61.89146295,
+     "O": 67.24521769,
+     "alloc": {
+      "크라운": "공4+장탄1+크확3+크뎀4",
+      "라피 : 레드 후드": "공4+장탄1+크확3+크뎀4",
+      "아스카 : WILLE": "우코4+공4+크확2+크뎀2",
+      "레이 (가칭)": "우코4+공4+크확2+크뎀2",
+      "헬름": "공4+차속4+차뎀4"
+     },
+     "screen": {
+      "크라운": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.7281836299999966,
+       "max_ammo_pct": 0.2607050299999969,
+       "crit_rate": 0.2632313100000019,
+       "crit_dmg": 0.22735520999999892,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "라피 : 레드 후드": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.4097451700000008,
+       "max_ammo_pct": 0.28429532999999907,
+       "crit_rate": 0.45734966999999926,
+       "crit_dmg": 0.39504259000000275,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아스카 : WILLE": {
+       "element_bonus": 12.84261051,
+       "atk_pct": 6.869249269999997,
+       "max_ammo_pct": 1.548032659999997,
+       "crit_rate": 2.2912147000000047,
+       "crit_dmg": 1.9790450500000034,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "레이 (가칭)": {
+       "element_bonus": 8.268051759999999,
+       "atk_pct": 4.338592759999997,
+       "max_ammo_pct": 0.9991708099999954,
+       "crit_rate": 1.468540400000002,
+       "crit_dmg": 1.2684449999999998,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "헬름": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.7469022599999988,
+       "max_ammo_pct": -0.45994042000000235,
+       "crit_rate": 0.1794474699999995,
+       "crit_dmg": 0.1549973300000005,
+       "charge_speed_pct": 0.8710053799999997,
+       "charge_dmg_pct": 0.2079690700000043,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "크라운": [
+       "atk_pct",
+       "crit_rate",
+       "max_ammo_pct",
+       "crit_dmg"
+      ],
+      "라피 : 레드 후드": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "max_ammo_pct"
+      ],
+      "아스카 : WILLE": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "레이 (가칭)": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "헬름": [
+       "charge_speed_pct",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_rate"
+      ]
+     },
+     "C2": 67.52506835,
+     "ctrl2_variants": [
+      "squad:camera:헬름",
+      "레이 (가칭):reload:B0.5"
+     ],
+     "final": 67.52506835,
+     "final_variants": [
+      "squad:camera:헬름",
+      "레이 (가칭):reload:B0.5"
+     ],
+     "sims": 2446,
+     "seconds": 275.2
+    }
+   ],
+   "total": {
+    "pre": 263.89753421,
+    "ctrl": 277.80664752,
+    "E0": 295.75390149,
+    "O": 344.54036218,
+    "final": 350.49913333999996
+   }
+  },
+  "pack": {
+   "decks": [
+    {
+     "id": "S38-r3",
+     "season": 38,
+     "squad": [
+      "아니스 : 스타",
+      "리버렐리오",
+      "앵커 : 이노센트 메이드",
+      "홍련 : 흑영",
+      "마스트 : 로망틱 메이드"
+     ],
+     "win": null,
+     "pre": 85.17375201,
+     "ctrl": 91.29027704,
+     "ctrl_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:B0.5",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:B0.5"
+     ],
+     "E0": 95.773364,
+     "O": 106.13997405,
+     "alloc": {
+      "아니스 : 스타": "공4+크확4+크뎀4",
+      "리버렐리오": "우코4+공4+차속4",
+      "앵커 : 이노센트 메이드": "공4+장탄2+크확2+크뎀4",
+      "홍련 : 흑영": "우코4+공4+크뎀3+차속1",
+      "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4"
+     },
+     "screen": {
+      "아니스 : 스타": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.3932019399999973,
+       "max_ammo_pct": 0.6950330699999938,
+       "crit_rate": 0.8504978400000027,
+       "crit_dmg": 1.2208583999999973,
+       "charge_speed_pct": 0.13302081000000499,
+       "charge_dmg_pct": 0.7243721199999982,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "리버렐리오": {
+       "element_bonus": 11.508292650000001,
+       "atk_pct": 16.392005550000007,
+       "max_ammo_pct": 2.213769020000001,
+       "crit_rate": 2.3656391499999927,
+       "crit_dmg": 3.7554508399999946,
+       "charge_speed_pct": 5.676933070000004,
+       "charge_dmg_pct": 1.7927199100000024,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "앵커 : 이노센트 메이드": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.624017809999998,
+       "max_ammo_pct": 1.4416738299999992,
+       "crit_rate": 0.30058329000000583,
+       "crit_dmg": 0.4337194799999935,
+       "charge_speed_pct": 0.05563582999999994,
+       "charge_dmg_pct": 0.03946863000000178,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "홍련 : 흑영": {
+       "element_bonus": 22.296519329999995,
+       "atk_pct": 7.700559389999995,
+       "max_ammo_pct": 2.6444816599999967,
+       "crit_rate": 5.595926969999994,
+       "crit_dmg": 6.843564990000004,
+       "charge_speed_pct": 6.936680129999999,
+       "charge_dmg_pct": 2.333506420000006,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "마스트 : 로망틱 메이드": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.6552001099999956,
+       "max_ammo_pct": 0.9568172900000036,
+       "crit_rate": 0.31577459000000374,
+       "crit_dmg": 0.46148320000000354,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "아니스 : 스타": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "charge_dmg_pct"
+      ],
+      "리버렐리오": [
+       "atk_pct",
+       "element_bonus",
+       "charge_speed_pct",
+       "crit_dmg"
+      ],
+      "앵커 : 이노센트 메이드": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "홍련 : 흑영": [
+       "element_bonus",
+       "atk_pct",
+       "charge_speed_pct",
+       "crit_dmg"
+      ],
+      "마스트 : 로망틱 메이드": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ]
+     },
+     "C2": 106.81773768,
+     "ctrl2_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "아니스 : 스타:reload:B0.5",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:C0.5",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:B0.5"
+     ],
+     "final": 106.81773768,
+     "final_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "아니스 : 스타:reload:B0.5",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:C0.5",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:B0.5"
+     ],
+     "sims": 2387,
+     "seconds": 359.9
+    },
+    {
+     "id": "S38-r5",
+     "season": 38,
+     "squad": [
+      "크라운",
+      "아스카 : WILLE",
+      "리틀 머메이드",
+      "레이 (가칭)",
+      "프리바티"
+     ],
+     "win": null,
+     "pre": 73.53898927,
+     "ctrl": 73.97059122,
+     "ctrl_variants": [
+      "레이 (가칭):cube:렐릭 퀀텀 큐브",
+      "리틀 머메이드:reload:C0.5",
+      "프리바티:cube:렐릭 어설트 큐브",
+      "프리바티:reload:C0.1"
+     ],
+     "E0": 76.69220083,
+     "O": 90.15172198,
+     "alloc": {
+      "크라운": "공4+장탄2+크확3+크뎀3",
+      "아스카 : WILLE": "우코4+공4+크확2+크뎀2",
+      "리틀 머메이드": "우코4+공4+크확2+크뎀2",
+      "레이 (가칭)": "우코4+공4+장탄2+크확2",
+      "프리바티": "공4+크확4+크뎀4"
+     },
+     "screen": {
+      "크라운": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.6920045100000038,
+       "max_ammo_pct": 0.5393127399999997,
+       "crit_rate": 0.24656197999999563,
+       "crit_dmg": 0.21297312999999463,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아스카 : WILLE": {
+       "element_bonus": 13.335026700000007,
+       "atk_pct": 6.887121730000004,
+       "max_ammo_pct": 1.558866750000007,
+       "crit_rate": 2.3715259699999933,
+       "crit_dmg": 2.0483945399999897,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "리틀 머메이드": {
+       "element_bonus": 8.993582990000007,
+       "atk_pct": 4.3770741600000065,
+       "max_ammo_pct": 0.41307510000000036,
+       "crit_rate": 1.5953128399999912,
+       "crit_dmg": 1.3779503599999998,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "레이 (가칭)": {
+       "element_bonus": 7.984441290000007,
+       "atk_pct": 4.127519480000004,
+       "max_ammo_pct": 1.447631940000008,
+       "crit_rate": 1.4151659999999993,
+       "crit_dmg": 1.2223476699999907,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "프리바티": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.48990139,
+       "max_ammo_pct": -8.027036359999997,
+       "crit_rate": 0.12085799999999836,
+       "crit_dmg": 0.10438975999998945,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "크라운": [
+       "atk_pct",
+       "max_ammo_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "아스카 : WILLE": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "리틀 머메이드": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "레이 (가칭)": [
+       "element_bonus",
+       "atk_pct",
+       "max_ammo_pct",
+       "crit_rate"
+      ],
+      "프리바티": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "element_bonus"
+      ]
+     },
+     "C2": 92.91420929,
+     "ctrl2_variants": [
+      "레이 (가칭):cube:렐릭 퀀텀 큐브",
+      "레이 (가칭):reload:C0.5",
+      "리틀 머메이드:reload:A0.3",
+      "아스카 : WILLE:reload:A0.3",
+      "크라운:reload:C0.1_dry",
+      "프리바티:cube:렐릭 어설트 큐브",
+      "프리바티:reload:A0.3"
+     ],
+     "final": 92.91420929,
+     "final_variants": [
+      "레이 (가칭):cube:렐릭 퀀텀 큐브",
+      "레이 (가칭):reload:C0.5",
+      "리틀 머메이드:reload:A0.3",
+      "아스카 : WILLE:reload:A0.3",
+      "크라운:reload:C0.1_dry",
+      "프리바티:cube:렐릭 어설트 큐브",
+      "프리바티:reload:A0.3"
+     ],
+     "sims": 2322,
+     "seconds": 258.2
+    },
+    {
+     "id": "S38-r6",
+     "season": 38,
+     "squad": [
+      "목단",
+      "민트",
+      "스노우 화이트 : 헤비암즈",
+      "아크레인저 블랙",
+      "프리카"
+     ],
+     "win": null,
+     "pre": 42.00508304,
+     "ctrl": 43.00163213,
+     "ctrl_variants": [
+      "squad:tactic:버충=프리카",
+      "목단:reload:B0.5",
+      "아크레인저 블랙:cube:택티컬 부스트 큐브",
+      "프리카:cube:렐릭 피어싱 큐브",
+      "프리카:reload:C0.1_dry"
+     ],
+     "E0": 47.65704538,
+     "O": 56.50288549,
+     "alloc": {
+      "목단": "공4+크확4+크뎀4",
+      "민트": "공4+차속4+차뎀4",
+      "스노우 화이트 : 헤비암즈": "공3+장탄1+크확4+크뎀4",
+      "아크레인저 블랙": "우코4+공2+크확3+크뎀3",
+      "프리카": "공4+장탄4+차뎀4"
+     },
+     "screen": {
+      "목단": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.0248818099999966,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 0.5863892300000018,
+       "crit_dmg": 0.6155677100000005,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "민트": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.4105226399999964,
+       "max_ammo_pct": 0.16683603999999974,
+       "crit_rate": 0.2186595699999998,
+       "crit_dmg": 0.22818749000000338,
+       "charge_speed_pct": 0.4157874200000009,
+       "charge_dmg_pct": 0.29227673999999837,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "스노우 화이트 : 헤비암즈": {
+       "element_bonus": 0.0,
+       "atk_pct": 2.270944479999997,
+       "max_ammo_pct": 1.2278021899999985,
+       "crit_rate": 1.764845120000004,
+       "crit_dmg": 1.8411508900000015,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.4283374500000008,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아크레인저 블랙": {
+       "element_bonus": 9.943981350000001,
+       "atk_pct": 3.3000007899999986,
+       "max_ammo_pct": 0.41497250999999835,
+       "crit_rate": 2.82970976,
+       "crit_dmg": 2.984165400000002,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "프리카": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.441100040000002,
+       "max_ammo_pct": 1.0046222699999987,
+       "crit_rate": 0.22612794999999863,
+       "crit_dmg": 0.2341991799999974,
+       "charge_speed_pct": 0.1393994499999991,
+       "charge_dmg_pct": 0.2886286100000035,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "목단": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "element_bonus"
+      ],
+      "민트": [
+       "charge_speed_pct",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_dmg"
+      ],
+      "스노우 화이트 : 헤비암즈": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ],
+      "아크레인저 블랙": [
+       "element_bonus",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "프리카": [
+       "max_ammo_pct",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_dmg"
+      ]
+     },
+     "C2": 56.67523579,
+     "ctrl2_variants": [
+      "squad:tactic:버충=프리카",
+      "목단:cube:렐릭 어설트 큐브",
+      "목단:reload:C0.1_dry",
+      "스노우 화이트 : 헤비암즈:cube:렐릭 퀀텀 큐브",
+      "아크레인저 블랙:cube:택티컬 부스트 큐브",
+      "프리카:cube:렐릭 피어싱 큐브",
+      "프리카:reload:C0.1_dry"
+     ],
+     "final": 56.67523579,
+     "final_variants": [
+      "squad:tactic:버충=프리카",
+      "목단:cube:렐릭 어설트 큐브",
+      "목단:reload:C0.1_dry",
+      "스노우 화이트 : 헤비암즈:cube:렐릭 퀀텀 큐브",
+      "아크레인저 블랙:cube:택티컬 부스트 큐브",
+      "프리카:cube:렐릭 피어싱 큐브",
+      "프리카:reload:C0.1_dry"
+     ],
+     "sims": 2371,
+     "seconds": 357.9
+    },
+    {
+     "id": "S38-r7",
+     "season": 38,
+     "squad": [
+      "라피 : 레드 후드",
+      "나유타",
+      "헬름",
+      "디젤 : 윈터 스위츠",
+      "벨벳"
+     ],
+     "win": null,
+     "pre": 38.27899207,
+     "ctrl": 38.59011505,
+     "ctrl_variants": [
+      "나유타:cube:택티컬 어설트 큐브",
+      "라피 : 레드 후드:cube:택티컬 베어 큐브",
+      "헬름:reload:C0.5"
+     ],
+     "E0": 46.04815579,
+     "O": 52.60616628,
+     "alloc": {
+      "라피 : 레드 후드": "공4+장탄4+크확2+크뎀2",
+      "나유타": "우코4+공4+차뎀4",
+      "헬름": "공4+크확4+크뎀4",
+      "디젤 : 윈터 스위츠": "공4+크확4+크뎀4",
+      "벨벳": "우코4+공4+장탄2+차속2"
+     },
+     "screen": {
+      "라피 : 레드 후드": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.166949350000003,
+       "max_ammo_pct": 1.352601270000001,
+       "crit_rate": 0.34245828999999617,
+       "crit_dmg": 0.2957757900000004,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "나유타": {
+       "element_bonus": 8.17432333,
+       "atk_pct": 4.457038880000006,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 1.446601819999998,
+       "crit_dmg": 1.2494978299999957,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 1.5421591799999987,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "헬름": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.5920588000000038,
+       "max_ammo_pct": 0.16424494000000323,
+       "crit_rate": 0.5184685899999977,
+       "crit_dmg": 0.4478263099999964,
+       "charge_speed_pct": 0.3120330899999999,
+       "charge_dmg_pct": 0.22986141999999887,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "디젤 : 윈터 스위츠": {
+       "element_bonus": 0.0,
+       "atk_pct": 2.9706752499999993,
+       "max_ammo_pct": 0.19513710000000373,
+       "crit_rate": 1.1795692099999968,
+       "crit_dmg": 0.7250011699999988,
+       "charge_speed_pct": 0.6307049699999965,
+       "charge_dmg_pct": 0.23001190999999466,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "벨벳": {
+       "element_bonus": 1.8607207100000025,
+       "atk_pct": 1.0453185699999992,
+       "max_ammo_pct": 0.8644927800000062,
+       "crit_rate": 0.3384290499999949,
+       "crit_dmg": 0.29231736999999924,
+       "charge_speed_pct": 1.0490083099999978,
+       "charge_dmg_pct": 0.5585220299999989,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "라피 : 레드 후드": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "나유타": [
+       "element_bonus",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_rate"
+      ],
+      "헬름": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "charge_speed_pct"
+      ],
+      "디젤 : 윈터 스위츠": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "charge_speed_pct"
+      ],
+      "벨벳": [
+       "element_bonus",
+       "charge_speed_pct",
+       "atk_pct",
+       "max_ammo_pct"
+      ]
+     },
+     "C2": 52.60616628,
+     "ctrl2_variants": [
+      "나유타:cube:택티컬 어설트 큐브",
+      "라피 : 레드 후드:cube:택티컬 베어 큐브",
+      "헬름:reload:C0.5"
+     ],
+     "final": 52.60616628,
+     "final_variants": [
+      "나유타:cube:택티컬 어설트 큐브",
+      "라피 : 레드 후드:cube:택티컬 베어 큐브",
+      "헬름:reload:C0.5"
+     ],
+     "sims": 2509,
+     "seconds": 367.4
+    },
+    {
+     "id": "S38-r8",
+     "season": 38,
+     "squad": [
+      "토브",
+      "아르카나 : 포츈 메이트",
+      "누아르",
+      "드레이크",
+      "솔린 : 프로스트 티켓"
+     ],
+     "win": null,
+     "pre": 37.14438236,
+     "ctrl": 41.21150335,
+     "ctrl_variants": [
+      "누아르:cancel:on",
+      "누아르:reload:B0.1",
+      "드레이크:cancel:on",
+      "드레이크:cube:택티컬 베어 큐브",
+      "드레이크:reload:B0.5",
+      "솔린 : 프로스트 티켓:cube:택티컬 베어 큐브",
+      "솔린 : 프로스트 티켓:reload:B0.5",
+      "토브:burst:wait2"
+     ],
+     "E0": 45.45839053,
+     "O": 54.07083004,
+     "alloc": {
+      "토브": "공4+장탄1+크확3+크뎀4",
+      "아르카나 : 포츈 메이트": "공4+크확4+크뎀4",
+      "누아르": "우코4+공4+크확1+크뎀3",
+      "드레이크": "공4+크확4+크뎀4",
+      "솔린 : 프로스트 티켓": "공4+크확4+크뎀4"
+     },
+     "screen": {
+      "토브": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.24381637000000467,
+       "max_ammo_pct": 0.03848666000000378,
+       "crit_rate": 0.06410954999999774,
+       "crit_dmg": 0.08342024999999609,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아르카나 : 포츈 메이트": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.407826810000003,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 0.6955527499999974,
+       "crit_dmg": 1.570971809999996,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "누아르": {
+       "element_bonus": 7.316486790000006,
+       "atk_pct": 2.682192190000002,
+       "max_ammo_pct": 0.5398555200000033,
+       "crit_rate": 1.3913175100000004,
+       "crit_dmg": 1.814780639999995,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "드레이크": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.8389030200000036,
+       "max_ammo_pct": 0.36346406999999914,
+       "crit_rate": 0.9660248799999991,
+       "crit_dmg": 1.2618188399999966,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "솔린 : 프로스트 티켓": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.9659943000000055,
+       "max_ammo_pct": 0.4507777000000033,
+       "crit_rate": 0.5259850999999998,
+       "crit_dmg": 0.6867874,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "토브": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ],
+      "아르카나 : 포츈 메이트": [
+       "crit_dmg",
+       "atk_pct",
+       "crit_rate",
+       "element_bonus"
+      ],
+      "누아르": [
+       "element_bonus",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "드레이크": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ],
+      "솔린 : 프로스트 티켓": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ]
+     },
+     "C2": 55.00011835,
+     "ctrl2_variants": [
+      "누아르:cancel:on",
+      "누아르:cube:택티컬 베어 큐브",
+      "누아르:reload:A0.3",
+      "드레이크:cube:택티컬 베어 큐브",
+      "드레이크:reload:B0.1",
+      "솔린 : 프로스트 티켓:cube:택티컬 베어 큐브",
+      "아르카나 : 포츈 메이트:cancel:on",
+      "아르카나 : 포츈 메이트:reload:B0.1",
+      "토브:burst:wait2",
+      "토브:cube:택티컬 베어 큐브"
+     ],
+     "final": 55.00011835,
+     "final_variants": [
+      "누아르:cancel:on",
+      "누아르:cube:택티컬 베어 큐브",
+      "누아르:reload:A0.3",
+      "드레이크:cube:택티컬 베어 큐브",
+      "드레이크:reload:B0.1",
+      "솔린 : 프로스트 티켓:cube:택티컬 베어 큐브",
+      "아르카나 : 포츈 메이트:cancel:on",
+      "아르카나 : 포츈 메이트:reload:B0.1",
+      "토브:burst:wait2",
+      "토브:cube:택티컬 베어 큐브"
+     ],
+     "sims": 2269,
+     "seconds": 267.8
+    }
+   ],
+   "total": {
+    "pre": 276.14119875,
+    "ctrl": 288.06411879,
+    "E0": 311.62915653,
+    "O": 359.47157784,
+    "final": 364.01346739
+   }
+  },
+  "r1": {
+   "decks": [
+    {
+     "id": "S38-r9",
+     "season": 38,
+     "squad": [
+      "프리바티",
+      "벨벳",
+      "헬름",
+      "리틀 머메이드",
+      "크라운"
+     ],
+     "win": null,
+     "pre": 61.86667271,
+     "ctrl": 64.05202635,
+     "ctrl_variants": [
+      "리틀 머메이드:cube:택티컬 부스트 큐브",
+      "벨벳:click:hold_own_fb",
+      "벨벳:cube:택티컬 어설트 큐브",
+      "크라운:cube:택티컬 어설트 큐브",
+      "크라운:reload:C0.1",
+      "프리바티:cancel:on",
+      "프리바티:cube:렐릭 어설트 큐브",
+      "프리바티:reload:C0.5",
+      "헬름:cube:렐릭 부스트 큐브",
+      "헬름:reload:B0.5"
+     ],
+     "E0": 62.50567456,
+     "O": 84.1788033,
+     "alloc": {
+      "프리바티": "공4+크확4+크뎀4",
+      "벨벳": "우코4+공4+크확2+크뎀2",
+      "헬름": "공4+크확4+크뎀4",
+      "리틀 머메이드": "우코4+공4+크확2+크뎀2",
+      "크라운": "공4+장탄2+크확2+크뎀4"
+     },
+     "screen": {
+      "프리바티": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.5525407200000032,
+       "max_ammo_pct": -10.760415960000003,
+       "crit_rate": 0.14980483000000078,
+       "crit_dmg": 0.13550396999999492,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "벨벳": {
+       "element_bonus": 9.869447900000004,
+       "atk_pct": 5.1370295900000045,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 1.7182641400000023,
+       "crit_dmg": 1.5325380399999915,
+       "charge_speed_pct": -0.30574363000000204,
+       "charge_dmg_pct": 0.07367187999999913,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "헬름": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.5186305400000037,
+       "max_ammo_pct": -1.0126204399999992,
+       "crit_rate": 0.42289367000000055,
+       "crit_dmg": 0.37266587999999956,
+       "charge_speed_pct": 0.3433273200000002,
+       "charge_dmg_pct": 0.22983948999999626,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "리틀 머메이드": {
+       "element_bonus": 12.813530980000003,
+       "atk_pct": 6.513861810000002,
+       "max_ammo_pct": 0.12097540999999978,
+       "crit_rate": 2.242488620000003,
+       "crit_dmg": 1.9614507999999944,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "크라운": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.6479371100000009,
+       "max_ammo_pct": 0.03479822999999982,
+       "crit_rate": 0.1355648499999944,
+       "crit_dmg": 0.1234227399999952,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "프리바티": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "element_bonus"
+      ],
+      "벨벳": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "헬름": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "charge_speed_pct"
+      ],
+      "리틀 머메이드": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg"
+      ],
+      "크라운": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "max_ammo_pct"
+      ]
+     },
+     "C2": 84.20354326,
+     "ctrl2_variants": [
+      "리틀 머메이드:cube:택티컬 부스트 큐브",
+      "리틀 머메이드:reload:C0.1_dry",
+      "벨벳:click:hold_own_fb",
+      "벨벳:cube:택티컬 어설트 큐브",
+      "크라운:cube:택티컬 베어 큐브",
+      "크라운:reload:C0.1",
+      "프리바티:cancel:on",
+      "프리바티:cube:렐릭 어설트 큐브",
+      "프리바티:reload:C0.5",
+      "헬름:cube:렐릭 부스트 큐브",
+      "헬름:reload:B0.5"
+     ],
+     "final": 84.20354326,
+     "final_variants": [
+      "리틀 머메이드:cube:택티컬 부스트 큐브",
+      "리틀 머메이드:reload:C0.1_dry",
+      "벨벳:click:hold_own_fb",
+      "벨벳:cube:택티컬 어설트 큐브",
+      "크라운:cube:택티컬 베어 큐브",
+      "크라운:reload:C0.1",
+      "프리바티:cancel:on",
+      "프리바티:cube:렐릭 어설트 큐브",
+      "프리바티:reload:C0.5",
+      "헬름:cube:렐릭 부스트 큐브",
+      "헬름:reload:B0.5"
+     ],
+     "sims": 2439,
+     "seconds": 322.1
+    },
+    {
+     "id": "S38-r10",
+     "season": 38,
+     "squad": [
+      "라피 : 레드 후드",
+      "스노우 화이트 : 헤비암즈",
+      "민트",
+      "아크레인저 블랙",
+      "프리카"
+     ],
+     "win": null,
+     "pre": 39.93973723,
+     "ctrl": 41.54395882,
+     "ctrl_variants": [
+      "squad:tactic:버충=프리카",
+      "라피 : 레드 후드:cube:택티컬 베어 큐브",
+      "민트:reload:A0.3",
+      "스노우 화이트 : 헤비암즈:cube:렐릭 퀀텀 큐브",
+      "아크레인저 블랙:cube:택티컬 부스트 큐브",
+      "프리카:burst:delay1"
+     ],
+     "E0": 46.67753295,
+     "O": 54.24297188,
+     "alloc": {
+      "라피 : 레드 후드": "공4+장탄4+크확2+크뎀2",
+      "스노우 화이트 : 헤비암즈": "공4+장탄1+크확3+크뎀4",
+      "민트": "공4+크확4+크뎀4",
+      "아크레인저 블랙": "우코4+공4+크확2+크뎀2",
+      "프리카": "공4+장탄2+크뎀2+차뎀4"
+     },
+     "screen": {
+      "라피 : 레드 후드": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.1536896699999986,
+       "max_ammo_pct": 2.0761224700000014,
+       "crit_rate": 0.5429718600000015,
+       "crit_dmg": 0.564510460000001,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "스노우 화이트 : 헤비암즈": {
+       "element_bonus": 0.0,
+       "atk_pct": 2.3330347799999984,
+       "max_ammo_pct": 0.9665728599999994,
+       "crit_rate": 1.7487675100000004,
+       "crit_dmg": 1.8245193799999981,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.42543119999999846,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "민트": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.42683576999999673,
+       "max_ammo_pct": 0.1787093399999975,
+       "crit_rate": 0.2147808100000006,
+       "crit_dmg": 0.22438273000000208,
+       "charge_speed_pct": 0.034574010000000044,
+       "charge_dmg_pct": 0.2858974700000019,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아크레인저 블랙": {
+       "element_bonus": 9.850663930000003,
+       "atk_pct": 3.3817484499999964,
+       "max_ammo_pct": 0.7038327699999982,
+       "crit_rate": 2.8009449700000033,
+       "crit_dmg": 2.9534290699999985,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "프리카": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.39145571000000245,
+       "max_ammo_pct": 0.6900045699999993,
+       "crit_rate": 0.19325025999999923,
+       "crit_dmg": 0.2011985600000017,
+       "charge_speed_pct": 0.14691915000000222,
+       "charge_dmg_pct": 0.24415223999999824,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "라피 : 레드 후드": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "스노우 화이트 : 헤비암즈": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ],
+      "민트": [
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "아크레인저 블랙": [
+       "element_bonus",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ],
+      "프리카": [
+       "max_ammo_pct",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_dmg"
+      ]
+     },
+     "C2": 54.74687246,
+     "ctrl2_variants": [
+      "squad:tactic:버충=프리카",
+      "라피 : 레드 후드:cube:택티컬 베어 큐브",
+      "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+      "스노우 화이트 : 헤비암즈:reload:A0.3",
+      "아크레인저 블랙:cube:택티컬 베어 큐브",
+      "아크레인저 블랙:reload:C0.1_dry",
+      "프리카:burst:delay2",
+      "프리카:cube:렐릭 피어싱 큐브"
+     ],
+     "final": 54.74687246,
+     "final_variants": [
+      "squad:tactic:버충=프리카",
+      "라피 : 레드 후드:cube:택티컬 베어 큐브",
+      "스노우 화이트 : 헤비암즈:cube:렐릭 피어싱 큐브",
+      "스노우 화이트 : 헤비암즈:reload:A0.3",
+      "아크레인저 블랙:cube:택티컬 베어 큐브",
+      "아크레인저 블랙:reload:C0.1_dry",
+      "프리카:burst:delay2",
+      "프리카:cube:렐릭 피어싱 큐브"
+     ],
+     "sims": 2479,
+     "seconds": 434.3
+    },
+    {
+     "id": "S38-r11",
+     "season": 38,
+     "squad": [
+      "마스트 : 로망틱 메이드",
+      "홍련 : 흑영",
+      "아니스 : 스타",
+      "리버렐리오",
+      "앵커 : 이노센트 메이드"
+     ],
+     "win": null,
+     "pre": 83.5542386,
+     "ctrl": 89.41529477,
+     "ctrl_variants": [
+      "리버렐리오:cube:렐릭 부스트 큐브",
+      "마스트 : 로망틱 메이드:burst:wait2",
+      "마스트 : 로망틱 메이드:cube:렐릭 퀀텀 큐브",
+      "아니스 : 스타:reload:C0.1_dry",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:A0.3",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:C0.1_dry"
+     ],
+     "E0": 93.59635145,
+     "O": 103.85862528,
+     "alloc": {
+      "마스트 : 로망틱 메이드": "공4+장탄2+크확2+크뎀4",
+      "홍련 : 흑영": "우코4+공4+크뎀4",
+      "아니스 : 스타": "공4+크확4+크뎀4",
+      "리버렐리오": "우코4+공4+차속4",
+      "앵커 : 이노센트 메이드": "공4+장탄1+크확3+크뎀4"
+     },
+     "screen": {
+      "마스트 : 로망틱 메이드": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.6262620199999986,
+       "max_ammo_pct": 0.053724110000004544,
+       "crit_rate": 0.30293600999999626,
+       "crit_dmg": 0.43715188999999555,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "홍련 : 흑영": {
+       "element_bonus": 21.814708980000006,
+       "atk_pct": 7.651562830000003,
+       "max_ammo_pct": 2.674634960000006,
+       "crit_rate": 5.457931970000004,
+       "crit_dmg": 6.729535769999998,
+       "charge_speed_pct": 7.173907349999993,
+       "charge_dmg_pct": 2.3438646000000034,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아니스 : 스타": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.3901405000000011,
+       "max_ammo_pct": 0.4059888000000029,
+       "crit_rate": 0.847050749999994,
+       "crit_dmg": 1.2115344799999974,
+       "charge_speed_pct": 0.12588587000000473,
+       "charge_dmg_pct": 0.720975800000005,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "리버렐리오": {
+       "element_bonus": 11.18116861,
+       "atk_pct": 14.249670260000002,
+       "max_ammo_pct": 0.8527721300000053,
+       "crit_rate": 2.312592440000003,
+       "crit_dmg": 3.6413899899999933,
+       "charge_speed_pct": 6.899129549999998,
+       "charge_dmg_pct": 1.7886508499999962,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "앵커 : 이노센트 메이드": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.6168635899999941,
+       "max_ammo_pct": 0.17399803000000702,
+       "crit_rate": 0.29966905000000565,
+       "crit_dmg": 0.42977227000000084,
+       "charge_speed_pct": 0.0052100500000022976,
+       "charge_dmg_pct": 0.0014081799999985378,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "마스트 : 로망틱 메이드": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ],
+      "홍련 : 흑영": [
+       "element_bonus",
+       "atk_pct",
+       "charge_speed_pct",
+       "crit_dmg"
+      ],
+      "아니스 : 스타": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "charge_dmg_pct"
+      ],
+      "리버렐리오": [
+       "atk_pct",
+       "element_bonus",
+       "charge_speed_pct",
+       "crit_dmg"
+      ],
+      "앵커 : 이노센트 메이드": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "max_ammo_pct"
+      ]
+     },
+     "C2": 106.81492222,
+     "ctrl2_variants": [
+      "마스트 : 로망틱 메이드:burst:wait2",
+      "아니스 : 스타:cube:택티컬 베어 큐브",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:C0.1_dry",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:C0.1_dry"
+     ],
+     "final": 106.81492222,
+     "final_variants": [
+      "마스트 : 로망틱 메이드:burst:wait2",
+      "아니스 : 스타:cube:택티컬 베어 큐브",
+      "앵커 : 이노센트 메이드:click:tap",
+      "앵커 : 이노센트 메이드:reload:C0.1_dry",
+      "홍련 : 흑영:cube:렐릭 디바이드 큐브",
+      "홍련 : 흑영:reload:C0.1_dry"
+     ],
+     "sims": 2374,
+     "seconds": 391.1
+    },
+    {
+     "id": "S38-r12",
+     "season": 38,
+     "squad": [
+      "목단",
+      "에이드 : 에이전트 바니",
+      "아스카 : WILLE",
+      "레이 (가칭)",
+      "루드밀라 : 윈터 오너"
+     ],
+     "win": null,
+     "pre": 36.55291533,
+     "ctrl": 39.36801876,
+     "ctrl_variants": [
+      "레이 (가칭):reload:B0.1",
+      "루드밀라 : 윈터 오너:reload:C0.1_dry",
+      "목단:cube:렐릭 퀀텀 큐브",
+      "아스카 : WILLE:reload:A0.3",
+      "에이드 : 에이전트 바니:click:tap",
+      "에이드 : 에이전트 바니:reload:C0.1_dry"
+     ],
+     "E0": 48.16610442,
+     "O": 50.5593001,
+     "alloc": {
+      "목단": "공4+크확4+크뎀4",
+      "에이드 : 에이전트 바니": "공4+장탄3+크확4+차속1",
+      "아스카 : WILLE": "우코4+공4+장탄4",
+      "레이 (가칭)": "우코4+공4+장탄3+크확1",
+      "루드밀라 : 윈터 오너": "공4+장탄4+크확1+크뎀3"
+     },
+     "screen": {
+      "목단": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.9992240000000052,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 0.26433402999999345,
+       "crit_dmg": 0.2283189799999974,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "에이드 : 에이전트 바니": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.41877791000000286,
+       "max_ammo_pct": 1.968100800000002,
+       "crit_rate": 0.10828153999999302,
+       "crit_dmg": 0.09352776999999435,
+       "charge_speed_pct": 0.573745339999995,
+       "charge_dmg_pct": 0.02708381999999432,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "아스카 : WILLE": {
+       "element_bonus": 10.050264870000007,
+       "atk_pct": 5.693237890000006,
+       "max_ammo_pct": 8.824254690000004,
+       "crit_rate": 1.7751107099999999,
+       "crit_dmg": 1.5332640599999934,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "레이 (가칭)": {
+       "element_bonus": 6.3561639600000035,
+       "atk_pct": 3.6381209800000036,
+       "max_ammo_pct": 1.8443902700000052,
+       "crit_rate": 1.1349791899999957,
+       "crit_dmg": 0.9803333299999935,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "루드밀라 : 윈터 오너": {
+       "element_bonus": 0.0,
+       "atk_pct": 1.2708102000000068,
+       "max_ammo_pct": 3.614349510000004,
+       "crit_rate": 0.31245298999999704,
+       "crit_dmg": 0.4986188099999964,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "목단": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "element_bonus"
+      ],
+      "에이드 : 에이전트 바니": [
+       "max_ammo_pct",
+       "charge_speed_pct",
+       "atk_pct",
+       "crit_rate"
+      ],
+      "아스카 : WILLE": [
+       "element_bonus",
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_rate"
+      ],
+      "레이 (가칭)": [
+       "element_bonus",
+       "atk_pct",
+       "max_ammo_pct",
+       "crit_rate"
+      ],
+      "루드밀라 : 윈터 오너": [
+       "max_ammo_pct",
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate"
+      ]
+     },
+     "C2": 51.98286337,
+     "ctrl2_variants": [
+      "레이 (가칭):reload:A0.3",
+      "루드밀라 : 윈터 오너:cube:택티컬 베어 큐브",
+      "목단:cube:렐릭 퀀텀 큐브",
+      "아스카 : WILLE:reload:A0.3",
+      "에이드 : 에이전트 바니:click:tap",
+      "에이드 : 에이전트 바니:reload:C0.1"
+     ],
+     "final": 51.98286337,
+     "final_variants": [
+      "레이 (가칭):reload:A0.3",
+      "루드밀라 : 윈터 오너:cube:택티컬 베어 큐브",
+      "목단:cube:렐릭 퀀텀 큐브",
+      "아스카 : WILLE:reload:A0.3",
+      "에이드 : 에이전트 바니:click:tap",
+      "에이드 : 에이전트 바니:reload:C0.1"
+     ],
+     "sims": 2342,
+     "seconds": 267.7
+    },
+    {
+     "id": "S38-r13",
+     "season": 38,
+     "squad": [
+      "미란다",
+      "맥스웰",
+      "나유타",
+      "루주",
+      "디젤 : 윈터 스위츠"
+     ],
+     "win": null,
+     "pre": 23.11039963,
+     "ctrl": 26.14778632,
+     "ctrl_variants": [
+      "나유타:cube:렐릭 퀀텀 큐브",
+      "디젤 : 윈터 스위츠:reload:B0.5",
+      "루주:burst:delay1",
+      "루주:reload:B0.5",
+      "맥스웰:click:tap",
+      "맥스웰:reload:C0.5",
+      "미란다:reload:B0.5"
+     ],
+     "E0": 29.72041449,
+     "O": 42.39496234,
+     "alloc": {
+      "미란다": "공4+크확4+크뎀4",
+      "맥스웰": "장탄3+크확4+크뎀4+차뎀1",
+      "나유타": "우코4+공4+크확4",
+      "루주": "공4+차속4+차뎀4",
+      "디젤 : 윈터 스위츠": "공4+크확4+크뎀4"
+     },
+     "screen": {
+      "미란다": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.7014822999999986,
+       "max_ammo_pct": -0.6109439200000004,
+       "crit_rate": 0.29965024000000184,
+       "crit_dmg": 0.44003409000000104,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.0,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "맥스웰": {
+       "element_bonus": 0.0,
+       "atk_pct": -4.163201789999999,
+       "max_ammo_pct": 0.638360930000001,
+       "crit_rate": 0.337291350000001,
+       "crit_dmg": 0.2592071500000017,
+       "charge_speed_pct": -0.017799189999998077,
+       "charge_dmg_pct": 0.10779411000000039,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "나유타": {
+       "element_bonus": 4.4542755199999995,
+       "atk_pct": 3.0534353900000006,
+       "max_ammo_pct": 0.0,
+       "crit_rate": 1.2190715000000019,
+       "crit_dmg": 0.6793808299999995,
+       "charge_speed_pct": 0.0,
+       "charge_dmg_pct": 0.9779877200000016,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "루주": {
+       "element_bonus": 0.0,
+       "atk_pct": 0.27039530000000056,
+       "max_ammo_pct": -0.16016541000000117,
+       "crit_rate": 0.09750534000000144,
+       "crit_dmg": 0.0559012800000005,
+       "charge_speed_pct": 0.4771655800000012,
+       "charge_dmg_pct": 0.14643106000000117,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      },
+      "디젤 : 윈터 스위츠": {
+       "element_bonus": 0.0,
+       "atk_pct": 2.6937943900000008,
+       "max_ammo_pct": 0.5331627999999995,
+       "crit_rate": 2.687161960000001,
+       "crit_dmg": 0.7353920000000009,
+       "charge_speed_pct": 0.19599760000000188,
+       "charge_dmg_pct": 0.24508563999999922,
+       "accuracy_pct": 0.0,
+       "def_pct": 0.0
+      }
+     },
+     "top": {
+      "미란다": [
+       "atk_pct",
+       "crit_dmg",
+       "crit_rate",
+       "element_bonus"
+      ],
+      "맥스웰": [
+       "max_ammo_pct",
+       "crit_rate",
+       "crit_dmg",
+       "charge_dmg_pct"
+      ],
+      "나유타": [
+       "element_bonus",
+       "atk_pct",
+       "crit_rate",
+       "charge_dmg_pct"
+      ],
+      "루주": [
+       "charge_speed_pct",
+       "atk_pct",
+       "charge_dmg_pct",
+       "crit_rate"
+      ],
+      "디젤 : 윈터 스위츠": [
+       "atk_pct",
+       "crit_rate",
+       "crit_dmg",
+       "max_ammo_pct"
+      ]
+     },
+     "C2": 42.78785222,
+     "ctrl2_variants": [
+      "나유타:cube:렐릭 퀀텀 큐브",
+      "디젤 : 윈터 스위츠:click:tap",
+      "디젤 : 윈터 스위츠:reload:B0.5",
+      "루주:burst:delay1",
+      "루주:reload:B0.5",
+      "맥스웰:click:tap",
+      "맥스웰:reload:C0.1",
+      "미란다:reload:B0.5"
+     ],
+     "final": 42.78785222,
+     "final_variants": [
+      "나유타:cube:렐릭 퀀텀 큐브",
+      "디젤 : 윈터 스위츠:click:tap",
+      "디젤 : 윈터 스위츠:reload:B0.5",
+      "루주:burst:delay1",
+      "루주:reload:B0.5",
+      "맥스웰:click:tap",
+      "맥스웰:reload:C0.1",
+      "미란다:reload:B0.5"
+     ],
+     "sims": 2238,
+     "seconds": 261.1
+    }
+   ],
+   "total": {
+    "pre": 245.0239635,
+    "ctrl": 260.52708502,
+    "E0": 280.66607787,
+    "O": 335.2346629,
+    "final": 340.53605353
+   }
+  }
+ },
+ "decks_new": 14,
+ "reused_from_A": [],
+ "sims": 16800
+}
