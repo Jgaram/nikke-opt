@@ -148,6 +148,111 @@
    "seconds": 115.2,
    "errors": 0,
    "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "17": {
+   "sims": 2765,
+   "reused": 2235,
+   "seconds": 99.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "18": {
+   "sims": 3160,
+   "reused": 1840,
+   "seconds": 124.0,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "19": {
+   "sims": 3800,
+   "reused": 1200,
+   "seconds": 153.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "20": {
+   "sims": 2999,
+   "reused": 2001,
+   "seconds": 108.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "21": {
+   "sims": 3732,
+   "reused": 1268,
+   "seconds": 127.2,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "22": {
+   "sims": 3152,
+   "reused": 1848,
+   "seconds": 116.6,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "23": {
+   "sims": 2877,
+   "reused": 2123,
+   "seconds": 116.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "24": {
+   "sims": 2769,
+   "reused": 2231,
+   "seconds": 123.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "25": {
+   "sims": 3011,
+   "reused": 1989,
+   "seconds": 138.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "26": {
+   "sims": 2903,
+   "reused": 2097,
+   "seconds": 122.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "27": {
+   "sims": 3114,
+   "reused": 1886,
+   "seconds": 117.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "28": {
+   "sims": 3531,
+   "reused": 1469,
+   "seconds": 152.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "29": {
+   "sims": 3527,
+   "reused": 1473,
+   "seconds": 109.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "30": {
+   "sims": 3368,
+   "reused": 1632,
+   "seconds": 97.2,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "31": {
+   "sims": 3602,
+   "reused": 1398,
+   "seconds": 110.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
   }
  }
 }
