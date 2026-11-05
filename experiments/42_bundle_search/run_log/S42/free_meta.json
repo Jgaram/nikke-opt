@@ -901,6 +901,41 @@
    "seconds": 110.5,
    "errors": 0,
    "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "127": {
+   "sims": 3603,
+   "reused": 1397,
+   "seconds": 132.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "128": {
+   "sims": 3671,
+   "reused": 1329,
+   "seconds": 108.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "129": {
+   "sims": 2865,
+   "reused": 2135,
+   "seconds": 87.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "130": {
+   "sims": 4251,
+   "reused": 749,
+   "seconds": 105.0,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "131": {
+   "sims": 2322,
+   "reused": 686,
+   "seconds": 68.0,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
   }
  }
 }
