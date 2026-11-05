@@ -1,0 +1,80 @@
+{
+ "season": 42,
+ "comps": 658008,
+ "chunk": 5000,
+ "chunks": 132,
+ "options": {
+  "enemy": {
+   "code": "수냉"
+  },
+  "sim": {
+   "camera_reload_cancel": true
+  }
+ },
+ "order": "실험 41 base_order(단계 1 · 2 · A · 3, 같은 단계 안 이름순)",
+ "parts": {
+  "0": {
+   "sims": 3104,
+   "reused": 1896,
+   "seconds": 188.6,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "1": {
+   "sims": 2940,
+   "reused": 2060,
+   "seconds": 215.2,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "2": {
+   "sims": 2567,
+   "reused": 2433,
+   "seconds": 153.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "3": {
+   "sims": 2412,
+   "reused": 2588,
+   "seconds": 148.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "4": {
+   "sims": 2397,
+   "reused": 2603,
+   "seconds": 150.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "5": {
+   "sims": 2280,
+   "reused": 2720,
+   "seconds": 168.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "6": {
+   "sims": 4316,
+   "reused": 684,
+   "seconds": 329.2,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "7": {
+   "sims": 4217,
+   "reused": 783,
+   "seconds": 296.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "8": {
+   "sims": 2784,
+   "reused": 2216,
+   "seconds": 188.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  }
+ }
+}
