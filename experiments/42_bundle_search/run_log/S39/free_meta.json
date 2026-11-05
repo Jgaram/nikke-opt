@@ -1,0 +1,111 @@
+{
+ "season": 39,
+ "comps": 658008,
+ "chunk": 5000,
+ "chunks": 132,
+ "options": {
+  "enemy": {
+   "code": "전격"
+  },
+  "profile": {
+   "base": "default",
+   "chars": {
+    "로산나": {
+     "favorite_stage": 0
+    },
+    "슈가": {
+     "favorite_stage": 0
+    },
+    "팬텀": {
+     "favorite_stage": 0
+    },
+    "플로라": {
+     "favorite_stage": 0
+    }
+   }
+  },
+  "sim": {
+   "camera_reload_cancel": true
+  }
+ },
+ "order": "실험 41 base_order(단계 1 · 2 · A · 3, 같은 단계 안 이름순)",
+ "parts": {
+  "0": {
+   "sims": 3985,
+   "reused": 1015,
+   "seconds": 156.0,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "1": {
+   "sims": 3953,
+   "reused": 1047,
+   "seconds": 151.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "2": {
+   "sims": 2838,
+   "reused": 2162,
+   "seconds": 89.6,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "3": {
+   "sims": 2913,
+   "reused": 2087,
+   "seconds": 90.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "4": {
+   "sims": 3106,
+   "reused": 1894,
+   "seconds": 95.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "5": {
+   "sims": 2879,
+   "reused": 2121,
+   "seconds": 96.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "6": {
+   "sims": 2867,
+   "reused": 2133,
+   "seconds": 119.4,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "7": {
+   "sims": 2838,
+   "reused": 2162,
+   "seconds": 102.0,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "8": {
+   "sims": 2893,
+   "reused": 2107,
+   "seconds": 115.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "9": {
+   "sims": 2757,
+   "reused": 2243,
+   "seconds": 150.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "10": {
+   "sims": 2619,
+   "reused": 2381,
+   "seconds": 166.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  }
+ }
+}
