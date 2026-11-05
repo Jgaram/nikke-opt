@@ -360,7 +360,8 @@ def cmd_replay(a: argparse.Namespace) -> int:
 
 BASE39 = EXPS / "39_bundle_explore" / "run_log" / "base"
 CHECK39_N = 300
-VERIFY_ARMS = ("R", "P", "L")
+VERIFY_ARMS = ("R", "P", "L", "P50", "PL")
+GATE_ARMS = ("P", "L", "P50", "PL")   # 판단 2 후보(P · L과 그 개발 변형)
 
 
 def r39() -> Any:
@@ -574,20 +575,21 @@ def analyze() -> dict[str, Any]:
                     "reach99": sum(r["reach"]["0.99"] is not None for r in rows), "reach97": sum(r["reach"]["0.97"] is not None for r in rows),
                     "reach99_evals": med([r["reach"]["0.99"] for r in rows]), "seconds": med([r["seconds"] for r in rows])}
     rp = out["replay"]
-    complete = all(len(rp.get(str(s), {}).get(t, {}).get("seeds", [])) == len(REPLAY_SEEDS)
-                   for s in SEASONS for t in ("base", "P", "L"))
-    if complete:
+    done = lambda t: all(len(rp.get(str(s), {}).get(t, {}).get("seeds", [])) == len(REPLAY_SEEDS) for s in SEASONS)  # noqa: E731
+    if done("base"):
         passed = {}
-        for arm in ("P", "L"):
+        for arm in GATE_ARMS:
+            if not done(arm):
+                continue
             gate = {s: rp[str(s)][arm]["reach99"] for s in DEV_GATE}
             guard = rp[str(DEV_GUARD)][arm]["median"] - rp[str(DEV_GUARD)]["base"]["median"]
             allm = med([r["final_ratio"] for s in SEASONS for r in rp[str(s)][arm]["seeds"]])
             ok = all(v >= REACH_MIN for v in gate.values()) and guard >= -S39_SLACK
             passed[arm] = {"reach99": gate, "s39_vs_base": guard, "median_all": allm, "pass": ok}
-        ok = [a for a, v in passed.items() if v["pass"]]
-        if len(ok) == 2 and abs(passed["P"]["median_all"] - passed["L"]["median_all"]) > PICK_TIE:
-            ok = [max(ok, key=lambda a: passed[a]["median_all"])]
-        out["judge"]["2"] = {"arms": passed, "to_stage2": ok}
+        ok = sorted((a for a, v in passed.items() if v["pass"]), key=lambda a: -passed[a]["median_all"])
+        ok = [a for a in ok if passed[ok[0]]["median_all"] - passed[a]["median_all"] <= PICK_TIE][:2]
+        if passed:
+            out["judge"]["2"] = {"arms": passed, "to_stage2": ok}
     # 2단계 · 판단 3
     R39 = r39()
     vrows: dict[str, dict[int, dict[str, Any]]] = {}
@@ -713,7 +715,7 @@ def main(argv: list[str] | None = None) -> int:
     k.add_argument("--deadline", type=float, default=900.0)
     y = sub.add_parser("replay")
     y.add_argument("--season", type=int, required=True)
-    y.add_argument("--arm", required=True, choices=("base", "R", "P", "L"))
+    y.add_argument("--arm", required=True, choices=("base", "R", "P", "L", "P50", "PL"))
     y.add_argument("--seed", type=int, default=None)
     y.add_argument("--budget", type=int, default=REPLAY_BUDGET)
     y.add_argument("--tag", default=None, help="기록 이름(개발 중 판 수치를 바꿔 볼 때)")

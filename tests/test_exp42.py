@@ -121,6 +121,11 @@ class Arms42(unittest.TestCase):
         self.assertEqual((r.R10.design, r.R10.local_round, A.S4.neighbors), before)
         with A.patched("base"):
             self.assertIs(r.R10.design, before[0])
+        for arm, fn in (("L", A.lns_round), ("P50", A.p50_round), ("PL", A.pl_round)):
+            with A.patched(arm):
+                self.assertIs(r.R10.local_round, fn)
+                self.assertIs(r.R10.design, A.design_free)
+        self.assertEqual((r.R10.design, r.R10.local_round, A.S4.neighbors), before)
 
 
 class Order42(unittest.TestCase):

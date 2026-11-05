@@ -25,12 +25,14 @@ R10, R9 = R41.R10, R41.R9
 S4 = R9.S4
 base_order = R41.base_order
 
-ARMS = ("base", "R", "P", "L")
+ARMS = ("base", "R", "P", "L", "P50", "PL")
 PARAMS: dict[str, Any] = {
     "first_beam": 18,     # R 구성: 첫 니케 후보 수(실험 10은 틀 6 × 3 = 18)
     "beam": 40,           # P · L 빔 폭
     "lns_pool": 60,       # L: 풀린 자리에서 만들 대리 모델 상위 구성 수
     "lns_pairs": 3,       # L: 덱 쌍마다 평가할 새 두 덱 후보 수
+    "p50_share": 0.5,     # P50: 라운드 중 가격 후보 몫(나머지 R 라운드)
+    "pl_price_share": 0.2,  # PL: 다시 짜기 후보 다음 가격 후보 몫(나머지 R 라운드)
 }
 
 
@@ -261,6 +263,76 @@ def lns_round(sess: Any, n: int, lineage: set[frozenset] | None, fitf: Callable)
     return pick[:n]
 
 
+# ---------------------------------------------------------------- 개발 변형(1단계 첫 재생 뒤, 개발 시즌에서만 정함)
+# 첫 재생(PARAMS 처음 값): P는 라운드 100을 가격 후보로만 채워 국소 다듬기(R 이웃 · 5덱 고치기)가 없다 — S36에서 멈춤(99% 1/4).
+# L은 다시 짜기 후보(≤ 60) + R 이웃이라 S36 4/4지만 S39에서 99.3% 국소 최적에 머문다(가격 후보가 S39 4/4).
+# P50 = 가격 후보 몫을 절반으로, 나머지 R 라운드. PL = 다시 짜기 후보 + 가격 후보 몫 + 나머지 R 라운드.
+
+def _price_cands(sess: Any, lineage: set[frozenset] | None, score: Callable) -> list[tuple[float, frozenset]]:
+    total, _, book = _current(sess, lineage)
+    price = nikke_prices(book, sess.acct.names, total)
+    return beam_comps(score, sess.acct.names, price, PARAMS["beam"] * 3)
+
+
+def _lns_props(sess: Any, lineage: set[frozenset] | None, score: Callable) -> list[tuple[float, list[frozenset]]]:
+    _, decks, _ = _current(sess, lineage)
+    if len(decks) < 5:
+        return []
+    props: list[tuple[float, list[frozenset]]] = []
+    for i, j in combinations(range(5), 2):
+        keep = [d for q, (_, d) in enumerate(decks) if q not in (i, j)]
+        used = {x for d in keep for x in d}
+        top = beam_comps(score, [m for m in sess.acct.names if m not in used], None, PARAMS["lns_pool"])
+        pairs = sorted(((ra + rb, a, b) for (ra, a), (rb, b) in combinations(top, 2) if not a & b), key=lambda t: -t[0])
+        old = decks[i][0] + decks[j][0]
+        props += [(g - old, [a, b]) for g, a, b in pairs[:PARAMS["lns_pairs"]]]
+    return sorted(props, key=lambda t: -t[0])
+
+
+def mix_round(sess: Any, n: int, lineage: set[frozenset] | None, fitf: Callable, price_share: float, lns: bool) -> list[tuple]:
+    """다시 짜기 후보(lns이면, 전부) → 가격 후보(라운드의 price_share 몫까지) → 나머지 R 라운드."""
+    score = fitf(sess.book, sess.acct.names)
+    pick: list[tuple] = []
+    seen: set[frozenset] = set()
+
+    def take(c: frozenset) -> bool:
+        sq = base_order(c)
+        if len(pick) >= n or c in sess.book.best or c in seen or not sess.fresh(sq):
+            return False
+        seen.add(c)
+        pick.append(sq)
+        return True
+
+    if lns:
+        for _, cs in _lns_props(sess, lineage, score):
+            for c in cs:
+                take(c)
+    k, got = int(round(n * price_share)), 0
+    for _, c in _price_cands(sess, lineage, score):
+        if got >= k or len(pick) >= n:
+            break
+        got += take(c)
+    if len(pick) < n:
+        for sq in _R_LOCAL(sess, n - len(pick), lineage, fitf):
+            if frozenset(sq) not in seen:
+                seen.add(frozenset(sq))
+                pick.append(sq)
+    if lineage is not None:
+        lineage.update(frozenset(s) for s in pick)
+    return pick[:n]
+
+
+def p50_round(sess: Any, n: int, lineage: set[frozenset] | None, fitf: Callable) -> list[tuple]:
+    return mix_round(sess, n, lineage, fitf, PARAMS["p50_share"], lns=False)
+
+
+def pl_round(sess: Any, n: int, lineage: set[frozenset] | None, fitf: Callable) -> list[tuple]:
+    return mix_round(sess, n, lineage, fitf, PARAMS["pl_price_share"], lns=True)
+
+
+ROUNDS: dict[str, Callable] = {"P": price_round, "L": lns_round, "P50": p50_round, "PL": pl_round}
+
+
 # ---------------------------------------------------------------- 끼우기
 
 @contextlib.contextmanager
@@ -274,8 +346,8 @@ def patched(arm: str):
         if arm != "base":
             R10.design, R10.greedy_squads, R10.do_kick = design_free, greedy_free, kick_free
             S4.neighbors, S4.pack_moves = neighbors_free, pack_moves_free
-        if arm in ("P", "L"):
-            R10.local_round = price_round if arm == "P" else lns_round
+        if arm in ROUNDS:
+            R10.local_round = ROUNDS[arm]
         yield
     finally:
         for (mod, name), fn in saved.items():
