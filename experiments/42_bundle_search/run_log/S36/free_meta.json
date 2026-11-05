@@ -1,0 +1,153 @@
+{
+ "season": 36,
+ "comps": 435897,
+ "chunk": 5000,
+ "chunks": 88,
+ "options": {
+  "enemy": {
+   "code": "수냉"
+  },
+  "profile": {
+   "base": "default",
+   "chars": {
+    "로산나": {
+     "favorite_stage": 0
+    },
+    "슈가": {
+     "favorite_stage": 0
+    },
+    "팬텀": {
+     "favorite_stage": 0
+    },
+    "플로라": {
+     "favorite_stage": 0
+    }
+   }
+  },
+  "sim": {
+   "camera_reload_cancel": true
+  }
+ },
+ "order": "실험 41 base_order(단계 1 · 2 · A · 3, 같은 단계 안 이름순)",
+ "parts": {
+  "0": {
+   "sims": 2645,
+   "reused": 2355,
+   "seconds": 89.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "1": {
+   "sims": 2368,
+   "reused": 2632,
+   "seconds": 101.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "2": {
+   "sims": 2659,
+   "reused": 2341,
+   "seconds": 144.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "3": {
+   "sims": 2204,
+   "reused": 2796,
+   "seconds": 82.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "4": {
+   "sims": 2245,
+   "reused": 2755,
+   "seconds": 65.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "5": {
+   "sims": 2143,
+   "reused": 2857,
+   "seconds": 66.1,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "6": {
+   "sims": 3296,
+   "reused": 1704,
+   "seconds": 85.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "7": {
+   "sims": 2790,
+   "reused": 2210,
+   "seconds": 98.6,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "8": {
+   "sims": 3486,
+   "reused": 1514,
+   "seconds": 138.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "9": {
+   "sims": 2266,
+   "reused": 2734,
+   "seconds": 88.2,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "10": {
+   "sims": 2772,
+   "reused": 2228,
+   "seconds": 95.3,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "11": {
+   "sims": 2324,
+   "reused": 2676,
+   "seconds": 89.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "12": {
+   "sims": 4241,
+   "reused": 759,
+   "seconds": 196.7,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "13": {
+   "sims": 2753,
+   "reused": 2247,
+   "seconds": 99.9,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "14": {
+   "sims": 2900,
+   "reused": 2100,
+   "seconds": 100.5,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "15": {
+   "sims": 2964,
+   "reused": 2036,
+   "seconds": 135.8,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  },
+  "16": {
+   "sims": 2995,
+   "reused": 2005,
+   "seconds": 115.2,
+   "errors": 0,
+   "evaluator": "nikke-calc-rs f0f648c"
+  }
+ }
+}

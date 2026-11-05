@@ -1,0 +1,8 @@
+{
+ "season": 42,
+ "comps": 39,
+ "requests": 930,
+ "sims": 930,
+ "seconds": 71.5,
+ "evaluator": "nikke-calc-rs f0f648c"
+}

@@ -1,0 +1,7 @@
+{
+ "season": 36,
+ "comps": 100,
+ "diff": 0,
+ "sims": 100,
+ "evaluator": "nikke-calc-rs f0f648c"
+}
