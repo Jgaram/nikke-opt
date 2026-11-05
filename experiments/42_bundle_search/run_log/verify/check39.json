@@ -1,0 +1,11 @@
+{
+ "n": 300,
+ "diff": 0,
+ "examples": [],
+ "evaluator": "nikke-calc-rs f0f648c",
+ "base_evaluators": [
+  "nikke-calc-rs 6e73529",
+  "nikke-calc-rs 8bc51a2"
+ ],
+ "seconds": 31.6
+}
