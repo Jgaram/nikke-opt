@@ -123,5 +123,51 @@ class Arms42(unittest.TestCase):
             self.assertIs(r.R10.design, before[0])
 
 
+class Order42(unittest.TestCase):
+    def test_order_season_with_fake_evaluator(self):
+        """3단계: 잰 stage_key는 다시 안 재고, 다듬은 값은 기록 값보다 작아지지 않으며, 시뮬 수 = 순서 + 카메라."""
+        import hashlib
+        from types import SimpleNamespace
+        r = load()
+        names = sorted(r.BURST)[:30]
+        rng = random.Random(11)
+        comps = [tuple(rng.sample(names, 5)) for _ in range(40)]
+
+        def val(order, cam=None):
+            h = int(hashlib.md5(("|".join(order) + f"#{cam}").encode()).hexdigest()[:6], 16)
+            return 10e8 + sum(len(x) for x in order) * 1e7 + h % 5_000_000
+
+        class FakeEv:
+            sim_count = 0
+
+            def evaluate(self, reqs):
+                self.sim_count += len(reqs)
+                return [SimpleNamespace(error=None, total_damage=val(tuple(q.squad), (q.options.get("operation") or {}).get("camera")))
+                        for q in reqs]
+
+        recs = {k: [{"squad": list(c), "total_damage": val(c), "error": None} for c in comps[k::2]] for k in (0, 1)}
+        full = comps[0]
+        recs[0] += [{"squad": list(o), "total_damage": val(o), "error": None} for o in r.R41.R2.distinct_orders(full, r.BURST)]
+        old = r.verify_recs
+        r.verify_recs = lambda arm, s, k: recs[k]
+        try:
+            ev = FakeEv()
+            out = r.order_season("base", 23, ev)
+        finally:
+            r.verify_recs = old
+        self.assertEqual(out["sims"], out["order_sims"] + out["camera_sims"])
+        self.assertEqual(out["sims"], ev.sim_count)
+        self.assertEqual(out["camera_sims"], 5 * out["targets"])
+        self.assertGreaterEqual(out["after_order"] + 1e-9, out["pre"])
+        self.assertGreaterEqual(out["after_camera"] + 1e-9, out["after_order"])
+        for d in out["decks"]:
+            self.assertGreaterEqual(d["after"] + 1e-9, d["order"])
+            self.assertGreaterEqual(d["order"] + 1e-9, d["pre"])
+        dk = {frozenset(d["comp"]): d for d in out["decks"]}
+        if frozenset(full) in dk:                                           # 다 잰 구성은 새 순서를 안 잰다
+            n_rep = len(r.R41.R2.distinct_orders(full, r.BURST))
+            self.assertEqual(dk[frozenset(full)]["orders"], n_rep + (tuple(full) not in r.R41.R2.distinct_orders(full, r.BURST)))
+
+
 if __name__ == "__main__":
     unittest.main()
