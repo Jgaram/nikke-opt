@@ -148,6 +148,210 @@ def cmd_free(a: argparse.Namespace) -> int:
     return 0
 
 
+# ---------------------------------------------------------------- 0c 순서 확인: 단계 안 순서 × 카메라 대 120순서
+
+def with_camera(s: int, name: str) -> dict[str, Any]:
+    o = options(s)
+    o["operation"] = {**o.get("operation", {}), "camera": name}
+    return o
+
+
+def order_targets(s: int) -> dict[int, dict[tuple, float]]:
+    """실험 41 자리 순서 대상 중 120순서를 모두 잰 구성 → {순서: 값}(카메라 기본)."""
+    T = R41.Table.load(s)
+    P = R41.load_perm(s)
+    out = {}
+    for i, d in P.items():
+        allv = dict(d)
+        for v, o in T.refined.get(i, {}).values():
+            allv[tuple(o)] = v
+        allv[base_order(T.cs[i])] = T.base[i]
+        if len(allv) == 120:
+            out[i] = allv
+    return out
+
+
+def cmd_ordercheck(a: argparse.Namespace) -> int:
+    from nikke_opt.evaluator import EvalRequest
+    s = a.season
+    f = sdir(s) / "ordercheck.jsonl.gz"
+    if f.exists():
+        return 0
+    T = R41.Table.load(s)
+    tg = order_targets(s)
+    jobs = []
+    for i in sorted(tg):
+        for o in R41.R2.distinct_orders(base_order(T.cs[i]), BURST):
+            for n in o:
+                jobs.append((i, tuple(o), n))
+    t0 = time.time()
+    with R41.evaluator(a.jobs) as ev:
+        res = ev.evaluate([EvalRequest(o, boss=None, options=with_camera(s, n)) for _, o, n in jobs])
+        tmp = f.with_suffix(".tmp")
+        f.parent.mkdir(parents=True, exist_ok=True)
+        with gzip.open(tmp, "wt", encoding="utf-8") as fh:
+            for (i, o, n), r in zip(jobs, res):
+                v = None if r.error or r.total_damage is None else r.total_damage / E8
+                fh.write(json.dumps({"i": i, "order": list(o), "camera": n, "value": v}, ensure_ascii=False) + "\n")
+        tmp.rename(f)
+        jdump(sdir(s) / "ordercheck_meta.json", {"season": s, "comps": len(tg), "requests": len(jobs), "sims": ev.sim_count,
+                                                 "seconds": round(time.time() - t0, 1), "evaluator": R41.ev_version(ev)})
+    summ = order_summary(s)
+    jdump(sdir(s) / "ordercheck_summary.json", summ)
+    print(json.dumps({k: v for k, v in summ.items() if k != "short"}, ensure_ascii=False), flush=True)
+    return 0
+
+
+def order_summary(s: int) -> dict[str, Any]:
+    """(1) 카메라를 3번 자리 니케로 적은 값 = 적지 않은 값인가, (2) 커버율 = max(단계 안 순서 × 카메라) ÷ max(120순서) —
+    전부 보기와, 싼 차례(기본 카메라로 단계 안 순서 최선 → 그 순서에서 카메라 5명)."""
+    tg = order_targets(s)
+    rows: dict[int, list] = {}
+    with gzip.open(sdir(s) / "ordercheck.jsonl.gz", "rt", encoding="utf-8") as fh:
+        for line in fh:
+            r = json.loads(line)
+            rows.setdefault(r["i"], []).append(r)
+    same, diff, cover, cheap, gain_cam = 0, [], [], [], []
+    for i, rs in rows.items():
+        allv = tg[i]
+        best120 = max(allv.values())
+        for r in rs:
+            o = tuple(r["order"])
+            if r["camera"] == o[2] and r["value"] is not None:
+                if abs(r["value"] - allv[o]) <= 1e-6:
+                    same += 1
+                else:
+                    diff.append([i, r["order"], r["value"], allv[o]])
+        full = max(r["value"] for r in rs if r["value"] is not None)
+        cover.append(full / best120)
+        reps = {tuple(r["order"]) for r in rs}
+        o_best = max(reps, key=lambda o: allv[o])
+        c_best = max([allv[o_best]] + [r["value"] for r in rs if tuple(r["order"]) == o_best and r["value"] is not None])
+        cheap.append(c_best / best120)
+        gain_cam.append(c_best / allv[o_best] - 1)
+    q = lambda xs, p: sorted(xs)[int(p * (len(xs) - 1))]  # noqa: E731
+    short = []
+    for i, rs in rows.items():
+        allv = tg[i]
+        o120, v120 = max(allv.items(), key=lambda kv: kv[1])
+        b = max((r for r in rs if r["value"] is not None), key=lambda r: r["value"])
+        if b["value"] / v120 < 0.99:
+            short.append({"i": i, "cover": b["value"] / v120, "best120": list(o120), "v120": v120,
+                          "best": b["order"], "camera": b["camera"], "v": b["value"]})
+    return {"season": s, "comps": len(rows), "short": sorted(short, key=lambda x: x["cover"]), "camera_slot3_same": same, "camera_slot3_diff": len(diff), "diff_examples": diff[:5],
+            "cover_full": {"median": R41.median(cover), "p10": q(cover, 0.1), "min": min(cover), "ge_99": sum(x >= 0.99 for x in cover)},
+            "cover_cheap": {"median": R41.median(cheap), "p10": q(cheap, 0.1), "min": min(cheap), "ge_99": sum(x >= 0.99 for x in cheap)},
+            "camera_gain_on_best_order": {"median": R41.median(gain_cam), "max": max(gain_cam)}}
+
+
+# ---------------------------------------------------------------- 0b 규칙 없는 OPT(시뮬 0)
+
+def cmd_freepack(a: argparse.Namespace) -> int:
+    s = a.season
+    T = free_table(s)
+    t0 = time.time()
+    opt = R41.exact_opt(T, "base", deadline_s=a.deadline)
+    rk = T.ranks("base")
+    opt["ranks"] = [rk[i] for i in opt["idx"]]
+    opt["outside_rule"] = [list(T.cs[i]) for i in opt["idx"] if not P41.passes(T.cs[i])]
+    land = {}
+    for x in R41.LAND_X:
+        L = R41.landscape(T, "base", opt["total"], x, cap=a.cap, deadline_s=a.deadline)
+        land[str(x)] = {k: L[k] for k in ("candidates", "count", "complete", "stop")} | {
+            "comps_in": len(L["comps_in"]), "outside_rule_in": sum(not P41.passes(T.cs[i]) for i in L["comps_in"])}
+        if x == min(R41.LAND_X):
+            low_keep = L["keep"]
+    cm = R41.R30.class_map(T.book("base", low_keep), max_reps=R41.CLASS_MAX, low=R41.CLASS_LOW)
+    classes = {str(x): sum(1 for r in cm["reps"] if not r.get("below") and r["total"] >= x * opt["total"] - 1e-9) for x in R41.LAND_X}
+    rn = {str(x): R41.r_need(T, "base", x * opt["total"], deadline_s=a.deadline) for x in R41.RNEED_X}
+    rule = R41.jload(R41.sdir(s) / "pack.json")["base"]["opt"]
+    out = {"season": s, "comps": len(T.cs), "opt": opt, "rule_opt_base": rule["total"], "gain_vs_rule": opt["total"] / rule["total"] - 1,
+           "landscape": land, "classes": classes, "class_reps": cm["reps"], "r_need": rn, "seconds": round(time.time() - t0, 1)}
+    jdump(sdir(s) / "freepack.json", out)
+    print(json.dumps({"season": s, "opt": opt["total"], "exact": opt["exact"], "rule_opt": rule["total"],
+                      "gain": out["gain_vs_rule"], "ranks": opt["ranks"], "outside_rule": opt["outside_rule"],
+                      "land": {k: (v["count"], v["complete"], v["outside_rule_in"]) for k, v in land.items()},
+                      "classes": classes, "r_need": {k: v["K"] for k, v in rn.items()}}, ensure_ascii=False), flush=True)
+    return 0
+
+
+# ---------------------------------------------------------------- 1단계 재생(기본 값 세계, 시뮬 0)
+
+REPLAY_SEEDS = (0, 1, 2, 3)
+REPLAY_BUDGET = run31.SEED_BUDGET    # 12,500
+
+
+class BaseWorldEvaluator:
+    """표를 보는 평가기 — 요청 구성의 기본 순서 값으로 답한다(순서는 값에 안 들어감). 표 밖 구성은 KeyError."""
+
+    def __init__(self, T: Any):
+        from nikke_opt.evaluator import EvalResult
+        self.T, self._R = T, EvalResult
+        self.sim_count, self.cache_hits = 0, 0
+        self.version = {"repo": "table42", "commit": f"S{T.s}"}
+        self.outside_rule = 0
+
+    def evaluate(self, requests: Sequence[Any]) -> list[Any]:
+        out = []
+        for r in requests:
+            i = self.T.idx[frozenset(r.squad)]
+            v = self.T.base[i]
+            self.sim_count += 1
+            self.outside_rule += not P41.passes(self.T.cs[i])
+            raw = {"total_damage": None, "error": {"message": "표 값 없음"}} if v is None else {"total_damage": round(v * E8)}
+            out.append(self._R(None if v is None else round(v * E8), raw, False))
+        return out
+
+    def submit(self, requests: Sequence[Any]) -> list[Any]:
+        raise NotImplementedError
+
+    def close(self) -> None:
+        pass
+
+
+def arms_mod() -> Any:
+    return sys.modules.get("arms42") or _load("arms42", HERE / "arms.py")
+
+
+def run_arm(acct: Any, arm: str, budget: int, ev: Any) -> tuple[dict, list, Any]:
+    A = arms_mod()
+    with A.patched(arm):
+        return R10.run_method(acct, "G+E", budget, ev, pool=177)
+
+
+def cmd_replay(a: argparse.Namespace) -> int:
+    s = a.season
+    T = free_table(s)
+    fp = jload(sdir(s) / "freepack.json")
+    if not fp:
+        raise RuntimeError(f"S{s}: 먼저 freepack")
+    opt = fp["opt"]["total"]
+    rule_opt = fp["rule_opt_base"]
+    seeds = REPLAY_SEEDS if a.seed is None else (a.seed,)
+    tag = a.tag or a.arm
+    for k in seeds:
+        f = sdir(s) / "replay" / f"{tag}_s{k}.json"
+        if f.exists() and not a.force:
+            continue
+        ev = BaseWorldEvaluator(T)
+        acct = R41.replay_account(s, k)
+        t0 = time.time()
+        summ, recs, sess = run_arm(acct, a.arm, a.budget, ev)
+        hist = summ["history"]
+        fin = summ["final"]
+        out = {"season": s, "arm": a.arm, "tag": tag, "params": dict(arms_mod().PARAMS) if a.arm != "base" else {},
+               "seed": k, "account": acct.id, "budget": a.budget, "evals": summ["evals"], "opt": opt, "rule_opt": rule_opt,
+               "final": fin, "final_ratio": fin["total"] / opt, "final_ratio_rule": fin["total"] / rule_opt,
+               "reach": {str(x): R41.first_reach(hist, opt, x) for x in (0.99, 0.97)},
+               "grid": R41.grid_of(hist, opt, budget=a.budget), "history": hist, "kicks": summ["kicks"],
+               "outside_rule_requests": ev.outside_rule, "final_outside_rule": sum(not P41.passes(sorted(q)) for _, q in fin["squads"]),
+               "errors": summ["errors"], "comps_seen": len(sess.book.best), "seconds": round(time.time() - t0, 1)}
+        jdump(f, out)
+        print(json.dumps({k2: out[k2] for k2 in ("season", "tag", "seed", "evals", "final_ratio", "reach", "final_outside_rule", "seconds")},
+                         ensure_ascii=False), flush=True)
+    return 0
+
+
 # ---------------------------------------------------------------- 명령
 
 def main(argv: list[str] | None = None) -> int:
@@ -157,8 +361,22 @@ def main(argv: list[str] | None = None) -> int:
     f.add_argument("--season", type=int, required=True)
     f.add_argument("--jobs", type=int, default=4)
     f.add_argument("--limit", type=int, default=None)
+    c = sub.add_parser("ordercheck")
+    c.add_argument("--season", type=int, required=True)
+    c.add_argument("--jobs", type=int, default=4)
+    k = sub.add_parser("freepack")
+    k.add_argument("--season", type=int, required=True)
+    k.add_argument("--cap", type=int, default=2_000_000)
+    k.add_argument("--deadline", type=float, default=900.0)
+    y = sub.add_parser("replay")
+    y.add_argument("--season", type=int, required=True)
+    y.add_argument("--arm", required=True, choices=("base", "R", "P", "L"))
+    y.add_argument("--seed", type=int, default=None)
+    y.add_argument("--budget", type=int, default=REPLAY_BUDGET)
+    y.add_argument("--tag", default=None, help="기록 이름(개발 중 판 수치를 바꿔 볼 때)")
+    y.add_argument("--force", action="store_true")
     a = p.parse_args(argv)
-    return {"free": cmd_free}[a.cmd](a)
+    return {"free": cmd_free, "ordercheck": cmd_ordercheck, "freepack": cmd_freepack, "replay": cmd_replay}[a.cmd](a)
 
 
 if __name__ == "__main__":
